@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id    String @id @default(uuid())
+  email String @unique
+  name  String?
+  trips TripMember[]
+}
+
+model Trip {
+  id        String          @id @default(uuid())
+  name      String
+  startDate DateTime?
+  endDate   DateTime?
+  members   TripMember[]
+  itinerary ItineraryItem[]
+}
+
+model TripMember {
+  id     String @id @default(uuid())
+  user   User   @relation(fields: [userId], references: [id])
+  userId String
+  trip   Trip   @relation(fields: [tripId], references: [id])
+  tripId String
+  role   String @default("editor") // administrator, editor, viewer 等
+
+  @@unique([userId, tripId])
+}
+
+model Location {
+  id      String          @id @default(uuid())
+  name    String
+  placeId String?
+  lat     Float?
+  lng     Float?
+  address String?
+  items   ItineraryItem[]
+}
+
+model ItineraryItem {
+  id            String   @id @default(uuid())
+  trip          Trip     @relation(fields: [tripId], references: [id])
+  tripId        String
+  location      Location @relation(fields: [locationId], references: [id])
+  locationId    String
+  scheduledTime DateTime?
+  duration      Int?     // 分鐘
+  orderIndex    Int      // 拖曳排序用
+}
