@@ -14,9 +14,4 @@ for (const name of ["korea-trip-handbook.pdf", "emergency-pack.pdf"]) {
   fs.copyFileSync(src, path.join(pub, name));
 }
 
-const readiness = path.join(distDir, "readiness-report.json");
-if (fs.existsSync(readiness)) {
-  fs.copyFileSync(readiness, path.join(pub, "readiness-report.json"));
-}
-
-console.log("prepare-public-artifacts: copied PDFs (+ readiness if present) to site/public/downloads/");
+console.log("prepare-public-artifacts: copied public PDFs to site/public/downloads/");

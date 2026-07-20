@@ -1,129 +1,45 @@
 ---
 import Handbook from "../layouts/Handbook.astro";
-import {
-  loadTrip,
-  loadTimeline,
-  loadBudget,
-  loadSources,
-  loadFounderDecisions,
-  loadReadinessReport,
-  nextOpenTask,
-  budgetProgress,
-  bookingProgress,
-  staleSources,
-} from "../lib/data";
-
-const trip = loadTrip();
-const timeline = loadTimeline();
-const budget = loadBudget();
-const sources = loadSources();
-const decisions = loadFounderDecisions();
-const readiness = loadReadinessReport();
-const next = nextOpenTask(timeline);
-const bud = budgetProgress(budget);
-const book = bookingProgress();
-const stale = staleSources(sources);
 const base = import.meta.env.BASE_URL;
-
-const countdown =
-  trip.start_date == null
-    ? "日期未確認"
-    : `${Math.ceil((new Date(trip.start_date).getTime() - Date.now()) / 86400000)} 天`;
 ---
-<Handbook title="Dashboard" current="home">
+<Handbook title="我們的韓國旅行" current="home">
   <section class="panel">
-    <h1 style="margin-top:0">Dashboard</h1>
-    <p class="muted">{trip.success_criterion}</p>
-    <div class="grid2">
-      <div class="stat">
-        <div class="label">距離出發</div>
-        <div class="value">{countdown}</div>
-      </div>
-      <div class="stat">
-        <div class="label">Readiness</div>
-        <div class="value" style="font-size:1rem">{readiness?.overall ?? "run npm run readiness"}</div>
-        <span class="badge provisional">非 Trip Ready</span>
-      </div>
+    <h1 style="margin-top:0">我們的第一次韓國旅行</h1>
+    <p style="margin:0.4rem 0 0.8rem">目前方案：<strong>Seoul 4N + Busan 2N</strong></p>
+    <p class="muted" style="margin-top:0">旅行月份：2027 年 3 月（日期待確認）</p>
+    <div class="btn-row">
+      <a class="btn primary" href={`${base}days/`}>查看 7 天行程</a>
+      <a class="btn primary" href={`${base}today/`}>今天模式</a>
+      <a class="btn" href={`${base}decisions/`}>我們需要一起決定的事情</a>
     </div>
   </section>
 
   <section class="panel">
-    <h2>出國當天</h2>
-    <p>
-      <a class="btn primary" href={`${base}today/`}>開啟今日（Execution Mode）</a>
-    </p>
-    <p class="muted">10 秒內：一件事、下一動、地圖、緊急 — 路徑 <code>/today/</code></p>
-  </section>
-
-  {
-    readiness && (
-      <section class="panel">
-        <h2>Readiness gates</h2>
-        <p class="muted">
-          Pass {readiness.summary.pass} · Provisional {readiness.summary.provisional} · Blocked{" "}
-          {readiness.summary.blocked}
-        </p>
-        <ul class="list">
-          {(readiness.top_risks ?? []).map((r: any) => (
-            <li>
-              <strong>{r.id}</strong> · {r.blocker}
-            </li>
-          ))}
-        </ul>
-        <p class="muted">下一個 Founder：{readiness.next_founder} · Agent：{readiness.next_agent}</p>
-      </section>
-    )
-  }
-
-  <section class="panel">
-    <h2>下一個待辦</h2>
-    {
-      next ? (
-        <p>
-          <strong>{next.milestone}</strong> · {next.task.title}
-        </p>
-      ) : (
-        <p>全部完成</p>
-      )
-    }
-  </section>
-
-  <section class="panel">
-    <h2>Founder Decisions</h2>
+    <h2>目前狀態</h2>
     <ul class="list">
-      {decisions.map((d) => (
-        <li>
-          <span class="badge decision">{d.status}</span> {d.id} · {d.title_zh}
-        </li>
-      ))}
+      <li><strong>已決定：</strong>D2 城市晚數 = Seoul 4N + Busan 2N</li>
+      <li><strong>暫定：</strong>D3 目標航線 = TPE → ICN，PUS → TPE（直飛優先）</li>
+      <li><strong>還要一起決定：</strong>D1 確切日期（目前只先用 2027 年 3 月）</li>
+      <li><strong>出發前要再確認：</strong>實際航班、KTX、住宿供應、入境規則最新公告</li>
     </ul>
-    <a class="btn primary" href={`${base}decisions/`}>決策包</a>
   </section>
 
   <section class="panel">
-    <h2>路線（Provisional）</h2>
-    <p>{trip.route_option}</p>
-    <span class="badge provisional">{trip.route_status}</span>
-    <a class="btn" href={`${base}route/`}>Route Decision</a>
+    <h2>你們在意的重點</h2>
+    <p class="muted">GOT7、購物、韓服、海景、豬肉湯飯、09:00–21:00 行程節奏</p>
+    <div class="btn-row">
+      <a class="btn" href={`${base}days/day-2/`}>韓服/宮殿（首爾）</a>
+      <a class="btn" href={`${base}days/day-3/`}>購物（首爾）</a>
+      <a class="btn" href={`${base}days/day-6/`}>海景（釜山）</a>
+    </div>
   </section>
 
   <section class="panel">
-    <h2>離線手冊 PDF</h2>
-    <p class="muted">Build 後可下載（同 CI artifact）</p>
+    <h2>手機離線備用</h2>
+    <p class="muted">可以直接下載 PDF 放手機，沒網路也能看。</p>
     <div class="btn-row">
       <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>Handbook PDF</a>
       <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>Emergency PDF</a>
     </div>
   </section>
-
-  <section class="panel">
-    <h2>過期資料</h2>
-    <p>{stale.length === 0 ? "無 stale 警告（查核基準 2026-07-20）" : `${stale.length} 筆需重查`}</p>
-  </section>
-
-  <div class="btn-row">
-    <a class="btn primary" href={`${base}days/day-2/`}>Seoul sample (Day 2)</a>
-    <a class="btn" href={`${base}days/day-5/`}>Transfer (Day 5)</a>
-    <a class="btn" href={`${base}days/day-6/`}>Busan sample (Day 6)</a>
-  </div>
 </Handbook>
