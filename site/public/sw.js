@@ -1,7 +1,8 @@
-const CACHE = "korea-trip-v1";
+const CACHE = "korea-trip-v2";
 const PRECACHE = [
   "./",
   "./index.html",
+  "./today/",
   "./emergency/",
   "./days/",
   "./manifest.webmanifest",

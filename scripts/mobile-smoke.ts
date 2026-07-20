@@ -5,6 +5,8 @@ import { siteDistDir, root } from "./lib/root.ts";
 const viewports = [375, 390, 430];
 const pages = [
   "index.html",
+  "today/index.html",
+  "today/day-2/index.html",
   "decisions/index.html",
   "days/day-2/index.html",
   "days/day-5/index.html",
