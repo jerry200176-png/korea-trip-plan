@@ -69,5 +69,20 @@ for (const w of viewports) {
   console.log(`mobile-smoke: viewport ${w}px pages OK (static HTML checks)`);
 }
 
+const swPath = path.join(root, "site/public/sw.js");
+const sw = fs.readFileSync(swPath, "utf8");
+if (!sw.includes("caches.delete") || !sw.includes("keys.filter")) {
+  failed = true;
+  console.error("sw.js: missing old-cache purge on activate");
+}
+if (!sw.includes('req.mode === "navigate"') && !sw.includes("text/html")) {
+  failed = true;
+  console.error("sw.js: missing network-first HTML strategy");
+}
+if (!sw.includes("res.ok")) {
+  failed = true;
+  console.error("sw.js: should not cache non-ok responses");
+}
+
 if (failed) process.exit(1);
 console.log("mobile-smoke: OK");

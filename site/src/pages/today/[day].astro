@@ -67,14 +67,24 @@ for (const b of day.blocks) {
       {
         mapPlace?.naver_map_url && (
           <a class="btn primary" href={mapPlace.naver_map_url} target="_blank" rel="noreferrer">
-            地圖 · {mapPlace.name_zh}
+            Naver Map · {mapPlace.name_zh}
           </a>
         )
       }
+      <span class="btn muted" style="opacity:0.85" title="Fact 座標 KML/GeoJSON 匯出後，以 Organic Maps 離線開啟">
+        離線地圖（匯出待辦）
+      </span>
       <a class="btn" href={`${base}days/${dayParam}/`}>
         完整 Day {day.day_index}
       </a>
     </div>
+    {
+      mapPlace && (
+        <p class="muted" style="margin-top:0.75rem">
+          離線文字：{mapPlace.name_ko} · {mapPlace.address ?? "地址見完整 Day 頁"}
+        </p>
+      )
+    }
   </section>
 
   <section class="panel">
