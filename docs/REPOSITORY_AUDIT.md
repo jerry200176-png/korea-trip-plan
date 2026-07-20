@@ -1,8 +1,11 @@
 # Repository Audit
 
-**Audit date:** 2026-07-20  
+**Audit date:** 2026-07-20 (initial) · **Updated:** 2026-07-20 (Foundation Exit)  
 **Repo:** `jerry200176-png/korea-trip-plan` (private)  
-**Branch at audit:** `main` → pivot on `cursor/korea-handbook-foundation-f5a1`
+**Branch:** `cursor/korea-handbook-foundation-f5a1` · **PR:** #1 (ready for review)
+
+> **Current capability audit:** see [FOUNDATION_EXIT_AUDIT.md](./FOUNDATION_EXIT_AUDIT.md) and gate criteria [FOUNDATION_EXIT_GATE.md](./FOUNDATION_EXIT_GATE.md).  
+> Route night math corrected to **Seoul 4N + Busan 2N** for 7 calendar days / 6 hotel nights (supersedes early draft 4N+3N in original plan notes).
 
 ## 1. Existing structure (pre-pivot)
 

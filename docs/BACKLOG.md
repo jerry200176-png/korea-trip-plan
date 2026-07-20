@@ -6,7 +6,7 @@ GitHub Issues API is unavailable to this agent integration. Track work here; use
 
 | # | Milestone | Outcome | Status |
 |---|-----------|---------|--------|
-| 1 | Foundation | Docs, schema, privacy, CI skeleton | In progress (this PR) |
+| 1 | Foundation | Docs, schema, privacy, CI skeleton | **Complete** (PR #1; see Foundation Exit Gate) |
 | 2 | Route Decision | Founder locks cities / nights | Blocked on D2 |
 | 3 | Research Complete | Entry, transit, pay, weather, shopping research with sources | Partial (this PR) |
 | 4 | Itinerary Draft | 7 executable provisional days | Skeleton (this PR) |
