@@ -1,0 +1,766 @@
+id: lodging-area-scores-v1
+status: Provisional
+updated: '2026-07-20'
+depends_on:
+  route: seoul-4n-busan-2n
+  flight_plan: D3-B
+dimensions:
+  - id: icn_arrival
+    label_zh: ICN 抵達後進城便利性
+  - id: seoul_days1_4_transit
+    label_zh: 前四晚首爾行程平均交通成本
+  - id: ktx_seoul_station
+    label_zh: 前往 Seoul Station 搭 KTX 便利性
+  - id: pus_departure
+    label_zh: PUS 離境便利性
+  - id: pork_soup_food
+    label_zh: 豬肉湯飯與日常餐飲密度
+  - id: beach_scenery
+    label_zh: 海灘／海景可達性
+  - id: shopping
+    label_zh: 購物、化妝品、服飾便利性
+  - id: evening_safety
+    label_zh: 晚間安全與回住宿便利性
+  - id: walking_elevator
+    label_zh: 步行量、坡度、轉乘與電梯風險
+  - id: room_couple_supply
+    label_zh: 房間大小與雙人住宿供給
+  - id: noise
+    label_zh: 噪音風險
+  - id: convenience_breakfast
+    label_zh: 便利商店與早餐取得
+  - id: luggage_movement
+    label_zh: 行李移動成本
+  - id: schedule_0900_2100
+    label_zh: 對 09:00–21:00 作息適配
+seoul:
+  recommendation:
+    primary: jongno_insadong
+    backup: myeongdong_euljiro
+    status: Provisional
+    summary_zh: 4 晚首爾以 Jongno/Insadong 平衡 Day2 景點與 KTX；明洞為購物備選（Day3 一次地鐵）。
+  areas:
+    - id: jongno_insadong
+      label: Jongno / Insadong
+      included_reason: Itinerary Day 2 Jongno；景福宮／北村／韓服動線
+      scores:
+        icn_arrival:
+          score: 4
+          epistemic: Inference
+          rationale: ICN→AREX/機場鐵路→首爾站或直達線再轉 1/3/5 號線；時間依航班時段
+          source_ids:
+            - src-incheon
+            - src-naver-map
+            - src-tmoney
+        seoul_days1_4_transit:
+          score: 5
+          epistemic: Inference
+          rationale: Day2 同區；Day3 至明洞約 15–25 分地鐵；Day4 至江南需 25–40 分
+          source_ids:
+            - src-naver-map
+            - src-royal-palaces
+        ktx_seoul_station:
+          score: 4
+          epistemic: Inference
+          rationale: 地鐵至 Seoul Station 約 10–20 分；KTX 日可預留計程車
+          source_ids:
+            - src-korail
+            - src-naver-map
+        pus_departure:
+          score: 2
+          epistemic: Assumption
+          rationale: 首爾住宿離 PUS 遠；離境日應已在釜山（不以此區評 PUS）
+          source_ids:
+            - src-pusan-air
+        pork_soup_food:
+          score: 4
+          epistemic: Inference
+          rationale: 老城區食堂多；豬肉湯飯選擇需逐店確認無甲殼類
+          source_ids:
+            - src-naver-map
+        beach_scenery:
+          score: 1
+          epistemic: Fact
+          rationale: 非海濱區
+          source_ids:
+            - src-busan-city
+        shopping:
+          score: 3
+          epistemic: Inference
+          rationale: 傳統伴手禮強；明洞級美妝需一次地鐵
+          source_ids:
+            - src-naver-map
+        evening_safety:
+          score: 4
+          epistemic: Inference
+          rationale: 觀光警政多；22:00 前回宿與偏好一致
+          source_ids:
+            - src-naver-map
+        walking_elevator:
+          score: 3
+          epistemic: Inference
+          rationale: 北村坡度與階梯多；Day2 步行量高
+          source_ids:
+            - src-seoul-hanok
+            - src-naver-map
+        room_couple_supply:
+          score: 3
+          epistemic: Assumption
+          rationale: 雙人房供給中等；需篩選床型與面積
+          source_ids:
+            - src-naver-map
+        noise:
+          score: 3
+          epistemic: Assumption
+          rationale: 主幹道旁可能較吵
+          source_ids:
+            - src-naver-map
+        convenience_breakfast:
+          score: 4
+          epistemic: Inference
+          rationale: 便利店與小食多
+          source_ids:
+            - src-naver-map
+        luggage_movement:
+          score: 3
+          epistemic: Inference
+          rationale: Day1 ICN 進城與 Day5 帶行李去 KTX 需預留電梯/計程車
+          source_ids:
+            - src-incheon
+            - src-korail
+        schedule_0900_2100:
+          score: 5
+          epistemic: Inference
+          rationale: 09:00 出門至景福宮等近；21:00 前回宿容易
+          source_ids:
+            - src-royal-palaces
+    - id: myeongdong_euljiro
+      label: Myeongdong / Euljiro
+      scores:
+        icn_arrival:
+          score: 4
+          epistemic: Inference
+          rationale: 機場鐵路/巴士至市區後轉 2/4 號線；尖峰時段較擠
+          source_ids:
+            - src-incheon
+            - src-naver-map
+        seoul_days1_4_transit:
+          score: 4
+          epistemic: Inference
+          rationale: Day3 購物最佳；Day2 景福宮需跨區；Day4 江南中等
+          source_ids:
+            - src-naver-map
+        ktx_seoul_station:
+          score: 5
+          epistemic: Inference
+          rationale: 至 Seoul Station 地鐵短；KTX 日友善
+          source_ids:
+            - src-korail
+            - src-naver-map
+        pus_departure:
+          score: 2
+          epistemic: Assumption
+          rationale: 離 PUS 遠（離境日在釜山）
+          source_ids:
+            - src-pusan-air
+        pork_soup_food:
+          score: 4
+          epistemic: Inference
+          rationale: 明洞餐飲密度高；需避開海鮮為主的店
+          source_ids:
+            - src-naver-map
+        beach_scenery:
+          score: 1
+          epistemic: Fact
+          rationale: 非海濱
+          source_ids:
+            - src-busan-city
+        shopping:
+          score: 5
+          epistemic: Inference
+          rationale: 美妝服飾與外國人服務成熟
+          source_ids:
+            - src-naver-map
+        evening_safety:
+          score: 4
+          epistemic: Inference
+          rationale: 觀光區夜間人流大
+          source_ids:
+            - src-naver-map
+        walking_elevator:
+          score: 4
+          epistemic: Inference
+          rationale: 相對平坦；明洞坡道仍多
+          source_ids:
+            - src-naver-map
+        room_couple_supply:
+          score: 4
+          epistemic: Assumption
+          rationale: 觀光飯店/商務旅館多
+          source_ids:
+            - src-naver-map
+        noise:
+          score: 2
+          epistemic: Assumption
+          rationale: 鬧區噪音風險較高
+          source_ids:
+            - src-naver-map
+        convenience_breakfast:
+          score: 5
+          epistemic: Inference
+          rationale: 便利店極多
+          source_ids:
+            - src-naver-map
+        luggage_movement:
+          score: 4
+          epistemic: Inference
+          rationale: 交通樞紐多；Day1 進城路線選擇多
+          source_ids:
+            - src-incheon
+            - src-naver-map
+        schedule_0900_2100:
+          score: 4
+          epistemic: Inference
+          rationale: 09:00 出發 OK；21:00 回宿 OK 但人潮
+          source_ids:
+            - src-naver-map
+    - id: hongdae
+      label: Hongdae
+      scores:
+        icn_arrival:
+          score: 4
+          epistemic: Inference
+          rationale: 機場鐵路→首爾站/弘大線轉乘；行李尖峰較累
+          source_ids:
+            - src-incheon
+            - src-naver-map
+        seoul_days1_4_transit:
+          score: 3
+          epistemic: Inference
+          rationale: 至 Jongno/明洞/江南皆需 25–40+ 分
+          source_ids:
+            - src-naver-map
+        ktx_seoul_station:
+          score: 4
+          epistemic: Inference
+          rationale: 至 Seoul Station 約 15–25 分
+          source_ids:
+            - src-korail
+            - src-naver-map
+        pus_departure:
+          score: 2
+          epistemic: Assumption
+          rationale: 離 PUS 遠
+          source_ids:
+            - src-pusan-air
+        pork_soup_food:
+          score: 4
+          epistemic: Inference
+          rationale: 青年街餐飲多；服飾與小吃為主
+          source_ids:
+            - src-naver-map
+        beach_scenery:
+          score: 1
+          epistemic: Fact
+          rationale: 非海濱
+          source_ids:
+            - src-busan-city
+        shopping:
+          score: 4
+          epistemic: Inference
+          rationale: 服飾與年輕品牌強
+          source_ids:
+            - src-naver-map
+        evening_safety:
+          score: 3
+          epistemic: Assumption
+          rationale: 夜生活多；需選安靜街區
+          source_ids:
+            - src-naver-map
+        walking_elevator:
+          score: 4
+          epistemic: Inference
+          rationale: 站周邊相對平；轉乘次數可能多
+          source_ids:
+            - src-naver-map
+        room_couple_supply:
+          score: 4
+          epistemic: Assumption
+          rationale: 青年/設計旅店多
+          source_ids:
+            - src-naver-map
+        noise:
+          score: 2
+          epistemic: Assumption
+          rationale: 夜間噪音風險高
+          source_ids:
+            - src-naver-map
+        convenience_breakfast:
+          score: 5
+          epistemic: Inference
+          rationale: 便利店密集
+          source_ids:
+            - src-naver-map
+        luggage_movement:
+          score: 3
+          epistemic: Inference
+          rationale: 轉乘較多
+          source_ids:
+            - src-naver-map
+        schedule_0900_2100:
+          score: 3
+          epistemic: Inference
+          rationale: 遠距離日（Day2/4）早出門壓力
+          source_ids:
+            - src-naver-map
+    - id: gangnam
+      label: Gangnam
+      included_reason: Itinerary Day 4 Gangnam（JYP／算命候選）— 證據支持納入比較
+      scores:
+        icn_arrival:
+          score: 4
+          epistemic: Inference
+          rationale: 機場巴士/地鐵 2/9 號線進江南；尖峰時間長
+          source_ids:
+            - src-incheon
+            - src-naver-map
+        seoul_days1_4_transit:
+          score: 3
+          epistemic: Inference
+          rationale: Day4 最佳；Day2/3 跨城長
+          source_ids:
+            - src-naver-map
+            - src-jyp
+        ktx_seoul_station:
+          score: 3
+          epistemic: Inference
+          rationale: 至 Seoul Station 較遠；KTX 日宜計程車
+          source_ids:
+            - src-korail
+            - src-naver-map
+        pus_departure:
+          score: 2
+          epistemic: Assumption
+          rationale: 離 PUS 遠
+          source_ids:
+            - src-pusan-air
+        pork_soup_food:
+          score: 4
+          epistemic: Inference
+          rationale: 餐廳多；豬湯需挑店
+          source_ids:
+            - src-naver-map
+        beach_scenery:
+          score: 1
+          epistemic: Fact
+          rationale: 非海濱
+          source_ids:
+            - src-busan-city
+        shopping:
+          score: 4
+          epistemic: Inference
+          rationale: 百貨與服飾強
+          source_ids:
+            - src-naver-map
+        evening_safety:
+          score: 4
+          epistemic: Inference
+          rationale: 商業區夜間仍有人流
+          source_ids:
+            - src-naver-map
+        walking_elevator:
+          score: 4
+          epistemic: Inference
+          rationale: 站區相對平；站內轉乘長
+          source_ids:
+            - src-naver-map
+        room_couple_supply:
+          score: 4
+          epistemic: Assumption
+          rationale: 商務/連鎖多
+          source_ids:
+            - src-naver-map
+        noise:
+          score: 3
+          epistemic: Assumption
+          rationale: 幹道旁可能吵
+          source_ids:
+            - src-naver-map
+        convenience_breakfast:
+          score: 4
+          epistemic: Inference
+          rationale: 便利店充足
+          source_ids:
+            - src-naver-map
+        luggage_movement:
+          score: 3
+          epistemic: Inference
+          rationale: KTX 日行李跨城較麻煩
+          source_ids:
+            - src-korail
+        schedule_0900_2100:
+          score: 3
+          epistemic: Inference
+          rationale: Day2 早出門至 Jongno 負擔大
+          source_ids:
+            - src-naver-map
+busan:
+  recommendation:
+    primary: haeundae
+    backup: seomyeon
+    status: Provisional
+    summary_zh: 2 晚釜山優先海雲台（Day6 海灘）；西面為豬湯/轉運備選。
+  areas:
+    - id: haeundae
+      label: Haeundae
+      scores:
+        icn_arrival:
+          score: 1
+          epistemic: Fact
+          rationale: 釜山區域；不適用 ICN 進城
+          source_ids:
+            - src-incheon
+        seoul_days1_4_transit:
+          score: null
+          epistemic: Fact
+          rationale: N/A — 首爾 4 晚不在釜山
+          source_ids: []
+        ktx_seoul_station:
+          score: null
+          epistemic: Fact
+          rationale: N/A
+          source_ids: []
+        pus_departure:
+          score: 4
+          epistemic: Inference
+          rationale: PUS 距海雲台約 30–50 分（路況/大眾運輸）；離境日宜預留緩衝
+          source_ids:
+            - src-pusan-air
+            - src-naver-map
+            - src-busan-city
+        pork_soup_food:
+          score: 4
+          epistemic: Inference
+          rationale: 豬湯名店多；海鮮街需避甲殼類
+          source_ids:
+            - src-naver-map
+            - src-busan-city
+        beach_scenery:
+          score: 5
+          epistemic: Inference
+          rationale: Day6 海灘主題最佳
+          source_ids:
+            - src-busan-city
+        shopping:
+          score: 3
+          epistemic: Inference
+          rationale: 海雲台商圈；非首爾級美妝
+          source_ids:
+            - src-naver-map
+        evening_safety:
+          score: 4
+          epistemic: Inference
+          rationale: 觀光海灘區警政與照明
+          source_ids:
+            - src-busan-city
+        walking_elevator:
+          score: 3
+          epistemic: Inference
+          rationale: 海灘步行多；部分坡道
+          source_ids:
+            - src-busan-city
+        room_couple_supply:
+          score: 4
+          epistemic: Assumption
+          rationale: 度假村/飯店多
+          source_ids:
+            - src-naver-map
+        noise:
+          score: 3
+          epistemic: Assumption
+          rationale: 海邊娛樂區夏夜較吵；3 月相對好
+          source_ids:
+            - src-busan-city
+        convenience_breakfast:
+          score: 4
+          epistemic: Inference
+          rationale: 便利店多
+          source_ids:
+            - src-naver-map
+        luggage_movement:
+          score: 3
+          epistemic: Inference
+          rationale: Day5 抵釜山帶行李；Day7 去 PUS
+          source_ids:
+            - src-korail
+            - src-pusan-air
+        schedule_0900_2100:
+          score: 5
+          epistemic: Inference
+          rationale: Day6 海灘日減少通勤
+          source_ids:
+            - src-busan-city
+    - id: seomyeon
+      label: Seomyeon
+      scores:
+        icn_arrival:
+          score: 1
+          epistemic: Fact
+          rationale: N/A ICN
+          source_ids:
+            - src-incheon
+        seoul_days1_4_transit:
+          score: null
+          epistemic: Fact
+          rationale: N/A
+          source_ids: []
+        ktx_seoul_station:
+          score: null
+          epistemic: Fact
+          rationale: N/A
+          source_ids: []
+        pus_departure:
+          score: 4
+          epistemic: Inference
+          rationale: 地鐵 2 號線至 PUS 約 40+ 分；計程車較穩
+          source_ids:
+            - src-pusan-air
+            - src-naver-map
+        pork_soup_food:
+          score: 5
+          epistemic: Inference
+          rationale: 豬湯飯與本地食堂密度高
+          source_ids:
+            - src-naver-map
+            - src-busan-city
+        beach_scenery:
+          score: 2
+          epistemic: Inference
+          rationale: 至海雲台需 20–30 分地鐵
+          source_ids:
+            - src-naver-map
+            - src-busan-city
+        shopping:
+          score: 4
+          epistemic: Inference
+          rationale: 地下街與百貨
+          source_ids:
+            - src-naver-map
+        evening_safety:
+          score: 4
+          epistemic: Inference
+          rationale: 核心商業區
+          source_ids:
+            - src-busan-city
+        walking_elevator:
+          score: 4
+          epistemic: Inference
+          rationale: 轉乘樞紐；站內步行長
+          source_ids:
+            - src-naver-map
+        room_couple_supply:
+          score: 4
+          epistemic: Assumption
+          rationale: 商務旅館多
+          source_ids:
+            - src-naver-map
+        noise:
+          score: 3
+          epistemic: Assumption
+          rationale: 鬧區中等噪音
+          source_ids:
+            - src-naver-map
+        convenience_breakfast:
+          score: 5
+          epistemic: Inference
+          rationale: 便利店極多
+          source_ids:
+            - src-naver-map
+        luggage_movement:
+          score: 4
+          epistemic: Inference
+          rationale: KTX 釜山站/西面轉乘成熟
+          source_ids:
+            - src-korail
+            - src-naver-map
+        schedule_0900_2100:
+          score: 4
+          epistemic: Inference
+          rationale: Day6 海灘需額外交通
+          source_ids:
+            - src-naver-map
+    - id: gwangalli
+      label: Gwangalli
+      scores:
+        icn_arrival:
+          score: 1
+          epistemic: Fact
+          rationale: N/A
+          source_ids:
+            - src-incheon
+        seoul_days1_4_transit:
+          score: null
+          epistemic: Fact
+          rationale: N/A
+          source_ids: []
+        ktx_seoul_station:
+          score: null
+          epistemic: Fact
+          rationale: N/A
+          source_ids: []
+        pus_departure:
+          score: 3
+          epistemic: Inference
+          rationale: PUS 距離與海雲台類似或略遠；需查即時路線
+          source_ids:
+            - src-pusan-air
+            - src-naver-map
+        pork_soup_food:
+          score: 3
+          epistemic: Inference
+          rationale: 海邊餐飲偏海鮮；豬湯選擇較少
+          source_ids:
+            - src-naver-map
+        beach_scenery:
+          score: 4
+          epistemic: Inference
+          rationale: 广安里沙滩；橋景佳
+          source_ids:
+            - src-busan-city
+        shopping:
+          score: 2
+          epistemic: Inference
+          rationale: 非主要購物區
+          source_ids:
+            - src-naver-map
+        evening_safety:
+          score: 4
+          epistemic: Inference
+          rationale: 海邊步道照明
+          source_ids:
+            - src-busan-city
+        walking_elevator:
+          score: 3
+          epistemic: Inference
+          rationale: 海堤步行
+          source_ids:
+            - src-busan-city
+        room_couple_supply:
+          score: 3
+          epistemic: Assumption
+          rationale: 中小型 lodging
+          source_ids:
+            - src-naver-map
+        noise:
+          score: 3
+          epistemic: Assumption
+          rationale: 酒吧街可能吵
+          source_ids:
+            - src-naver-map
+        convenience_breakfast:
+          score: 3
+          epistemic: Inference
+          rationale: 便利店較海雲台少
+          source_ids:
+            - src-naver-map
+        luggage_movement:
+          score: 3
+          epistemic: Inference
+          rationale: 轉乘次數可能多於海雲台
+          source_ids:
+            - src-naver-map
+        schedule_0900_2100:
+          score: 4
+          epistemic: Inference
+          rationale: 海灘近但 Day7 去 PUS 需規劃
+          source_ids:
+            - src-pusan-air
+    - id: busan_station_nampo
+      label: Busan Station / Nampo
+      included_reason: KTX 抵釜山與機場巴士動線；僅在交通證據支持時納入
+      scores:
+        icn_arrival:
+          score: 1
+          epistemic: Fact
+          rationale: N/A
+          source_ids:
+            - src-incheon
+        seoul_days1_4_transit:
+          score: null
+          epistemic: Fact
+          rationale: N/A
+          source_ids: []
+        ktx_seoul_station:
+          score: null
+          epistemic: Fact
+          rationale: N/A
+          source_ids: []
+        pus_departure:
+          score: 4
+          epistemic: Inference
+          rationale: 釜山站一帶至 PUS 有巴士/地鐵；南浦較遠
+          source_ids:
+            - src-pusan-air
+            - src-korail
+            - src-naver-map
+        pork_soup_food:
+          score: 5
+          epistemic: Inference
+          rationale: 南浦/札嘎其周邊豬湯文化
+          source_ids:
+            - src-naver-map
+            - src-busan-city
+        beach_scenery:
+          score: 2
+          epistemic: Inference
+          rationale: 至海雲台 30+ 分
+          source_ids:
+            - src-naver-map
+        shopping:
+          score: 3
+          epistemic: Inference
+          rationale: 南浦傳統市場
+          source_ids:
+            - src-naver-map
+        evening_safety:
+          score: 3
+          epistemic: Inference
+          rationale: 車站/市場混合區需選街
+          source_ids:
+            - src-busan-city
+        walking_elevator:
+          score: 3
+          epistemic: Inference
+          rationale: 階梯與市場坡道
+          source_ids:
+            - src-naver-map
+        room_couple_supply:
+          score: 3
+          epistemic: Assumption
+          rationale: 老舊/小型旅館比例高
+          source_ids:
+            - src-naver-map
+        noise:
+          score: 3
+          epistemic: Assumption
+          rationale: 車站周邊
+          source_ids:
+            - src-naver-map
+        convenience_breakfast:
+          score: 4
+          epistemic: Inference
+          rationale: 便利店 OK
+          source_ids:
+            - src-naver-map
+        luggage_movement:
+          score: 5
+          epistemic: Inference
+          rationale: Day5 KTX 抵達最省搬運
+          source_ids:
+            - src-korail
+        schedule_0900_2100:
+          score: 3
+          epistemic: Inference
+          rationale: Day6 海灘日通勤長
+          source_ids:
+            - src-naver-map
