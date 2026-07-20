@@ -1,0 +1,74 @@
+# Textbook Edition scorecard — honest baselines only.
+# Round Exit requires overall ≥ 90 and dimension floors; Round 1 is far below that by design.
+
+meta:
+  product: Jerry & Nikita Korea Trip Textbook Edition
+  updated_at: "2026-07-20"
+  round: 1
+  baseline_of: Media Edition Beta + PR #10 publication quality on main b907145
+  scoring_rule: Do not inflate. Unknowns lower the score.
+
+dimensions:
+  research_depth:
+    max: 20
+    score: 8
+    notes: >
+      76 graded sources and coverage matrix exist, but many personalization-critical
+      cells (fortune shop, cosmetics path, locked pork-soup restaurant) remain Low.
+  factual_trust:
+    max: 15
+    score: 7
+    notes: >
+      Tier A portals recorded for entry/airports/palace/beaches; itinerary still mostly
+      Provisional with stale-risk hours and no ticket verification.
+  personalization:
+    max: 20
+    score: 9
+    notes: >
+      Couple profile captured; days name Nikita interests but several stops lack
+      evidence-backed couple-fit rationale (JYP, fortune, store path).
+  itinerary_logic:
+    max: 15
+    score: 8
+    notes: >
+      Seoul 4N + Busan 2N cluster intent is sound; Day 3/4/6/7 have logic or value gaps.
+  visual_teaching_value:
+    max: 15
+    score: 5
+    notes: >
+      Strong chapter Inspire art; weak Explain/Compare/Warn/Identify/Remember teaching set.
+  website_ux:
+    max: 10
+    score: 6
+    notes: >
+      Reader-facing cleanup landed with PR #10; still not textbook IA; some pages thin.
+  publication_quality:
+    max: 5
+    score: 4
+    notes: >
+      16-page handbook pagination and Credits balance improved; not yet textbook edition.
+
+totals:
+  overall:
+    max: 100
+    score: 47
+  round_exit_met: false
+
+p0_open:
+  - id: p0-fortune-shop
+    summary: Day 4 fortune-telling has no feasible shop evidence
+  - id: p0-dates
+    summary: D1 exact dates DecisionRequired — blocks weekday palace/flight hardening
+
+license_risks:
+  - KTO KOGL candidates not yet rights-confirmed for download
+
+time_sensitive_checked_at_coverage: partial
+
+human_review:
+  jerry_nikita_blockers: pending_round_1_acceptance
+
+round_1_top3_roi_gaps:
+  - Gangnam fortune-telling feasibility + GOT7-light alternative evidence
+  - Cosmetics/clothes store path with queue + tax-refund teaching
+  - Pork soup shortlist + Day 6 low-energy / less-touristy coastal variant
