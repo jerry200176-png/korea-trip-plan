@@ -144,7 +144,7 @@ Sources include entries tagged `website_benchmark` in [`data/research-sources.ya
 
 ## Korea Trip website IA draft (not implemented)
 
-```
+```text
 /                       旅程首頁（Jerry & Nikita · 成功標準）
 /review/                兩人驗收（保留）
 /days/                  七天總覽（why each day）
