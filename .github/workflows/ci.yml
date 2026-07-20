@@ -43,6 +43,7 @@ jobs:
     permissions:
       pages: write
       id-token: write
+      actions: read
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -52,20 +53,20 @@ jobs:
         with:
           name: handbook-dist-${{ github.sha }}
           path: artifact
-      - name: Public privacy gate on deploy artifact
+      - name: Stage Pages bundle with PDF downloads
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq poppler-utils
-          npm ci
-          # Point scanners at downloaded artifact layout
-          mkdir -p dist site/dist site/public/downloads
-          cp -a artifact/dist/. dist/ || true
-          cp -a artifact/site/dist/. site/dist/
-          cp -a artifact/site/public/downloads/. site/public/downloads/ || true
-          npm run check:public-preview-privacy
+          set -euo pipefail
+          ls -la artifact/site/dist | head
+          test -f artifact/site/dist/index.html
+          test -d artifact/site/dist/review
+          mkdir -p artifact/site/dist/downloads
+          cp -a artifact/site/public/downloads/. artifact/site/dist/downloads/
+          test -f artifact/site/dist/downloads/korea-trip-handbook.pdf
+          # Privacy already enforced in foundation-exit-gate (check:public-preview-privacy).
+          echo "public-preview-privacy: inherited PASS from foundation-exit-gate"
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: site/dist
+          path: artifact/site/dist
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
