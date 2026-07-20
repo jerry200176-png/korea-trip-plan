@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip.local/schemas/founder-decisions.json",
+  "type": "object",
+  "required": ["decisions"],
+  "properties": {
+    "decisions": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title_zh",
+          "status",
+          "why_now",
+          "confirmed_facts",
+          "assumptions",
+          "recommendation",
+          "options",
+          "decide_by",
+          "reply_one_line"
+        ],
+        "properties": {
+          "id": { "type": "string", "enum": ["D1", "D2", "D3"] },
+          "title_zh": { "type": "string" },
+          "status": { "type": "string", "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"] },
+          "why_now": { "type": "string" },
+          "confirmed_facts": { "type": "array", "items": { "type": "string" } },
+          "assumptions": { "type": "array", "items": { "type": "string" } },
+          "recommendation": { "type": ["string", "null"] },
+          "options": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "required": ["id", "label", "summary", "impacts"],
+              "properties": {
+                "id": { "type": "string" },
+                "label": { "type": "string" },
+                "summary": { "type": "string" },
+                "impacts": {
+                  "type": "object",
+                  "required": [
+                    "quality",
+                    "energy",
+                    "transit_loss",
+                    "food",
+                    "beach_scenery",
+                    "shopping",
+                    "cost",
+                    "research_effort"
+                  ],
+                  "properties": {
+                    "quality": { "type": "string" },
+                    "energy": { "type": "string" },
+                    "transit_loss": { "type": "string" },
+                    "food": { "type": "string" },
+                    "beach_scenery": { "type": "string" },
+                    "shopping": { "type": "string" },
+                    "cost": { "type": "string" },
+                    "research_effort": { "type": "string" }
+                  }
+                }
+              }
+            }
+          },
+          "decide_by": { "type": "string" },
+          "reply_one_line": { "type": "string" }
+        }
+      }
+    }
+  }
+}

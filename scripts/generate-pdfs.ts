@@ -17,6 +17,7 @@ const places = load<{ places: any[] }>("places.yaml").places;
 const destinations = load<{ destinations: any[] }>("destinations.yaml").destinations;
 const budget = load<any>("budget.yaml");
 const sources = load<{ sources: any[] }>("sources.yaml").sources;
+const emergency = load<any>("emergency-public.yaml");
 
 const placeMap = Object.fromEntries(places.map((p) => [p.id, p]));
 
@@ -164,55 +165,47 @@ await writePdf("korea-trip-handbook.pdf", (doc) => {
 await writePdf("emergency-pack.pdf", (doc) => {
   doc.fontSize(20).text("Emergency Pack", { align: "center" });
   doc.fontSize(10).moveDown();
-  doc.text("Offline essentials only. No secret booking codes in git.");
+  doc.text(emergency.offline_note ?? "Offline essentials only.");
+  doc.text(`Status: ${emergency.status} · checked ${emergency.checked_at}`);
   doc.moveDown();
 
   doc.fontSize(14).text("Lodging (placeholders)");
-  doc.fontSize(10).text("Seoul lodging Korean address: REPLACE_ME");
-  doc.text("Busan lodging Korean address: REPLACE_ME");
+  doc.fontSize(10).text(`Seoul: ${emergency.lodging_placeholders.seoul_address_ko}`);
+  doc.text(`Busan: ${emergency.lodging_placeholders.busan_address_ko}`);
   doc.moveDown();
 
   doc.fontSize(14).text("Airports & transit");
-  doc.fontSize(10).text("Arrival airport: REPLACE_ME (see Open Decision D3)");
-  doc.text("Departure airport: REPLACE_ME");
-  doc.text("Airport official: https://www.airport.kr");
-  doc.text("Korail: https://www.letskorail.com");
-  doc.text("Naver Map: https://map.naver.com");
+  doc.fontSize(10).text("Arrival/departure airports: REPLACE_ME (Founder D3)");
+  doc.text("https://www.airport.kr");
+  doc.text("https://www.letskorail.com");
+  doc.text("https://map.naver.com");
   doc.moveDown();
 
   doc.fontSize(14).text("Insurance");
-  doc.fontSize(10).text("Provider: REPLACE_ME");
-  doc.text("Emergency phone: REPLACE_ME (store offline)");
+  doc.fontSize(10).text(`Provider: ${emergency.insurance.provider}`);
+  doc.text(`Emergency: ${emergency.insurance.emergency_phone} (${emergency.insurance.note})`);
   doc.moveDown();
 
   doc.fontSize(14).text("Official help");
-  doc.fontSize(10).text("Police 112 · Fire/Medical 119");
-  doc.fillColor("#0645AD").text("Taipei Mission in Korea: https://www.roc-taiwan.org/kr", {
-    link: "https://www.roc-taiwan.org/kr",
+  doc.fontSize(10).text(`Police ${emergency.korea.police} · Fire/Medical ${emergency.korea.fire_ambulance}`);
+  doc.fillColor("#0645AD").text(`${emergency.korea.mission_name}: ${emergency.korea.mission_url}`, {
+    link: emergency.korea.mission_url,
     underline: true,
   });
-  doc.fillColor("#111").moveDown();
-
-  doc.fontSize(14).text("Diet phrases");
-  doc.fontSize(10).text("저희는 술을 마시지 않아요 (We do not drink alcohol)");
-  doc.text("갑각류 해산은 빼 주실 수 있나요? (Please omit crustacean seafood)");
-  doc.text("돼지국밥 하나 주세요 (One pork soup rice please)");
+  doc.fillColor("#111").text(emergency.korea.mission_phone_note);
   doc.moveDown();
 
-  doc.fontSize(14).text("Help phrases");
-  doc.fontSize(10).text("도와주세요 (Please help)");
-  doc.text("구급차를 불러 주세요 (Please call an ambulance)");
-  doc.text("이 주소로 가 주세요 (Please go to this address)");
-  doc.moveDown();
-
-  doc.fontSize(14).text("Return to lodging");
-  doc.fontSize(10).text("Show hotel address card to taxi driver. Prefer subway before last trains.");
+  doc.fontSize(14).text("Diet / help (Korean)");
+  const ph = emergency.phrases_ko;
+  doc.fontSize(10).text(ph.no_alcohol);
+  doc.text(ph.no_crustaceans);
+  doc.text(ph.help);
+  doc.text(ph.ambulance);
+  doc.text(ph.taxi_address);
   doc.moveDown();
 
   doc.fontSize(14).text("Flights / bookings");
-  doc.fontSize(10).text("Outbound confirmation: REPLACE_ME");
-  doc.text("Return confirmation: REPLACE_ME");
-  doc.text("Never photograph QR tickets into this public-ready PDF source tree.");
+  doc.fontSize(10).text("Confirmation codes: REPLACE_ME — store offline only");
 
   addFooter(doc);
 });

@@ -8,5 +8,5 @@ data/bookings.local.yaml
 !.env.example
 .DS_Store
 *.log
-.playwright/
-coverage/
+site/public/downloads/*.pdf
+site/public/downloads/readiness-report.json

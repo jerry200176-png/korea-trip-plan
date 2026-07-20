@@ -10,12 +10,13 @@
 ## Quick start
 
 ```bash
-npm install
-npm run validate
-npm run build
-npm run pdf
-npm run dev          # handbook site at http://localhost:4321
+npm ci
+npm ci --prefix site
+npm run ci          # Foundation Exit Gate
+npm run dev         # http://localhost:4321
 ```
+
+Node **22** (see `.nvmrc`).
 
 ## Source of truth
 

@@ -17,6 +17,12 @@ const nextDay = dayIndex < 7 ? dayIndex + 1 : null;
 ---
 <Handbook title={`Day ${day.day_index}`} current="days">
   <p class="muted"><a href={`${base}days/`}>← 所有天</a></p>
+  {day.foundation_slice && (
+    <section class="panel">
+      <span class="badge provisional">Foundation vertical slice</span>
+      <p class="muted">驗證資料模型與 UX — 非正式鎖定行程。Status: {day.status}</p>
+    </section>
+  )}
   <h1>Day {day.day_index}</h1>
   <p>{day.theme}</p>
   <section class="panel">

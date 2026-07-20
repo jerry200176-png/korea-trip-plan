@@ -6,35 +6,47 @@ on:
   pull_request:
 
 jobs:
-  build:
+  foundation-exit-gate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version-file: ".nvmrc"
           cache: npm
-      - name: Install root deps
-        run: npm ci
-      - name: Install site deps
-        run: npm ci --prefix site
-      - name: Validate data & privacy & itinerary
+          cache-dependency-path: |
+            package-lock.json
+            site/package-lock.json
+      - name: Clean install (reproducibility)
         run: |
-          npm run validate
-          npm run check:privacy
-          npm run check:stale
-          npm run test:itinerary
-          npm run check:links
-      - name: Markdown lint
-        run: npm run lint:md
-      - name: Build site
-        run: npm run build:site
-      - name: Generate PDFs
-        run: npm run pdf
-      - name: Upload artifacts
+          npm ci
+          npm ci --prefix site
+      - name: Foundation Exit Gate — npm run ci
+        run: npm run ci
+      - name: Upload handbook artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: handbook-dist
+          name: handbook-dist-${{ github.sha }}
           path: |
             dist/
             site/dist/
+            site/public/downloads/
+          if-no-files-found: error
+
+  pages:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: foundation-exit-gate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+      - run: npm ci && npm ci --prefix site && npm run ci
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+      - uses: actions/deploy-pages@v4

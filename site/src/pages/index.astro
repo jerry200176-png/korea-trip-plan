@@ -5,6 +5,8 @@ import {
   loadTimeline,
   loadBudget,
   loadSources,
+  loadFounderDecisions,
+  loadReadinessReport,
   nextOpenTask,
   budgetProgress,
   bookingProgress,
@@ -15,6 +17,8 @@ const trip = loadTrip();
 const timeline = loadTimeline();
 const budget = loadBudget();
 const sources = loadSources();
+const decisions = loadFounderDecisions();
+const readiness = loadReadinessReport();
 const next = nextOpenTask(timeline);
 const bud = budgetProgress(budget);
 const book = bookingProgress();
@@ -36,12 +40,32 @@ const countdown =
         <div class="value">{countdown}</div>
       </div>
       <div class="stat">
-        <div class="label">路線狀態</div>
-        <div class="value" style="font-size:1rem">{trip.route_option}</div>
-        <span class="badge provisional">{trip.route_status}</span>
+        <div class="label">Readiness</div>
+        <div class="value" style="font-size:1rem">{readiness?.overall ?? "run npm run readiness"}</div>
+        <span class="badge provisional">非 Trip Ready</span>
       </div>
     </div>
   </section>
+
+  {
+    readiness && (
+      <section class="panel">
+        <h2>Readiness gates</h2>
+        <p class="muted">
+          Pass {readiness.summary.pass} · Provisional {readiness.summary.provisional} · Blocked{" "}
+          {readiness.summary.blocked}
+        </p>
+        <ul class="list">
+          {(readiness.top_risks ?? []).map((r: any) => (
+            <li>
+              <strong>{r.id}</strong> · {r.blocker}
+            </li>
+          ))}
+        </ul>
+        <p class="muted">下一個 Founder：{readiness.next_founder} · Agent：{readiness.next_agent}</p>
+      </section>
+    )
+  }
 
   <section class="panel">
     <h2>下一個待辦</h2>
@@ -57,47 +81,41 @@ const countdown =
   </section>
 
   <section class="panel">
-    <h2>尚未確認的關鍵決策</h2>
+    <h2>Founder Decisions</h2>
     <ul class="list">
-      <li><span class="badge decision">DecisionRequired</span> 最終旅行日期</li>
-      <li><span class="badge decision">DecisionRequired</span> 城市與停留天數</li>
-      <li><span class="badge decision">DecisionRequired</span> 航班機場</li>
+      {decisions.map((d) => (
+        <li>
+          <span class="badge decision">{d.status}</span> {d.id} · {d.title_zh}
+        </li>
+      ))}
     </ul>
-    <a class="btn" href={`${base}decisions/`}>查看 Open Decisions</a>
+    <a class="btn primary" href={`${base}decisions/`}>決策包</a>
   </section>
 
   <section class="panel">
-    <h2>預訂進度</h2>
-    <p>{book.label}</p>
-    <p class="muted">真實確認碼只存在離線／bookings.local.yaml（gitignore）</p>
+    <h2>路線（Provisional）</h2>
+    <p>{trip.route_option}</p>
+    <span class="badge provisional">{trip.route_status}</span>
+    <a class="btn" href={`${base}route/`}>Route Decision</a>
   </section>
 
   <section class="panel">
-    <h2>預算進度</h2>
-    <p>已花 {bud.spent} / 規劃 {bud.planned} TWD（{bud.pct}%）· 狀態 {budget.status}</p>
-    <a class="btn" href={`${base}budget/`}>預算明細</a>
+    <h2>離線手冊 PDF</h2>
+    <p class="muted">Build 後可下載（同 CI artifact）</p>
+    <div class="btn-row">
+      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>Handbook PDF</a>
+      <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>Emergency PDF</a>
+    </div>
   </section>
 
   <section class="panel">
-    <h2>過期資料警示</h2>
-    {
-      stale.length === 0 ? (
-        <p class="muted">目前無超過 freshness 門檻的來源（查核日 2026-07-20）。</p>
-      ) : (
-        <ul class="list">
-          {stale.map((s) => (
-            <li>
-              {s.id} · {s.name}
-            </li>
-          ))}
-        </ul>
-      )
-    }
+    <h2>過期資料</h2>
+    <p>{stale.length === 0 ? "無 stale 警告（查核基準 2026-07-20）" : `${stale.length} 筆需重查`}</p>
   </section>
 
   <div class="btn-row">
-    <a class="btn primary" href={`${base}days/day-1/`}>今日行程入口</a>
-    <a class="btn" href={`${base}overview/`}>行程總覽</a>
-    <a class="btn" href={`${base}before/`}>出發前</a>
+    <a class="btn primary" href={`${base}days/day-2/`}>Seoul sample (Day 2)</a>
+    <a class="btn" href={`${base}days/day-5/`}>Transfer (Day 5)</a>
+    <a class="btn" href={`${base}days/day-6/`}>Busan sample (Day 6)</a>
   </div>
 </Handbook>

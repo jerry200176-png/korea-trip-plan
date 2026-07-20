@@ -1,29 +1,39 @@
 ---
 import Handbook from "../layouts/Handbook.astro";
+import { loadEmergencyPublic } from "../lib/data";
+
+const e = loadEmergencyPublic();
+const base = import.meta.env.BASE_URL;
 ---
 <Handbook title="Emergency" current="emergency">
   <h1>Emergency</h1>
+  <span class="badge provisional">{e.status}</span>
   <section class="panel">
     <h2>立即撥打</h2>
-    <p style="font-size:1.4rem;font-family:var(--font-display)">112 警察 · 119 消防／醫療</p>
+    <p style="font-size:1.4rem;font-family:var(--font-display)">
+      {e.korea.police} 警察 · {e.korea.fire_ambulance} 消防／醫療
+    </p>
   </section>
   <section class="panel">
     <h2>官方</h2>
-    <p><a href="https://www.roc-taiwan.org/kr" target="_blank" rel="noreferrer">駐韓國台北代表部</a>（出發前重查電話）</p>
-    <p class="muted">保險緊急電話：REPLACE_ME（離線保存）</p>
+    <p>
+      <a href={e.korea.mission_url} target="_blank" rel="noreferrer">{e.korea.mission_name}</a>
+    </p>
+    <p class="muted">{e.korea.mission_phone_note}</p>
   </section>
   <section class="panel">
     <h2>住宿（占位）</h2>
-    <p>首爾韓文地址：REPLACE_ME</p>
-    <p>釜山韓文地址：REPLACE_ME</p>
-    <p>對計程車說：이 주소로 가 주세요</p>
+    <p>首爾：{e.lodging_placeholders.seoul_address_ko}</p>
+    <p>釜山：{e.lodging_placeholders.busan_address_ko}</p>
+    <p>{e.phrases_ko.taxi_address}</p>
   </section>
   <section class="panel">
     <h2>飲食／求助</h2>
-    <p>저희는 술을 마시지 않아요</p>
-    <p>갑각류 해산은 빼 주실 수 있나요?</p>
-    <p>도와주세요</p>
-    <p>구급차를 불러 주세요</p>
+    <p>{e.phrases_ko.no_alcohol}</p>
+    <p>{e.phrases_ko.no_crustaceans}</p>
+    <p>{e.phrases_ko.help}</p>
+    <p>{e.phrases_ko.ambulance}</p>
   </section>
-  <p class="muted">完整離線版見 dist/emergency-pack.pdf</p>
+  <a class="btn primary" href={`${base}downloads/emergency-pack.pdf`}>下載 Emergency PDF</a>
+  <p class="muted">{e.offline_note}</p>
 </Handbook>

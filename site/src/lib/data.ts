@@ -51,6 +51,20 @@ export function loadTravelers() {
   return loadData<{ travelers: any[] }>("travelers.yaml").travelers;
 }
 
+export function loadFounderDecisions() {
+  return loadData<{ decisions: any[] }>("founder-decisions.yaml").decisions;
+}
+
+export function loadEmergencyPublic() {
+  return loadData<any>("emergency-public.yaml");
+}
+
+export function loadReadinessReport() {
+  const p = path.resolve(process.cwd(), "../dist/readiness-report.json");
+  if (!fs.existsSync(p)) return null;
+  return JSON.parse(fs.readFileSync(p, "utf8"));
+}
+
 export function nextOpenTask(timeline: { milestones: any[] }) {
   for (const m of timeline.milestones) {
     for (const t of m.tasks) {

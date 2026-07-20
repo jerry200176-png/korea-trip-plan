@@ -1,0 +1,156 @@
+decisions:
+  - id: D1
+    title_zh: 最終旅行日期
+    status: DecisionRequired
+    why_now: 尚未鎖定 start_date/end_date，Dashboard 倒數、機票、住宿、保險、K-ETA 重查窗口與 3 月打包都無法進入 Booking Ready。
+    confirmed_facts:
+      - 約 7 天行程意圖（Assumption 層級，見 trip.yaml）
+      - 目標月份可能為 2027-03（Assumption，非 Confirmed）
+      - 每日約 09:00 出門、21:00 回住宿（Confirmed 偏好）
+    assumptions:
+      - 兩人均可配合 March 2027 的氣候與假別
+      - 未與公司／補習等固定班表衝突（未驗證）
+    recommendation: null
+    options:
+      - id: D1-A
+        label: 維持 2027 年 3 月並選定具體起迄（7 日／6 晚）
+        summary: 鎖定一組可購票的日期，使倒數、保險、K-ETA 重查有明確 T- 時間軸。
+        impacts:
+          quality: 高 — 可安排連假或低壓時段
+          energy: 中 — 取決於是否選在週末密集日
+          transit_loss: 低
+          food: 中 — 3 月非旺季，排隊風險通常較低
+          beach_scenery: 中 — 3 月海邊偏涼，需正確期待
+          shopping: 中
+          cost: 中 — 機票價格隨日期波動
+          research_effort: 低 — 解鎖後續所有 T- 任務
+      - id: D1-B
+        label: 改到其他月份（仍約 7 天）
+        summary: 若 3 月不可行，改月並重算氣候、假別、機票。
+        impacts:
+          quality: 視月份而定
+          energy: 視月份而定
+          transit_loss: 低
+          food: 中
+          beach_scenery: 夏末海邊較暖但人潮可能更高
+          shopping: 中
+          cost: 中
+          research_effort: 高 — 需重跑天氣、服裝、部分營業資訊
+      - id: D1-C
+        label: 暫不決定，維持 Assumption
+        summary: 繼續 Provisional 骨架，但不進入購票／訂房。
+        impacts:
+          quality: 低 — 手冊無法進入 Trip Ready
+          energy: n/a
+          transit_loss: n/a
+          food: n/a
+          beach_scenery: n/a
+          shopping: n/a
+          cost: 低 — 暫無支出
+          research_effort: 低 — 但阻塞後續 ROI
+    decide_by: 任何機票／住宿搜尋或 K-ETA 申請之前
+    reply_one_line: "D1: 選 A/B/C — 若 A 請寫 YYYY-MM-DD 去程抵達日與 YYYY-MM-DD 回程離境日"
+
+  - id: D2
+    title_zh: 城市與停留晚數
+    status: DecisionRequired
+    why_now: 住宿區、KTX 日、購物與海灘分配、預算與每日體力都依城市晚數；目前 Provisional 4N+2N 需 Founder 確認或改選。
+    confirmed_facts:
+      - 7 calendar days，Day 1 抵達、Day 7 離境 ⇒ 6 hotel nights（算術 Confirmed）
+      - Seoul 4N + Busan 2N = 6N（與 7 日架構一致）
+      - Seoul 3N + Busan 3N = 6N（替代方案）
+      - Seoul 4N + Busan 3N = 7N ⇒ 通常需 8 calendar days（非目前 7 日架構）
+    assumptions:
+      - 雙城 KTX 移動 1 次可接受（Provisional）
+      - 不租車、以大眾運輸為主（Confirmed 偏好）
+    recommendation: 在 7 日／6 晚前提下，Provisional 建議 Seoul 4N + Busan 2N（保留首爾 GOT7／購物／韓服／算命密度，釜山 2 晚換 1 個完整海灘日）。
+    options:
+      - id: D2-A
+        label: Seoul 4N + Busan 2N（6N）
+        summary: 現行 Provisional 骨架；Day5 KTX；Day6 海灘；Day7 離境。
+        impacts:
+          quality: 高 — 城市+海對比
+          energy: 中 — 移動日輕排
+          transit_loss: 中 — 1 次 KTX
+          food: 高 — 首爾密度 + 釜山豬湯
+          beach_scenery: 中 — 1 個完整海灘日
+          shopping: 高 — 首爾 4 晚
+          cost: 中 — 兩次 lodging + KTX
+          research_effort: 低 — 與現 data 一致
+      - id: D2-B
+        label: Seoul 3N + Busan 3N（6N）
+        summary: 更早移動；釜山多 1 晚，首爾少 1 晚。
+        impacts:
+          quality: 高 — 海灘更飽
+          energy: 中
+          transit_loss: 中 — KTX 略提前
+          food: 高
+          beach_scenery: 高
+          shopping: 中 — 首爾少 1 天
+          cost: 中
+          research_effort: 中 — 需調 itinerary 與 lodging 區
+      - id: D2-C
+        label: 延長為 8 calendar days 以採 4N+3N 或其他 7N 配置
+        summary: 只有需要 7 hotel nights 時才選；需同步改 duration_days 與航班。
+        impacts:
+          quality: 視配置
+          energy: 中
+          transit_loss: 中
+          food: 高
+          beach_scenery: 高
+          shopping: 高
+          cost: 高 — 多 1 天機票+住宿
+          research_effort: 高 — 重算整本手冊
+    decide_by: 訂房與 KTX 購票前
+    reply_one_line: "D2: 選 D2-A / D2-B / D2-C — 若 C 請註明是否改 8 日與新的晚數"
+
+  - id: D3
+    title_zh: 航班機場
+    status: DecisionRequired
+    why_now: Day1 入境、Day7 離境、住宿選區、行李動線與機場緩衝時間皆未鎖定；open-jaw（首爾進／釜山出）亦未決。
+    confirmed_facts:
+      - 台灣常見出發點含 TPE、TSA（需查航空公司，非 Confirmed 選項）
+      - 韓國端常見 ICN/GMP（首爾圈）、PUS（釜山）
+      - 目前 itinerary 未鎖定離境機場（Decision Required）
+    assumptions:
+      - 兩人持 ROC 護照（Assumption，影響 K-ETA 重查）
+    recommendation: null
+    options:
+      - id: D3-A
+        label: 往返 ICN（首爾進出）+ KTX 往返釜山
+        summary: 機票選擇多；需 KTX 日；Day7 若從釜山離境則需回頭或改 PUS 出。
+        impacts:
+          quality: 中
+          energy: 中 — 可能多一段回頭
+          transit_loss: 中
+          food: 中
+          beach_scenery: 中
+          shopping: 高
+          cost: 中
+          research_effort: 中
+      - id: D3-B
+        label: Open-jaw：ICN 進、PUS 出（或反向）
+        summary: 符合 4N+2N 雙城動線；機票組合較少需比價。
+        impacts:
+          quality: 高 — 少回頭
+          energy: 高 — 對腳友善
+          transit_loss: 低
+          food: 中
+          beach_scenery: 中
+          shopping: 中 — 購物須在首爾段完成
+          cost: 視票價
+          research_effort: 中
+      - id: D3-C
+        label: 暫不決定，維持 TBD
+        summary: 手冊維持占位；Day1/D7 僅保留緩衝框架。
+        impacts:
+          quality: 低
+          energy: n/a
+          transit_loss: n/a
+          food: n/a
+          beach_scenery: n/a
+          shopping: n/a
+          cost: 低
+          research_effort: 低 — 阻塞 lodging 與機場交通細節
+    decide_by: 機票短名單前
+    reply_one_line: "D3: 選 D3-A / D3-B / D3-C — 若 A/B 請寫 TW 出發機場 + KR 抵達/離境機場"

@@ -57,6 +57,7 @@ days:
 
   - id: day-02
     day_index: 2
+    foundation_slice: true
     theme: 韓服・宮殿・北村
     one_priority: 完成一次韓服＋宮殿／韓屋合照體驗
     wake_time: "07:30"
@@ -227,6 +228,7 @@ days:
 
   - id: day-05
     day_index: 5
+    foundation_slice: true
     theme: 首爾→釜山移動日
     one_priority: 安全舒適完成 KTX 移動與釜山入住安頓
     wake_time: "07:00"
@@ -282,6 +284,7 @@ days:
 
   - id: day-06
     day_index: 6
+    foundation_slice: true
     theme: 海雲台・海岸風景
     one_priority: 完成海灘／海岸兩人合照，節奏放慢
     wake_time: "08:00"

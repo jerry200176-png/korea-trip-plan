@@ -12,6 +12,7 @@
         "properties": {
           "id": { "type": "string" },
           "day_index": { "type": "integer", "minimum": 1, "maximum": 7 },
+          "foundation_slice": { "type": "boolean" },
           "theme": { "type": "string" },
           "one_priority": { "type": "string" },
           "wake_time": { "type": "string" },
