@@ -1,0 +1,165 @@
+sources:
+  - id: src-keta
+    name: Korea Electronic Travel Authorization (K-ETA)
+    url: https://www.k-eta.go.kr
+    tier: A
+    topics: [entry, visa]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+    notes: Eligibility changes; re-check before application. Do not treat blog summaries as current law.
+  - id: src-hikorea
+    name: Hi Korea
+    url: https://www.hikorea.go.kr
+    tier: A
+    topics: [entry, immigration]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-customs-kr
+    name: Korea Customs Service
+    url: https://www.customs.go.kr
+    tier: A
+    topics: [customs]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-mofa-tw
+    name: Taiwan Ministry of Foreign Affairs (consular / travel)
+    url: https://www.bosa.mofa.gov.tw
+    tier: A
+    topics: [advisory, emergency]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-roc-korea
+    name: Taipei Mission in Korea
+    url: https://www.roc-taiwan.org/kr
+    tier: A
+    topics: [emergency, consular]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-incheon
+    name: Incheon International Airport
+    url: https://www.airport.kr
+    tier: A
+    topics: [airport, transit]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-gmp
+    name: Gimpo International Airport
+    url: https://www.airport.co.kr/gimpoeng
+    tier: A
+    topics: [airport]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-pusan-air
+    name: Gimhae International Airport
+    url: https://www.airport.co.kr/gimhaeeng
+    tier: A
+    topics: [airport]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-korail
+    name: Korail / Let's Korail
+    url: https://www.letskorail.com
+    tier: A
+    topics: [ktx, rail]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-tmoney
+    name: T-money
+    url: https://www.t-money.co.kr
+    tier: A
+    topics: [transit]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-naver-map
+    name: Naver Map
+    url: https://map.naver.com
+    tier: B
+    topics: [maps, hours]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 60
+  - id: src-kakao-map
+    name: Kakao Map
+    url: https://map.kakao.com
+    tier: B
+    topics: [maps]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 60
+  - id: src-taishin
+    name: Taishin Bank
+    url: https://www.taishinbank.com.tw
+    tier: C
+    topics: [cards, fx]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+    notes: Do not assert current card benefits; read bank notices before trip.
+  - id: src-fubon
+    name: Taipei Fubon Bank
+    url: https://www.fubon.com
+    tier: C
+    topics: [cards, fx]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+    notes: Do not assert current card benefits.
+  - id: src-kma
+    name: Korea Meteorological Administration
+    url: https://www.kma.go.kr
+    tier: D
+    topics: [weather, climate]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90
+  - id: src-royal-palaces
+    name: Korea Heritage / Royal Palaces
+    url: https://royal.cha.go.kr
+    tier: A
+    topics: [palace, hours]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 60
+  - id: src-seoul-hanok
+    name: Seoul Hanok
+    url: https://hanok.seoul.go.kr
+    tier: A
+    topics: [bukchon]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 60
+  - id: src-busan-city
+    name: Busan Metropolitan City
+    url: https://www.busan.go.kr
+    tier: A
+    topics: [beach, city]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 60
+  - id: src-jyp
+    name: JYP Entertainment
+    url: https://www.jype.com
+    tier: B
+    topics: [GOT7, entertainment]
+    checked_at: "2026-07-20"
+    status: Provisional
+    freshness_days: 60
+    notes: Public visit value must be re-verified; no assumption of tours.
+  - id: src-emergency-kr
+    name: Korea emergency numbers reference (119 fire/medical, 112 police)
+    url: https://www.mois.go.kr
+    tier: A
+    topics: [emergency]
+    checked_at: "2026-07-20"
+    status: Confirmed
+    freshness_days: 90

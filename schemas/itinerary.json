@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip.local/schemas/itinerary.json",
+  "type": "object",
+  "required": ["days"],
+  "properties": {
+    "days": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "day_index", "theme", "one_priority", "wake_time", "out_time", "return_by", "primary_areas", "energy", "status", "blocks"],
+        "properties": {
+          "id": { "type": "string" },
+          "day_index": { "type": "integer", "minimum": 1, "maximum": 7 },
+          "theme": { "type": "string" },
+          "one_priority": { "type": "string" },
+          "wake_time": { "type": "string" },
+          "out_time": { "type": "string" },
+          "return_by": { "type": "string" },
+          "primary_areas": { "type": "array", "items": { "type": "string" }, "maxItems": 2 },
+          "city": { "type": "string" },
+          "energy": { "type": "string", "enum": ["low", "medium", "high"] },
+          "estimated_cost_krw": { "type": ["integer", "null"] },
+          "walking_level": { "type": "string", "enum": ["low", "medium", "high"] },
+          "buffer_percent": { "type": "integer" },
+          "photo_tips": { "type": "string" },
+          "restroom_notes": { "type": "string" },
+          "rain_plan": { "type": "string" },
+          "low_energy_plan": { "type": "string" },
+          "closure_plan": { "type": "string" },
+          "droppable_items": { "type": "array", "items": { "type": "string" } },
+          "emergency_return": { "type": "string" },
+          "status": { "type": "string", "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"] },
+          "blocks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["start", "end", "title", "kind"],
+              "properties": {
+                "start": { "type": "string" },
+                "end": { "type": "string" },
+                "title": { "type": "string" },
+                "kind": { "type": "string", "enum": ["transit", "place", "meal", "rest", "buffer", "experience", "shopping", "free"] },
+                "place_id": { "type": ["string", "null"] },
+                "restaurant_id": { "type": ["string", "null"] },
+                "transit_mode": { "type": ["string", "null"] },
+                "transit_minutes": { "type": ["integer", "null"] },
+                "transfers": { "type": ["integer", "null"] },
+                "dwell_minutes": { "type": ["integer", "null"] },
+                "queue_risk": { "type": ["string", "null"] },
+                "reservation_deadline": { "type": ["string", "null"] },
+                "map_url": { "type": ["string", "null"] },
+                "notes": { "type": "string" },
+                "plan_b": { "type": "string" },
+                "droppable": { "type": "boolean" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

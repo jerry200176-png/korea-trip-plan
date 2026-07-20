@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip.local/schemas/timeline.json",
+  "type": "object",
+  "required": ["milestones"],
+  "properties": {
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "tasks"],
+        "properties": {
+          "id": { "type": "string" },
+          "label": { "type": "string" },
+          "tasks": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "title", "done"],
+              "properties": {
+                "id": { "type": "string" },
+                "title": { "type": "string" },
+                "done": { "type": "boolean" },
+                "notes": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

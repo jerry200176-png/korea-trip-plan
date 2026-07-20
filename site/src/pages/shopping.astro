@@ -1,0 +1,12 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import fs from "node:fs";
+import path from "node:path";
+const md = fs.readFileSync(path.resolve(process.cwd(), "../handbook/shopping-and-entertainment.md"), "utf8");
+---
+<Handbook title="Shopping" current="more">
+  <h1>Shopping</h1>
+  <section class="panel">
+    <pre style="white-space:pre-wrap;font-family:var(--font-body);margin:0">{md}</pre>
+  </section>
+</Handbook>

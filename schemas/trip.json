@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip.local/schemas/trip.json",
+  "type": "object",
+  "required": ["id", "title", "party_size", "duration_days", "preferences", "status"],
+  "additionalProperties": false,
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "party_size": { "type": "integer", "minimum": 1 },
+    "duration_days": { "type": "integer", "minimum": 1 },
+    "target_month": { "type": ["string", "null"] },
+    "start_date": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "end_date": { "type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "daily_out": { "type": "string" },
+    "daily_return": { "type": "string" },
+    "route_option": { "type": "string" },
+    "route_status": { "type": "string", "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"] },
+    "success_criterion": { "type": "string" },
+    "preferences": {
+      "type": "object",
+      "required": ["no_alcohol", "avoid_crustaceans", "spicy_ok", "no_jjimjilbang", "no_rental_car"],
+      "properties": {
+        "no_alcohol": { "type": "boolean" },
+        "avoid_crustaceans": { "type": "boolean" },
+        "spicy_ok": { "type": "boolean" },
+        "pork_soup_interest": { "type": "boolean" },
+        "no_jjimjilbang": { "type": "boolean" },
+        "no_rental_car": { "type": "boolean" },
+        "max_queue_hours": { "type": "number" },
+        "couple_photo_ratio_target": { "type": "number" },
+        "devices": { "type": "array", "items": { "type": "string" } },
+        "lodging": { "type": "object" },
+        "interests": { "type": "array", "items": { "type": "string" } },
+        "shopping": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "status": { "type": "string", "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"] },
+    "notes": { "type": "string" }
+  }
+}

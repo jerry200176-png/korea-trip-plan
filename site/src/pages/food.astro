@@ -1,0 +1,29 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import { loadRestaurants } from "../lib/data";
+const restaurants = loadRestaurants();
+---
+<Handbook title="Food" current="food">
+  <h1>餐飲</h1>
+  <section class="panel">
+    <h2>硬性規則</h2>
+    <ul class="list">
+      <li>不喝酒</li>
+      <li>不安排甲殼類海鮮為主的餐廳</li>
+      <li>可吃辣</li>
+      <li>想吃豬肉湯飯／豬肉湯類</li>
+    </ul>
+  </section>
+  {restaurants.map((r) => (
+    <section class="panel">
+      <h2>{r.name_zh}</h2>
+      <p>{r.name_ko} · {r.name_en}</p>
+      <p class="muted">{r.city} / {r.area} · {r.status}</p>
+      <p>甲殼類風險：{r.crustacean_risk} · 排隊：{r.queue_risk}</p>
+      <p>{r.recommend_reason}</p>
+      <p class="muted">風險：{r.risks}</p>
+      {r.menu_order_ko && <p>點餐：{r.menu_order_ko}</p>}
+      {r.naver_map_url && <a class="btn primary" href={r.naver_map_url} target="_blank" rel="noreferrer">Naver Map</a>}
+    </section>
+  ))}
+</Handbook>

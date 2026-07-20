@@ -1,0 +1,34 @@
+name: Task
+description: High-ROI handbook or research task
+title: "[M?] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use milestones from docs/BACKLOG.md. Prefer completing work over opening decorative issues.
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome
+      description: What will be true when this is done?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options: [P0, P1, P2]
+    validations:
+      required: true
+  - type: textarea
+    id: depends
+    attributes:
+      label: Dependencies
+      description: Issue numbers or Open Decisions (D1–D3)

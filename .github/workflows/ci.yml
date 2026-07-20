@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "cursor/**"]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install root deps
+        run: npm ci
+      - name: Install site deps
+        run: npm ci --prefix site
+      - name: Validate data & privacy & itinerary
+        run: |
+          npm run validate
+          npm run check:privacy
+          npm run check:stale
+          npm run test:itinerary
+          npm run check:links
+      - name: Markdown lint
+        run: npm run lint:md
+      - name: Build site
+        run: npm run build:site
+      - name: Generate PDFs
+        run: npm run pdf
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: handbook-dist
+          path: |
+            dist/
+            site/dist/

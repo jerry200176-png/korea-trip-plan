@@ -1,0 +1,42 @@
+id: trip-korea-2027
+title: Jerry 與女友韓國旅行
+party_size: 2
+duration_days: 7
+target_month: "2027-03"
+start_date: null
+end_date: null
+daily_out: "09:00"
+daily_return: "21:00"
+route_option: seoul-4n-busan-3n
+route_status: Provisional
+success_criterion: 第一次一起出國，留下最美好的回憶
+preferences:
+  no_alcohol: true
+  avoid_crustaceans: true
+  spicy_ok: true
+  pork_soup_interest: true
+  no_jjimjilbang: true
+  no_rental_car: true
+  max_queue_hours: 1
+  couple_photo_ratio_target: 0.8
+  devices:
+    - iPhone
+    - instant_camera
+  lodging:
+    clean_comfortable: true
+    double_bed: true
+    bathtub_required: false
+    convenience_store_nearby_bonus: true
+  interests:
+    - beach
+    - nature
+    - hanbok
+    - fortune_telling
+    - GOT7
+    - food
+  shopping:
+    - alien_merch
+    - cosmetics
+    - clothes
+status: Assumption
+notes: Dates and cities not Founder-locked. March 2027 is Assumption only.

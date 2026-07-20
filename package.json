@@ -1,0 +1,29 @@
+{
+  "name": "korea-trip-handbook",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "validate": "tsx scripts/validate-data.ts",
+    "check:privacy": "tsx scripts/check-privacy.ts",
+    "check:stale": "tsx scripts/check-stale.ts",
+    "check:links": "tsx scripts/check-links.ts",
+    "test:itinerary": "tsx scripts/check-itinerary.ts",
+    "pdf": "tsx scripts/generate-pdfs.ts",
+    "build:site": "npm run build --prefix site",
+    "build": "npm run validate && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run build:site && npm run pdf",
+    "dev": "npm run dev --prefix site",
+    "lint:md": "markdownlint-cli2 \"docs/**/*.md\" \"handbook/**/*.md\" \"checklists/**/*.md\" \"README.md\"",
+    "ci": "npm run validate && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run lint:md && npm run build:site && npm run pdf"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.0",
+    "markdownlint-cli2": "^0.17.2",
+    "pdfkit": "^0.16.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

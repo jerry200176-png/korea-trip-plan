@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip.local/schemas/sources.json",
+  "type": "object",
+  "required": ["sources"],
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "url", "tier", "topics", "checked_at", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "url": { "type": "string" },
+          "tier": { "type": "string", "enum": ["A", "B", "C", "D", "inspiration"] },
+          "topics": { "type": "array", "items": { "type": "string" } },
+          "checked_at": { "type": "string" },
+          "status": { "type": "string", "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"] },
+          "notes": { "type": "string" },
+          "freshness_days": { "type": "integer" }
+        }
+      }
+    }
+  }
+}

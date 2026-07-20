@@ -1,0 +1,29 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import { loadTimeline } from "../lib/data";
+const timeline = loadTimeline();
+const base = import.meta.env.BASE_URL;
+---
+<Handbook title="Before You Go" current="more">
+  <h1>Before You Go</h1>
+  <p class="muted">對應 data/timeline.yaml 與 checklists/</p>
+  {timeline.milestones.map((m) => (
+    <section class="panel">
+      <h2>{m.label}</h2>
+      <ul class="list">
+        {m.tasks.map((t: any) => (
+          <li>
+            <label style="display:flex;gap:0.6rem;align-items:flex-start">
+              <input type="checkbox" disabled checked={t.done} />
+              <span>{t.title}</span>
+            </label>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+  <div class="btn-row">
+    <a class="btn" href={`${base}packing/`}>行李</a>
+    <a class="btn" href={`${base}bookings/`}>預訂占位</a>
+  </div>
+</Handbook>

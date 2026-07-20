@@ -1,0 +1,78 @@
+---
+import Handbook from "../../layouts/Handbook.astro";
+import { loadItinerary, loadPlaces, loadRestaurants } from "../../lib/data";
+
+export function getStaticPaths() {
+  const days = loadItinerary().days;
+  return days.map((d) => ({ params: { day: `day-${d.day_index}` } }));
+}
+
+const dayParam = Astro.params.day!;
+const dayIndex = Number(dayParam.replace("day-", ""));
+const day = loadItinerary().days.find((d) => d.day_index === dayIndex)!;
+const places = Object.fromEntries(loadPlaces().map((p) => [p.id, p]));
+const restaurants = Object.fromEntries(loadRestaurants().map((r) => [r.id, r]));
+const base = import.meta.env.BASE_URL;
+const nextDay = dayIndex < 7 ? dayIndex + 1 : null;
+---
+<Handbook title={`Day ${day.day_index}`} current="days">
+  <p class="muted"><a href={`${base}days/`}>← 所有天</a></p>
+  <h1>Day {day.day_index}</h1>
+  <p>{day.theme}</p>
+  <section class="panel">
+    <h2>今日最重要</h2>
+    <p>{day.one_priority}</p>
+    <p class="muted">出門 {day.out_time} · 最晚回住宿 {day.return_by}</p>
+    <p class="muted">區域：{day.primary_areas.join(" / ")} · 緩衝 ~{day.buffer_percent}%</p>
+    <span class="badge provisional">{day.status}</span>
+  </section>
+
+  {day.blocks.map((b: any, i: number) => {
+    const place = b.place_id ? places[b.place_id] : null;
+    const rest = b.restaurant_id ? restaurants[b.restaurant_id] : null;
+    const next = day.blocks[i + 1];
+    return (
+      <article class="block">
+        <div class="time">{b.start} – {b.end}</div>
+        <h3 style="margin:0.2rem 0">{b.title}</h3>
+        <p class="muted">{b.kind}{b.droppable ? " · 可刪" : ""}</p>
+        {place && (
+          <>
+            <p><strong>{place.name_zh}</strong> · {place.name_ko}</p>
+            <p class="muted">{place.address}</p>
+            <div class="btn-row">
+              {place.naver_map_url && <a class="btn primary" href={place.naver_map_url} target="_blank" rel="noreferrer">Naver Map</a>}
+              {place.google_maps_url && <a class="btn" href={place.google_maps_url} target="_blank" rel="noreferrer">Google Maps</a>}
+            </div>
+          </>
+        )}
+        {rest && (
+          <p>餐飲候選：{rest.name_zh} / {rest.name_ko}（{rest.status}）</p>
+        )}
+        {b.transit_mode && (
+          <p class="muted">交通：{b.transit_mode}{b.transit_minutes != null ? ` · ~${b.transit_minutes} 分` : ""}{b.transfers != null ? ` · 轉乘 ${b.transfers}` : ""}</p>
+        )}
+        {b.map_url && <p><a href={b.map_url} target="_blank" rel="noreferrer">Map 連結</a></p>}
+        {b.notes && <p class="muted">{b.notes}</p>}
+        {b.plan_b && <p><strong>Plan B：</strong>{b.plan_b}</p>}
+        {next && <p class="muted">下一個：{next.title}</p>}
+      </article>
+    );
+  })}
+
+  <section class="panel">
+    <h2>備案</h2>
+    <p><strong>雨天：</strong>{day.rain_plan}</p>
+    <p><strong>體力不足：</strong>{day.low_energy_plan}</p>
+    <p><strong>店休／取消：</strong>{day.closure_plan}</p>
+    <p><strong>可刪項目：</strong>{(day.droppable_items || []).join("、") || "—"}</p>
+    <p><strong>緊急回住宿：</strong>{day.emergency_return}</p>
+    <p class="muted">拍照：{day.photo_tips}</p>
+    <p class="muted">廁所／休息：{day.restroom_notes}</p>
+  </section>
+
+  <div class="btn-row">
+    {nextDay && <a class="btn primary" href={`${base}days/day-${nextDay}/`}>Day {nextDay}</a>}
+    <a class="btn" href={`${base}emergency/`}>緊急</a>
+  </div>
+</Handbook>

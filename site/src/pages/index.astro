@@ -1,0 +1,103 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import {
+  loadTrip,
+  loadTimeline,
+  loadBudget,
+  loadSources,
+  nextOpenTask,
+  budgetProgress,
+  bookingProgress,
+  staleSources,
+} from "../lib/data";
+
+const trip = loadTrip();
+const timeline = loadTimeline();
+const budget = loadBudget();
+const sources = loadSources();
+const next = nextOpenTask(timeline);
+const bud = budgetProgress(budget);
+const book = bookingProgress();
+const stale = staleSources(sources);
+const base = import.meta.env.BASE_URL;
+
+const countdown =
+  trip.start_date == null
+    ? "日期未確認"
+    : `${Math.ceil((new Date(trip.start_date).getTime() - Date.now()) / 86400000)} 天`;
+---
+<Handbook title="Dashboard" current="home">
+  <section class="panel">
+    <h1 style="margin-top:0">Dashboard</h1>
+    <p class="muted">{trip.success_criterion}</p>
+    <div class="grid2">
+      <div class="stat">
+        <div class="label">距離出發</div>
+        <div class="value">{countdown}</div>
+      </div>
+      <div class="stat">
+        <div class="label">路線狀態</div>
+        <div class="value" style="font-size:1rem">{trip.route_option}</div>
+        <span class="badge provisional">{trip.route_status}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>下一個待辦</h2>
+    {
+      next ? (
+        <p>
+          <strong>{next.milestone}</strong> · {next.task.title}
+        </p>
+      ) : (
+        <p>全部完成</p>
+      )
+    }
+  </section>
+
+  <section class="panel">
+    <h2>尚未確認的關鍵決策</h2>
+    <ul class="list">
+      <li><span class="badge decision">DecisionRequired</span> 最終旅行日期</li>
+      <li><span class="badge decision">DecisionRequired</span> 城市與停留天數</li>
+      <li><span class="badge decision">DecisionRequired</span> 航班機場</li>
+    </ul>
+    <a class="btn" href={`${base}decisions/`}>查看 Open Decisions</a>
+  </section>
+
+  <section class="panel">
+    <h2>預訂進度</h2>
+    <p>{book.label}</p>
+    <p class="muted">真實確認碼只存在離線／bookings.local.yaml（gitignore）</p>
+  </section>
+
+  <section class="panel">
+    <h2>預算進度</h2>
+    <p>已花 {bud.spent} / 規劃 {bud.planned} TWD（{bud.pct}%）· 狀態 {budget.status}</p>
+    <a class="btn" href={`${base}budget/`}>預算明細</a>
+  </section>
+
+  <section class="panel">
+    <h2>過期資料警示</h2>
+    {
+      stale.length === 0 ? (
+        <p class="muted">目前無超過 freshness 門檻的來源（查核日 2026-07-20）。</p>
+      ) : (
+        <ul class="list">
+          {stale.map((s) => (
+            <li>
+              {s.id} · {s.name}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+
+  <div class="btn-row">
+    <a class="btn primary" href={`${base}days/day-1/`}>今日行程入口</a>
+    <a class="btn" href={`${base}overview/`}>行程總覽</a>
+    <a class="btn" href={`${base}before/`}>出發前</a>
+  </div>
+</Handbook>

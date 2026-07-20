@@ -1,0 +1,12 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import fs from "node:fs";
+import path from "node:path";
+const packing = fs.readFileSync(path.resolve(process.cwd(), "../checklists/packing.md"), "utf8");
+---
+<Handbook title="Packing" current="more">
+  <h1>Packing</h1>
+  <section class="panel">
+    <pre style="white-space:pre-wrap;font-family:var(--font-body);margin:0">{packing}</pre>
+  </section>
+</Handbook>

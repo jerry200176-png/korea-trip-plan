@@ -1,0 +1,19 @@
+destinations:
+  - id: dest-seoul
+    name_zh: 首爾
+    name_ko: 서울
+    name_en: Seoul
+    role: primary_city_provisional
+    provisional_nights: 4
+    airports: [ICN, GMP]
+    why: GOT7/娛樂、購物、韓服、算命、飲食密度
+    status: Provisional
+  - id: dest-busan
+    name_zh: 釜山
+    name_ko: 부산
+    name_en: Busan
+    role: secondary_city_provisional
+    provisional_nights: 3
+    airports: [PUS]
+    why: 海灘與自然風景、豬肉湯飯文化、海岸合照
+    status: Provisional

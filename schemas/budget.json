@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip.local/schemas/budget.json",
+  "type": "object",
+  "required": ["currency", "categories", "status"],
+  "properties": {
+    "currency": { "type": "string" },
+    "party_size": { "type": "integer" },
+    "notes": { "type": "string" },
+    "status": { "type": "string", "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"] },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "planned_twd", "spent_twd", "status"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "planned_twd": { "type": "integer" },
+          "spent_twd": { "type": "integer" },
+          "status": { "type": "string", "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"] },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}
