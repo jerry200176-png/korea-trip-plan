@@ -1,38 +1,76 @@
 # Source Count Summary
 
-Generated: 2026-07-20
+Generated: 2026-07-20  
+Quality correction: 2026-07-20  
+Inventory: [`data/research-sources.yaml`](../../data/research-sources.yaml)  
+Recount: `python3 scripts/recount-research-sources.py`
 
-- Total usable sources: 76
-- Blocked or failed candidate sources: 7
-- Website/publication benchmark sources: 23
-- Seoul-related usable sources: 34
-- Busan-related usable sources: 36
+## Counting rules
 
-## Totals by evidence tier
+- Every usable source has exactly one `primary_category` (unique primary count).
+- `category_tags` may list secondary roles, but **must not** inflate travel evidence depth.
+- Design / publication benchmarks are **not** counted as travel factual evidence.
+- Map validation endpoints are counted separately from experience evidence.
+- `operational_freshness: current` is **not** assigned from HTTP 200 / title presence alone.
+- When page update date is unconfirmed: `content_last_updated: unknown`.
 
-- A: 40
-- B: 24
-- C: 12
+## Primary category table (unique)
 
-## Totals by city
+| Primary category | Count |
+|------------------|------:|
+| travel factual evidence | 40 |
+| independent experience evidence | 20 |
+| creator discovery | 12 |
+| map validation endpoints | 4 |
+| design / publication benchmarks | 10 |
+| **Usable total (sum of unique primaries)** | **86** |
+| blocked sources | 9 |
 
-- Busan: 36
-- National: 5
-- Seoul: 33
-- Taiwan: 2
+Do **not** collapse the above into a single “76/86 usable sources” travel-depth claim. Travel factual depth is **40**, not 86.
 
-## Totals by source_type
+## Evidence tier (A1 / A2 / B / C)
 
-- airport: 2
-- government: 10
-- guidebook_media: 3
-- independent_blog: 12
-- map_platform: 4
-- official_tourism: 25
-- rail: 1
-- venue_official: 2
-- website_benchmark: 17
+| Tier | Meaning | Count |
+|------|---------|------:|
+| A1 | Government, operator, venue/shop primary pages | 15 |
+| A2 | Official tourism portals / official aggregator pages | 25 |
+| B | Independent experience, map platforms, trusted editorial, design benchmarks | 34 |
+| C | Creator discovery | 12 |
 
-## Blocked count
+Official tourism (A2) must **not** be treated as automatic latest venue-operator proof. Prefer A1 for hours/tickets/closure when hardening itinerary claims.
 
-- blocked_sources: 7
+## Freshness distribution
+
+| Field / value | Count |
+|---------------|------:|
+| `content_last_updated: unknown` | 86 |
+| `operational_freshness: needs_recheck` | 64 |
+| `operational_freshness: unknown` | 22 |
+| `operational_freshness: current` | 0 |
+
+## City distribution (usable sources)
+
+| City | Count |
+|------|------:|
+| Busan | 37 |
+| Seoul | 33 |
+| Multi | 8 |
+| National | 6 |
+| Taiwan | 2 |
+
+## Tier C diversity (honest)
+
+| Metric | Count |
+|--------|------:|
+| direct YouTube sources readable | 0 |
+| direct Instagram sources readable | 0 |
+| blog sources readable | 12 |
+| blocked creator sources | 2 |
+
+Round 1 does **not** pad Tier C with unread videos/posts. Search snippets are not full reviews.
+
+## Blocked sources
+
+- Total blocked / unavailable candidates: **9**
+- Includes HTTP 403/404/429/000 failures and creator-platform sessions that were not fully readable
+- See `blocked_sources` in `data/research-sources.yaml`

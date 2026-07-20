@@ -1,9 +1,11 @@
 # Existing 7-Day Itinerary Gap Audit
 
-**Round:** 1 · 2026-07-20  
+**Round:** 1 · Quality correction 2026-07-20  
 **Baseline itinerary:** [`data/itinerary.yaml`](../../data/itinerary.yaml) (Provisional)  
 **Profile:** [`data/couple-profile.yaml`](../../data/couple-profile.yaml)  
-**Rule:** Presence in the current PDF is **not** a reason to Retain.
+**Claims:** [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml)  
+**Rule:** Presence in the current PDF is **not** a reason to Retain.  
+**Scope:** Audit only — this document does **not** change formal itinerary conclusions.
 
 Stop verdicts: `Retain` · `Rework` · `Replace` · `Remove` · `Research Gap`
 
@@ -154,17 +156,19 @@ Stop verdicts: `Retain` · `Rework` · `Replace` · `Remove` · `Research Gap`
 
 ---
 
-## Cross-cutting special questions
+## Cross-cutting special questions (with claim IDs)
 
-| Question | Round 1 answer |
-|----------|----------------|
-| Is JYP check-in worth keeping? | **Not yet.** Evidence insufficient; treat as Research Gap / likely Replace with stronger GOT7-light experience. |
-| Is Gangnam fortune-telling feasible? | **Unknown.** No shop evidence → blocking research for Day 4 theme. |
-| Does Day 3 serve cosmetics/clothes? | **Intent only.** Needs store path. |
-| Is Day 6 over-touristy? | **Yes, risk.** Needs differentiation + low-energy variant. |
-| Pork soup research enough? | **Partial.** Michelin/local guides exist; no locked restaurant + dietary mapping. |
-| Seoul 4N + Busan 2N over-moving? | **Acceptable skeleton**; Day 5 must stay protected from extra sightseeing. |
-| Day 7 value? | **Low until flight band known.** |
+| Question | Round 1 answer | Claim / sources |
+|----------|----------------|-----------------|
+| Is JYP check-in worth keeping? | **Not yet.** Research Gap / likely Replace. | `clm-jyp-visit-value-unproven` · rs-026, rs-024, rs-025, rs-059 |
+| Is Gangnam fortune-telling feasible? | **Unknown — P0 research risk.** No shop locked. | `clm-fortune-shop-missing` · rs-065, rs-066, rs-blocked-005 |
+| Does Day 3 serve cosmetics/clothes? | **Intent only.** Store path thin. | `clm-day3-shopping-path-thin` · rs-018–021, rs-061, rs-051 |
+| Is Day 6 over-touristy / low-energy ready? | **Touristy risk; low-energy variant missing.** | `clm-day6-low-energy-variant-missing` · rs-032, rs-030, rs-060, rs-039, rs-009 |
+| Pork soup research enough? | **Partial.** Signals exist; no locked shop. | `clm-pork-soup-shortlist-incomplete` · rs-037, rs-038, rs-041–043, rs-063 |
+| Sky Capsule ready to schedule? | **Not hardened.** Operator page exists; ops unconfirmed for March. | `clm-sky-capsule-ops-unconfirmed` · rs-027–029, rs-057, rs-058 |
+| Hanbok shop ready? | **No.** Priority without vendor. | `clm-hanbok-shop-unselected` · rs-010, rs-013, rs-050, rs-062 |
+| Seoul 4N + Busan 2N over-moving? | **Acceptable skeleton**; protect Day 5. | route baseline (founder D2) — not a freshness claim |
+| Day 7 value? | **Low until departure band known** (founder D1/D3 dependency). | see `founder_decision_dependencies` in scorecard |
 
 ## Stop tally (honest)
 

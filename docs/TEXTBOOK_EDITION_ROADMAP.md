@@ -1,7 +1,8 @@
 # Textbook Edition Roadmap
 
-**Round:** 1 Research Foundation · 2026-07-20  
+**Round:** 1 Research Foundation · Quality correction 2026-07-20  
 **Gate closed:** PR #10 merged at `b907145`  
+**Draft PR:** [#12](https://github.com/jerry200176-png/korea-trip-plan/pull/12) — do not merge; Round 2 implementation not started  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
 ## Round 1 outcome
@@ -81,22 +82,32 @@ Round 1 does **not** rewrite the formal itinerary, import a large media atlas, o
 - Seasonal beach facility claims for the precise week  
 - Final booking holds and some ticket prices  
 
-### 10. Round 2 Top 3 (highest ROI)
+### 10. Round 2 boundary — three separate PRs (no mega-PR)
 
-1. **Day 4 evidence package:** fortune-telling feasibility (2 shops) + GOT7-light retain/replace decision for JYP  
-2. **Nikita shopping path:** cosmetics/clothes shortlist + queue/tax-refund Explain visuals on Day 3  
-3. **Busan food + pacing:** pork-soup shortlist (crustacean-aware) + Day 6 low-energy / less-generic coastal variant diagrams  
+Round 2 implementation must **not** start until Jerry accepts Round 1.  
+Round 2 is **not** one large PR. Split into:
+
+| # | Slice PR | Must include |
+|---|----------|--------------|
+| 1 | **Day 4 Feasibility Decision** | fortune feasibility evidence; JYP retain/replace; personalized rationale; ≥1 functional diagram; independent critic; no self-merge |
+| 2 | **Nikita Shopping Teaching Slice** | cosmetics/clothes path; tax-refund teaching; rationale; ≥1 diagram; independent critic; no self-merge |
+| 3 | **Busan Food & Coastal Rhythm** | pork-soup shortlist; Day 6 low-energy coastal variant; rationale; ≥1 diagram; independent critic; no self-merge |
+
+Each slice uses **Round 2 Slice Exit** (local), not **Textbook Final Exit** (Overall ≥ 90).
+
+Claim anchors already mapped: `clm-fortune-shop-missing`, `clm-jyp-visit-value-unproven`, `clm-day3-shopping-path-thin`, `clm-pork-soup-shortlist-incomplete`, `clm-day6-low-energy-variant-missing`, `clm-sky-capsule-ops-unconfirmed`.
 
 ---
 
 ## Delivery sequence (later rounds)
 
-1. ~~Research Foundation~~ ← Round 1 PR  
-2. Personalized Itinerary Model  
-3. Visual Media Atlas (licensed, function-tagged)  
-4. Editorial Website Architecture  
-5. Textbook PDF Edition  
-6. Independent Quality Review  
+1. Research Foundation ← Round 1 PR #12 (Draft; quality correction in progress)  
+2. Round 2 slices (three PRs above) — after Round 1 Acceptance  
+3. Personalized Itinerary Model  
+4. Visual Media Atlas (licensed, function-tagged)  
+5. Editorial Website Architecture  
+6. Textbook PDF Edition  
+7. Independent Quality Review → Textbook Final Exit  
 
 ## Non-goals reminding all rounds
 
@@ -105,3 +116,4 @@ Round 1 does **not** rewrite the formal itinerary, import a large media atlas, o
 - No AI art as place evidence  
 - No self-merge  
 - CI green ≠ textbook done  
+- Do not demand Overall ≥ 90 to close a Round 2 slice  

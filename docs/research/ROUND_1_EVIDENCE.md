@@ -1,78 +1,97 @@
 # Round 1 Evidence Sheet
 
 **Branch:** `feat/korea-trip-textbook-edition`  
+**Draft PR:** https://github.com/jerry200176-png/korea-trip-plan/pull/12  
 **Base main verified:** `b907145d2b677fd6328cb0a4f0eb9601af76a858`  
-**Date:** 2026-07-20
+**Quality correction date:** 2026-07-20
 
-## Phase A (prerequisite — closed)
+## Phase A (prerequisite — closed on main)
 
 | Item | Result |
 |------|--------|
 | PR #10 | Merged squash |
 | Merge commit | `b907145d2b677fd6328cb0a4f0eb9601af76a858` |
-| Accepted head | `ede26232e71fc69a8754fcfa44dc1b342872a681` |
-| main CI + Pages | https://github.com/jerry200176-png/korea-trip-plan/actions/runs/29785824016 success |
-| Pages deploy SHA | matches main `b907145` |
-| Live URLs | home / review / day-4 / today-day-4 / PDF → HTTP 200 |
-| Live PDF | Jerry & Nikita present; JYP 周邊打卡 present; zero `plc-jyp-tower`; zero「Jerry 與女友」 |
+| main CI + Pages | success; deploy SHA matches main |
+| Live checks | Jerry & Nikita; JYP 周邊打卡; zero `plc-jyp-tower`; zero「Jerry 與女友」 |
 
-### Epic #11 update
+Epic #11 write attempts returned 403 for this bot token — paste gate-close text manually if needed.
 
-Attempted `gh issue comment/edit` → **403 Resource not accessible by integration** (token cannot write issues). Gate-close text is recorded here and in this PR body for Jerry to paste into #11 if needed:
+## Round 1 Research Quality Correction
 
-> PR #10 publication-quality gate closed. Textbook Edition Round 1 may start from verified main.
+Scope of correction commit: **research governance only** — no itinerary / site / PDF / media product changes.
 
-## Round 1 deliverables
+### Corrected source count table (unique primary)
 
-| Deliverable | Path |
-|-------------|------|
-| Couple profile | `data/couple-profile.yaml` |
-| Research method | `docs/research/RESEARCH_METHOD.md` |
-| Source rubric | `docs/research/SOURCE_QUALITY_RUBRIC.md` |
-| Copyright/media rules | `docs/research/COPYRIGHT_AND_MEDIA_RESEARCH_RULES.md` |
-| Research sources | `data/research-sources.yaml` |
-| Source counts | `docs/research/SOURCE_COUNT_SUMMARY.md` |
-| Coverage matrix | `docs/research/RESEARCH_COVERAGE_MATRIX.md` |
-| Itinerary gap audit | `docs/research/ITINERARY_GAP_AUDIT.md` |
-| Visual gap audit | `docs/research/VISUAL_GAP_AUDIT.md` |
-| Visual candidates | `data/visual-candidates.yaml` |
-| Website benchmark | `docs/research/WEBSITE_BENCHMARK_AUDIT.md` |
-| Textbook loop | `docs/TEXTBOOK_LOOP.md` |
-| Scorecard | `data/textbook-scorecard.yaml` |
-| Roadmap | `docs/TEXTBOOK_EDITION_ROADMAP.md` |
+| Primary category | Count |
+|------------------|------:|
+| travel factual evidence | 40 |
+| independent experience evidence | 20 |
+| creator discovery | 12 |
+| map validation endpoints | 4 |
+| design / publication benchmarks | 10 |
+| usable total | 86 |
+| blocked sources | 9 |
 
-## Source counts (usable)
+Recount: `python3 scripts/recount-research-sources.py`
+
+### Tier distribution
+
+| Tier | Count |
+|------|------:|
+| A1 | 15 |
+| A2 | 25 |
+| B | 34 |
+| C | 12 |
+
+### Freshness distribution
+
+| Value | Count |
+|-------|------:|
+| content_last_updated unknown | 86 |
+| operational_freshness needs_recheck | 64 |
+| operational_freshness unknown | 22 |
+| operational_freshness current | 0 |
+
+### Tier C diversity
 
 | Metric | Count |
 |--------|------:|
-| Total usable | 76 |
-| Tier A | 40 |
-| Tier B | 24 |
-| Tier C | 12 |
-| Website/publication benchmarks | 23 |
-| Seoul-related | 34 |
-| Busan-related | 36 |
-| Blocked / unavailable | 7 |
+| direct YouTube readable | 0 |
+| direct Instagram readable | 0 |
+| blog readable | 12 |
+| blocked creator sources | 2 |
 
-## Honest baseline score
+### Claim-level examples
 
-**Overall 47 / 100** (`data/textbook-scorecard.yaml`) — Round Exit not met (expected).
+See `data/claim-evidence-map.yaml` — includes palace, hanbok, Day 3 shopping, JYP, fortune (P0), pork soup, Sky Capsule, Day 6 low-energy.
 
-## Top 10 product risks
+### Scorecard schema (corrected)
 
-1. Day 4 fortune-telling has no shop evidence  
-2. JYP check-in may be zero-value popularity residue  
-3. Day 3 shopping path not researched to store level  
-4. Pork soup not locked; queue + dietary mapping incomplete  
-5. D1 dates block weekday/flight hardening  
-6. Lodging still area-only  
-7. Day 6 over-touristy risk  
-8. Day 7 hollow without departure band  
-9. Visual teaching set missing (maps/transfers/Identify)  
-10. KTO/KOGL candidates not rights-cleared  
+- `gates.textbook_final_exit` — Overall ≥ 90 whole-product bar  
+- `gates.round_1_acceptance` — research governance checklist  
+- `gates.round_2_slice_exit` — per-PR slice exit without requiring 90  
+- `p0_open` — only `p0-fortune-shop`  
+- `founder_decision_dependencies` — `dep-d1-dates` (does not block Round 2 research)  
+- Honest overall score: **48 / 100**
 
-## Round 2 Top 3
+### Round 1 Acceptance judgment (agent self-check)
 
-1. Fortune + GOT7-light evidence package  
-2. Cosmetics/clothes path + tax-refund teaching  
-3. Pork soup shortlist + Day 6 low-energy coastal variant  
+| Check | Status |
+|-------|--------|
+| Required docs exist | PASS |
+| Source counts recomputable | PASS |
+| No category padding | PASS |
+| Freshness semantics correct | PASS |
+| Top 3 gaps have claim map | PASS |
+| Scope not expanded | PASS |
+| Independent AI / Jerry review | **PENDING** |
+
+**Verdict:** Ready for Jerry independent review toward Round 1 Acceptance.  
+**Not** Textbook Final Exit.  
+**Do not merge. Do not start Round 2 implementation.**
+
+### Round 2 planned slices (discussion only)
+
+1. Day 4 Feasibility Decision  
+2. Nikita Shopping Teaching Slice  
+3. Busan Food & Coastal Rhythm  

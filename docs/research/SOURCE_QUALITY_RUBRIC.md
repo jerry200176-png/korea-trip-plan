@@ -6,9 +6,17 @@
 
 | Tier | Who | Can confirm operational facts? | Typical use |
 |------|-----|--------------------------------|-------------|
-| A | Official / primary operators | Yes | Hours, tickets, transit, entry, rules |
-| B | Independent experience / curated guides | No (signal only) | Queue, walking, vibe, trap risk |
+| A1 | Government, operators, venue/shop primary pages | Yes (preferred) | Hours, tickets, transit, entry, rules |
+| A2 | Official tourism portals / aggregators | Partial — orient only until A1 corroboration | Official summaries, discovery into A1 |
+| B | Independent experience, maps, trusted editorial | No (signal only) | Queue, walking, vibe, trap risk |
 | C | Creators / social / discovery blogs | No | Candidates, angles, atmosphere |
+
+Anti-padding rules:
+
+- Design/publication benchmarks use `primary_category: design_publication_benchmark`  
+- Map ping/search pages use `map_validation_endpoint`  
+- Do not count benchmarks inside travel factual depth  
+- Do not mark freshness `current` from HTTP 200 alone  
 
 ## Scoring checklist (per source)
 

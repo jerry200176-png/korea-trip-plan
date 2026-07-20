@@ -1,10 +1,10 @@
 # Textbook Correction Loop
 
-**Updated:** 2026-07-20  
+**Updated:** 2026-07-20 (Research Quality Correction)  
 **Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml)  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
-## Fixed cycle (every round)
+## Fixed cycle (every round / slice)
 
 1. Audit current product  
 2. Identify Top 3 highest-ROI gaps  
@@ -13,22 +13,50 @@
 5. Update couple-fit rationale  
 6. Update itinerary or visual candidates  
 7. Implement a small slice  
-8. Generate site and PDF  
+8. Generate site and PDF (when the slice touches product surfaces)  
 9. Independent critic review  
 10. Fix blockers  
 11. Jerry & Nikita review  
 12. Decide next Top 3 gaps  
 
-## Round Exit bar (product success — not CI green)
+## Gates (do not conflate)
+
+### Textbook Final Exit
+
+Whole-product success bar (not CI green):
 
 - Overall ≥ 90 / 100  
 - Research depth ≥ 18 / 20  
 - Personalization ≥ 18 / 20  
 - Visual teaching value ≥ 13 / 15  
-- No P0  
+- No product P0  
 - No unclear-license images in public outputs  
-- All time-sensitive facts have `checked_at`  
+- Time-sensitive facts have `checked_at`  
 - Jerry & Nikita human review has no blockers  
+
+### Round 1 Acceptance
+
+Research-governance gate for the foundation PR:
+
+- Required docs exist  
+- Source counts recomputable (`scripts/recount-research-sources.py`)  
+- No primary-category padding (benchmarks ≠ travel depth)  
+- Freshness semantics correct (no HTTP-200 ⇒ `current`)  
+- Top 3 gaps have claim-level evidence map  
+- Scope not expanded into itinerary/site/PDF/media  
+- Independent review has no research-governance blocker  
+
+Round 1 Acceptance **does not** require Overall ≥ 90.
+
+### Round 2 Slice Exit
+
+Each Round 2 PR closes on **slice** criteria, not Textbook Final Exit:
+
+1. Day 4 Feasibility Decision  
+2. Nikita Shopping Teaching Slice  
+3. Busan Food & Coastal Rhythm  
+
+Every slice PR must include: research evidence · personalized rationale · ≥1 functional diagram · independent critic · no self-merge.
 
 ## Scoring dimensions (100)
 
@@ -42,9 +70,9 @@
 | Website UX | 10 |
 | Publication quality | 5 |
 
-## Round 1 posture
+## Posture
 
-Round 1 **only** establishes an honest baseline and research foundation.  
-Do **not** inflate scores to look finished.  
-Do **not** treat CI success as research completion.  
-Do **not** self-merge Textbook Edition PRs.
+- Do not inflate scores  
+- Do not treat CI success as research completion  
+- Do not self-merge Textbook Edition PRs  
+- Do not start Round 2 implementation until Jerry accepts Round 1  

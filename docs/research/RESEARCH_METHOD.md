@@ -17,40 +17,65 @@ Build a Korea trip product that is:
 
 ## Evidence tiers
 
-### Tier A — Primary / official
+### Tier A1 — Operator / government / venue primary
 
-Confirm only with Tier A (or two independent Tier A):
+Confirm operational facts with A1 when possible:
 
-- Open / closed status  
-- Hours, closed days  
-- Tickets / prices  
-- Reservations  
-- Transit / schedules  
-- Official events  
-- Regulations, entry, baggage  
+- Open / closed status, hours, closed days  
+- Tickets / prices, reservations  
+- Transit / schedules, baggage, entry rules  
+- Venue/shop’s own pages, airport/rail operators, government ministries  
 
-Examples: government portals, airports, Korail, venue official sites, VisitKorea / VisitSeoul / VisitBusan city pages.
+### Tier A2 — Official tourism portals / aggregators
 
-### Tier B — Aggregated experience
+VisitKorea / VisitSeoul / VisitBusan and similar **official tourism entry pages**.
+
+- Useful for orientation and official summaries  
+- **Must not** be treated as automatic latest venue-operator proof  
+- Harden hours/tickets/closure with A1 (or two independent high-quality sources including A1) before itinerary lock  
+
+### Tier B — Independent experience / maps / trusted editorial
 
 Use for understanding (never sole confirmation of prices/hours/schedules):
 
 - Queues, walking load, on-site flow  
 - Dwell time, crowding, photo conditions  
 - Rain-day feel, tourist-trap risk  
-
-Examples: Michelin / reputable guides, independent local blogs with first-person experience, map-platform reviews used only as signals.
+- Map validation endpoints (separate primary category)  
 
 ### Tier C — Creator discovery
 
-Use for discovery and atmosphere:
+Use for discovery and atmosphere only.
 
-- YouTube, Instagram, Threads, TikTok  
-- Taiwan / Korea / English blogs  
-- Travel media, local lifestyle content  
+Allowed: candidate places, photo angles, vibe, hidden flows, queue warnings.  
+**Forbidden:** Tier C alone confirming price, hours, schedules, regulations, or “still open.”  
+Do not claim a YouTube/Instagram item was reviewed unless the full public item was actually readable.
 
-Allowed uses: candidate places, photo angles, vibe, hidden flows, queue warnings.  
-**Forbidden:** Tier C alone confirming price, hours, schedules, regulations, or “still open.”
+## Freshness fields (required per source)
+
+| Field | Meaning |
+|-------|---------|
+| `accessibility_status` | accessible / blocked / partial |
+| `publish_date` | page publish date if known, else null |
+| `content_last_updated` | page update date if known, else `unknown` |
+| `operational_freshness` | `needs_recheck` / `unknown` / rarely `current` |
+| `checked_at` | when we inspected |
+| `revalidate_by` | next required revalidation date |
+| `freshness_basis` | why freshness was graded |
+
+**Forbidden:** marking `operational_freshness: current` solely because HTTP 200 or a title string exists.
+
+## Primary categories (unique count)
+
+Every source has one `primary_category`:
+
+- `travel_factual_evidence`  
+- `independent_experience_evidence`  
+- `creator_discovery`  
+- `map_validation_endpoint`  
+- `design_publication_benchmark`  
+
+Benchmarks must not inflate travel evidence depth. Recount with `python3 scripts/recount-research-sources.py`.
 
 ## Research workflow (every claim)
 
