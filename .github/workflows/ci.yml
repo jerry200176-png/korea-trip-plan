@@ -43,13 +43,29 @@ jobs:
     permissions:
       pages: write
       id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Download built site from gate
+        uses: actions/download-artifact@v4
         with:
-          node-version-file: ".nvmrc"
-      - run: npm ci && npm ci --prefix site && npm run ci
+          name: handbook-dist-${{ github.sha }}
+          path: artifact
+      - name: Public privacy gate on deploy artifact
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          npm ci
+          # Point scanners at downloaded artifact layout
+          mkdir -p dist site/dist site/public/downloads
+          cp -a artifact/dist/. dist/ || true
+          cp -a artifact/site/dist/. site/dist/
+          cp -a artifact/site/public/downloads/. site/public/downloads/ || true
+          npm run check:public-preview-privacy
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site/dist
-      - uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
