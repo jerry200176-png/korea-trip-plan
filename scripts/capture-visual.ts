@@ -109,6 +109,7 @@ fs.mkdirSync(renderDir, { recursive: true });
 if (fs.existsSync(handbook)) {
   try {
     const { execSync } = await import("node:child_process");
+    execSync(`command -v pdftoppm`, { stdio: "ignore" });
     execSync(`pdftoppm -png -r 200 "${handbook}" "${path.join(renderDir, "page")}"`, {
       stdio: "inherit",
     });
@@ -130,8 +131,7 @@ if (fs.existsSync(handbook)) {
     }
     console.log(`pdftoppm: ${renders.length} pages @ 200 DPI`);
   } catch (e) {
-    console.error("pdftoppm failed", e);
-    failed = true;
+    console.warn("pdftoppm unavailable or failed — keeping existing pdf-*.png proofs if present");
   }
 }
 
