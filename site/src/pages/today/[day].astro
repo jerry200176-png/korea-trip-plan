@@ -1,6 +1,7 @@
 ---
+import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
-import { loadItinerary, loadPlaces, loadTrip } from "../../lib/data";
+import { loadItinerary, loadPlaces, loadTrip, mediaById, mediaPublicUrl } from "../../lib/data";
 
 export function getStaticPaths() {
   const days = loadItinerary().days;
@@ -12,89 +13,106 @@ const dayIndex = Number(dayParam.replace("day-", ""));
 const day = loadItinerary().days.find((d) => d.day_index === dayIndex)!;
 const places = Object.fromEntries(loadPlaces().map((p) => [p.id, p]));
 const trip = loadTrip();
-const base = import.meta.env.BASE_URL;
+const base = siteBase();
+const mood = dayIndex === 2 ? mediaById("seoul-palace-gate") : null;
 
-const activityBlocks = day.blocks.filter((b: { kind: string; droppable?: boolean }) => b.kind !== "rest");
 const nextBlock =
-  day.blocks.find((b: { droppable?: boolean; kind: string }) => !b.droppable && b.kind !== "buffer") ??
-  activityBlocks[0];
+  day.blocks.find((b: { droppable?: boolean; kind: string }) => !b.droppable && b.kind !== "buffer" && b.kind !== "rest") ??
+  day.blocks[0];
 
-let mapPlace: { naver_map_url?: string; google_maps_url?: string; name_zh: string } | null = null;
+let mapPlace: { naver_map_url?: string; name_zh: string; name_ko?: string; address?: string } | null = null;
 for (const b of day.blocks) {
   if (b.place_id && places[b.place_id]) {
     mapPlace = places[b.place_id];
     break;
   }
 }
+
+function statusZh(s: string) {
+  return s === "Confirmed" ? "已確認" : s === "Provisional" ? "暫定" : s;
+}
 ---
 <Handbook title={`今日 · Day ${day.day_index}`} current="today">
-  <section class="panel" style="border: 2px solid var(--accent, #3d8bfd)">
-    <p class="muted" style="margin:0">
-      <a href={`${base}today/`}>← 換一天</a> · Execution Mode · {day.status}
-    </p>
-    <h1 style="margin:0.5rem 0 0;font-size:1.35rem">Day {day.day_index}</h1>
-    <p class="muted">{day.theme}</p>
-  </section>
+  <p class="muted">
+    <a href={`${base}today/`}>← 換一天</a>
+  </p>
+  <p class="eyebrow">Today · Day {day.day_index}</p>
+  <h1 class="page-title" style="font-size:1.25rem">{day.theme}</h1>
+  <span class="status status-provisional">{statusZh(day.status)}</span>
 
-  <section class="panel">
+  <section class="surface-warm">
     <h2 style="margin-top:0">今天只做這件事</h2>
-    <p style="font-size:1.15rem;line-height:1.45">{day.one_priority}</p>
-    <p class="muted">最晚回住宿 <strong>{day.return_by}</strong> · 出門目標 {day.out_time}</p>
+    <p style="font-size:1.15rem;line-height:1.45;margin:0">{day.one_priority}</p>
+    <p class="muted" style="margin-top:var(--space-3)">
+      最晚回住宿 <strong>{day.return_by}</strong> · 出門目標 {day.out_time}
+    </p>
   </section>
 
   {
+    mood && (
+      <img
+        class="today-visual"
+        src={mediaPublicUrl(base, mood)}
+        alt={mood.alt_zh}
+        loading="lazy"
+      />
+    )
+  }
+
+  {
     nextBlock && (
-      <section class="panel">
+      <section class="surface">
         <h2 style="margin-top:0">下一動</h2>
-        <p>
+        <p style="margin:0">
           <strong>{nextBlock.title}</strong>
         </p>
         <p class="muted">
           {nextBlock.start} – {nextBlock.end}
           {nextBlock.transit_mode ? ` · ${nextBlock.transit_mode}` : ""}
         </p>
-        {nextBlock.notes && <p class="muted">{nextBlock.notes}</p>}
+        {nextBlock.plan_b && (
+          <p class="muted">
+            <strong>Plan B：</strong>
+            {nextBlock.plan_b}
+          </p>
+        )}
       </section>
     )
   }
 
-  <section class="panel">
+  <section class="surface">
     <h2 style="margin-top:0">一鍵</h2>
     <div class="btn-row">
-      <a class="btn primary" href={`${base}emergency/`} style="min-height:var(--tap,48px)">
-        緊急卡
-      </a>
       {
         mapPlace?.naver_map_url && (
           <a class="btn primary" href={mapPlace.naver_map_url} target="_blank" rel="noreferrer">
-            Naver Map · {mapPlace.name_zh}
+            Naver Map
           </a>
         )
       }
-      <span class="btn muted" style="opacity:0.85" title="Fact 座標 KML/GeoJSON 匯出後，以 Organic Maps 離線開啟">
-        離線地圖（匯出待辦）
-      </span>
       <a class="btn" href={`${base}days/${dayParam}/`}>
-        完整 Day {day.day_index}
+        完整行程
+      </a>
+      <a class="btn" href={`${base}emergency/`}>
+        緊急
       </a>
     </div>
     {
       mapPlace && (
-        <p class="muted" style="margin-top:0.75rem">
-          離線文字：{mapPlace.name_ko} · {mapPlace.address ?? "地址見完整 Day 頁"}
+        <p class="muted" style="margin-top:var(--space-3)">
+          <span lang="ko">{mapPlace.name_ko}</span> · {mapPlace.address ?? "地址見完整行程"}
         </p>
       )
     }
   </section>
 
-  <section class="panel">
+  <section class="surface-quiet">
     <h2 style="margin-top:0">若下雨／體力低</h2>
-    <p class="muted">{day.rain_plan}</p>
+    <p class="muted" style="margin:0">{day.rain_plan}</p>
     <p class="muted">{day.low_energy_plan}</p>
+    <p class="muted">
+      <strong>回住宿：</strong>
+      {day.emergency_return}
+    </p>
   </section>
-
-  <p class="muted">
-    航班假設（D3 Provisional）：{trip.flight_plan?.outbound?.tw_airport ?? "TBD"}→
-    {trip.flight_plan?.outbound?.kr_airport ?? "ICN"} · 不寫入訂位碼
-  </p>
 </Handbook>

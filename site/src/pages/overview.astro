@@ -1,10 +1,11 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTrip, loadDestinations, loadTravelers } from "../lib/data";
 const trip = loadTrip();
 const destinations = loadDestinations();
 const travelers = loadTravelers();
-const base = import.meta.env.BASE_URL;
+const base = siteBase();
 ---
 <Handbook title="Trip Overview" current="more">
   <h1>Trip Overview</h1>

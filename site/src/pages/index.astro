@@ -1,129 +1,131 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
-import {
-  loadTrip,
-  loadTimeline,
-  loadBudget,
-  loadSources,
-  loadFounderDecisions,
-  loadReadinessReport,
-  nextOpenTask,
-  budgetProgress,
-  bookingProgress,
-  staleSources,
-} from "../lib/data";
+import { loadTrip, loadDestinations, loadFounderDecisions, loadItinerary, mediaById, mediaPublicUrl } from "../lib/data";
 
 const trip = loadTrip();
-const timeline = loadTimeline();
-const budget = loadBudget();
-const sources = loadSources();
+const destinations = loadDestinations();
 const decisions = loadFounderDecisions();
-const readiness = loadReadinessReport();
-const next = nextOpenTask(timeline);
-const bud = budgetProgress(budget);
-const book = bookingProgress();
-const stale = staleSources(sources);
-const base = import.meta.env.BASE_URL;
+const itinerary = loadItinerary();
+const base = siteBase();
+const hero = mediaById("cover-hero")!;
+const heroSrc = mediaPublicUrl(base, hero);
+
+const seoul = destinations.find((d) => d.id === "dest-seoul");
+const busan = destinations.find((d) => d.id === "dest-busan");
+const openDecisions = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional");
+
+function statusClass(s: string) {
+  if (s === "Confirmed") return "status-confirmed";
+  if (s === "DecisionRequired") return "status-decision";
+  if (s === "Assumption") return "status-assumption";
+  return "status-provisional";
+}
+
+function statusZh(s: string) {
+  const map: Record<string, string> = {
+    Confirmed: "已確認",
+    Provisional: "暫定",
+    Assumption: "假設",
+    DecisionRequired: "待決策",
+  };
+  return map[s] ?? s;
+}
 
 const countdown =
   trip.start_date == null
-    ? "日期未確認"
-    : `${Math.ceil((new Date(trip.start_date).getTime() - Date.now()) / 86400000)} 天`;
+    ? `目標 ${trip.target_month ?? "未定"}`
+    : `還有 ${Math.ceil((new Date(trip.start_date).getTime() - Date.now()) / 86400000)} 天`;
 ---
-<Handbook title="Dashboard" current="home">
-  <section class="panel">
-    <h1 style="margin-top:0">Dashboard</h1>
-    <p class="muted">{trip.success_criterion}</p>
-    <div class="grid2">
-      <div class="stat">
-        <div class="label">距離出發</div>
-        <div class="value">{countdown}</div>
-      </div>
-      <div class="stat">
-        <div class="label">Readiness</div>
-        <div class="value" style="font-size:1rem">{readiness?.overall ?? "run npm run readiness"}</div>
-        <span class="badge provisional">非 Trip Ready</span>
+<Handbook title="首頁" current="home">
+  <section class="hero-stage">
+    <picture>
+      <source type="image/webp" srcset={heroSrc.replace(/\.jpg$/, ".webp")} />
+      <img
+        class="hero-img"
+        src={heroSrc.replace(/\.webp$/, ".jpg")}
+        alt={hero.alt_zh}
+        width="1600"
+        height="900"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+    <div class="hero-copy">
+      <p class="eyebrow">Our First Korea</p>
+      <h1 class="page-title hero-title">{trip.title}</h1>
+      <p class="hero-lede">{trip.success_criterion}</p>
+      <div class="btn-row">
+        <a class="btn primary" href={`${base}days/`}>查看 7 天旅程</a>
+        <a class="btn" href={`${base}review/`}>Couple 驗收</a>
       </div>
     </div>
   </section>
 
-  <section class="panel">
-    <h2>出國當天</h2>
-    <p>
-      <a class="btn primary" href={`${base}today/`}>開啟今日（Execution Mode）</a>
+  <section class="surface route-overlay">
+    <p class="eyebrow">路線</p>
+    <div class="route-path" aria-label="首爾到釜山路線">
+      <span>首爾 {seoul?.provisional_nights ?? 4}N</span>
+      <span class="route-arrow">—— KTX ——</span>
+      <span>釜山 {busan?.provisional_nights ?? 2}N</span>
+    </div>
+    <p class="muted" style="margin:var(--space-3) 0 0">
+      路線 <strong>{trip.route_option}</strong>
+      <span class={`status ${statusClass(trip.route_status)}`}>{statusZh(trip.route_status)}</span>
+      · {countdown}
     </p>
-    <p class="muted">10 秒內：一件事、下一動、地圖、緊急 — 路徑 <code>/today/</code></p>
   </section>
 
-  {
-    readiness && (
-      <section class="panel">
-        <h2>Readiness gates</h2>
-        <p class="muted">
-          Pass {readiness.summary.pass} · Provisional {readiness.summary.provisional} · Blocked{" "}
-          {readiness.summary.blocked}
-        </p>
-        <ul class="list">
-          {(readiness.top_risks ?? []).map((r: any) => (
-            <li>
-              <strong>{r.id}</strong> · {r.blocker}
-            </li>
-          ))}
-        </ul>
-        <p class="muted">下一個 Founder：{readiness.next_founder} · Agent：{readiness.next_agent}</p>
-      </section>
-    )
-  }
-
-  <section class="panel">
-    <h2>下一個待辦</h2>
-    {
-      next ? (
-        <p>
-          <strong>{next.milestone}</strong> · {next.task.title}
-        </p>
-      ) : (
-        <p>全部完成</p>
-      )
-    }
-  </section>
-
-  <section class="panel">
-    <h2>Founder Decisions</h2>
-    <ul class="list">
-      {decisions.map((d) => (
-        <li>
-          <span class="badge decision">{d.status}</span> {d.id} · {d.title_zh}
-        </li>
-      ))}
-    </ul>
-    <a class="btn primary" href={`${base}decisions/`}>決策包</a>
-  </section>
-
-  <section class="panel">
-    <h2>路線（Provisional）</h2>
-    <p>{trip.route_option}</p>
-    <span class="badge provisional">{trip.route_status}</span>
-    <a class="btn" href={`${base}route/`}>Route Decision</a>
-  </section>
-
-  <section class="panel">
-    <h2>離線手冊 PDF</h2>
-    <p class="muted">Build 後可下載（同 CI artifact）</p>
+  <section class="surface-warm">
+    <h2 style="margin-top:0">出發前，我們一起</h2>
+    <p>這本書給兩個人：期待、決策、路上執行、回來還能翻。</p>
     <div class="btn-row">
-      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>Handbook PDF</a>
-      <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>Emergency PDF</a>
+      <a class="btn primary" href={`${base}decisions/`}>一起決定</a>
+      <a class="btn" href={`${base}today/day-2/`}>試試今日模式</a>
     </div>
   </section>
 
-  <section class="panel">
-    <h2>過期資料</h2>
-    <p>{stale.length === 0 ? "無 stale 警告（查核基準 2026-07-20）" : `${stale.length} 筆需重查`}</p>
+  <section class="surface">
+    <h2 style="margin-top:0">七天預覽</h2>
+    <ul class="list">
+      {
+        itinerary.days
+          .slice()
+          .sort((a, b) => a.day_index - b.day_index)
+          .map((d) => (
+            <li>
+              <a href={`${base}days/day-${d.day_index}/`}>Day {d.day_index} · {d.theme}</a>
+              <span class="status status-provisional">暫定</span>
+            </li>
+          ))
+      }
+    </ul>
   </section>
 
-  <div class="btn-row">
-    <a class="btn primary" href={`${base}days/day-2/`}>Seoul sample (Day 2)</a>
-    <a class="btn" href={`${base}days/day-5/`}>Transfer (Day 5)</a>
-    <a class="btn" href={`${base}days/day-6/`}>Busan sample (Day 6)</a>
-  </div>
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">還在討論的事</h2>
+    <ul class="list">
+      {
+        openDecisions.map((d) => (
+          <li>
+            <span class={`status ${statusClass(d.status)}`}>{statusZh(d.status)}</span>{" "}
+            {d.title_zh}
+          </li>
+        ))
+      }
+    </ul>
+    <a class="btn" href={`${base}decisions/`}>打開決策頁</a>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">離線 PDF</h2>
+    <p class="muted">完整預覽書＋緊急卡，可下載後傳給對方。</p>
+    <div class="btn-row">
+      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>旅行書 PDF</a>
+      <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>緊急卡 PDF</a>
+    </div>
+    <p class="muted" style="margin-top:var(--space-3)">
+      <a href={`${base}credits/`}>Image credits</a>
+    </p>
+  </section>
 </Handbook>

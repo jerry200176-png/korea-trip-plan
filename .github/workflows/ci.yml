@@ -19,8 +19,11 @@ jobs:
             site/package-lock.json
       - name: Clean install (reproducibility)
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
           npm ci
           npm ci --prefix site
+          npx playwright install chromium
       - name: Foundation Exit Gate — npm run ci
         run: npm run ci
       - name: Upload handbook artifacts

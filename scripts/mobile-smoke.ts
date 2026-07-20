@@ -13,6 +13,8 @@ const pages = [
   "days/day-6/index.html",
   "emergency/index.html",
   "route/index.html",
+  "review/index.html",
+  "credits/index.html",
 ];
 
 let failed = false;
@@ -33,12 +35,12 @@ function checkFile(rel: string) {
     failed = true;
     console.error(`${rel}: missing mobile nav`);
   }
-  if (!html.includes("badge")) {
+  if (!html.includes("badge") && !html.includes("status ")) {
     failed = true;
     console.error(`${rel}: missing text status badges`);
   }
   // Status must appear as text, not color-only
-  if (!/Provisional|DecisionRequired|Confirmed|Assumption|Stale/.test(html)) {
+  if (!/已確認|暫定|待決策|假設|Provisional|DecisionRequired|Confirmed|Assumption/.test(html)) {
     console.warn(`WARN ${rel}: no status keyword in HTML`);
   }
   if (html.includes("SyncTrip") || html.includes("synctrip")) {

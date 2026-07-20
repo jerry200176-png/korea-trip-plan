@@ -1,6 +1,7 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
-const base = import.meta.env.BASE_URL;
+const base = siteBase();
 const items = [
   ["行程總覽", "overview/"],
   ["出發前", "before/"],

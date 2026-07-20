@@ -1,11 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import yaml from "js-yaml";
-import PDFDocument from "pdfkit";
+import { chromium } from "playwright";
+import { distDir, root } from "./lib/root.ts";
+import { wrapHtml } from "./lib/pdf-html.ts";
 
-const root = path.resolve(import.meta.dirname, "..");
-const dist = path.join(root, "dist");
-fs.mkdirSync(dist, { recursive: true });
+fs.mkdirSync(distDir, { recursive: true });
 
 function load<T>(file: string): T {
   return yaml.load(fs.readFileSync(path.join(root, "data", file), "utf8")) as T;
@@ -14,202 +14,249 @@ function load<T>(file: string): T {
 const trip = load<any>("trip.yaml");
 const itinerary = load<{ days: any[] }>("itinerary.yaml");
 const places = load<{ places: any[] }>("places.yaml").places;
-const destinations = load<{ destinations: any[] }>("destinations.yaml").destinations;
-const budget = load<any>("budget.yaml");
-const sources = load<{ sources: any[] }>("sources.yaml").sources;
 const emergency = load<any>("emergency-public.yaml");
-
+const decisions = load<{ decisions: any[] }>("founder-decisions.yaml").decisions;
+const mediaDoc = load<{ media: any[] }>("media.yaml");
 const placeMap = Object.fromEntries(places.map((p) => [p.id, p]));
+const mediaById = Object.fromEntries(mediaDoc.media.map((m) => [m.id, m]));
 
-function writePdf(
-  filename: string,
-  build: (doc: PDFKit.PDFDocument) => void
-): Promise<void> {
-  return new Promise((resolve, reject) => {
-    const doc = new PDFDocument({
-      size: "A4",
-      margins: { top: 50, bottom: 50, left: 50, right: 50 },
-      info: {
-        Title: filename,
-        Author: "Korea Trip Handbook",
-      },
-    });
-    const stream = fs.createWriteStream(path.join(dist, filename));
-    doc.pipe(stream);
-    build(doc);
-    doc.end();
-    stream.on("finish", () => resolve());
-    stream.on("error", reject);
-  });
+function mediaSrc(id: string): string {
+  const m = mediaById[id];
+  if (!m?.pdf_path || !m.license) {
+    throw new Error(`PDF media ${id} missing pdf_path or license`);
+  }
+  const abs = path.join(root, m.pdf_path);
+  const buf = fs.readFileSync(abs);
+  const ext = path.extname(abs).toLowerCase();
+  const mime =
+    ext === ".png" ? "image/png" : ext === ".webp" ? "image/webp" : ext === ".svg" ? "image/svg+xml" : "image/jpeg";
+  return `data:${mime};base64,${buf.toString("base64")}`;
 }
 
-function addFooter(doc: PDFKit.PDFDocument) {
-  const range = doc.bufferedPageRange();
-  for (let i = 0; i < range.count; i++) {
-    doc.switchToPage(range.start + i);
-    doc
-      .fontSize(8)
-      .fillColor("#444")
-      .text(
-        `Korea Trip Handbook · page ${i + 1} of ${range.count} · status labels required`,
-        50,
-        doc.page.height - 40,
-        { align: "center", width: doc.page.width - 100 }
-      );
-  }
+function iconSrc(id: string): string {
+  const m = mediaById[id];
+  const abs = path.join(root, m.local_path);
+  const buf = fs.readFileSync(abs);
+  return `data:image/svg+xml;base64,${buf.toString("base64")}`;
 }
 
-await writePdf("korea-trip-handbook.pdf", (doc) => {
-  doc.fontSize(22).fillColor("#111").text("Korea Trip Handbook", { align: "center" });
-  doc.moveDown();
-  doc.fontSize(12).text(trip.title, { align: "center" });
-  doc.fontSize(10).fillColor("#333").text(`Route: ${trip.route_option} (${trip.route_status})`, {
-    align: "center",
-  });
-  doc.text(`Dates: ${trip.target_month ?? "TBD"} (${trip.status})`, { align: "center" });
-  doc.text("Success: " + trip.success_criterion, { align: "center" });
-  doc.moveDown();
-  doc.fontSize(11).fillColor("#111").text("Table of contents");
-  doc.fontSize(10).fillColor("#222");
-  doc.text("1. Overview");
-  doc.text("2. Destinations");
-  doc.text("3. Daily itinerary");
-  doc.text("4. Budget placeholders");
-  doc.text("5. Sources");
-  doc.addPage();
+function caption(id: string): string {
+  const m = mediaById[id];
+  return `${m.alt_zh} · ${m.attribution}`;
+}
 
-  doc.fontSize(16).text("1. Overview");
-  doc.fontSize(10).moveDown(0.5);
-  doc.text(`Party size: ${trip.party_size}`);
-  doc.text(`Daily window: ${trip.daily_out} – ${trip.daily_return}`);
-  doc.text(
-    `Preferences: no alcohol=${trip.preferences.no_alcohol}; avoid crustaceans=${trip.preferences.avoid_crustaceans}; spicy_ok=${trip.preferences.spicy_ok}; no jjimjilbang=${trip.preferences.no_jjimjilbang}; no rental car=${trip.preferences.no_rental_car}`
-  );
-  doc.moveDown();
-  doc.text(
-    "IMPORTANT: Cities/dates/flights are not Founder-locked. Content marked Provisional/Assumption must not be treated as booked."
-  );
-
-  doc.addPage();
-  doc.fontSize(16).fillColor("#111").text("2. Destinations");
-  doc.fontSize(10).moveDown(0.5);
-  for (const d of destinations) {
-    doc.text(
-      `${d.name_zh} / ${d.name_ko} / ${d.name_en} — ${d.provisional_nights ?? "?"}N — ${d.status}`
-    );
-    doc.fillColor("#333").text(d.why);
-    doc.fillColor("#111").moveDown(0.5);
-  }
-
-  for (const day of itinerary.days) {
-    doc.addPage();
-    doc.fontSize(16).text(`Day ${day.day_index}: ${day.theme}`);
-    doc.fontSize(10).moveDown(0.3);
-    doc.text(`Priority: ${day.one_priority}`);
-    doc.text(
-      `Out ${day.out_time} · Return ${day.return_by} · Energy ${day.energy} · Walk ${day.walking_level} · Status ${day.status}`
-    );
-    doc.text(`Areas: ${day.primary_areas.join(", ")}`);
-    doc.text(`Rain: ${day.rain_plan}`);
-    doc.text(`Low energy: ${day.low_energy_plan}`);
-    doc.text(`Emergency return: ${day.emergency_return}`);
-    doc.moveDown(0.5);
-    for (const b of day.blocks) {
+function dayHtml(day: any, mediaId?: string): string {
+  const blocks = day.blocks
+    .map((b: any) => {
       const place = b.place_id ? placeMap[b.place_id] : null;
-      doc.fillColor("#111").text(`${b.start}–${b.end} · ${b.title} [${b.kind}]`);
-      if (place) {
-        doc.fillColor("#333").text(`  ${place.name_zh} / ${place.name_ko}`);
-        doc.text(`  Address: ${place.address}`);
-        if (place.naver_map_url) {
-          doc.fillColor("#0645AD").text(`  Naver: ${place.naver_map_url}`, {
-            link: place.naver_map_url,
-            underline: true,
-          });
-        }
-      }
-      if (b.map_url) {
-        doc.fillColor("#0645AD").text(`  Map: ${b.map_url}`, {
-          link: b.map_url,
-          underline: true,
-        });
-      }
-      if (b.plan_b) doc.fillColor("#333").text(`  Plan B: ${b.plan_b}`);
-      if (b.droppable) doc.text("  (droppable)");
-      doc.moveDown(0.3);
-    }
-  }
+      const placeLine = place
+        ? `<p><strong>${place.name_zh}</strong> · <span lang="ko">${place.name_ko}</span></p>`
+        : "";
+      const kindZh = ({ transit: "交通", experience: "體驗", meal: "用餐", free: "自由", photo: "拍照", shopping: "購物", rest: "休息", buffer: "緩衝" } as Record<string,string>)[b.kind] ?? b.kind;
+      return `<div class="block"><div class="time">${b.start} – ${b.end}</div><strong>${b.title}</strong><p class="muted">${kindZh}</p>${placeLine}${b.plan_b ? `<p><strong>備案：</strong>${b.plan_b}</p>` : ""}</div>`;
+    })
+    .join("\n");
+  const media = mediaId
+    ? `<img class="day-media" src="${mediaSrc(mediaId)}" alt="${mediaById[mediaId].alt_zh}"/><p class="caption">${caption(mediaId)}</p>`
+    : "";
+  return `<section class="page day"><p class="eyebrow">Day ${day.day_index} · ${day.city}</p><h1>${day.theme}</h1><p><strong>今天最重要：</strong>${day.one_priority}</p><p><span class="status">暫定</span></p>${media}${blocks}<p><strong>雨天：</strong>${day.rain_plan}</p></section>`;
+}
 
-  doc.addPage();
-  doc.fontSize(16).fillColor("#111").text("4. Budget placeholders");
-  doc.fontSize(10).text(`Currency ${budget.currency} · status ${budget.status}`);
-  doc.text(budget.notes);
-  doc.moveDown(0.5);
-  for (const c of budget.categories) {
-    doc.text(
-      `${c.name}: planned ${c.planned_twd} / spent ${c.spent_twd} (${c.status})`
-    );
-  }
+const days = [...itinerary.days].sort((a, b) => a.day_index - b.day_index);
+const seoulDays = days.filter((d) => d.city === "Seoul");
+const transitDays = days.filter((d) => d.city === "Transit");
+const busanDays = days.filter((d) => d.city === "Busan");
+const openDecisions = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional").slice(0, 3);
 
-  doc.addPage();
-  doc.fontSize(16).text("5. Sources");
-  doc.fontSize(9).moveDown(0.5);
-  for (const s of sources) {
-    doc.fillColor("#111").text(`${s.id} · ${s.name} · ${s.status} · checked ${s.checked_at}`);
-    doc.fillColor("#0645AD").text(s.url, { link: s.url, underline: true });
-    doc.moveDown(0.25);
-  }
+const dayMedia: Record<number, string | undefined> = {
+  2: "seoul-palace-gate",
+  6: "busan-haeundae",
+};
 
-  addFooter(doc);
-});
+const experienceIcons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-shop", "icon-fortune"]
+  .map((id) => {
+    const m = mediaById[id];
+    return `<div class="icon-item"><img src="${iconSrc(id)}" alt="${m.alt_zh}"/><div>${m.alt_zh.replace("圖示", "")}</div></div>`;
+  })
+  .join("");
 
-await writePdf("emergency-pack.pdf", (doc) => {
-  doc.fontSize(20).text("Emergency Pack", { align: "center" });
-  doc.fontSize(10).moveDown();
-  doc.text(emergency.offline_note ?? "Offline essentials only.");
-  doc.text(`Status: ${emergency.status} · checked ${emergency.checked_at}`);
-  doc.moveDown();
+const creditsItems = mediaDoc.media
+  .filter((m) => m.status === "Approved" && (m.type === "photo" || m.type === "generated_illustration"))
+  .map((m) => {
+    const kind = m.type === "generated_illustration" ? "AI 原創插畫" : "照片";
+    return `<li><strong>${m.id}</strong> · ${kind}<br/>${m.attribution}<br/><span class="muted">${m.source_url}</span><br/>License: ${m.license}</li>`;
+  })
+  .join("");
 
-  doc.fontSize(14).text("Lodging (placeholders)");
-  doc.fontSize(10).text(`Seoul: ${emergency.lodging_placeholders.seoul_address_ko}`);
-  doc.text(`Busan: ${emergency.lodging_placeholders.busan_address_ko}`);
-  doc.moveDown();
+const handbookBody = `
+<div class="cover">
+  <img class="cover-media" src="${mediaSrc("cover-hero")}" alt="${mediaById["cover-hero"].alt_zh}"/>
+  <div class="cover-body">
+    <p class="eyebrow">Our First Korea</p>
+    <h1>${trip.title}</h1>
+    <p class="lede">${trip.success_criterion}</p>
+    <p>首爾四晚 · 釜山兩晚 · ${trip.target_month ?? "日期待決"}</p>
+    <p class="caption">${caption("cover-hero")}</p>
+  </div>
+</div>
 
-  doc.fontSize(14).text("Airports & transit");
-  doc.fontSize(10).text("Arrival/departure airports: REPLACE_ME (Founder D3)");
-  doc.text("https://www.airport.kr");
-  doc.text("https://www.letskorail.com");
-  doc.text("https://map.naver.com");
-  doc.moveDown();
+<section class="page intro">
+  <p class="eyebrow">Intro</p>
+  <h2>我們想留下的回憶</h2>
+  <p>這是我們第一次一起出國。不是把行程填滿，而是留下會想再翻開的畫面：韓服與宮殿、KTX 窗外、釜山海邊、一起決定要買什麼、一起吃什麼。</p>
+  <p>目前方案：<strong>Seoul 4N + Busan 2N</strong>。目標月份：${trip.target_month ?? "待確認"}。日期與訂房仍待一起決定。</p>
+  <div class="route-line">
+    <strong>TPE → ICN</strong> · 首爾四晚 · <strong>KTX</strong> · 釜山兩晚 · <strong>PUS → TPE</strong>
+  </div>
+  <p class="muted">這本旅行書是 Couple Preview，不是訂票憑證。</p>
+</section>
 
-  doc.fontSize(14).text("Insurance");
-  doc.fontSize(10).text(`Provider: ${emergency.insurance.provider}`);
-  doc.text(`Emergency: ${emergency.insurance.emergency_phone} (${emergency.insurance.note})`);
-  doc.moveDown();
+<section class="page">
+  <p class="eyebrow">Route</p>
+  <h2>路線一覽</h2>
+  <ol>
+    ${days.map((d) => `<li><strong>Day ${d.day_index}</strong> · ${d.theme} <span class="muted">（${d.city}）</span></li>`).join("")}
+  </ol>
+  <p>成功標準：${trip.success_criterion}</p>
+</section>
 
-  doc.fontSize(14).text("Official help");
-  doc.fontSize(10).text(`Police ${emergency.korea.police} · Fire/Medical ${emergency.korea.fire_ambulance}`);
-  doc.fillColor("#0645AD").text(`${emergency.korea.mission_name}: ${emergency.korea.mission_url}`, {
-    link: emergency.korea.mission_url,
-    underline: true,
+<div class="divider seoul">
+  <img src="${mediaSrc("seoul-chapter")}" alt="${mediaById["seoul-chapter"].alt_zh}"/>
+  <div class="divider-body">
+    <p class="eyebrow">Chapter</p>
+    <h1>首爾 · Seoul</h1>
+    <p>四晚慢慢走：韓服、宮殿、購物、算命與城市節奏。</p>
+    <p class="caption">${caption("seoul-chapter")}</p>
+  </div>
+</div>
+
+<section class="page">
+  <h2>首爾主視覺</h2>
+  <div class="media-frame"><img src="${mediaSrc("seoul-palace-roof")}" alt="${mediaById["seoul-palace-roof"].alt_zh}"/></div>
+  <p class="caption">${caption("seoul-palace-roof")}</p>
+  <p>真實宮殿屋頂質感，提醒我們 Day 2 想留下的合照氣氛——之後用我們自己的照片替換。</p>
+</section>
+
+${seoulDays.map((d) => dayHtml(d, dayMedia[d.day_index])).join("\n")}
+
+<div class="divider ktx">
+  <img src="${mediaSrc("ktx-transition")}" alt="${mediaById["ktx-transition"].alt_zh}"/>
+  <div class="divider-body">
+    <p class="eyebrow">Transit</p>
+    <h1>首爾 → 釜山 · KTX</h1>
+    <p>移動日以行李與體力為先，車窗風景留給兩個人。</p>
+    <p class="caption">${caption("ktx-transition")}</p>
+  </div>
+</div>
+
+${transitDays.map((d) => dayHtml(d)).join("\n")}
+
+<div class="divider busan">
+  <img src="${mediaSrc("busan-chapter")}" alt="${mediaById["busan-chapter"].alt_zh}"/>
+  <div class="divider-body">
+    <p class="eyebrow">Chapter</p>
+    <h1>釜山 · Busan</h1>
+    <p>兩晚海邊收尾：海雲台、橋的節奏、慢慢走路。</p>
+    <p class="caption">${caption("busan-chapter")}</p>
+  </div>
+</div>
+
+<section class="page">
+  <h2>釜山主視覺</h2>
+  <div class="media-frame"><img src="${mediaSrc("busan-haeundae")}" alt="${mediaById["busan-haeundae"].alt_zh}"/></div>
+  <p class="caption">${caption("busan-haeundae")}</p>
+  <div class="media-frame" style="margin-top:14pt"><img src="${mediaSrc("busan-gwangan")}" alt="${mediaById["busan-gwangan"].alt_zh}"/></div>
+  <p class="caption">${caption("busan-gwangan")}</p>
+</section>
+
+${busanDays.map((d) => dayHtml(d, dayMedia[d.day_index])).join("\n")}
+
+<section class="page">
+  <p class="eyebrow">Experiences</p>
+  <h2>最期待的體驗</h2>
+  <div class="icon-strip">${experienceIcons}</div>
+  <h3 style="margin-top:22pt">美食</h3>
+  <div class="media-frame"><img src="${mediaSrc("seoul-street-food")}" alt="${mediaById["seoul-street-food"].alt_zh}"/></div>
+  <p class="caption">${caption("seoul-street-food")}</p>
+  <h3>購物</h3>
+  <div class="media-frame"><img src="${mediaSrc("shopping-atmosphere")}" alt="${mediaById["shopping-atmosphere"].alt_zh}"/></div>
+  <p class="caption">${caption("shopping-atmosphere")}</p>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Together</p>
+  <h2>一起決定</h2>
+  <ul>
+    ${openDecisions.map((d) => `<li><strong>${d.title_zh}</strong> · ${d.status === "DecisionRequired" ? "待一起決定" : "暫定"}</li>`).join("")}
+  </ul>
+  <p class="muted">完整選項見網站「決策」頁。本頁只提醒我們還要一起談的事。</p>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Before departure</p>
+  <h2>出發前</h2>
+  <ul>
+    <li>護照效期、K-ETA／入境規定出發前再查官網</li>
+    <li>住宿確認後填入緊急卡地址</li>
+    <li>出發前下載離線版 PDF 存入手機</li>
+    <li>保險與私人電話僅離線保存</li>
+    <li>無酒精、避免甲殼海鮮偏好隨身記得</li>
+  </ul>
+  <p class="footer-note">我們的韓國 · Couple Preview Media Edition · 非訂票憑證</p>
+</section>
+
+<section class="page">
+  <p class="eyebrow">Credits</p>
+  <h2>Image credits</h2>
+  <p class="muted">正文不插入 attribution；完整出處如下。AI 插畫不作為景點證據。</p>
+  <ol class="credits">${creditsItems}</ol>
+</section>
+`;
+
+const emergencyBody = `
+<section class="emergency">
+  <p class="eyebrow">緊急卡</p>
+  <h1>緊急協助</h1>
+  <p class="big">${emergency.korea.police} 警察 · ${emergency.korea.fire_ambulance} 消防／醫療</p>
+  <p><a href="${emergency.korea.mission_url}">${emergency.korea.mission_name}</a></p>
+  <p>${emergency.korea.mission_phone_note}</p>
+  <h2>住宿地址</h2>
+  <p>首爾：${emergency.lodging_placeholders.seoul_address_ko}</p>
+  <p>釜山：${emergency.lodging_placeholders.busan_address_ko}</p>
+  <h2>保險</h2>
+  <p>保險公司：${emergency.insurance.provider}</p>
+  <p>緊急電話：${emergency.insurance.emergency_phone}</p>
+  <p class="muted">${emergency.insurance.note}</p>
+  <h2>韓文短句</h2>
+  <p lang="ko">${emergency.phrases_ko.no_alcohol}</p>
+  <p lang="ko">${emergency.phrases_ko.no_crustaceans}</p>
+  <p lang="ko">${emergency.phrases_ko.help}</p>
+  <p lang="ko">${emergency.phrases_ko.ambulance}</p>
+  <p lang="ko">${emergency.phrases_ko.taxi_address}</p>
+  <p class="muted">${emergency.offline_note}</p>
+</section>
+`;
+
+async function renderPdf(html: string, outFile: string) {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.setContent(html, { waitUntil: "networkidle" });
+  await page.evaluate(async () => {
+    if (document.fonts?.ready) await document.fonts.ready;
   });
-  doc.fillColor("#111").text(emergency.korea.mission_phone_note);
-  doc.moveDown();
+  await page.waitForTimeout(800);
+  await page.pdf({
+    path: path.join(distDir, outFile),
+    format: "A4",
+    printBackground: true,
+    margin: { top: "10mm", bottom: "14mm", left: "10mm", right: "10mm" },
+  });
+  await browser.close();
+}
 
-  doc.fontSize(14).text("Diet / help (Korean)");
-  const ph = emergency.phrases_ko;
-  doc.fontSize(10).text(ph.no_alcohol);
-  doc.text(ph.no_crustaceans);
-  doc.text(ph.help);
-  doc.text(ph.ambulance);
-  doc.text(ph.taxi_address);
-  doc.moveDown();
+await renderPdf(wrapHtml("Korea Trip Handbook", handbookBody), "korea-trip-handbook.pdf");
+await renderPdf(wrapHtml("Emergency Pack", emergencyBody), "emergency-pack.pdf");
 
-  doc.fontSize(14).text("Flights / bookings");
-  doc.fontSize(10).text("Confirmation codes: REPLACE_ME — store offline only");
-
-  addFooter(doc);
-});
-
-console.log("PDF generation complete:");
+console.log("PDF generation complete (Couple Preview Media Edition):");
 console.log(" - dist/korea-trip-handbook.pdf");
 console.log(" - dist/emergency-pack.pdf");

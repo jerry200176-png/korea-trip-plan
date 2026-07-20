@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip-plan.local/schemas/media.json",
+  "type": "object",
+  "required": ["media", "kto_candidates"],
+  "additionalProperties": false,
+  "properties": {
+    "media": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/mediaItem" }
+    },
+    "kto_candidates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/ktoCandidate" }
+    }
+  },
+  "$defs": {
+    "mediaItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "subject",
+        "usage_scope",
+        "local_path",
+        "source_url",
+        "source_platform",
+        "creator",
+        "license",
+        "attribution",
+        "downloaded_at",
+        "checked_at",
+        "modification_notes",
+        "alt_zh",
+        "alt_en",
+        "focal_point",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 2 },
+        "type": {
+          "type": "string",
+          "enum": ["photo", "generated_illustration", "icon", "map"]
+        },
+        "subject": { "type": "string", "minLength": 2 },
+        "usage_scope": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "cover",
+              "home_hero",
+              "seoul_chapter",
+              "busan_chapter",
+              "ktx",
+              "day_page",
+              "today",
+              "food",
+              "shopping",
+              "experiences",
+              "pdf",
+              "credits",
+              "review",
+              "icon_strip"
+            ]
+          }
+        },
+        "local_path": { "type": "string", "minLength": 3 },
+        "web_path": { "type": ["string", "null"] },
+        "pdf_path": { "type": ["string", "null"] },
+        "source_url": { "type": "string", "minLength": 3 },
+        "source_platform": { "type": "string", "minLength": 2 },
+        "creator": { "type": "string", "minLength": 2 },
+        "license": { "type": "string", "minLength": 2 },
+        "attribution": { "type": "string", "minLength": 2 },
+        "downloaded_at": { "type": "string", "format": "date" },
+        "checked_at": { "type": "string", "format": "date" },
+        "modification_notes": { "type": "string" },
+        "alt_zh": { "type": "string", "minLength": 2 },
+        "alt_en": { "type": "string", "minLength": 2 },
+        "focal_point": {
+          "type": "string",
+          "pattern": "^(center|[0-9]{1,3}%\\s+[0-9]{1,3}%)$"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["Approved", "Candidate", "Rejected", "NeedsFounderAction"]
+        },
+        "prompt_path": { "type": ["string", "null"] },
+        "generation_tool": { "type": ["string", "null"] },
+        "generation_date": { "type": ["string", "null"], "format": "date" },
+        "purpose_note": { "type": ["string", "null"] }
+      }
+    },
+    "ktoCandidate": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "source_url",
+        "kogl_type",
+        "commercial_ok",
+        "modification_ok",
+        "attribution_format",
+        "founder_action",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "source_url": { "type": "string" },
+        "kogl_type": { "type": ["string", "null"] },
+        "commercial_ok": { "type": ["boolean", "null"] },
+        "modification_ok": { "type": ["boolean", "null"] },
+        "attribution_format": { "type": ["string", "null"] },
+        "founder_action": { "type": "string" },
+        "status": { "type": "string", "enum": ["Candidate", "NeedsFounderAction"] },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

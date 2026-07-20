@@ -1,75 +1,72 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadFounderDecisions } from "../lib/data";
 
 const decisions = loadFounderDecisions();
-const base = import.meta.env.BASE_URL;
+const base = siteBase();
+
+function statusClass(s: string) {
+  if (s === "Confirmed") return "status-confirmed";
+  if (s === "DecisionRequired") return "status-decision";
+  if (s === "Assumption") return "status-assumption";
+  return "status-provisional";
+}
+
+function statusZh(s: string) {
+  const map: Record<string, string> = {
+    Confirmed: "已確認",
+    Provisional: "暫定",
+    Assumption: "假設",
+    DecisionRequired: "待決策",
+  };
+  return map[s] ?? s;
+}
 ---
-<Handbook title="Founder Decisions" current="more">
-  <h1>Founder Decisions</h1>
-  <p class="muted">Source: data/founder-decisions.yaml · 僅 D1–D3</p>
+<Handbook title="一起決定" current="decisions">
+  <p class="eyebrow">出發前</p>
+  <h1 class="page-title">一起決定</h1>
+  <p class="hero-lede">已確認與仍暫定的項目分開標示 — 方便兩人討論。</p>
   {
     decisions.map((d) => (
-      <section class="panel">
-        <h2>
-          {d.id} · {d.title_zh}
+      <section class="surface decision-card">
+        <h2 style="margin-top:0">
+          {d.title_zh}
         </h2>
-        <span class="badge decision">{d.status}</span>
-        <p><strong>為何現在要決定：</strong>{d.why_now}</p>
-        <p><strong>已確認：</strong></p>
+        <span class={`status ${statusClass(d.status)}`}>{statusZh(d.status)}</span>
+        <p style="margin-top:var(--space-3)">
+          <strong>為什麼現在要談：</strong>
+          {d.why_now}
+        </p>
+        <p>
+          <strong>已確認：</strong>
+        </p>
         <ul>
           {d.confirmed_facts.map((f: string) => (
             <li>{f}</li>
           ))}
         </ul>
-        <p><strong>Assumptions：</strong></p>
-        <ul>
-          {d.assumptions.map((f: string) => (
-            <li>{f}</li>
-          ))}
-        </ul>
         {d.recommendation && (
           <p>
-            <strong>
-              {d.status === "DecisionRequired" ? "建議（仍 DecisionRequired）：" : "建議："}
-            </strong>
+            <strong>建議：</strong>
             {d.recommendation}
           </p>
         )}
-        {d.founder_selection && (
-          <p>
-            <strong>Founder 表態：</strong>
-            {d.founder_selection}
-            {d.founder_selection_note && (
-              <span class="muted"> — {d.founder_selection_note}</span>
-            )}
-          </p>
-        )}
-        <p><strong>選項（最多三個）：</strong></p>
+        <p>
+          <strong>選項：</strong>
+        </p>
         {d.options.map((o: any) => (
-          <div class="block">
-            <strong>{o.id}</strong> · {o.label}
+          <div class="decision-option">
+            <strong>{o.label}</strong>
             <p class="muted">{o.summary}</p>
-            <p class="muted">
-              影響 — 品質:{o.impacts.quality} · 體力:{o.impacts.energy} · 交通損耗:
-              {o.impacts.transit_loss} · 飲食:{o.impacts.food} · 海灘:{o.impacts.beach_scenery} ·
-              購物:{o.impacts.shopping} · 成本:{o.impacts.cost} · 研究重工:
-              {o.impacts.research_effort}
-            </p>
           </div>
         ))}
-        <p><strong>最晚決策：</strong>{d.decide_by}</p>
-        {d.reply_legend && (
-          <>
-            <p><strong>回覆選項定義（自含，無需另開檔）：</strong></p>
-            <pre class="reply-legend">{d.reply_legend.trim()}</pre>
-          </>
-        )}
-        <p>
-          <strong>回覆格式：</strong>
-          <code>{d.reply_one_line}</code>
+        <p class="muted">
+          <strong>最晚：</strong>
+          {d.decide_by}
         </p>
       </section>
     ))
   }
+  <a class="btn" href={`${base}`}>← 首頁</a>
 </Handbook>

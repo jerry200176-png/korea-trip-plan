@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="64" height="64" role="img" aria-label="海景">
+  <circle cx="12" cy="12" r="11" fill="#e3efe8" stroke="#2d6a4f" stroke-width="1"/>
+  <path d="M3 16c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2v2c-2 0-2-2-4-2s-2 2-4 2-2-2-4-2-2 2-4 2v-2zm9-3a4 4 0 100-8 4 4 0 000 8z" fill="#2d6a4f" transform="translate(0 0) scale(0.72) translate(4.5 4.5)"/>
+</svg>

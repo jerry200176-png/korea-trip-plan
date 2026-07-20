@@ -1,21 +1,73 @@
 ---
+import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
-import { loadItinerary } from "../../lib/data";
-const days = loadItinerary().days;
-const base = import.meta.env.BASE_URL;
+import { loadItinerary, mediaById, mediaPublicUrl } from "../../lib/data";
+
+const days = loadItinerary().days.slice().sort((a, b) => a.day_index - b.day_index);
+const base = siteBase();
+const seoul = mediaById("seoul-chapter")!;
+const busan = mediaById("busan-chapter")!;
+const ktx = mediaById("ktx-transition")!;
 ---
-<Handbook title="Days" current="days">
-  <h1>每日行程</h1>
-  <p class="muted">最多 1–2 個相鄰區域 · 狀態皆為 Provisional 骨架</p>
+<Handbook title="行程" current="days">
+  <p class="eyebrow">7 days</p>
+  <h1 class="page-title">每日行程</h1>
+  <p class="muted">首爾四晚 · KTX · 釜山兩晚。狀態皆為暫定骨架。</p>
+
+  <section class="chapter-visual">
+    <img src={mediaPublicUrl(base, seoul)} alt={seoul.alt_zh} loading="lazy" />
+    <p class="media-caption">首爾章節</p>
+  </section>
   <ul class="list">
-    {days.map((d) => (
-      <li>
-        <a href={`${base}days/day-${d.day_index}/`}>
-          <strong>Day {d.day_index}</strong> · {d.theme}
-        </a>
-        <div class="muted">{d.one_priority}</div>
-        <div class="muted">{d.city} · {d.energy} energy · walk {d.walking_level}</div>
-      </li>
-    ))}
+    {
+      days
+        .filter((d) => d.city === "Seoul")
+        .map((d) => (
+          <li>
+            <a href={`${base}days/day-${d.day_index}/`}>
+              <strong>Day {d.day_index}</strong> · {d.theme}
+            </a>
+            <div class="muted">{d.one_priority}</div>
+          </li>
+        ))
+    }
+  </ul>
+
+  <section class="chapter-visual">
+    <img src={mediaPublicUrl(base, ktx)} alt={ktx.alt_zh} loading="lazy" />
+    <p class="media-caption">KTX 移動</p>
+  </section>
+  <ul class="list">
+    {
+      days
+        .filter((d) => d.city === "Transit")
+        .map((d) => (
+          <li>
+            <a href={`${base}days/day-${d.day_index}/`}>
+              <strong>Day {d.day_index}</strong> · {d.theme}
+            </a>
+            <div class="muted">{d.one_priority}</div>
+          </li>
+        ))
+    }
+  </ul>
+
+  <section class="chapter-visual">
+    <img src={mediaPublicUrl(base, busan)} alt={busan.alt_zh} loading="lazy" />
+    <p class="media-caption">釜山章節</p>
+  </section>
+  <ul class="list">
+    {
+      days
+        .filter((d) => d.city === "Busan")
+        .map((d) => (
+          <li>
+            <a href={`${base}days/day-${d.day_index}/`}>
+              <strong>Day {d.day_index}</strong> · {d.theme}
+            </a>
+            <div class="muted">{d.one_priority}</div>
+          </li>
+        ))
+    }
   </ul>
 </Handbook>

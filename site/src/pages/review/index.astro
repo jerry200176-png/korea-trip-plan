@@ -1,0 +1,112 @@
+---
+import { siteBase } from "../../lib/base";
+import Handbook from "../../layouts/Handbook.astro";
+import { loadFounderDecisions, loadItinerary, mediaById, mediaPublicUrl } from "../../lib/data";
+
+const base = siteBase();
+const decisions = loadFounderDecisions();
+const days = loadItinerary().days.slice().sort((a, b) => a.day_index - b.day_index);
+const open = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional").slice(0, 3);
+const hero = mediaById("cover-hero")!;
+const heroSrc = mediaPublicUrl(base, hero);
+
+const replyTemplate = `Couple Review 回覆
+1. 第一眼會想繼續看嗎？
+（ ）會  （ ）還好  （ ）不太會
+補充：
+
+2. 哪一頁最喜歡？
+
+
+3. 圖片太多、剛好、還是太少？
+（ ）太多  （ ）剛好  （ ）太少
+
+4. 最期待的三項（韓服／海景／美食／購物／GOT7／算命）：
+1.
+2.
+3.
+
+5. 有哪一頁看起來仍像工作報告？
+
+`;
+---
+<Handbook title="Couple 驗收" current="home">
+  <p class="eyebrow">Review</p>
+  <h1 class="page-title">Couple Review Mode</h1>
+  <span class="status status-provisional">暫定驗收</span>
+  <p class="hero-lede">只給 Jerry 與女友驗收。看完後可複製下方回覆文字傳給對方。</p>
+
+  <section class="media-block">
+    <img src={heroSrc.replace(/\.webp$/, ".jpg")} alt={hero.alt_zh} loading="lazy" />
+  </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">開始</h2>
+    <div class="btn-row">
+      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>打開旅行書 PDF</a>
+      <a class="btn" href={`${base}`}>回到首頁</a>
+    </div>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">看七天旅程</h2>
+    <ul class="list">
+      {
+        days.map((d) => (
+          <li>
+            <a href={`${base}days/day-${d.day_index}/`}>Day {d.day_index} · {d.theme}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">最期待的體驗</h2>
+    <div class="chip-row">
+      <a class="chip" href={`${base}days/day-2/`}>韓服</a>
+      <a class="chip" href={`${base}days/day-6/`}>海景</a>
+      <a class="chip" href={`${base}food/`}>美食</a>
+      <a class="chip" href={`${base}shopping/`}>購物</a>
+      <a class="chip" href={`${base}days/day-4/`}>GOT7</a>
+      <a class="chip" href={`${base}days/day-4/`}>算命</a>
+    </div>
+  </section>
+
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">三個尚待一起決定</h2>
+    <ol>
+      {open.map((d) => <li>{d.title_zh}</li>)}
+    </ol>
+    <a class="btn" href={`${base}decisions/`}>打開決策頁</a>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">5 個簡短回饋問題</h2>
+    <ol class="review-questions">
+      <li>第一眼會想繼續看嗎？</li>
+      <li>哪一頁最喜歡？</li>
+      <li>圖片太多、剛好、還是太少？</li>
+      <li>最期待韓服、海景、美食、購物、GOT7、算命中的哪三項？</li>
+      <li>有哪一頁看起來仍像工作報告？</li>
+    </ol>
+    <label class="muted" for="review-reply">可複製回覆</label>
+    <textarea id="review-reply" class="review-copy" readonly rows="16">{replyTemplate}</textarea>
+    <button class="btn primary" type="button" id="copy-review">複製回覆文字</button>
+  </section>
+</Handbook>
+
+<script>
+  const btn = document.getElementById("copy-review");
+  const area = document.getElementById("review-reply") as HTMLTextAreaElement | null;
+  btn?.addEventListener("click", async () => {
+    if (!area) return;
+    try {
+      await navigator.clipboard.writeText(area.value);
+      btn.textContent = "已複製";
+    } catch {
+      area.select();
+      btn.textContent = "請手動複製";
+    }
+  });
+</script>

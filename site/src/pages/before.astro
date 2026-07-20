@@ -1,8 +1,9 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTimeline } from "../lib/data";
 const timeline = loadTimeline();
-const base = import.meta.env.BASE_URL;
+const base = siteBase();
 ---
 <Handbook title="Before You Go" current="more">
   <h1>Before You Go</h1>
