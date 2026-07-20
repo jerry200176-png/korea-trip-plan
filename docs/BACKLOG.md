@@ -7,7 +7,7 @@ GitHub Issues API is unavailable to this agent integration. Track work here; use
 | # | Milestone | Outcome | Status |
 |---|-----------|---------|--------|
 | 1 | Foundation | Docs, schema, privacy, CI skeleton | **Complete** (PR #1; see Foundation Exit Gate) |
-| 2 | Route Decision | Founder locks cities / nights | Blocked on D2 |
+| 2 | Route Decision | Founder locks cities / nights | **Complete** (D2-A Confirmed) |
 | 3 | Research Complete | Entry, transit, pay, weather, shopping research with sources | Partial (this PR) |
 | 4 | Itinerary Draft | 7 executable provisional days | Skeleton (this PR) |
 | 5 | Booking Ready | Shortlists + example booking file only | Not started |
@@ -21,4 +21,4 @@ GitHub Issues API is unavailable to this agent integration. Track work here; use
 2. **After D2 + D3 locked:** entry/exit cities + lodging **area shortlist**.  
 3. **After D1 + D2 + D3 locked:** compare real flights, specific hotels, date-priced options, and formal booking candidates.
 
-Founder queue (see [HANDOFF_SUMMARY.md](HANDOFF_SUMMARY.md)): D1 dates (Assumption: 2027-03, 7 days — no exact dates in repo); D2 **D2-A** Provisional; D3 suggested **TPE→ICN / PUS→TPE** open-jaw (verify after D1).
+Founder queue: D1 dates; D3 ticket verify after D1. D2 Confirmed; D3 Provisional D3-B.

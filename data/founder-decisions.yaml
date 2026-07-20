@@ -57,19 +57,20 @@ decisions:
 
   - id: D2
     title_zh: 城市與停留晚數
-    status: Provisional
+    status: Confirmed
     founder_selection: D2-A
-    founder_selection_note: Jerry 2026-07-20 表態 D2-A；待 D1 確切日期後可升級為 Confirmed 鎖定
-    why_now: 住宿區、KTX 日、購物與海灘分配、預算與每日體力都依城市晚數；Founder 已選 D2-A，仍非 Trip Ready 直到 D1/D3 與驗證完成。
+    founder_selection_note: Jerry 2026-07-20 正式確認 D2-A（Seoul 4N + Busan 2N）；若航班／價格／交通證據顯示不可行，經 Decision Log 重新開啟
+    why_now: 住宿區評分、KTX 日與每日體力分配已可鎖定城市晚數；Trip Ready 仍待 D1 日期、D3 查票驗證與訂房。
     confirmed_facts:
+      - Founder 決策：Seoul 4N + Busan 2N（D2-A）
       - 7 calendar days，Day 1 抵達、Day 7 離境 ⇒ 6 hotel nights（算術 Confirmed）
       - Seoul 4N + Busan 2N = 6N（與 7 日架構一致）
       - Seoul 3N + Busan 3N = 6N（替代方案）
       - Seoul 4N + Busan 3N = 7N ⇒ 通常需 8 calendar days（非目前 7 日架構）
     assumptions:
-      - 雙城 KTX 移動 1 次可接受（Provisional）
+      - 雙城 KTX 移動 1 次可接受（與 D3 Provisional open-jaw 一致）
       - 不租車、以大眾運輸為主（Confirmed 偏好）
-    recommendation: 在 7 日／6 晚前提下，Provisional 建議 Seoul 4N + Busan 2N（保留首爾 GOT7／購物／韓服／算命密度，釜山 2 晚換 1 個完整海灘日）。
+    recommendation: null
     reply_legend: |
       D2-A = Seoul 4N + Busan 2N（6N，現行 skeleton）
       D2-B = Seoul 3N + Busan 3N（6N）
@@ -77,7 +78,7 @@ decisions:
     options:
       - id: D2-A
         label: Seoul 4N + Busan 2N（6N）
-        summary: 現行 Provisional 骨架；首爾 GOT7／購物／韓服／算命密度 + 釜山 1 個完整海灘日。
+        summary: Founder Confirmed 方案；首爾 GOT7／購物／韓服／算命密度 + 釜山 1 個完整海灘日。
         impacts:
           quality: 高 — 城市+海對比
           energy: 中 — 移動日輕排
@@ -112,19 +113,22 @@ decisions:
           cost: 高 — 多 1 天機票+住宿
           research_effort: 高 — 重算整本手冊
     decide_by: 訂房與 KTX 購票前
-    reply_one_line: "D2: 選 D2-A / D2-B / D2-C — A=Seoul4N+Busan2N；B=Seoul3N+Busan3N；C=延長8日採7N — 若 C 請註明是否改 8 日與新的晚數"
+    reply_one_line: "D2: Confirmed D2-A — Seoul 4N + Busan 2N（6N）"
 
   - id: D3
     title_zh: 航班機場
-    status: DecisionRequired
-    why_now: Day1 入境、Day7 離境、住宿選區、行李動線與機場緩衝時間皆未鎖定；open-jaw（首爾進／釜山出）亦未決。
+    status: Provisional
+    founder_selection: D3-B
+    founder_selection_note: Jerry 2026-07-20 選定目標方案 D3-B；D1 前不得斷言特定日期必有直飛或票價
+    why_now: 住宿區評分需 ICN 進城與 PUS 離境假設；機票仍待 D1 後以班次、總價、行李、時刻、取消條款驗證才可 Confirmed。
     confirmed_facts:
-      - 台灣常見出發點含 TPE、TSA（需查航空公司，非 Confirmed 選項）
-      - 韓國端常見 ICN/GMP（首爾圈）、PUS（釜山）
-      - 目前 itinerary 未鎖定離境機場（Decision Required）
+      - Founder 目標方案：TPE → ICN 入境、PUS → TPE 出境，open-jaw、優先全程直飛；首爾↔釜山 KTX
+      - 台灣常見出發點含 TPE、TSA（本方案鎖 TPE 為目標，非已購票）
+      - 韓國端 ICN（首爾圈）、PUS（釜山）
+      - 不得將「目前或 2027 年必有此航班」寫成 Confirmed 事實
     assumptions:
       - 兩人持 ROC 護照（Assumption，影響 K-ETA 重查）
-    recommendation: 建議方向（非 Confirmed）：TPE → ICN 入境、PUS → TPE 出境，open-jaw、優先全程直飛；待 D1 日期確定後以實際航班時間、總價、行李與取消條款驗證。
+    recommendation: null
     reply_legend: |
       D3-A = 桃園/松山 ↔ ICN 往返，釜山靠 KTX（Day7 若在釜山可能需回頭飛 ICN）
       D3-B = Open-jaw：TPE → ICN 去、PUS → TPE 回（優先全程直飛；符合 4N+2N）
@@ -167,4 +171,4 @@ decisions:
           cost: 低
           research_effort: 低 — 阻塞 lodging 與機場交通細節
     decide_by: 機票短名單前
-    reply_one_line: "D3: 選 D3-A / D3-B / D3-C — A=往返ICN+KTX；B=TPE→ICN、PUS→TPE open-jaw直飛；C=暫不決定 — 若 A/B 請寫 TW 出發機場 + KR 抵達/離境機場"
+    reply_one_line: "D3: Provisional D3-B — TPE→ICN、PUS→TPE open-jaw 直飛優先 + KTX；D1 後查票驗證"

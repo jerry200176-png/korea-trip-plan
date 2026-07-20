@@ -8,7 +8,8 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 |-------|--------|
 | Question | Exact departure and return dates? Is March 2027 still the target? |
 | Why it blocks | Flights, hotels, weather packing, reservation windows, countdown dashboard |
-| Current placeholder | March 2027, 7 calendar days (Assumption only — **no** exact dates in repo) |
+| Planning baseline | March 2027, 7 calendar days, Day 1 arrive / Day 7 depart, 6 hotel nights |
+| Current placeholder | **No** `start_date` / `end_date` in repo (Assumption only) |
 | Status | Decision Required |
 | Needed by | Before any paid booking |
 
@@ -16,22 +17,18 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 
 | Field | Value |
 |-------|--------|
-| Question | For a 7-day / 6-night trip, accept Provisional **Seoul 4N + Busan 2N**? Or prefer Seoul 3N+Busan 3N, extend to 8 days for 4N+3N, or single-city? |
-| Why it blocks | Itinerary, lodging areas, KTX day, shopping/GOT7 vs beach balance |
-| Current placeholder | **Seoul 4N + Busan 2N** — Founder表態 **D2-A** (2026-07-20) |
-| Status | **Provisional** (upgrade to Confirmed after D1 dates locked) |
-| Needed by | Before detailed day plans and lodging shortlist |
-| Note | Older draft 4N+3N conflicted with 7-day arrive/depart math; corrected 2026-07-20 |
+| Decision | **D2-A — Seoul 4N + Busan 2N** |
+| Status | **Confirmed** (2026-07-20) |
+| Re-open | Only via Decision Log if flight/price/transit evidence makes split infeasible |
 
 ## D3 — Flight airports
 
 | Field | Value |
 |-------|--------|
-| Question | Taiwan departure airport(s) and Korea arrival/departure airports (ICN / GMP / PUS etc.)? |
-| Why it blocks | First/last day logistics, lodging near stations/airports, luggage strategy |
-| Current placeholder | Suggested **TPE → ICN**, **PUS → TPE** open-jaw, prefer direct; verify after D1 |
-| Status | Decision Required |
-| Needed by | Before flight shortlist and Day 1 / Day 7 plans |
+| Target | **D3-B:** TPE → ICN, PUS → TPE, prefer direct open-jaw; Seoul↔Busan **KTX** |
+| Why still open | Not ticket-verified until D1 dates (schedule, fare, baggage, times, cancellation) |
+| Status | **Provisional** — do **not** assert specific flights exist for 2027 |
+| Needed by | After D1; before paid tickets |
 
 ## Explicitly not Founder decisions
 

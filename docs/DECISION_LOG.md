@@ -2,7 +2,14 @@
 
 Append-only. Newest first.
 
-## 2026-07-20 — Founder direction (handoff; not Trip Ready)
+## 2026-07-20 — Founder locks D2; D3 target Provisional
+
+- **D2:** Jerry **Confirmed D2-A** — Seoul 4N + Busan 2N. Independent of D1 exact dates; re-open only via Decision Log if evidence shows infeasible.
+- **D3:** Jerry selects target **D3-B** (TPE→ICN, PUS→TPE open-jaw direct preferred, KTX intercity) → **Provisional** until D1 dates enable ticket verification. Must not document future flight existence as Fact.
+- **D1:** Remains **DecisionRequired**; March 2027 + 7 days Assumption; no fabricated dates in repo.
+- **Data:** `trip.yaml` `route_status: Confirmed`, `flight_plan` Provisional D3-B.
+
+## 2026-07-20 — Founder direction (handoff; superseded for D2/D3 status)
 
 - **D1:** Keep **March 2027** and **7 calendar days** as Assumption only — do **not** write exact `start_date` / `end_date` until Jerry confirms.
 - **D2:** Jerry selects **D2-A — Seoul 4N + Busan 2N** → record as **Provisional** + `founder_selection`; Confirmed after D1 locked.

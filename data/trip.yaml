@@ -8,7 +8,19 @@ end_date: null
 daily_out: "09:00"
 daily_return: "21:00"
 route_option: seoul-4n-busan-2n
-route_status: Provisional
+route_status: Confirmed
+flight_plan:
+  status: Provisional
+  founder_option: D3-B
+  outbound:
+    tw_airport: TPE
+    kr_airport: ICN
+  return:
+    kr_airport: PUS
+    tw_airport: TPE
+  prefer_direct_open_jaw: true
+  intercity: KTX
+  verified_booking: false
 success_criterion: 第一次一起出國，留下最美好的回憶
 preferences:
   no_alcohol: true
@@ -40,6 +52,6 @@ preferences:
     - clothes
 status: Assumption
 notes: >
-  Dates and cities not Founder-locked. March 2027 is Assumption only.
-  Night math: duration_days=7 with Day1 arrive / Day7 depart ⇒ 6 hotel nights
-  ⇒ Provisional Seoul 4N + Busan 2N (not 4+3).
+  D1 DecisionRequired: March 2027 + 7 calendar days Assumption only; no start_date/end_date.
+  D2 Confirmed: Seoul 4N + Busan 2N. D3 Provisional: TPE→ICN / PUS→TPE open-jaw — not ticket-verified.
+  Night math: Day1 arrive / Day7 depart ⇒ 6 hotel nights.

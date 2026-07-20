@@ -52,25 +52,42 @@ gates.push(
   )
 );
 
+const d2 = data.founderDecisions.decisions.find((d) => d.id === "D2");
+const d3 = data.founderDecisions.decisions.find((d) => d.id === "D3");
+const routeConfirmed =
+  data.trip.route_status === "Confirmed" || d2?.status === "Confirmed";
+const flightProvisional =
+  d3?.status === "Provisional" || data.trip.flight_plan?.status === "Provisional";
+const flightConfirmed =
+  d3?.status === "Confirmed" && data.trip.flight_plan?.verified_booking === true;
+
 gates.push(
   gate(
     "route",
-    data.trip.route_status === "Confirmed" ? "pass" : "provisional",
-    data.trip.route_status === "Confirmed" ? null : "D2 not locked",
-    `route_option=${data.trip.route_option}`,
-    "Founder D2 reply",
-    "founder"
+    routeConfirmed ? "pass" : "provisional",
+    routeConfirmed ? null : "D2 not Confirmed",
+    `route_option=${data.trip.route_option} route_status=${data.trip.route_status}`,
+    routeConfirmed ? "Maintain alignment with itinerary nights" : "Founder D2 reply",
+    routeConfirmed ? "agent" : "founder"
   )
 );
 
 gates.push(
   gate(
     "flights",
-    "blocked",
-    "D3 not locked",
-    "No airports in trip.yaml",
-    "Founder D3 reply",
-    "founder"
+    flightConfirmed ? "pass" : flightProvisional ? "provisional" : "blocked",
+    flightConfirmed
+      ? null
+      : flightProvisional
+        ? "D3 Provisional — not ticket-verified until D1 dates"
+        : "D3 not set",
+    data.trip.flight_plan
+      ? `flight_plan=${data.trip.flight_plan.founder_option} verified=${data.trip.flight_plan.verified_booking}`
+      : "No flight_plan in trip.yaml",
+    flightProvisional
+      ? "After D1: compare schedules/fare/baggage/cancel; do not assert future availability"
+      : "Founder D3 reply",
+    flightProvisional ? "both" : "founder"
   )
 );
 
@@ -79,9 +96,9 @@ gates.push(
     "lodging",
     "provisional",
     "No hotel candidates booked",
-    "docs/LODGING_AREAS.md shortlist only",
-    "After D2: name 2–3 candidates per city",
-    "both"
+    "docs/LODGING_AREAS.md + area scoring (post-D2)",
+    "Build lodging area scoring model (areas only)",
+    "agent"
   )
 );
 
@@ -205,7 +222,7 @@ const report = {
     .slice(0, 3)
     .map((g) => ({ id: g.id, blocker: g.blocker })),
   next_founder: "D1",
-  next_agent: "Keep Foundation Exit Gate green; after D2 lodging candidates",
+  next_agent: "Lodging area scoring model (regions only; no hotels)",
   stale_sources: staleCount,
   ci_status: "run npm run ci locally / GitHub Actions",
   gates,
@@ -218,7 +235,7 @@ const md = `# Trip Readiness
 
 Generated: ${checked} (machine report: dist/readiness-report.json)
 
-**Overall:** ${overall} — not Trip Ready until Founder locks D1–D3 and bookings exist offline.
+**Overall:** ${overall} — not Trip Ready until D1 dates locked, D3 ticket-verified, and bookings exist offline.
 
 | Gate | Status | Blocker |
 |------|--------|---------|
