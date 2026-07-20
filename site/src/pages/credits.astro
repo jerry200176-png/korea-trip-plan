@@ -1,0 +1,68 @@
+---
+import { siteBase } from "../lib/base";
+import Handbook from "../layouts/Handbook.astro";
+import { loadMedia, mediaPublicUrl } from "../lib/data";
+
+const base = siteBase();
+const { media, kto_candidates } = loadMedia();
+const credits = media.filter(
+  (m) => m.status === "Approved" && (m.type === "photo" || m.type === "generated_illustration" || m.type === "icon")
+);
+---
+<Handbook title="Image Credits" current="home">
+  <p class="eyebrow">Attribution</p>
+  <h1 class="page-title">Image credits</h1>
+  <p class="hero-lede">正文不插入出處。以下為本預覽版使用的全部圖片與授權資訊。</p>
+
+  <section class="surface">
+    <h2 style="margin-top:0">使用中的媒體</h2>
+    <ul class="credit-list">
+      {
+        credits.map((m) => (
+          <li>
+            <strong>{m.id}</strong>
+            <span class="status status-provisional">{m.type === "generated_illustration" ? "AI 插畫" : m.type}</span>
+            <p>{m.attribution}</p>
+            <p class="muted">License: {m.license}</p>
+            <p class="muted">
+              {m.source_platform} ·{" "}
+              {String(m.source_url).startsWith("http") ? (
+                <a href={m.source_url} target="_blank" rel="noreferrer">
+                  來源頁面
+                </a>
+              ) : (
+                m.source_url
+              )}
+            </p>
+            {m.web_path && (
+              <img
+                class="credit-thumb"
+                src={mediaPublicUrl(base, m)}
+                alt={m.alt_zh}
+                loading="lazy"
+              />
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">Korea Tourism Organization（候選）</h2>
+    <p class="muted">僅建立候選清單；本輪未下載、未申請帳號。</p>
+    <ul class="list">
+      {
+        kto_candidates.map((k) => (
+          <li>
+            <strong>{k.title}</strong>
+            <p class="muted">{k.founder_action}</p>
+            <a href={k.source_url} target="_blank" rel="noreferrer">
+              候選連結
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Handbook>

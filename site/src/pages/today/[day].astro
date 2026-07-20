@@ -1,7 +1,7 @@
 ---
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
-import { loadItinerary, loadPlaces, loadTrip } from "../../lib/data";
+import { loadItinerary, loadPlaces, loadTrip, mediaById, mediaPublicUrl } from "../../lib/data";
 
 export function getStaticPaths() {
   const days = loadItinerary().days;
@@ -14,6 +14,7 @@ const day = loadItinerary().days.find((d) => d.day_index === dayIndex)!;
 const places = Object.fromEntries(loadPlaces().map((p) => [p.id, p]));
 const trip = loadTrip();
 const base = siteBase();
+const mood = dayIndex === 2 ? mediaById("seoul-palace-gate") : null;
 
 const nextBlock =
   day.blocks.find((b: { droppable?: boolean; kind: string }) => !b.droppable && b.kind !== "buffer" && b.kind !== "rest") ??
@@ -46,6 +47,17 @@ function statusZh(s: string) {
       最晚回住宿 <strong>{day.return_by}</strong> · 出門目標 {day.out_time}
     </p>
   </section>
+
+  {
+    mood && (
+      <img
+        class="today-visual"
+        src={mediaPublicUrl(base, mood)}
+        alt={mood.alt_zh}
+        loading="lazy"
+      />
+    )
+  }
 
   {
     nextBlock && (

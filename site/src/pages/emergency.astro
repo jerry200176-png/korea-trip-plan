@@ -5,11 +5,21 @@ import { loadEmergencyPublic } from "../lib/data";
 
 const e = loadEmergencyPublic();
 const base = siteBase();
+
+function statusZh(s: string) {
+  const map: Record<string, string> = {
+    Confirmed: "已確認",
+    Provisional: "暫定",
+    Assumption: "假設",
+    DecisionRequired: "待決策",
+  };
+  return map[s] ?? s;
+}
 ---
 <Handbook title="緊急" current="emergency">
   <p class="eyebrow">路上</p>
   <h1 class="page-title">緊急協助</h1>
-  <span class="status status-provisional">狀態 {e.status}</span>
+  <span class="status status-provisional">{statusZh(e.status)}</span>
 
   <section class="surface-emergency">
     <h2 style="margin-top:0">立即撥打</h2>
@@ -27,16 +37,17 @@ const base = siteBase();
   </section>
 
   <section class="surface">
-    <h2 style="margin-top:0">住宿（占位）</h2>
-    <p>
-      首爾：<span lang="ko">{e.lodging_placeholders.seoul_address_ko}</span>
-    </p>
-    <p>
-      釜山：<span lang="ko">{e.lodging_placeholders.busan_address_ko}</span>
-    </p>
-    <p class="muted" lang="ko">
-      {e.phrases_ko.taxi_address}
-    </p>
+    <h2 style="margin-top:0">住宿地址</h2>
+    <p>首爾：{e.lodging_placeholders.seoul_address_ko}</p>
+    <p>釜山：{e.lodging_placeholders.busan_address_ko}</p>
+    <p class="muted" lang="ko">{e.phrases_ko.taxi_address}</p>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">保險</h2>
+    <p>保險公司：{e.insurance.provider}</p>
+    <p>緊急電話：{e.insurance.emergency_phone}</p>
+    <p class="muted">{e.insurance.note}</p>
   </section>
 
   <section class="surface-quiet">

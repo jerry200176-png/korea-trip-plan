@@ -1,12 +1,37 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
+import { mediaById, mediaPublicUrl } from "../lib/data";
 import fs from "node:fs";
 import path from "node:path";
+
 const md = fs.readFileSync(path.resolve(process.cwd(), "../handbook/shopping-and-entertainment.md"), "utf8");
+const base = siteBase();
+const shop = mediaById("shopping-atmosphere")!;
+const icons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-shop", "icon-fortune"].map((id) => mediaById(id)!);
 ---
-<Handbook title="Shopping" current="more">
-  <h1>Shopping</h1>
-  <section class="panel">
+<Handbook title="購物" current="more">
+  <p class="eyebrow">Shopping</p>
+  <h1 class="page-title">購物與體驗</h1>
+  <figure class="media-block">
+    <img src={mediaPublicUrl(base, shop)} alt={shop.alt_zh} loading="lazy" />
+    <figcaption class="media-caption">{shop.alt_zh}（無商標抽象插畫）</figcaption>
+  </figure>
+  <section class="surface">
+    <h2 style="margin-top:0">體驗速覽</h2>
+    <div class="icon-strip">
+      {
+        icons.map((ic) => (
+          <figure>
+            <img src={mediaPublicUrl(base, ic)} alt={ic.alt_zh} />
+            <figcaption>{ic.alt_zh.replace("圖示", "")}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </section>
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">筆記</h2>
     <pre style="white-space:pre-wrap;font-family:var(--font-body);margin:0">{md}</pre>
   </section>
 </Handbook>

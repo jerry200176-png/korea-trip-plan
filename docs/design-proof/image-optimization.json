@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cover-hero",
+    "original": "1536x1024",
+    "webp_kb": 204,
+    "pdf_kb": 368
+  },
+  {
+    "id": "seoul-chapter",
+    "original": "1536x1024",
+    "webp_kb": 103,
+    "pdf_kb": 340
+  },
+  {
+    "id": "ktx-transition",
+    "original": "1536x1024",
+    "webp_kb": 99,
+    "pdf_kb": 318
+  },
+  {
+    "id": "busan-chapter",
+    "original": "1536x1024",
+    "webp_kb": 151,
+    "pdf_kb": 399
+  },
+  {
+    "id": "seoul-palace-roof",
+    "original": "2400x3600",
+    "webp_kb": 359,
+    "pdf_kb": 1533
+  },
+  {
+    "id": "seoul-palace-gate",
+    "original": "2400x1600",
+    "webp_kb": 123,
+    "pdf_kb": 752
+  },
+  {
+    "id": "busan-haeundae",
+    "original": "2400x2400",
+    "webp_kb": 109,
+    "pdf_kb": 652
+  },
+  {
+    "id": "busan-gwangan",
+    "original": "2400x1807",
+    "webp_kb": 111,
+    "pdf_kb": 610
+  },
+  {
+    "id": "seoul-street-food",
+    "original": "2400x3600",
+    "webp_kb": 165,
+    "pdf_kb": 769
+  }
+]

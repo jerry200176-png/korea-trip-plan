@@ -1,7 +1,7 @@
 ---
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
-import { loadItinerary, loadPlaces, loadRestaurants } from "../../lib/data";
+import { loadItinerary, loadPlaces, loadRestaurants, mediaById, mediaPublicUrl } from "../../lib/data";
 
 export function getStaticPaths() {
   const days = loadItinerary().days;
@@ -19,6 +19,10 @@ const nextDay = dayIndex < 7 ? dayIndex + 1 : null;
 const cityClass =
   day.city === "Seoul" ? "seoul" : day.city === "Busan" || day.primary_areas?.some((a: string) => a.includes("Busan")) ? "busan" : "";
 
+const dayMediaId =
+  dayIndex === 2 ? "seoul-palace-gate" : dayIndex === 5 ? "ktx-transition" : dayIndex === 6 ? "busan-haeundae" : null;
+const dayMedia = dayMediaId ? mediaById(dayMediaId) : null;
+
 function statusZh(s: string) {
   const map: Record<string, string> = {
     Confirmed: "已確認",
@@ -34,6 +38,15 @@ function statusZh(s: string) {
   <p class="eyebrow">Day {day.day_index} · {day.city ?? "行程"}</p>
   <h1 class="page-title">{day.theme}</h1>
   <span class="status status-provisional">{statusZh(day.status)}</span>
+
+  {
+    dayMedia && (
+      <figure class="day-visual">
+        <img src={mediaPublicUrl(base, dayMedia)} alt={dayMedia.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{dayMedia.alt_zh}</figcaption>
+      </figure>
+    )
+  }
 
   <section class={`surface city-ribbon ${cityClass}`}>
     <h2 style="margin-top:0">今天最重要</h2>

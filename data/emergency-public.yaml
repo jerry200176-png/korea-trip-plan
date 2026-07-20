@@ -7,10 +7,10 @@ korea:
   fire_ambulance: "119"
   mission_name: 駐韓國台北代表部
   mission_url: https://www.roc-taiwan.org/kr
-  mission_phone_note: Re-verify on official site before trip; do not commit live numbers to git if policy changes
+  mission_phone_note: 出發前請至官網再次確認電話；私人號碼不寫入公開版
 lodging_placeholders:
-  seoul_address_ko: REPLACE_ME
-  busan_address_ko: REPLACE_ME
+  seoul_address_ko: 住宿確認後填入
+  busan_address_ko: 住宿確認後填入
 phrases_ko:
   no_alcohol: 저희는 술을 마시지 않아요
   no_crustaceans: 갑각류 해산은 빼 주실 수 있나요?
@@ -18,7 +18,7 @@ phrases_ko:
   ambulance: 구급차를 불러 주세요
   taxi_address: 이 주소로 가 주세요
 insurance:
-  provider: REPLACE_ME
-  emergency_phone: REPLACE_ME
-  note: Store real values offline only
-offline_note: Emergency Pack PDF is designed to be saved on phones before departure; this YAML feeds site + PDF generator.
+  provider: 此欄尚未完成
+  emergency_phone: 此欄尚未完成
+  note: 真實保單資料請離線保存，勿貼上公開網站
+offline_note: 出發前下載離線版，存入手機以便無網路時查看

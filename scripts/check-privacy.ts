@@ -10,6 +10,19 @@ const SKIP_DIRS = new Set([
   "archive",
   ".astro",
   "site/dist",
+  "pdf-renders",
+]);
+
+const SKIP_EXT = new Set([
+  ".png",
+  ".jpg",
+  ".jpeg",
+  ".webp",
+  ".gif",
+  ".pdf",
+  ".woff",
+  ".woff2",
+  ".ico",
 ]);
 
 /** High-confidence secret patterns only (avoid date / ID false positives). */

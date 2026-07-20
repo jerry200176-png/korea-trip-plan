@@ -22,6 +22,7 @@ const fileSchemaMap: Record<string, string> = {
   "timeline.yaml": "timeline.json",
   "founder-decisions.yaml": "founder-decisions.json",
   "lodging-area-scores.yaml": "lodging-area-scores.json",
+  "media.yaml": "media.json",
 };
 
 function loadSchema(file: string) {

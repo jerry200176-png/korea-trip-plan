@@ -1,15 +1,19 @@
 ---
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
-import { loadTrip, loadDestinations, loadFounderDecisions } from "../lib/data";
+import { loadTrip, loadDestinations, loadFounderDecisions, loadItinerary, mediaById, mediaPublicUrl } from "../lib/data";
 
 const trip = loadTrip();
 const destinations = loadDestinations();
 const decisions = loadFounderDecisions();
+const itinerary = loadItinerary();
 const base = siteBase();
+const hero = mediaById("cover-hero")!;
+const heroSrc = mediaPublicUrl(base, hero);
 
-const seoul = destinations.find((d) => d.id === "seoul");
-const busan = destinations.find((d) => d.id === "busan");
+const seoul = destinations.find((d) => d.id === "dest-seoul");
+const busan = destinations.find((d) => d.id === "dest-busan");
+const openDecisions = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional");
 
 function statusClass(s: string) {
   if (s === "Confirmed") return "status-confirmed";
@@ -34,26 +38,36 @@ const countdown =
     : `還有 ${Math.ceil((new Date(trip.start_date).getTime() - Date.now()) / 86400000)} 天`;
 ---
 <Handbook title="首頁" current="home">
-  <p class="eyebrow">Our First Korea</p>
-  <h1 class="page-title" style="margin-top:0">{trip.title}</h1>
-  <p class="hero-lede">{trip.success_criterion}</p>
+  <section class="hero-stage">
+    <picture>
+      <source type="image/webp" srcset={heroSrc.replace(/\.jpg$/, ".webp")} />
+      <img
+        class="hero-img"
+        src={heroSrc.replace(/\.webp$/, ".jpg")}
+        alt={hero.alt_zh}
+        width="1600"
+        height="900"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
+    <div class="hero-copy">
+      <p class="eyebrow">Our First Korea</p>
+      <h1 class="page-title hero-title">{trip.title}</h1>
+      <p class="hero-lede">{trip.success_criterion}</p>
+      <div class="btn-row">
+        <a class="btn primary" href={`${base}days/`}>查看 7 天旅程</a>
+        <a class="btn" href={`${base}review/`}>Couple 驗收</a>
+      </div>
+    </div>
+  </section>
 
-  <section class="surface city-ribbon seoul">
-    <div class="grid2">
-      <div class="stat">
-        <div class="label">首爾</div>
-        <div class="value">{seoul?.provisional_nights ?? 4} 晚</div>
-        <span class={`status ${statusClass(seoul?.status ?? "Provisional")}`}>
-          {statusZh(seoul?.status ?? "Provisional")}
-        </span>
-      </div>
-      <div class="stat">
-        <div class="label">釜山</div>
-        <div class="value">{busan?.provisional_nights ?? 2} 晚</div>
-        <span class={`status ${statusClass(busan?.status ?? "Provisional")}`}>
-          {statusZh(busan?.status ?? "Provisional")}
-        </span>
-      </div>
+  <section class="surface route-overlay">
+    <p class="eyebrow">路線</p>
+    <div class="route-path" aria-label="首爾到釜山路線">
+      <span>首爾 {seoul?.provisional_nights ?? 4}N</span>
+      <span class="route-arrow">—— KTX ——</span>
+      <span>釜山 {busan?.provisional_nights ?? 2}N</span>
     </div>
     <p class="muted" style="margin:var(--space-3) 0 0">
       路線 <strong>{trip.route_option}</strong>
@@ -72,30 +86,19 @@ const countdown =
   </section>
 
   <section class="surface">
-    <h2 style="margin-top:0">快速找到</h2>
-    <div class="chip-row">
-      <a class="chip" href={`${base}days/day-6/`}>海景</a>
-      <a class="chip" href={`${base}days/day-2/`}>韓服</a>
-      <a class="chip" href={`${base}shopping/`}>購物</a>
-      <a class="chip" href={`${base}days/day-4/`}>GOT7</a>
-      <a class="chip" href={`${base}food/`}>豬肉湯飯</a>
-    </div>
-  </section>
-
-  <section class="surface">
-    <h2 style="margin-top:0">行程一覽</h2>
+    <h2 style="margin-top:0">七天預覽</h2>
     <ul class="list">
-      <li>
-        <a href={`${base}days/day-2/`}>Day 2 · 首爾韓服與宮殿</a>
-        <span class="status status-provisional">暫定</span>
-      </li>
-      <li>
-        <a href={`${base}days/day-5/`}>Day 5 · KTX 移動日</a>
-        <span class="status status-provisional">暫定</span>
-      </li>
-      <li>
-        <a href={`${base}days/`}>全部 7 天 →</a>
-      </li>
+      {
+        itinerary.days
+          .slice()
+          .sort((a, b) => a.day_index - b.day_index)
+          .map((d) => (
+            <li>
+              <a href={`${base}days/day-${d.day_index}/`}>Day {d.day_index} · {d.theme}</a>
+              <span class="status status-provisional">暫定</span>
+            </li>
+          ))
+      }
     </ul>
   </section>
 
@@ -103,7 +106,7 @@ const countdown =
     <h2 style="margin-top:0">還在討論的事</h2>
     <ul class="list">
       {
-        decisions.map((d) => (
+        openDecisions.map((d) => (
           <li>
             <span class={`status ${statusClass(d.status)}`}>{statusZh(d.status)}</span>{" "}
             {d.title_zh}
@@ -116,10 +119,13 @@ const countdown =
 
   <section class="surface">
     <h2 style="margin-top:0">離線 PDF</h2>
-    <p class="muted">與網站同一套版面語言，可列印收藏。</p>
+    <p class="muted">完整預覽書＋緊急卡，可下載後傳給對方。</p>
     <div class="btn-row">
       <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>旅行書 PDF</a>
       <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>緊急卡 PDF</a>
     </div>
+    <p class="muted" style="margin-top:var(--space-3)">
+      <a href={`${base}credits/`}>Image credits</a>
+    </p>
   </section>
 </Handbook>

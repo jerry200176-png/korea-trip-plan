@@ -59,6 +59,19 @@ export function loadEmergencyPublic() {
   return loadData<any>("emergency-public.yaml");
 }
 
+export function loadMedia() {
+  return loadData<{ media: any[]; kto_candidates: any[] }>("media.yaml");
+}
+
+export function mediaById(id: string) {
+  return loadMedia().media.find((m) => m.id === id);
+}
+
+export function mediaPublicUrl(base: string, item: { web_path?: string | null; local_path: string }) {
+  const rel = (item.web_path ?? item.local_path).replace(/^site\/public\//, "");
+  return `${base}${rel}`;
+}
+
 export function loadReadinessReport() {
   const p = path.resolve(process.cwd(), "../dist/readiness-report.json");
   if (!fs.existsSync(p)) return null;

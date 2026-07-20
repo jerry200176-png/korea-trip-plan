@@ -1,25 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import { distDir } from "./lib/root.ts";
+import { execSync } from "node:child_process";
 
 const files = [
-  { name: "korea-trip-handbook.pdf", minBytes: 15000 },
-  { name: "emergency-pack.pdf", minBytes: 8000 },
+  { name: "korea-trip-handbook.pdf", minBytes: 80000, minPages: 12 },
+  { name: "emergency-pack.pdf", minBytes: 8000, minPages: 1 },
 ];
 
 let failed = false;
-
-function extractText(buf: Buffer): string {
-  const chunks: string[] = [];
-  const re = /\(([^()\\]*(?:\\.[^()\\]*)*)\)/g;
-  const s = buf.toString("latin1");
-  let m: RegExpExecArray | null;
-  while ((m = re.exec(s))) {
-    const t = m[1];
-    if (t.length > 2 && !/^[\x00-\x1f]*$/.test(t)) chunks.push(t);
-  }
-  return chunks.join(" ");
-}
 
 for (const f of files) {
   const p = path.join(distDir, f.name);
@@ -49,6 +38,29 @@ for (const f of files) {
     console.error(`${f.name}: missing ToUnicode maps (CJK extractability)`);
   } else {
     console.log(`  ToUnicode maps: ${latin.split("ToUnicode").length - 1}`);
+  }
+
+  try {
+    const info = execSync(`pdfinfo "${p}"`, { encoding: "utf8" });
+    const pages = Number((info.match(/Pages:\s+(\d+)/) || [])[1] || 0);
+    console.log(`  pages: ${pages}`);
+    if (pages < f.minPages) {
+      failed = true;
+      console.error(`${f.name}: expected >= ${f.minPages} pages, got ${pages}`);
+    }
+  } catch (e) {
+    console.warn(`  pdfinfo unavailable for ${f.name}`);
+  }
+
+  // Ban engineering placeholders in emergency pack
+  if (f.name === "emergency-pack.pdf") {
+    const text = execSync(`pdftotext -layout "${p}" -`, { encoding: "utf8" });
+    for (const bad of ["REPLACE_ME", "YAML generator", "GitHub", "CI ", "schema"]) {
+      if (text.includes(bad)) {
+        failed = true;
+        console.error(`${f.name}: forbidden engineering text "${bad}"`);
+      }
+    }
   }
 
   console.log(`OK PDF ${f.name} (${buf.length} bytes)`);

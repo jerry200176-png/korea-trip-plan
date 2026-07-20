@@ -13,6 +13,8 @@ const pages = [
   "days/day-6/index.html",
   "emergency/index.html",
   "route/index.html",
+  "review/index.html",
+  "credits/index.html",
 ];
 
 let failed = false;

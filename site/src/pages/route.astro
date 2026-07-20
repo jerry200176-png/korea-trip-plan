@@ -1,40 +1,61 @@
 ---
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
-import { loadTrip, loadDestinations } from "../lib/data";
+import { loadTrip, loadDestinations, mediaById, mediaPublicUrl } from "../lib/data";
 
 const trip = loadTrip();
 const destinations = loadDestinations();
 const base = siteBase();
 const nights = trip.duration_days - 1;
+const cover = mediaById("cover-hero")!;
+
+function statusZh(s: string) {
+  const map: Record<string, string> = {
+    Confirmed: "已確認",
+    Provisional: "暫定",
+    Assumption: "假設",
+    DecisionRequired: "待決策",
+  };
+  return map[s] ?? s;
+}
 ---
-<Handbook title="Route Decision" current="more">
-  <h1>Route Decision</h1>
-  <span class="badge provisional">{trip.route_status}</span>
-  <section class="panel">
-    <h2>Night math（Confirmed）</h2>
+<Handbook title="路線" current="more">
+  <p class="eyebrow">Route</p>
+  <h1 class="page-title">路線一覽</h1>
+  <figure class="media-block">
+    <img src={mediaPublicUrl(base, cover)} alt={cover.alt_zh} loading="lazy" />
+  </figure>
+  <span class="status status-provisional">{statusZh(trip.route_status)}</span>
+  <section class="surface">
+    <h2 style="margin-top:0">晚數計算</h2>
     <p>
-      {trip.duration_days} calendar days · Day 1 抵達 · Day {trip.duration_days} 離境 ⇒{" "}
-      <strong>{nights} hotel nights</strong>
+      {trip.duration_days} 天 · Day 1 抵達 · Day {trip.duration_days} 離境 ⇒{" "}
+      <strong>{nights} 晚住宿</strong>
     </p>
-    <p>Seoul 4N + Busan 2N = 6N ✓ · Seoul 3N + Busan 3N = 6N ✓</p>
-    <p class="muted">Seoul 4N + Busan 3N = 7N ⇒ 通常需 8 calendar days</p>
+    <p>首爾 4 晚 + 釜山 2 晚 = 6 晚 ✓</p>
+    <div class="route-path" style="margin-top:var(--space-3)">
+      <span>首爾 4N</span>
+      <span class="route-arrow">—— KTX ——</span>
+      <span>釜山 2N</span>
+    </div>
   </section>
-  <section class="panel">
-    <h2>Provisional recommendation</h2>
+  <section class="surface">
+    <h2 style="margin-top:0">目前方案</h2>
     <p>{trip.route_option}</p>
-    <p class="muted">完整評分見 docs/ROUTE_DECISION.md</p>
+    <p class="muted">詳細評分見 docs/ROUTE_DECISION.md（維護者文件）</p>
   </section>
-  <section class="panel">
-    <h2>Cities</h2>
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">城市</h2>
     <ul class="list">
-      {destinations.map((d) => (
-        <li>
-          <strong>{d.name_zh}</strong> {d.provisional_nights}N · {d.status}
-          <div class="muted">{d.why}</div>
-        </li>
-      ))}
+      {
+        destinations.map((d) => (
+          <li>
+            <strong>{d.name_zh}</strong> {d.provisional_nights} 晚 · {statusZh(d.status)}
+            <div class="muted">{d.why}</div>
+          </li>
+        ))
+      }
     </ul>
   </section>
-  <a class="btn primary" href={`${base}decisions/`}>回答 D2</a>
+  <a class="btn primary" href={`${base}decisions/`}>一起決定晚數與日期</a>
 </Handbook>
