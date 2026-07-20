@@ -8,6 +8,8 @@
   },
   "scripts": {
     "validate": "tsx scripts/validate-data.ts",
+    "check:design-md": "tsx scripts/check-design-md.ts",
+    "check:css-tokens": "tsx scripts/check-css-tokens.ts",
     "check:privacy": "tsx scripts/check-privacy.ts",
     "check:stale": "tsx scripts/check-stale.ts",
     "check:links": "tsx scripts/check-links.ts",
@@ -19,11 +21,12 @@
     "verify:pdf": "tsx scripts/verify-pdfs.ts",
     "prepare:artifacts": "tsx scripts/prepare-public-artifacts.ts",
     "test:mobile": "tsx scripts/mobile-smoke.ts",
+    "capture:visual": "tsx scripts/capture-visual.ts",
     "build:site": "npm run build --prefix site",
     "build": "npm run ci",
     "dev": "npm run dev --prefix site",
-    "lint:md": "markdownlint-cli2 \"docs/**/*.md\" \"handbook/**/*.md\" \"checklists/**/*.md\" \"README.md\"",
-    "ci": "npm run validate && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run check:route-messaging && npm run check:lodging-scores && npm run check:links && npm run lint:md && npm run readiness && npm run build:site && npm run pdf && npm run verify:pdf && npm run prepare:artifacts && npm run test:mobile"
+    "lint:md": "markdownlint-cli2 \"DESIGN.md\" \"docs/**/*.md\" \"handbook/**/*.md\" \"checklists/**/*.md\" \"README.md\"",
+    "ci": "npm run validate && npm run check:design-md && npm run check:css-tokens && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run check:route-messaging && npm run check:lodging-scores && npm run check:links && npm run lint:md && npm run readiness && npm run build:site && npm run pdf && npm run verify:pdf && npm run prepare:artifacts && npm run test:mobile && npm run capture:visual"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
@@ -31,7 +34,7 @@
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.0",
     "markdownlint-cli2": "^0.17.2",
-    "pdfkit": "^0.16.0",
+    "playwright": "^1.52.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   }

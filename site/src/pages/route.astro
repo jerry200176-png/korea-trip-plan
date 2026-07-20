@@ -1,10 +1,11 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTrip, loadDestinations } from "../lib/data";
 
 const trip = loadTrip();
 const destinations = loadDestinations();
-const base = import.meta.env.BASE_URL;
+const base = siteBase();
 const nights = trip.duration_days - 1;
 ---
 <Handbook title="Route Decision" current="more">

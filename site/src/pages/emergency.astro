@@ -1,39 +1,52 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadEmergencyPublic } from "../lib/data";
 
 const e = loadEmergencyPublic();
-const base = import.meta.env.BASE_URL;
+const base = siteBase();
 ---
-<Handbook title="Emergency" current="emergency">
-  <h1>Emergency</h1>
-  <span class="badge provisional">{e.status}</span>
-  <section class="panel">
-    <h2>立即撥打</h2>
-    <p style="font-size:1.4rem;font-family:var(--font-display)">
+<Handbook title="緊急" current="emergency">
+  <p class="eyebrow">路上</p>
+  <h1 class="page-title">緊急協助</h1>
+  <span class="status status-provisional">狀態 {e.status}</span>
+
+  <section class="surface-emergency">
+    <h2 style="margin-top:0">立即撥打</h2>
+    <p style="font-size:1.5rem;font-family:var(--font-display);margin:0">
       {e.korea.police} 警察 · {e.korea.fire_ambulance} 消防／醫療
     </p>
   </section>
-  <section class="panel">
-    <h2>官方</h2>
+
+  <section class="surface">
+    <h2 style="margin-top:0">駐韓機構</h2>
     <p>
       <a href={e.korea.mission_url} target="_blank" rel="noreferrer">{e.korea.mission_name}</a>
     </p>
     <p class="muted">{e.korea.mission_phone_note}</p>
   </section>
-  <section class="panel">
-    <h2>住宿（占位）</h2>
-    <p>首爾：{e.lodging_placeholders.seoul_address_ko}</p>
-    <p>釜山：{e.lodging_placeholders.busan_address_ko}</p>
-    <p>{e.phrases_ko.taxi_address}</p>
+
+  <section class="surface">
+    <h2 style="margin-top:0">住宿（占位）</h2>
+    <p>
+      首爾：<span lang="ko">{e.lodging_placeholders.seoul_address_ko}</span>
+    </p>
+    <p>
+      釜山：<span lang="ko">{e.lodging_placeholders.busan_address_ko}</span>
+    </p>
+    <p class="muted" lang="ko">
+      {e.phrases_ko.taxi_address}
+    </p>
   </section>
-  <section class="panel">
-    <h2>飲食／求助</h2>
-    <p>{e.phrases_ko.no_alcohol}</p>
-    <p>{e.phrases_ko.no_crustaceans}</p>
-    <p>{e.phrases_ko.help}</p>
-    <p>{e.phrases_ko.ambulance}</p>
+
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">飲食／求助韓文</h2>
+    <p lang="ko">{e.phrases_ko.no_alcohol}</p>
+    <p lang="ko">{e.phrases_ko.no_crustaceans}</p>
+    <p lang="ko">{e.phrases_ko.help}</p>
+    <p lang="ko">{e.phrases_ko.ambulance}</p>
   </section>
-  <a class="btn primary" href={`${base}downloads/emergency-pack.pdf`}>下載 Emergency PDF</a>
+
+  <a class="btn primary" href={`${base}downloads/emergency-pack.pdf`}>下載緊急 PDF</a>
   <p class="muted">{e.offline_note}</p>
 </Handbook>

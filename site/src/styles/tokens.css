@@ -1,0 +1,65 @@
+/* Our First Korea — canonical color tokens. See DESIGN.md §4. */
+
+:root {
+  --color-canvas: #f7f4ed;
+  --color-surface: #fffdf8;
+  --color-surface-muted: #efe9de;
+  --color-ink: #1c2420;
+  --color-ink-muted: #5a635c;
+  --color-ink-faint: #8a928a;
+  --color-border: #ddd4c4;
+  --color-border-strong: #c4b8a4;
+
+  --color-primary: #2d6a4f;
+  --color-primary-hover: #245a42;
+  --color-primary-soft: #e3efe8;
+  --color-on-primary: #f7f4ed;
+
+  --color-accent-warm: #c96d3b;
+  --color-accent-warm-soft: #f5e8dc;
+
+  --color-seoul: #4a6fa5;
+  --color-seoul-soft: #e8eef5;
+  --color-busan: #4a7c7c;
+  --color-busan-soft: #e6f0f0;
+
+  --color-status-confirmed: #2d6a4f;
+  --color-status-provisional: #b8860b;
+  --color-status-decision: #a63d3d;
+  --color-status-danger: #9b2c2c;
+  --color-status-ok: #3d7a5a;
+
+  --font-serif: "Noto Serif TC", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-sans: "Noto Sans TC", "Noto Sans KR", "Segoe UI", "Helvetica Neue", sans-serif;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --radius-button: 10px;
+  --radius-card: 12px;
+  --radius-pill: 999px;
+
+  --tap: 48px;
+
+  /* Semantic aliases used in components */
+  --bg: var(--color-canvas);
+  --bg-elev: var(--color-surface);
+  --bg-soft: var(--color-surface-muted);
+  --text: var(--color-ink);
+  --muted: var(--color-ink-muted);
+  --accent: var(--color-primary);
+  --accent-2: var(--color-accent-warm);
+  --danger: var(--color-status-danger);
+  --border: var(--color-border);
+  --ok: var(--color-status-ok);
+  --warn: var(--color-status-provisional);
+  --font-display: var(--font-serif);
+  --font-body: var(--font-sans);
+  --radius: var(--radius-card);
+}

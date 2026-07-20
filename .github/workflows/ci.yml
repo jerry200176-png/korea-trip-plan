@@ -21,6 +21,7 @@ jobs:
         run: |
           npm ci
           npm ci --prefix site
+          npx playwright install chromium
       - name: Foundation Exit Gate — npm run ci
         run: npm run ci
       - name: Upload handbook artifacts

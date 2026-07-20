@@ -1,8 +1,9 @@
 ---
+import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
 import { loadItinerary } from "../../lib/data";
 const days = loadItinerary().days;
-const base = import.meta.env.BASE_URL;
+const base = siteBase();
 ---
 <Handbook title="Days" current="days">
   <h1>每日行程</h1>
