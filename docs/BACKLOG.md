@@ -15,11 +15,10 @@ GitHub Issues API is unavailable to this agent integration. Track work here; use
 | 7 | Pre-Departure Verified | T-30 / T-7 freshness passes | Not started |
 | 8 | Trip Ready | Phones hold site + PDFs; bookings offline | Not started |
 
-## Active high-ROI items (do not duplicate as tiny Issues)
+## Active high-ROI items (post–PR #1 merge; no hotel/restaurant deep dive in PR #1)
 
-1. Founder: lock dates, route (4N+2N vs 3N+3N vs 8-day 4N+3N), airports (D1–D3).  
-2. Re-read K-ETA temporary exemption country list for actual travel year (official portal only).  
-3. Build lodging area shortlists for Seoul & Busan after D2.  
-4. Add verified restaurants (pork soup, non-crustacean) with Naver links.  
-5. Confirm GOT7-related venues still operate.  
-6. Fill Day pages with map links and Plan B after places land in YAML.
+1. **After D2 locked:** city night ratio + lodging **area scoring model** (areas only, no hotel names).  
+2. **After D2 + D3 locked:** entry/exit cities + lodging **area shortlist**.  
+3. **After D1 + D2 + D3 locked:** compare real flights, specific hotels, date-priced options, and formal booking candidates.
+
+Founder queue (see [HANDOFF_SUMMARY.md](HANDOFF_SUMMARY.md)): D1 dates (Assumption: 2027-03, 7 days — no exact dates in repo); D2 **D2-A** Provisional; D3 suggested **TPE→ICN / PUS→TPE** open-jaw (verify after D1).

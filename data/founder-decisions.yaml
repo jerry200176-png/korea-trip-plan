@@ -49,12 +49,18 @@ decisions:
           cost: 低 — 暫無支出
           research_effort: 低 — 但阻塞後續 ROI
     decide_by: 任何機票／住宿搜尋或 K-ETA 申請之前
-    reply_one_line: "D1: 選 A/B/C — 若 A 請寫 YYYY-MM-DD 去程抵達日與 YYYY-MM-DD 回程離境日"
+    reply_legend: |
+      D1-A = 維持 2027 年 3 月並選定具體起迄（7 calendar days / 6 hotel nights）
+      D1-B = 改到其他月份（仍約 7 天）
+      D1-C = 暫不決定，維持 Assumption（不進 Booking Ready）
+    reply_one_line: "D1: 選 D1-A / D1-B / D1-C — A=2027-03+確切起迄7日6晚；B=改月份仍約7天；C=暫不決定 — 若 A 請寫 YYYY-MM-DD 抵達日 與 YYYY-MM-DD 離境日"
 
   - id: D2
     title_zh: 城市與停留晚數
-    status: DecisionRequired
-    why_now: 住宿區、KTX 日、購物與海灘分配、預算與每日體力都依城市晚數；目前 Provisional 4N+2N 需 Founder 確認或改選。
+    status: Provisional
+    founder_selection: D2-A
+    founder_selection_note: Jerry 2026-07-20 表態 D2-A；待 D1 確切日期後可升級為 Confirmed 鎖定
+    why_now: 住宿區、KTX 日、購物與海灘分配、預算與每日體力都依城市晚數；Founder 已選 D2-A，仍非 Trip Ready 直到 D1/D3 與驗證完成。
     confirmed_facts:
       - 7 calendar days，Day 1 抵達、Day 7 離境 ⇒ 6 hotel nights（算術 Confirmed）
       - Seoul 4N + Busan 2N = 6N（與 7 日架構一致）
@@ -64,10 +70,14 @@ decisions:
       - 雙城 KTX 移動 1 次可接受（Provisional）
       - 不租車、以大眾運輸為主（Confirmed 偏好）
     recommendation: 在 7 日／6 晚前提下，Provisional 建議 Seoul 4N + Busan 2N（保留首爾 GOT7／購物／韓服／算命密度，釜山 2 晚換 1 個完整海灘日）。
+    reply_legend: |
+      D2-A = Seoul 4N + Busan 2N（6N，現行 skeleton）
+      D2-B = Seoul 3N + Busan 3N（6N）
+      D2-C = 延長 8 calendar days 以採 7N（如 4N+3N）
     options:
       - id: D2-A
         label: Seoul 4N + Busan 2N（6N）
-        summary: 現行 Provisional 骨架；Day5 KTX；Day6 海灘；Day7 離境。
+        summary: 現行 Provisional 骨架；首爾 GOT7／購物／韓服／算命密度 + 釜山 1 個完整海灘日。
         impacts:
           quality: 高 — 城市+海對比
           energy: 中 — 移動日輕排
@@ -102,7 +112,7 @@ decisions:
           cost: 高 — 多 1 天機票+住宿
           research_effort: 高 — 重算整本手冊
     decide_by: 訂房與 KTX 購票前
-    reply_one_line: "D2: 選 D2-A / D2-B / D2-C — 若 C 請註明是否改 8 日與新的晚數"
+    reply_one_line: "D2: 選 D2-A / D2-B / D2-C — A=Seoul4N+Busan2N；B=Seoul3N+Busan3N；C=延長8日採7N — 若 C 請註明是否改 8 日與新的晚數"
 
   - id: D3
     title_zh: 航班機場
@@ -114,7 +124,11 @@ decisions:
       - 目前 itinerary 未鎖定離境機場（Decision Required）
     assumptions:
       - 兩人持 ROC 護照（Assumption，影響 K-ETA 重查）
-    recommendation: null
+    recommendation: 建議方向（非 Confirmed）：TPE → ICN 入境、PUS → TPE 出境，open-jaw、優先全程直飛；待 D1 日期確定後以實際航班時間、總價、行李與取消條款驗證。
+    reply_legend: |
+      D3-A = 桃園/松山 ↔ ICN 往返，釜山靠 KTX（Day7 若在釜山可能需回頭飛 ICN）
+      D3-B = Open-jaw：TPE → ICN 去、PUS → TPE 回（優先全程直飛；符合 4N+2N）
+      D3-C = 暫不決定機場（維持 TBD）
     options:
       - id: D3-A
         label: 往返 ICN（首爾進出）+ KTX 往返釜山
@@ -129,8 +143,8 @@ decisions:
           cost: 中
           research_effort: 中
       - id: D3-B
-        label: Open-jaw：ICN 進、PUS 出（或反向）
-        summary: 符合 4N+2N 雙城動線；機票組合較少需比價。
+        label: Open-jaw：TPE → ICN、PUS → TPE（優先全程直飛）
+        summary: 符合 4N+2N 雙城動線；機票組合較少需比價；最終須在 D1 鎖定後查票驗證。
         impacts:
           quality: 高 — 少回頭
           energy: 高 — 對腳友善
@@ -153,4 +167,4 @@ decisions:
           cost: 低
           research_effort: 低 — 阻塞 lodging 與機場交通細節
     decide_by: 機票短名單前
-    reply_one_line: "D3: 選 D3-A / D3-B / D3-C — 若 A/B 請寫 TW 出發機場 + KR 抵達/離境機場"
+    reply_one_line: "D3: 選 D3-A / D3-B / D3-C — A=往返ICN+KTX；B=TPE→ICN、PUS→TPE open-jaw直飛；C=暫不決定 — 若 A/B 請寫 TW 出發機場 + KR 抵達/離境機場"

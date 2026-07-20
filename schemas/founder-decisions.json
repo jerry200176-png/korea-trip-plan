@@ -68,7 +68,10 @@
             }
           },
           "decide_by": { "type": "string" },
-          "reply_one_line": { "type": "string" }
+          "reply_one_line": { "type": "string" },
+          "reply_legend": { "type": "string" },
+          "founder_selection": { "type": "string" },
+          "founder_selection_note": { "type": "string" }
         }
       }
     }

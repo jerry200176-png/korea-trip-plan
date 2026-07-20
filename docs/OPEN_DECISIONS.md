@@ -8,7 +8,7 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 |-------|--------|
 | Question | Exact departure and return dates? Is March 2027 still the target? |
 | Why it blocks | Flights, hotels, weather packing, reservation windows, countdown dashboard |
-| Current placeholder | March 2027 (Assumption) |
+| Current placeholder | March 2027, 7 calendar days (Assumption only — **no** exact dates in repo) |
 | Status | Decision Required |
 | Needed by | Before any paid booking |
 
@@ -18,8 +18,8 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 |-------|--------|
 | Question | For a 7-day / 6-night trip, accept Provisional **Seoul 4N + Busan 2N**? Or prefer Seoul 3N+Busan 3N, extend to 8 days for 4N+3N, or single-city? |
 | Why it blocks | Itinerary, lodging areas, KTX day, shopping/GOT7 vs beach balance |
-| Current placeholder | Seoul 4N + Busan 2N (Provisional) — see [ROUTE_DECISION.md](ROUTE_DECISION.md) |
-| Status | Decision Required |
+| Current placeholder | **Seoul 4N + Busan 2N** — Founder表態 **D2-A** (2026-07-20) |
+| Status | **Provisional** (upgrade to Confirmed after D1 dates locked) |
 | Needed by | Before detailed day plans and lodging shortlist |
 | Note | Older draft 4N+3N conflicted with 7-day arrive/depart math; corrected 2026-07-20 |
 
@@ -29,7 +29,7 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 |-------|--------|
 | Question | Taiwan departure airport(s) and Korea arrival/departure airports (ICN / GMP / PUS etc.)? |
 | Why it blocks | First/last day logistics, lodging near stations/airports, luggage strategy |
-| Current placeholder | Not assumed as final |
+| Current placeholder | Suggested **TPE → ICN**, **PUS → TPE** open-jaw, prefer direct; verify after D1 |
 | Status | Decision Required |
 | Needed by | Before flight shortlist and Day 1 / Day 7 plans |
 

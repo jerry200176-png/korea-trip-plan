@@ -30,8 +30,19 @@ const base = import.meta.env.BASE_URL;
         </ul>
         {d.recommendation && (
           <p>
-            <strong>建議（仍 DecisionRequired）：</strong>
+            <strong>
+              {d.status === "DecisionRequired" ? "建議（仍 DecisionRequired）：" : "建議："}
+            </strong>
             {d.recommendation}
+          </p>
+        )}
+        {d.founder_selection && (
+          <p>
+            <strong>Founder 表態：</strong>
+            {d.founder_selection}
+            {d.founder_selection_note && (
+              <span class="muted"> — {d.founder_selection_note}</span>
+            )}
           </p>
         )}
         <p><strong>選項（最多三個）：</strong></p>
@@ -48,6 +59,12 @@ const base = import.meta.env.BASE_URL;
           </div>
         ))}
         <p><strong>最晚決策：</strong>{d.decide_by}</p>
+        {d.reply_legend && (
+          <>
+            <p><strong>回覆選項定義（自含，無需另開檔）：</strong></p>
+            <pre class="reply-legend">{d.reply_legend.trim()}</pre>
+          </>
+        )}
         <p>
           <strong>回覆格式：</strong>
           <code>{d.reply_one_line}</code>

@@ -19,7 +19,7 @@
 
 ## 建議
 
-無（不替 Jerry 決定日期）。
+無（不替 Jerry 決定日期）。維持 2027 年 3 月、7 calendar days 為 Assumption 時，**勿**在 repo 填入確切日期。
 
 ## 選項（三選一）
 
@@ -33,8 +33,12 @@
 
 任何機票／住宿搜尋或 K-ETA 申請之前。
 
-## 回覆一行
+## 回覆一行（含 A/B/C 定義）
+
+**D1-A** = 維持 2027 年 3 月並選定具體起迄（7 calendar days / 6 hotel nights）  
+**D1-B** = 改到其他月份（仍約 7 天）  
+**D1-C** = 暫不決定，維持 Assumption
 
 ```text
-D1: 選 A/B/C — 若 A 請寫 YYYY-MM-DD 去程抵達日與 YYYY-MM-DD 回程離境日
+D1: 選 D1-A / D1-B / D1-C — 若 A 請寫 YYYY-MM-DD 去程抵達日與 YYYY-MM-DD 回程離境日
 ```

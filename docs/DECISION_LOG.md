@@ -2,6 +2,14 @@
 
 Append-only. Newest first.
 
+## 2026-07-20 — Founder direction (handoff; not Trip Ready)
+
+- **D1:** Keep **March 2027** and **7 calendar days** as Assumption only — do **not** write exact `start_date` / `end_date` until Jerry confirms.
+- **D2:** Jerry selects **D2-A — Seoul 4N + Busan 2N** → record as **Provisional** + `founder_selection`; Confirmed after D1 locked.
+- **D3:** Maintainer **suggested** direction (not Confirmed): **TPE → ICN**, **PUS → TPE**, open-jaw, prefer all-direct; validate times, total price, baggage, cancellation after D1.
+- **Next ROI tiers:** (1) after D2 → area scoring model; (2) after D2+D3 → area shortlist; (3) after D1+D2+D3 → flights/hotels/date pricing/booking candidates.
+- **Handoff:** [HANDOFF_SUMMARY.md](HANDOFF_SUMMARY.md) — A/B/C definitions inline in YAML `reply_legend` + site `/decisions/`.
+
 ## 2026-07-20 — Correct dual-city nights for a 7-day trip
 
 - **Decision:** Provisional split is **Seoul 4 nights + Busan 2 nights** (6 nights total), not 4N+3N.
