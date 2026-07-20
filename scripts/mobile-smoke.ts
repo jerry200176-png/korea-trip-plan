@@ -5,6 +5,8 @@ import { siteDistDir, root } from "./lib/root.ts";
 const viewports = [375, 390, 430];
 const pages = [
   "index.html",
+  "today/index.html",
+  "today/day-2/index.html",
   "decisions/index.html",
   "days/day-2/index.html",
   "days/day-5/index.html",
@@ -65,6 +67,21 @@ if (!css.includes("overflow-wrap") && !css.includes("word-break")) {
 
 for (const w of viewports) {
   console.log(`mobile-smoke: viewport ${w}px pages OK (static HTML checks)`);
+}
+
+const swPath = path.join(root, "site/public/sw.js");
+const sw = fs.readFileSync(swPath, "utf8");
+if (!sw.includes("caches.delete") || !sw.includes("keys.filter")) {
+  failed = true;
+  console.error("sw.js: missing old-cache purge on activate");
+}
+if (!sw.includes('req.mode === "navigate"') && !sw.includes("text/html")) {
+  failed = true;
+  console.error("sw.js: missing network-first HTML strategy");
+}
+if (!sw.includes("res.ok")) {
+  failed = true;
+  console.error("sw.js: should not cache non-ok responses");
 }
 
 if (failed) process.exit(1);

@@ -1,0 +1,38 @@
+---
+import Handbook from "../../layouts/Handbook.astro";
+import { loadItinerary, loadTrip } from "../../lib/data";
+
+const trip = loadTrip();
+const days = loadItinerary().days;
+const base = import.meta.env.BASE_URL;
+---
+<Handbook title="今日" current="today">
+  <section class="panel">
+    <h1 style="margin-top:0">Execution Mode</h1>
+    <p class="muted">出國當天 10 秒內：只看「今天一件事」、下一動、地圖、緊急。完整規劃見 Dashboard。</p>
+    {
+      trip.start_date ? (
+        <p>
+          出發日已鎖：<strong>{trip.start_date}</strong> — 上線後可依日期自動開啟對應日（待實作）。
+        </p>
+      ) : (
+        <p class="muted">D1 未鎖定 — 請先選「預覽第幾天」作戰畫面。</p>
+      )
+    }
+  </section>
+  <section class="panel">
+    <h2>選今天（預覽）</h2>
+    <div class="btn-row">
+      {
+        days.map((d) => (
+          <a class="btn primary" href={`${base}today/day-${d.day_index}/`}>
+            Day {d.day_index}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+  <p class="muted">
+    <a href={`${base}`}>← Dashboard</a>
+  </p>
+</Handbook>
