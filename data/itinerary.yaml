@@ -179,12 +179,12 @@ days:
 
   - id: day-04
     day_index: 4
-    theme: GOT7 靈感・算命・輕量文化
+    theme: GOT7 靈感・算命・輕量文化（江南單區）
     one_priority: 完成一次韓國算命體驗；GOT7 相關僅作低強度打卡
     wake_time: "08:00"
     out_time: "09:00"
     return_by: "21:00"
-    primary_areas: [Gangnam, Jongno]
+    primary_areas: [Gangnam]
     city: Seoul
     energy: low
     estimated_cost_krw: 100000
@@ -194,7 +194,7 @@ days:
     restroom_notes: 商場內
     rain_plan: 全程室內算命＋咖啡
     low_energy_plan: 取消 JYP 周邊，只留算命
-    closure_plan: 換預約時段或改塔羅咖啡館（需篩選）
+    closure_plan: 換預約時段或改同區塔羅咖啡館（需篩選）
     droppable_items: [plc-jyp-tower]
     emergency_return: 地鐵／計程車
     status: Provisional
@@ -207,21 +207,22 @@ days:
         dwell_minutes: 30
         droppable: true
         plan_b: 直接算命
-        notes: 確認無可進入設施則跳過
+        notes: 確認無可進入設施則跳過；與算命同留在江南，避免跨區折返
       - start: "12:00"
         end: "14:00"
-        title: 韓國算命（店家未鎖定）
+        title: 韓國算命（江南候選・店家未鎖定）
         kind: experience
         reservation_deadline: "建議 T-14 起查語言與預約"
         queue_risk: low
-        notes: 英語／中文服務需驗證；費用差異大
-        plan_b: 改塔羅或取消
+        notes: 英語／中文服務需驗證；費用差異大；勿改排到鍾路造成當日折返
+        plan_b: 改同區塔羅或取消
         droppable: false
       - start: "14:00"
         end: "21:00"
         title: 輕量自由／打包準備移動日
         kind: free
         plan_b: 提早回住宿整理行李
+        notes: 化妝品／三眼怪若尚未買，優先在首爾補齊（釜山僅 2 晚）
         droppable: true
 
   - id: day-05
@@ -335,37 +336,37 @@ days:
 
   - id: day-07
     day_index: 7
-    theme: 三眼怪／尾聲・返程準備
-    one_priority: 完成三眼怪相關購物嘗試；依航班安全回機場
+    theme: 釜山尾聲・返程準備
+    one_priority: 依航班安全前往機場；非必要購物可刪
     wake_time: "07:30"
     out_time: "09:00"
     return_by: "依航班"
-    primary_areas: [shopping_TBD]
+    primary_areas: [Busan-lodging]
     city: Busan
     energy: low
-    estimated_cost_krw: 80000
+    estimated_cost_krw: 50000
     walking_level: low
     buffer_percent: 25
     photo_tips: 最後一天合照留在輕鬆場景
     restroom_notes: 商場與機場
-    rain_plan: 室內商場
-    low_energy_plan: 取消購物，直達機場
-    closure_plan: 改機場免稅店（容量風險）
+    rain_plan: 室內咖啡後直達機場
+    low_energy_plan: 取消一切購物，直達機場
+    closure_plan: 機場免稅僅作行李容量允許時的備案
     droppable_items: [非必要購物]
     emergency_return: 以機場動線為優先
     status: Provisional
     blocks:
       - start: "09:00"
-        end: "12:00"
-        title: 三眼怪／紀念品候選店（未鎖定）
-        kind: shopping
-        notes: 店家需查 Naver；可能在首爾更齊——若首爾已買到可刪
-        plan_b: 跳過
+        end: "11:00"
+        title: 緩衝／輕量散步（可刪）
+        kind: free
+        notes: 三眼怪／化妝品應已在首爾完成；釜山僅 2N，勿為購物壓縮機場緩衝
+        plan_b: 跳過，直接出發
         droppable: true
-      - start: "12:00"
+      - start: "11:00"
         end: "ARR_AIRPORT"
         title: 前往機場（PUS 或其他・未鎖定）
         kind: transit
-        notes: Decision Required — 離境機場與航班時刻；預留官方建議時間
+        notes: Decision Required — 離境機場與航班時刻；預留航空公司建議到場時間
         plan_b: 計程車減轉乘
         droppable: false

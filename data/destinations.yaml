@@ -13,7 +13,7 @@ destinations:
     name_ko: 부산
     name_en: Busan
     role: secondary_city_provisional
-    provisional_nights: 3
+    provisional_nights: 2
     airports: [PUS]
-    why: 海灘與自然風景、豬肉湯飯文化、海岸合照
+    why: 海灘與自然風景、豬肉湯飯文化、海岸合照（7 日／6 晚架構下為 2N）
     status: Provisional

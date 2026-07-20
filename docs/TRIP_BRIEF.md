@@ -56,7 +56,7 @@ Do **not** store passport numbers, full DOB, phones, or addresses in this repo. 
 | Field | Value | Status |
 |-------|-------|--------|
 | Cities | Not locked | Decision Required |
-| Provisional recommendation | Seoul 4 nights + Busan 3 nights | Provisional — see [ROUTE_DECISION.md](ROUTE_DECISION.md) |
+| Provisional recommendation | Seoul 4 nights + Busan 2 nights (6 nights / 7 days) | Provisional — see [ROUTE_DECISION.md](ROUTE_DECISION.md) |
 | Flights / airports | Not locked | Decision Required |
 
 ## Conflict note

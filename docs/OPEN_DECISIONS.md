@@ -16,11 +16,12 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 
 | Field | Value |
 |-------|--------|
-| Question | Accept Provisional **Seoul 4 nights + Busan 3 nights**, or choose Seoul-only / Busan-primary / other? |
+| Question | For a 7-day / 6-night trip, accept Provisional **Seoul 4N + Busan 2N**? Or prefer Seoul 3N+Busan 3N, extend to 8 days for 4N+3N, or single-city? |
 | Why it blocks | Itinerary, lodging areas, KTX day, shopping/GOT7 vs beach balance |
-| Current placeholder | Seoul 4N + Busan 3N (Provisional) — see [ROUTE_DECISION.md](ROUTE_DECISION.md) |
+| Current placeholder | Seoul 4N + Busan 2N (Provisional) — see [ROUTE_DECISION.md](ROUTE_DECISION.md) |
 | Status | Decision Required |
 | Needed by | Before detailed day plans and lodging shortlist |
+| Note | Older draft 4N+3N conflicted with 7-day arrive/depart math; corrected 2026-07-20 |
 
 ## D3 — Flight airports
 

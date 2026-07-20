@@ -6,7 +6,7 @@ Items below are **not** confirmed facts. Each must be revalidated before booking
 |----|------------|-----------------|--------|
 | A-01 | Trip length is about 7 days | Route night split and buffer days change | Assumption |
 | A-02 | Target window is March 2027 | Weather packing, cherry-blossom crowds, K-ETA rules may differ by year | Assumption |
-| A-03 | Seoul 4N + Busan 3N is the best city split | Entire itinerary skeleton changes | Provisional |
+| A-03 | Seoul 4N + Busan 2N is the best 7-day dual-city split | Entire itinerary skeleton changes | Provisional |
 | A-04 | Arrival via ICN or GMP and departure similarly (TBD) | Airport transfer and lodging area change | Assumption |
 | A-05 | Both travelers hold ROC (Taiwan) passports | Visa / K-ETA rules differ by nationality | Assumption |
 | A-06 | Comfortable with spicy Korean food but no alcohol | Restaurant filters | Confirmed preference (dietary) |

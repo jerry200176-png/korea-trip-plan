@@ -7,7 +7,7 @@ start_date: null
 end_date: null
 daily_out: "09:00"
 daily_return: "21:00"
-route_option: seoul-4n-busan-3n
+route_option: seoul-4n-busan-2n
 route_status: Provisional
 success_criterion: 第一次一起出國，留下最美好的回憶
 preferences:
@@ -39,4 +39,7 @@ preferences:
     - cosmetics
     - clothes
 status: Assumption
-notes: Dates and cities not Founder-locked. March 2027 is Assumption only.
+notes: >
+  Dates and cities not Founder-locked. March 2027 is Assumption only.
+  Night math: duration_days=7 with Day1 arrive / Day7 depart ⇒ 6 hotel nights
+  ⇒ Provisional Seoul 4N + Busan 2N (not 4+3).

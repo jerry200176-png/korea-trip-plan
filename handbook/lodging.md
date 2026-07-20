@@ -23,9 +23,9 @@
 
 Prefer areas that reduce daily cross-city travel for palace/shopping days (e.g. Jongno / City Hall / Myeongdong belt **or** a single well-connected hub). Exact neighborhood shortlist after D2.
 
-### Busan (3N provisional)
+### Busan (2N provisional for 7-day trip)
 
-Prefer Haeundae or near subway that reaches beach with few transfers — balance beach walk vs hills.
+Prefer Haeundae or near subway that reaches beach with few transfers — with only two nights, stay beach-adjacent to avoid wasting the single full Busan day on transfers.
 
 ## Ranking rule
 

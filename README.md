@@ -45,7 +45,7 @@ Policy: [`docs/PRIVACY_AND_DATA_POLICY.md`](docs/PRIVACY_AND_DATA_POLICY.md).
 
 ## Provisional route
 
-**Seoul 4 nights + Busan 3 nights** — Provisional. Details: [`docs/ROUTE_DECISION.md`](docs/ROUTE_DECISION.md).
+**Seoul 4 nights + Busan 2 nights** — Provisional (7 days / 6 nights). Details: [`docs/ROUTE_DECISION.md`](docs/ROUTE_DECISION.md).
 
 ## Archive
 
