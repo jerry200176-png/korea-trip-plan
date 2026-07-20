@@ -7,7 +7,11 @@ sources:
     checked_at: "2026-07-20"
     status: Confirmed
     freshness_days: 90
-    notes: Eligibility changes; re-check before application. Do not treat blog summaries as current law.
+    notes: >
+      Portal facts checked 2026-07-20: fee KRW 10000; assessment generally within 72h;
+      apply only on official site/app; temporary-exemption extension notice listed 2026-03-20;
+      exemption FAQ listed 2026-06-11. Do NOT assert Taiwan is exempt for 2027 travel without
+      re-reading the official country list for those dates.
   - id: src-hikorea
     name: Hi Korea
     url: https://www.hikorea.go.kr

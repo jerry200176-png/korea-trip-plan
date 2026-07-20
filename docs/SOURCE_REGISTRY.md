@@ -8,7 +8,7 @@ Human-readable index. Machine registry: [`data/sources.yaml`](../data/sources.ya
 
 | ID | Name | URL | Topic | checked_at | Notes |
 |----|------|-----|-------|------------|-------|
-| src-keta | Korea Immigration K-ETA | https://www.k-eta.go.kr | Entry | 2026-07-20 | Rules change; re-check before apply |
+| src-keta | Korea Immigration K-ETA | https://www.k-eta.go.kr | Entry | 2026-07-20 | Fee KRW 10k; ~72h assessment; exemption-extension notice listed 2026-03-20 — re-check Taiwan list before 2027 travel |
 | src-hikorea | Hi Korea | https://www.hikorea.go.kr | Entry / stay | 2026-07-20 | |
 | src-customs-kr | Korea Customs Service | https://www.customs.go.kr | Customs | 2026-07-20 | |
 | src-mofa-tw | Taiwan MOFA travel | https://www.bosa.mofa.gov.tw | Travel advisories | 2026-07-20 | |
