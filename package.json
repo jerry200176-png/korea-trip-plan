@@ -12,6 +12,7 @@
     "check:stale": "tsx scripts/check-stale.ts",
     "check:links": "tsx scripts/check-links.ts",
     "check:route-messaging": "tsx scripts/check-route-messaging.ts",
+    "check:lodging-scores": "tsx scripts/check-lodging-scores.ts",
     "test:itinerary": "tsx scripts/check-itinerary.ts",
     "readiness": "tsx scripts/generate-readiness.ts",
     "pdf": "tsx scripts/generate-pdfs.ts",
@@ -22,7 +23,7 @@
     "build": "npm run ci",
     "dev": "npm run dev --prefix site",
     "lint:md": "markdownlint-cli2 \"docs/**/*.md\" \"handbook/**/*.md\" \"checklists/**/*.md\" \"README.md\"",
-    "ci": "npm run validate && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run check:route-messaging && npm run check:links && npm run lint:md && npm run readiness && npm run build:site && npm run pdf && npm run verify:pdf && npm run prepare:artifacts && npm run test:mobile"
+    "ci": "npm run validate && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run check:route-messaging && npm run check:lodging-scores && npm run check:links && npm run lint:md && npm run readiness && npm run build:site && npm run pdf && npm run verify:pdf && npm run prepare:artifacts && npm run test:mobile"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

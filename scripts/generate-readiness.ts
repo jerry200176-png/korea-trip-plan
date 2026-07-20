@@ -96,8 +96,8 @@ gates.push(
     "lodging",
     "provisional",
     "No hotel candidates booked",
-    "docs/LODGING_AREAS.md + area scoring (post-D2)",
-    "Build lodging area scoring model (areas only)",
+    "data/lodging-area-scores.yaml + docs/LODGING_AREA_SCORING.md",
+    "Refine scores after D1/D3; area shortlist next — no hotel names yet",
     "agent"
   )
 );

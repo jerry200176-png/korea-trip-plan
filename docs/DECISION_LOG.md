@@ -2,6 +2,12 @@
 
 Append-only. Newest first.
 
+## 2026-07-20 — Lodging area scoring v1 (regions only)
+
+- **Decision:** Publish Provisional area scoring in `data/lodging-area-scores.yaml` (14 dimensions × listed Seoul/Busan belts).
+- **Recommendations:** Seoul primary **Jongno/Insadong**, backup **Myeongdong/Euljiro**; Busan primary **Haeundae**, backup **Seomyeon**.
+- **Status:** Provisional — no hotel names or prices.
+
 ## 2026-07-20 — Founder locks D2; D3 target Provisional
 
 - **D2:** Jerry **Confirmed D2-A** — Seoul 4N + Busan 2N. Independent of D1 exact dates; re-open only via Decision Log if evidence shows infeasible.
