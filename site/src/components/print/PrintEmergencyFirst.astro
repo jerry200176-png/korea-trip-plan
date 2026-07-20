@@ -1,0 +1,60 @@
+---
+interface Props {
+  emergency: any;
+}
+
+const { emergency } = Astro.props;
+const ko = emergency.phrases_ko ?? {};
+const lod = emergency.lodging_placeholders ?? {};
+const ins = emergency.insurance ?? {};
+---
+<section class="emergency-sheet" id="emergency-first">
+  <h1>緊急卡 · Emergency</h1>
+  <div class="emergency-grid">
+    <div class="emergency-block">
+      <div class="emergency-num">112</div>
+      <div class="emergency-label">Police · 警察</div>
+    </div>
+    <div class="emergency-block">
+      <div class="emergency-num">119</div>
+      <div class="emergency-label">Fire / Ambulance · 消防／救護</div>
+    </div>
+  </div>
+
+  <div class="emergency-block">
+    <div class="emergency-label">台灣駐韓官方聯絡</div>
+    <p>{emergency.korea?.mission_name}</p>
+    <p class="placeholder">出發前至代表部官網確認電話與地址（不將即時電話寫入 git）</p>
+  </div>
+
+  <div class="emergency-block">
+    <div class="emergency-label">首爾住宿（韓文地址 · 占位）</div>
+    <p class="emergency-ko placeholder">{lod.seoul_address_ko ?? "REPLACE_ME"}</p>
+  </div>
+  <div class="emergency-block">
+    <div class="emergency-label">釜山住宿（韓文地址 · 占位）</div>
+    <p class="emergency-ko placeholder">{lod.busan_address_ko ?? "REPLACE_ME"}</p>
+  </div>
+
+  <div class="emergency-block">
+    <div class="emergency-label">回住宿</div>
+    <p class="emergency-ko">{ko.taxi_address ?? "이 주소로 가 주세요"}</p>
+  </div>
+
+  <div class="emergency-block">
+    <div class="emergency-label">「我不吃甲殼類」</div>
+    <p class="emergency-ko">{ko.no_crustaceans}</p>
+  </div>
+
+  <div class="emergency-block">
+    <div class="emergency-label">「請幫我叫救護車」</div>
+    <p class="emergency-ko">{ko.ambulance}</p>
+  </div>
+
+  <div class="emergency-block">
+    <div class="emergency-label">保險（離線自用 · 占位）</div>
+    <p class="placeholder">
+      {ins.provider} · {ins.emergency_phone} — {ins.note}
+    </p>
+  </div>
+</section>

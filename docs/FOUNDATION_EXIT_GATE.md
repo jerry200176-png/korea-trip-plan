@@ -21,7 +21,7 @@ All sections **A–G** must pass for **PASS**. Any fail ⇒ PR stays **draft**.
 | Output | Source |
 |--------|--------|
 | Site itinerary/days | `data/itinerary.yaml`, `data/places.yaml`, … |
-| Handbook PDF | Same YAML via `scripts/generate-pdfs.ts` |
+| Handbook PDF | Astro print routes + Playwright (`npm run publication:build`) |
 | Emergency PDF + Emergency page | `data/emergency-public.yaml` |
 | Founder Decisions page | `data/founder-decisions.yaml` |
 | Readiness dashboard | `dist/readiness-report.json` from `scripts/generate-readiness.ts` |

@@ -1,0 +1,123 @@
+---
+import PrintLayout from "../../layouts/PrintLayout.astro";
+import PrintCover from "../../components/print/PrintCover.astro";
+import PrintToc from "../../components/print/PrintToc.astro";
+import PrintSectionDivider from "../../components/print/PrintSectionDivider.astro";
+import PrintDaySpread from "../../components/print/PrintDaySpread.astro";
+import PrintEmergencyFirst from "../../components/print/PrintEmergencyFirst.astro";
+import {
+  loadTrip,
+  loadItinerary,
+  loadPlaces,
+  loadRestaurants,
+  loadBudget,
+  loadSources,
+  loadEmergencyPublic,
+} from "../../lib/data";
+import { readerStatus } from "../../lib/publication";
+
+const trip = loadTrip();
+const itinerary = loadItinerary();
+const places = Object.fromEntries(loadPlaces().map((p) => [p.id, p]));
+const restaurants = Object.fromEntries(loadRestaurants().map((r) => [r.id, r]));
+const budget = loadBudget();
+const sources = loadSources();
+const emergency = loadEmergencyPublic();
+
+const seoulDays = itinerary.days.filter((d) => d.city === "Seoul");
+const busanDays = itinerary.days.filter((d) => d.city === "Busan");
+const transitDays = itinerary.days.filter((d) => d.city === "Transit");
+---
+<PrintLayout title="Korea Trip Handbook" publication="handbook">
+  <PrintCover trip={trip} />
+  <PrintToc />
+
+  <section class="overview-page" id="overview">
+    <h2 style="font-family:var(--font-display);font-size:16pt">Overview</h2>
+    <p>{trip.success_criterion}</p>
+    <p>
+      <strong>路線</strong> · 首爾四晚、釜山兩晚 · <span class="status-pill">{readerStatus(trip.route_status)}</span>
+    </p>
+    <p>
+      <strong>航班計畫</strong> · TPE→ICN、PUS→TPE · <span class="status-pill">{readerStatus(trip.flight_plan?.status)}</span>
+    </p>
+    <p class="names-ko">서울 · 부산 · KTX</p>
+  </section>
+
+  <PrintSectionDivider
+    id="seoul"
+    variant="seoul"
+    title="Seoul · 首爾"
+    subtitle="四晚慢慢走 — 鍾路、弘大、汉江"
+  />
+  {seoulDays.map((day) => (
+    <PrintDaySpread day={day} places={places} restaurants={restaurants} />
+  ))}
+
+  <PrintSectionDivider
+    id="ktx"
+    variant="ktx"
+    title="Seoul → Busan by KTX"
+    subtitle="移動日 · 行李與體力優先"
+  />
+  {transitDays.map((day) => (
+    <PrintDaySpread day={day} places={places} restaurants={restaurants} />
+  ))}
+
+  <PrintSectionDivider
+    id="busan"
+    variant="busan"
+    title="Busan · 釜山"
+    subtitle="海邊、市場、輕鬆收尾"
+  />
+  {busanDays.map((day) => (
+    <PrintDaySpread day={day} places={places} restaurants={restaurants} />
+  ))}
+
+  <PrintSectionDivider
+    id="before"
+    variant="before"
+    title="Before You Go"
+    subtitle="出發前一起確認 — 不寫入私密資料"
+  />
+  <section class="before-page">
+    <ul>
+      <li>護照效期、簽證／K-ETA 依官方重查</li>
+      <li>Sim / eSIM 與 T-Money 抵達日購買</li>
+      <li>住宿區域已評分 — 具體飯店出發前決定</li>
+      <li>海鮮過敏與無酒精偏好隨身記得</li>
+    </ul>
+  </section>
+
+  <PrintSectionDivider id="budget" variant="budget" title="Budget" subtitle="占位預算 — 出發前更新" />
+  <section class="budget-page">
+    <p>規劃幣別：{budget.currency ?? "TWD"} · 狀態 {readerStatus(budget.status)}</p>
+    <ul>
+      {budget.categories?.slice(0, 8).map((c: any) => (
+        <li>
+          {c.label_zh} · 規劃 {c.planned_twd} · 已用 {c.spent_twd}
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <PrintSectionDivider
+    id="emergency"
+    variant="emergency"
+    title="Emergency"
+    subtitle="離線緊急卡 — 另附 Emergency Pack PDF"
+  />
+  <PrintEmergencyFirst emergency={emergency} />
+
+  <section class="sources-page" id="sources">
+    <h2>Sources · 參考連結</h2>
+    <p style="font-size:9pt">正文以短標記引用；完整 URL 僅列於此附錄。</p>
+    <ol>
+      {sources.slice(0, 40).map((s: any) => (
+        <li>
+          {s.title ?? s.id} — <a href={s.url}>{s.url}</a>
+        </li>
+      ))}
+    </ol>
+  </section>
+</PrintLayout>

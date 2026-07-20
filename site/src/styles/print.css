@@ -1,0 +1,436 @@
+/* Korea Trip Handbook — A5 print / Paged.js */
+
+@import "@fontsource/noto-sans-tc/400.css";
+@import "@fontsource/noto-sans-tc/500.css";
+@import "@fontsource/noto-serif-tc/600.css";
+@import "@fontsource/noto-sans-kr/400.css";
+
+:root {
+  --ink: #1a1614;
+  --ink-muted: #5c534c;
+  --paper: #faf7f2;
+  --accent: #c45c4a;
+  --accent-soft: #e8d5cf;
+  --line: #ddd5cb;
+  --seoul: #2d5a7b;
+  --busan: #3d6b5c;
+  --font-body: "Noto Sans TC", "Noto Sans KR", sans-serif;
+  --font-display: "Noto Serif TC", "Noto Sans KR", serif;
+}
+
+@page {
+  size: A5 portrait;
+  margin: 14mm 12mm 16mm;
+  background: var(--paper);
+
+  @bottom-center {
+    content: counter(page);
+    font-family: var(--font-body);
+    font-size: 9pt;
+    color: var(--ink-muted);
+  }
+}
+
+@page cover {
+  margin: 0;
+  @bottom-center {
+    content: none;
+  }
+}
+
+@page emergency {
+  size: A5 portrait;
+  margin: 10mm;
+  background: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 10pt;
+  line-height: 1.45;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.print-root {
+  background: var(--paper);
+}
+
+.publication-flow {
+  max-width: none;
+}
+
+.page-cover {
+  page: cover;
+  min-height: 210mm;
+  width: 148mm;
+  padding: 18mm 14mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(165deg, #faf7f2 0%, #f0e8df 55%, #e8ddd2 100%);
+  break-after: page;
+}
+
+.cover-eyebrow {
+  font-size: 9pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-muted);
+}
+
+.cover-title {
+  font-family: var(--font-display);
+  font-size: 26pt;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 8mm 0 4mm;
+}
+
+.cover-sub {
+  font-size: 11pt;
+  color: var(--ink-muted);
+}
+
+.cover-meta {
+  font-size: 10.5pt;
+  margin-top: 6mm;
+}
+
+.cover-couple {
+  font-family: var(--font-display);
+  font-size: 13pt;
+  margin-top: 4mm;
+}
+
+.cover-ko {
+  font-family: var(--font-body);
+  font-size: 11pt;
+  color: var(--seoul);
+  margin-top: 8mm;
+}
+
+.route-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10mm;
+  font-size: 10pt;
+}
+
+.route-line .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.route-line .bar {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--seoul), var(--accent), var(--busan));
+}
+
+.page-toc {
+  break-after: page;
+  padding-top: 4mm;
+}
+
+.page-toc h2 {
+  font-family: var(--font-display);
+  font-size: 16pt;
+  margin: 0 0 6mm;
+}
+
+.toc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4mm;
+  font-size: 10.5pt;
+}
+
+.toc-row .label {
+  flex: 0 0 auto;
+}
+
+.toc-row .leaders {
+  flex: 1;
+  border-bottom: 1px dotted var(--line);
+  min-width: 12mm;
+  margin: 0 4px;
+}
+
+.toc-row .page-ref {
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-muted);
+}
+
+.section-divider {
+  break-before: page;
+  min-height: 160mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8mm 0;
+  break-after: page;
+}
+
+.section-divider.seoul {
+  background: linear-gradient(135deg, #eef3f7 0%, var(--paper) 70%);
+  border-left: 4mm solid var(--seoul);
+  padding-left: 8mm;
+}
+
+.section-divider.ktx {
+  background: linear-gradient(135deg, #f7f0ea 0%, var(--paper) 70%);
+  border-left: 4mm solid var(--accent);
+  padding-left: 8mm;
+}
+
+.section-divider.busan {
+  background: linear-gradient(135deg, #eef5f1 0%, var(--paper) 70%);
+  border-left: 4mm solid var(--busan);
+  padding-left: 8mm;
+}
+
+.section-divider.before,
+.section-divider.budget,
+.section-divider.emergency {
+  border-left: 4mm solid var(--ink-muted);
+  padding-left: 8mm;
+}
+
+.section-divider h2 {
+  font-family: var(--font-display);
+  font-size: 22pt;
+  margin: 0;
+}
+
+.section-divider p {
+  color: var(--ink-muted);
+  max-width: 42ch;
+  margin-top: 4mm;
+}
+
+.day-spread {
+  break-before: page;
+  break-inside: avoid-page;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 3mm;
+  margin-bottom: 4mm;
+}
+
+.day-number {
+  font-family: var(--font-display);
+  font-size: 20pt;
+  line-height: 1;
+}
+
+.day-city {
+  font-size: 10pt;
+  color: var(--ink-muted);
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 8.5pt;
+  font-weight: 500;
+}
+
+.day-theme {
+  font-size: 13pt;
+  font-weight: 500;
+  margin: 0 0 3mm;
+}
+
+.one-priority {
+  background: var(--accent-soft);
+  padding: 3mm 4mm;
+  border-radius: 4px;
+  margin-bottom: 4mm;
+  font-size: 10pt;
+}
+
+.one-priority strong {
+  display: block;
+  font-size: 8pt;
+  letter-spacing: 0.06em;
+  color: var(--ink-muted);
+  margin-bottom: 1mm;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 22mm 1fr;
+  gap: 3mm;
+  padding: 2.5mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+
+.timeline-item .time {
+  font-variant-numeric: tabular-nums;
+  font-size: 9pt;
+  color: var(--ink-muted);
+}
+
+.timeline-item .block-title {
+  font-weight: 500;
+  margin: 0;
+}
+
+.names-ko {
+  font-family: "Noto Sans KR", "Noto Sans TC", sans-serif;
+  color: var(--ink-muted);
+  font-size: 9pt;
+}
+
+.map-chip {
+  display: inline-block;
+  margin-top: 2mm;
+  padding: 1.5mm 3mm;
+  background: var(--seoul);
+  color: #fff;
+  font-size: 8pt;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3mm;
+  margin-top: 4mm;
+  font-size: 9pt;
+}
+
+.meta-grid dt {
+  font-weight: 500;
+  color: var(--ink-muted);
+}
+
+.meta-grid dd {
+  margin: 0 0 2mm;
+}
+
+.plan-box {
+  margin-top: 4mm;
+  padding: 3mm;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-size: 9pt;
+  break-inside: avoid;
+}
+
+.plan-box h4 {
+  margin: 0 0 2mm;
+  font-size: 9pt;
+}
+
+.emergency-sheet {
+  page: emergency;
+  break-after: page;
+  background: #fff;
+  color: #000;
+  padding: 4mm;
+}
+
+.emergency-sheet h1 {
+  font-size: 16pt;
+  margin: 0 0 4mm;
+  border-bottom: 3px solid #000;
+  padding-bottom: 2mm;
+}
+
+.emergency-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4mm;
+}
+
+.emergency-num {
+  font-size: 28pt;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.emergency-label {
+  font-size: 10pt;
+  font-weight: 600;
+}
+
+.emergency-block {
+  margin-bottom: 5mm;
+  break-inside: avoid;
+}
+
+.emergency-ko {
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 12pt;
+  font-weight: 600;
+  background: #f0f0f0;
+  padding: 3mm;
+  border: 2px dashed #666;
+}
+
+.placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+.overview-page,
+.budget-page,
+.before-page,
+.sources-page {
+  break-before: page;
+}
+
+.sources-page a {
+  word-break: break-all;
+  font-size: 8pt;
+  color: var(--ink-muted);
+}
+
+.hidden-url {
+  /* URL only in appendix */
+}
+
+.pagedjs_pages {
+  background: var(--paper);
+}
+
+/* QA sentinel — must not appear in output */
+.overflow-sentinel {
+  display: none;
+}

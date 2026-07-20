@@ -9,6 +9,9 @@
     "preview": "astro preview --host 0.0.0.0"
   },
   "dependencies": {
+    "@fontsource/noto-sans-kr": "^5.2.5",
+    "@fontsource/noto-sans-tc": "^5.2.5",
+    "@fontsource/noto-serif-tc": "^5.2.5",
     "astro": "^5.7.10",
     "js-yaml": "^4.1.0"
   },

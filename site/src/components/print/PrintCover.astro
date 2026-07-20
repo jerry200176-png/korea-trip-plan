@@ -1,0 +1,25 @@
+---
+interface Props {
+  trip: any;
+}
+
+const { trip } = Astro.props;
+---
+<section class="page-cover" id="cover">
+  <div>
+    <p class="cover-eyebrow">Travel keepsake</p>
+    <h1 class="cover-title">我們的第一次韓國旅行</h1>
+    <p class="cover-sub">Seoul 4N · Busan 2N</p>
+    <p class="cover-meta">March 2027 · dates to be decided</p>
+    <p class="cover-couple">Jerry & 女友</p>
+    <p class="cover-ko">첫 한국 여행 · 서울에서 부산까지</p>
+  </div>
+  <div class="route-line" aria-hidden="true">
+    <span>서울</span>
+    <span class="dot"></span>
+    <span class="bar"></span>
+    <span class="dot"></span>
+    <span>부산</span>
+  </div>
+  <p class="cover-sub" style="margin-top:8mm;font-size:9pt">{trip.success_criterion}</p>
+</section>

@@ -1,0 +1,14 @@
+---
+interface Props {
+  id: string;
+  title: string;
+  subtitle: string;
+  variant: "seoul" | "ktx" | "busan" | "before" | "budget" | "emergency";
+}
+
+const { id, title, subtitle, variant } = Astro.props;
+---
+<section class={`section-divider ${variant}`} id={id}>
+  <h2>{title}</h2>
+  <p>{subtitle}</p>
+</section>

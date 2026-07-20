@@ -1,0 +1,23 @@
+---
+import { tocEntries } from "../../lib/publication";
+
+/** Static page hints for TOC before Paged.js runs; Paged.js updates via CSS targets in full build. */
+const entries = tocEntries();
+---
+<section class="page-toc" id="toc">
+  <h2>Contents · 目錄</h2>
+  <ul class="toc-list">
+    {
+      entries.map((e) => (
+        <li class="toc-row">
+          <span class="label">{e.label}</span>
+          <span class="leaders" aria-hidden="true"></span>
+          <span class="page-ref" data-target={e.target}>· · ·</span>
+        </li>
+      ))
+    }
+  </ul>
+  <p style="font-size:9pt;color:var(--ink-muted);margin-top:8mm">
+    頁碼於付印時自動更新 · Overview · Seoul · KTX · Busan · Before You Go · Budget · Emergency
+  </p>
+</section>

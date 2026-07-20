@@ -1,0 +1,43 @@
+---
+import PrintLayout from "../../layouts/PrintLayout.astro";
+import PrintCover from "../../components/print/PrintCover.astro";
+import PrintToc from "../../components/print/PrintToc.astro";
+import PrintSectionDivider from "../../components/print/PrintSectionDivider.astro";
+import PrintDaySpread from "../../components/print/PrintDaySpread.astro";
+import PrintEmergencyFirst from "../../components/print/PrintEmergencyFirst.astro";
+import {
+  loadTrip,
+  loadItinerary,
+  loadPlaces,
+  loadRestaurants,
+  loadEmergencyPublic,
+} from "../../lib/data";
+
+const trip = loadTrip();
+const itinerary = loadItinerary();
+const places = Object.fromEntries(loadPlaces().map((p) => [p.id, p]));
+const restaurants = Object.fromEntries(loadRestaurants().map((r) => [r.id, r]));
+const emergency = loadEmergencyPublic();
+
+const day2 = itinerary.days.find((d) => d.day_index === 2)!;
+const day5 = itinerary.days.find((d) => d.day_index === 5)!;
+---
+<PrintLayout title="Design proof" publication="proof">
+  <PrintCover trip={trip} />
+  <PrintToc />
+  <PrintSectionDivider
+    id="seoul"
+    variant="seoul"
+    title="Seoul · 首爾"
+    subtitle="韓服、宮殿、城市散步 — 一起決定的小驚喜"
+  />
+  <PrintDaySpread day={day2} places={places} restaurants={restaurants} />
+  <PrintSectionDivider
+    id="ktx"
+    variant="ktx"
+    title="Seoul → Busan by KTX"
+    subtitle="移動日：舒適抵達釜山、不趕行程"
+  />
+  <PrintDaySpread day={day5} places={places} restaurants={restaurants} />
+  <PrintEmergencyFirst emergency={emergency} />
+</PrintLayout>

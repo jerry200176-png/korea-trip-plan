@@ -1,0 +1,104 @@
+---
+import {
+  readerStatus,
+  walkingLabel,
+  energyLabel,
+  cityLabel,
+  blockDisplayNames,
+  mapButtonLabel,
+} from "../../lib/publication";
+
+interface Props {
+  day: any;
+  places: Record<string, any>;
+  restaurants: Record<string, any>;
+}
+
+const { day, places, restaurants } = Astro.props;
+const status = readerStatus(day.status);
+---
+<article class="day-spread" id={`day-${day.day_index}`}>
+  <header class="day-header">
+    <div>
+      <div class="day-number">Day {day.day_index}</div>
+      <div class="day-city">{cityLabel(day.city)} · {day.primary_areas?.join(" · ")}</div>
+    </div>
+    <span class="status-pill">{status}</span>
+  </header>
+
+  <h3 class="day-theme">{day.theme}</h3>
+
+  <div class="one-priority">
+    <strong>今日最重要的一件事</strong>
+    {day.one_priority}
+  </div>
+
+  <ol class="timeline">
+    {
+      day.blocks.map((b: any) => {
+        const names = blockDisplayNames(b, places, restaurants);
+        const place = b.place_id ? places[b.place_id] : null;
+        const hasMap = place?.naver_map_url || b.map_url;
+        return (
+          <li class="timeline-item">
+            <div class="time">
+              {b.start}–{b.end}
+            </div>
+            <div>
+              <p class="block-title">{b.title}</p>
+              {(names.zh || names.ko) && (
+                <p class="names-ko">
+                  {names.zh}
+                  {names.ko ? ` · ${names.ko}` : ""}
+                </p>
+              )}
+              {b.transit_mode && (
+                <p style="font-size:9pt;color:var(--ink-muted);margin:1mm 0 0">
+                  交通 · {b.transit_mode}
+                  {b.transit_minutes != null ? ` · 約 ${b.transit_minutes} 分` : ""}
+                </p>
+              )}
+              {hasMap && (
+                <span class="map-chip">{mapButtonLabel()}</span>
+              )}
+            </div>
+          </li>
+        );
+      })
+    }
+  </ol>
+
+  <dl class="meta-grid">
+    <div>
+      <dt>出門 · 返回</dt>
+      <dd>
+        {day.out_time} – 最晚 {day.return_by}
+      </dd>
+    </div>
+    <div>
+      <dt>步行 · 體力</dt>
+      <dd>
+        步行 {walkingLabel(day.walking_level)} · 體力 {energyLabel(day.energy)}
+      </dd>
+    </div>
+    <div>
+      <dt>區域</dt>
+      <dd>{day.primary_areas?.join("、")}</dd>
+    </div>
+    <div>
+      <dt>緩衝</dt>
+      <dd>約 {day.buffer_percent}%</dd>
+    </div>
+  </dl>
+
+  <div class="plan-box">
+    <h4>雨天備案</h4>
+    <p>{day.rain_plan}</p>
+    <h4>低體力時優先刪除</h4>
+    <p>{(day.droppable_items || []).join("、") || "—"}</p>
+    <h4>低體力計畫</h4>
+    <p>{day.low_energy_plan}</p>
+    <h4>最晚回住宿</h4>
+    <p>{day.emergency_return}</p>
+  </div>
+</article>

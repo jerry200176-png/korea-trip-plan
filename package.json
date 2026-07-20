@@ -14,16 +14,20 @@
     "check:route-messaging": "tsx scripts/check-route-messaging.ts",
     "check:lodging-scores": "tsx scripts/check-lodging-scores.ts",
     "test:itinerary": "tsx scripts/check-itinerary.ts",
-    "readiness": "tsx scripts/generate-readiness.ts",
-    "pdf": "tsx scripts/generate-pdfs.ts",
-    "verify:pdf": "tsx scripts/verify-pdfs.ts",
+  "readiness": "tsx scripts/generate-readiness.ts",
+  "pdf:legacy": "tsx scripts/generate-pdfs.ts",
+  "publication:render": "tsx scripts/render-publication.ts",
+  "publication:verify": "tsx scripts/verify-publication.ts",
+  "publication:build": "tsx scripts/build-publication.ts",
+    "publication-quality-gate": "tsx scripts/build-publication.ts",
+  "verify:pdf": "tsx scripts/verify-publication.ts",
     "prepare:artifacts": "tsx scripts/prepare-public-artifacts.ts",
     "test:mobile": "tsx scripts/mobile-smoke.ts",
     "build:site": "npm run build --prefix site",
     "build": "npm run ci",
     "dev": "npm run dev --prefix site",
     "lint:md": "markdownlint-cli2 \"docs/**/*.md\" \"handbook/**/*.md\" \"checklists/**/*.md\" \"README.md\"",
-    "ci": "npm run validate && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run check:route-messaging && npm run check:lodging-scores && npm run check:links && npm run lint:md && npm run readiness && npm run build:site && npm run pdf && npm run verify:pdf && npm run prepare:artifacts && npm run test:mobile"
+    "ci": "npm run validate && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run check:route-messaging && npm run check:lodging-scores && npm run check:links && npm run lint:md && npm run readiness && npm run publication-quality-gate && npm run prepare:artifacts && npm run test:mobile"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
@@ -31,7 +35,9 @@
     "gray-matter": "^4.0.3",
     "js-yaml": "^4.1.0",
     "markdownlint-cli2": "^0.17.2",
-    "pdfkit": "^0.16.0",
+    "pagedjs": "^0.4.3",
+    "playwright": "^1.51.1",
+    "sharp": "^0.33.5",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   }

@@ -1,0 +1,16 @@
+---
+import PrintLayout from "../../layouts/PrintLayout.astro";
+import PrintEmergencyFirst from "../../components/print/PrintEmergencyFirst.astro";
+import { loadEmergencyPublic } from "../../lib/data";
+
+const emergency = loadEmergencyPublic();
+---
+<PrintLayout title="Emergency Pack" publication="emergency">
+  <PrintEmergencyFirst emergency={emergency} />
+  <section class="emergency-sheet">
+    <h1 style="font-size:14pt">更多離線提示</h1>
+    <p>此頁可列印後折疊放錢包。不含訂位代碼、護照號、電話或 QR 私密資料。</p>
+    <p class="emergency-ko">{emergency.phrases_ko?.help}</p>
+    <p class="emergency-ko">{emergency.phrases_ko?.no_alcohol}</p>
+  </section>
+</PrintLayout>

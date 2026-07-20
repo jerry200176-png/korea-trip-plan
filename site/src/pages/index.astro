@@ -108,11 +108,15 @@ const countdown =
   </section>
 
   <section class="panel">
-    <h2>離線手冊 PDF</h2>
-    <p class="muted">Build 後可下載（同 CI artifact）</p>
+    <h2>紀念手冊（A5 PDF）</h2>
+    <p class="muted">
+      新版出版 pipeline（CJK 嵌入 + 視覺 QA）。舊 PDFKit 輸出已標記 failed — 見 docs/PDF_DELIVERY_FAILURE.md
+    </p>
     <div class="btn-row">
-      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>Handbook PDF</a>
-      <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>Emergency PDF</a>
+      <a class="btn primary" href={`${base}print/handbook/`}>預覽手冊（列印版）</a>
+      <a class="btn" href={`${base}downloads/korea-trip-handbook-a5.pdf`}>下載 A5 PDF</a>
+      <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>Emergency Pack</a>
+      <a class="btn" href={`${base}print/emergency/`}>預覽 Emergency</a>
     </div>
   </section>
 

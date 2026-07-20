@@ -17,10 +17,14 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             site/package-lock.json
+      - name: Install poppler (pdffonts, pdftotext, pdftoppm)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
       - name: Clean install (reproducibility)
         run: |
           npm ci
           npm ci --prefix site
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium
       - name: Foundation Exit Gate — npm run ci
         run: npm run ci
       - name: Upload handbook artifacts
