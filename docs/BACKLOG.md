@@ -8,10 +8,10 @@ GitHub Issues API is unavailable to this agent integration. Track work here; use
 |---|-----------|---------|--------|
 | 1 | Foundation | Docs, schema, privacy, CI skeleton | **Complete** (PR #1; see Foundation Exit Gate) |
 | 2 | Route Decision | Founder locks cities / nights | **Complete** (D2-A Confirmed) |
-| 3 | Research Complete | Entry, transit, pay, weather, shopping research with sources | Partial (this PR) |
-| 4 | Itinerary Draft | 7 executable provisional days | Skeleton (this PR) |
+| 3 | Research Complete | Entry, transit, pay, weather, shopping research with sources | **Complete** (handbook/ + sources.yaml) |
+| 4 | Itinerary Draft | 7 executable provisional days | **Skeleton** (data/itinerary.yaml) |
 | 5 | Booking Ready | Shortlists + example booking file only | Not started |
-| 6 | Handbook Beta | Mobile site + PDFs usable offline | Skeleton (this PR) |
+| 6 | Handbook Beta | Mobile site + PDFs usable offline | **In progress** (publication pipeline PR #5) |
 | 7 | Pre-Departure Verified | T-30 / T-7 freshness passes | Not started |
 | 8 | Trip Ready | Phones hold site + PDFs; bookings offline | Not started |
 

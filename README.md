@@ -28,7 +28,7 @@ Node **22** (see `.nvmrc`).
 | `handbook/` | Long-form researched chapters (Markdown) |
 | `checklists/` | Pre-departure / packing / emergency |
 | `site/` | Astro mobile handbook |
-| `scripts/` | Validate, privacy scan, stale check, PDF generation |
+| `scripts/` | Validate, privacy, stale, links, **publication PDF** (`publication:build`) |
 | `dist/` | Built site + PDFs (generated; do not hand-edit) |
 
 ## Status labels
