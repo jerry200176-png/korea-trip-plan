@@ -2,29 +2,55 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTimeline } from "../lib/data";
+import { sanitizeReaderText } from "../lib/presentation";
+
 const timeline = loadTimeline();
 const base = siteBase();
+
+function milestoneLabel(label: string) {
+  const map: Record<string, string> = {
+    "T-180": "出發前約半年",
+    "T-120": "出發前約四個月",
+    "T-90": "出發前約三個月",
+    "T-60": "出發前約兩個月",
+    "T-30": "出發前約一個月",
+    "T-14": "出發前兩週",
+    "T-7": "出發前一週",
+    "T-3": "出發前三天",
+    "T-1": "出發前一天",
+    出發日: "出發當天",
+    回國後: "回家之後",
+  };
+  return map[label] ?? sanitizeReaderText(label);
+}
 ---
-<Handbook title="Before You Go" current="more">
-  <h1>Before You Go</h1>
-  <p class="muted">對應 data/timeline.yaml 與 checklists/</p>
-  {timeline.milestones.map((m) => (
-    <section class="panel">
-      <h2>{m.label}</h2>
-      <ul class="list">
-        {m.tasks.map((t: any) => (
-          <li>
-            <label style="display:flex;gap:0.6rem;align-items:flex-start">
-              <input type="checkbox" disabled checked={t.done} />
-              <span>{t.title}</span>
-            </label>
-          </li>
-        ))}
-      </ul>
-    </section>
-  ))}
+<Handbook title="出發前" current="more">
+  <p class="eyebrow">出發前</p>
+  <h1 class="page-title">出發前準備</h1>
+  <p class="muted">依時間遠近，Jerry 與 Nikita 一起完成的事項。</p>
+  {
+    timeline.milestones.map((m) => (
+      <section class="surface">
+        <h2 style="margin-top:0">{milestoneLabel(m.label)}</h2>
+        <ul class="list">
+          {m.tasks.map((t: any) => (
+            <li>
+              <label style="display:flex;gap:0.6rem;align-items:flex-start">
+                <input type="checkbox" disabled checked={t.done} />
+                <span>{sanitizeReaderText(t.title)}</span>
+              </label>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
   <div class="btn-row">
-    <a class="btn" href={`${base}packing/`}>行李</a>
-    <a class="btn" href={`${base}bookings/`}>預訂占位</a>
+    <a class="btn" href={`${base}packing/`}>
+      行李
+    </a>
+    <a class="btn" href={`${base}bookings/`}>
+      預訂狀態
+    </a>
   </div>
 </Handbook>

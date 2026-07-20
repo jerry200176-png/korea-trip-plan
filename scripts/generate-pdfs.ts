@@ -11,6 +11,7 @@ import {
   formatTargetMonth,
   kindZh,
   placeTypeZh,
+  readerRefLabel,
   sanitizeReaderText,
   statusZh,
   transitModeZh,
@@ -97,7 +98,7 @@ function dayHeader(day: any, continued = false): string {
 
 function dayClosing(day: any): string {
   const drop = (day.droppable_items || []).length
-    ? `<p><strong>低體力優先刪除：</strong>${day.droppable_items.map((x: string) => sanitizeReaderText(String(x))).join("、")}</p>`
+    ? `<p><strong>低體力優先刪除：</strong>${day.droppable_items.map((x: string) => readerRefLabel(String(x), placeMap)).join("、")}</p>`
     : "";
   return `<div class="keep"><p><strong>雨備：</strong>${sanitizeReaderText(day.rain_plan)}</p><p><strong>低體力：</strong>${sanitizeReaderText(day.low_energy_plan)}</p><p><strong>回住宿：</strong>${sanitizeReaderText(day.emergency_return)}</p>${drop}</div>`;
 }
@@ -173,24 +174,32 @@ const dayMedia: Record<number, string | undefined> = {
   6: "busan-haeundae",
 };
 
-const creditsItems = mediaDoc.media
-  .filter((m) => m.status === "Approved" && (m.type === "photo" || m.type === "generated_illustration"))
-  .map((m) => {
-    const isAi = m.type === "generated_illustration";
-    const creator = isAi
-      ? `AI 原創插畫（專案生成 · ${m.generation_date || ""}）`
-      : m.creator;
-    const source = String(m.source_url || "").startsWith("http")
-      ? "來源頁面見網站圖片出處"
-      : isAi
-        ? "本專案原創插畫"
-        : m.source_platform || "本專案";
-    const attrib = isAi
-      ? `本專案 AI 原創插畫 · ${m.generation_date || ""}`
-      : m.attribution;
-    return `<li><strong>${m.alt_zh}</strong><br/>名稱：${m.id}<br/>攝影者／生成方式：${creator}<br/>來源：${source}<br/>License：${m.license}<br/>Attribution：${attrib}</li>`;
-  })
-  .join("");
+function creditItemHtml(m: any): string {
+  const isAi = m.type === "generated_illustration";
+  const creator = isAi
+    ? `AI 原創插畫（專案生成 · ${m.generation_date || ""}）`
+    : m.creator;
+  const source = String(m.source_url || "").startsWith("http")
+    ? "來源頁面見網站圖片出處"
+    : isAi
+      ? "本專案原創插畫"
+      : m.source_platform || "本專案";
+  const attrib = isAi
+    ? `本專案 AI 原創插畫 · ${m.generation_date || ""}`
+    : m.attribution;
+  const license = String(m.license || "")
+    .replace(/Original AI-generated illustration for this project/g, "本專案原創 AI 插畫授權")
+    .replace(/AI-generated/g, "AI 原創");
+  return `<li><strong>${m.alt_zh}</strong><br/>攝影者／生成方式：${creator}<br/>來源：${source}<br/>授權：${license}<br/>出處：${attrib}</li>`;
+}
+
+const approvedIllustrations = mediaDoc.media.filter(
+  (m) => m.status === "Approved" && m.type === "generated_illustration"
+);
+const approvedPhotos = mediaDoc.media.filter((m) => m.status === "Approved" && m.type === "photo");
+const creditIllustrations = approvedIllustrations.map(creditItemHtml).join("");
+const creditPhotos = approvedPhotos.map(creditItemHtml).join("");
+const photoListStart = approvedIllustrations.length + 1;
 
 const monthLabel = formatTargetMonth(trip.target_month);
 
@@ -199,9 +208,9 @@ const handbookBody = `
   <img class="cover-media" src="${mediaSrc("cover-hero")}" alt="${mediaById["cover-hero"].alt_zh}"/>
   <div class="cover-body">
     <p class="eyebrow">我們的韓國 · 旅行規劃預覽版</p>
-    <h1>${trip.title}</h1>
+    <h1>Jerry &amp; Nikita</h1>
     <p class="lede">${trip.success_criterion}</p>
-    <p class="meta">首爾四晚 · 釜山兩晚 · ${monthLabel}</p>
+    <p class="meta">Jerry 與 Nikita · 首爾四晚 · 釜山兩晚 · ${monthLabel}</p>
     <p class="meta muted">目前是規劃預覽，不是已完成預訂。</p>
   </div>
 </div>
@@ -209,8 +218,8 @@ const handbookBody = `
 <section class="page intro compact">
   <p class="eyebrow">Intro</p>
   <h2>我們想留下的回憶</h2>
-  <p>這是我們第一次一起出國。成功標準只有一句：${trip.success_criterion}。</p>
-  <p>女友期待：GOT7、海景、韓服、購物、美食、韓國算命。Jerry 希望順暢、不要太累、不要排太滿。兩人照與拍立得很重要。</p>
+  <p>這是 Jerry 與 Nikita 第一次一起出國。成功標準只有一句：${trip.success_criterion}。</p>
+  <p>Nikita 期待：GOT7、海景、韓服、購物、美食、韓國算命。Jerry 希望順暢、不要太累、不要排太滿。兩人照與拍立得很重要。</p>
   <div class="route-line">
     <strong>TPE → ICN</strong> · 首爾四晚 · <strong>KTX</strong> · 釜山兩晚 · <strong>PUS → TPE</strong>
   </div>
@@ -275,14 +284,21 @@ ${busanMain.map((d) => dayPages(d, dayMedia[d.day_index])).join("\n")}
     </ul>
   </div>
   <p class="meta-row" style="margin-top:10pt">最期待：韓服 · 宮殿 · 海景 · 美食 · 購物 · 算命</p>
-  <p class="footer-note">我們的韓國 · 旅行規劃預覽版 · 非訂票憑證</p>
+  <p class="footer-note">Jerry 與 Nikita · 我們的韓國 · 旅行規劃預覽版 · 非訂票憑證</p>
 </section>
 
-<section class="page compact">
-  <p class="eyebrow">Credits</p>
-  <h2>Image Credits</h2>
-  <p class="muted">封面、章節與每日正文不放技術出處；完整 attribution 如下。AI 插畫不是景點證據。</p>
-  <ol class="credits">${creditsItems}</ol>
+<section class="page compact credits-page">
+  <p class="eyebrow">Credits · 1／2</p>
+  <h2>圖片出處 · 插畫</h2>
+  <p class="muted">封面與章節插畫的完整出處。AI 插畫不是景點證據；正文不放技術說明。</p>
+  <ol class="credits dense-credits">${creditIllustrations}</ol>
+</section>
+
+<section class="page compact credits-page">
+  <p class="eyebrow">Credits · 2／2</p>
+  <h2>圖片出處 · 照片</h2>
+  <p class="muted">真實照片出處與授權。完整列表供 Jerry 與 Nikita 保存與再查。</p>
+  <ol class="credits dense-credits" start="${photoListStart}">${creditPhotos}</ol>
 </section>
 `;
 

@@ -5,6 +5,7 @@ import { loadItinerary, loadPlaces, mediaById, mediaPublicUrl } from "../../lib/
 import {
   cityZh,
   formatClock,
+  readerRefLabel,
   sanitizeReaderText,
   statusZh,
   transitModeZh,
@@ -116,7 +117,7 @@ const transit = nextBlock ? transitModeZh(nextBlock.transit_mode) : null;
   <section class="surface-quiet">
     <h2 style="margin-top:0">若下雨／體力低</h2>
     <p class="muted" style="margin:0"><strong>雨備：</strong>{sanitizeReaderText(day.rain_plan)}</p>
-    <p class="muted"><strong>低體力優先刪除：</strong>{(day.droppable_items || []).map((x: string) => sanitizeReaderText(String(x))).join("、") || sanitizeReaderText(day.low_energy_plan)}</p>
+    <p class="muted"><strong>低體力優先刪除：</strong>{(day.droppable_items || []).map((x: string) => readerRefLabel(String(x), places)).join("、") || sanitizeReaderText(day.low_energy_plan)}</p>
     <p class="muted">
       <strong>回住宿方向：</strong>
       {sanitizeReaderText(day.emergency_return)}

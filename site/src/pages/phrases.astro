@@ -1,12 +1,29 @@
 ---
 import Handbook from "../layouts/Handbook.astro";
-import fs from "node:fs";
-import path from "node:path";
-const md = fs.readFileSync(path.resolve(process.cwd(), "../handbook/korean-phrases.md"), "utf8");
 ---
-<Handbook title="Korean Phrases" current="more">
-  <h1>Korean Phrases</h1>
-  <section class="panel">
-    <pre style="white-space:pre-wrap;font-family:var(--font-body);margin:0">{md}</pre>
+<Handbook title="韓文句子" current="more">
+  <p class="eyebrow">韓文</p>
+  <h1 class="page-title">實用韓文短句</h1>
+  <p class="muted">短句優先，現場可指著螢幕給對方看。</p>
+
+  <section class="surface">
+    <h2 style="margin-top:0">飲食需求</h2>
+    <ul class="list">
+      <li>我們不喝酒 — <span lang="ko">저희는 술을 마시지 않아요</span></li>
+      <li>可以不要甲殼類海鮮嗎？ — <span lang="ko">갑각류 해산은 빼 주실 수 있나요?</span></li>
+      <li>豬肉湯飯請給我一份 — <span lang="ko">돼지국밥 하나 주세요</span></li>
+      <li>不要太辣／可以辣 — <span lang="ko">덜 맵게 해 주세요 / 맵게 해 주세요</span></li>
+      <li>謝謝 — <span lang="ko">감사합니다</span></li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">求助與交通</h2>
+    <ul class="list">
+      <li>幫得我忙嗎？ — <span lang="ko">도와주세요</span></li>
+      <li>我想去這裡 — <span lang="ko">여기로 가고 싶어요</span></li>
+      <li>請叫救護車 — <span lang="ko">구급차를 불러 주세요</span></li>
+      <li>請到這個地址 — <span lang="ko">이 주소로 가 주세요</span></li>
+    </ul>
   </section>
 </Handbook>

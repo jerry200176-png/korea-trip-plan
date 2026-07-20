@@ -1,12 +1,39 @@
 ---
 import Handbook from "../layouts/Handbook.astro";
-import fs from "node:fs";
-import path from "node:path";
-const packing = fs.readFileSync(path.resolve(process.cwd(), "../checklists/packing.md"), "utf8");
 ---
-<Handbook title="Packing" current="more">
-  <h1>Packing</h1>
-  <section class="panel">
-    <pre style="white-space:pre-wrap;font-family:var(--font-body);margin:0">{packing}</pre>
+<Handbook title="行李" current="more">
+  <p class="eyebrow">行李</p>
+  <h1 class="page-title">行李清單</h1>
+  <p class="muted">以 2027 年 3 月氣候為規劃基準；出發前一週再對一次天氣預報。</p>
+
+  <section class="surface">
+    <h2 style="margin-top:0">證件與裝置</h2>
+    <ul class="list">
+      <li>護照</li>
+      <li>手機、充電器、行動電源</li>
+      <li>拍立得相機與底片（避免極端冷熱）</li>
+      <li>離線地圖與旅行書 PDF</li>
+      <li>卡片與少量現金</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">衣服（舒適優先）</h2>
+    <ul class="list">
+      <li>適合偏涼與海風的層次穿搭</li>
+      <li>防風／防潑水外套</li>
+      <li>好走的鞋（主力）＋備用鞋</li>
+      <li>防磨襪子</li>
+      <li>配合韓服店規定的內搭（店家鎖定後確認）</li>
+    </ul>
+  </section>
+
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">每日小包</h2>
+    <ul class="list">
+      <li>衛生紙／濕紙巾</li>
+      <li>手機背帶或小側背</li>
+      <li>可重複使用購物袋（化妝品體積會變多）</li>
+    </ul>
   </section>
 </Handbook>

@@ -70,8 +70,9 @@ export function areaZh(area: string): string {
     Mapo: "麻浦",
     Jung: "中區",
     Suyeong: "水營",
+    TBD: "區域確認後補上",
   };
-  return map[area] ?? area;
+  return map[area] ?? sanitizeReaderText(area);
 }
 
 export function transitModeZh(mode: string | null | undefined): string | null {
@@ -104,12 +105,40 @@ export function formatTargetMonth(month: string | null | undefined): string {
   return `${m[1]} 年 ${Number(m[2])} 月，日期待決定`;
 }
 
+const READER_PLACE_LABELS: Record<string, string> = {
+  "plc-jyp-tower": "JYP 周邊打卡",
+  "plc-gyeongbokgung": "景福宮",
+  "plc-bukchon": "北村韓屋村",
+  "plc-myeongdong": "明洞",
+  "plc-hongdae": "弘大",
+  "plc-haeundae": "海雲台海水浴場",
+  "plc-gwangalli": "廣安里海水浴場",
+};
+
+/** Resolve internal refs (plc-*, etc.) to reader-facing labels. Never emit raw IDs. */
+export function readerRefLabel(
+  ref: string,
+  places?: Record<string, { name_zh?: string } | undefined>
+): string {
+  const raw = String(ref || "").trim();
+  if (!raw) return "";
+  if (READER_PLACE_LABELS[raw]) return READER_PLACE_LABELS[raw];
+  if (places?.[raw]?.name_zh) return places[raw]!.name_zh!;
+  if (/^(plc|src|med|rst|trv|dest|t\d)-/i.test(raw) || /^(place_id|foundation_slice|route_option)$/i.test(raw)) {
+    return "待確認項目";
+  }
+  return sanitizeReaderText(raw);
+}
+
 export function sanitizeReaderText(text: string | null | undefined): string {
   if (!text) return "";
   return text
+    .replace(/Jerry\s*與女友/g, "Jerry 與 Nikita")
+    .replace(/Jerry\s*&\s*女友/g, "Jerry & Nikita")
     .replace(/\bREPLACE_ME\b/g, "確認後補上")
     .replace(/\bDecision Required\b/gi, "還要一起決定")
     .replace(/\bDecisionRequired\b/g, "還要一起決定")
+    .replace(/\bOpen Decision\b/gi, "還要一起決定")
     .replace(/\bConfirmed\b/g, "已決定")
     .replace(/\bProvisional\b/g, "目前暫定")
     .replace(/\bAssumption\b/g, "規劃基準")
@@ -125,12 +154,27 @@ export function sanitizeReaderText(text: string | null | undefined): string {
     .replace(/\bTrip Ready\b/gi, "行程就緒")
     .replace(/\bDashboard\b/g, "首頁")
     .replace(/\btrip\.yaml\b/g, "旅程資料")
+    .replace(/\bdata\/[a-z0-9_.-]+\.yaml\b/gi, "旅程資料")
+    .replace(/\bchecklists\/[a-z0-9_.-]*/gi, "出發前清單")
+    .replace(/\bhandbook\/[a-z0-9_.-]*/gi, "旅行筆記")
+    .replace(/\bupdate YAML\b/gi, "回填實際心得")
+    .replace(/\bYAML\b/g, "資料")
+    .replace(/\bduration_days\b/g, "行程天數")
+    .replace(/\bcalendar days\b/gi, "個日曆日")
+    .replace(/\bhotel nights\b/gi, "晚住宿")
     .replace(/\bSeoul 4N \+ Busan 2N\b/g, "首爾四晚 + 釜山兩晚")
+    .replace(/\b4N\+3N\b/g, "四晚+三晚")
     .replace(/\b4N\b/g, "四晚")
     .replace(/\b2N\b/g, "兩晚")
     .replace(/\b3N\b/g, "三晚")
     .replace(/\b6N\b/g, "六晚")
     .replace(/\b7N\b/g, "七晚")
+    .replace(/\bSeoul\b/g, "首爾")
+    .replace(/\bBusan\b/g, "釜山")
+    .replace(/\bplc-[a-z0-9-]+/gi, (id) => READER_PLACE_LABELS[id] || "待確認地點")
+    .replace(/\bsrc-[a-z0-9-]+/gi, "來源")
+    .replace(/\bmed-[a-z0-9-]+/gi, "圖片")
+    .replace(/\brst-[a-z0-9-]+/gi, "餐廳候選")
     .replace(/\s{2,}/g, " ")
     .trim();
 }

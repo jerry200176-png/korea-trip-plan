@@ -1,7 +1,7 @@
 ---
 import Handbook from "../layouts/Handbook.astro";
 import { loadBudget, budgetProgress } from "../lib/data";
-import { statusZh } from "../lib/presentation";
+import { sanitizeReaderText, statusZh } from "../lib/presentation";
 const budget = loadBudget();
 const prog = budgetProgress(budget);
 ---
@@ -10,14 +10,16 @@ const prog = budgetProgress(budget);
   <section class="panel">
     <p>已花 {prog.spent} / 規劃 {prog.planned} {budget.currency}（{prog.pct}%）</p>
     <span class="status status-provisional">{statusZh(budget.status)}</span>
-    <p class="muted">{budget.notes}</p>
+    <p class="muted">{sanitizeReaderText(budget.notes)}</p>
   </section>
   <ul class="list">
     {budget.categories.map((c: any) => (
       <li>
         <strong>{c.name}</strong>
-        <div>{c.spent_twd} / {c.planned_twd} TWD · {statusZh(c.status)}</div>
-        {c.notes && <div class="muted">{c.notes}</div>}
+        <div>
+          {c.spent_twd} / {c.planned_twd} TWD · {statusZh(c.status)}
+        </div>
+        {c.notes && <div class="muted">{sanitizeReaderText(c.notes)}</div>}
       </li>
     ))}
   </ul>

@@ -196,7 +196,7 @@ days:
     rain_plan: 全程室內算命＋咖啡
     low_energy_plan: 取消 JYP 周邊，只留算命
     closure_plan: 換預約時段或改同區塔羅咖啡館（需篩選）
-    droppable_items: [plc-jyp-tower]
+    droppable_items: [JYP 周邊打卡]
     emergency_return: 地鐵／計程車
     status: Provisional
     blocks:

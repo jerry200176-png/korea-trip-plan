@@ -41,7 +41,7 @@ const base = siteBase();
         </p>
         {d.options.map((o: any) => (
           <div class="decision-option">
-            <strong>{o.label}</strong>
+            <strong>{sanitizeReaderText(o.label)}</strong>
             <p class="muted">{sanitizeReaderText(o.summary)}</p>
           </div>
         ))}

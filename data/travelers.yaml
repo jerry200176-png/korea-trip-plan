@@ -11,7 +11,7 @@ travelers:
     status: Confirmed
     notes: Do not store passport, DOB, phone, or address in repo.
   - id: trv-partner
-    display_name: 女友
+    display_name: Nikita
     role: traveler
     nationality_assumption: TW
     interests:
@@ -21,4 +21,4 @@ travelers:
       - avoid_crustacean_heavy_meals
       - no_jjimjilbang
     status: Confirmed
-    notes: Display name only; no PII.
+    notes: Display first name only; no surname or other PII.

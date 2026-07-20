@@ -170,6 +170,18 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2;
   border-radius: 3pt;
 }
 .credits li { margin: 5pt 0; font-size: 9pt; break-inside: avoid; page-break-inside: avoid; }
+.credits-page h2 { margin-bottom: 6pt; }
+.dense-credits { margin: 8pt 0 0; padding-left: 1.2em; }
+.dense-credits li {
+  margin: 7pt 0;
+  padding: 6pt 8pt;
+  font-size: 9pt;
+  line-height: 1.35;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 4pt;
+  list-style-position: inside;
+}
 .muted { color: var(--color-ink-muted); }
 .route-line {
   margin: 10pt 0;

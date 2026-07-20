@@ -8,6 +8,7 @@ import {
   formatClock,
   kindZh,
   placeTypeZh,
+  readerRefLabel,
   reservationLabel,
   sanitizeReaderText,
   statusZh,
@@ -153,7 +154,7 @@ const expectLine =
     </p>
     <p>
       <strong>低體力優先刪除：</strong>
-      {(day.droppable_items || []).map((x: string) => sanitizeReaderText(String(x))).join("、") || sanitizeReaderText(day.low_energy_plan)}
+      {(day.droppable_items || []).map((x: string) => readerRefLabel(String(x), places)).join("、") || sanitizeReaderText(day.low_energy_plan)}
     </p>
     <p>
       <strong>低體力方案：</strong>

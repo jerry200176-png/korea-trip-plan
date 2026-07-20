@@ -4,55 +4,65 @@ import Handbook from "../layouts/Handbook.astro";
 import { loadMedia, mediaPublicUrl } from "../lib/data";
 
 const base = siteBase();
-const { media, kto_candidates } = loadMedia();
-const credits = media.filter(
-  (m) => m.status === "Approved" && (m.type === "photo" || m.type === "generated_illustration" || m.type === "icon")
-);
+const { media } = loadMedia();
+const illustrations = media.filter((m) => m.status === "Approved" && m.type === "generated_illustration");
+const photos = media.filter((m) => m.status === "Approved" && m.type === "photo");
+const icons = media.filter((m) => m.status === "Approved" && m.type === "icon");
 
-function typeZh(t: string) {
-  if (t === "generated_illustration") return "AI 插畫";
-  if (t === "photo") return "照片";
-  if (t === "icon") return "圖示";
-  return "媒體";
+function licenseZh(license: string) {
+  return String(license || "")
+    .replace(/Original AI-generated illustration for this project/g, "本專案原創 AI 插畫授權")
+    .replace(/AI-generated/g, "AI 原創")
+    .replace(/Unsplash License/g, "Unsplash 授權")
+    .replace(/Original work for this project/g, "本專案原創");
 }
 ---
 <Handbook title="圖片出處" current="home">
-  <p class="eyebrow">Image Credits</p>
+  <p class="eyebrow">圖片出處</p>
   <h1 class="page-title">圖片出處</h1>
   <span class="status status-provisional">公開版</span>
-  <p class="hero-lede">封面、章節與每日正文不放技術出處。以下為本預覽版使用的全部圖片與授權資訊。</p>
+  <p class="hero-lede">封面、章節與每日正文不放技術出處。以下為 Jerry 與 Nikita 預覽版使用的圖片與授權資訊。</p>
 
   <section class="surface">
-    <h2 style="margin-top:0">使用中的媒體</h2>
+    <h2 style="margin-top:0">插畫</h2>
     <ul class="credit-list">
       {
-        credits.map((m) => (
+        illustrations.map((m) => (
           <li>
             <strong>{m.alt_zh}</strong>
-            <span class="status status-provisional">{typeZh(m.type)}</span>
-            <p>名稱：{m.id}</p>
-            <p>攝影者／生成方式：{m.type === "generated_illustration" ? `AI 原創插畫（專案生成 · ${m.generation_date ?? ""}）` : m.creator}</p>
-            <p>Attribution：{m.type === "generated_illustration" ? `本專案 AI 原創插畫 · ${m.generation_date ?? ""}` : m.attribution}</p>
-            <p class="muted">License：{m.license}</p>
+            <span class="status status-provisional">AI 插畫</span>
+            <p>攝影者／生成方式：AI 原創插畫（專案生成 · {m.generation_date ?? ""}）</p>
+            <p>出處：本專案 AI 原創插畫 · {m.generation_date ?? ""}</p>
+            <p class="muted">授權：{licenseZh(m.license)}</p>
+            {m.web_path && (
+              <img class="credit-thumb" src={mediaPublicUrl(base, m)} alt={m.alt_zh} loading="lazy" />
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">照片</h2>
+    <ul class="credit-list">
+      {
+        photos.map((m) => (
+          <li>
+            <strong>{m.alt_zh}</strong>
+            <span class="status status-provisional">照片</span>
+            <p>攝影者／生成方式：{m.creator}</p>
+            <p>出處：{m.attribution}</p>
+            <p class="muted">授權：{licenseZh(m.license)}</p>
             <p class="muted">
-              來源：{m.source_platform}
               {String(m.source_url).startsWith("http") ? (
-                <>
-                  {" "}
-                  ·{" "}
-                  <a href={m.source_url} target="_blank" rel="noreferrer">
-                    來源頁面
-                  </a>
-                </>
+                <a href={m.source_url} target="_blank" rel="noreferrer">
+                  來源頁面
+                </a>
               ) : null}
             </p>
             {m.web_path && (
-              <img
-                class="credit-thumb"
-                src={mediaPublicUrl(base, m)}
-                alt={m.alt_zh}
-                loading="lazy"
-              />
+              <img class="credit-thumb" src={mediaPublicUrl(base, m)} alt={m.alt_zh} loading="lazy" />
             )}
           </li>
         ))
@@ -61,20 +71,13 @@ function typeZh(t: string) {
   </section>
 
   <section class="surface-quiet">
-    <h2 style="margin-top:0">韓國觀光公社候選（尚未下載）</h2>
-    <p class="muted">僅建立候選清單；本輪未下載、未申請帳號。</p>
+    <h2 style="margin-top:0">圖示</h2>
     <ul class="list">
-      {
-        kto_candidates.map((k) => (
-          <li>
-            <strong>{k.title}</strong>
-            <p class="muted">{k.founder_action}</p>
-            <a href={k.source_url} target="_blank" rel="noreferrer">
-              候選連結
-            </a>
-          </li>
-        ))
-      }
+      {icons.map((m) => (
+        <li>
+          <strong>{m.alt_zh}</strong> · 本專案原創圖示
+        </li>
+      ))}
     </ul>
   </section>
 </Handbook>
