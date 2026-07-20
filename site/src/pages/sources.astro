@@ -1,16 +1,22 @@
 ---
 import Handbook from "../layouts/Handbook.astro";
 import { loadSources } from "../lib/data";
+import { statusZh } from "../lib/presentation";
 const sources = loadSources();
 ---
-<Handbook title="Sources" current="more">
-  <h1>Sources</h1>
+<Handbook title="來源" current="more">
+  <h1>來源</h1>
+  <p class="muted">維護用清單。出發前需重查的項目會標示狀態。</p>
   <ul class="list">
     {sources.map((s) => (
       <li>
-        <strong>{s.id}</strong> · {s.name}
-        <div><a href={s.url} target="_blank" rel="noreferrer">{s.url}</a></div>
-        <div class="muted">tier {s.tier} · checked {s.checked_at} · {s.status}</div>
+        <strong>{s.name}</strong>
+        <div>
+          <a href={s.url} target="_blank" rel="noreferrer">
+            開啟來源
+          </a>
+        </div>
+        <div class="muted">可靠度 {s.tier} · 查核 {s.checked_at} · {statusZh(s.status)}</div>
       </li>
     ))}
   </ul>

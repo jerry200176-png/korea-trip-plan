@@ -2,19 +2,10 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadEmergencyPublic } from "../lib/data";
+import { sanitizeReaderText, statusZh } from "../lib/presentation";
 
 const e = loadEmergencyPublic();
 const base = siteBase();
-
-function statusZh(s: string) {
-  const map: Record<string, string> = {
-    Confirmed: "已確認",
-    Provisional: "暫定",
-    Assumption: "假設",
-    DecisionRequired: "待決策",
-  };
-  return map[s] ?? s;
-}
 ---
 <Handbook title="緊急" current="emergency">
   <p class="eyebrow">路上</p>
@@ -38,16 +29,16 @@ function statusZh(s: string) {
 
   <section class="surface">
     <h2 style="margin-top:0">住宿地址</h2>
-    <p>首爾：{e.lodging_placeholders.seoul_address_ko}</p>
-    <p>釜山：{e.lodging_placeholders.busan_address_ko}</p>
+    <p>首爾：{sanitizeReaderText(e.lodging_placeholders.seoul_address_ko)}</p>
+    <p>釜山：{sanitizeReaderText(e.lodging_placeholders.busan_address_ko)}</p>
     <p class="muted" lang="ko">{e.phrases_ko.taxi_address}</p>
   </section>
 
   <section class="surface">
     <h2 style="margin-top:0">保險</h2>
-    <p>保險公司：{e.insurance.provider}</p>
-    <p>緊急電話：{e.insurance.emergency_phone}</p>
-    <p class="muted">{e.insurance.note}</p>
+    <p>保險公司：{sanitizeReaderText(e.insurance.provider)}</p>
+    <p>緊急電話：{sanitizeReaderText(e.insurance.emergency_phone)}</p>
+    <p class="muted">{sanitizeReaderText(e.insurance.note)}</p>
   </section>
 
   <section class="surface-quiet">
@@ -59,5 +50,5 @@ function statusZh(s: string) {
   </section>
 
   <a class="btn primary" href={`${base}downloads/emergency-pack.pdf`}>下載緊急 PDF</a>
-  <p class="muted">{e.offline_note}</p>
+  <p class="muted">{sanitizeReaderText(e.offline_note)}</p>
 </Handbook>

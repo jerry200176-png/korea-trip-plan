@@ -2,31 +2,15 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadFounderDecisions } from "../lib/data";
+import { sanitizeReaderText, statusClass, statusZh } from "../lib/presentation";
 
 const decisions = loadFounderDecisions();
 const base = siteBase();
-
-function statusClass(s: string) {
-  if (s === "Confirmed") return "status-confirmed";
-  if (s === "DecisionRequired") return "status-decision";
-  if (s === "Assumption") return "status-assumption";
-  return "status-provisional";
-}
-
-function statusZh(s: string) {
-  const map: Record<string, string> = {
-    Confirmed: "已確認",
-    Provisional: "暫定",
-    Assumption: "假設",
-    DecisionRequired: "待決策",
-  };
-  return map[s] ?? s;
-}
 ---
 <Handbook title="一起決定" current="decisions">
   <p class="eyebrow">出發前</p>
   <h1 class="page-title">一起決定</h1>
-  <p class="hero-lede">已確認與仍暫定的項目分開標示 — 方便兩人討論。</p>
+  <p class="hero-lede">已決定與仍暫定的項目分開標示 — 方便兩人討論。</p>
   {
     decisions.map((d) => (
       <section class="surface decision-card">
@@ -36,20 +20,20 @@ function statusZh(s: string) {
         <span class={`status ${statusClass(d.status)}`}>{statusZh(d.status)}</span>
         <p style="margin-top:var(--space-3)">
           <strong>為什麼現在要談：</strong>
-          {d.why_now}
+          {sanitizeReaderText(d.why_now)}
         </p>
         <p>
-          <strong>已確認：</strong>
+          <strong>已決定的事實：</strong>
         </p>
         <ul>
           {d.confirmed_facts.map((f: string) => (
-            <li>{f}</li>
+            <li>{sanitizeReaderText(f)}</li>
           ))}
         </ul>
         {d.recommendation && (
           <p>
             <strong>建議：</strong>
-            {d.recommendation}
+            {sanitizeReaderText(d.recommendation)}
           </p>
         )}
         <p>
@@ -58,12 +42,12 @@ function statusZh(s: string) {
         {d.options.map((o: any) => (
           <div class="decision-option">
             <strong>{o.label}</strong>
-            <p class="muted">{o.summary}</p>
+            <p class="muted">{sanitizeReaderText(o.summary)}</p>
           </div>
         ))}
         <p class="muted">
           <strong>最晚：</strong>
-          {d.decide_by}
+          {sanitizeReaderText(d.decide_by)}
         </p>
       </section>
     ))

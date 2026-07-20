@@ -1,7 +1,14 @@
 ---
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
-import { loadItinerary, loadPlaces, loadTrip, mediaById, mediaPublicUrl } from "../../lib/data";
+import { loadItinerary, loadPlaces, mediaById, mediaPublicUrl } from "../../lib/data";
+import {
+  cityZh,
+  formatClock,
+  sanitizeReaderText,
+  statusZh,
+  transitModeZh,
+} from "../../lib/presentation";
 
 export function getStaticPaths() {
   const days = loadItinerary().days;
@@ -12,7 +19,6 @@ const dayParam = Astro.params.day!;
 const dayIndex = Number(dayParam.replace("day-", ""));
 const day = loadItinerary().days.find((d) => d.day_index === dayIndex)!;
 const places = Object.fromEntries(loadPlaces().map((p) => [p.id, p]));
-const trip = loadTrip();
 const base = siteBase();
 const mood = dayIndex === 2 ? mediaById("seoul-palace-gate") : null;
 
@@ -20,7 +26,7 @@ const nextBlock =
   day.blocks.find((b: { droppable?: boolean; kind: string }) => !b.droppable && b.kind !== "buffer" && b.kind !== "rest") ??
   day.blocks[0];
 
-let mapPlace: { naver_map_url?: string; name_zh: string; name_ko?: string; address?: string } | null = null;
+let mapPlace: { naver_map_url?: string; name_zh: string; name_ko?: string; address?: string; area?: string } | null = null;
 for (const b of day.blocks) {
   if (b.place_id && places[b.place_id]) {
     mapPlace = places[b.place_id];
@@ -28,21 +34,19 @@ for (const b of day.blocks) {
   }
 }
 
-function statusZh(s: string) {
-  return s === "Confirmed" ? "已確認" : s === "Provisional" ? "暫定" : s;
-}
+const transit = nextBlock ? transitModeZh(nextBlock.transit_mode) : null;
 ---
 <Handbook title={`今日 · Day ${day.day_index}`} current="today">
   <p class="muted">
     <a href={`${base}today/`}>← 換一天</a>
   </p>
-  <p class="eyebrow">Today · Day {day.day_index}</p>
-  <h1 class="page-title" style="font-size:1.25rem">{day.theme}</h1>
+  <p class="eyebrow">今日執行 · Day {day.day_index} · {cityZh(day.city)}</p>
+  <h1 class="page-title" style="font-size:1.25rem">{sanitizeReaderText(day.theme)}</h1>
   <span class="status status-provisional">{statusZh(day.status)}</span>
 
   <section class="surface-warm">
     <h2 style="margin-top:0">今天只做這件事</h2>
-    <p style="font-size:1.15rem;line-height:1.45;margin:0">{day.one_priority}</p>
+    <p style="font-size:1.15rem;line-height:1.45;margin:0">{sanitizeReaderText(day.one_priority)}</p>
     <p class="muted" style="margin-top:var(--space-3)">
       最晚回住宿 <strong>{day.return_by}</strong> · 出門目標 {day.out_time}
     </p>
@@ -64,16 +68,17 @@ function statusZh(s: string) {
       <section class="surface">
         <h2 style="margin-top:0">下一動</h2>
         <p style="margin:0">
-          <strong>{nextBlock.title}</strong>
+          <strong>{sanitizeReaderText(nextBlock.title)}</strong>
         </p>
         <p class="muted">
-          {nextBlock.start} – {nextBlock.end}
-          {nextBlock.transit_mode ? ` · ${nextBlock.transit_mode}` : ""}
+          {formatClock(nextBlock.start)} – {formatClock(nextBlock.end)}
+          {transit ? ` · ${transit}` : ""}
+          {nextBlock.transit_minutes != null ? ` · 約 ${nextBlock.transit_minutes} 分` : ""}
         </p>
         {nextBlock.plan_b && (
           <p class="muted">
-            <strong>Plan B：</strong>
-            {nextBlock.plan_b}
+            <strong>備案：</strong>
+            {sanitizeReaderText(nextBlock.plan_b)}
           </p>
         )}
       </section>
@@ -86,7 +91,7 @@ function statusZh(s: string) {
       {
         mapPlace?.naver_map_url && (
           <a class="btn primary" href={mapPlace.naver_map_url} target="_blank" rel="noreferrer">
-            Naver Map
+            開啟 Naver Map
           </a>
         )
       }
@@ -100,7 +105,9 @@ function statusZh(s: string) {
     {
       mapPlace && (
         <p class="muted" style="margin-top:var(--space-3)">
-          <span lang="ko">{mapPlace.name_ko}</span> · {mapPlace.address ?? "地址見完整行程"}
+          <strong>{mapPlace.name_zh}</strong>
+          {mapPlace.name_ko ? <> · <span lang="ko">{mapPlace.name_ko}</span></> : null}
+          · 地址出發前再確認
         </p>
       )
     }
@@ -108,11 +115,11 @@ function statusZh(s: string) {
 
   <section class="surface-quiet">
     <h2 style="margin-top:0">若下雨／體力低</h2>
-    <p class="muted" style="margin:0">{day.rain_plan}</p>
-    <p class="muted">{day.low_energy_plan}</p>
+    <p class="muted" style="margin:0"><strong>雨備：</strong>{sanitizeReaderText(day.rain_plan)}</p>
+    <p class="muted"><strong>低體力優先刪除：</strong>{(day.droppable_items || []).map((x: string) => sanitizeReaderText(String(x))).join("、") || sanitizeReaderText(day.low_energy_plan)}</p>
     <p class="muted">
-      <strong>回住宿：</strong>
-      {day.emergency_return}
+      <strong>回住宿方向：</strong>
+      {sanitizeReaderText(day.emergency_return)}
     </p>
   </section>
 </Handbook>

@@ -8,12 +8,19 @@ const { media, kto_candidates } = loadMedia();
 const credits = media.filter(
   (m) => m.status === "Approved" && (m.type === "photo" || m.type === "generated_illustration" || m.type === "icon")
 );
+
+function typeZh(t: string) {
+  if (t === "generated_illustration") return "AI 插畫";
+  if (t === "photo") return "照片";
+  if (t === "icon") return "圖示";
+  return "媒體";
+}
 ---
-<Handbook title="Image Credits" current="home">
-  <p class="eyebrow">Attribution</p>
-  <h1 class="page-title">Image credits</h1>
+<Handbook title="圖片出處" current="home">
+  <p class="eyebrow">Image Credits</p>
+  <h1 class="page-title">圖片出處</h1>
   <span class="status status-provisional">公開版</span>
-  <p class="hero-lede">正文不插入出處。以下為本預覽版使用的全部圖片與授權資訊。</p>
+  <p class="hero-lede">封面、章節與每日正文不放技術出處。以下為本預覽版使用的全部圖片與授權資訊。</p>
 
   <section class="surface">
     <h2 style="margin-top:0">使用中的媒體</h2>
@@ -21,19 +28,23 @@ const credits = media.filter(
       {
         credits.map((m) => (
           <li>
-            <strong>{m.id}</strong>
-            <span class="status status-provisional">{m.type === "generated_illustration" ? "AI 插畫" : m.type}</span>
-            <p>{m.attribution}</p>
-            <p class="muted">License: {m.license}</p>
+            <strong>{m.alt_zh}</strong>
+            <span class="status status-provisional">{typeZh(m.type)}</span>
+            <p>名稱：{m.id}</p>
+            <p>攝影者／生成方式：{m.type === "generated_illustration" ? `AI 原創插畫（專案生成 · ${m.generation_date ?? ""}）` : m.creator}</p>
+            <p>Attribution：{m.type === "generated_illustration" ? `本專案 AI 原創插畫 · ${m.generation_date ?? ""}` : m.attribution}</p>
+            <p class="muted">License：{m.license}</p>
             <p class="muted">
-              {m.source_platform} ·{" "}
+              來源：{m.source_platform}
               {String(m.source_url).startsWith("http") ? (
-                <a href={m.source_url} target="_blank" rel="noreferrer">
-                  來源頁面
-                </a>
-              ) : (
-                m.source_url
-              )}
+                <>
+                  {" "}
+                  ·{" "}
+                  <a href={m.source_url} target="_blank" rel="noreferrer">
+                    來源頁面
+                  </a>
+                </>
+              ) : null}
             </p>
             {m.web_path && (
               <img
@@ -50,7 +61,7 @@ const credits = media.filter(
   </section>
 
   <section class="surface-quiet">
-    <h2 style="margin-top:0">Korea Tourism Organization（候選）</h2>
+    <h2 style="margin-top:0">韓國觀光公社候選（尚未下載）</h2>
     <p class="muted">僅建立候選清單；本輪未下載、未申請帳號。</p>
     <ul class="list">
       {

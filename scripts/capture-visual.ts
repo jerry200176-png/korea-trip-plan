@@ -116,12 +116,12 @@ if (fs.existsSync(handbook)) {
     const renders = fs.readdirSync(renderDir).filter((f) => f.endsWith(".png")).sort();
     const wanted = [
       { key: "cover", idx: 0 },
-      { key: "seoul-divider", idx: 3 },
-      { key: "day", idx: 6 },
-      { key: "ktx", idx: 10 },
-      { key: "busan-divider", idx: 12 },
+      { key: "seoul-divider", idx: 2 },
+      { key: "day", idx: 4 },
+      { key: "ktx", idx: 8 },
+      { key: "busan-divider", idx: 10 },
       { key: "decisions", idx: Math.max(0, renders.length - 3) },
-      { key: "credits", idx: Math.max(0, renders.length - 1) },
+      { key: "credits", idx: Math.max(0, renders.length - 2) },
     ];
     for (const w of wanted) {
       const srcName = renders[Math.min(w.idx, renders.length - 1)];
