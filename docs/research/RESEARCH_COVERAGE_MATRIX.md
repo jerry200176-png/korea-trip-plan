@@ -18,18 +18,20 @@ Tier columns now mean **A1+A2** combined under “Official”, with notes when o
 
 Travel factual primary sources: **40** (not the full 86 inventory). Personalization-critical cells remain thin.
 
-## High-impact claim links
+## High-impact claim links (role-split)
 
-| Topic | Claim IDs | Supporting source IDs |
-|-------|-----------|------------------------|
-| 景福宮 | clm-gyeongbokgung-closed-tuesday | rs-010, rs-011, rs-012 |
-| 韓服 | clm-hanbok-shop-unselected | rs-010, rs-013, rs-050, rs-062, rs-067, rs-068 |
-| Day 3 購物 | clm-day3-shopping-path-thin | rs-018, rs-019, rs-020, rs-021, rs-061, rs-051 |
-| JYP | clm-jyp-visit-value-unproven | rs-026, rs-024, rs-025, rs-059 |
-| 韓國算命 | clm-fortune-shop-missing | rs-065, rs-066, rs-blocked-005 |
-| 豬肉湯飯 | clm-pork-soup-shortlist-incomplete | rs-037, rs-038, rs-041, rs-042, rs-043, rs-063 |
-| Sky Capsule | clm-sky-capsule-ops-unconfirmed | rs-027, rs-028, rs-029, rs-057, rs-058 |
-| Day 6 低體力 | clm-day6-low-energy-variant-missing | rs-032, rs-030, rs-060, rs-039, rs-009 |
+See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for full role fields.
+
+| Topic | Claim ID | Supporting | Discovery | Blocked |
+|-------|----------|------------|-----------|---------|
+| 景福宮 | clm-gyeongbokgung-closed-tuesday | rs-011, rs-010 | rs-012 | — |
+| 韓服 | clm-hanbok-shop-unselected | — | rs-010, rs-013, rs-050, rs-062, rs-067, rs-068 | — |
+| Day 3 購物 | clm-day3-shopping-path-thin | — | rs-018–021, rs-061, rs-051 | — |
+| JYP | clm-jyp-visit-value-unproven | rs-026 | rs-024, rs-025, rs-059 | — |
+| 韓國算命 | clm-fortune-shop-missing | — | rs-065, rs-066 | rs-blocked-005 |
+| 豬肉湯飯 | clm-pork-soup-shortlist-incomplete | rs-041–043 | rs-037, rs-038, rs-063 | — |
+| Sky Capsule | clm-sky-capsule-ops-unconfirmed | rs-028 | rs-027, rs-029, rs-057, rs-058 | — |
+| Day 6 低體力 | clm-day6-low-energy-variant-missing | — | rs-032, rs-030, rs-060, rs-039, rs-009 | — |
 
 ---
 

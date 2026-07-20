@@ -16,9 +16,14 @@
 
 Epic #11 write attempts returned 403 for this bot token — paste gate-close text manually if needed.
 
-## Round 1 Research Quality Correction
+## Round 1 Research Quality Correction + governance blocker fixes
 
-Scope of correction commit: **research governance only** — no itinerary / site / PDF / media product changes.
+Scope: **research governance only** — no itinerary / site / PDF / media product changes.
+
+### Governance blockers addressed (post independent review FAIL)
+
+1. `check:research-registry` integrity gate (unique IDs, required freshness fields, A1/A2/B/C only, blocked/usable overlap, tier sum = usable total, HTTP-alone `current` fails, claim ID roles validated) wired into `npm run ci`
+2. Claim map role split: `supporting_source_ids` / `discovery_source_ids` / `blocked_source_ids` / `contradicting_source_ids` / `missing_evidence_requirements` — blocked IDs cannot sit in supporting or raise confidence
 
 ### Corrected source count table (unique primary)
 

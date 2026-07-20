@@ -3,7 +3,10 @@
 Generated: 2026-07-20  
 Quality correction: 2026-07-20  
 Inventory: [`data/research-sources.yaml`](../../data/research-sources.yaml)  
-Recount: `python3 scripts/recount-research-sources.py`
+Recount / CI gate:
+
+- `npm run check:research-registry` (wired into `npm run ci`)
+- `python3 scripts/recount-research-sources.py` (local twin; same integrity rules)
 
 ## Counting rules
 

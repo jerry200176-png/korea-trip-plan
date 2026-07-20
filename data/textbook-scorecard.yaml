@@ -33,22 +33,22 @@ gates:
         detail: couple-profile, research method/rubric/copyright, sources, coverage, gap audits, visual candidates, website benchmark, loop, scorecard, roadmap, claim map, recount script
       - id: source_counts_recomputable
         ok: true
-        detail: python3 scripts/recount-research-sources.py
+        detail: npm run check:research-registry (+ python twin); fails on integrity errors
       - id: no_category_padding
         ok: true
         detail: unique primary_category; benchmarks not counted as travel factual depth
       - id: freshness_semantics_correct
         ok: true
-        detail: no operational_freshness current from HTTP 200; content_last_updated unknown when unconfirmed
+        detail: no operational_freshness current from HTTP 200; content_last_updated unknown when unconfirmed; bad_fresh fails gate
       - id: top3_gaps_have_claim_map
         ok: true
-        detail: data/claim-evidence-map.yaml covers fortune/JYP/shopping/pork/capsule/day6/hanbok/palace
+        detail: role-split claim map (supporting/discovery/blocked/contradicting/missing)
       - id: scope_not_expanded
         ok: true
-        detail: no itinerary/site/PDF/media product changes in quality correction
+        detail: no itinerary/site/PDF/media product changes in governance fixes
       - id: independent_ai_review_no_governance_blocker
         ok: pending
-        detail: awaiting Jerry / independent AI review of this correction commit
+        detail: awaiting Jerry / independent AI re-review after governance blocker fixes
     notes: >
       Round 1 Acceptance is a research-governance gate. It does not require Textbook Final Exit 90.
 

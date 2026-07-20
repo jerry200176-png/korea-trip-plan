@@ -160,13 +160,13 @@ Stop verdicts: `Retain` · `Rework` · `Replace` · `Remove` · `Research Gap`
 
 | Question | Round 1 answer | Claim / sources |
 |----------|----------------|-----------------|
-| Is JYP check-in worth keeping? | **Not yet.** Research Gap / likely Replace. | `clm-jyp-visit-value-unproven` · rs-026, rs-024, rs-025, rs-059 |
-| Is Gangnam fortune-telling feasible? | **Unknown — P0 research risk.** No shop locked. | `clm-fortune-shop-missing` · rs-065, rs-066, rs-blocked-005 |
-| Does Day 3 serve cosmetics/clothes? | **Intent only.** Store path thin. | `clm-day3-shopping-path-thin` · rs-018–021, rs-061, rs-051 |
-| Is Day 6 over-touristy / low-energy ready? | **Touristy risk; low-energy variant missing.** | `clm-day6-low-energy-variant-missing` · rs-032, rs-030, rs-060, rs-039, rs-009 |
-| Pork soup research enough? | **Partial.** Signals exist; no locked shop. | `clm-pork-soup-shortlist-incomplete` · rs-037, rs-038, rs-041–043, rs-063 |
-| Sky Capsule ready to schedule? | **Not hardened.** Operator page exists; ops unconfirmed for March. | `clm-sky-capsule-ops-unconfirmed` · rs-027–029, rs-057, rs-058 |
-| Hanbok shop ready? | **No.** Priority without vendor. | `clm-hanbok-shop-unselected` · rs-010, rs-013, rs-050, rs-062 |
+| Is JYP check-in worth keeping? | **Not yet.** Research Gap / likely Replace. | `clm-jyp-visit-value-unproven` · support rs-026; discovery rs-024/025/059 |
+| Is Gangnam fortune-telling feasible? | **Unknown — P0 research risk.** No shop locked. | `clm-fortune-shop-missing` · discovery rs-065/066; blocked rs-blocked-005; support none |
+| Does Day 3 serve cosmetics/clothes? | **Intent only.** Store path thin. | `clm-day3-shopping-path-thin` · discovery only; missing store path requirements |
+| Is Day 6 over-touristy / low-energy ready? | **Touristy risk; low-energy variant missing.** | `clm-day6-low-energy-variant-missing` · discovery only |
+| Pork soup research enough? | **Partial.** Signals exist; no locked shop. | `clm-pork-soup-shortlist-incomplete` · support rs-041–043; discovery rs-037/038/063 |
+| Sky Capsule ready to schedule? | **Not hardened.** Operator page exists; ops unconfirmed for March. | `clm-sky-capsule-ops-unconfirmed` · support rs-028; discovery rs-027/029/057/058 |
+| Hanbok shop ready? | **No.** Priority without vendor. | `clm-hanbok-shop-unselected` · discovery only |
 | Seoul 4N + Busan 2N over-moving? | **Acceptable skeleton**; protect Day 5. | route baseline (founder D2) — not a freshness claim |
 | Day 7 value? | **Low until departure band known** (founder D1/D3 dependency). | see `founder_decision_dependencies` in scorecard |
 
