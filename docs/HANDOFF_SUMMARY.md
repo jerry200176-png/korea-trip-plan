@@ -1,6 +1,6 @@
 # Handoff summary (self-contained Founder replies)
 
-**Evidence SHA:** `4d3d89911ad855f9dd6e432984dbc3ff2f02d612`（PR head；`git rev-parse HEAD` on branch）  
+**Evidence SHA:** Same as PR #1 head commit (`git rev-parse HEAD` on `cursor/korea-handbook-foundation-f5a1`).  
 **PR:** https://github.com/jerry200176-png/korea-trip-plan/pull/1  
 **Foundation Exit:** PASS · **Trip Ready:** NO
 
