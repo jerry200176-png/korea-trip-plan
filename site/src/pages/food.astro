@@ -2,13 +2,24 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadRestaurants, mediaById, mediaPublicUrl } from "../lib/data";
+import { areaZh, cityZh, statusZh } from "../lib/presentation";
 
 const restaurants = loadRestaurants();
 const base = siteBase();
 const foodMedia = mediaById("seoul-street-food")!;
+
+function riskZh(v: string) {
+  const map: Record<string, string> = {
+    low: "低",
+    medium: "中",
+    high: "高",
+    unknown: "出發前再確認",
+  };
+  return map[v] ?? "出發前再確認";
+}
 ---
 <Handbook title="美食" current="more">
-  <p class="eyebrow">Food</p>
+  <p class="eyebrow">美食</p>
   <h1 class="page-title">美食</h1>
   <figure class="media-block">
     <img src={mediaPublicUrl(base, foodMedia)} alt={foodMedia.alt_zh} loading="lazy" />
@@ -28,20 +39,20 @@ const foodMedia = mediaById("seoul-street-food")!;
       <section class="surface">
         <h2 style="margin-top:0">{r.name_zh}</h2>
         <p>
-          {r.name_ko} · {r.name_en}
+          <span lang="ko">{r.name_ko}</span>
         </p>
         <p class="muted">
-          {r.city} / {r.area} · {r.status}
+          {cityZh(r.city)}／{areaZh(r.area)} · {statusZh(r.status)}
         </p>
         <p>
-          甲殼類風險：{r.crustacean_risk} · 排隊：{r.queue_risk}
+          甲殼類風險：{riskZh(r.crustacean_risk)} · 排隊：{riskZh(r.queue_risk)}
         </p>
         <p>{r.recommend_reason}</p>
         <p class="muted">風險：{r.risks}</p>
         {r.menu_order_ko && <p>點餐：{r.menu_order_ko}</p>}
         {r.naver_map_url && (
           <a class="btn primary" href={r.naver_map_url} target="_blank" rel="noreferrer">
-            Naver Map
+            開啟 Naver Map
           </a>
         )}
       </section>

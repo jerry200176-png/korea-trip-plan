@@ -2,6 +2,19 @@
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
 import { loadItinerary, loadPlaces, loadRestaurants, mediaById, mediaPublicUrl } from "../../lib/data";
+import {
+  areaZh,
+  cityZh,
+  formatClock,
+  kindZh,
+  placeTypeZh,
+  readerRefLabel,
+  reservationLabel,
+  sanitizeReaderText,
+  statusZh,
+  transitModeZh,
+  walkingZh,
+} from "../../lib/presentation";
 
 export function getStaticPaths() {
   const days = loadItinerary().days;
@@ -23,34 +36,19 @@ const dayMediaId =
   dayIndex === 2 ? "seoul-palace-gate" : dayIndex === 5 ? "ktx-transition" : dayIndex === 6 ? "busan-haeundae" : null;
 const dayMedia = dayMediaId ? mediaById(dayMediaId) : null;
 
-function statusZh(s: string) {
-  const map: Record<string, string> = {
-    Confirmed: "已確認",
-    Provisional: "暫定",
-    Assumption: "假設",
-    DecisionRequired: "待決策",
-  };
-  return map[s] ?? s;
-}
-
-function kindZh(kind: string) {
-  const map: Record<string, string> = {
-    transit: "交通",
-    experience: "體驗",
-    meal: "用餐",
-    free: "自由",
-    photo: "拍照",
-    shopping: "購物",
-    rest: "休息",
-    buffer: "緩衝",
-  };
-  return map[kind] ?? kind;
-}
+const expectLine =
+  dayIndex === 2
+    ? "韓服與宮殿合照"
+    : dayIndex === 6
+      ? "海岸線兩人照"
+      : dayIndex === 4
+        ? "一次韓國算命體驗"
+        : day.one_priority;
 ---
 <Handbook title={`第 ${day.day_index} 天`} current="days">
   <p class="muted"><a href={`${base}days/`}>← 全部行程</a></p>
-  <p class="eyebrow">Day {day.day_index} · {day.city ?? "行程"}</p>
-  <h1 class="page-title">{day.theme}</h1>
+  <p class="eyebrow">Day {day.day_index} · {cityZh(day.city)}</p>
+  <h1 class="page-title">{sanitizeReaderText(day.theme)}</h1>
   <span class="status status-provisional">{statusZh(day.status)}</span>
 
   {
@@ -64,11 +62,16 @@ function kindZh(kind: string) {
 
   <section class={`surface city-ribbon ${cityClass}`}>
     <h2 style="margin-top:0">今天最重要</h2>
-    <p style="font-size:1.1rem">{day.one_priority}</p>
+    <p style="font-size:1.1rem">{sanitizeReaderText(day.one_priority)}</p>
     <p class="muted">
-      出門 {day.out_time} · 回住宿 {day.return_by} · 緩衝 ~{day.buffer_percent}%
+      出門 {day.out_time} · 最晚回住宿 {day.return_by} · 步行強度 {walkingZh(day.walking_level)}
     </p>
-    <p class="muted">區域：{day.primary_areas.join(" / ")}</p>
+    <p class="muted">區域：{(day.primary_areas || []).map(areaZh).join("／")}</p>
+  </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">這一天最期待</h2>
+    <p style="margin:0">{sanitizeReaderText(expectLine)}</p>
   </section>
 
   <section class="surface-quiet">
@@ -79,46 +82,61 @@ function kindZh(kind: string) {
         const place = b.place_id ? places[b.place_id] : null;
         const rest = b.restaurant_id ? restaurants[b.restaurant_id] : null;
         const isTransit = b.kind === "transit";
+        const typeLabel = place ? placeTypeZh(place.type) : null;
+        const transit = transitModeZh(b.transit_mode);
         return (
           <article class={`route-node ${isTransit ? "transit" : ""}`}>
               <div class="time">
-                {b.start} – {b.end}
+                {formatClock(b.start)} – {formatClock(b.end)}
               </div>
-              <h3 style="margin:0.2rem 0">{b.title}</h3>
+              <h3 style="margin:0.2rem 0">{sanitizeReaderText(b.title)}</h3>
               <p class="muted">
                 {kindZh(b.kind)}
-                {b.droppable ? " · 可刪" : ""}
+                {b.droppable ? " · 體力不足可刪" : ""}
               </p>
               {place && (
                 <>
                   <p>
                     <strong>{place.name_zh}</strong> · <span lang="ko">{place.name_ko}</span>
+                    {typeLabel ? ` · ${typeLabel}` : ""}
                   </p>
-                  <p class="muted">{place.address}</p>
+                  <p class="muted">
+                    {place.area ? `${areaZh(place.area)}` : "區域出發前確認"}
+                    {place.address ? ` · 地址出發前再確認` : ""}
+                  </p>
+                  <p class="muted">
+                    {reservationLabel(b.reservation_deadline, place.reservation_required)}
+                  </p>
                   <div class="btn-row">
                     {place.naver_map_url && (
                       <a class="btn primary" href={place.naver_map_url} target="_blank" rel="noreferrer">
-                        Naver Map
+                        開啟 Naver Map
                       </a>
                     )}
                   </div>
                 </>
               )}
+              {!place && b.reservation_deadline && (
+                <p class="muted">{reservationLabel(b.reservation_deadline, null)}</p>
+              )}
               {rest && (
                 <p>
-                  餐飲：{rest.name_zh} / <span lang="ko">{rest.name_ko}</span>（{rest.status}）
+                  餐飲：{rest.name_zh} / <span lang="ko">{rest.name_ko}</span>（{statusZh(rest.status)}）
                 </p>
               )}
-              {b.transit_mode && (
+              {b.kind === "meal" && !rest && (
+                <p class="muted">餐廳：店家鎖定後補上</p>
+              )}
+              {transit && (
                 <p class="muted">
-                  交通 {b.transit_mode}
-                  {b.transit_minutes != null ? ` · ~${b.transit_minutes} 分` : ""}
+                  {transit}
+                  {b.transit_minutes != null ? ` · 約 ${b.transit_minutes} 分` : " · 移動時間出發前確認"}
                 </p>
               )}
               {b.plan_b && (
                 <p>
-                  <strong>Plan B：</strong>
-                  {b.plan_b}
+                  <strong>備案：</strong>
+                  {sanitizeReaderText(b.plan_b)}
                 </p>
               )}
             </article>
@@ -131,16 +149,20 @@ function kindZh(kind: string) {
   <section class="surface">
     <h2 style="margin-top:0">備案</h2>
     <p>
-      <strong>雨天：</strong>
-      {day.rain_plan}
+      <strong>雨備：</strong>
+      {sanitizeReaderText(day.rain_plan)}
     </p>
     <p>
-      <strong>體力不足：</strong>
-      {day.low_energy_plan}
+      <strong>低體力優先刪除：</strong>
+      {(day.droppable_items || []).map((x: string) => readerRefLabel(String(x), places)).join("、") || sanitizeReaderText(day.low_energy_plan)}
     </p>
     <p>
-      <strong>緊急回住宿：</strong>
-      {day.emergency_return}
+      <strong>低體力方案：</strong>
+      {sanitizeReaderText(day.low_energy_plan)}
+    </p>
+    <p>
+      <strong>回住宿方向：</strong>
+      {sanitizeReaderText(day.emergency_return)}
     </p>
   </section>
 

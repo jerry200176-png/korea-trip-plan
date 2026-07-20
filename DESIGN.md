@@ -113,7 +113,7 @@ No glassmorphism stacks, no heavy drop shadows on content cards.
 
 - **Bottom dock** (fixed): 首頁 · 今日 · 行程 · 決策 · 緊急 — five items, 48px min touch.
 - **No** “Dashboard”, “Readiness gates”, or engineer jargon in couple-facing labels.
-- **Design Lab** at `/design-lab/` — maintainer only, not in dock.
+- Design Lab is **not** part of the public Jerry & Nikita travel product.
 - Deep links: Home quick-find chips for 海景、韓服、購物、GOT7、豬肉湯飯.
 
 ## 12. Itinerary timeline

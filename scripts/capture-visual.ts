@@ -105,6 +105,11 @@ for (const pdf of ["korea-trip-handbook.pdf", "emergency-pack.pdf"]) {
 // Render PDF pages at ~200 DPI using pdftoppm
 const handbook = path.join(distDir, "korea-trip-handbook.pdf");
 const renderDir = path.join(outDir, "pdf-renders");
+// Always clear prior renders so a shorter PDF cannot leave stale page-N.png files
+// that inflate renders.length and mis-map decisions/credits proofs.
+if (fs.existsSync(renderDir)) {
+  fs.rmSync(renderDir, { recursive: true, force: true });
+}
 fs.mkdirSync(renderDir, { recursive: true });
 if (fs.existsSync(handbook)) {
   try {
@@ -113,15 +118,22 @@ if (fs.existsSync(handbook)) {
     execSync(`pdftoppm -png -r 200 "${handbook}" "${path.join(renderDir, "page")}"`, {
       stdio: "inherit",
     });
-    const renders = fs.readdirSync(renderDir).filter((f) => f.endsWith(".png")).sort();
+    const renders = fs
+      .readdirSync(renderDir)
+      .filter((f) => /^page-\d+\.png$/.test(f))
+      .sort((a, b) => {
+        const na = Number((a.match(/page-(\d+)/) || [])[1] || 0);
+        const nb = Number((b.match(/page-(\d+)/) || [])[1] || 0);
+        return na - nb;
+      });
     const wanted = [
       { key: "cover", idx: 0 },
-      { key: "seoul-divider", idx: 3 },
-      { key: "day", idx: 6 },
-      { key: "ktx", idx: 10 },
-      { key: "busan-divider", idx: 12 },
+      { key: "seoul-divider", idx: 2 },
+      { key: "day", idx: 4 },
+      { key: "ktx", idx: 8 },
+      { key: "busan-divider", idx: 10 },
       { key: "decisions", idx: Math.max(0, renders.length - 3) },
-      { key: "credits", idx: Math.max(0, renders.length - 1) },
+      { key: "credits", idx: Math.max(0, renders.length - 2) },
     ];
     for (const w of wanted) {
       const srcName = renders[Math.min(w.idx, renders.length - 1)];

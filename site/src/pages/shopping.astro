@@ -2,21 +2,21 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { mediaById, mediaPublicUrl } from "../lib/data";
-import fs from "node:fs";
-import path from "node:path";
 
-const md = fs.readFileSync(path.resolve(process.cwd(), "../handbook/shopping-and-entertainment.md"), "utf8");
 const base = siteBase();
 const shop = mediaById("shopping-atmosphere")!;
-const icons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-shop", "icon-fortune"].map((id) => mediaById(id)!);
+const icons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-shop", "icon-fortune"].map(
+  (id) => mediaById(id)!
+);
 ---
 <Handbook title="購物" current="more">
-  <p class="eyebrow">Shopping</p>
+  <p class="eyebrow">購物</p>
   <h1 class="page-title">購物與體驗</h1>
   <figure class="media-block">
     <img src={mediaPublicUrl(base, shop)} alt={shop.alt_zh} loading="lazy" />
-    <figcaption class="media-caption">{shop.alt_zh}（無商標抽象插畫）</figcaption>
+    <figcaption class="media-caption">{shop.alt_zh}</figcaption>
   </figure>
+
   <section class="surface">
     <h2 style="margin-top:0">體驗速覽</h2>
     <div class="icon-strip">
@@ -30,8 +30,24 @@ const icons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-sh
       }
     </div>
   </section>
-  <section class="surface-quiet">
-    <h2 style="margin-top:0">筆記</h2>
-    <pre style="white-space:pre-wrap;font-family:var(--font-body);margin:0">{md}</pre>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">Nikita 最想買／體驗</h2>
+    <ul class="list">
+      <li>化妝品與衣服（明洞／弘大風格街區為目前暫定錨點）</li>
+      <li>三眼怪／角色周邊：出發前再查百貨與快閃</li>
+      <li>韓服體驗（店家鎖定後補上）</li>
+      <li>GOT7 靈感：JYP 周邊打卡可刪，沒有可看的公共空間就跳過</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">Jerry 的節奏提醒</h2>
+    <ul class="list">
+      <li>排隊超過約 1 小時就先跳過，除非兩人一起決定一定要</li>
+      <li>粉絲相關停留保持低步行、可刪</li>
+      <li>退稅與海關規定出發前再查官方說明</li>
+      <li>大件購物盡量留在首爾完成，避免壓縮釜山休息</li>
+    </ul>
   </section>
 </Handbook>

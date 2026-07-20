@@ -2,6 +2,7 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTrip, loadDestinations, loadFounderDecisions, loadItinerary, mediaById, mediaPublicUrl } from "../lib/data";
+import { formatTargetMonth, statusClass, statusZh } from "../lib/presentation";
 
 const trip = loadTrip();
 const destinations = loadDestinations();
@@ -14,28 +15,7 @@ const heroSrc = mediaPublicUrl(base, hero);
 const seoul = destinations.find((d) => d.id === "dest-seoul");
 const busan = destinations.find((d) => d.id === "dest-busan");
 const openDecisions = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional");
-
-function statusClass(s: string) {
-  if (s === "Confirmed") return "status-confirmed";
-  if (s === "DecisionRequired") return "status-decision";
-  if (s === "Assumption") return "status-assumption";
-  return "status-provisional";
-}
-
-function statusZh(s: string) {
-  const map: Record<string, string> = {
-    Confirmed: "已確認",
-    Provisional: "暫定",
-    Assumption: "假設",
-    DecisionRequired: "待決策",
-  };
-  return map[s] ?? s;
-}
-
-const countdown =
-  trip.start_date == null
-    ? `目標 ${trip.target_month ?? "未定"}`
-    : `還有 ${Math.ceil((new Date(trip.start_date).getTime() - Date.now()) / 86400000)} 天`;
+const monthLabel = formatTargetMonth(trip.target_month);
 ---
 <Handbook title="首頁" current="home">
   <section class="hero-stage">
@@ -52,9 +32,12 @@ const countdown =
       />
     </picture>
     <div class="hero-copy">
-      <p class="eyebrow">Our First Korea</p>
+      <p class="eyebrow">旅行規劃預覽版</p>
       <h1 class="page-title hero-title">{trip.title}</h1>
       <p class="hero-lede">{trip.success_criterion}</p>
+      <p class="muted" style="margin:0.4rem 0 0">
+        首爾 {seoul?.provisional_nights ?? 4} 晚 · 釜山 {busan?.provisional_nights ?? 2} 晚 · {monthLabel}
+      </p>
       <div class="btn-row">
         <a class="btn primary" href={`${base}days/`}>查看 7 天旅程</a>
         <a class="btn" href={`${base}review/`}>Couple 驗收</a>
@@ -65,20 +48,19 @@ const countdown =
   <section class="surface route-overlay">
     <p class="eyebrow">路線</p>
     <div class="route-path" aria-label="首爾到釜山路線">
-      <span>首爾 {seoul?.provisional_nights ?? 4}N</span>
+      <span>首爾 {seoul?.provisional_nights ?? 4} 晚</span>
       <span class="route-arrow">—— KTX ——</span>
-      <span>釜山 {busan?.provisional_nights ?? 2}N</span>
+      <span>釜山 {busan?.provisional_nights ?? 2} 晚</span>
     </div>
     <p class="muted" style="margin:var(--space-3) 0 0">
-      路線 <strong>{trip.route_option}</strong>
+      目前是規劃預覽，不是已完成預訂。
       <span class={`status ${statusClass(trip.route_status)}`}>{statusZh(trip.route_status)}</span>
-      · {countdown}
     </p>
   </section>
 
   <section class="surface-warm">
-    <h2 style="margin-top:0">出發前，我們一起</h2>
-    <p>這本書給兩個人：期待、決策、路上執行、回來還能翻。</p>
+    <h2 style="margin-top:0">我們想留下的回憶</h2>
+    <p>第一次一起出國。Nikita 期待 GOT7、海景、韓服、購物、美食與韓國算命；Jerry 希望順暢、不要太累、不要排太滿。兩人照與拍立得優先。</p>
     <div class="btn-row">
       <a class="btn primary" href={`${base}decisions/`}>一起決定</a>
       <a class="btn" href={`${base}today/day-2/`}>試試今日模式</a>
@@ -95,7 +77,7 @@ const countdown =
           .map((d) => (
             <li>
               <a href={`${base}days/day-${d.day_index}/`}>Day {d.day_index} · {d.theme}</a>
-              <span class="status status-provisional">暫定</span>
+              <span class="status status-provisional">目前暫定</span>
             </li>
           ))
       }
@@ -103,7 +85,7 @@ const countdown =
   </section>
 
   <section class="surface-quiet">
-    <h2 style="margin-top:0">還在討論的事</h2>
+    <h2 style="margin-top:0">還要一起決定</h2>
     <ul class="list">
       {
         openDecisions.map((d) => (
@@ -119,13 +101,15 @@ const countdown =
 
   <section class="surface">
     <h2 style="margin-top:0">離線 PDF</h2>
-    <p class="muted">完整預覽書＋緊急卡，可下載後傳給對方。</p>
+    <p class="muted">旅行書目前為 Beta 品質修正版；通過驗收前請勿視為 Final。</p>
     <div class="btn-row">
-      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>旅行書 PDF</a>
+      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>旅行書 PDF（Beta）</a>
       <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>緊急卡 PDF</a>
     </div>
     <p class="muted" style="margin-top:var(--space-3)">
-      <a href={`${base}credits/`}>Image credits</a>
+      <a href={`${base}credits/`}>圖片出處</a>
+      ·
+      <a href={`${base}review/`}>保留驗收回饋</a>
     </p>
   </section>
 </Handbook>

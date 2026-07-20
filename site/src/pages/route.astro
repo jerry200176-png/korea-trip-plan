@@ -2,25 +2,16 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTrip, loadDestinations, mediaById, mediaPublicUrl } from "../lib/data";
+import { statusZh } from "../lib/presentation";
 
 const trip = loadTrip();
 const destinations = loadDestinations();
 const base = siteBase();
 const nights = trip.duration_days - 1;
 const cover = mediaById("cover-hero")!;
-
-function statusZh(s: string) {
-  const map: Record<string, string> = {
-    Confirmed: "已確認",
-    Provisional: "暫定",
-    Assumption: "假設",
-    DecisionRequired: "待決策",
-  };
-  return map[s] ?? s;
-}
 ---
 <Handbook title="路線" current="more">
-  <p class="eyebrow">Route</p>
+  <p class="eyebrow">路線</p>
   <h1 class="page-title">路線一覽</h1>
   <figure class="media-block">
     <img src={mediaPublicUrl(base, cover)} alt={cover.alt_zh} loading="lazy" />
@@ -32,17 +23,17 @@ function statusZh(s: string) {
       {trip.duration_days} 天 · Day 1 抵達 · Day {trip.duration_days} 離境 ⇒{" "}
       <strong>{nights} 晚住宿</strong>
     </p>
-    <p>首爾 4 晚 + 釜山 2 晚 = 6 晚 ✓</p>
+    <p>首爾 4 晚 + 釜山 2 晚 = 6 晚</p>
     <div class="route-path" style="margin-top:var(--space-3)">
-      <span>首爾 4N</span>
+      <span>首爾 4 晚</span>
       <span class="route-arrow">—— KTX ——</span>
-      <span>釜山 2N</span>
+      <span>釜山 2 晚</span>
     </div>
   </section>
   <section class="surface">
     <h2 style="margin-top:0">目前方案</h2>
-    <p>{trip.route_option}</p>
-    <p class="muted">詳細評分見 docs/ROUTE_DECISION.md（維護者文件）</p>
+    <p>首爾四晚 + 釜山兩晚（KTX 銜接）</p>
+    <p class="muted">目前是規劃預覽，不是已完成預訂。</p>
   </section>
   <section class="surface-quiet">
     <h2 style="margin-top:0">城市</h2>

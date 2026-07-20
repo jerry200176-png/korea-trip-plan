@@ -4,6 +4,19 @@ import yaml from "js-yaml";
 import { chromium } from "playwright";
 import { distDir, root } from "./lib/root.ts";
 import { wrapHtml } from "./lib/pdf-html.ts";
+import {
+  areaZh,
+  cityZh,
+  formatClock,
+  formatTargetMonth,
+  kindZh,
+  placeTypeZh,
+  readerRefLabel,
+  sanitizeReaderText,
+  statusZh,
+  transitModeZh,
+  walkingZh,
+} from "./lib/presentation.ts";
 
 fs.mkdirSync(distDir, { recursive: true });
 
@@ -14,10 +27,12 @@ function load<T>(file: string): T {
 const trip = load<any>("trip.yaml");
 const itinerary = load<{ days: any[] }>("itinerary.yaml");
 const places = load<{ places: any[] }>("places.yaml").places;
+const restaurants = load<{ restaurants: any[] }>("restaurants.yaml").restaurants;
 const emergency = load<any>("emergency-public.yaml");
 const decisions = load<{ decisions: any[] }>("founder-decisions.yaml").decisions;
 const mediaDoc = load<{ media: any[] }>("media.yaml");
 const placeMap = Object.fromEntries(places.map((p) => [p.id, p]));
+const restaurantMap = Object.fromEntries(restaurants.map((r) => [r.id, r]));
 const mediaById = Object.fromEntries(mediaDoc.media.map((m) => [m.id, m]));
 
 function mediaSrc(id: string): string {
@@ -33,91 +48,186 @@ function mediaSrc(id: string): string {
   return `data:${mime};base64,${buf.toString("base64")}`;
 }
 
-function iconSrc(id: string): string {
-  const m = mediaById[id];
-  const abs = path.join(root, m.local_path);
-  const buf = fs.readFileSync(abs);
-  return `data:image/svg+xml;base64,${buf.toString("base64")}`;
+function altCaption(id: string): string {
+  return mediaById[id].alt_zh;
 }
 
-function caption(id: string): string {
-  const m = mediaById[id];
-  return `${m.alt_zh} · ${m.attribution}`;
+function creditLabel(m: any): string {
+  if (m.type === "generated_illustration") return "AI 原創插畫";
+  if (m.type === "photo") return "照片";
+  return "圖示";
 }
 
-function dayHtml(day: any, mediaId?: string): string {
-  const blocks = day.blocks
-    .map((b: any) => {
-      const place = b.place_id ? placeMap[b.place_id] : null;
-      const placeLine = place
-        ? `<p><strong>${place.name_zh}</strong> · <span lang="ko">${place.name_ko}</span></p>`
-        : "";
-      const kindZh = ({ transit: "交通", experience: "體驗", meal: "用餐", free: "自由", photo: "拍照", shopping: "購物", rest: "休息", buffer: "緩衝" } as Record<string,string>)[b.kind] ?? b.kind;
-      return `<div class="block"><div class="time">${b.start} – ${b.end}</div><strong>${b.title}</strong><p class="muted">${kindZh}</p>${placeLine}${b.plan_b ? `<p><strong>備案：</strong>${b.plan_b}</p>` : ""}</div>`;
-    })
-    .join("\n");
-  const media = mediaId
-    ? `<img class="day-media" src="${mediaSrc(mediaId)}" alt="${mediaById[mediaId].alt_zh}"/><p class="caption">${caption(mediaId)}</p>`
+function blockHtml(b: any): string {
+  const place = b.place_id ? placeMap[b.place_id] : null;
+  const rest = b.restaurant_id ? restaurantMap[b.restaurant_id] : null;
+  const typeLabel = place ? placeTypeZh(place.type) : null;
+  const placeLine = place
+    ? `<p><strong>${place.name_zh}</strong> · <span lang="ko">${place.name_ko}</span>${typeLabel ? ` · ${typeLabel}` : ""}${place.area ? ` · ${areaZh(place.area)}` : ""}</p>`
     : "";
-  return `<section class="page day"><p class="eyebrow">Day ${day.day_index} · ${day.city}</p><h1>${day.theme}</h1><p><strong>今天最重要：</strong>${day.one_priority}</p><p><span class="status">暫定</span></p>${media}${blocks}<p><strong>雨天：</strong>${day.rain_plan}</p></section>`;
+  const restLine = rest
+    ? `<p>餐飲：${rest.name_zh} · <span lang="ko">${rest.name_ko}</span> · ${statusZh(rest.status)}</p>`
+    : b.kind === "meal"
+      ? `<p class="muted">餐廳：店家鎖定後補上</p>`
+      : "";
+  const transit = transitModeZh(b.transit_mode);
+  const transitLine = transit
+    ? `<p class="muted">${transit}${b.transit_minutes != null ? ` · 約 ${b.transit_minutes} 分` : " · 移動時間出發前確認"}</p>`
+    : "";
+  const reservationRaw =
+    b.reservation_deadline != null
+      ? sanitizeReaderText(String(b.reservation_deadline))
+          .replace(/T-(\d+)\s*前?/g, "出發前 $1 天")
+          .replace(/出發前 (\d+) 天\s*前/g, "出發前 $1 天")
+      : null;
+  const reservation = reservationRaw
+    ? `<p class="muted">預約：${reservationRaw}</p>`
+    : place && place.reservation_required === true
+      ? `<p class="muted">需要預約</p>`
+      : place && place.reservation_required === false
+        ? `<p class="muted">通常免預約（出發前再確認）</p>`
+        : "";
+  const title = sanitizeReaderText(b.title);
+  return `<div class="block"><div class="time">${formatClock(b.start)} – ${formatClock(b.end)}</div><strong>${title}</strong><p class="muted">${kindZh(b.kind)}${b.droppable ? " · 體力不足可刪" : ""}</p>${placeLine}${restLine}${transitLine}${reservation}${b.plan_b ? `<p><strong>備案：</strong>${sanitizeReaderText(b.plan_b)}</p>` : ""}</div>`;
+}
+
+function dayHeader(day: any, continued = false): string {
+  const cont = continued ? " · 續" : "";
+  return `<div class="day-header"><p class="eyebrow">Day ${day.day_index} · ${cityZh(day.city)}${cont}</p><h1>${sanitizeReaderText(day.theme)}</h1><p><strong>今天最重要：</strong>${sanitizeReaderText(day.one_priority)}</p><p class="meta-row">最晚回住宿 ${day.return_by} · 步行強度 ${walkingZh(day.walking_level)} · <span class="status">${statusZh(day.status)}</span></p><p class="meta-row">區域：${(day.primary_areas || []).map(areaZh).join("／")}</p></div>`;
+}
+
+function dayClosing(day: any): string {
+  const drop = (day.droppable_items || []).length
+    ? `<p><strong>低體力優先刪除：</strong>${day.droppable_items.map((x: string) => readerRefLabel(String(x), placeMap)).join("、")}</p>`
+    : "";
+  return `<div class="keep"><p><strong>雨備：</strong>${sanitizeReaderText(day.rain_plan)}</p><p><strong>低體力：</strong>${sanitizeReaderText(day.low_energy_plan)}</p><p><strong>回住宿：</strong>${sanitizeReaderText(day.emergency_return)}</p>${drop}</div>`;
+}
+
+function expectBox(day: any): string {
+  return `<div class="editorial"><h3>這一天最期待</h3><p>${sanitizeReaderText(day.one_priority)}</p></div>`;
+}
+
+/** Prefer one page; Day 2 and Day 6 use meaningful two-page spreads. */
+function dayPages(day: any, mediaId?: string): string {
+  const blocks = day.blocks || [];
+  const media = mediaId
+    ? `<img class="day-media" src="${mediaSrc(mediaId)}" alt="${mediaById[mediaId].alt_zh}"/><p class="caption">${altCaption(mediaId)}</p>`
+    : "";
+
+  // Day 2: morning experience / afternoon free
+  if (day.day_index === 2 && blocks.length >= 5) {
+    const morning = blocks.slice(0, 3).map(blockHtml).join("\n");
+    const afternoon = blocks.slice(3).map(blockHtml).join("\n");
+    return `
+<section class="page day compact">
+  ${dayHeader(day, false)}
+  ${media}
+  ${morning}
+  ${expectBox(day)}
+</section>
+<section class="page day compact">
+  ${dayHeader(day, true)}
+  ${afternoon}
+  ${dayClosing(day)}
+</section>`;
+  }
+
+  // Day 6: coast morning / optional afternoon + closing (avoid orphan rain block)
+  if (day.day_index === 6 && blocks.length >= 4) {
+    const first = blocks.slice(0, 2).map(blockHtml).join("\n");
+    const second = blocks.slice(2).map(blockHtml).join("\n");
+    return `
+<section class="page day compact">
+  ${dayHeader(day, false)}
+  ${media}
+  ${first}
+  ${expectBox(day)}
+</section>
+<section class="page day compact">
+  ${dayHeader(day, true)}
+  ${second}
+  ${dayClosing(day)}
+</section>`;
+  }
+
+  return `
+<section class="page day compact">
+  ${dayHeader(day, false)}
+  ${media}
+  ${blocks.map(blockHtml).join("\n")}
+  ${dayClosing(day)}
+</section>`;
 }
 
 const days = [...itinerary.days].sort((a, b) => a.day_index - b.day_index);
 const seoulDays = days.filter((d) => d.city === "Seoul");
 const transitDays = days.filter((d) => d.city === "Transit");
 const busanDays = days.filter((d) => d.city === "Busan");
-const openDecisions = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional").slice(0, 3);
+const day7 = busanDays.find((d) => d.day_index === 7);
+const busanMain = busanDays.filter((d) => d.day_index !== 7);
+const openDecisions = decisions
+  .filter((d) => d.status === "DecisionRequired" || d.status === "Provisional")
+  .slice(0, 4);
 
 const dayMedia: Record<number, string | undefined> = {
   2: "seoul-palace-gate",
   6: "busan-haeundae",
 };
 
-const experienceIcons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-shop", "icon-fortune"]
-  .map((id) => {
-    const m = mediaById[id];
-    return `<div class="icon-item"><img src="${iconSrc(id)}" alt="${m.alt_zh}"/><div>${m.alt_zh.replace("圖示", "")}</div></div>`;
-  })
-  .join("");
+function creditItemHtml(m: any): string {
+  const isAi = m.type === "generated_illustration";
+  const creator = isAi
+    ? `AI 原創插畫（專案生成 · ${m.generation_date || ""}）`
+    : m.creator;
+  const source = String(m.source_url || "").startsWith("http")
+    ? "來源頁面見網站圖片出處"
+    : isAi
+      ? "本專案原創插畫"
+      : m.source_platform || "本專案";
+  const attrib = isAi
+    ? `本專案 AI 原創插畫 · ${m.generation_date || ""}`
+    : m.attribution;
+  const license = String(m.license || "")
+    .replace(/Original AI-generated illustration for this project/g, "本專案原創 AI 插畫授權")
+    .replace(/AI-generated/g, "AI 原創");
+  return `<li><strong>${m.alt_zh}</strong><br/>攝影者／生成方式：${creator}<br/>來源：${source}<br/>授權：${license}<br/>出處：${attrib}</li>`;
+}
 
-const creditsItems = mediaDoc.media
-  .filter((m) => m.status === "Approved" && (m.type === "photo" || m.type === "generated_illustration"))
-  .map((m) => {
-    const kind = m.type === "generated_illustration" ? "AI 原創插畫" : "照片";
-    return `<li><strong>${m.id}</strong> · ${kind}<br/>${m.attribution}<br/><span class="muted">${m.source_url}</span><br/>License: ${m.license}</li>`;
-  })
-  .join("");
+const approvedIllustrations = mediaDoc.media.filter(
+  (m) => m.status === "Approved" && m.type === "generated_illustration"
+);
+const approvedPhotos = mediaDoc.media.filter((m) => m.status === "Approved" && m.type === "photo");
+const creditIllustrations = approvedIllustrations.map(creditItemHtml).join("");
+const creditPhotos = approvedPhotos.map(creditItemHtml).join("");
+const photoListStart = approvedIllustrations.length + 1;
+
+const monthLabel = formatTargetMonth(trip.target_month);
 
 const handbookBody = `
 <div class="cover">
   <img class="cover-media" src="${mediaSrc("cover-hero")}" alt="${mediaById["cover-hero"].alt_zh}"/>
   <div class="cover-body">
-    <p class="eyebrow">Our First Korea</p>
-    <h1>${trip.title}</h1>
+    <p class="eyebrow">我們的韓國 · 旅行規劃預覽版</p>
+    <h1>Jerry &amp; Nikita</h1>
     <p class="lede">${trip.success_criterion}</p>
-    <p>首爾四晚 · 釜山兩晚 · ${trip.target_month ?? "日期待決"}</p>
-    <p class="caption">${caption("cover-hero")}</p>
+    <p class="meta">Jerry 與 Nikita · 首爾四晚 · 釜山兩晚 · ${monthLabel}</p>
+    <p class="meta muted">目前是規劃預覽，不是已完成預訂。</p>
   </div>
 </div>
 
-<section class="page intro">
+<section class="page intro compact">
   <p class="eyebrow">Intro</p>
   <h2>我們想留下的回憶</h2>
-  <p>這是我們第一次一起出國。不是把行程填滿，而是留下會想再翻開的畫面：韓服與宮殿、KTX 窗外、釜山海邊、一起決定要買什麼、一起吃什麼。</p>
-  <p>目前方案：<strong>Seoul 4N + Busan 2N</strong>。目標月份：${trip.target_month ?? "待確認"}。日期與訂房仍待一起決定。</p>
+  <p>這是 Jerry 與 Nikita 第一次一起出國。成功標準只有一句：${trip.success_criterion}。</p>
+  <p>Nikita 期待：GOT7、海景、韓服、購物、美食、韓國算命。Jerry 希望順暢、不要太累、不要排太滿。兩人照與拍立得很重要。</p>
   <div class="route-line">
     <strong>TPE → ICN</strong> · 首爾四晚 · <strong>KTX</strong> · 釜山兩晚 · <strong>PUS → TPE</strong>
   </div>
-  <p class="muted">這本旅行書是 Couple Preview，不是訂票憑證。</p>
-</section>
-
-<section class="page">
-  <p class="eyebrow">Route</p>
-  <h2>路線一覽</h2>
-  <ol>
-    ${days.map((d) => `<li><strong>Day ${d.day_index}</strong> · ${d.theme} <span class="muted">（${d.city}）</span></li>`).join("")}
+  <p><strong>目前方案：</strong>首爾四晚 + 釜山兩晚 · ${monthLabel}</p>
+  <ol class="dense">
+    ${days.map((d) => `<li><strong>Day ${d.day_index}</strong> · ${sanitizeReaderText(d.theme)} <span class="muted">（${cityZh(d.city)}）</span></li>`).join("")}
   </ol>
-  <p>成功標準：${trip.success_criterion}</p>
+  <p class="muted">這本旅行書是規劃預覽版，不是訂票憑證。</p>
 </section>
 
 <div class="divider seoul">
@@ -126,18 +236,10 @@ const handbookBody = `
     <p class="eyebrow">Chapter</p>
     <h1>首爾 · Seoul</h1>
     <p>四晚慢慢走：韓服、宮殿、購物、算命與城市節奏。</p>
-    <p class="caption">${caption("seoul-chapter")}</p>
   </div>
 </div>
 
-<section class="page">
-  <h2>首爾主視覺</h2>
-  <div class="media-frame"><img src="${mediaSrc("seoul-palace-roof")}" alt="${mediaById["seoul-palace-roof"].alt_zh}"/></div>
-  <p class="caption">${caption("seoul-palace-roof")}</p>
-  <p>真實宮殿屋頂質感，提醒我們 Day 2 想留下的合照氣氛——之後用我們自己的照片替換。</p>
-</section>
-
-${seoulDays.map((d) => dayHtml(d, dayMedia[d.day_index])).join("\n")}
+${seoulDays.map((d) => dayPages(d, dayMedia[d.day_index])).join("\n")}
 
 <div class="divider ktx">
   <img src="${mediaSrc("ktx-transition")}" alt="${mediaById["ktx-transition"].alt_zh}"/>
@@ -145,11 +247,10 @@ ${seoulDays.map((d) => dayHtml(d, dayMedia[d.day_index])).join("\n")}
     <p class="eyebrow">Transit</p>
     <h1>首爾 → 釜山 · KTX</h1>
     <p>移動日以行李與體力為先，車窗風景留給兩個人。</p>
-    <p class="caption">${caption("ktx-transition")}</p>
   </div>
 </div>
 
-${transitDays.map((d) => dayHtml(d)).join("\n")}
+${transitDays.map((d) => dayPages(d)).join("\n")}
 
 <div class="divider busan">
   <img src="${mediaSrc("busan-chapter")}" alt="${mediaById["busan-chapter"].alt_zh}"/>
@@ -157,59 +258,47 @@ ${transitDays.map((d) => dayHtml(d)).join("\n")}
     <p class="eyebrow">Chapter</p>
     <h1>釜山 · Busan</h1>
     <p>兩晚海邊收尾：海雲台、橋的節奏、慢慢走路。</p>
-    <p class="caption">${caption("busan-chapter")}</p>
   </div>
 </div>
 
-<section class="page">
-  <h2>釜山主視覺</h2>
-  <div class="media-frame"><img src="${mediaSrc("busan-haeundae")}" alt="${mediaById["busan-haeundae"].alt_zh}"/></div>
-  <p class="caption">${caption("busan-haeundae")}</p>
-  <div class="media-frame" style="margin-top:14pt"><img src="${mediaSrc("busan-gwangan")}" alt="${mediaById["busan-gwangan"].alt_zh}"/></div>
-  <p class="caption">${caption("busan-gwangan")}</p>
+${busanMain.map((d) => dayPages(d, dayMedia[d.day_index])).join("\n")}
+
+<section class="page compact">
+  ${day7 ? dayHeader(day7, false) : ""}
+  ${day7 ? (day7.blocks || []).map(blockHtml).join("\n") : ""}
+  ${day7 ? dayClosing(day7) : ""}
+  <div class="editorial" style="margin-top:8pt">
+    <h3>一起決定</h3>
+    <ul class="dense">
+      ${openDecisions.map((d) => `<li><strong>${d.title_zh}</strong> · ${statusZh(d.status)}</li>`).join("")}
+    </ul>
+  </div>
+  <div class="editorial" style="margin-top:8pt">
+    <h3>出發前</h3>
+    <ul class="dense">
+      <li>護照效期、K-ETA／入境規定出發前再查官網</li>
+      <li>住宿確認後填入緊急卡地址</li>
+      <li>出發前下載離線版 PDF 存入手機</li>
+      <li>保險與私人電話僅離線保存</li>
+      <li>無酒精、避免甲殼海鮮偏好隨身記得</li>
+    </ul>
+  </div>
+  <p class="meta-row" style="margin-top:10pt">最期待：韓服 · 宮殿 · 海景 · 美食 · 購物 · 算命</p>
+  <p class="footer-note">Jerry 與 Nikita · 我們的韓國 · 旅行規劃預覽版 · 非訂票憑證</p>
 </section>
 
-${busanDays.map((d) => dayHtml(d, dayMedia[d.day_index])).join("\n")}
-
-<section class="page">
-  <p class="eyebrow">Experiences</p>
-  <h2>最期待的體驗</h2>
-  <div class="icon-strip">${experienceIcons}</div>
-  <h3 style="margin-top:22pt">美食</h3>
-  <div class="media-frame"><img src="${mediaSrc("seoul-street-food")}" alt="${mediaById["seoul-street-food"].alt_zh}"/></div>
-  <p class="caption">${caption("seoul-street-food")}</p>
-  <h3>購物</h3>
-  <div class="media-frame"><img src="${mediaSrc("shopping-atmosphere")}" alt="${mediaById["shopping-atmosphere"].alt_zh}"/></div>
-  <p class="caption">${caption("shopping-atmosphere")}</p>
+<section class="page compact credits-page">
+  <p class="eyebrow">Credits · 1／2</p>
+  <h2>圖片出處 · 插畫</h2>
+  <p class="muted">封面與章節插畫的完整出處。AI 插畫不是景點證據；正文不放技術說明。</p>
+  <ol class="credits dense-credits">${creditIllustrations}</ol>
 </section>
 
-<section class="page">
-  <p class="eyebrow">Together</p>
-  <h2>一起決定</h2>
-  <ul>
-    ${openDecisions.map((d) => `<li><strong>${d.title_zh}</strong> · ${d.status === "DecisionRequired" ? "待一起決定" : "暫定"}</li>`).join("")}
-  </ul>
-  <p class="muted">完整選項見網站「決策」頁。本頁只提醒我們還要一起談的事。</p>
-</section>
-
-<section class="page">
-  <p class="eyebrow">Before departure</p>
-  <h2>出發前</h2>
-  <ul>
-    <li>護照效期、K-ETA／入境規定出發前再查官網</li>
-    <li>住宿確認後填入緊急卡地址</li>
-    <li>出發前下載離線版 PDF 存入手機</li>
-    <li>保險與私人電話僅離線保存</li>
-    <li>無酒精、避免甲殼海鮮偏好隨身記得</li>
-  </ul>
-  <p class="footer-note">我們的韓國 · Couple Preview Media Edition · 非訂票憑證</p>
-</section>
-
-<section class="page">
-  <p class="eyebrow">Credits</p>
-  <h2>Image credits</h2>
-  <p class="muted">正文不插入 attribution；完整出處如下。AI 插畫不作為景點證據。</p>
-  <ol class="credits">${creditsItems}</ol>
+<section class="page compact credits-page">
+  <p class="eyebrow">Credits · 2／2</p>
+  <h2>圖片出處 · 照片</h2>
+  <p class="muted">真實照片出處與授權。完整列表供 Jerry 與 Nikita 保存與再查。</p>
+  <ol class="credits dense-credits" start="${photoListStart}">${creditPhotos}</ol>
 </section>
 `;
 
@@ -218,22 +307,22 @@ const emergencyBody = `
   <p class="eyebrow">緊急卡</p>
   <h1>緊急協助</h1>
   <p class="big">${emergency.korea.police} 警察 · ${emergency.korea.fire_ambulance} 消防／醫療</p>
-  <p><a href="${emergency.korea.mission_url}">${emergency.korea.mission_name}</a></p>
+  <p>${emergency.korea.mission_name}</p>
   <p>${emergency.korea.mission_phone_note}</p>
   <h2>住宿地址</h2>
-  <p>首爾：${emergency.lodging_placeholders.seoul_address_ko}</p>
-  <p>釜山：${emergency.lodging_placeholders.busan_address_ko}</p>
+  <p>首爾：${sanitizeReaderText(emergency.lodging_placeholders.seoul_address_ko)}</p>
+  <p>釜山：${sanitizeReaderText(emergency.lodging_placeholders.busan_address_ko)}</p>
   <h2>保險</h2>
-  <p>保險公司：${emergency.insurance.provider}</p>
-  <p>緊急電話：${emergency.insurance.emergency_phone}</p>
-  <p class="muted">${emergency.insurance.note}</p>
+  <p>保險公司：${sanitizeReaderText(emergency.insurance.provider)}</p>
+  <p>緊急電話：${sanitizeReaderText(emergency.insurance.emergency_phone)}</p>
+  <p class="muted">${sanitizeReaderText(emergency.insurance.note)}</p>
   <h2>韓文短句</h2>
   <p lang="ko">${emergency.phrases_ko.no_alcohol}</p>
   <p lang="ko">${emergency.phrases_ko.no_crustaceans}</p>
   <p lang="ko">${emergency.phrases_ko.help}</p>
   <p lang="ko">${emergency.phrases_ko.ambulance}</p>
   <p lang="ko">${emergency.phrases_ko.taxi_address}</p>
-  <p class="muted">${emergency.offline_note}</p>
+  <p class="muted">${sanitizeReaderText(emergency.offline_note)}</p>
 </section>
 `;
 
@@ -249,7 +338,7 @@ async function renderPdf(html: string, outFile: string) {
     path: path.join(distDir, outFile),
     format: "A4",
     printBackground: true,
-    margin: { top: "10mm", bottom: "14mm", left: "10mm", right: "10mm" },
+    margin: { top: "8mm", bottom: "10mm", left: "8mm", right: "8mm" },
   });
   await browser.close();
 }
@@ -257,6 +346,6 @@ async function renderPdf(html: string, outFile: string) {
 await renderPdf(wrapHtml("Korea Trip Handbook", handbookBody), "korea-trip-handbook.pdf");
 await renderPdf(wrapHtml("Emergency Pack", emergencyBody), "emergency-pack.pdf");
 
-console.log("PDF generation complete (Couple Preview Media Edition):");
+console.log("PDF generation complete (publication quality fix):");
 console.log(" - dist/korea-trip-handbook.pdf");
 console.log(" - dist/emergency-pack.pdf");

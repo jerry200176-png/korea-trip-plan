@@ -2,41 +2,43 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTrip, loadDestinations, loadTravelers } from "../lib/data";
+import { formatTargetMonth, statusZh } from "../lib/presentation";
+
 const trip = loadTrip();
 const destinations = loadDestinations();
 const travelers = loadTravelers();
 const base = siteBase();
 ---
-<Handbook title="Trip Overview" current="more">
-  <h1>Trip Overview</h1>
+<Handbook title="旅程概覽" current="more">
+  <h1>旅程概覽</h1>
   <section class="panel">
     <h2>{trip.title}</h2>
-    <p>長度約 {trip.duration_days} 天 · 狀態 <span class="badge">{trip.status}</span></p>
-    <p>目標月份：{trip.target_month ?? "TBD"}</p>
+    <p>長度約 {trip.duration_days} 天 · <span class="status status-assumption">{statusZh(trip.status)}</span></p>
+    <p>目標：{formatTargetMonth(trip.target_month)}</p>
     <p>每日：{trip.daily_out} 出門 / {trip.daily_return} 回住宿</p>
-    <p class="muted">{trip.notes}</p>
+    <p class="muted">目前是規劃預覽，不是已完成預訂。日期、航班與住宿仍待一起決定。</p>
   </section>
   <section class="panel">
     <h2>旅客</h2>
     <ul class="list">
       {travelers.map((t) => (
         <li>
-          <strong>{t.display_name}</strong> · {t.role}
-          <div class="muted">{(t.interests || []).join(", ") || "—"}</div>
+          <strong>{t.display_name}</strong>
+          <div class="muted">{(t.interests || []).join("、") || "興趣確認後補上"}</div>
         </li>
       ))}
     </ul>
   </section>
   <section class="panel">
-    <h2>城市（Provisional）</h2>
+    <h2>城市（目前暫定）</h2>
     <ul class="list">
       {destinations.map((d) => (
         <li>
-          <strong>{d.name_zh}</strong> {d.name_ko} · {d.provisional_nights}N
+          <strong>{d.name_zh}</strong> {d.name_ko} · {d.provisional_nights} 晚
           <div class="muted">{d.why}</div>
         </li>
       ))}
     </ul>
-    <a class="btn" href={`${base}decisions/`}>需要 Founder 鎖定</a>
+    <a class="btn" href={`${base}decisions/`}>還要一起決定</a>
   </section>
 </Handbook>

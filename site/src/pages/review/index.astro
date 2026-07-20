@@ -10,7 +10,7 @@ const open = decisions.filter((d) => d.status === "DecisionRequired" || d.status
 const hero = mediaById("cover-hero")!;
 const heroSrc = mediaPublicUrl(base, hero);
 
-const replyTemplate = `Couple Review 回覆
+const replyTemplate = `Jerry & Nikita Review 回覆
 1. 第一眼會想繼續看嗎？
 （ ）會  （ ）還好  （ ）不太會
 補充：
@@ -30,11 +30,11 @@ const replyTemplate = `Couple Review 回覆
 
 `;
 ---
-<Handbook title="Couple 驗收" current="home">
+<Handbook title="一起驗收" current="home">
   <p class="eyebrow">Review</p>
-  <h1 class="page-title">Couple Review Mode</h1>
-  <span class="status status-provisional">暫定驗收</span>
-  <p class="hero-lede">只給 Jerry 與女友驗收。看完後可複製下方回覆文字傳給對方。</p>
+  <h1 class="page-title">Jerry & Nikita 驗收</h1>
+  <span class="status status-provisional">目前暫定驗收</span>
+  <p class="hero-lede">只給 Jerry 與 Nikita 驗收。看完後可複製下方回覆文字傳給對方。</p>
 
   <section class="media-block">
     <img src={heroSrc.replace(/\.webp$/, ".jpg")} alt={hero.alt_zh} loading="lazy" />
@@ -43,7 +43,7 @@ const replyTemplate = `Couple Review 回覆
   <section class="surface-warm">
     <h2 style="margin-top:0">開始</h2>
     <div class="btn-row">
-      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>打開旅行書 PDF</a>
+      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>打開旅行書 PDF（Beta）</a>
       <a class="btn" href={`${base}`}>回到首頁</a>
     </div>
   </section>
