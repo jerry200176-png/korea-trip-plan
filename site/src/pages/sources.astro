@@ -1,0 +1,17 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import { loadSources } from "../lib/data";
+const sources = loadSources();
+---
+<Handbook title="Sources" current="more">
+  <h1>Sources</h1>
+  <ul class="list">
+    {sources.map((s) => (
+      <li>
+        <strong>{s.id}</strong> · {s.name}
+        <div><a href={s.url} target="_blank" rel="noreferrer">{s.url}</a></div>
+        <div class="muted">tier {s.tier} · checked {s.checked_at} · {s.status}</div>
+      </li>
+    ))}
+  </ul>
+</Handbook>

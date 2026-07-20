@@ -1,0 +1,50 @@
+# EXAMPLE ONLY — copy to bookings.local.yaml for private use (gitignored).
+# Never commit real PNRs, ticket numbers, or hotel confirmation codes.
+
+bookings:
+  - id: bk-flight-outbound
+    type: flight
+    status: placeholder
+    carrier: REPLACE_ME
+    route: TPE_or_TSA → ICN_or_GMP
+    depart_at: "REPLACE_ME"
+    confirmation_code: "REPLACE_ME"
+    notes: Store real code offline only
+
+  - id: bk-flight-return
+    type: flight
+    status: placeholder
+    carrier: REPLACE_ME
+    route: PUS_or_ICN → TPE_or_TSA
+    depart_at: "REPLACE_ME"
+    confirmation_code: "REPLACE_ME"
+
+  - id: bk-hotel-seoul
+    type: lodging
+    status: placeholder
+    name: REPLACE_ME
+    address_ko: REPLACE_ME
+    confirmation_code: "REPLACE_ME"
+    check_in: "REPLACE_ME"
+    check_out: "REPLACE_ME"
+
+  - id: bk-hotel-busan
+    type: lodging
+    status: placeholder
+    name: REPLACE_ME
+    address_ko: REPLACE_ME
+    confirmation_code: "REPLACE_ME"
+    check_in: "REPLACE_ME"
+    check_out: "REPLACE_ME"
+
+  - id: bk-ktx
+    type: rail
+    status: placeholder
+    confirmation_code: "REPLACE_ME"
+
+  - id: bk-insurance
+    type: insurance
+    status: placeholder
+    provider: REPLACE_ME
+    policy_number: "REPLACE_ME"
+    emergency_phone: "REPLACE_ME"

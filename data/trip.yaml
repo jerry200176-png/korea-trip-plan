@@ -1,0 +1,57 @@
+id: trip-korea-2027
+title: Jerry 與女友韓國旅行
+party_size: 2
+duration_days: 7
+target_month: "2027-03"
+start_date: null
+end_date: null
+daily_out: "09:00"
+daily_return: "21:00"
+route_option: seoul-4n-busan-2n
+route_status: Confirmed
+flight_plan:
+  status: Provisional
+  founder_option: D3-B
+  outbound:
+    tw_airport: TPE
+    kr_airport: ICN
+  return:
+    kr_airport: PUS
+    tw_airport: TPE
+  prefer_direct_open_jaw: true
+  intercity: KTX
+  verified_booking: false
+success_criterion: 第一次一起出國，留下最美好的回憶
+preferences:
+  no_alcohol: true
+  avoid_crustaceans: true
+  spicy_ok: true
+  pork_soup_interest: true
+  no_jjimjilbang: true
+  no_rental_car: true
+  max_queue_hours: 1
+  couple_photo_ratio_target: 0.8
+  devices:
+    - iPhone
+    - instant_camera
+  lodging:
+    clean_comfortable: true
+    double_bed: true
+    bathtub_required: false
+    convenience_store_nearby_bonus: true
+  interests:
+    - beach
+    - nature
+    - hanbok
+    - fortune_telling
+    - GOT7
+    - food
+  shopping:
+    - alien_merch
+    - cosmetics
+    - clothes
+status: Assumption
+notes: >
+  D1 DecisionRequired: March 2027 + 7 calendar days Assumption only; no start_date/end_date.
+  D2 Confirmed: Seoul 4N + Busan 2N. D3 Provisional: TPE→ICN / PUS→TPE open-jaw — not ticket-verified.
+  Night math: Day1 arrive / Day7 depart ⇒ 6 hotel nights.

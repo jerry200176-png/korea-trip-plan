@@ -1,0 +1,39 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import { loadTrip, loadDestinations } from "../lib/data";
+
+const trip = loadTrip();
+const destinations = loadDestinations();
+const base = import.meta.env.BASE_URL;
+const nights = trip.duration_days - 1;
+---
+<Handbook title="Route Decision" current="more">
+  <h1>Route Decision</h1>
+  <span class="badge provisional">{trip.route_status}</span>
+  <section class="panel">
+    <h2>Night math（Confirmed）</h2>
+    <p>
+      {trip.duration_days} calendar days · Day 1 抵達 · Day {trip.duration_days} 離境 ⇒{" "}
+      <strong>{nights} hotel nights</strong>
+    </p>
+    <p>Seoul 4N + Busan 2N = 6N ✓ · Seoul 3N + Busan 3N = 6N ✓</p>
+    <p class="muted">Seoul 4N + Busan 3N = 7N ⇒ 通常需 8 calendar days</p>
+  </section>
+  <section class="panel">
+    <h2>Provisional recommendation</h2>
+    <p>{trip.route_option}</p>
+    <p class="muted">完整評分見 docs/ROUTE_DECISION.md</p>
+  </section>
+  <section class="panel">
+    <h2>Cities</h2>
+    <ul class="list">
+      {destinations.map((d) => (
+        <li>
+          <strong>{d.name_zh}</strong> {d.provisional_nights}N · {d.status}
+          <div class="muted">{d.why}</div>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <a class="btn primary" href={`${base}decisions/`}>回答 D2</a>
+</Handbook>

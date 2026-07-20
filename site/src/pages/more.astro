@@ -1,0 +1,25 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+const base = import.meta.env.BASE_URL;
+const items = [
+  ["行程總覽", "overview/"],
+  ["出發前", "before/"],
+  ["交通", "transport/"],
+  ["預訂", "bookings/"],
+  ["預算", "budget/"],
+  ["行李", "packing/"],
+  ["購物", "shopping/"],
+  ["韓文句子", "phrases/"],
+  ["來源", "sources/"],
+  ["Route Decision", "route/"],
+  ["Founder Decisions", "decisions/"],
+];
+---
+<Handbook title="More" current="more">
+  <h1>更多</h1>
+  <ul class="list">
+    {items.map(([label, href]) => (
+      <li><a href={`${base}${href}`}>{label}</a></li>
+    ))}
+  </ul>
+</Handbook>

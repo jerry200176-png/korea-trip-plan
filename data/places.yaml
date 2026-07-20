@@ -1,0 +1,189 @@
+places:
+  - id: plc-gyeongbokgung
+    name_zh: 景福宮
+    name_ko: 경복궁
+    name_en: Gyeongbokgung Palace
+    type: palace
+    city: Seoul
+    area: Jongno
+    address: 161 Sajik-ro, Jongno-gu, Seoul
+    naver_map_url: https://map.naver.com/v5/search/%EA%B2%BD%EB%B3%B5%EA%B6%81
+    google_maps_url: https://maps.google.com/?q=Gyeongbokgung
+    official_url: https://royal.cha.go.kr
+    opening_hours: "Verify on official site before visit; typically daytime with weekly closed day"
+    closed_days: "Often closed Tuesdays — re-verify (Stale risk)"
+    estimated_dwell_minutes: 120
+    estimated_cost_krw: 3000
+    reservation_required: false
+    queue_risk: medium
+    indoor_outdoor: mixed
+    rain_ok: false
+    best_time_of_day: morning
+    nearby_place_ids: [plc-bukchon]
+    recommend_reason: 韓服與宮殿合照核心；文化體驗密度高
+    risks: 排隊與步行；週二公休需重查；門票與時間表易變
+    source_ids: [src-royal-palaces, src-naver-map]
+    checked_at: "2026-07-20"
+    status: Provisional
+
+  - id: plc-bukchon
+    name_zh: 北村韓屋村
+    name_ko: 북촌한옥마을
+    name_en: Bukchon Hanok Village
+    type: neighborhood
+    city: Seoul
+    area: Jongno
+    address: Bukchon-ro, Jongno-gu, Seoul
+    naver_map_url: https://map.naver.com/v5/search/%EB%B6%81%EC%B4%8C%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84
+    google_maps_url: https://maps.google.com/?q=Bukchon+Hanok+Village
+    official_url: https://hanok.seoul.go.kr
+    opening_hours: Outdoor area; respect residential quiet hours
+    closed_days: null
+    estimated_dwell_minutes: 90
+    estimated_cost_krw: 0
+    reservation_required: false
+    queue_risk: medium
+    indoor_outdoor: outdoor
+    rain_ok: false
+    best_time_of_day: morning
+    nearby_place_ids: [plc-gyeongbokgung]
+    recommend_reason: 韓屋街景合照；可與韓服同一日
+    risks: 坡道步行；居民區噪音禮儀；雨天濕滑
+    source_ids: [src-seoul-hanok, src-naver-map]
+    checked_at: "2026-07-20"
+    status: Provisional
+
+  - id: plc-hongdae
+    name_zh: 弘大
+    name_ko: 홍대
+    name_en: Hongdae
+    type: shopping_district
+    city: Seoul
+    area: Mapo
+    address: Hongik University area, Mapo-gu, Seoul
+    naver_map_url: https://map.naver.com/v5/search/%ED%99%8D%EB%8C%80
+    google_maps_url: https://maps.google.com/?q=Hongdae+Seoul
+    official_url: null
+    opening_hours: Shops vary; evenings lively
+    closed_days: null
+    estimated_dwell_minutes: 180
+    estimated_cost_krw: null
+    reservation_required: false
+    queue_risk: low
+    indoor_outdoor: mixed
+    rain_ok: true
+    best_time_of_day: afternoon
+    nearby_place_ids: []
+    recommend_reason: 衣服與年輕潮流購物；步行可控制在街區內
+    risks: 人潮；夜間較吵；非 GOT7 官方場館
+    source_ids: [src-naver-map]
+    checked_at: "2026-07-20"
+    status: Provisional
+
+  - id: plc-myeongdong
+    name_zh: 明洞
+    name_ko: 명동
+    name_en: Myeongdong
+    type: shopping_district
+    city: Seoul
+    area: Jung
+    address: Myeongdong, Jung-gu, Seoul
+    naver_map_url: https://map.naver.com/v5/search/%EB%AA%85%EB%8F%99
+    google_maps_url: https://maps.google.com/?q=Myeongdong
+    official_url: null
+    opening_hours: Mall/shop hours vary
+    closed_days: null
+    estimated_dwell_minutes: 150
+    estimated_cost_krw: null
+    reservation_required: false
+    queue_risk: medium
+    indoor_outdoor: mixed
+    rain_ok: true
+    best_time_of_day: afternoon
+    nearby_place_ids: []
+    recommend_reason: 化妝品與退稅便利購物帶
+    risks: 人潮；推銷；排長隊熱門店可跳過
+    source_ids: [src-naver-map]
+    checked_at: "2026-07-20"
+    status: Provisional
+
+  - id: plc-haeundae
+    name_zh: 海雲台海水浴場
+    name_ko: 해운대해수욕장
+    name_en: Haeundae Beach
+    type: beach
+    city: Busan
+    area: Haeundae
+    address: Haeundae Beach, Busan
+    naver_map_url: https://map.naver.com/v5/search/%ED%95%B4%EC%9A%B4%EB%8C%80%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5
+    google_maps_url: https://maps.google.com/?q=Haeundae+Beach
+    official_url: https://www.busan.go.kr
+    opening_hours: Open coastal area; facilities seasonal
+    closed_days: null
+    estimated_dwell_minutes: 120
+    estimated_cost_krw: 0
+    reservation_required: false
+    queue_risk: low
+    indoor_outdoor: outdoor
+    rain_ok: false
+    best_time_of_day: afternoon
+    nearby_place_ids: [plc-gwangalli]
+    recommend_reason: 海灘與自然風景核心；兩人合照價值高
+    risks: 3 月偏涼；風大；勿以甲殼類海鮮街為主餐
+    source_ids: [src-busan-city, src-naver-map]
+    checked_at: "2026-07-20"
+    status: Provisional
+
+  - id: plc-gwangalli
+    name_zh: 廣安里海水浴場
+    name_ko: 광안리해수욕장
+    name_en: Gwangalli Beach
+    type: beach
+    city: Busan
+    area: Suyeong
+    address: Gwangalli Beach, Busan
+    naver_map_url: https://map.naver.com/v5/search/%EA%B4%91%EC%95%88%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5
+    google_maps_url: https://maps.google.com/?q=Gwangalli+Beach
+    official_url: https://www.busan.go.kr
+    opening_hours: Open coastal area
+    closed_days: null
+    estimated_dwell_minutes: 90
+    estimated_cost_krw: 0
+    reservation_required: false
+    queue_risk: low
+    indoor_outdoor: outdoor
+    rain_ok: false
+    best_time_of_day: evening
+    nearby_place_ids: [plc-haeundae]
+    recommend_reason: 大橋夜景合照；節奏可放慢
+    risks: 海邊餐廳甲殼類比例高，用餐需篩選
+    source_ids: [src-busan-city, src-naver-map]
+    checked_at: "2026-07-20"
+    status: Provisional
+
+  - id: plc-jyp-tower
+    name_zh: JYP 大樓周邊（GOT7 相關靈感點）
+    name_ko: JYP타워 인근
+    name_en: JYP Tower vicinity
+    type: entertainment_interest
+    city: Seoul
+    area: Gangnam
+    address: Verify current public-facing address before visit
+    naver_map_url: https://map.naver.com/v5/search/JYP
+    google_maps_url: null
+    official_url: https://www.jype.com
+    opening_hours: Exterior only unless a public venue is confirmed
+    closed_days: null
+    estimated_dwell_minutes: 30
+    estimated_cost_krw: 0
+    reservation_required: false
+    queue_risk: low
+    indoor_outdoor: outdoor
+    rain_ok: true
+    best_time_of_day: afternoon
+    nearby_place_ids: []
+    recommend_reason: GOT7／JYP 粉絲打卡靈感；需確認是否仍有可參觀公共空間
+    risks: 可能無可進入設施；勿打擾員工；活動檔期需重查
+    source_ids: [src-jyp, src-naver-map]
+    checked_at: "2026-07-20"
+    status: Provisional

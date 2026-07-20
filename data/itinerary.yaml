@@ -1,0 +1,375 @@
+days:
+  - id: day-01
+    day_index: 1
+    theme: 抵達首爾・輕量安頓
+    one_priority: 順利入境、抵達住宿、買好交通卡與網路
+    wake_time: "依航班"
+    out_time: "彈性"
+    return_by: "21:00"
+    primary_areas: [lodging_area]
+    city: Seoul
+    energy: low
+    estimated_cost_krw: 80000
+    walking_level: low
+    buffer_percent: 25
+    photo_tips: 機場與市區第一張兩人合照即可，不追景點
+    restroom_notes: 機場出境後與地鐵站內
+    rain_plan: 直達住宿；便利商店晚餐
+    low_energy_plan: 放棄任何加點，提早休息
+    closure_plan: n/a
+    droppable_items: [附近散步]
+    emergency_return: 依尚未鎖定之住宿地址（占位）→ 計程車或地鐵末班前返回
+    status: Provisional
+    blocks:
+      - start: "ARR"
+        end: "+2h"
+        title: 入境與領行李
+        kind: transit
+        transit_mode: airport
+        notes: 航班未鎖定；預留緩衝
+        plan_b: 依機場官方動線
+        droppable: false
+      - start: "+2h"
+        end: "+3.5h"
+        title: 機場→住宿
+        kind: transit
+        transit_mode: AREX_or_bus_TBD
+        transit_minutes: null
+        transfers: null
+        notes: Decision Required — 機場與住宿區
+        plan_b: 官方機場巴士／計程車（行李多時）
+        droppable: false
+      - start: "17:00"
+        end: "19:00"
+        title: 安頓・便利商店／輕食
+        kind: meal
+        restaurant_id: null
+        notes: 不安排跨區晚餐
+        plan_b: 住宿附近第二間便利商店
+        droppable: false
+      - start: "19:00"
+        end: "21:00"
+        title: 自由休息
+        kind: free
+        notes: 15–25% 緩衝含於此
+        plan_b: 提早睡
+        droppable: true
+
+  - id: day-02
+    day_index: 2
+    foundation_slice: true
+    theme: 韓服・宮殿・北村
+    one_priority: 完成一次韓服＋宮殿／韓屋合照體驗
+    wake_time: "07:30"
+    out_time: "09:00"
+    return_by: "21:00"
+    primary_areas: [Jongno]
+    city: Seoul
+    energy: medium
+    estimated_cost_krw: 120000
+    walking_level: medium
+    buffer_percent: 20
+    photo_tips: 80% 兩人合照；宮殿門與韓屋階梯各留一組
+    restroom_notes: 景福宮參觀動線內；北村咖啡館
+    rain_plan: 縮短戶外韓屋；改室內博物館或購物雨備
+    low_energy_plan: 只留韓服店外拍＋咖啡，取消北村坡道
+    closure_plan: 若宮殿公休改昌德宮或仁寺洞室內文化體驗（需當日重查）
+    droppable_items: [北村延伸巷弄]
+    emergency_return: 地鐵回住宿；避免尖峰強行轉乘
+    status: Provisional
+    blocks:
+      - start: "09:00"
+        end: "09:45"
+        title: 住宿→鍾路
+        kind: transit
+        transit_mode: subway
+        transit_minutes: 30
+        transfers: 1
+        notes: 實際分鐘依住宿區更新
+        plan_b: 計程車若行李腳痠
+        droppable: false
+      - start: "09:45"
+        end: "12:00"
+        title: 韓服體驗（店家未鎖定）
+        kind: experience
+        place_id: null
+        reservation_deadline: "T-7 前確認是否需預約"
+        queue_risk: medium
+        notes: Founder 未選店；勿寫成已訂
+        plan_b: 僅便服拍北村
+        droppable: false
+      - start: "12:00"
+        end: "14:00"
+        title: 景福宮
+        kind: place
+        place_id: plc-gyeongbokgung
+        dwell_minutes: 120
+        queue_risk: medium
+        map_url: https://map.naver.com/v5/search/%EA%B2%BD%EB%B3%B5%EA%B6%81
+        plan_b: 縮短至主要殿堂
+        droppable: false
+      - start: "14:00"
+        end: "15:00"
+        title: 午餐（非海鮮主打）
+        kind: meal
+        restaurant_id: rst-seoul-non-seafood-candidate
+        plan_b: 第二候選韓式定食
+        droppable: false
+      - start: "15:00"
+        end: "16:30"
+        title: 北村韓屋村
+        kind: place
+        place_id: plc-bukchon
+        dwell_minutes: 90
+        map_url: https://map.naver.com/v5/search/%EB%B6%81%EC%B4%8C%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84
+        plan_b: 取消坡道段
+        droppable: true
+      - start: "16:30"
+        end: "21:00"
+        title: 緩衝／回住宿／輕量自由
+        kind: buffer
+        notes: 含休息與晚餐彈性
+        plan_b: 直接回住宿
+        droppable: true
+
+  - id: day-03
+    day_index: 3
+    theme: 購物・化妝品・衣服
+    one_priority: 完成化妝品與衣服重點購物，不追排隊網紅店
+    wake_time: "08:00"
+    out_time: "09:00"
+    return_by: "21:00"
+    primary_areas: [Myeongdong]
+    city: Seoul
+    energy: medium
+    estimated_cost_krw: 200000
+    walking_level: medium
+    buffer_percent: 20
+    photo_tips: 購物街合照一組即可
+    restroom_notes: 百貨／地下街
+    rain_plan: 全程室內百貨與地下街
+    low_energy_plan: 只去一棟百貨
+    closure_plan: 換相鄰商場
+    droppable_items: [第二購物區]
+    emergency_return: 地鐵直達
+    status: Provisional
+    blocks:
+      - start: "09:00"
+        end: "10:00"
+        title: 前往明洞
+        kind: transit
+        transit_mode: subway
+        place_id: plc-myeongdong
+        map_url: https://map.naver.com/v5/search/%EB%AA%85%EB%8F%99
+        plan_b: 計程車
+        droppable: false
+      - start: "10:00"
+        end: "16:00"
+        title: 明洞購物（化裝品／衣服）
+        kind: shopping
+        place_id: plc-myeongdong
+        notes: 跳過需排 >1h 的店；退稅流程出發前重查
+        plan_b: 弘大改為備案日
+        droppable: false
+      - start: "16:00"
+        end: "21:00"
+        title: 休息與自由晚餐
+        kind: free
+        plan_b: 回住宿附近吃
+        droppable: true
+
+  - id: day-04
+    day_index: 4
+    theme: GOT7 靈感・算命・輕量文化（江南單區）
+    one_priority: 完成一次韓國算命體驗；GOT7 相關僅作低強度打卡
+    wake_time: "08:00"
+    out_time: "09:00"
+    return_by: "21:00"
+    primary_areas: [Gangnam]
+    city: Seoul
+    energy: low
+    estimated_cost_krw: 100000
+    walking_level: low
+    buffer_percent: 25
+    photo_tips: 算命店外／活動合照；不強求室內
+    restroom_notes: 商場內
+    rain_plan: 全程室內算命＋咖啡
+    low_energy_plan: 取消 JYP 周邊，只留算命
+    closure_plan: 換預約時段或改同區塔羅咖啡館（需篩選）
+    droppable_items: [plc-jyp-tower]
+    emergency_return: 地鐵／計程車
+    status: Provisional
+    blocks:
+      - start: "10:00"
+        end: "11:00"
+        title: JYP 周邊（可刪）
+        kind: place
+        place_id: plc-jyp-tower
+        dwell_minutes: 30
+        droppable: true
+        plan_b: 直接算命
+        notes: 確認無可進入設施則跳過；與算命同留在江南，避免跨區折返
+      - start: "12:00"
+        end: "14:00"
+        title: 韓國算命（江南候選・店家未鎖定）
+        kind: experience
+        reservation_deadline: "建議 T-14 起查語言與預約"
+        queue_risk: low
+        notes: 英語／中文服務需驗證；費用差異大；勿改排到鍾路造成當日折返
+        plan_b: 改同區塔羅或取消
+        droppable: false
+      - start: "14:00"
+        end: "21:00"
+        title: 輕量自由／打包準備移動日
+        kind: free
+        plan_b: 提早回住宿整理行李
+        notes: 化妝品／三眼怪若尚未買，優先在首爾補齊（釜山僅 2 晚）
+        droppable: true
+
+  - id: day-05
+    day_index: 5
+    foundation_slice: true
+    theme: 首爾→釜山移動日
+    one_priority: 安全舒適完成 KTX 移動與釜山入住安頓
+    wake_time: "07:00"
+    out_time: "08:30"
+    return_by: "21:00"
+    primary_areas: [Seoul-station, Busan-lodging]
+    city: Transit
+    energy: medium
+    estimated_cost_krw: 150000
+    walking_level: medium
+    buffer_percent: 25
+    photo_tips: 車站合照一張即可
+    restroom_notes: 車站內
+    rain_plan: 不影響火車；市區用計程車減濕滑步行
+    low_energy_plan: 抵達後不安排任何景點
+    closure_plan: 若車次異動改下一班；查 Korail 官方
+    droppable_items: [抵達後加點]
+    emergency_return: 當日以釜山住宿為家
+    status: Provisional
+    blocks:
+      - start: "08:30"
+        end: "09:30"
+        title: 住宿→首爾站／龍山（TBD）
+        kind: transit
+        transit_mode: subway_taxi
+        notes: 車次未訂；勿寫確認碼
+        plan_b: 計程車行李門到門
+        droppable: false
+      - start: "10:00"
+        end: "13:00"
+        title: KTX 首爾→釜山
+        kind: transit
+        transit_mode: KTX
+        transit_minutes: 150
+        transfers: 0
+        notes: 實際時刻表查 letskorail；票未買
+        plan_b: SRT 若更合適（需比較）
+        droppable: false
+      - start: "13:30"
+        end: "15:00"
+        title: 釜山站→住宿安頓
+        kind: transit
+        plan_b: 計程車
+        droppable: false
+      - start: "15:00"
+        end: "21:00"
+        title: 輕食＋休息（不塞景點）
+        kind: rest
+        restaurant_id: rst-busan-pork-soup-candidate
+        notes: 可嘗試豬肉湯飯；若太累改便利商店
+        plan_b: 便利商店
+        droppable: true
+
+  - id: day-06
+    day_index: 6
+    foundation_slice: true
+    theme: 海雲台・海岸風景
+    one_priority: 完成海灘／海岸兩人合照，節奏放慢
+    wake_time: "08:00"
+    out_time: "09:00"
+    return_by: "21:00"
+    primary_areas: [Haeundae]
+    city: Busan
+    energy: medium
+    estimated_cost_krw: 100000
+    walking_level: medium
+    buffer_percent: 20
+    photo_tips: 海岸線合照為主；拍立得注意海風與底片保溫
+    restroom_notes: 海邊設施季節性，出發前重查
+    rain_plan: 改室內咖啡＋商場；取消長時間沙灘
+    low_energy_plan: 只留一處海灘觀景 45 分鐘
+    closure_plan: 改廣安里或城市展望台（需重查）
+    droppable_items: [第二海灘]
+    emergency_return: 地鐵／計程車回住宿
+    status: Provisional
+    blocks:
+      - start: "10:00"
+        end: "12:30"
+        title: 海雲台海水浴場
+        kind: place
+        place_id: plc-haeundae
+        dwell_minutes: 120
+        map_url: https://map.naver.com/v5/search/%ED%95%B4%EC%9A%B4%EB%8C%80%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5
+        plan_b: 縮短步行
+        droppable: false
+      - start: "12:30"
+        end: "14:00"
+        title: 午餐（避開甲殼類主打店）
+        kind: meal
+        notes: 篩選豬肉湯飯或其他非海鮮主打
+        restaurant_id: rst-busan-pork-soup-candidate
+        plan_b: 連鎖韓式
+        droppable: false
+      - start: "15:00"
+        end: "17:00"
+        title: 廣安里（可刪）
+        kind: place
+        place_id: plc-gwangalli
+        droppable: true
+        plan_b: 回住宿休息
+        map_url: https://map.naver.com/v5/search/%EA%B4%91%EC%95%88%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5
+      - start: "17:00"
+        end: "21:00"
+        title: 緩衝與自由
+        kind: buffer
+        plan_b: 提早結束
+        droppable: true
+
+  - id: day-07
+    day_index: 7
+    theme: 釜山尾聲・返程準備
+    one_priority: 依航班安全前往機場；非必要購物可刪
+    wake_time: "07:30"
+    out_time: "09:00"
+    return_by: "依航班"
+    primary_areas: [Busan-lodging]
+    city: Busan
+    energy: low
+    estimated_cost_krw: 50000
+    walking_level: low
+    buffer_percent: 25
+    photo_tips: 最後一天合照留在輕鬆場景
+    restroom_notes: 商場與機場
+    rain_plan: 室內咖啡後直達機場
+    low_energy_plan: 取消一切購物，直達機場
+    closure_plan: 機場免稅僅作行李容量允許時的備案
+    droppable_items: [非必要購物]
+    emergency_return: 以機場動線為優先
+    status: Provisional
+    blocks:
+      - start: "09:00"
+        end: "11:00"
+        title: 緩衝／輕量散步（可刪）
+        kind: free
+        notes: 三眼怪／化妝品應已在首爾完成；釜山僅 2N，勿為購物壓縮機場緩衝
+        plan_b: 跳過，直接出發
+        droppable: true
+      - start: "11:00"
+        end: "ARR_AIRPORT"
+        title: 前往機場（PUS 或其他・未鎖定）
+        kind: transit
+        notes: Decision Required — 離境機場與航班時刻；預留航空公司建議到場時間
+        plan_b: 計程車減轉乘
+        droppable: false

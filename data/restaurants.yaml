@@ -1,0 +1,60 @@
+restaurants:
+  - id: rst-busan-pork-soup-candidate
+    name_zh: 釜山豬肉湯飯（候選類型・尚未鎖定店家）
+    name_ko: 부산 돼지국밥 (후보)
+    name_en: Busan pork soup rice (candidate type)
+    city: Busan
+    area: TBD
+    address: TBD — pick specific shop after Founder locks route
+    cuisine: pork_soup
+    naver_map_url: https://map.naver.com/v5/search/%EB%8F%BC%EC%A7%80%EA%B5%AD%EB%B0%A5
+    google_maps_url: null
+    official_url: null
+    opening_hours: null
+    closed_days: null
+    estimated_dwell_minutes: 45
+    price_range_krw: "8000-15000"
+    reservation_possible: false
+    queue_risk: medium
+    menu_order_ko: 돼지국밥
+    payment_notes: Many accept cards; carry some cash
+    crustacean_risk: low
+    alcohol_focus: false
+    spicy_options: true
+    pork_soup: true
+    alternatives_nearby: []
+    recommend_reason: 符合道地豬肉湯飯目標；釜山代表性料理
+    risks: 店家未鎖定；排隊店可換隔壁；確認菜單無甲殼類主打
+    source_ids: [src-naver-map]
+    checked_at: "2026-07-20"
+    status: Assumption
+
+  - id: rst-seoul-non-seafood-candidate
+    name_zh: 首爾道地韓式（非海鮮主打・候選）
+    name_ko: 서울 한식 (해산물 메인 제외 후보)
+    name_en: Seoul Korean meal (non-seafood-forward candidate)
+    city: Seoul
+    area: TBD
+    address: TBD
+    cuisine: korean
+    naver_map_url: https://map.naver.com/v5/search/%ED%95%9C%EC%8B%9D
+    google_maps_url: null
+    official_url: null
+    opening_hours: null
+    closed_days: null
+    estimated_dwell_minutes: 60
+    price_range_krw: "12000-25000"
+    reservation_possible: null
+    queue_risk: unknown
+    menu_order_ko: null
+    payment_notes: Prefer card; decline DCC
+    crustacean_risk: unknown
+    alcohol_focus: false
+    spicy_options: true
+    pork_soup: false
+    alternatives_nearby: []
+    recommend_reason: 占位：鎖定區域後再選低甲殼類風險店
+    risks: 尚未點名；不可當作已訂位
+    source_ids: [src-naver-map]
+    checked_at: "2026-07-20"
+    status: Assumption

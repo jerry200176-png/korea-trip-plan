@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip.local/schemas/common.json",
+  "title": "Common enums",
+  "definitions": {
+    "status": {
+      "type": "string",
+      "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"]
+    },
+    "credibility": {
+      "type": "string",
+      "enum": ["A", "B", "C", "D", "inspiration"]
+    },
+    "money": {
+      "type": "object",
+      "properties": {
+        "amount": { "type": "number" },
+        "currency": { "type": "string", "enum": ["KRW", "TWD", "USD"] },
+        "note": { "type": "string" }
+      },
+      "required": ["amount", "currency"]
+    }
+  }
+}

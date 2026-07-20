@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "cursor/**"]
+  pull_request:
+
+jobs:
+  foundation-exit-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            site/package-lock.json
+      - name: Clean install (reproducibility)
+        run: |
+          npm ci
+          npm ci --prefix site
+      - name: Foundation Exit Gate — npm run ci
+        run: npm run ci
+      - name: Upload handbook artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: handbook-dist-${{ github.sha }}
+          path: |
+            dist/
+            site/dist/
+            site/public/downloads/
+          if-no-files-found: error
+
+  pages:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: foundation-exit-gate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: ".nvmrc"
+      - run: npm ci && npm ci --prefix site && npm run ci
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+      - uses: actions/deploy-pages@v4

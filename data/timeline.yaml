@@ -1,0 +1,103 @@
+milestones:
+  - id: t-180
+    label: T-180
+    tasks:
+      - id: t180-passport
+        title: 確認兩人護照效期（通常建議效期覆蓋行程後至少 6 個月——以航空／入境官方為準）
+        done: false
+      - id: t180-dates
+        title: Founder 鎖定旅行日期（Open Decision D1）
+        done: false
+      - id: t180-route
+        title: Founder 鎖定城市與夜數（Open Decision D2）
+        done: false
+  - id: t-120
+    label: T-120
+    tasks:
+      - id: t120-airports
+        title: 決定出發／抵達機場偏好（Open Decision D3）
+        done: false
+      - id: t120-flight-shortlist
+        title: 建立航班候選清單（尚未購票）
+        done: false
+      - id: t120-keta-watch
+        title: 查核 K-ETA／免簽最新規定（官方）
+        done: false
+  - id: t-90
+    label: T-90
+    tasks:
+      - id: t90-insurance-research
+        title: 旅遊保險方案比較（官網條款）
+        done: false
+      - id: t90-lodging-areas
+        title: 首爾／釜山住宿區域短名單
+        done: false
+  - id: t-60
+    label: T-60
+    tasks:
+      - id: t60-book-flights
+        title: 購票（Founder 執行；代碼勿 commit）
+        done: false
+      - id: t60-book-hotels
+        title: 訂房（Founder 執行；代碼勿 commit）
+        done: false
+      - id: t60-experiences
+        title: 需提早預約的韓服／算命時段調查
+        done: false
+  - id: t-30
+    label: T-30
+    tasks:
+      - id: t30-reverify-places
+        title: 重查所有正式行程地點營業資訊
+        done: false
+      - id: t30-sim
+        title: 決定 eSIM／SIM／Wi-Fi
+        done: false
+      - id: t30-ktx
+        title: 若採雙城，規劃 KTX 車次（再購票）
+        done: false
+  - id: t-14
+    label: T-14
+    tasks:
+      - id: t14-fx
+        title: 換匯／信用卡海外交易設定（查銀行官網）
+        done: false
+      - id: t14-packing-draft
+        title: 行李清單初稿
+        done: false
+  - id: t-7
+    label: T-7
+    tasks:
+      - id: t7-final-hours
+        title: 最終確認營業時間、天氣、交通、預約
+        done: false
+      - id: t7-pdfs
+        title: 更新手冊與 PDF，存入兩人手機
+        done: false
+  - id: t-3
+    label: T-3
+    tasks:
+      - id: t3-pack
+        title: 完成打包與液體／電池檢查
+        done: false
+  - id: t-1
+    label: T-1
+    tasks:
+      - id: t1-docs
+        title: 護照、保險、離線地圖、緊急包 PDF
+        done: false
+  - id: departure
+    label: 出發日
+    tasks:
+      - id: dep-buffer
+        title: 依航空公司建議提早到機場
+        done: false
+  - id: return
+    label: 回國後
+    tasks:
+      - id: ret-notes
+        title: 回填實際花費與值得／不值得的店（更新 YAML）
+        done: false
+      - id: ret-film
+        title: 拍立得底片保存與數位備份
+        done: false

@@ -1,0 +1,24 @@
+travelers:
+  - id: trv-jerry
+    display_name: Jerry
+    role: traveler
+    nationality_assumption: TW
+    interests: []
+    constraints:
+      - feet_tire_easily
+      - prefer_advance_plans
+      - avoid_long_queues
+    status: Confirmed
+    notes: Do not store passport, DOB, phone, or address in repo.
+  - id: trv-partner
+    display_name: 女友
+    role: traveler
+    nationality_assumption: TW
+    interests:
+      - GOT7
+    constraints:
+      - no_alcohol
+      - avoid_crustacean_heavy_meals
+      - no_jjimjilbang
+    status: Confirmed
+    notes: Display name only; no PII.

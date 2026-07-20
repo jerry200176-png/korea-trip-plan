@@ -1,0 +1,17 @@
+{
+  "name": "Korea Trip Handbook",
+  "short_name": "KoreaTrip",
+  "start_url": "/korea-trip-plan/",
+  "display": "standalone",
+  "background_color": "#0f1419",
+  "theme_color": "#0f1419",
+  "lang": "zh-Hant",
+  "icons": [
+    {
+      "src": "/korea-trip-plan/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

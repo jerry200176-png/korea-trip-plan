@@ -1,0 +1,21 @@
+---
+import Handbook from "../../layouts/Handbook.astro";
+import { loadItinerary } from "../../lib/data";
+const days = loadItinerary().days;
+const base = import.meta.env.BASE_URL;
+---
+<Handbook title="Days" current="days">
+  <h1>每日行程</h1>
+  <p class="muted">最多 1–2 個相鄰區域 · 狀態皆為 Provisional 骨架</p>
+  <ul class="list">
+    {days.map((d) => (
+      <li>
+        <a href={`${base}days/day-${d.day_index}/`}>
+          <strong>Day {d.day_index}</strong> · {d.theme}
+        </a>
+        <div class="muted">{d.one_priority}</div>
+        <div class="muted">{d.city} · {d.energy} energy · walk {d.walking_level}</div>
+      </li>
+    ))}
+  </ul>
+</Handbook>

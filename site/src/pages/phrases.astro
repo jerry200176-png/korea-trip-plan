@@ -1,0 +1,12 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import fs from "node:fs";
+import path from "node:path";
+const md = fs.readFileSync(path.resolve(process.cwd(), "../handbook/korean-phrases.md"), "utf8");
+---
+<Handbook title="Korean Phrases" current="more">
+  <h1>Korean Phrases</h1>
+  <section class="panel">
+    <pre style="white-space:pre-wrap;font-family:var(--font-body);margin:0">{md}</pre>
+  </section>
+</Handbook>

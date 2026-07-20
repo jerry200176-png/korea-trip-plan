@@ -1,0 +1,121 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import {
+  loadTrip,
+  loadTimeline,
+  loadBudget,
+  loadSources,
+  loadFounderDecisions,
+  loadReadinessReport,
+  nextOpenTask,
+  budgetProgress,
+  bookingProgress,
+  staleSources,
+} from "../lib/data";
+
+const trip = loadTrip();
+const timeline = loadTimeline();
+const budget = loadBudget();
+const sources = loadSources();
+const decisions = loadFounderDecisions();
+const readiness = loadReadinessReport();
+const next = nextOpenTask(timeline);
+const bud = budgetProgress(budget);
+const book = bookingProgress();
+const stale = staleSources(sources);
+const base = import.meta.env.BASE_URL;
+
+const countdown =
+  trip.start_date == null
+    ? "日期未確認"
+    : `${Math.ceil((new Date(trip.start_date).getTime() - Date.now()) / 86400000)} 天`;
+---
+<Handbook title="Dashboard" current="home">
+  <section class="panel">
+    <h1 style="margin-top:0">Dashboard</h1>
+    <p class="muted">{trip.success_criterion}</p>
+    <div class="grid2">
+      <div class="stat">
+        <div class="label">距離出發</div>
+        <div class="value">{countdown}</div>
+      </div>
+      <div class="stat">
+        <div class="label">Readiness</div>
+        <div class="value" style="font-size:1rem">{readiness?.overall ?? "run npm run readiness"}</div>
+        <span class="badge provisional">非 Trip Ready</span>
+      </div>
+    </div>
+  </section>
+
+  {
+    readiness && (
+      <section class="panel">
+        <h2>Readiness gates</h2>
+        <p class="muted">
+          Pass {readiness.summary.pass} · Provisional {readiness.summary.provisional} · Blocked{" "}
+          {readiness.summary.blocked}
+        </p>
+        <ul class="list">
+          {(readiness.top_risks ?? []).map((r: any) => (
+            <li>
+              <strong>{r.id}</strong> · {r.blocker}
+            </li>
+          ))}
+        </ul>
+        <p class="muted">下一個 Founder：{readiness.next_founder} · Agent：{readiness.next_agent}</p>
+      </section>
+    )
+  }
+
+  <section class="panel">
+    <h2>下一個待辦</h2>
+    {
+      next ? (
+        <p>
+          <strong>{next.milestone}</strong> · {next.task.title}
+        </p>
+      ) : (
+        <p>全部完成</p>
+      )
+    }
+  </section>
+
+  <section class="panel">
+    <h2>Founder Decisions</h2>
+    <ul class="list">
+      {decisions.map((d) => (
+        <li>
+          <span class="badge decision">{d.status}</span> {d.id} · {d.title_zh}
+        </li>
+      ))}
+    </ul>
+    <a class="btn primary" href={`${base}decisions/`}>決策包</a>
+  </section>
+
+  <section class="panel">
+    <h2>路線（Provisional）</h2>
+    <p>{trip.route_option}</p>
+    <span class="badge provisional">{trip.route_status}</span>
+    <a class="btn" href={`${base}route/`}>Route Decision</a>
+  </section>
+
+  <section class="panel">
+    <h2>離線手冊 PDF</h2>
+    <p class="muted">Build 後可下載（同 CI artifact）</p>
+    <div class="btn-row">
+      <a class="btn primary" href={`${base}downloads/korea-trip-handbook.pdf`}>Handbook PDF</a>
+      <a class="btn" href={`${base}downloads/emergency-pack.pdf`}>Emergency PDF</a>
+    </div>
+  </section>
+
+  <section class="panel">
+    <h2>過期資料</h2>
+    <p>{stale.length === 0 ? "無 stale 警告（查核基準 2026-07-20）" : `${stale.length} 筆需重查`}</p>
+  </section>
+
+  <div class="btn-row">
+    <a class="btn primary" href={`${base}days/day-2/`}>Seoul sample (Day 2)</a>
+    <a class="btn" href={`${base}days/day-5/`}>Transfer (Day 5)</a>
+    <a class="btn" href={`${base}days/day-6/`}>Busan sample (Day 6)</a>
+  </div>
+</Handbook>

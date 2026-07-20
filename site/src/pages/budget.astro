@@ -1,0 +1,23 @@
+---
+import Handbook from "../layouts/Handbook.astro";
+import { loadBudget, budgetProgress } from "../lib/data";
+const budget = loadBudget();
+const prog = budgetProgress(budget);
+---
+<Handbook title="Budget" current="more">
+  <h1>Budget</h1>
+  <section class="panel">
+    <p>已花 {prog.spent} / 規劃 {prog.planned} {budget.currency}（{prog.pct}%）</p>
+    <span class="badge">{budget.status}</span>
+    <p class="muted">{budget.notes}</p>
+  </section>
+  <ul class="list">
+    {budget.categories.map((c: any) => (
+      <li>
+        <strong>{c.name}</strong>
+        <div>{c.spent_twd} / {c.planned_twd} TWD · {c.status}</div>
+        {c.notes && <div class="muted">{c.notes}</div>}
+      </li>
+    ))}
+  </ul>
+</Handbook>

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://korea-trip.local/schemas/restaurants.json",
+  "type": "object",
+  "required": ["restaurants"],
+  "properties": {
+    "restaurants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id", "name_zh", "name_ko", "name_en", "city", "area", "address",
+          "cuisine", "crustacean_risk", "alcohol_focus", "recommend_reason",
+          "risks", "source_ids", "checked_at", "status"
+        ],
+        "properties": {
+          "id": { "type": "string", "pattern": "^rst-" },
+          "name_zh": { "type": "string" },
+          "name_ko": { "type": "string" },
+          "name_en": { "type": "string" },
+          "city": { "type": "string" },
+          "area": { "type": "string" },
+          "address": { "type": "string" },
+          "cuisine": { "type": "string" },
+          "naver_map_url": { "type": ["string", "null"] },
+          "google_maps_url": { "type": ["string", "null"] },
+          "official_url": { "type": ["string", "null"] },
+          "opening_hours": { "type": ["string", "null"] },
+          "closed_days": { "type": ["string", "null"] },
+          "estimated_dwell_minutes": { "type": ["integer", "null"] },
+          "price_range_krw": { "type": ["string", "null"] },
+          "reservation_possible": { "type": ["boolean", "null"] },
+          "queue_risk": { "type": "string", "enum": ["low", "medium", "high", "unknown"] },
+          "menu_order_ko": { "type": ["string", "null"] },
+          "payment_notes": { "type": ["string", "null"] },
+          "crustacean_risk": { "type": "string", "enum": ["low", "medium", "high", "unknown"] },
+          "alcohol_focus": { "type": "boolean" },
+          "spicy_options": { "type": ["boolean", "null"] },
+          "pork_soup": { "type": ["boolean", "null"] },
+          "alternatives_nearby": { "type": "array", "items": { "type": "string" } },
+          "recommend_reason": { "type": "string" },
+          "risks": { "type": "string" },
+          "source_ids": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "checked_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "status": { "type": "string", "enum": ["Confirmed", "Provisional", "Assumption", "DecisionRequired", "Stale"] }
+        }
+      }
+    }
+  }
+}
