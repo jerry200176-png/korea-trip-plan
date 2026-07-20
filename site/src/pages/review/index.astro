@@ -1,7 +1,7 @@
 ---
-import { siteBase } from "../lib/base";
-import Handbook from "../layouts/Handbook.astro";
-import { loadFounderDecisions, loadItinerary, mediaById, mediaPublicUrl } from "../lib/data";
+import { siteBase } from "../../lib/base";
+import Handbook from "../../layouts/Handbook.astro";
+import { loadFounderDecisions, loadItinerary, mediaById, mediaPublicUrl } from "../../lib/data";
 
 const base = siteBase();
 const decisions = loadFounderDecisions();
@@ -33,6 +33,7 @@ const replyTemplate = `Couple Review 回覆
 <Handbook title="Couple 驗收" current="home">
   <p class="eyebrow">Review</p>
   <h1 class="page-title">Couple Review Mode</h1>
+  <span class="status status-provisional">暫定驗收</span>
   <p class="hero-lede">只給 Jerry 與女友驗收。看完後可複製下方回覆文字傳給對方。</p>
 
   <section class="media-block">

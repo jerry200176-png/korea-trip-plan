@@ -3,7 +3,7 @@ import path from "node:path";
 import yaml from "js-yaml";
 import { chromium } from "playwright";
 import { distDir, root } from "./lib/root.ts";
-import { wrapHtml, fileUrl } from "./lib/pdf-html.ts";
+import { wrapHtml } from "./lib/pdf-html.ts";
 
 fs.mkdirSync(distDir, { recursive: true });
 
@@ -25,7 +25,19 @@ function mediaSrc(id: string): string {
   if (!m?.pdf_path || !m.license) {
     throw new Error(`PDF media ${id} missing pdf_path or license`);
   }
-  return fileUrl(path.join(root, m.pdf_path));
+  const abs = path.join(root, m.pdf_path);
+  const buf = fs.readFileSync(abs);
+  const ext = path.extname(abs).toLowerCase();
+  const mime =
+    ext === ".png" ? "image/png" : ext === ".webp" ? "image/webp" : ext === ".svg" ? "image/svg+xml" : "image/jpeg";
+  return `data:${mime};base64,${buf.toString("base64")}`;
+}
+
+function iconSrc(id: string): string {
+  const m = mediaById[id];
+  const abs = path.join(root, m.local_path);
+  const buf = fs.readFileSync(abs);
+  return `data:image/svg+xml;base64,${buf.toString("base64")}`;
 }
 
 function caption(id: string): string {
@@ -40,7 +52,8 @@ function dayHtml(day: any, mediaId?: string): string {
       const placeLine = place
         ? `<p><strong>${place.name_zh}</strong> · <span lang="ko">${place.name_ko}</span></p>`
         : "";
-      return `<div class="block"><div class="time">${b.start} – ${b.end}</div><strong>${b.title}</strong><p class="muted">${b.kind}</p>${placeLine}${b.plan_b ? `<p><strong>備案：</strong>${b.plan_b}</p>` : ""}</div>`;
+      const kindZh = ({ transit: "交通", experience: "體驗", meal: "用餐", free: "自由", photo: "拍照", shopping: "購物", rest: "休息", buffer: "緩衝" } as Record<string,string>)[b.kind] ?? b.kind;
+      return `<div class="block"><div class="time">${b.start} – ${b.end}</div><strong>${b.title}</strong><p class="muted">${kindZh}</p>${placeLine}${b.plan_b ? `<p><strong>備案：</strong>${b.plan_b}</p>` : ""}</div>`;
     })
     .join("\n");
   const media = mediaId
@@ -63,8 +76,7 @@ const dayMedia: Record<number, string | undefined> = {
 const experienceIcons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-shop", "icon-fortune"]
   .map((id) => {
     const m = mediaById[id];
-    const src = fileUrl(path.join(root, m.local_path));
-    return `<div class="icon-item"><img src="${src}" alt="${m.alt_zh}"/><div>${m.alt_zh.replace("圖示", "")}</div></div>`;
+    return `<div class="icon-item"><img src="${iconSrc(id)}" alt="${m.alt_zh}"/><div>${m.alt_zh.replace("圖示", "")}</div></div>`;
   })
   .join("");
 
