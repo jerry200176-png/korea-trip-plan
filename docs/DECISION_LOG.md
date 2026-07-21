@@ -101,3 +101,10 @@ Append-only. Newest first.
 - **Status:** Teaching Provisional; not Booking Ready. Final airport timing waits for flight harden.
 - **Evidence:** `rs-006`/`rs-096`/`rs-097` arrival; `rs-098`/`rs-099`/`rs-100` local transit; `rs-008` KTX; `rs-007`/`rs-101` Busan/Gimhae; `rs-102`/`rs-103` map/traveler discovery.
 - **Doc:** `docs/research/TRANSPORT_TEXTBOOK.md`
+
+## 2026-07-21 — Food Atlas Identify / order / queue teaching
+
+- **Decision:** Ship Food Atlas with Identify cards, Korean order phrases, crustacean/shrimp warn, BBQ cut compare, market snack Identify, and queue/alt decision; keep pork shortlist; no AI photoreal food as evidence; no zero-allergen claim.
+- **Status:** Teaching Provisional; shop hours revalidate before visit.
+- **Evidence:** `rs-104`/`rs-105` VisitKorea dwaejigukbap; `rs-106` Michelin how-to; prior pork shortlist claims.
+- **Doc:** `docs/research/FOOD_ATLAS.md`

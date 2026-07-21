@@ -4072,6 +4072,123 @@ sources:
   revalidate_by: '2026-10-18'
   freshness_basis: Independent blog used as discovery of traveler failure modes only.
   freshness_basis_type: page_review_no_update_date
+- source_id: rs-104
+  source_type: official_tourism
+  title: 'Dwaejigukbap: Busan''s Representative Local Dish — VISITKOREA'
+  publisher_or_creator: Korea Tourism Organization (VISITKOREA)
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=221285
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji_gukbap
+  - Busan_food
+  - salted_shrimp
+  summary: Official tourism explainer on Busan pork-and-rice soup styles, condiments (including salted shrimp), and Seomyeon local-food street orientation.
+  findings:
+  - Page reachable HTTP 200 on 2026-07-21.
+  - Explains meat-based vs bone-based broth styles and that bowls commonly come with kimchi, salted shrimp, and chives.
+  - Instructs tasting broth then seasoning with salted shrimp or salt — supports ask-to-omit teaching, not zero-allergen guarantee.
+  - Mentions Seomyeon Local Food Street as a dwaejigukbap cluster (orientation only; shortlist already named elsewhere).
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Supports teaching seasoning risks without inventing kitchen allergen guarantees.
+  nikita_relevance: Anchors pork-soup Identify teaching to official tourism language.
+  claims_requiring_official_verification:
+  - Reconfirm any named venues and hours nearer visit; do not treat tourism feature as booking proof.
+  corroborating_source_ids:
+  - rs-042
+  - rs-043
+  - rs-037
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: VisitKorea dwaejigukbap feature reviewed on checked_at; condiment practices are teaching, not booking facts.
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-105
+  source_type: official_tourism
+  title: Pork and Rice Soup (돼지국밥 / Dwaejigukbap) — VISITKOREA
+  publisher_or_creator: Korea Tourism Organization (VISITKOREA)
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=178139
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji_gukbap
+  - salted_shrimp
+  summary: Official short dish page describing pork bone broth rice soup and seasoning with salted shrimp or salt.
+  findings:
+  - Page reachable on 2026-07-21.
+  - States soup is a Busan local food; add salted shrimp or salt to taste — reinforces shrimp-sauce ask rule.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Short official dish definition for teaching cards.
+  nikita_relevance: Supports Identify label for pork soup without locking a shop.
+  claims_requiring_official_verification:
+  - None beyond general T-7 food ops revalidation.
+  corroborating_source_ids:
+  - rs-104
+  - rs-037
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: Official dish page reviewed on checked_at.
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-106
+  source_type: trusted_editorial
+  title: MICHELIN Guide — how to enjoy dwaeji-gukbap and recommended shops
+  publisher_or_creator: MICHELIN Guide
+  url: https://guide.michelin.com/kr/en/article/dining-out/michelin-guide-recommends-6-must-visit-dwaeji-gukbap-restaurants-and-how-best-to-enjoy-them
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji_gukbap
+  - Hapcheon
+  - Anmok
+  - queue_risk
+  - offal
+  summary: Editorial how-to on seasoning dwaeji-gukbap and shop notes including Hapcheon sides (fermented shrimp) and Anmok positioning.
+  findings:
+  - Hapcheon accompaniments include fermented shrimp among sides — reinforces ask/omit teaching.
+  - Notes lunch-time solo-dining restriction at Hapcheon between 11:00–13:00 — queue/constraint signal, reconfirm before visit.
+  - Anmok framed as cleaner international-guest-friendly presentation — still not allergen guarantee.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Queue/constraint foresight for not forcing cross-town lunch when tired.
+  nikita_relevance: Supports shortlist realism and organ-meat awareness (naejang variants exist elsewhere).
+  claims_requiring_official_verification:
+  - Reconfirm Hapcheon lunch rules and side dishes on visit day.
+  corroborating_source_ids:
+  - rs-042
+  - rs-093
+  - rs-094
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: Michelin editorial reviewed on checked_at; shop rules revalidate before visit.
+  freshness_basis_type: page_review_no_update_date
 blocked_sources:
 - source_id: rs-blocked-001
   url: https://www.klook.com/en-US/city/13-seoul-things-to-do/

@@ -7,8 +7,13 @@ import { areaZh, cityZh, statusZh } from "../lib/presentation";
 const restaurants = loadRestaurants();
 const base = siteBase();
 const foodMedia = mediaById("seoul-street-food")!;
+const identify = mediaById("food-identify-cards")!;
+const order = mediaById("food-order-korean-cards")!;
+const warn = mediaById("food-crustacean-shrimp-warn")!;
+const bbq = mediaById("food-bbq-cuts-compare")!;
+const market = mediaById("food-market-snack-identify")!;
+const queue = mediaById("food-queue-or-alt-decision")!;
 const porkCard = mediaById("busan-pork-order")!;
-const warnCard = mediaById("busan-crustacean-warn")!;
 
 function riskZh(v: string) {
   const map: Record<string, string> = {
@@ -22,35 +27,96 @@ function riskZh(v: string) {
 ---
 <Handbook title="美食" current="more">
   <p class="eyebrow">美食教材</p>
-  <h1 class="page-title">美食與點餐</h1>
+  <h1 class="page-title">辨識・點餐・避雷</h1>
+  <span class="status status-provisional">目前暫定</span>
+  <p class="muted">給 Jerry 與 Nikita 的食物教材。不保證零甲殼類；不為熱門店排過久；腳累不跨區吃一餐。</p>
+
   <figure class="media-block">
     <img src={mediaPublicUrl(base, foodMedia)} alt={foodMedia.alt_zh} loading="lazy" />
     <figcaption class="media-caption">{foodMedia.alt_zh}</figcaption>
   </figure>
+
   <section class="surface">
     <h2 style="margin-top:0">硬性規則</h2>
     <ul class="list">
       <li>不喝酒</li>
-      <li>不安排甲殼類海鮮為主的餐廳</li>
+      <li>不安排甲殼類海鮮為主的餐廳；現場仍要問蝦醬</li>
       <li>可吃辣</li>
-      <li>想吃豬肉湯飯／豬肉湯類（shortlist 已建立，仍要現場問蝦醬）</li>
+      <li>不想啃骨頭、不吃內臟時要說清楚</li>
+      <li>排隊約超過 1 小時就改備案</li>
+      <li>腳累時不要為一餐跨區</li>
     </ul>
   </section>
 
   <section class="surface-warm">
-    <h2 style="margin-top:0">豬肉湯飯怎麼點</h2>
+    <h2 style="margin-top:0">食物怎麼辨識</h2>
     <figure class="media-block">
-      <img src={mediaPublicUrl(base, porkCard)} alt={porkCard.alt_zh} loading="lazy" />
-      <figcaption class="media-caption">{porkCard.alt_zh}</figcaption>
+      <img src={mediaPublicUrl(base, identify)} alt={identify.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{identify.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>豬肉湯飯、韓國烤肉、早餐、市場小吃、咖啡甜點、便利商店、車站／移動日快速餐</li>
+      <li>雨天備援：室內韓式／便利商店／住宿附近，不追戶外排隊</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">點餐韓文卡</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, order)} alt={order.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{order.alt_zh}</figcaption>
     </figure>
   </section>
 
   <section class="surface">
-    <h2 style="margin-top:0">甲殼類提醒</h2>
+    <h2 style="margin-top:0">甲殼類／蝦醬 Warn</h2>
     <figure class="media-block">
-      <img src={mediaPublicUrl(base, warnCard)} alt={warnCard.alt_zh} loading="lazy" />
-      <figcaption class="media-caption">{warnCard.alt_zh}</figcaption>
+      <img src={mediaPublicUrl(base, warn)} alt={warn.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{warn.alt_zh}</figcaption>
     </figure>
+    <p class="muted" lang="ko">새우젓 빼주세요</p>
+  </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">豬肉湯飯 shortlist</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, porkCard)} alt={porkCard.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{porkCard.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>合天／Anmok／Namakzip：可吃候選，不是低體力日的強迫任務</li>
+      <li>常見配料含蝦醬；官方旅遊說明也把蝦醬當調味選項</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">烤肉部位比較</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, bbq)} alt={bbq.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{bbq.alt_zh}</figcaption>
+    </figure>
+    <p class="muted">選簡單好烤部位；不為名店硬排。不喝酒，餐點以肉／蔬菜為主。</p>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">市場小吃辨識</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, market)} alt={market.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{market.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">排隊還是改備案</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, queue)} alt={queue.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{queue.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">候選店清單</h2>
+    <p class="muted">以下為教材 shortlist／占位，不是已訂位清單。</p>
   </section>
 
   {

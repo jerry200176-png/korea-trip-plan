@@ -1,9 +1,8 @@
 meta:
   updated_at: '2026-07-21'
-  round: 4-transport
+  round: 5-food-atlas
   purpose: Role-split claim evidence map for Textbook Edition
-  notes: Transport textbook adds arrival/AREX/T-money/KTX/Busan-exit/recovery claims. Roles remain split; blocked IDs
-    never in supporting.
+  notes: Food Atlas adds Identify/order/queue claims on top of transport and Round 2 food shortlist claims.
 claims:
 - claim_id: clm-gyeongbokgung-closed-tuesday
   claim: Gyeongbokgung is regularly closed on Tuesdays (holiday shift rules may apply); hours vary by season.
@@ -581,8 +580,47 @@ claims:
   jerry_relevance: Risk foresight without freezing panic into Core Plan.
   nikita_relevance: Shared rescue language for both travelers.
   notes: Emergency pack holds phrases; personal phones stay offline-only.
+- claim_id: clm-food-atlas-identify-order
+  claim: Food Atlas teaches Identify cards for pork soup, BBQ, breakfast, market snacks, cafe/dessert, convenience, and
+    station/moving-day meals plus Korean order cards for no-alcohol, no-crustacean, no-bones preference, no-organ, and
+    remove salted shrimp — without claiming zero-allergen kitchens.
+  supporting_source_ids:
+  - rs-104
+  - rs-105
+  - rs-098
+  discovery_source_ids:
+  - rs-106
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Licensed close-up Identify photos for each dish family (diagrams + existing street-food photo only for now)
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: All
+  jerry_relevance: Faster meal decisions with queue/skip rules.
+  nikita_relevance: Executable order phrases for dietary constraints.
+  notes: Functional diagrams are teaching aids, not place evidence photos.
+- claim_id: clm-food-queue-alt-and-rain
+  claim: When a queue is about one hour or longer, or feet are tired, the couple skips and uses nearby alt / convenience /
+    rain indoor backup instead of cross-town forcing.
+  supporting_source_ids:
+  - rs-106
+  - rs-094
+  discovery_source_ids: []
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: All
+  jerry_relevance: Protects daily energy budget.
+  nikita_relevance: Keeps food joy without martyr queues.
+  notes: Aligns with couple profile no-long-queue preference.
 proposed_round_2_claims:
   day4: []
   shopping: []
   busan: []
   transport: []
+  food: []

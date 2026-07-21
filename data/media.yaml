@@ -906,6 +906,173 @@ media:
   generation_tool: null
   generation_date: null
   purpose_note: Rescue|Warn printable offline emergency transport card; teaching visual, not decoration
+- id: food-identify-cards
+  type: map
+  subject: Six meal-type Identify cards with shape cues for pork soup BBQ street snack cafe convenience station
+  usage_scope:
+  - food
+  - day_page
+  - pdf
+  - credits
+  - today
+  local_path: media/diagrams/food-identify-cards.svg
+  web_path: site/public/media/food-identify-cards.svg
+  pdf_path: media/diagrams/food-identify-cards.svg
+  source_url: media/diagrams/food-identify-cards.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original food identify cards · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Identify teaching diagram; icon/shape cues only, not photoreal food
+  alt_zh: 六種餐型辨識卡：豬肉湯飯、烤肉、街頭小吃、咖啡甜點、便利商店、車站速食
+  alt_en: Six meal-type Identify cards with shape cues for pork soup, BBQ, street snack, cafe, convenience, and station meals
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Identify| six meal types with visual shape cues; teaching visual, not decoration
+- id: food-order-korean-cards
+  type: map
+  subject: Korean ordering phrase cards for no alcohol crustaceans bones organ meat and salted shrimp remove
+  usage_scope:
+  - food
+  - day_page
+  - pdf
+  - credits
+  - today
+  local_path: media/diagrams/food-order-korean-cards.svg
+  web_path: site/public/media/food-order-korean-cards.svg
+  pdf_path: media/diagrams/food-order-korean-cards.svg
+  source_url: media/diagrams/food-order-korean-cards.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original Korean order phrase cards · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Explain teaching diagram; phrases aligned with handbook and emergency-public
+  alt_zh: 韓文點餐句卡：不喝酒、不要甲殼類、少骨頭、不要內臟、새우젓 빼주세요
+  alt_en: Korean ordering phrase cards for no alcohol, no crustaceans, fewer bones, no organ meat, and remove salted shrimp
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Explain| Korean dietary constraint phrases for on-site pointing; teaching visual, not decoration
+- id: food-crustacean-shrimp-warn
+  type: map
+  subject: Crustacean and salted shrimp risk warn with always-ask and cannot-guarantee-zero message
+  usage_scope:
+  - food
+  - day_page
+  - pdf
+  - credits
+  - today
+  local_path: media/diagrams/food-crustacean-shrimp-warn.svg
+  web_path: site/public/media/food-crustacean-shrimp-warn.svg
+  pdf_path: media/diagrams/food-crustacean-shrimp-warn.svg
+  source_url: media/diagrams/food-crustacean-shrimp-warn.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original crustacean shrimp warn diagram · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Warn teaching diagram; shape icons only; no zero-allergen guarantee claim
+  alt_zh: 甲殼類與蝦醬風險警示：無法保證零接觸，現場必問
+  alt_en: Warn diagram for crustacean and salted-shrimp risk; cannot guarantee zero; always ask
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Warn| crustacean and 새우젓 risk; always ask; teaching visual, not decoration
+- id: food-bbq-cuts-compare
+  type: map
+  subject: Compare common Korean BBQ cuts with prefer-simple and avoid-long-queue notes
+  usage_scope:
+  - food
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/food-bbq-cuts-compare.svg
+  web_path: site/public/media/food-bbq-cuts-compare.svg
+  pdf_path: media/diagrams/food-bbq-cuts-compare.svg
+  source_url: media/diagrams/food-bbq-cuts-compare.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original BBQ cuts compare diagram · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Compare teaching diagram; shape cues for cuts; no restaurant hours invented
+  alt_zh: 韓式烤肉部位比較：五花／梅花優先，避開長排隊
+  alt_en: Compare common Korean BBQ cuts; prefer simpler cuts; avoid long queues
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Compare| BBQ cut options and queue preference; teaching visual, not decoration
+- id: food-market-snack-identify
+  type: map
+  subject: Market snack type Identify cards plus shellfish trap Warn
+  usage_scope:
+  - food
+  - day_page
+  - pdf
+  - credits
+  - today
+  local_path: media/diagrams/food-market-snack-identify.svg
+  web_path: site/public/media/food-market-snack-identify.svg
+  pdf_path: media/diagrams/food-market-snack-identify.svg
+  source_url: media/diagrams/food-market-snack-identify.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original market snack identify diagram · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Identify/Warn teaching diagram; shape cues; shellfish trap callout
+  alt_zh: 市場小吃辨識與貝蝦陷阱警示
+  alt_en: Market snack Identify cards with shellfish-trap Warn
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Identify|Warn market snack types and shellfish traps; teaching visual, not decoration
+- id: food-queue-or-alt-decision
+  type: map
+  subject: Queue over about one hour Rescue decision with skip nearby convenience and rain backup
+  usage_scope:
+  - food
+  - day_page
+  - pdf
+  - credits
+  - today
+  local_path: media/diagrams/food-queue-or-alt-decision.svg
+  web_path: site/public/media/food-queue-or-alt-decision.svg
+  pdf_path: media/diagrams/food-queue-or-alt-decision.svg
+  source_url: media/diagrams/food-queue-or-alt-decision.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original queue-or-alt decision diagram · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Rescue/Compare teaching diagram; ~1h gate aligned with itinerary closure rules
+  alt_zh: 排隊逾約一小時決策：跳過、鄰近替代、便利商店、雨天備援
+  alt_en: Rescue decision when queue exceeds about one hour — skip, nearby alt, convenience, or rain backup
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Rescue|Compare queue vs alternatives when wait exceeds ~1 hour; teaching visual, not decoration
 kto_candidates:
 - id: kto-visitkorea-seoul-overview
   title: VisitKorea — Seoul destination photography (candidate)

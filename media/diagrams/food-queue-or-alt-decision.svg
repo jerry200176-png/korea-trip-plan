@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Queue or Alternative Decision</title>
+  <desc id="desc">Rescue and Compare: if queue exceeds about one hour, skip, use nearby alternative, convenience store, or rain backup.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-bad { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-rescue { fill: #eef2f7; stroke: #2a4a8a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .big { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 20px; font-weight: 700; fill: #8a3b2a; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">排隊或改道決策（Rescue／Compare）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · avoid_long_queues · 2026-07-21 · 功能：Rescue 長隊；Compare 備援餐</text>
+
+  <rect class="card-bad" x="40" y="96" width="1120" height="100" rx="8"/>
+  <rect x="56" y="112" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="72" y="129">Gate</text>
+  <text class="big" x="172" y="130">預估排隊 &gt; 約 1 小時？</text>
+  <text class="t" x="56" y="165">量測：目視隊伍長度／店員口述等待 · 不硬撐為打卡</text>
+  <text class="muted" x="56" y="186">門檻來自行程 closure／couple-profile · 約數，非精準碼表</text>
+
+  <text class="muted" x="48" y="230">是 → 執行下方四選一（可並用）　　　否 → 留下，但設 Soft Cap（再等仍超就走）</text>
+
+  <rect class="card-bad" x="40" y="250" width="270" height="280" rx="8"/>
+  <rect x="56" y="266" width="72" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="72" y="283">Skip</text>
+  <text class="h" x="140" y="284">直接跳過</text>
+  <text class="t" x="56" y="330">名店不是失敗條件</text>
+  <text class="t" x="56" y="358">把時間還給休息／拍照</text>
+  <text class="t" x="56" y="386">同一日不再回頭硬排</text>
+  <text class="muted" x="56" y="430">Jerry：節奏優先</text>
+  <text class="muted" x="56" y="455">Nikita：體驗保留其他餐</text>
+  <text class="muted" x="56" y="490">標記 Optional 已刪</text>
+
+  <rect class="card-rescue" x="330" y="250" width="270" height="280" rx="8"/>
+  <rect x="346" y="266" width="88" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="358" y="283">Nearby</text>
+  <text class="h" x="450" y="284">鄰近替代店</text>
+  <text class="t" x="346" y="330">同商圈、同餐型即可</text>
+  <text class="t" x="346" y="358">座位看得見再進</text>
+  <text class="t" x="346" y="386">仍問甲殼／蝦醬句</text>
+  <text class="muted" x="346" y="430">Plan B ≠ 更差</text>
+  <text class="muted" x="346" y="455">跨區名店不強迫</text>
+  <text class="muted" x="346" y="490">Rescue · 保正餐</text>
+
+  <rect class="card-ok" x="620" y="250" width="270" height="280" rx="8"/>
+  <rect x="636" y="266" width="100" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="648" y="283">Convenience</text>
+  <text class="h" x="752" y="284">便利商店</text>
+  <text class="t" x="636" y="330">飯糰／杯麵／飲料</text>
+  <text class="t" x="636" y="358">低體力保底餐</text>
+  <text class="t" x="636" y="386">住宿附近 bonus</text>
+  <text class="muted" x="636" y="430">合法「好結局」</text>
+  <text class="muted" x="636" y="455">不羞辱便利店餐</text>
+  <text class="muted" x="636" y="490">Explain 見辨識卡</text>
+
+  <rect class="card" x="910" y="250" width="250" height="280" rx="8"/>
+  <rect x="926" y="266" width="88" height="24" rx="4" fill="#6a5d4a"/>
+  <text class="tag" x="938" y="283">Rain</text>
+  <text class="h" x="1026" y="284">雨天 Backup</text>
+  <text class="t" x="926" y="330">室內商場／站內餐</text>
+  <text class="t" x="926" y="358">咖啡休息節點</text>
+  <text class="t" x="926" y="386">縮短戶外市場</text>
+  <text class="muted" x="926" y="430">雨 + 長隊 = 雙跳</text>
+  <text class="muted" x="926" y="455">優先乾爽與充電</text>
+  <text class="muted" x="926" y="490">Compare 舒適度</text>
+
+  <rect class="card" x="40" y="552" width="1120" height="128" rx="8"/>
+  <rect x="56" y="568" width="120" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="68" y="585">Rescue Flow</text>
+  <text class="t" x="192" y="586">現場口訣</text>
+  <text class="t" x="56" y="620">看隊 → 超約 1h？ → Skip／Nearby／Convenience／Rain → 留下也設 Soft Cap → 不回頭硬排</text>
+  <text class="muted" x="56" y="650">對照：明洞購物 &gt;1h 換店、釜山湯飯可換鄰近、Day 6 不強迫跨區名店</text>
+</svg>
