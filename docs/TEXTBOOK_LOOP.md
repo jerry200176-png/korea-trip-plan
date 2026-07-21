@@ -1,6 +1,6 @@
 # Textbook Correction Loop
 
-**Updated:** 2026-07-21 (Textbook PDF restructure in progress)  
+**Updated:** 2026-07-21 (Final Acceptance Packet — READY FOR JERRY & NIKITA ACCEPTANCE)  
 **Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **91 / 100**  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
@@ -76,11 +76,11 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 
 ## Next Top 3 ROI gaps
 
-1. Full-product Final Audit  
-2. Final Acceptance Packet  
-3. Remaining D1 date dependency honesty  
+1. Jerry & Nikita human acceptance review  
+2. Time-sensitive facts revalidation before travel  
+3. D1 exact dates decision  
 
-Photo & Memory merged (PR #23). Textbook PDF restructure in progress on `cursor/textbook-pdf-restructure-e48c`. Overall **91 / 100** does **not** auto-Final — human review still required.
+Textbook PDF restructure merged (PR #24 @ `2c13cf3`). Product status: **READY FOR JERRY & NIKITA ACCEPTANCE**. Do **not** claim Final approved / Booking Ready / accepted. Packet: [`docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md`](final-acceptance/FINAL_ACCEPTANCE_PACKET.md).
 
 ## Posture
 

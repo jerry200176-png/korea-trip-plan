@@ -122,7 +122,8 @@ if (closedIds.has("p0-fortune-shop")) {
   }
 }
 
-// 4) Premature READY / Final approved when Textbook Final Exit not met
+// 4) Premature Final approved / Booking Ready; READY FOR ACCEPTANCE is allowed as
+//    pre-human-review status when floors are met but textbook_final_exit_met is false.
 if (!finalMet) {
   const gMet = Boolean(scorecard.gates?.textbook_final_exit?.met);
   const tMet = Boolean(scorecard.totals?.textbook_final_exit_met);
@@ -130,20 +131,23 @@ if (!finalMet) {
     fail(`totals.textbook_final_exit_met (${tMet}) != gates.textbook_final_exit.met (${gMet})`);
   }
 
-  const acceptanceStatus = String(scorecard.acceptance_status ?? "");
-  if (/READY FOR JERRY & NIKITA ACCEPTANCE/i.test(acceptanceStatus) || /Final approved/i.test(acceptanceStatus)) {
-    fail(`scorecard.acceptance_status claims ${acceptanceStatus} while Textbook Final Exit is unmet`);
+  const acceptanceStatus = String(scorecard.acceptance_status ?? scorecard.product_status ?? "");
+  if (/\bFinal approved\b/i.test(acceptanceStatus) || /\bBooking Ready\b/i.test(acceptanceStatus)) {
+    fail(`scorecard status claims ${acceptanceStatus} while Textbook Final Exit is unmet`);
+  }
+  if (/Jerry &\s*Nikita accepted/i.test(acceptanceStatus)) {
+    fail(`scorecard status claims couple accepted while Textbook Final Exit is unmet`);
   }
 
   const packet = path.join(root, "docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md");
   if (fs.existsSync(packet)) {
     const body = fs.readFileSync(packet, "utf8");
-    // Present-tense ready claims only (planned language in other docs is allowed)
-    if (/^#\s*READY FOR JERRY & NIKITA ACCEPTANCE/m.test(body) || /\bstatus:\s*READY FOR JERRY/i.test(body)) {
-      fail("FINAL_ACCEPTANCE_PACKET.md asserts READY status while textbook_final_exit_met is false");
-    }
-    if (/\bFinal approved\b/i.test(body) && !/must not|do not|不得|not yet/i.test(body)) {
+    // Forbid present-tense Final / Booking Ready / accepted claims without negation
+    if (/\bFinal approved\b/i.test(body) && !/must not|do not|不得|not yet|not claimed|不得標示/i.test(body)) {
       fail("FINAL_ACCEPTANCE_PACKET.md claims Final approved while textbook_final_exit_met is false");
+    }
+    if (/\bBooking Ready\b/i.test(body) && !/must not|do not|不得|not yet|not claimed|不得標示|false claim/i.test(body)) {
+      fail("FINAL_ACCEPTANCE_PACKET.md claims Booking Ready while Textbook Final Exit is unmet");
     }
   }
 }
