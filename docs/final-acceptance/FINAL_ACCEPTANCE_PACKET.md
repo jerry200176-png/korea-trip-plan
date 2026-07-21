@@ -13,11 +13,13 @@
 | **render_source_sha** | *(see `pdf-section-manifest.json` after each PDF generate)* | Git HEAD used when PDFs/renders were produced. |
 | **evidence_snapshot_sha** | `e15fd89a2ed7734d97c498136b0cc2ee38ae4abf` | First committed evidence bundle on PR #26; **not** “PR head”. |
 | **ci_verified_head_sha** | from CI metadata / `dist/ci-verified-head.json` in artifact | Latest green PR artifact head: `2af422a4f1b100abf8507a2d551be04685f799f1` (run 29811332779 / artifact 8487595985). |
-| **deployed_pages_sha** | unknown until Pages rebuild after merge | Populate only after deployment. |
+| **deployed_pages_sha** | `bc237a818165a4e90999a99e8421d6b323ca817f` | main after PR #26 squash merge; Pages deploy succeeded on run 29812129911 |
 
 Canonical one-page table: `docs/design-proof/SHA_IDENTITY_TABLE.md`.
 
-**PR #26:** independent artifact critic PASS — merge authorized under harness.  
+**PR #26:** squash-merged.  
+**main SHA:** `bc237a818165a4e90999a99e8421d6b323ca817f`  
+**Live audit:** `docs/final-acceptance/POST_MERGE_LIVE_AUDIT.md`  
 **Live URL:** https://jerry200176-png.github.io/korea-trip-plan/  
 **PDF URL:** https://jerry200176-png.github.io/korea-trip-plan/downloads/korea-trip-handbook.pdf  
 **Emergency PDF:** https://jerry200176-png.github.io/korea-trip-plan/downloads/emergency-pack.pdf  
@@ -107,4 +109,4 @@ Itinerary decisions, destinations, and research scope were **not** changed in th
 **Current:** `READY FOR JERRY & NIKITA ACCEPTANCE`  
 **Not authorized:** Final approved · Booking Ready · Jerry & Nikita accepted  
 
-Humans own the next acceptance step. Autonomous agent must not invent further content after Product Stop Rule is fully met post-merge/live verification.
+Live site + PDFs verified on main `bc237a8`. Autonomous agent stops here for Jerry & Nikita review.

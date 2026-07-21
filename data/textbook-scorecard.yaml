@@ -220,19 +220,20 @@ round_2_progress:
       PR #25 merged the acceptance packet, but product status was reverted to
       FINAL ACCEPTANCE REPAIR REQUIRED after independent rendering blockers.
   final_acceptance_repair:
-    status: in_pr
+    status: merged
     decision_doc: docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md
     updated_at: '2026-07-21'
-    branch: cursor/final-textbook-rendering-f752
+    merged_at: '2026-07-21'
+    merge_sha: bc237a818165a4e90999a99e8421d6b323ca817f
     pr: 26
     product_baseline_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
     evidence_snapshot_sha: e15fd89a2ed7734d97c498136b0cc2ee38ae4abf
-    last_green_ci_run: '29811332779'
-    last_artifact_id: '8487595985'
+    last_green_ci_run: '29812129911'
+    last_artifact_id: '8487917804'
     notes: >-
-      Independent Visual+Publication critic PASS on artifact 8487595985.
-      READY restored for human acceptance; Textbook Final Exit still unmet.
-      render_source_sha lives in pdf-section-manifest.json; ci_verified_head_sha is CI-only.
+      Squash-merged. Independent Visual+Publication critic PASS prior to merge.
+      Live Pages verified. READY for Jerry & Nikita human acceptance.
+      Textbook Final Exit still unmet until humans finish review.
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
