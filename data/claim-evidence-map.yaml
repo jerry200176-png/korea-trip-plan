@@ -1,175 +1,299 @@
-# Claim-level traceability for high-impact Round 1 conclusions.
-# Evidence roles are split — blocked IDs must never sit in supporting_source_ids.
-# Confidence must not be elevated by blocked or discovery-only evidence.
-
 meta:
-  updated_at: "2026-07-20"
-  round: 1
+  updated_at: '2026-07-21'
+  round: 2A
   purpose: Round 1 research governance — role-split claim evidence map
-  notes: >
-    Round 2 may add further claims only when they change a decision.
-    Suggested future IDs are listed under proposed_round_2_claims (not active).
-
+  notes: Round 2A closes Day 4 fortune Result B (Optional/T-14) and JYP Remove-from-Core. Roles remain split; blocked IDs
+    never in supporting.
 claims:
-  - claim_id: clm-gyeongbokgung-closed-tuesday
-    claim: Gyeongbokgung is regularly closed on Tuesdays (holiday shift rules may apply); hours vary by season.
-    supporting_source_ids: [rs-011, rs-010]
-    discovery_source_ids: [rs-012]
-    blocked_source_ids: []
-    contradicting_source_ids: []
-    missing_evidence_requirements:
-      - Revalidate hours and Tuesday/holiday-shift rule near travel dates after D1 weekday is known
-    confidence: Medium
-    checked_at: "2026-07-20"
-    requires_revalidation: true
-    affected_day: Day 2
-    jerry_relevance: Avoid planning a wasted palace block; need weekday after D1.
-    nikita_relevance: Hanbok + palace photo day depends on open status.
-    notes: Supporting = A1 royal palace page + A2 VisitSeoul hours/closure summary. Discovery = guard ceremony page context only.
-
-  - claim_id: clm-hanbok-shop-unselected
-    claim: Day 2 hanbok experience is a confirmed Nikita priority but no shop is selected; queue/deposit/language remain Research Gaps.
-    supporting_source_ids: []
-    discovery_source_ids: [rs-010, rs-013, rs-050, rs-062, rs-067, rs-068]
-    blocked_source_ids: []
-    contradicting_source_ids: []
-    missing_evidence_requirements:
-      - At least three shortlisted hanbok shops near palace/Bukchon
-      - Each shop A1 or directly verified booking page
-      - Language support, deposit, and rain/cancellation rules
-    confidence: Low
-    checked_at: "2026-07-20"
-    requires_revalidation: true
-    affected_day: Day 2
-    jerry_relevance: Queue and walking risk uncontrolled without vendor evidence.
-    nikita_relevance: Core priority without executable vendor path.
-    notes: Discovery sources show hanbok/palace context only; they do not confirm a selected shop.
-
-  - claim_id: clm-day3-shopping-path-thin
-    claim: Day 3 names cosmetics/clothes shopping but lacks a researched store-level path; Myeongdong is popularity-default until shortlisted.
-    supporting_source_ids: []
-    discovery_source_ids: [rs-018, rs-019, rs-020, rs-021, rs-061, rs-051]
-    blocked_source_ids: []
-    contradicting_source_ids: []
-    missing_evidence_requirements:
-      - Store-level cosmetics and clothes shortlist with official or map-validated shop pages
-      - One core Myeongdong walking path with rest breaks
-      - Current tax-refund process cited from official pages at slice time
-      - Explicit Hongdae/Seongsu transfer compare decision
-    confidence: Low
-    checked_at: "2026-07-20"
-    requires_revalidation: true
-    affected_day: Day 3
-    jerry_relevance: Queue and sales-pressure risk without a plan.
-    nikita_relevance: Cosmetics/clothes priorities not yet operationalized.
-    notes: A2/editorial pages are discovery/background for the gap claim, not a completed shopping path.
-
-  - claim_id: clm-jyp-visit-value-unproven
-    claim: JYP Tower vicinity check-in may have near-zero public visit value; exterior-only status and retain/replace decision need evidence before keeping Day 4 stop.
-    supporting_source_ids: [rs-026]
-    discovery_source_ids: [rs-024, rs-025, rs-059]
-    blocked_source_ids: []
-    contradicting_source_ids: []
-    missing_evidence_requirements:
-      - Direct evidence that a general visitor public experience exists or explicitly does not
-      - If none, a GOT7-light replacement option with current value evidence
-    confidence: Low
-    checked_at: "2026-07-20"
-    requires_revalidation: true
-    affected_day: Day 4
-    jerry_relevance: Do not sacrifice day quality for low-value check-in.
-    nikita_relevance: GOT7 interest needs a better-proven light experience if JYP fails.
-    notes: rs-026 supports that the official org site was checked and does not establish a public tour; adjacent K-Star material is discovery only. Confidence stays Low until retain/replace evidence is complete.
-
-  - claim_id: clm-fortune-shop-missing
-    claim: Korean fortune-telling is a Day 4 theme and Nikita priority, but no feasible Gangnam shop with language/booking evidence is locked (P0 research risk).
-    supporting_source_ids: []
-    discovery_source_ids: [rs-065, rs-066]
-    blocked_source_ids: [rs-blocked-005]
-    contradicting_source_ids: []
-    missing_evidence_requirements:
-      - two directly bookable providers
-      - written English or Chinese language confirmation
-      - current opening hours
-      - booking and cancellation rules
-      - Gangnam single-cluster fit without excessive transfers
-    confidence: Low
-    checked_at: "2026-07-20"
-    requires_revalidation: true
-    affected_day: Day 4
-    jerry_relevance: Day theme collapses without a workable booking path.
-    nikita_relevance: Priority experience currently unexecutable.
-    notes: >
-      Discovery blogs explain the practice only. Blocked source records a failed research attempt
-      and must not count as supporting evidence or raise confidence. Zero A1 shop pages in inventory.
-
-  - claim_id: clm-pork-soup-shortlist-incomplete
-    claim: Busan dwaeji-gukbap is a Nikita food priority with editorial/Michelin signals, but no restaurant is locked and crustacean-safe sides/queue strategy are incomplete.
-    supporting_source_ids: [rs-041, rs-042, rs-043]
-    discovery_source_ids: [rs-037, rs-038, rs-063]
-    blocked_source_ids: []
-    contradicting_source_ids: []
-    missing_evidence_requirements:
-      - Three named restaurant candidates with direct info or recent map-validated hours
-      - Crustacean-risk and ordering Identify notes
-      - Queue risk notes for chosen candidates
-    confidence: Medium
-    checked_at: "2026-07-20"
-    requires_revalidation: true
-    affected_day: Day 5 / Day 6
-    jerry_relevance: Queue risk and transfer cost must be understood before pinning a bowl.
-    nikita_relevance: Authentic pork soup goal without a chosen shop.
-    notes: Michelin entries support that named candidates exist as editorial signals; A2/itinerary pages are discovery. Still not booking-ready.
-
-  - claim_id: clm-sky-capsule-ops-unconfirmed
-    claim: Haeundae Sky Capsule / Blueline is a candidate scenic add-on; operator pages exist but queue/price/hours for March travel are not hardened.
-    supporting_source_ids: [rs-028]
-    discovery_source_ids: [rs-027, rs-029, rs-057, rs-058]
-    blocked_source_ids: []
-    contradicting_source_ids: []
-    missing_evidence_requirements:
-      - Operator hours/price/booking rules for the intended travel window
-      - Queue/wait expectation and low-energy skip rule
-    confidence: Medium
-    checked_at: "2026-07-20"
-    requires_revalidation: true
-    affected_day: Day 6
-    jerry_relevance: Queue and fatigue risk vs minimize_transfers / not-too-packed.
-    nikita_relevance: Scenery/photo value if timed well.
-    notes: A1 operator page supports existence/course identity; A2/editorial are discovery. March ops still unconfirmed.
-
-  - claim_id: clm-day6-low-energy-variant-missing
-    claim: Day 6 currently risks an over-touristy Haeundae + Gwangalli postcard day; a documented low-energy beach-walk variant with named backups is not yet evidenced as a product slice.
-    supporting_source_ids: []
-    discovery_source_ids: [rs-032, rs-030, rs-060, rs-039, rs-009]
-    blocked_source_ids: []
-    contradicting_source_ids: []
-    missing_evidence_requirements:
-      - Documented full vs low-energy coastal Compare path
-      - Named rest/cafe backups near the chosen lodging cluster
-      - Evidence-based Optional vs Retain decision for Gwangalli
-    confidence: Low
-    checked_at: "2026-07-20"
-    requires_revalidation: true
-    affected_day: Day 6
-    jerry_relevance: feet_tire_easily; need Compare full vs low-energy path.
-    nikita_relevance: Keep scenery value without forcing second-beach fatigue.
-    notes: Place/climate pages are discovery context for the missing teaching variant.
-
+- claim_id: clm-gyeongbokgung-closed-tuesday
+  claim: Gyeongbokgung is regularly closed on Tuesdays (holiday shift rules may apply); hours vary by season.
+  supporting_source_ids:
+  - rs-011
+  - rs-010
+  discovery_source_ids:
+  - rs-012
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Revalidate hours and Tuesday/holiday-shift rule near travel dates after D1 weekday is known
+  confidence: Medium
+  checked_at: '2026-07-20'
+  requires_revalidation: true
+  affected_day: Day 2
+  jerry_relevance: Avoid planning a wasted palace block; need weekday after D1.
+  nikita_relevance: Hanbok + palace photo day depends on open status.
+  notes: Supporting = A1 royal palace page + A2 VisitSeoul hours/closure summary. Discovery = guard ceremony page context
+    only.
+- claim_id: clm-hanbok-shop-unselected
+  claim: Day 2 hanbok experience is a confirmed Nikita priority but no shop is selected; queue/deposit/language remain Research
+    Gaps.
+  supporting_source_ids: []
+  discovery_source_ids:
+  - rs-010
+  - rs-013
+  - rs-050
+  - rs-062
+  - rs-067
+  - rs-068
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - At least three shortlisted hanbok shops near palace/Bukchon
+  - Each shop A1 or directly verified booking page
+  - Language support, deposit, and rain/cancellation rules
+  confidence: Low
+  checked_at: '2026-07-20'
+  requires_revalidation: true
+  affected_day: Day 2
+  jerry_relevance: Queue and walking risk uncontrolled without vendor evidence.
+  nikita_relevance: Core priority without executable vendor path.
+  notes: Discovery sources show hanbok/palace context only; they do not confirm a selected shop.
+- claim_id: clm-day3-shopping-path-thin
+  claim: Day 3 names cosmetics/clothes shopping but lacks a researched store-level path; Myeongdong is popularity-default
+    until shortlisted.
+  supporting_source_ids: []
+  discovery_source_ids:
+  - rs-018
+  - rs-019
+  - rs-020
+  - rs-021
+  - rs-061
+  - rs-051
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Store-level cosmetics and clothes shortlist with official or map-validated shop pages
+  - One core Myeongdong walking path with rest breaks
+  - Current tax-refund process cited from official pages at slice time
+  - Explicit Hongdae/Seongsu transfer compare decision
+  confidence: Low
+  checked_at: '2026-07-20'
+  requires_revalidation: true
+  affected_day: Day 3
+  jerry_relevance: Queue and sales-pressure risk without a plan.
+  nikita_relevance: Cosmetics/clothes priorities not yet operationalized.
+  notes: A2/editorial pages are discovery/background for the gap claim, not a completed shopping path.
+- claim_id: clm-jyp-visit-value-unproven
+  claim: JYP HQ is exterior-only for general visitors, located in Gangdong (Seongnae), and is Removed from Day 4 Core; GOT7
+    emotional value is not equivalent to a building check-in. No verified high-value GOT7-light replace found in this pass.
+  supporting_source_ids:
+  - rs-026
+  discovery_source_ids:
+  - rs-024
+  - rs-025
+  - rs-059
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - If a future official GOT7-light public event/store appears near travel window, reassess as Optional add-on (not automatic
+    Day 4 Core)
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 4
+  jerry_relevance: Avoids Gangdong detour and low-value exterior stop on a light Seoul day.
+  nikita_relevance: Preserves GOT7 as theme/memory prompt without requiring HQ visit.
+  notes: rs-026 supports official HQ address in Gangdong and absence of public tour product on official site. K-Star Road
+    materials remain discovery only and must not re-add JYP to Core.
+- claim_id: clm-fortune-shop-missing
+  claim: Korean fortune-telling remains a Nikita interest, but Round 2A evidence shows no lockable Gangnam + written EN/ZH
+    + clear rules provider for Core; product decision is Optional / T-14 recheck (Result B), not forced shop selection.
+  supporting_source_ids:
+  - rs-087
+  - rs-088
+  discovery_source_ids:
+  - rs-065
+  - rs-066
+  - rs-089
+  - rs-090
+  blocked_source_ids:
+  - rs-blocked-005
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - T-14 reconfirm English/Chinese written service for a Gangnam/Apgujeong bookable option
+  - 'If upgrading to Core: current hours + cancel/deposit rules in writing'
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 4
+  jerry_relevance: Day quality protected by demoting unbookable fortune instead of forcing a weak shop.
+  nikita_relevance: Priority kept as Optional contingent path, not deleted as a theme.
+  notes: Supporting = operator booking page proving English currently not in service + Visit Gangnam Sotdae language/price
+    gap. Discovery blogs remain non-operational. Blocked daebak page stays blocked. P0 product-theme infeasibility closed
+    by Result B decision; T-14 revalidation remains.
+- claim_id: clm-pork-soup-shortlist-incomplete
+  claim: Busan dwaeji-gukbap is a Nikita food priority with editorial/Michelin signals, but no restaurant is locked and crustacean-safe
+    sides/queue strategy are incomplete.
+  supporting_source_ids:
+  - rs-041
+  - rs-042
+  - rs-043
+  discovery_source_ids:
+  - rs-037
+  - rs-038
+  - rs-063
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Three named restaurant candidates with direct info or recent map-validated hours
+  - Crustacean-risk and ordering Identify notes
+  - Queue risk notes for chosen candidates
+  confidence: Medium
+  checked_at: '2026-07-20'
+  requires_revalidation: true
+  affected_day: Day 5 / Day 6
+  jerry_relevance: Queue risk and transfer cost must be understood before pinning a bowl.
+  nikita_relevance: Authentic pork soup goal without a chosen shop.
+  notes: Michelin entries support that named candidates exist as editorial signals; A2/itinerary pages are discovery. Still
+    not booking-ready.
+- claim_id: clm-sky-capsule-ops-unconfirmed
+  claim: Haeundae Sky Capsule / Blueline is a candidate scenic add-on; operator pages exist but queue/price/hours for March
+    travel are not hardened.
+  supporting_source_ids:
+  - rs-028
+  discovery_source_ids:
+  - rs-027
+  - rs-029
+  - rs-057
+  - rs-058
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Operator hours/price/booking rules for the intended travel window
+  - Queue/wait expectation and low-energy skip rule
+  confidence: Medium
+  checked_at: '2026-07-20'
+  requires_revalidation: true
+  affected_day: Day 6
+  jerry_relevance: Queue and fatigue risk vs minimize_transfers / not-too-packed.
+  nikita_relevance: Scenery/photo value if timed well.
+  notes: A1 operator page supports existence/course identity; A2/editorial are discovery. March ops still unconfirmed.
+- claim_id: clm-day6-low-energy-variant-missing
+  claim: Day 6 currently risks an over-touristy Haeundae + Gwangalli postcard day; a documented low-energy beach-walk variant
+    with named backups is not yet evidenced as a product slice.
+  supporting_source_ids: []
+  discovery_source_ids:
+  - rs-032
+  - rs-030
+  - rs-060
+  - rs-039
+  - rs-009
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Documented full vs low-energy coastal Compare path
+  - Named rest/cafe backups near the chosen lodging cluster
+  - Evidence-based Optional vs Retain decision for Gwangalli
+  confidence: Low
+  checked_at: '2026-07-20'
+  requires_revalidation: true
+  affected_day: Day 6
+  jerry_relevance: feet_tire_easily; need Compare full vs low-energy path.
+  nikita_relevance: Keep scenery value without forcing second-beach fatigue.
+  notes: Place/climate pages are discovery context for the missing teaching variant.
+- claim_id: clm-fortune-language-support
+  claim: Neither shortlisted fortune candidate currently provides reliable written English/Chinese confirmation suitable for
+    a first-overseas Core booking in Gangnam.
+  supporting_source_ids:
+  - rs-087
+  - rs-088
+  discovery_source_ids:
+  - rs-090
+  - rs-066
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Direct provider written EN/ZH confirmation at T-14
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 4
+  jerry_relevance: Language risk is a hard gate before paying or locking schedule.
+  nikita_relevance: Experience quality depends on being able to understand the reading.
+  notes: KTE marks English not in service; Sotdae tourism page targets Korean-capable tourists.
+- claim_id: clm-fortune-booking-feasible
+  claim: A bookable online path exists (KoreaTravelEasy) but is not currently executable in English; Sotdae booking is phone/walk-in
+    with unpublished price/cancel rules.
+  supporting_source_ids:
+  - rs-087
+  - rs-088
+  discovery_source_ids:
+  - rs-089
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Executable EN/ZH booking with published cancel rules
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 4
+  jerry_relevance: Booking uncertainty is why fortune stays Optional.
+  nikita_relevance: Keeps a contingent path without false certainty.
+  notes: Feasibility is contingent, not impossible forever.
+- claim_id: clm-fortune-location-cluster-fit
+  claim: Apgujeong/Gangnam fortune locations can fit Day 4 single-cluster; Hongdae English branch would break the Gangnam-only
+    day and is rejected for Core.
+  supporting_source_ids:
+  - rs-087
+  discovery_source_ids:
+  - rs-088
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: Day 4
+  jerry_relevance: Protects minimize_transfers / not-too-packed.
+  nikita_relevance: Keeps any future fortune attempt inside a pleasant light day.
+  notes: Cluster fit alone is insufficient without language/booking.
+- claim_id: clm-jyp-no-public-experience
+  claim: JYP Entertainment public site confirms corporate HQ in Gangdong Seongnae and does not offer a general-visitor tour/lobby
+    experience; exterior check-in is not a Day 4 Core activity.
+  supporting_source_ids:
+  - rs-026
+  discovery_source_ids:
+  - rs-024
+  - rs-025
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 4
+  jerry_relevance: Evidence supports Remove-from-Core.
+  nikita_relevance: Separates fandom feeling from building logistics.
+  notes: Do not conflate historical Cheongdam mentions with current HQ visitor value.
+- claim_id: clm-got7-replacement-current-value
+  claim: No verified currently public high-value GOT7-light official event, popup, exhibition, or store was locked for the
+    open travel window in Round 2A; time returns to rest/shopping/photo on Day 4.
+  supporting_source_ids:
+  - rs-026
+  discovery_source_ids:
+  - rs-024
+  - rs-025
+  - rs-059
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - If Founder later finds an official public GOT7-light event with dates, reassess Optional add-on
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 4
+  jerry_relevance: Avoids inventing a replacement stop.
+  nikita_relevance: GOT7 theme can continue via merch/memory prompts without fake venue.
+  notes: Absence of replace is an accepted decision input, not a research failure requiring a forced substitute.
 proposed_round_2_claims:
-  day4:
-    - clm-fortune-language-support
-    - clm-fortune-booking-feasible
-    - clm-fortune-location-cluster-fit
-    - clm-jyp-no-public-experience
-    - clm-got7-replacement-current-value
+  day4: []
   shopping:
-    - clm-myeongdong-single-area-sufficient
-    - clm-tax-refund-current-process
-    - clm-shopping-route-rest-breaks
-    - clm-hongdae-backup-value
+  - clm-myeongdong-single-area-sufficient
+  - clm-tax-refund-current-process
+  - clm-shopping-route-rest-breaks
+  - clm-hongdae-backup-value
   busan:
-    - clm-pork-soup-crustacean-risk
-    - clm-pork-soup-queue-risk
-    - clm-day6-full-vs-low-energy
-    - clm-gwangalli-optional-value
+  - clm-pork-soup-crustacean-risk
+  - clm-pork-soup-queue-risk
+  - clm-day6-full-vs-low-energy
+  - clm-gwangalli-optional-value

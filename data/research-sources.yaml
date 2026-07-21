@@ -1016,7 +1016,7 @@ sources:
   publisher_or_creator: JYP Entertainment
   url: https://www.jype.com/
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -1028,6 +1028,8 @@ sources:
   findings:
   - Curl returned HTTP 200 with JYP Entertainment title.
   - Use only to verify official corporate presence, not public tours.
+  - Official site locale strings list HQ as 205, Gangdong-daero, Gangdong-gu, Seoul (Seongnae-dong, JYP Center) 05407; no
+    public visitor tour offering found on the public home/company surface reviewed 2026-07-21.
   sponsorship_bias_risk: low
   copyright_usage_rule: facts_ok_no_copy
   evidence_tier: A1
@@ -1044,11 +1046,11 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
-  revalidate_by: '2026-09-18'
-  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
-    unknown; operational claims must be revalidated before use in itinerary hardening
-  freshness_basis_type: http_reachability_only
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-10-18'
+  freshness_basis: Official corporate site re-reviewed on 2026-07-21; HQ address string confirmed in site locale payload;
+    still no public tour product; content_last_updated unknown on page.
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-027
   source_type: official_tourism
   title: Haeundae Blueline Park
@@ -3422,6 +3424,178 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-087
+  source_type: venue_official
+  title: Korean traditional fortune telling (Saju) in English and Japanese — KoreaTravelEasy
+  publisher_or_creator: KoreaTravelEasy / OneMoreTrip
+  url: https://www.koreatraveleasy.com/product/korean-traditional-fortune-telling-in-english/
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Seoul
+  topic:
+  - Korean_fortune_telling
+  - booking
+  - language_support
+  - Apgujeong
+  - Hongdae
+  summary: Operator booking product for saju in English/Japanese with Apgujeong and Hongdae branches, prices, cancel policy,
+    and live booking attributes.
+  findings:
+  - Page reachable HTTP 200 on 2026-07-21; full product content readable.
+  - 'Apgujeong address listed: 1F, 13-2 Seolleung-ro 155-gil, Gangnam-gu / 서울 강남구 선릉로155길 13-2 1층.'
+  - 'Hongdae address listed: 2F, 24 Wausan-ro 21-gil, Mapo-gu.'
+  - Booking attribute description shows “English currently not in service*” for English branch options on checked date.
+  - Cancellation policy states 100% refund if cancelled 2 business days before selected date by 17:00 KST.
+  - Duration options include 40/50/90 minutes; price band on page includes USD $50–$100 range markers.
+  - Birthdate required for saju; compatibility readings also offered.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Direct booking + cancel rules reduce logistics uncertainty if English service returns.
+  nikita_relevance: Potential English saju path, but not lockable while English is marked not in service.
+  claims_requiring_official_verification:
+  - Reconfirm English service availability and Apgujeong slot inventory at T-14 before any Core upgrade.
+  corroborating_source_ids:
+  - rs-088
+  - rs-065
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  - independent_experience_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-04'
+  freshness_basis: Operator booking page fully reviewed on checked_at; English service status and slot availability are live-operational
+    and must be revalidated before itinerary upgrade; content_last_updated not dated on page.
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-088
+  source_type: official_tourism
+  title: Sotdae Saju Cafe — Visit Gangnam (English place page)
+  publisher_or_creator: Visit Gangnam
+  url: https://visitgangnam.net/en/places/sotdae-saju-cafe
+  publish_date: '2026-07-20'
+  accessed_at: '2026-07-21'
+  language: en
+  city: Seoul
+  topic:
+  - Korean_fortune_telling
+  - Apgujeong
+  - language_support
+  - Sotdae
+  summary: District tourism place page for Sotdae Saju Cafe with address, hours, phone booking, and Korean-language visitor
+    note.
+  findings:
+  - Page reachable HTTP 200 on 2026-07-21; full place content readable.
+  - 'Address: 2nd floor, Hanyang Shopping Center, 334 Apgujeong-ro, Gangnam-gu.'
+  - Hours listed daily 13:00–22:00; phone 02-514-3307.
+  - Text states tourist should understand Korean well enough; no written English/Chinese service confirmation.
+  - Price not published — page directs callers to ask by phone.
+  - 'Page shows Last updated: 2026.07.20.'
+  - Walk-in wait with cafe tea described; phone reservation also accepted.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Language and opaque pricing make this a poor first-overseas Core commitment.
+  nikita_relevance: Location fits Gangnam, but language barrier blocks reliable enjoyment without Korean.
+  claims_requiring_official_verification:
+  - Direct written confirmation of EN/ZH support, menu prices, and cancel/deposit rules from the shop.
+  corroborating_source_ids:
+  - rs-089
+  - rs-087
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: '2026-07-20'
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: Official tourism place page reviewed; Last updated 2026-07-20 visible on page; hours/language notes still
+    need revalidation before any Core upgrade because A2 is not venue-operator proof for booking rules.
+  freshness_basis_type: dated_official_notice
+- source_id: rs-089
+  source_type: official_tourism
+  title: 솟대 사주카페 — Visit Gangnam (Korean place page)
+  publisher_or_creator: Visit Gangnam
+  url: https://visitgangnam.net/places/sotdae-saju-cafe
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: ko
+  city: Seoul
+  topic:
+  - Korean_fortune_telling
+  - Apgujeong
+  - Sotdae
+  summary: Korean Visit Gangnam listing confirming Sotdae address/hours/phone and Korean-speaking tourist framing.
+  findings:
+  - Page reachable HTTP 200 on 2026-07-21.
+  - 'Korean address: 서울특별시 강남구 압구정로 334 한양상가 2층.'
+  - Hours 매일 13:00-22:00; phone 02-514-3307.
+  - Copy targets tourists who understand Korean reasonably well; no EN/ZH package terms.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Corroborates location/hours without inventing price or language support.
+  nikita_relevance: Confirms Apgujeong candidate identity for later T-14 checks.
+  claims_requiring_official_verification:
+  - Price list and language support must come from shop/operator confirmation.
+  corroborating_source_ids:
+  - rs-088
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: Official tourism Korean page reviewed on checked_at; no clear content_last_updated stamp extracted in this
+    pass; operational details need recheck.
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-090
+  source_type: independent_blog
+  title: 'Tarot & Saju Cafes: Where to Try Fortune Telling in Seoul'
+  publisher_or_creator: IVisitKorea
+  url: https://www.ivisitkorea.com/saju-cafe-in-korea/
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Seoul
+  topic:
+  - Korean_fortune_telling
+  - Sotdae
+  - language_support
+  summary: Independent guide noting most Korean readers do not speak English and mentioning Sotdae as a Korean-friendly notable
+    cafe.
+  findings:
+  - Page reachable HTTP 200 on 2026-07-21.
+  - States most Korean readers do not speak English; bring a Korean-speaking friend or look for English OK signs.
+  - Mentions Sotdae/Sosdae in Gangnam with Apgujeong-ro address and phone +82 2-514-3307.
+  - Opening hours on this blog (11 AM–10 PM) differ from Visit Gangnam 13:00–22:00 — treat as contradicting signal on hours.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Supports not assuming English at popular saju cafes.
+  nikita_relevance: Discovery texture only; not booking proof.
+  claims_requiring_official_verification:
+  - Prefer Visit Gangnam / operator pages over blog hours.
+  corroborating_source_ids:
+  - rs-088
+  - rs-065
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: Creator/editorial page reviewed for discovery context; hours conflict with A2 listing so not used as operational
+    proof.
   freshness_basis_type: page_review_no_update_date
 blocked_sources:
 - source_id: rs-blocked-001

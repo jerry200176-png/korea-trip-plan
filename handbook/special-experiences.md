@@ -8,8 +8,10 @@
 
 ## 韓國算命
 
-- Language support varies widely — verify Chinese/English before paying.
-- Choose reputable storefronts; treat prices as provisional until quoted.
+- Round 2A（2026-07-21）：目前**不鎖 Core 店家**。
+- 候選已研究：KoreaTravelEasy（預約頁標示 English currently not in service）；솟대 사주카페（官方旅遊頁寫需懂韓文、價格未公開）。
+- 產品決策：**Optional／出發前 T-14 再確認**書面英文或中文＋可預約入口＋江南／狎鷗亭可達，才執行。
+- 低體力或語言未確認：直接跳過，改休息／購物補齊。
 - Emotional framing: fun shared memory, not life directives.
 
 ## 海灘與風景

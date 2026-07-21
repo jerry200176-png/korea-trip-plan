@@ -80,3 +80,18 @@ Round 1 does **not** pad Tier C with unread videos/posts. Search snippets are no
 - Total blocked / unavailable candidates: **9**
 - Includes HTTP 403/404/429/000 failures and creator-platform sessions that were not fully readable
 - See `blocked_sources` in `data/research-sources.yaml`
+
+## Round 2A delta (2026-07-21)
+
+Added usable sources `rs-087`–`rs-090` (KoreaTravelEasy operator page; Visit Gangnam Sotdae EN/KO; IVisitKorea discovery).
+
+| Metric | Round 1 | After 2A |
+|--------|--------:|---------:|
+| usable total | 86 | 90 |
+| travel_factual_evidence | 40 | 43 |
+| creator_discovery | 12 | 13 |
+| A1 | 15 | 16 |
+| A2 | 25 | 27 |
+| C | 12 | 13 |
+
+Recount remains authoritative via `npm run check:research-registry`.

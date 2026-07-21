@@ -33,7 +33,15 @@ const cityClass =
   day.city === "Seoul" ? "seoul" : day.city === "Busan" || day.primary_areas?.some((a: string) => a.includes("Busan")) ? "busan" : "";
 
 const dayMediaId =
-  dayIndex === 2 ? "seoul-palace-gate" : dayIndex === 5 ? "ktx-transition" : dayIndex === 6 ? "busan-haeundae" : null;
+  dayIndex === 2
+    ? "seoul-palace-gate"
+    : dayIndex === 4
+      ? "day4-feasibility-diagram"
+      : dayIndex === 5
+        ? "ktx-transition"
+        : dayIndex === 6
+          ? "busan-haeundae"
+          : null;
 const dayMedia = dayMediaId ? mediaById(dayMediaId) : null;
 
 const expectLine =
@@ -42,7 +50,7 @@ const expectLine =
     : dayIndex === 6
       ? "海岸線兩人照"
       : dayIndex === 4
-        ? "一次韓國算命體驗"
+        ? "江南輕量日：休息與購物補齊；算命僅在預約確認後"
         : day.one_priority;
 ---
 <Handbook title={`第 ${day.day_index} 天`} current="days">

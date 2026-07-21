@@ -79,7 +79,11 @@ Stop verdicts: `Retain` · `Rework` · `Replace` · `Remove` · `Research Gap`
 
 ---
 
-## Day 4 — GOT7 靈感・算命・輕量文化（江南）
+## Day 4 — 江南輕量日・購物補齊・算命待確認（Round 2A）
+
+> **Round 2A update (2026-07-21):** Fortune **Result B** — Optional/T-14. JYP **Remove from Core**. See `DAY4_FEASIBILITY_DECISION.md`.
+
+## Day 4 — legacy heading context (pre-2A theme)
 
 | Lens | Assessment |
 |------|------------|
@@ -160,8 +164,8 @@ Stop verdicts: `Retain` · `Rework` · `Replace` · `Remove` · `Research Gap`
 
 | Question | Round 1 answer | Claim / sources |
 |----------|----------------|-----------------|
-| Is JYP check-in worth keeping? | **Not yet.** Research Gap / likely Replace. | `clm-jyp-visit-value-unproven` · support rs-026; discovery rs-024/025/059 |
-| Is Gangnam fortune-telling feasible? | **Unknown — P0 research risk.** No shop locked. | `clm-fortune-shop-missing` · discovery rs-065/066; blocked rs-blocked-005; support none |
+| Is JYP check-in worth keeping? | **No — Remove from Core.** Gangdong exterior-only; GOT7 ≠ building. | `clm-jyp-no-public-experience` · support rs-026 |
+| Is Gangnam fortune-telling feasible? | **Not for Core now (Result B).** Optional/T-14. | `clm-fortune-shop-missing` · support rs-087/088; discovery rs-065/066/089/090 |
 | Does Day 3 serve cosmetics/clothes? | **Intent only.** Store path thin. | `clm-day3-shopping-path-thin` · discovery only; missing store path requirements |
 | Is Day 6 over-touristy / low-energy ready? | **Touristy risk; low-energy variant missing.** | `clm-day6-low-energy-variant-missing` · discovery only |
 | Pork soup research enough? | **Partial.** Signals exist; no locked shop. | `clm-pork-soup-shortlist-incomplete` · support rs-041–043; discovery rs-037/038/063 |

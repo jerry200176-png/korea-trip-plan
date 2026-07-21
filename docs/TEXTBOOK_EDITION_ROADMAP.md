@@ -89,7 +89,7 @@ Round 2 is **not** one large PR. Split into:
 
 | # | Slice PR | Must include |
 |---|----------|--------------|
-| 1 | **Day 4 Feasibility Decision** | fortune feasibility evidence; JYP retain/replace; personalized rationale; ≥1 functional diagram; independent critic; no self-merge |
+| 1 | **Day 4 Feasibility Decision** | Round 2A branch `feat/textbook-day4-feasibility` — fortune Result B + JYP Remove; diagram + claim updates; merge pending critic/CI |
 | 2 | **Nikita Shopping Teaching Slice** | cosmetics/clothes path; tax-refund teaching; rationale; ≥1 diagram; independent critic; no self-merge |
 | 3 | **Busan Food & Coastal Rhythm** | pork-soup shortlist; Day 6 low-energy coastal variant; rationale; ≥1 diagram; independent critic; no self-merge |
 

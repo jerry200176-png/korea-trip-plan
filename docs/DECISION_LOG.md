@@ -66,3 +66,10 @@ Append-only. Newest first.
 
 - **Decision:** Use `docs/BACKLOG.md` + issue templates; do not block on Issues API (integration lacks access).
 - **Status:** Confirmed (agent).
+
+## 2026-07-21 — Day 4 fortune Result B + JYP Remove from Core
+
+- **Decision:** Fortune-telling stays **Optional / T-14 recheck** (Result B). Do not force an unreliable shop into Core. JYP HQ check-in is **Removed from Core**; GOT7 remains a theme/memory prompt only.
+- **Status:** Provisional product decision (Round 2A); T-14 language/booking revalidation still required before any Core upgrade of fortune.
+- **Evidence:** `rs-087` KoreaTravelEasy (English currently not in service); `rs-088`/`rs-089` Visit Gangnam Sotdae (Korean-capable tourist framing; price unpublished); `rs-026` JYP HQ Gangdong Seongnae, no public tour.
+- **Doc:** `docs/research/DAY4_FEASIBILITY_DECISION.md`
