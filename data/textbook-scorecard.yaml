@@ -112,10 +112,7 @@ totals:
     score: 56
   textbook_final_exit_met: false
   round_1_acceptance_met: true
-p0_open:
-- id: p0-fortune-shop
-  summary: Day 4 fortune-telling theme has no feasible shop evidence (product-theme infeasibility risk)
-  claim_id: clm-fortune-shop-missing
+p0_open: []
 founder_decision_dependencies:
 - id: dep-d1-dates
   summary: D1 exact dates DecisionRequired — blocks weekday palace alignment, flight buffers, hotel holds, final bookings
@@ -133,7 +130,15 @@ round_1_top3_roi_gaps:
 - Day 2 Hanbok & Palace Teaching Slice
 round_2_progress:
   day4_feasibility:
-    status: in_pr
+    status: critic_fix_pending
     outcome: Fortune Result B Optional/T-14; JYP Remove from Core
     decision_doc: docs/research/DAY4_FEASIBILITY_DECISION.md
     updated_at: '2026-07-21'
+p0_closed:
+- id: p0-fortune-shop
+  summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
+  claim_id: clm-fortune-shop-missing
+  closed_at: '2026-07-21'
+  decision_doc: docs/research/DAY4_FEASIBILITY_DECISION.md
+  closure_rationale: Product-theme infeasibility risk removed by demoting fortune out of Core. T-14 language/booking revalidation
+    remains a contingency gate, not an open P0.

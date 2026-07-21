@@ -191,7 +191,7 @@ days:
     estimated_cost_krw: 90000
     walking_level: low
     buffer_percent: 25
-    photo_tips: 江南街景兩人照；不安排天堂洞 JYP 大樓折返
+    photo_tips: 江南街景兩人照；不安排江東區 JYP 大樓折返
     restroom_notes: 商場內
     rain_plan: 室內商場／咖啡；取消戶外散步
     low_energy_plan: 刪減購物拉伸，只留咖啡休息與打包
@@ -210,7 +210,7 @@ days:
         kind: free
         droppable: true
         plan_b: 直達商場室內休息
-        notes: 低體力日暖身；不跨區去天堂洞 JYP
+        notes: 低體力日暖身；不跨區去江東區 JYP
       - start: "12:00"
         end: "15:00"
         title: 購物補齊（化妝品／衣服・若 Day 3 未完）
