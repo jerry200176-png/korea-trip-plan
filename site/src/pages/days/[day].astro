@@ -45,6 +45,7 @@ const dayMediaId =
             ? "busan-haeundae"
             : null;
 const dayMedia = dayMediaId ? mediaById(dayMediaId) : null;
+const dayVisualClass = dayMedia?.type === "map" ? "day-visual day-visual-diagram" : "day-visual";
 
 const expectLine =
   dayIndex === 2
@@ -65,7 +66,7 @@ const expectLine =
 
   {
     dayMedia && (
-      <figure class="day-visual">
+      <figure class={dayVisualClass}>
         <img src={mediaPublicUrl(base, dayMedia)} alt={dayMedia.alt_zh} loading="lazy" />
         <figcaption class="media-caption">{dayMedia.alt_zh}</figcaption>
       </figure>

@@ -485,6 +485,17 @@ h1, h2, h3 {
   max-height: 12rem;
 }
 
+/* Teaching diagrams must stay fully readable — do not crop like hero photos */
+.day-visual-diagram {
+  overflow: visible;
+}
+
+.day-visual-diagram img {
+  max-height: none;
+  object-fit: contain;
+  background: var(--color-primary-soft);
+}
+
 .media-caption {
   font-size: 0.8rem;
   color: var(--color-ink-faint);

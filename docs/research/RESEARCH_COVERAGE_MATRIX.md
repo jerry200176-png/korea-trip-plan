@@ -29,6 +29,7 @@ See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for ful
 | Day 3 購物 | clm-day3-shopping-path-thin | — | rs-018–021, rs-061, rs-051 | — |
 | JYP | clm-jyp-visit-value-unproven | rs-026 | rs-024, rs-025, rs-059 | — |
 | 韓國算命 | clm-fortune-shop-missing | rs-087, rs-088 | rs-065, rs-066, rs-089, rs-090 | rs-blocked-005 |
+| 明洞購物／退稅 | clm-day3-shopping-path-thin | rs-018, rs-020, rs-021, rs-091 | rs-019, rs-023, rs-061 | — |
 | 豬肉湯飯 | clm-pork-soup-shortlist-incomplete | rs-041–043 | rs-037, rs-038, rs-063 | — |
 | Sky Capsule | clm-sky-capsule-ops-unconfirmed | rs-028 | rs-027, rs-029, rs-057, rs-058 | — |
 | Day 6 低體力 | clm-day6-low-energy-variant-missing | — | rs-032, rs-030, rs-060, rs-039, rs-009 | — |

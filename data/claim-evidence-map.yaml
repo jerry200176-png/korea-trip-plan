@@ -56,7 +56,6 @@ claims:
   - rs-020
   - rs-021
   - rs-091
-  - rs-092
   discovery_source_ids:
   - rs-019
   - rs-023
@@ -70,8 +69,8 @@ claims:
   checked_at: '2026-07-21'
   requires_revalidation: true
   affected_day: Day 3
-  jerry_relevance: Queue and sales-pressure risk without a plan.
-  nikita_relevance: Cosmetics/clothes priorities not yet operationalized.
+  jerry_relevance: Queue, sales-pressure, and single-area load are now planned instead of popularity-default only.
+  nikita_relevance: Cosmetics/clothes priorities now have an executable Myeongdong teaching path; SKU-level picks remain on-site.
   notes: Round 2B closes the thin-path gap at teaching level without inventing boutique hours. Clothes remain category-level
     inside Myeongdong.
 - claim_id: clm-jyp-visit-value-unproven
@@ -310,7 +309,6 @@ claims:
   supporting_source_ids:
   - rs-020
   - rs-021
-  - rs-092
   discovery_source_ids:
   - rs-091
   blocked_source_ids: []
