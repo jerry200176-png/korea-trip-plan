@@ -1,7 +1,7 @@
 # Textbook Correction Loop
 
-**Updated:** 2026-07-21 (State Integrity Sync)  
-**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **72 / 100**  
+**Updated:** 2026-07-21 (Transport Textbook in progress)  
+**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **81 / 100**  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
 ## Fixed cycle (every round / slice)
