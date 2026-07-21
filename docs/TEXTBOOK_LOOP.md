@@ -1,6 +1,6 @@
 # Textbook Correction Loop
 
-**Updated:** 2026-07-21 (Before-Trip in progress)  
+**Updated:** 2026-07-21 (Phase 4 re-score after Before-Trip; next = Website IA)  
 **Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **87 / 100**  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
@@ -76,11 +76,11 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 
 ## Next Top 3 ROI gaps
 
-1. Photo & Memory Slice  
-2. Website IA and discovery  
+1. Website IA and discovery  
+2. Photo & Memory Slice  
 3. Full Textbook PDF restructuring  
 
-Before-Trip Textbook Slice is in progress on `cursor/textbook-before-trip-e48c` (local slice exit; Overall still below Final Exit).
+Before-Trip Textbook Slice is **merged** (PR #20 @ `7cba979`). Overall **87 / 100**. Textbook Final Exit unmet. Founder Phase 4 order: IA → Photo → PDF → full audit → acceptance packet.
 
 ## Posture
 

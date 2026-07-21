@@ -121,8 +121,8 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Photo & Memory Slice
 - Website IA and discovery
+- Photo & Memory Slice
 - Full Textbook PDF restructuring
 round_2_progress:
   day4_feasibility:
@@ -163,9 +163,12 @@ round_2_progress:
     merge_sha: 7de48b732974da13159b4586e9f0945bc5b209b5
     pr: 19
   before_trip:
-    status: in_pr
+    status: merged
     decision_doc: docs/research/BEFORE_TRIP_TEXTBOOK.md
     updated_at: '2026-07-21'
+    merged_at: '2026-07-21'
+    merge_sha: 7cba9796f30e8691e608f03c8012d016b65807e2
+    pr: 20
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
@@ -204,3 +207,24 @@ score_deltas_before_trip_2026_07_21:
   - visual_teaching unchanged at 14 (five new diagrams; still below saturation)
   - factual_trust/itinerary/website/publication unchanged this slice
   - overall 85→87 (not inflated to 90; Photo & Memory / IA / PDF still open)
+
+phase4_rescore_after_top3_2026_07_21:
+  main_sha: 7cba9796f30e8691e608f03c8012d016b65807e2
+  overall: 87
+  research_depth: 18
+  personalization: 18
+  visual_teaching_value: 14
+  textbook_final_exit_met: false
+  reason_not_final: >-
+    Overall 87 is below 90. website_ux 8 and publication 4 remain below Final Exit floors.
+    Time-sensitive coverage is partial; human review is still pending. Founder Phase 4 order
+    is Website IA, then Photo and Memory, then Full Textbook PDF, then full audit, then
+    acceptance packet. No score inflation on this sync.
+  next_top3_roi_gaps:
+  - Website IA and discovery
+  - Photo & Memory Slice
+  - Full Textbook PDF restructuring
+  score_inflation: false
+  product_surface_change: false
+  notes: >-
+    PR #21 is scorecard and control-state only. No Photo, IA, or PDF product implementation.
