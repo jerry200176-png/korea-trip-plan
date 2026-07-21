@@ -2,6 +2,7 @@
 
 ## 韓服
 
+- Round 3 Day2：shortlist Hanboknam／Seohwa／Palace Fox 圈；T-14 鎖條款。
 - Pair with palace / bukchon morning (Day 2 skeleton).
 - Confirm rental duration, shoes, hair, and photo rules per shop.
 - Reserve only after dates lock; store confirmation offline.

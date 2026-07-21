@@ -638,6 +638,85 @@ media:
   generation_tool: null
   generation_date: null
   purpose_note: Decide whether optional second beach is worth energy
+- id: day2-hanbok-compare
+  type: map
+  subject: Hanbok shop shortlist compare card
+  usage_scope:
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/day2-hanbok-compare.svg
+  web_path: site/public/media/day2-hanbok-compare.svg
+  pdf_path: media/diagrams/day2-hanbok-compare.svg
+  source_url: media/diagrams/day2-hanbok-compare.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original hanbok compare · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Compare teaching
+  alt_zh: 韓服三家候選比較卡
+  alt_en: Hanbok three-shop compare card
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Compare hanbok shortlist candidates
+- id: day2-palace-areas
+  type: map
+  subject: Palace then Bukchon Insadong Ikseon area decision
+  usage_scope:
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/day2-palace-area-decision.svg
+  web_path: site/public/media/day2-palace-area-decision.svg
+  pdf_path: media/diagrams/day2-palace-area-decision.svg
+  source_url: media/diagrams/day2-palace-area-decision.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original area decision · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Compare teaching
+  alt_zh: 宮殿後北村／仁寺洞／益善洞決策圖
+  alt_en: Post-palace area retain/optional decision
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Compare Bukchon vs Insadong vs Ikseon
+- id: day2-low-energy
+  type: map
+  subject: Day 2 low-energy delete order card
+  usage_scope:
+  - day_page
+  - pdf
+  - credits
+  - today
+  local_path: media/diagrams/day2-low-energy-card.svg
+  web_path: site/public/media/day2-low-energy-card.svg
+  pdf_path: media/diagrams/day2-low-energy-card.svg
+  source_url: media/diagrams/day2-low-energy-card.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original low-energy card · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Explain teaching
+  alt_zh: Day 2 低體力刪減順序卡
+  alt_en: Day 2 low-energy delete-order card
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Explain low-energy Day 2 path
 kto_candidates:
 - id: kto-visitkorea-seoul-overview
   title: VisitKorea — Seoul destination photography (candidate)

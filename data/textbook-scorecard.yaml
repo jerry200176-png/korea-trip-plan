@@ -1,7 +1,7 @@
 meta:
   product: Jerry & Nikita Korea Trip Textbook Edition
   updated_at: '2026-07-21'
-  round: 2C
+  round: 3-day2
   quality_correction: '2026-07-20'
   baseline_of: Media Edition Beta + PR
   scoring_rule: Do not inflate. Unknowns lower the score.
@@ -71,7 +71,7 @@ gates:
 dimensions:
   research_depth:
     max: 20
-    score: 13
+    score: 14
     notes: Round 2A–2C closed Day 4/3/6 major research gaps; Day 2 hanbok vendor still open.
   factual_trust:
     max: 15
@@ -80,15 +80,15 @@ dimensions:
       and Sotdae language caveats recorded.
   personalization:
     max: 20
-    score: 13
+    score: 14
     notes: Couple-fit paths for shopping, Day 4 light day, and Busan low-energy coast now exist.
   itinerary_logic:
     max: 15
-    score: 12
+    score: 13
     notes: Day 6 postcard forcing removed; Core/Low-Energy/Optional evening documented.
   visual_teaching_value:
     max: 15
-    score: 10
+    score: 11
     notes: Added Busan pork/coast teaching diagrams on top of Day 3–4 visuals.
   website_ux:
     max: 10
@@ -103,7 +103,7 @@ dimensions:
 totals:
   overall:
     max: 100
-    score: 68
+    score: 72
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 p0_open: []
@@ -119,9 +119,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_round_1_acceptance
 round_1_top3_roi_gaps:
-- Day 2 Hanbok & Palace Teaching Slice
 - Transport Textbook Slice
-- Food Atlas / Before-Trip hardening
+- Food Atlas Slice
+- Before-Trip Textbook Slice
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -131,8 +131,11 @@ round_2_progress:
     status: merged
     updated_at: '2026-07-21'
   busan_food_coast:
+    status: merged
+    updated_at: '2026-07-21'
+  day2_hanbok_palace:
     status: in_pr
-    decision_doc: docs/research/DAY6_BUSAN_FOOD_COAST.md
+    decision_doc: docs/research/DAY2_HANBOK_PALACE.md
     updated_at: '2026-07-21'
 p0_closed:
 - id: p0-fortune-shop

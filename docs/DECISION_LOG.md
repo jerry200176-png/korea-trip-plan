@@ -87,3 +87,10 @@ Append-only. Newest first.
 - **Status:** Provisional (Round 2C); hours/queues revalidate before visit.
 - **Evidence:** `rs-028` Blueline Sky Capsule; `rs-042`/`rs-043`/`rs-093`/`rs-094` pork shortlist; `rs-032` Gwangalli.
 - **Doc:** `docs/research/DAY6_BUSAN_FOOD_COAST.md`
+
+## 2026-07-21 — Day 2 hanbok shortlist + Bukchon short Core
+
+- **Decision:** Shortlist three hanbok clusters near Gyeongbokgung; retain Bukchon as short Core photo walk; Insadong/Ikseon Optional; low-energy deletes long walks.
+- **Status:** Provisional; T-14 shop lock still required. Tuesday palace closure remains D1-dependent.
+- **Evidence:** `rs-095` visit.seoul.kr hanbok guide; `rs-011`/`rs-010` palace; `rs-013` Bukchon.
+- **Doc:** `docs/research/DAY2_HANBOK_PALACE.md`
