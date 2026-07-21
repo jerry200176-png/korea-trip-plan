@@ -149,9 +149,12 @@ round_2_progress:
     merge_sha: 702c9115ca475bf2bf476e4a888bed366a20ba77
     pr: 16
   transport_textbook:
-    status: in_pr
+    status: merged
     decision_doc: docs/research/TRANSPORT_TEXTBOOK.md
     updated_at: '2026-07-21'
+    merged_at: '2026-07-21'
+    merge_sha: 29a9fb3065c972e62410219db4174be2fb408556
+    pr: 18
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
