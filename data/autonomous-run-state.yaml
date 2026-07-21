@@ -22,9 +22,9 @@ active_blockers:
   - visual_publication_overall_pending_revalidation
 retry_count: 1
 last_failure_signature: "lint:md:MD032-blanks-around-lists:docs/design-proof/SHA_IDENTITY_TABLE.md"
-next_action: Fix MD032 in SHA_IDENTITY_TABLE.md; add harness; clean npm ci + npm run ci; push; wait for GitHub green + artifact
+next_action: Push local-green tip; wait for GitHub clean CI success and artifact upload matching final head
 hard_stop_required: false
-updated_at: "2026-07-21T07:20:00Z"
+updated_at: "2026-07-21T07:30:00Z"
 
 # Stable identity roles (not tip)
 sha_roles:

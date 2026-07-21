@@ -18,7 +18,7 @@ Signatures use: `<command>:<error-class>:<affected-file-or-stage>`
 | hypothesis | Notes list under `SHA_IDENTITY_TABLE.md` lacked blank line after `Notes:` heading (MD032). |
 | fix | Insert blank line before the list. |
 | why_different | Root cause is lint rule, not reader/PDF logic; clean CI will re-run full `npm run ci`. |
-| status | fixing |
+| status | local_clean_ci_pass_awaiting_github |
 
 ## Closed
 
