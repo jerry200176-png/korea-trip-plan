@@ -1,12 +1,24 @@
 # Day 2 Independent Critic — Hanbok & Palace
 
-**Branch:** `cursor/textbook-day2-hanbok-palace-e48c`  
-**Initial verdict:** FAIL (low-energy diagram not wired)  
-**Fix:** wire `day2-low-energy` on Day 2 page  
-**Re-review:** pending on fixed head
+**PR:** #16 (`cursor/textbook-day2-hanbok-palace-e48c`)  
+**Critic context:** fresh-context subagent (not PR author)  
+**Reviewed head (PASS):** `fb255d6`  
+**Verdict:** **PASS**
 
-## Intended outcome
+## Critics
 
-- Hanbok shortlist ×3 with T-14 lock gap honest
-- Bukchon short Core; Insadong/Ikseon Optional
-- Low-energy path + three diagrams
+| Critic | Verdict |
+|--------|---------|
+| Research | PASS |
+| Personalization | PASS |
+| Visual Editor | PASS |
+| Mobile UX | PASS |
+| Publication | PASS |
+
+## Blockers
+
+None after wiring `day2-low-energy`.
+
+## Squash-merge under autonomous policy
+
+Allowed when CI green and mergeable.
