@@ -1,7 +1,7 @@
 # Textbook Correction Loop
 
-**Updated:** 2026-07-21 (Transport Textbook in progress)  
-**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **81 / 100**  
+**Updated:** 2026-07-21 (Food Atlas in progress)  
+**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **85 / 100**  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
 ## Fixed cycle (every round / slice)
@@ -76,11 +76,11 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 
 ## Next Top 3 ROI gaps
 
-1. Food Atlas Slice  
-2. Before-Trip Textbook Slice  
-3. Photo & Memory Slice  
+1. Before-Trip Textbook Slice  
+2. Photo & Memory Slice  
+3. Website IA and discovery  
 
-Transport Textbook Slice is in progress on `cursor/textbook-transport-e48c` (local slice exit; Overall still below Final Exit).
+Food Atlas Slice is in progress on `cursor/textbook-food-atlas-e48c` (local slice exit; Overall still below Final Exit).
 
 ## Posture
 

@@ -1,7 +1,7 @@
 meta:
   product: Jerry & Nikita Korea Trip Textbook Edition
   updated_at: '2026-07-21'
-  round: 4-transport
+  round: 5-food-atlas
   quality_correction: '2026-07-20'
   baseline_of: Media Edition Beta + PR
   scoring_rule: Do not inflate. Unknowns lower the score.
@@ -72,9 +72,9 @@ gates:
 dimensions:
   research_depth:
     max: 20
-    score: 16
-    notes: 'Transport delta +2: AREX/VisitKorea/T-money/Seoul Metro/Busan/Gimhae/Naver claims (rs-096–103). Food Atlas and
-      Before-Trip still open — not 18 yet.'
+    score: 17
+    notes: 'Food Atlas delta +1: VisitKorea dwaejigukbap + Michelin how-to (rs-104–106) on top of transport. Before-Trip
+      still open — not 18 yet.'
   factual_trust:
     max: 15
     score: 11
@@ -82,22 +82,22 @@ dimensions:
       limousine ticket caveat recorded. Still partial time-sensitive coverage.'
   personalization:
     max: 20
-    score: 15
-    notes: 'Transport delta +1: Low-Energy arrival/exit, taxi Rescue rules, couple separation recovery. Still short of 18
-      without Food Atlas dietary atlas + Before-Trip packing personalization.'
+    score: 17
+    notes: 'Food Atlas delta +2: Identify/order/queue rules for no-alcohol, crustacean-ask, bones/organ, no long queues,
+      no cross-town when tired. Before-Trip packing personalization still needed for 18.'
   itinerary_logic:
     max: 15
     score: 14
     notes: 'Transport delta +1: Day 1/5/7 teaching flows + Date Pending KTX discipline. Day 7 still flight-dependent.'
   visual_teaching_value:
     max: 15
-    score: 13
-    notes: 'Transport delta +2: seven functional diagrams (arrival, AREX vs bus, KTX, Busan station, recovery, T-money, offline
-      card). Meets Final Exit visual minimum; other Final bars still unmet.'
+    score: 14
+    notes: 'Food Atlas delta +1: six Identify/order/warn/compare/queue diagrams wired on /food/. Still room for licensed
+      dish photos and Photo & Memory teaching.'
   website_ux:
     max: 10
     score: 8
-    notes: 'Transport delta +1: /transport/ textbook hub wired to Day 1/5/7 and emergency. IA discovery still incomplete.'
+    notes: '/food/ textbook hub expanded; IA discovery still incomplete (Photo & Memory / nav discoverability).'
   publication_quality:
     max: 5
     score: 4
@@ -105,7 +105,7 @@ dimensions:
 totals:
   overall:
     max: 100
-    score: 81
+    score: 85
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 p0_open: []
@@ -121,9 +121,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Food Atlas Slice
 - Before-Trip Textbook Slice
 - Photo & Memory Slice
+- Website IA and discovery
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -155,6 +155,10 @@ round_2_progress:
     merged_at: '2026-07-21'
     merge_sha: 29a9fb3065c972e62410219db4174be2fb408556
     pr: 18
+  food_atlas:
+    status: in_pr
+    decision_doc: docs/research/FOOD_ATLAS.md
+    updated_at: '2026-07-21'
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
@@ -174,3 +178,12 @@ score_deltas_transport_2026_07_21:
   - visual_teaching +2 via seven wired diagrams
   - website_ux +1 via /transport/ hub
   - publication_quality unchanged at 4
+
+score_deltas_food_atlas_2026_07_21:
+  from_overall: 81
+  to_overall: 85
+  evidence:
+  - research_depth +1 via rs-104–106
+  - personalization +2 via Identify/order/queue couple rules
+  - visual_teaching +1 via six food diagrams
+  - factual_trust/itinerary/website/publication unchanged this slice
