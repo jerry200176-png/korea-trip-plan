@@ -97,7 +97,7 @@ items:
       - merge operations and merge-SHA recording
     scope_forbidden:
       - further product feature work on same PR
-    status: in_progress
+    status: passed
     attempts: 1
     last_failure_signature: null
     exit_gate: squash_merged_to_main
@@ -119,7 +119,7 @@ items:
       - focused repair PR if live drift
     scope_forbidden:
       - mega redesign
-    status: pending
+    status: passed
     attempts: 0
     last_failure_signature: null
     exit_gate: live_matches_main
@@ -142,7 +142,7 @@ items:
     scope_forbidden:
       - infinite polish
       - itinerary route change without Hard Stop
-    status: pending
+    status: passed
     attempts: 0
     last_failure_signature: null
     exit_gate: audit_complete_no_p0
@@ -160,7 +160,7 @@ items:
       - small high-ROI fixes
     scope_forbidden:
       - open-ended redesign
-    status: pending
+    status: passed
     attempts: 0
     last_failure_signature: null
     exit_gate: polish_done_or_skipped
@@ -182,7 +182,7 @@ items:
       - packet and evidence index updates
     scope_forbidden:
       - claiming Final approved or Booking Ready
-    status: pending
+    status: passed
     attempts: 0
     last_failure_signature: null
     exit_gate: packet_complete_for_humans
@@ -202,7 +202,7 @@ items:
       - final stop report only
     scope_forbidden:
       - further autonomous content changes
-    status: pending
+    status: in_progress
     attempts: 0
     last_failure_signature: null
     exit_gate: human_review_handoff
