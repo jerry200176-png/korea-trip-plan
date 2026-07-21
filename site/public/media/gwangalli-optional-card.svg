@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img">
+  <rect width="1200" height="560" fill="#f7f4ed"/>
+  <text x="48" y="48" font-family="Noto Sans TC, sans-serif" font-size="28" font-weight="700">廣安里 Optional 決策卡（Compare）</text>
+  <rect x="40" y="100" width="540" height="380" rx="8" fill="#eef5ea" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="60" y="150" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#2f5d3a">可以去，如果…</text>
+  <text x="60" y="200" font-family="Noto Sans TC, sans-serif" font-size="16">• 海雲台行程後仍有體力</text>
+  <text x="60" y="235" font-family="Noto Sans TC, sans-serif" font-size="16">• 想看橋／夜景照片</text>
+  <text x="60" y="270" font-family="Noto Sans TC, sans-serif" font-size="16">• 晚餐想評估 Anmok 圈</text>
+  <text x="60" y="305" font-family="Noto Sans TC, sans-serif" font-size="16">• 返程交通已想好</text>
+  <rect x="620" y="100" width="540" height="380" rx="8" fill="#fff5f2" stroke="#8a3b2a" stroke-width="2"/>
+  <text x="640" y="150" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#8a3b2a">應該不去，如果…</text>
+  <text x="640" y="200" font-family="Noto Sans TC, sans-serif" font-size="16">• 已經走很累／風大</text>
+  <text x="640" y="235" font-family="Noto Sans TC, sans-serif" font-size="16">• 只是為了「兩個海邊都去過」</text>
+  <text x="640" y="270" font-family="Noto Sans TC, sans-serif" font-size="16">• 會壓縮休息或 Day 7</text>
+  <text x="640" y="305" font-family="Noto Sans TC, sans-serif" font-size="16">• 低體力日已啟動</text>
+  <text x="60" y="420" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#6a5d4a">預設：廣安里是 Optional，不是 Day 6 失敗條件。</text>
+</svg>

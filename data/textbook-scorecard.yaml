@@ -1,7 +1,7 @@
 meta:
   product: Jerry & Nikita Korea Trip Textbook Edition
   updated_at: '2026-07-21'
-  round: 2B
+  round: 2C
   quality_correction: '2026-07-20'
   baseline_of: Media Edition Beta + PR
   scoring_rule: Do not inflate. Unknowns lower the score.
@@ -71,25 +71,25 @@ gates:
 dimensions:
   research_depth:
     max: 20
-    score: 12
-    notes: Round 2A/2B advanced Day 4 + Day 3 shopping evidence. Busan pork-soup shortlist and Day 6 low-energy remain open.
+    score: 13
+    notes: Round 2A–2C closed Day 4/3/6 major research gaps; Day 2 hanbok vendor still open.
   factual_trust:
     max: 15
-    score: 8
+    score: 9
     notes: Day 4 fortune/JYP decisions cite readable operator/tourism pages; no current freshness overclaim. English-not-in-service
       and Sotdae language caveats recorded.
   personalization:
     max: 20
-    score: 12
-    notes: Day 3/4 now have couple-fit executable paths. Day 2 hanbok vendor and Day 6 coastal rhythm still thin.
+    score: 13
+    notes: Couple-fit paths for shopping, Day 4 light day, and Busan low-energy coast now exist.
   itinerary_logic:
     max: 15
-    score: 11
-    notes: Day 3 Myeongdong-only + Day 4 light day decided. Day 6 postcard risk and Day 2 hanbok logistics remain.
+    score: 12
+    notes: Day 6 postcard forcing removed; Core/Low-Energy/Optional evening documented.
   visual_teaching_value:
     max: 15
-    score: 8
-    notes: Day 4 feasibility diagram + Day 3 route/tax/category teaching diagrams added. Busan Identify cards still missing.
+    score: 10
+    notes: Added Busan pork/coast teaching diagrams on top of Day 3–4 visuals.
   website_ux:
     max: 10
     score: 7
@@ -103,7 +103,7 @@ dimensions:
 totals:
   overall:
     max: 100
-    score: 62
+    score: 68
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 p0_open: []
@@ -119,18 +119,20 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_round_1_acceptance
 round_1_top3_roi_gaps:
-- Busan Food & Coastal Rhythm (pork soup shortlist + Day 6 low-energy variant)
 - Day 2 Hanbok & Palace Teaching Slice
 - Transport Textbook Slice
+- Food Atlas / Before-Trip hardening
 round_2_progress:
   day4_feasibility:
     status: merged
     outcome: Fortune Result B Optional/T-14; JYP Remove from Core
     updated_at: '2026-07-21'
   nikita_shopping:
+    status: merged
+    updated_at: '2026-07-21'
+  busan_food_coast:
     status: in_pr
-    outcome: Myeongdong-only Core teaching path + tax refund visuals
-    decision_doc: docs/research/DAY3_SHOPPING_TEACHING.md
+    decision_doc: docs/research/DAY6_BUSAN_FOOD_COAST.md
     updated_at: '2026-07-21'
 p0_closed:
 - id: p0-fortune-shop
