@@ -2,8 +2,10 @@
 """Research registry recount + integrity gate (Python twin of check-research-registry.ts)."""
 from __future__ import annotations
 
+import re
 import sys
 from collections import Counter
+from datetime import date
 from pathlib import Path
 
 try:
@@ -25,6 +27,25 @@ PRIMARY = [
 ]
 TIERS = {"A1", "A2", "B", "C"}
 OPS = {"needs_recheck", "unknown", "current"}
+BASIS_TYPES = {
+    "http_reachability_only",
+    "page_review_no_update_date",
+    "dated_official_notice",
+    "operator_live_data",
+    "direct_provider_confirmation",
+    "unknown",
+}
+CURRENT_ALLOWED = {"dated_official_notice", "operator_live_data", "direct_provider_confirmation"}
+FORBIDDEN_CURRENT_PHRASES = [
+    "HTTP 200",
+    "HTTP 200 OK",
+    "curl success",
+    "page reachable",
+    "title present",
+    "search result exists",
+    "URL works",
+    "content accessible but update date unknown",
+]
 REQUIRED = [
     "source_id",
     "evidence_tier",
@@ -35,7 +56,18 @@ REQUIRED = [
     "checked_at",
     "revalidate_by",
     "freshness_basis",
+    "freshness_basis_type",
 ]
+
+
+def is_iso_date(value: str) -> bool:
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value or ""):
+        return False
+    try:
+        date.fromisoformat(value)
+    except ValueError:
+        return False
+    return True
 
 
 def main() -> int:
@@ -62,6 +94,7 @@ def main() -> int:
     op = Counter()
     content = Counter()
     cities = Counter()
+    basis_types = Counter()
 
     for s in sources:
         sid = s.get("source_id")
@@ -82,6 +115,10 @@ def main() -> int:
         if ops not in OPS:
             errors.append(f"{sid}: invalid operational_freshness {ops}")
         op[ops] += 1
+        bt = s.get("freshness_basis_type")
+        if bt not in BASIS_TYPES:
+            errors.append(f"{sid}: invalid freshness_basis_type {bt}")
+        basis_types[bt] += 1
         content[s.get("content_last_updated")] += 1
         cities[s.get("city")] += 1
 
@@ -89,14 +126,38 @@ def main() -> int:
             errors.append(f"{sid}: legacy freshness:current is forbidden")
 
         basis = s.get("freshness_basis") or ""
+        checked_at = str(s.get("checked_at") or "")
+        revalidate_by = str(s.get("revalidate_by") or "")
+        content_upd = str(s.get("content_last_updated") or "")
+        access = str(s.get("accessibility_status") or "")
+
         if ops == "current":
-            http_alone = ("HTTP" in basis) and (
-                "alone" in basis.lower() or "title" in basis.lower() or "reachability only" in basis.lower()
-            )
-            if http_alone or not str(basis).strip():
+            if bt not in CURRENT_ALLOWED:
                 errors.append(
-                    f"{sid}: operational_freshness:current forbidden when freshness_basis empty or HTTP/title alone"
+                    f"{sid}: operational_freshness:current requires freshness_basis_type in "
+                    f"{'|'.join(sorted(CURRENT_ALLOWED))}, got {bt}"
                 )
+            if content_upd == "unknown" or not is_iso_date(content_upd):
+                errors.append(
+                    f"{sid}: operational_freshness:current requires content_last_updated as a valid ISO date, got {content_upd}"
+                )
+            if not is_iso_date(checked_at):
+                errors.append(f"{sid}: operational_freshness:current requires checked_at as a valid ISO date")
+            if not is_iso_date(revalidate_by):
+                errors.append(f"{sid}: operational_freshness:current requires revalidate_by as a valid ISO date")
+            if is_iso_date(checked_at) and is_iso_date(revalidate_by) and revalidate_by < checked_at:
+                errors.append(f"{sid}: revalidate_by must be >= checked_at")
+            if not str(basis).strip():
+                errors.append(f"{sid}: operational_freshness:current requires non-empty freshness_basis")
+            if access != "accessible":
+                errors.append(
+                    f"{sid}: operational_freshness:current requires accessibility_status: accessible (fully readable)"
+                )
+            lower = basis.lower()
+            for phrase in FORBIDDEN_CURRENT_PHRASES:
+                if phrase.lower() in lower:
+                    errors.append(f'{sid}: freshness_basis contains phrase that cannot support current: "{phrase}"')
+                    break
 
     if sum(primary.values()) != len(sources):
         errors.append(f"primary_category sum {sum(primary.values())} != usable total {len(sources)}")
@@ -170,6 +231,9 @@ def main() -> int:
     print("### content_last_updated")
     for k in sorted(content):
         print(f"- {k}: {content[k]}")
+    print("### freshness_basis_type")
+    for k in sorted(basis_types):
+        print(f"- {k}: {basis_types[k]}")
     print("### city")
     for k, v in sorted(cities.items(), key=lambda kv: (-kv[1], str(kv[0]))):
         print(f"- {k}: {v}")

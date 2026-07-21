@@ -23,6 +23,21 @@ meta:
     notes: Round 1 Tier C is blog-heavy. No direct YouTube/Instagram pages were fully readable in this environment. Do not
       pretend search snippets equal full video/post review. Creator platforms remain listed under blocked or future work when
       publicly accessible.
+  freshness_model:
+    field: freshness_basis_type
+    allowed:
+    - http_reachability_only
+    - page_review_no_update_date
+    - dated_official_notice
+    - operator_live_data
+    - direct_provider_confirmation
+    - unknown
+    current_allowed:
+    - dated_official_notice
+    - operator_live_data
+    - direct_provider_confirmation
+    notes: current requires typed basis + valid content_last_updated/checked_at/revalidate_by; HTTP reachability alone never
+      supports current
 sources:
 - source_id: rs-001
   source_type: government
@@ -60,6 +75,7 @@ sources:
   revalidate_by: '2026-10-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-002
   source_type: government
   title: Hi Korea main portal
@@ -96,6 +112,7 @@ sources:
   revalidate_by: '2026-10-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-003
   source_type: government
   title: Korea Customs Service English portal
@@ -133,6 +150,7 @@ sources:
   revalidate_by: '2026-10-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-004
   source_type: government
   title: Taiwan Bureau of Consular Affairs
@@ -169,6 +187,7 @@ sources:
   revalidate_by: '2026-10-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-005
   source_type: government
   title: Taipei Mission in Korea contact listing
@@ -205,6 +224,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-006
   source_type: airport
   title: Incheon International Airport official site
@@ -242,6 +262,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-007
   source_type: airport
   title: Gimhae International Airport official English site
@@ -278,6 +299,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-008
   source_type: rail
   title: LetsKorail foreign booking portal
@@ -316,6 +338,7 @@ sources:
   revalidate_by: '2026-10-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-009
   source_type: government
   title: Korea Meteorological Administration English weather portal
@@ -351,6 +374,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-010
   source_type: official_tourism
   title: Gyeongbokgung Palace
@@ -390,6 +414,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-011
   source_type: government
   title: Gyeongbokgung Palace and its history
@@ -427,6 +452,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-012
   source_type: official_tourism
   title: Changing of the Royal Guard at Gyeongbokgung Palace
@@ -464,6 +490,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-013
   source_type: official_tourism
   title: Bukchon Hanok Village
@@ -503,6 +530,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-014
   source_type: government
   title: Seoul Hanok Bukchon town page
@@ -539,6 +567,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-015
   source_type: official_tourism
   title: Insa-dong street
@@ -578,6 +607,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-016
   source_type: official_tourism
   title: Ikseon-dong Hanok Village
@@ -617,6 +647,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-017
   source_type: government
   title: Ikseon-dong in Seoul
@@ -654,6 +685,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-018
   source_type: official_tourism
   title: Myeongdong
@@ -694,6 +726,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-019
   source_type: official_tourism
   title: A Complete Guide to Shopping in Seoul
@@ -734,6 +767,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-020
   source_type: official_tourism
   title: Comprehensive Tax Refund Guide
@@ -772,6 +806,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-021
   source_type: official_tourism
   title: Tax Refund
@@ -809,6 +844,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-022
   source_type: official_tourism
   title: If you visit Seoul for the first time
@@ -851,6 +887,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-023
   source_type: official_tourism
   title: Seongsu Hotspot One-Day Course
@@ -890,6 +927,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-024
   source_type: official_tourism
   title: 'K-Star Road: Where Stars are Made'
@@ -931,6 +969,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-025
   source_type: government
   title: Gangnam K-Star Road English guidebook
@@ -970,6 +1009,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-026
   source_type: venue_official
   title: JYP Entertainment official site
@@ -1008,6 +1048,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-027
   source_type: official_tourism
   title: Haeundae Blueline Park
@@ -1049,6 +1090,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-028
   source_type: venue_official
   title: Haeundae Sky Capsule course
@@ -1088,6 +1130,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-029
   source_type: official_tourism
   title: Haeundae Blueline Park themed tour
@@ -1128,6 +1171,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-030
   source_type: official_tourism
   title: 'Busan itinerary: Haeundae and Cheongsapo'
@@ -1168,6 +1212,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-031
   source_type: official_tourism
   title: Cheongsapo Port and Mipo Port
@@ -1207,6 +1252,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-032
   source_type: official_tourism
   title: Gwangalli Beach
@@ -1246,6 +1292,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-033
   source_type: official_tourism
   title: Busan night view themed tour
@@ -1285,6 +1332,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-034
   source_type: official_tourism
   title: Gukje Market
@@ -1324,6 +1372,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-035
   source_type: official_tourism
   title: Bupyeong Kkangtong Market
@@ -1363,6 +1412,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-036
   source_type: official_tourism
   title: Jagalchi Market
@@ -1402,6 +1452,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-037
   source_type: official_tourism
   title: Pork and Rice Soup
@@ -1440,6 +1491,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-038
   source_type: official_tourism
   title: 'Dwaejigukbap: Busan''s representative local dish'
@@ -1479,6 +1531,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-039
   source_type: official_tourism
   title: 'Feel the Sea, Enjoy the City: Discover Busan'
@@ -1520,6 +1573,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-040
   source_type: official_tourism
   title: Busan bridges themed tour
@@ -1558,6 +1612,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
     automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
 - source_id: rs-041
   source_type: guidebook_media
   title: Michelin Guide Seoul and Busan Bib Gourmand Selection
@@ -1597,6 +1652,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-042
   source_type: guidebook_media
   title: Hapcheon Gukbapjip
@@ -1635,6 +1691,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-043
   source_type: guidebook_media
   title: Namakzip
@@ -1673,6 +1730,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-044
   source_type: trusted_editorial
   title: Seoul travel guide
@@ -1712,6 +1770,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-045
   source_type: trusted_editorial
   title: Busan travel guide
@@ -1752,6 +1811,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-046
   source_type: trusted_editorial
   title: Time Out Seoul
@@ -1791,6 +1851,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-047
   source_type: trusted_editorial
   title: Time Out Busan
@@ -1831,6 +1892,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-048
   source_type: trusted_editorial
   title: Seoul travel guide
@@ -1872,6 +1934,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-049
   source_type: trusted_editorial
   title: Busan travel guide
@@ -1912,6 +1975,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-050
   source_type: trusted_editorial
   title: Creatrip Seoul activity listing
@@ -1953,6 +2017,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-051
   source_type: trusted_editorial
   title: Seoul travel guide
@@ -1993,6 +2058,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-052
   source_type: trusted_editorial
   title: Busan travel guide
@@ -2033,6 +2099,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-053
   source_type: map_platform
   title: 'Naver Map search: Seoul Station'
@@ -2071,6 +2138,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-054
   source_type: map_platform
   title: 'Kakao Map search: Seoul Station'
@@ -2110,6 +2178,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-055
   source_type: map_platform
   title: 'Naver Map search: Busan Station'
@@ -2149,6 +2218,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-056
   source_type: map_platform
   title: 'Kakao Map search: Busan Station'
@@ -2188,6 +2258,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
 - source_id: rs-057
   source_type: trusted_editorial
   title: Haeundae Sky Capsule guide
@@ -2229,6 +2300,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-058
   source_type: trusted_editorial
   title: 'Haeundae Blue Line Park: Sky Capsule and Beach Train'
@@ -2270,6 +2342,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-059
   source_type: trusted_editorial
   title: K-Star Road and Gangnamdol
@@ -2311,6 +2384,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-060
   source_type: trusted_editorial
   title: Haeundae Beach guide
@@ -2351,6 +2425,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-061
   source_type: trusted_editorial
   title: Myeongdong Shopping District guide
@@ -2392,6 +2467,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-062
   source_type: trusted_editorial
   title: Seoul itinerary seven-day guide
@@ -2433,6 +2509,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-063
   source_type: trusted_editorial
   title: Busan itinerary three-day guide
@@ -2474,6 +2551,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-064
   source_type: trusted_editorial
   title: Seoul restaurants guide
@@ -2514,6 +2592,7 @@ sources:
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
     (not design benchmark)
+  freshness_basis_type: http_reachability_only
 - source_id: rs-065
   source_type: independent_blog
   title: 'Saju and Tarot in Seoul: seven things foreigners should know'
@@ -2552,6 +2631,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-066
   source_type: independent_blog
   title: How to visit a saju cafe in Korea
@@ -2589,6 +2669,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-067
   source_type: independent_blog
   title: Wearing the Hanbok for a Day in Seoul
@@ -2628,6 +2709,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-068
   source_type: independent_blog
   title: Hanbok at Gyeongbokgung Palace photo guide
@@ -2668,6 +2750,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-069
   source_type: independent_blog
   title: Busan three-day itinerary with cafe hopping
@@ -2707,6 +2790,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-070
   source_type: independent_blog
   title: Three day Busan itinerary
@@ -2747,6 +2831,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-071
   source_type: independent_blog
   title: Busan two-day itinerary for first timers
@@ -2785,6 +2870,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-072
   source_type: independent_blog
   title: Rooftop cafes with the best ocean views in Busan
@@ -2825,6 +2911,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-073
   source_type: independent_blog
   title: Things to do in Busan
@@ -2864,6 +2951,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-074
   source_type: independent_blog
   title: 'East Busan guide: Haeundae, Gwangan, and Dalmaji'
@@ -2902,6 +2990,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-075
   source_type: independent_blog
   title: Sweet Escape to Busan three-day itinerary
@@ -2942,6 +3031,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-076
   source_type: independent_blog
   title: Busan itinerary for first-time visitors
@@ -2982,6 +3072,7 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
 - source_id: rs-077
   source_type: website_benchmark
   title: Wanderlog product site
@@ -3016,6 +3107,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-078
   source_type: website_benchmark
   title: TripIt product site
@@ -3050,6 +3142,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-079
   source_type: website_benchmark
   title: KDE Itinerary documentation
@@ -3083,6 +3176,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-080
   source_type: website_benchmark
   title: AdventureLog project
@@ -3117,6 +3211,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-081
   source_type: website_benchmark
   title: VisitKorea English portal homepage pattern
@@ -3152,6 +3247,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-082
   source_type: website_benchmark
   title: Visit Busan portal homepage pattern
@@ -3186,6 +3282,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-083
   source_type: website_benchmark
   title: Lonely Planet destination guide pattern notes
@@ -3221,6 +3318,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-084
   source_type: website_benchmark
   title: Michelin Guide web restaurant page pattern
@@ -3255,6 +3353,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-085
   source_type: website_benchmark
   title: TREK open-source travel planner README patterns
@@ -3289,6 +3388,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-086
   source_type: website_benchmark
   title: awesome-design-md repository pattern reference
@@ -3322,6 +3422,7 @@ sources:
   primary_category: design_publication_benchmark
   category_tags:
   - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
 blocked_sources:
 - source_id: rs-blocked-001
   url: https://www.klook.com/en-US/city/13-seoul-things-to-do/

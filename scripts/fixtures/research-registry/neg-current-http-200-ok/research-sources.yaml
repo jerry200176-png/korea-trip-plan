@@ -1,0 +1,45 @@
+meta:
+  purpose: fixture
+sources:
+  - source_id: rs-fixture-001
+    source_type: government
+    title: Fixture official notice
+    publisher_or_creator: Fixture Authority
+    url: https://example.test/notice
+    publish_date: '2026-07-01'
+    accessed_at: '2026-07-20'
+    language: en
+    city: National
+    topic:
+      - fixture
+    summary: Fixture source for freshness gate tests.
+    findings:
+      - Synthetic fixture only.
+    sponsorship_bias_risk: low
+    copyright_usage_rule: facts_ok_no_copy
+    evidence_tier: A1
+    primary_category: travel_factual_evidence
+    category_tags:
+      - travel_factual_evidence
+    jerry_relevance: Fixture
+    nikita_relevance: Fixture
+    claims_requiring_official_verification: []
+    corroborating_source_ids: []
+    accessibility_status: accessible
+    content_last_updated: '2026-07-15'
+    operational_freshness: current
+    checked_at: '2026-07-20'
+    revalidate_by: '2026-10-18'
+    freshness_basis: Got HTTP 200 OK from curl
+    freshness_basis_type: dated_official_notice
+blocked_sources:
+  - source_id: rs-blocked-fixture-001
+    url: https://example.test/blocked
+    reason: Fixture blocked source
+    attempted_at: '2026-07-20'
+    accessibility_status: blocked
+    blocked_class: other
+    content_last_updated: unknown
+    operational_freshness: unknown
+    checked_at: '2026-07-20'
+    freshness_basis: blocked fixture

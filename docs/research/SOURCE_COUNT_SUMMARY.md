@@ -3,10 +3,13 @@
 Generated: 2026-07-20  
 Quality correction: 2026-07-20  
 Inventory: [`data/research-sources.yaml`](../../data/research-sources.yaml)  
-Recount / CI gate:
+Recount / CI gates:
 
 - `npm run check:research-registry` (wired into `npm run ci`)
+- `npm run test:research-registry` (negative/positive freshness fixtures; wired into `npm run ci`)
 - `python3 scripts/recount-research-sources.py` (local twin; same integrity rules)
+
+`freshness_basis_type` current distribution: `http_reachability_only` 76 · `page_review_no_update_date` 10 · `current` 0
 
 ## Counting rules
 

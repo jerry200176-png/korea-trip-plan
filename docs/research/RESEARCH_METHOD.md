@@ -61,9 +61,32 @@ Do not claim a YouTube/Instagram item was reviewed unless the full public item w
 | `operational_freshness` | `needs_recheck` / `unknown` / rarely `current` |
 | `checked_at` | when we inspected |
 | `revalidate_by` | next required revalidation date |
-| `freshness_basis` | why freshness was graded |
+| `freshness_basis` | human-readable why freshness was graded |
+| `freshness_basis_type` | typed basis (see below) |
 
-**Forbidden:** marking `operational_freshness: current` solely because HTTP 200 or a title string exists.
+### `freshness_basis_type`
+
+Allowed values:
+
+- `http_reachability_only`
+- `page_review_no_update_date`
+- `dated_official_notice`
+- `operator_live_data`
+- `direct_provider_confirmation`
+- `unknown`
+
+`operational_freshness: current` is allowed **only** when:
+
+- `freshness_basis_type` ∈ `dated_official_notice` | `operator_live_data` | `direct_provider_confirmation`
+- `content_last_updated` is a valid ISO date (not `unknown`)
+- `checked_at` and `revalidate_by` are valid ISO dates
+- `revalidate_by >= checked_at`
+- `freshness_basis` is non-empty
+- `accessibility_status: accessible` (fully readable)
+
+These phrases must never justify `current`: HTTP 200 / HTTP 200 OK / curl success / page reachable / title present / search result exists / URL works / content accessible but update date unknown.
+
+Gate + fixtures: `npm run check:research-registry` and `npm run test:research-registry`.
 
 ## Primary categories (unique count)
 

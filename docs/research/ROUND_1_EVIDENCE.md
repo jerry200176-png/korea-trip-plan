@@ -20,10 +20,16 @@ Epic #11 write attempts returned 403 for this bot token — paste gate-close tex
 
 Scope: **research governance only** — no itinerary / site / PDF / media product changes.
 
-### Governance blockers addressed (post independent review FAIL)
+### Governance blockers addressed
 
-1. `check:research-registry` integrity gate (unique IDs, required freshness fields, A1/A2/B/C only, blocked/usable overlap, tier sum = usable total, HTTP-alone `current` fails, claim ID roles validated) wired into `npm run ci`
-2. Claim map role split: `supporting_source_ids` / `discovery_source_ids` / `blocked_source_ids` / `contradicting_source_ids` / `missing_evidence_requirements` — blocked IDs cannot sit in supporting or raise confidence
+1. `check:research-registry` integrity gate wired into `npm run ci`
+2. Claim map role split (supporting / discovery / blocked / contradicting / missing)
+3. **Freshness negative-gate (final blocker):**
+   - every usable source has `freshness_basis_type`
+   - `current` only with `dated_official_notice` | `operator_live_data` | `direct_provider_confirmation` + valid dates + readable source
+   - forbidden reachability phrases cannot justify `current`
+   - formal fixtures via `npm run test:research-registry` (10 negative + 3 positive + live)
+   - TypeScript validator and Python twin share the same semantics
 
 ### Corrected source count table (unique primary)
 

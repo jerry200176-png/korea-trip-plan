@@ -26,7 +26,7 @@ gates:
 
   round_1_acceptance:
     name: Round 1 Acceptance
-    met: pending_jerry_independent_review
+    met: pending_fresh_context_governance_review
     checklist:
       - id: required_docs_exist
         ok: true
@@ -39,7 +39,7 @@ gates:
         detail: unique primary_category; benchmarks not counted as travel factual depth
       - id: freshness_semantics_correct
         ok: true
-        detail: no operational_freshness current from HTTP 200; content_last_updated unknown when unconfirmed; bad_fresh fails gate
+        detail: freshness_basis_type model; current only with typed dated/operator/provider basis + valid dates; formal negative fixtures in test:research-registry
       - id: top3_gaps_have_claim_map
         ok: true
         detail: role-split claim map (supporting/discovery/blocked/contradicting/missing)
@@ -48,7 +48,7 @@ gates:
         detail: no itinerary/site/PDF/media product changes in governance fixes
       - id: independent_ai_review_no_governance_blocker
         ok: pending
-        detail: awaiting Jerry / independent AI re-review after governance blocker fixes
+        detail: awaiting fresh-context governance-only critic after freshness negative-gate fix
     notes: >
       Round 1 Acceptance is a research-governance gate. It does not require Textbook Final Exit 90.
 
