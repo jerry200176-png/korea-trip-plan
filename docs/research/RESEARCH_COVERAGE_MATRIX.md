@@ -50,9 +50,9 @@ See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for ful
 | 弘大 | A2 | 1 | 1 | Medium | needs_recheck | Clothes backup | Not scheduled | Overflow only |
 | 聖水 | A2 | 1 | 1 | Low | unknown | Clothes/cafe | Transfer cost | Only if lodging fits |
 | 江南 | A1/A2 | 1+ | 1 | Medium | needs_recheck | GOT7 + fortune | Shop gaps | Keep single cluster |
-| 化妝品購物 | A2 tax/shopping | 1+ | 0 | Low | needs_recheck | Nikita priority | No store IDs | Round 2 shopping slice |
-| GOT7／JYP | A1 org + A2 adj. | 1 | 0 | Low | unknown | Nikita GOT7 | Visit value unproven | Feasibility PR |
-| 韓國算命 | 0 A1 shops | 0 | 2 | Low | unknown | Nikita priority | **P0 shop gap** | Find 2 Gangnam shops |
+| 化妝品購物 | A2 tax/shopping | 1+ | 0 | Medium | needs_recheck | Nikita priority | Category path taught | PR #14 done; T-7 tax revalidate |
+| GOT7／JYP | A1 org + A2 adj. | 1 | 0 | Medium | needs_recheck | Nikita GOT7 | HQ visit value unproven | Removed from Core (PR #13) |
+| 韓國算命 | A1/A2 operator + tourism | 0 | 2 | Medium | needs_recheck | Nikita priority | No lockable Core shop | Result B Optional/T-14 (PR #13) |
 | 市場與街頭美食 | A2 | 1+ | 1 | Medium | needs_recheck | Food constraints | Shellfish mapping | Label safe stalls |
 | 兩人拍照地點 | mixed | 1+ | 2 | Medium | unknown | Couple + instant camera | Scattered tips | Photo cards later |
 | 雨天方案 | thin | 1+ | 0 | Low | unknown | Jerry risk | Generic indoor | Named venues |
@@ -69,7 +69,7 @@ See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for ful
 | 青沙浦 | A2 | 1 | 1 | Medium | needs_recheck | Capsule adjacency | Fatigue | Compare vs Haeundae-only |
 | 尾浦 | A2 | 1 | 0 | Low | unknown | Connector | Thin | Optional only |
 | 海岸／膠囊列車 | A1 operator + A2 | 2 | 0 | Medium | needs_recheck | Photo value | Hours/queue/price | Harden via rs-028 |
-| 豬肉湯飯 | A2 explainers | Michelin+ | 0 direct | Medium | needs_recheck | Nikita food | No locked shop | Round 2 food slice |
+| 豬肉湯飯 | A2 + named shortlist | Michelin+ | 0 direct | Medium | needs_recheck | Nikita food | Not booking-locked | PR #15 shortlist; Food Atlas next |
 | 市場 | A2 | 1 | 1 | Low | needs_recheck | Food/shopping | Shellfish exposure | Brief or skip |
 | 海景咖啡 | 0 A1 | 1 | 1+ | Low | unknown | Rain/low-energy | Unverified cafes | Pick 2 with hours |
 | 夜景 | A2 | 1 | 1 | Medium | unknown | Couple photos | Wind/tiredness | Optional evening |
@@ -79,8 +79,11 @@ See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for ful
 | 釜山站 | A1/A2 + maps | maps | 0 | Medium | needs_recheck | KTX arrival | Luggage path | Station card |
 | 金海機場 | A1 | 0 | 0 | Medium | needs_recheck | Return logistics | Flight unknown | Buffer bands after D1 |
 
-## Matrix reading for Round 2 slices
+## Matrix reading for Round 2 slices (complete) + next Top 3
 
-1. ~~**Day 4 Feasibility Decision**~~ — **done in Round 2A** (fortune Result B; JYP Remove)  
-2. ~~**Nikita Shopping Teaching Slice**~~ — Round 2B in progress — Day 3 path (`clm-day3-shopping-path-thin`)  
-3. **Busan Food & Coastal Rhythm** — pork soup + Day 6 low-energy (`clm-pork-soup-shortlist-incomplete`, `clm-day6-low-energy-variant-missing`, `clm-sky-capsule-ops-unconfirmed`)  
+1. ~~**Day 4 Feasibility Decision**~~ — **merged** PR #13 (fortune Result B; JYP Remove)  
+2. ~~**Nikita Shopping Teaching Slice**~~ — **merged** PR #14 — Day 3 path (`clm-day3-shopping-path-thin`)  
+3. ~~**Busan Food & Coastal Rhythm**~~ — **merged** PR #15 — pork soup + Day 6 low-energy  
+4. ~~**Day 2 Hanbok & Palace Teaching**~~ — **merged** PR #16 @ `702c911`  
+
+**Next Top 3 ROI gaps:** Transport Textbook Slice · Food Atlas Slice · Before-Trip Textbook Slice  

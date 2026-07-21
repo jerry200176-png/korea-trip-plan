@@ -1,8 +1,12 @@
 # Round 1 Evidence Sheet
 
-**Branch:** `feat/korea-trip-textbook-edition`  
-**Draft PR:** https://github.com/jerry200176-png/korea-trip-plan/pull/12  
-**Base main verified:** `b907145d2b677fd6328cb0a4f0eb9601af76a858`  
+> **Status (2026-07-21):** Historical Round 1 packet. Round 1 Acceptance **PASS**. PR #12 **merged**.  
+> Round 2A–2C + Day 2 teaching **merged** (PR #13–#16). Overall **72 / 100**. Textbook Final Exit **not** met.  
+> Do **not** treat the “Do not merge / Do not start Round 2” lines below as current control state.
+
+**Branch (historical):** `feat/korea-trip-textbook-edition`  
+**Draft PR (historical):** https://github.com/jerry200176-png/korea-trip-plan/pull/12 — now merged  
+**Base main verified (at Round 1):** `b907145d2b677fd6328cb0a4f0eb9601af76a858`  
 **Quality correction date:** 2026-07-20
 
 ## Phase A (prerequisite — closed on main)
@@ -81,9 +85,9 @@ See `data/claim-evidence-map.yaml` — includes palace, hanbok, Day 3 shopping, 
 - `gates.textbook_final_exit` — Overall ≥ 90 whole-product bar  
 - `gates.round_1_acceptance` — research governance checklist  
 - `gates.round_2_slice_exit` — per-PR slice exit without requiring 90  
-- `p0_open` — only `p0-fortune-shop`  
+- `p0_open` — empty after Round 2A closed `p0-fortune-shop` (historical Round 1 sheet listed only that P0)  
 - `founder_decision_dependencies` — `dep-d1-dates` (does not block Round 2 research)  
-- Honest overall score: **48 / 100**
+- Honest overall score at Round 1 close: **48 / 100** (later Round 2 + Day 2 teaching raised main to **72 / 100** without claiming Final Exit)
 
 ### Round 1 Acceptance judgment (agent self-check)
 
@@ -95,14 +99,18 @@ See `data/claim-evidence-map.yaml` — includes palace, hanbok, Day 3 shopping, 
 | Freshness semantics correct | PASS |
 | Top 3 gaps have claim map | PASS |
 | Scope not expanded | PASS |
-| Independent AI / Jerry review | **PENDING** |
+| Independent AI / Jerry review | **PASS** (governance critic; Acceptance recorded on scorecard) |
 
-**Verdict:** Ready for Jerry independent review toward Round 1 Acceptance.  
+**Verdict (historical at draft time):** Ready for Jerry independent review toward Round 1 Acceptance.  
+**Current (2026-07-21):** Round 1 Acceptance **met**. Round 2 + Day 2 slices **merged**.  
 **Not** Textbook Final Exit.  
-**Do not merge. Do not start Round 2 implementation.**
+**Superseded instruction:** ~~Do not merge. Do not start Round 2 implementation.~~
 
-### Round 2 planned slices (discussion only)
+### Round 2 planned slices (now complete)
 
-1. Day 4 Feasibility Decision  
-2. Nikita Shopping Teaching Slice  
-3. Busan Food & Coastal Rhythm  
+1. Day 4 Feasibility Decision — **merged** PR #13  
+2. Nikita Shopping Teaching Slice — **merged** PR #14  
+3. Busan Food & Coastal Rhythm — **merged** PR #15  
+4. Day 2 Hanbok & Palace Teaching — **merged** PR #16  
+
+**Next Top 3:** Transport · Food Atlas · Before-Trip  
