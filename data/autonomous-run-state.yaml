@@ -17,14 +17,14 @@ last_artifact_id: null
 deployed_pages_sha: null
 product_status: FINAL ACCEPTANCE REPAIR REQUIRED
 active_blockers:
-  - github_ci_failure_run_29808819023
+  - artifact_sha_must_match_pr_head
   - independent_artifact_reverification_pending
   - visual_publication_overall_pending_revalidation
 retry_count: 1
-last_failure_signature: "lint:md:MD032-blanks-around-lists:docs/design-proof/SHA_IDENTITY_TABLE.md"
-next_action: Push local-green tip; wait for GitHub clean CI success and artifact upload matching final head
+last_failure_signature: "upload-artifact:sha-mismatch:github.sha-vs-pr-head"
+next_action: Fix CI artifact naming to PR head SHA; push; wait for green CI with matching artifact name
 hard_stop_required: false
-updated_at: "2026-07-21T07:30:00Z"
+updated_at: "2026-07-21T07:28:00Z"
 
 # Stable identity roles (not tip)
 sha_roles:

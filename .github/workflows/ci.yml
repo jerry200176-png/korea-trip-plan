@@ -8,8 +8,30 @@ on:
 jobs:
   foundation-exit-gate:
     runs-on: ubuntu-latest
+    outputs:
+      artifact_sha: ${{ steps.meta.outputs.artifact_sha }}
     steps:
       - uses: actions/checkout@v4
+      - name: Resolve artifact / verified head SHA
+        id: meta
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            SHA="${{ github.event.pull_request.head.sha }}"
+          else
+            SHA="${{ github.sha }}"
+          fi
+          echo "artifact_sha=${SHA}" >> "$GITHUB_OUTPUT"
+          mkdir -p dist
+          printf '%s\n' "{
+            \"event\": \"${{ github.event_name }}\",
+            \"ci_verified_head_sha\": \"${SHA}\",
+            \"github_sha\": \"${{ github.sha }}\",
+            \"run_id\": \"${{ github.run_id }}\",
+            \"workflow\": \"${{ github.workflow }}\",
+            \"ref\": \"${{ github.ref }}\"
+          }" > dist/ci-verified-head.json
+          echo "Resolved ci_verified_head_sha=${SHA}"
       - uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
@@ -29,7 +51,7 @@ jobs:
       - name: Upload handbook artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: handbook-dist-${{ github.sha }}
+          name: handbook-dist-${{ steps.meta.outputs.artifact_sha }}
           path: |
             dist/
             site/dist/
@@ -51,7 +73,7 @@ jobs:
       - name: Download built site from gate
         uses: actions/download-artifact@v4
         with:
-          name: handbook-dist-${{ github.sha }}
+          name: handbook-dist-${{ needs.foundation-exit-gate.outputs.artifact_sha }}
           path: artifact
       - name: Stage Pages bundle with PDF downloads
         run: |
@@ -64,6 +86,10 @@ jobs:
           test -f artifact/site/dist/downloads/korea-trip-handbook.pdf
           # Privacy already enforced in foundation-exit-gate (check:public-preview-privacy).
           echo "public-preview-privacy: inherited PASS from foundation-exit-gate"
+          if [ -f artifact/dist/ci-verified-head.json ]; then
+            echo "ci-verified-head:"
+            cat artifact/dist/ci-verified-head.json
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: artifact/site/dist

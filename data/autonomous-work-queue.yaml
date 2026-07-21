@@ -27,8 +27,8 @@ items:
       - restore READY without Exit Gate
       - score inflation
     status: in_progress
-    attempts: 1
-    last_failure_signature: "lint:md:MD032-blanks-around-lists:docs/design-proof/SHA_IDENTITY_TABLE.md"
+    attempts: 2
+    last_failure_signature: "upload-artifact:sha-mismatch:github.sha-vs-pr-head"
     exit_gate: github_ci_green_with_matching_artifact
     next_if_pass: verify-pr26-final-artifact
     next_if_fail: repair-pr26-clean-ci
