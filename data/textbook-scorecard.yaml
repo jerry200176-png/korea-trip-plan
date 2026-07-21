@@ -115,6 +115,10 @@ totals:
     score: 91
   textbook_final_exit_met: false
   round_1_acceptance_met: true
+product_status: READY FOR JERRY & NIKITA ACCEPTANCE
+product_status_notes: >-
+  Phase 4 product slices complete (IA, Photo, PDF). Full-product audit PASS for readiness.
+  Do not claim Final approved, Booking Ready, or Jerry & Nikita accepted. Human review pending.
 p0_open: []
 founder_decision_dependencies:
 - id: dep-d1-dates
@@ -128,9 +132,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Full-product Final Audit
-- Final Acceptance Packet
-- Remaining D1 date dependency honesty
+- Jerry & Nikita human acceptance review
+- Time-sensitive facts revalidation before travel
+- D1 exact dates decision
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -191,10 +195,17 @@ round_2_progress:
     merge_sha: 02f6464591ad3c38585c777aecb6b0f8daddb130
     pr: 23
   pdf_restructure:
-    status: in_pr
+    status: merged
     decision_doc: docs/research/TEXTBOOK_PDF_RESTRUCTURE.md
     updated_at: '2026-07-21'
-    branch: cursor/textbook-pdf-restructure-e48c
+    merged_at: '2026-07-21'
+    merge_sha: 2c13cf37f51d8995be8ec8d0e8528d2f515e043e
+    pr: 24
+  final_audit:
+    status: in_pr
+    decision_doc: docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md
+    updated_at: '2026-07-21'
+    branch: cursor/textbook-final-audit-e48c
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
