@@ -121,8 +121,8 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Photo & Memory Slice
 - Website IA and discovery
+- Photo & Memory Slice
 - Full Textbook PDF restructuring
 round_2_progress:
   day4_feasibility:
@@ -215,8 +215,16 @@ phase4_rescore_after_top3_2026_07_21:
   personalization: 18
   visual_teaching_value: 14
   textbook_final_exit_met: false
-  reason_not_final: overall 87 < 90; website_ux 8; publication 4; time_sensitive coverage partial; human review pending; Photo & Memory / IA / PDF restructuring still open
+  reason_not_final: >-
+    Overall 87 is below 90. website_ux 8 and publication 4 remain below Final Exit floors.
+    Time-sensitive coverage is partial; human review is still pending. Founder Phase 4 order
+    is Website IA, then Photo and Memory, then Full Textbook PDF, then full audit, then
+    acceptance packet. No score inflation on this sync.
   next_top3_roi_gaps:
-  - Photo & Memory Slice
   - Website IA and discovery
+  - Photo & Memory Slice
   - Full Textbook PDF restructuring
+  score_inflation: false
+  product_surface_change: false
+  notes: >-
+    PR #21 is scorecard and control-state only. No Photo, IA, or PDF product implementation.
