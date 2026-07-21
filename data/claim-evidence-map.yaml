@@ -1,8 +1,8 @@
 meta:
   updated_at: '2026-07-21'
-  round: 5-food-atlas
+  round: 6-before-trip
   purpose: Role-split claim evidence map for Textbook Edition
-  notes: Food Atlas adds Identify/order/queue claims on top of transport and Round 2 food shortlist claims.
+  notes: Before-Trip adds conditional checklist claim on top of Food Atlas and Transport.
 claims:
 - claim_id: clm-gyeongbokgung-closed-tuesday
   claim: Gyeongbokgung is regularly closed on Tuesdays (holiday shift rules may apply); hours vary by season.
@@ -618,9 +618,29 @@ claims:
   jerry_relevance: Protects daily energy budget.
   nikita_relevance: Keeps food joy without martyr queues.
   notes: Aligns with couple profile no-long-queue preference.
+- claim_id: clm-before-trip-conditional-checklist
+  claim: Before-trip textbook provides T-90/T-30/T-14/T-7/T-1 checklist bands with conditional Date Pending items for unlocked
+    D1/airline/lodging, plus packing/SIM/power-bank/card/insurance/offline-doc teaching without invented cashback rates.
+  supporting_source_ids:
+  - rs-009
+  - rs-098
+  discovery_source_ids: []
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Airline-specific baggage and battery pages after tickets exist
+  - Bank overseas-fee pages re-read at T-14
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Pre-trip
+  jerry_relevance: Risk foresight and dual-phone readiness.
+  nikita_relevance: Packing comfort + instant camera + first-abroad checklist clarity.
+  notes: Card benefit percentages intentionally omitted.
 proposed_round_2_claims:
   day4: []
   shopping: []
   busan: []
   transport: []
   food: []
+  before: []

@@ -1,30 +1,57 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
+import { mediaById, mediaPublicUrl } from "../lib/data";
+
+const base = siteBase();
+const luggage = mediaById("packing-luggage-decision")!;
+const layers = mediaById("march-2027-layers-pack")!;
+const sim = mediaById("sim-esim-powerbank-card")!;
 ---
 <Handbook title="行李" current="more">
-  <p class="eyebrow">行李</p>
-  <h1 class="page-title">行李清單</h1>
-  <p class="muted">以 2027 年 3 月氣候為規劃基準；出發前一週再對一次天氣預報。</p>
+  <p class="eyebrow">行李教材</p>
+  <h1 class="page-title">七天行李與穿著</h1>
+  <span class="status status-provisional">目前暫定</span>
+  <p class="muted">以 2027 年 3 月氣候為規劃基準；出發前一週再對天氣預報。尺寸與電池規則以航空公司為準。</p>
 
-  <section class="surface">
-    <h2 style="margin-top:0">證件與裝置</h2>
+  <section class="surface-warm">
+    <h2 style="margin-top:0">行李箱怎麼選</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, luggage)} alt={luggage.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{luggage.alt_zh}</figcaption>
+    </figure>
     <ul class="list">
-      <li>護照</li>
-      <li>手機、充電器、行動電源</li>
-      <li>拍立得相機與底片（避免極端冷熱）</li>
-      <li>離線地圖與旅行書 PDF</li>
-      <li>卡片與少量現金</li>
+      <li>七天＋化妝品增量：多數情況需要可托運空間，但最終看航空公司與是否開顎</li>
+      <li>移動日（KTX）行李越少越好走</li>
     </ul>
   </section>
 
   <section class="surface">
-    <h2 style="margin-top:0">衣服（舒適優先）</h2>
+    <h2 style="margin-top:0">2027 年 3 月穿著原則</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, layers)} alt={layers.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{layers.alt_zh}</figcaption>
+    </figure>
     <ul class="list">
-      <li>適合偏涼與海風的層次穿搭</li>
-      <li>防風／防潑水外套</li>
-      <li>好走的鞋（主力）＋備用鞋</li>
-      <li>防磨襪子</li>
-      <li>配合韓服店規定的內搭（店家鎖定後確認）</li>
+      <li>層次穿搭：內層＋中層＋防風／防潑水外層</li>
+      <li>釜山海岸風可能更涼；預留一件可收的保暖</li>
+      <li>好走的鞋（主力）＋備用鞋；防磨襪</li>
+      <li>韓服內搭等店家鎖定後再確認</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">證件・裝置・拍立得</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, sim)} alt={sim.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{sim.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>護照、兩支手機、充電器、行動電源</li>
+      <li>拍立得相機與底片（避免極端冷熱）</li>
+      <li>離線地圖、旅行書 PDF、緊急卡</li>
+      <li>卡片與少量現金</li>
+      <li>藥品與個人用品（常用藥＋腸胃／感冒備藥）</li>
     </ul>
   </section>
 
@@ -36,4 +63,9 @@ import Handbook from "../layouts/Handbook.astro";
       <li>可重複使用購物袋（化妝品體積會變多）</li>
     </ul>
   </section>
+
+  <div class="btn-row">
+    <a class="btn" href={`${base}before/`}>出發前清單</a>
+    <a class="btn" href={`${base}emergency/`}>緊急</a>
+  </div>
 </Handbook>

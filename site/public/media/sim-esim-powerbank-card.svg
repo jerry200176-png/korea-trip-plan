@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">SIM eSIM power bank</title>
+  <desc id="desc">Warn and explain SIM contingency and airline-dependent power bank rules.</desc>
+  <defs><style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; }
+      .card-warn { fill: #fff8e8; stroke: #8a6a2a; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 30px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 18px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+</style></defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="48" y="52">網路與行動電源（Warn／Explain）</text>
+  <text class="muted" x="48" y="78">Jerry &amp; Nikita · 兩支手機 · 航空公司規則優先</text>
+  <rect class="card" x="50" y="120" width="540" height="430" rx="8"/>
+  <text class="h" x="78" y="170">SIM／eSIM</text>
+  <text class="t" x="78" y="210">T-30 選定並預先安裝測試</text>
+  <text class="t" x="78" y="240">兩支手機都要能熱點</text>
+  <text class="t" x="78" y="270">失敗備援：實體 SIM／機場方案</text>
+  <text class="muted" x="78" y="320">抵達疲勞＋行李時少排障</text>
+  <rect class="card-warn" x="620" y="120" width="530" height="430" rx="8"/>
+  <text class="h" x="648" y="170">行動電源</text>
+  <text class="t" x="648" y="210">瓦時／隨身規定查航空公司</text>
+  <text class="t" x="648" y="240">Airline-dependent · 不寫死單一 Wh</text>
+  <text class="t" x="648" y="270">充電器與線材備援各一</text>
+  <text class="muted" x="648" y="320">T-7 再查一次出發航司頁</text>
+</svg>

@@ -1073,6 +1073,146 @@ media:
   generation_tool: null
   generation_date: null
   purpose_note: Rescue|Compare queue vs alternatives when wait exceeds ~1 hour; teaching visual, not decoration
+- id: before-trip-timeline
+  type: map
+  subject: Orient T-90 T-30 T-14 T-7 T-1 before-trip checklist bands with Date Pending markers
+  usage_scope:
+  - before
+  - packing
+  - pdf
+  - credits
+  - day_page
+  local_path: media/diagrams/before-trip-timeline.svg
+  web_path: site/public/media/before-trip-timeline.svg
+  pdf_path: media/diagrams/before-trip-timeline.svg
+  source_url: media/diagrams/before-trip-timeline.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original before-trip timeline · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Orient teaching diagram; booking-dependent items marked Date Pending; no invented cashback rates
+  alt_zh: 出發前時間軸：T-90／T-30／T-14／T-7／T-1 清單帶，條件項標 Date Pending
+  alt_en: Before-trip timeline with T-90, T-30, T-14, T-7, and T-1 checklist bands; conditional items marked Date Pending
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Orient pre-departure checklist bands from T-90 to T-1; teaching visual, not decoration
+- id: packing-luggage-decision
+  type: map
+  subject: Compare carry-on versus checked luggage decision for a 7-day trip with airline-dependent size note
+  usage_scope:
+  - packing
+  - before
+  - pdf
+  - credits
+  - day_page
+  local_path: media/diagrams/packing-luggage-decision.svg
+  web_path: site/public/media/packing-luggage-decision.svg
+  pdf_path: media/diagrams/packing-luggage-decision.svg
+  source_url: media/diagrams/packing-luggage-decision.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original packing luggage decision · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Compare teaching diagram; no fixed cm/kg; airline-dependent banner
+  alt_zh: 七天行李尺寸決策：登機箱與托運比較，尺寸重量依航空公司
+  alt_en: Compare carry-on versus checked luggage for 7 days; size and weight airline-dependent
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Compare carry-on vs checked for a 7-day dual-city trip; teaching visual, not decoration
+- id: march-2027-layers-pack
+  type: map
+  subject: Explain March Korea layering stack for Seoul and Busan coast without invented exact temperatures
+  usage_scope:
+  - packing
+  - before
+  - pdf
+  - credits
+  - day_page
+  local_path: media/diagrams/march-2027-layers-pack.svg
+  web_path: site/public/media/march-2027-layers-pack.svg
+  pdf_path: media/diagrams/march-2027-layers-pack.svg
+  source_url: media/diagrams/march-2027-layers-pack.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original March layers pack diagram · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Explain teaching diagram; climate pattern only; no exact °C as booking facts
+  alt_zh: 三月韓國層次穿搭：內搭到風殼、首爾與釜山海岸差異、雨冷備案
+  alt_en: Explain March Korea layering from base to wind shell for Seoul and Busan coast with rain and cold contingencies
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Explain March layering habits without inventing exact temperatures; teaching visual, not decoration
+- id: sim-esim-powerbank-card
+  type: map
+  subject: Warn and Explain SIM eSIM contingency plus power bank airline rules that are airline-dependent
+  usage_scope:
+  - before
+  - packing
+  - pdf
+  - credits
+  - day_page
+  local_path: media/diagrams/sim-esim-powerbank-card.svg
+  web_path: site/public/media/sim-esim-powerbank-card.svg
+  pdf_path: media/diagrams/sim-esim-powerbank-card.svg
+  source_url: media/diagrams/sim-esim-powerbank-card.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original SIM eSIM power bank card · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Warn/Explain card; airline-dependent battery rules; no invented card cashback rates
+  alt_zh: SIM／eSIM 備援與行動電源警示：落地無網步驟、電池規則依航空、無現金回饋％
+  alt_en: Warn/Explain SIM and eSIM contingency with power-bank airline rules; no invented cashback rates
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Warn|Explain connectivity contingency and airline-dependent power-bank rules; teaching visual, not decoration
+- id: offline-docs-checklist
+  type: map
+  subject: Rescue offline documents checklist with passport entry insurance lodging Korean placeholders and 112/119
+  usage_scope:
+  - before
+  - packing
+  - pdf
+  - credits
+  - day_page
+  local_path: media/diagrams/offline-docs-checklist.svg
+  web_path: site/public/media/offline-docs-checklist.svg
+  pdf_path: media/diagrams/offline-docs-checklist.svg
+  source_url: media/diagrams/offline-docs-checklist.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original offline docs checklist · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Rescue offline checklist; lodging KO placeholders; emergency numbers; no private booking codes
+  alt_zh: 離線文件救援清單：護照入境、保險離線、住宿韓文占位、112／119
+  alt_en: Rescue offline docs checklist for passport/entry, insurance, lodging Korean address blanks, and 112/119
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Rescue printable offline documents checklist; teaching visual, not decoration
 kto_candidates:
 - id: kto-visitkorea-seoul-overview
   title: VisitKorea — Seoul destination photography (candidate)

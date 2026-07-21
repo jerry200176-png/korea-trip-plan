@@ -108,3 +108,10 @@ Append-only. Newest first.
 - **Status:** Teaching Provisional; shop hours revalidate before visit.
 - **Evidence:** `rs-104`/`rs-105` VisitKorea dwaejigukbap; `rs-106` Michelin how-to; prior pork shortlist claims.
 - **Doc:** `docs/research/FOOD_ATLAS.md`
+
+## 2026-07-21 — Before-Trip preparation textbook
+
+- **Decision:** Ship conditional T-90…T-1 checklist, luggage decision, March layering, SIM/power-bank, card principles without cashback invention, offline docs checklist.
+- **Status:** Teaching Provisional; airline/hotel/D1 items remain conditional.
+- **Evidence:** Existing KMA/weather + connectivity/payments handbook discipline; timeline hardening; functional diagrams.
+- **Doc:** `docs/research/BEFORE_TRIP_TEXTBOOK.md`

@@ -15,6 +15,8 @@ const pages = [
   "days/day-7/index.html",
   "transport/index.html",
   "food/index.html",
+  "before/index.html",
+  "packing/index.html",
   "emergency/index.html",
   "route/index.html",
   "before/index.html",

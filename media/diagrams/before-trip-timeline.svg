@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Before-trip timeline checklist</title>
+  <desc id="desc">Orient T-90 T-30 T-14 T-7 T-1 bands with Date Pending conditional items.</desc>
+  <defs><style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; }
+      .card-warn { fill: #fff8e8; stroke: #8a6a2a; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 30px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 18px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+</style></defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="52">出發前時間帶（Orient）</text>
+  <text class="muted" x="48" y="78">Jerry &amp; Nikita · 2026-07-21 · 條件式清單｜日期未定項目標 Date Pending</text>
+  <rect class="card" x="40" y="110" width="210" height="280" rx="8"/>
+  <rect x="56" y="126" width="70" height="26" rx="4" fill="#2f5d3a"/><text class="tag" x="68" y="144">T-90</text>
+  <text class="h" x="56" y="180">約三個月前</text>
+  <text class="t" x="56" y="210">保險方案比較</text>
+  <text class="t" x="56" y="236">住宿區域短名單</text>
+  <text class="t" x="56" y="262">護照效期備份</text>
+  <text class="t" x="56" y="288">讀卡海外說明</text>
+  <text class="muted" x="56" y="330">不寫死回饋％</text>
+  <rect class="card" x="270" y="110" width="210" height="280" rx="8"/>
+  <rect x="286" y="126" width="70" height="26" rx="4" fill="#2f5d3a"/><text class="tag" x="298" y="144">T-30</text>
+  <text class="h" x="286" y="180">約一個月前</text>
+  <text class="t" x="286" y="210">eSIM／SIM 決策</text>
+  <text class="t" x="286" y="236">雙手機測試</text>
+  <text class="t" x="286" y="262">行李尺寸決策</text>
+  <text class="t" x="286" y="288">KTX 僅規劃</text>
+  <text class="muted" x="286" y="330">Date Pending 購票</text>
+  <rect class="card" x="500" y="110" width="210" height="280" rx="8"/>
+  <rect x="516" y="126" width="70" height="26" rx="4" fill="#2f5d3a"/><text class="tag" x="528" y="144">T-14</text>
+  <text class="h" x="516" y="180">出發前兩週</text>
+  <text class="t" x="516" y="210">換匯／卡設定</text>
+  <text class="t" x="516" y="236">行李初稿</text>
+  <text class="t" x="516" y="262">韓服條款鎖定</text>
+  <text class="t" x="516" y="288">拍立得底片</text>
+  <text class="muted" x="516" y="330">算命若升級再確認</text>
+  <rect class="card" x="730" y="110" width="210" height="280" rx="8"/>
+  <rect x="746" y="126" width="70" height="26" rx="4" fill="#8a6a2a"/><text class="tag" x="758" y="144">T-7</text>
+  <text class="h" x="746" y="180">出發前一週</text>
+  <text class="t" x="746" y="210">天氣／營業重查</text>
+  <text class="t" x="746" y="236">PDF 存入手機</text>
+  <text class="t" x="746" y="262">住宿韓文地址</text>
+  <text class="t" x="746" y="288">航空公司電池規則</text>
+  <text class="muted" x="746" y="330">地址僅離線保存</text>
+  <rect class="card-warn" x="960" y="110" width="200" height="280" rx="8"/>
+  <rect x="976" y="126" width="70" height="26" rx="4" fill="#8a3b2a"/><text class="tag" x="988" y="144">T-1</text>
+  <text class="h" x="976" y="180">出發前一天</text>
+  <text class="t" x="976" y="210">護照／保險</text>
+  <text class="t" x="976" y="236">離線地圖</text>
+  <text class="t" x="976" y="262">緊急包 PDF</text>
+  <text class="t" x="976" y="288">雙手機充滿</text>
+  <text class="muted" x="976" y="330">開檔再確認一次</text>
+  <rect class="card-ok" x="40" y="420" width="1120" height="250" rx="8"/>
+  <text class="h" x="64" y="460">條件式（Date Pending）— 不是假裝已完成</text>
+  <text class="t" x="64" y="500">航班緩衝、住宿門牌、KTX 購票、韓服／算命最終條款、航空公司行李重量</text>
+  <text class="t" x="64" y="530">等出發日與訂票後再 harden；公開站不貼確認碼</text>
+  <text class="muted" x="64" y="580">功能：Orient 出發前節奏 · 不是 Booking Ready</text>
+</svg>
