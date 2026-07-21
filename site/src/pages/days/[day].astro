@@ -81,6 +81,14 @@ const expectLine =
     )
   }
   {
+    dayIndex === 2 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("day2-low-energy")!)} alt={mediaById("day2-low-energy")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("day2-low-energy")!.alt_zh}</figcaption>
+      </figure>
+    )
+  }
+  {
     dayIndex === 6 && (
       <figure class="day-visual day-visual-diagram">
         <img src={mediaPublicUrl(base, mediaById("gwangalli-optional")!)} alt={mediaById("gwangalli-optional")!.alt_zh} loading="lazy" />
