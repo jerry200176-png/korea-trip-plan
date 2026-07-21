@@ -1,7 +1,7 @@
 # Textbook Correction Loop
 
-**Updated:** 2026-07-20 (Research Quality Correction)  
-**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml)  
+**Updated:** 2026-07-21 (State Integrity Sync)  
+**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **72 / 100**  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
 ## Fixed cycle (every round / slice)
@@ -16,7 +16,7 @@
 8. Generate site and PDF (when the slice touches product surfaces)  
 9. Independent critic review  
 10. Fix blockers  
-11. Jerry & Nikita review  
+11. Jerry & Nikita review (at Final Acceptance Packet — not every slice)  
 12. Decide next Top 3 gaps  
 
 ## Gates (do not conflate)
@@ -34,9 +34,11 @@ Whole-product success bar (not CI green):
 - Time-sensitive facts have `checked_at`  
 - Jerry & Nikita human review has no blockers  
 
+**Current:** `textbook_final_exit_met: false` — do **not** emit READY / Final approved.
+
 ### Round 1 Acceptance
 
-Research-governance gate for the foundation PR:
+Research-governance gate for the foundation PR — **met: true** (2026-07-21).
 
 - Required docs exist  
 - Source counts recomputable (`scripts/recount-research-sources.py`)  
@@ -46,15 +48,17 @@ Research-governance gate for the foundation PR:
 - Scope not expanded into itinerary/site/PDF/media  
 - Independent review has no research-governance blocker  
 
-Round 1 Acceptance **does not** require Overall ≥ 90.
+Round 1 Acceptance **does not** require Overall ≥ 90.  
+Human blockers after R1: `pending_textbook_final_acceptance` (not `pending_round_1_acceptance`).
 
 ### Round 2 Slice Exit
 
-Each Round 2 PR closes on **slice** criteria, not Textbook Final Exit:
+Each Round 2 PR closed on **slice** criteria, not Textbook Final Exit:
 
-1. ~~Day 4 Feasibility Decision~~ (merged)
-2. ~~Nikita Shopping Teaching Slice~~ (Round 2B in progress)  
-3. ~~Busan Food & Coastal Rhythm~~ (Round 2C in progress)  
+1. ~~Day 4 Feasibility Decision~~ — **merged** (PR #13)  
+2. ~~Nikita Shopping Teaching Slice~~ — **merged** (PR #14)  
+3. ~~Busan Food & Coastal Rhythm~~ — **merged** (PR #15)  
+4. ~~Day 2 Hanbok & Palace Teaching~~ — **merged** (PR #16 @ `702c911`)  
 
 Every slice PR must include: research evidence · personalized rationale · ≥1 functional diagram · independent critic · no self-merge.
 
@@ -70,9 +74,16 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 | Website UX | 10 |
 | Publication quality | 5 |
 
+## Next Top 3 ROI gaps
+
+1. Transport Textbook Slice  
+2. Food Atlas Slice  
+3. Before-Trip Textbook Slice  
+
 ## Posture
 
 - Do not inflate scores  
 - Do not treat CI success as research completion  
 - Do not self-merge Textbook Edition PRs  
-- Do not start Round 2 implementation until Jerry accepts Round 1
+- Round 1 Acceptance is closed; continue autonomous slices until Textbook Final Exit + acceptance packet  
+- Control-state consistency enforced by `npm run check:control-state`  

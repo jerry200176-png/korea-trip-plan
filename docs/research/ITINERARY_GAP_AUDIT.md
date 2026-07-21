@@ -38,6 +38,8 @@ Stop verdicts: `Retain` · `Rework` · `Replace` · `Remove` · `Research Gap`
 
 ## Day 2 — 韓服・宮殿・北村
 
+> **Update (2026-07-21):** Teaching slice **merged** in PR #16 (`702c911`). See `DAY2_HANBOK_PALACE.md`. Shortlist teaching closed; T-14 shop lock and Tuesday palace alignment still D1-dependent.
+
 | Lens | Assessment |
 |------|------------|
 | Research depth | Medium for palace; Low for hanbok shop |
@@ -138,7 +140,7 @@ Stop verdicts: `Retain` · `Rework` · `Replace` · `Remove` · `Research Gap`
 | 廣安里 | Rework / droppable | Keep optional; seafood trap + energy |
 | 緩衝 | Retain | |
 
-**Special:** Day feels over-touristy; Round 2 should compare Haeundae-only vs Haeundae+Cheongsapo capsule with walking budgets.
+**Special:** Day postcard forcing addressed in Round 2C (PR #15): Haeundae Core vs Low-Energy + optional Cheongsapo/capsule; Gwangalli Optional evening.
 
 ---
 
@@ -181,6 +183,6 @@ Stop verdicts: `Retain` · `Rework` · `Replace` · `Remove` · `Research Gap`
 | Retain | 6 |
 | Rework | 8 |
 | Research Gap | 10 |
-| Replace / Remove candidates | 1–2 (JYP pending evidence) |
+| Replace / Remove candidates | JYP removed from Core (PR #13); fortune Optional/T-14 |
 
 Round 1 does **not** change the formal itinerary conclusions — this audit only grades them.
