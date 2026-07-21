@@ -45,3 +45,9 @@
 - Page 20 Food continuation: Chinese diagram titles without Identify/Warn chrome  
 - Page 27 Before: `日期待決定` present; no Date Pending  
 - Emergency p1: Korean phrases (`도와주세요`, etc.) readable; single page  
+
+## PR #26 follow-up (phrase + jargon)
+
+- Crustacean phrase corrected to `갑각류는 빼 주실 수 있나요?` on /phrases/, Emergency Pack, handbook, diagrams.  
+- Workflow jargon scrubbed from reader surfaces: harden → 再次確認並鎖定; Hard Stop → 必須停止並求助; Optional → 可選／有體力再去; Core/Core Plan → 主要行程; shortlist → 候選清單.  
+- SHA roles stabilized in packet + section manifest (`product_baseline_sha` / `render_source_sha`).  

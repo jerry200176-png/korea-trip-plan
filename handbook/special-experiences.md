@@ -2,16 +2,16 @@
 
 ## 韓服
 
-- Round 3 Day2：shortlist Hanboknam／Seohwa／Palace Fox 圈；T-14 鎖條款。
+- Round 3 Day2：候選清單 Hanboknam／Seohwa／Palace Fox 圈；T-14 鎖條款。
 - Pair with palace / bukchon morning (Day 2 skeleton).
 - Confirm rental duration, shoes, hair, and photo rules per shop.
 - Reserve only after dates lock; store confirmation offline.
 
 ## 韓國算命
 
-- Round 2A（2026-07-21）：目前**不鎖 Core 店家**。
+- Round 2A（2026-07-21）：目前**不鎖 主要行程 店家**。
 - 候選已研究：KoreaTravelEasy（預約頁標示 English currently not in service）；솟대 사주카페（官方旅遊頁寫需懂韓文、價格未公開）。
-- 產品決策：**Optional／出發前 T-14 再確認**書面英文或中文＋可預約入口＋江南／狎鷗亭可達，才執行。
+- 產品決策：**可選／有體力再去／出發前 T-14 再確認**書面英文或中文＋可預約入口＋江南／狎鷗亭可達，才執行。
 - 低體力或語言未確認：直接跳過，改休息／購物補齊。
 - Emotional framing: fun shared memory, not life directives.
 

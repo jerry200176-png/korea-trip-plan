@@ -386,7 +386,7 @@ ${busanMain.map((d) => dayPages(d, dayMedia[d.day_index], "transit_busan_days"))
 
 <section class="page compact">
   ${sec("shopping", "Shopping", "購物與退稅")}
-  <p>明洞單區完成化妝品與衣服補齊。弘大 Optional；聖水不進 Day 3。</p>
+  <p>明洞單區完成化妝品與衣服補齊。弘大可選／有體力再去；聖水不進 Day 3。</p>
   ${diagram("day3-myeongdong-route", 120)}
   ${diagram("korea-tax-refund-flow", 120)}
   <ul class="dense">
@@ -397,7 +397,7 @@ ${busanMain.map((d) => dayPages(d, dayMedia[d.day_index], "transit_busan_days"))
 
 <section class="page compact">
   ${sec("hanbok", "Hanbok &amp; Palace", "韓服與宮殿")}
-  <p>Day 2 Core：租借 → 宮殿合照 → 低體力可刪北村長坡。</p>
+  <p>Day 2 主要行程：租借 → 宮殿合照 → 低體力可刪北村長坡。</p>
   ${diagram("day2-hanbok-compare", 120)}
   ${diagram("day2-palace-areas", 110)}
   ${diagram("day2-low-energy", 100)}
@@ -564,7 +564,10 @@ async function renderPdf(html: string, outFile: string, withFooter = true) {
 
 type SectionManifest = {
   generated_at: string;
+  /** PR #25 merge on main — product content baseline for this repair series. */
   product_baseline_sha: string;
+  /** Git HEAD when this PDF/render was generated (not a claimed "main tip"). */
+  render_source_sha: string;
   total_pages: number;
   pages: Array<{ page: number; section: string }>;
   section_first_page: Record<string, number>;
@@ -586,15 +589,17 @@ function buildSectionManifest(pdfPath: string): SectionManifest {
     if (!(current in sectionFirst)) sectionFirst[current] = i;
     counts[current] = (counts[current] || 0) + 1;
   }
-  let baseline = "unknown";
+  const PRODUCT_BASELINE_SHA = "fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c"; // PR #25 merge
+  let renderSource = "unknown";
   try {
-    baseline = execSync("git rev-parse HEAD", { encoding: "utf8", cwd: root }).trim();
+    renderSource = execSync("git rev-parse HEAD", { encoding: "utf8", cwd: root }).trim();
   } catch {
     /* ignore */
   }
   return {
     generated_at: new Date().toISOString(),
-    product_baseline_sha: baseline,
+    product_baseline_sha: PRODUCT_BASELINE_SHA,
+    render_source_sha: renderSource,
     total_pages: total,
     pages,
     section_first_page: sectionFirst,

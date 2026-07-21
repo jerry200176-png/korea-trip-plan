@@ -7,6 +7,10 @@ import {
   READER_FORBIDDEN_PDFSEC_RE,
   READER_FORBIDDEN_SNAKE_RE,
   READER_FORBIDDEN_STATUS_RE,
+  READER_FORBIDDEN_JARGON_RE,
+  READER_FORBIDDEN_CORE_RE,
+  READER_FORBIDDEN_KO_CRUSTACEAN_RE,
+  READER_REQUIRED_KO_CRUSTACEAN,
 } from "./lib/reader-sanitize-extra.ts";
 
 /**
@@ -18,6 +22,9 @@ const forbiddenPatterns: Array<{ label: string; re: RegExp }> = [
   { label: "PDFSEC", re: READER_FORBIDDEN_PDFSEC_RE },
   { label: "visual-function label", re: READER_FORBIDDEN_FUNCTION_RE },
   { label: "internal status label", re: READER_FORBIDDEN_STATUS_RE },
+  { label: "workflow jargon", re: READER_FORBIDDEN_JARGON_RE },
+  { label: "workflow Core token", re: READER_FORBIDDEN_CORE_RE },
+  { label: "incorrect Korean crustacean phrase", re: READER_FORBIDDEN_KO_CRUSTACEAN_RE },
   { label: "raw snake_case profile key", re: READER_FORBIDDEN_SNAKE_RE },
   { label: "plc- id", re: /\bplc-[a-z0-9-]+/i },
   { label: "src- id", re: /\bsrc-[a-z0-9-]+/i },
@@ -166,6 +173,16 @@ for (const name of ["korea-trip-handbook.pdf", "emergency-pack.pdf"]) {
       console.error("FAIL handbook PDF still contains PDFSEC:");
     }
   }
+  if (name === "emergency-pack.pdf") {
+    if (READER_FORBIDDEN_KO_CRUSTACEAN_RE.test(text)) {
+      failed = true;
+      console.error("FAIL emergency PDF still has incorrect Korean crustacean phrase");
+    }
+    if (!text.includes(READER_REQUIRED_KO_CRUSTACEAN)) {
+      failed = true;
+      console.error(`FAIL emergency PDF missing required phrase: ${READER_REQUIRED_KO_CRUSTACEAN}`);
+    }
+  }
 }
 
 const home = path.join(siteDistDir, "index.html");
@@ -176,6 +193,20 @@ if (fs.existsSync(home)) {
     console.error("FAIL home missing Jerry 與 Nikita / Jerry & Nikita");
   }
 }
+
+const phrasesPage = path.join(siteDistDir, "phrases/index.html");
+if (fs.existsSync(phrasesPage)) {
+  const html = fs.readFileSync(phrasesPage, "utf8");
+  if (READER_FORBIDDEN_KO_CRUSTACEAN_RE.test(html)) {
+    failed = true;
+    console.error("FAIL /phrases/ still has incorrect Korean crustacean phrase");
+  }
+  if (!html.includes(READER_REQUIRED_KO_CRUSTACEAN)) {
+    failed = true;
+    console.error(`FAIL /phrases/ missing required phrase: ${READER_REQUIRED_KO_CRUSTACEAN}`);
+  }
+}
+
 
 const outPath = path.join(root, "docs/design-proof/READER_FACING_SCAN.txt");
 const svgOutPath = path.join(root, "docs/design-proof/SVG_READER_FACING_SCAN.txt");

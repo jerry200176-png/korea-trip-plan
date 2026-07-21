@@ -5,32 +5,33 @@
 
 **Date:** 2026-07-21  
 
-## SHA identity (avoid self-referential “main SHA”)
+## SHA identity (stable roles — do not self-reference tip into a file that changes tip)
 
-| Role | SHA | Notes |
-|------|-----|-------|
-| **Product baseline SHA** | `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c` | `main` tip after PR **#25** merge (acceptance packet). Recorded as `round_2_progress.final_audit.merge_sha`. |
-| **Packet PR / head SHA** | `e15fd89a2ed7734d97c498136b0cc2ee38ae4abf` | Branch `cursor/final-textbook-rendering-f752`. Not claimed as `main`. |
-| **Deployed Pages SHA** | unknown until Pages rebuild after merge | Live URL may lag; do not equate Pages deploy with packet head. |
+| Role | SHA / value | Notes |
+|------|-------------|-------|
+| **product_baseline_sha** | `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c` | `main` after PR **#25** merge. Unchanged by this repair series. |
+| **render_source_sha** | *(see `pdf-section-manifest.json` after each PDF generate)* | Git HEAD used when PDFs/renders were produced. |
+| **evidence_snapshot_sha** | `e15fd89a2ed7734d97c498136b0cc2ee38ae4abf` | First committed evidence bundle on PR #26; **not** “PR head”. |
+| **ci_verified_head_sha** | *(CI artifact / workflow metadata only — not hardcoded here)* | Recorded by CI when green; updating this packet must not invent a tip. |
+| **deployed_pages_sha** | unknown until Pages rebuild after merge | Populate only after deployment. |
 
-**PR #25 merge SHA (correct):** `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c`  
+**PR #25 merge SHA (product baseline):** `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c`  
+**PR #26:** open for independent re-verification — do not self-merge.  
 **Live URL:** https://jerry200176-png.github.io/korea-trip-plan/  
 **PDF URL:** https://jerry200176-png.github.io/korea-trip-plan/downloads/korea-trip-handbook.pdf  
 **Emergency PDF:** https://jerry200176-png.github.io/korea-trip-plan/downloads/emergency-pack.pdf  
 
 ---
 
-## Why READY was reverted
+## Why READY remains revoked
 
-Independent final-product review found rendering / evidence blockers:
+Independent re-verification of PR #26 found remaining blockers after the first rendering pass:
 
-1. Visible `PDFSEC:*` in reader PDF text  
-2. Broken CJK in PDF footers and functional SVGs (system-font `<img>` SVGs)  
-3. Internal visual-function labels in reader output (Orient / Explain / Warn / Rescue / Compare / Identify / Remember)  
-4. Emergency Pack near-blank second page  
-5. Stale evidence (`final_audit: in_pr`, packet “main SHA” drift)
+1. Incorrect Korean crustacean phrase (`갑각류 해산은…`)  
+2. Reader-facing workflow jargon (`harden` / `Hard Stop` / `Optional` / `Core` / `shortlist`)  
+3. Inconsistent SHA role labeling  
 
-**Do not restore** `READY FOR JERRY & NIKITA ACCEPTANCE` until an independent reviewer inspects rendered pages and clears blockers.
+**Do not restore** `READY FOR JERRY & NIKITA ACCEPTANCE` until an independent reviewer clears these on regenerated renders.
 
 ---
 
@@ -42,10 +43,10 @@ Independent final-product review found rendering / evidence blockers:
 | Factual trust | 11 | 15 | unchanged |
 | Personalization | 19 | 20 | unchanged |
 | Itinerary logic | 14 | 15 | unchanged |
-| Visual teaching | **pending_revalidation** | 15 | prior 15/15 **invalidated** until diagram/footer CJK + label scrub re-verified |
+| Visual teaching | **pending_revalidation** | 15 | prior 15 invalidated |
 | Website UX | 9 | 10 | unchanged |
-| Publication | **pending_revalidation** | 5 | prior 5/5 **invalidated** until PDFSEC-free PDF + Emergency Pack + evidence repair re-verified |
-| **Overall** | **pending_revalidation** | **100** | prior 91 invalidated with Visual/Publication |
+| Publication | **pending_revalidation** | 5 | prior 5 invalidated |
+| **Overall** | **pending_revalidation** | **100** | prior 91 invalidated |
 | P0 open | **0** | — | PASS |
 | Textbook Final Exit met | **false** | — | awaits human review after READY |
 
@@ -59,16 +60,18 @@ Itinerary decisions, destinations, and research scope were **not** changed in th
 |----------|------|
 | Full Textbook PDF | `docs/design-proof/korea-trip-handbook.pdf` |
 | Emergency Pack PDF | `docs/design-proof/emergency-pack.pdf` |
-| Section manifest (machine-only) | `docs/design-proof/pdf-section-manifest.json` |
+| Section manifest | `docs/design-proof/pdf-section-manifest.json` |
 | PDF text / reader scan | `docs/design-proof/READER_FACING_SCAN.txt` |
+| Public-text / jargon scan | `docs/design-proof/PUBLIC_TEXT_SCAN.txt` |
+| Korean phrase search | `docs/design-proof/KO_CRUSTACEAN_PHRASE_SCAN.txt` |
 | SVG reader-facing scan | `docs/design-proof/SVG_READER_FACING_SCAN.txt` |
 | Font embedding report | `docs/design-proof/FONT_EMBEDDING_REPORT.md` |
 | PDF CJK evidence | `docs/design-proof/PDF_CJK_EVIDENCE.md` |
 | 200 DPI page renders | `docs/design-proof/pdf-renders/` |
 | Contact sheet (35 pages) | `docs/design-proof/pdf-contact-sheet.png` |
 | PAGE_REVIEW | `docs/design-proof/PAGE_REVIEW.md` |
-| Publication critic (page cites) | `docs/research/critics/final-audit/PUBLICATION_CRITIC.md` |
-| Visual critic (page cites) | `docs/research/critics/final-audit/VISUAL_EDITOR_CRITIC.md` |
+| Publication critic | `docs/research/critics/final-audit/PUBLICATION_CRITIC.md` |
+| Visual critic | `docs/research/critics/final-audit/VISUAL_EDITOR_CRITIC.md` |
 
 ---
 

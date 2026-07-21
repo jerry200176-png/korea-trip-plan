@@ -141,7 +141,10 @@ function convertTextsToPaths(svg: string): string {
       path = font.getPath(text, x + dx, y, fontSize);
     }
 
-    const d = path.toPathData(2);
+    const d = path.toPathData(2).replace(/NaN/g, "0");
+    if (d.includes("NaN")) {
+      throw new Error(`NaN path data for text: ${text}`);
+    }
     const aria = encodeXml(text);
     return `<path d="${d}" fill="${fill}" aria-label="${aria}"/>`;
   });

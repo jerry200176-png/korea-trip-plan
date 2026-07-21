@@ -5,6 +5,15 @@ function scrubVisualFunctionLabels(text: string): string {
   out = out.replace(/\bRescue Flow\b/gi, "救援步驟");
   out = out.replace(/\bTaxi Rescue\b/gi, "改搭計程車");
   out = out.replace(/計程車\s*Rescue/g, "計程車救援");
+  out = out.replace(/\bHard Stop\b/gi, "必須停止並求助");
+  out = out.replace(/\bHardStop\b/gi, "必須停止並求助");
+  out = out.replace(/\bCore Plan\b/gi, "主要行程");
+  out = out.replace(/\bPrimary shortlist\b/gi, "優先候選清單");
+  out = out.replace(/\bshortlist\b/gi, "候選清單");
+  out = out.replace(/\bShortlist\b/g, "候選清單");
+  out = out.replace(/\bharden\b/gi, "再次確認並鎖定");
+  out = out.replace(/\bOptional\b/g, "可選／有體力再去");
+  out = out.replace(/\bCore\b/gi, "主要行程");
   out = out.replace(/\bDate Pending\b/gi, "日期待決定");
   out = out.replace(/\bBooking Ready\b/gi, "尚未完成預訂");
   out = out.replace(/[（(]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire)(?:\s*[／/·|,、]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire))*\s*[）)]/gi, "");
@@ -15,6 +24,7 @@ function scrubVisualFunctionLabels(text: string): string {
   out = out.replace(/\bavoid_long_queues\b/g, "避免長時間排隊");
   out = out.replace(/\bavoid_crustacean_seafood\b/g, "避免甲殼類海鮮");
   out = out.replace(/\bfeet_tire_easily\b/g, "腳容易累");
+  out = out.replace(/갑각류 해산은 빼 주실 수 있나요\?/g, "갑각류는 빼 주실 수 있나요?");
   out = out.replace(/\s{2,}/g, " ");
   out = out.replace(/（\s*）/g, "");
   out = out.replace(/\(\s*\)/g, "");

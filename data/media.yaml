@@ -441,7 +441,7 @@ media:
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Compare diagram for Round 2A; not place photography
-  alt_zh: Day 4 決策圖：比較兩家算命候選，並將 JYP 大樓移出 Core Plan
+  alt_zh: Day 4 決策圖：比較兩家算命候選，並將 JYP 大樓移出主要行程
   alt_en: Day 4 decision diagram comparing two fortune candidates and removing JYP tower from the core plan
   focal_point: center
   status: Approved
@@ -604,7 +604,7 @@ media:
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Compare teaching diagram
-  alt_zh: Day 6 Core 與低體力路線比較圖
+  alt_zh: Day 6 主要行程與低體力路線比較圖
   alt_en: Day 6 Core versus low-energy route compare
   focal_point: center
   status: Approved
@@ -630,7 +630,7 @@ media:
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Compare decision card
-  alt_zh: 廣安里 Optional 去留決策卡
+  alt_zh: 廣安里可選／有體力再去去留決策卡
   alt_en: Gwangalli optional go/no-go decision card
   focal_point: center
   status: Approved
@@ -844,7 +844,7 @@ media:
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Rescue decision tree with Hard Stop; no fake schedules
-  alt_zh: 走錯車救援樹：坐反、錯過站、錯過 KTX、末班已過的第一步、不要做與 Hard Stop
+  alt_zh: 走錯車救援樹：坐反、錯過站、錯過 KTX、末班已過的第一步、不要做與必須停止並求助
   alt_en: Lost or wrong-train rescue tree covering wrong direction, missed stop, missed KTX, and last train gone
   focal_point: center
   status: Approved

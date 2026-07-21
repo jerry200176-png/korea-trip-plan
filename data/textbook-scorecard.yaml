@@ -225,7 +225,12 @@ round_2_progress:
     updated_at: '2026-07-21'
     branch: cursor/final-textbook-rendering-f752
     pr: 26
-    head_sha: bbdfbd4d502eb83be601082d98d000fe6446fd7a
+    product_baseline_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
+    evidence_snapshot_sha: e15fd89a2ed7734d97c498136b0cc2ee38ae4abf
+    notes: >-
+      evidence_snapshot_sha points at the first committed evidence bundle on this PR
+      (git log --grep='add rendering evidence'). Do not store mutable PR tip as head_sha.
+      render_source_sha lives in pdf-section-manifest.json; ci_verified_head_sha is CI-only.
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'

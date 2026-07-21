@@ -40,7 +40,7 @@
 ## Busan local + Gimhae exit
 
 - Metro / bus / taxi; coastal evening returns may need taxi Rescue.
-- Gimhae exit has normal / luggage / low-energy versions; harden after flight time exists.
+- Gimhae exit has normal / luggage / low-energy versions; 再次確認並鎖定 after flight time exists.
 
 ## Taxi
 
@@ -51,6 +51,6 @@
 
 - Wrong direction / missed stop: next station, reverse.
 - Pair separation: stay at last agreed point; call; 112 if needed.
-- Hard Stop examples: lost passport/documents; lost luggage requiring report; missed international connection you cannot rebook alone.
+- 必須停止並求助 examples: lost passport/documents; lost luggage requiring report; missed international connection you cannot rebook alone.
 
 Full diagrams and recovery tables live on the public `/transport/` and `/emergency/` pages.
