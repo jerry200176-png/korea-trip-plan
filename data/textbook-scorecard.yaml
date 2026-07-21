@@ -1,14 +1,10 @@
-# Textbook Edition scorecard — honest baselines only.
-# Overall ≥ 90 is Textbook Final Exit, NOT Round 1 Acceptance.
-
 meta:
   product: Jerry & Nikita Korea Trip Textbook Edition
-  updated_at: "2026-07-20"
-  round: 1
-  quality_correction: "2026-07-20"
-  baseline_of: Media Edition Beta + PR #10 publication quality on main b907145
+  updated_at: '2026-07-21'
+  round: 2A
+  quality_correction: '2026-07-20'
+  baseline_of: Media Edition Beta + PR
   scoring_rule: Do not inflate. Unknowns lower the score.
-
 gates:
   textbook_final_exit:
     name: Textbook Final Exit
@@ -17,128 +13,127 @@ gates:
     personalization_min: 18
     visual_teaching_min: 13
     also_requires:
-      - no_p0_product_blockers
-      - no_unclear_license_images_in_public_outputs
-      - time_sensitive_facts_have_checked_at
-      - jerry_nikita_human_review_no_blockers
+    - no_p0_product_blockers
+    - no_unclear_license_images_in_public_outputs
+    - time_sensitive_facts_have_checked_at
+    - jerry_nikita_human_review_no_blockers
     met: false
     notes: Whole-product bar. Must not be demanded of Round 1 or of a single Round 2 slice.
-
   round_1_acceptance:
     name: Round 1 Acceptance
     met: true
-    accepted_at: "2026-07-21"
-    accepted_head: "0032dc01ebba75c2caabc45ac70e013dafc7f643"
+    accepted_at: '2026-07-21'
+    accepted_head: 0032dc01ebba75c2caabc45ac70e013dafc7f643
     critic: fresh-context-governance-only
     critic_verdict: PASS
     checklist:
-      - id: required_docs_exist
-        ok: true
-        detail: couple-profile, research method/rubric/copyright, sources, coverage, gap audits, visual candidates, website benchmark, loop, scorecard, roadmap, claim map, recount script
-      - id: source_counts_recomputable
-        ok: true
-        detail: npm run check:research-registry (+ python twin); fails on integrity errors
-      - id: no_category_padding
-        ok: true
-        detail: unique primary_category; benchmarks not counted as travel factual depth
-      - id: freshness_semantics_correct
-        ok: true
-        detail: freshness_basis_type model; current only with typed dated/operator/provider basis + valid dates; formal negative fixtures in test:research-registry
-      - id: top3_gaps_have_claim_map
-        ok: true
-        detail: role-split claim map (supporting/discovery/blocked/contradicting/missing)
-      - id: scope_not_expanded
-        ok: true
-        detail: no itinerary/site/PDF/media product changes in governance fixes
-      - id: independent_ai_review_no_governance_blocker
-        ok: true
-        detail: fresh-context governance critic PASS on 0032dc0; CI green with registry + freshness fixture gates
-    notes: >
-      Round 1 Acceptance is a research-governance gate. It does not require Textbook Final Exit 90.
+    - id: required_docs_exist
+      ok: true
+      detail: couple-profile, research method/rubric/copyright, sources, coverage, gap audits, visual candidates, website
+        benchmark, loop, scorecard, roadmap, claim map, recount script
+    - id: source_counts_recomputable
+      ok: true
+      detail: npm run check:research-registry (+ python twin); fails on integrity errors
+    - id: no_category_padding
+      ok: true
+      detail: unique primary_category; benchmarks not counted as travel factual depth
+    - id: freshness_semantics_correct
+      ok: true
+      detail: freshness_basis_type model; current only with typed dated/operator/provider basis + valid dates; formal negative
+        fixtures in test:research-registry
+    - id: top3_gaps_have_claim_map
+      ok: true
+      detail: role-split claim map (supporting/discovery/blocked/contradicting/missing)
+    - id: scope_not_expanded
+      ok: true
+      detail: no itinerary/site/PDF/media product changes in governance fixes
+    - id: independent_ai_review_no_governance_blocker
+      ok: true
+      detail: fresh-context governance critic PASS on 0032dc0; CI green with registry + freshness fixture gates
+    notes: 'Round 1 Acceptance is a research-governance gate. It does not require Textbook Final Exit 90.
 
+      '
   round_2_slice_exit:
     name: Round 2 Slice Exit
     applies_to_each_pr: true
     requires_overall_90: false
     each_slice_must_include:
-      - research_evidence
-      - personalized_rationale
-      - one_or_more_functional_diagrams
-      - independent_critic
-      - no_self_merge
+    - research_evidence
+    - personalized_rationale
+    - one_or_more_functional_diagrams
+    - independent_critic
+    - no_self_merge
     planned_slices:
-      - Day 4 Feasibility Decision
-      - Nikita Shopping Teaching Slice
-      - Busan Food & Coastal Rhythm
+    - Day 4 Feasibility Decision
+    - Nikita Shopping Teaching Slice
+    - Busan Food & Coastal Rhythm
     notes: A slice may close with local exit criteria even while overall product score remains below 90.
-
 dimensions:
   research_depth:
     max: 20
-    score: 9
-    notes: >
-      Primary travel factual evidence is 40 (not 86). Claim map exists. Many personalization
-      cells still Low; fortune shop remains P0 research risk.
+    score: 11
+    notes: Round 2A added operator/tourism fortune evidence (rs-087–090) and closed fortune P0 via Result B. Day 3 shopping
+      and Busan food shortlists remain open gaps.
   factual_trust:
     max: 15
-    score: 7
-    notes: >
-      A1/A2 split applied; freshness no longer overclaimed as current. Most ops freshness is
-      needs_recheck/unknown pending revalidation.
+    score: 8
+    notes: Day 4 fortune/JYP decisions cite readable operator/tourism pages; no current freshness overclaim. English-not-in-service
+      and Sotdae language caveats recorded.
   personalization:
     max: 20
-    score: 9
-    notes: >
-      Couple profile captured; Day 3/4/6 still lack evidence-backed executable couple-fit paths.
+    score: 11
+    notes: Day 4 now protects Jerry low-transfer/low-energy priorities while keeping Nikita fortune as Optional/T-14 and GOT7
+      as theme without forcing JYP HQ.
   itinerary_logic:
     max: 15
-    score: 8
-    notes: >
-      4N+2N skeleton sound; Day 3/4/6/7 logic or value gaps remain (audit only).
+    score: 10
+    notes: Day 4 Core rewritten to Gangnam light day; JYP removed; fortune droppable; rain/low-energy paths present. Day 3/6
+      teaching slices still pending.
   visual_teaching_value:
     max: 15
-    score: 5
-    notes: >
-      Candidates listed; no Round 1 media import. Teaching diagrams still missing in product.
+    score: 6
+    notes: Added functional Compare diagram for Day 4 fortune candidates + JYP remove decision. Shopping/Busan teaching visuals
+      still missing.
   website_ux:
     max: 10
     score: 6
-    notes: >
-      PR #10 reader cleanup on main; textbook IA not implemented (Round 1 non-goal).
+    notes: 'PR #10 reader cleanup on main; textbook IA not implemented (Round 1 non-goal).
+
+      '
   publication_quality:
     max: 5
     score: 4
-    notes: >
-      Media Edition publication quality on main; not Textbook PDF edition.
+    notes: 'Media Edition publication quality on main; not Textbook PDF edition.
 
+      '
 totals:
   overall:
     max: 100
-    score: 48
+    score: 56
   textbook_final_exit_met: false
   round_1_acceptance_met: true
-
 p0_open:
-  - id: p0-fortune-shop
-    summary: Day 4 fortune-telling theme has no feasible shop evidence (product-theme infeasibility risk)
-    claim_id: clm-fortune-shop-missing
-
+- id: p0-fortune-shop
+  summary: Day 4 fortune-telling theme has no feasible shop evidence (product-theme infeasibility risk)
+  claim_id: clm-fortune-shop-missing
 founder_decision_dependencies:
-  - id: dep-d1-dates
-    summary: D1 exact dates DecisionRequired — blocks weekday palace alignment, flight buffers, hotel holds, final bookings
-    blocks_round_2_research: false
-    blocks_final_hardening: true
-    notes: Not a Round 1 / Round 2 research P0. Tracked separately from p0-fortune-shop.
-
+- id: dep-d1-dates
+  summary: D1 exact dates DecisionRequired — blocks weekday palace alignment, flight buffers, hotel holds, final bookings
+  blocks_round_2_research: false
+  blocks_final_hardening: true
+  notes: Not a Round 1 / Round 2 research P0. Tracked separately from p0-fortune-shop.
 license_risks:
-  - KTO KOGL candidates not yet rights-confirmed for download
-
+- KTO KOGL candidates not yet rights-confirmed for download
 time_sensitive_checked_at_coverage: partial
-
 human_review:
   jerry_nikita_blockers: pending_round_1_acceptance
-
 round_1_top3_roi_gaps:
-  - Day 4 Feasibility Decision (fortune P0 + JYP retain/replace)
-  - Nikita Shopping Teaching Slice (cosmetics/clothes + tax-refund teaching)
-  - Busan Food & Coastal Rhythm (pork soup shortlist + Day 6 low-energy variant)
+- Nikita Shopping Teaching Slice (cosmetics/clothes + tax-refund teaching)
+- Busan Food & Coastal Rhythm (pork soup shortlist + Day 6 low-energy variant)
+- Day 2 Hanbok & Palace Teaching Slice
+round_2_progress:
+  day4_feasibility:
+    status: in_pr
+    outcome: Fortune Result B Optional/T-14; JYP Remove from Core
+    decision_doc: docs/research/DAY4_FEASIBILITY_DECISION.md
+    updated_at: '2026-07-21'

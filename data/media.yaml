@@ -1,407 +1,472 @@
 media:
-  - id: cover-hero
-    type: generated_illustration
-    subject: Seoul palace roof silhouette, Seoul→Busan route line, KTX motion, Busan sea horizon
-    usage_scope: [cover, home_hero, pdf, credits, review]
-    local_path: media/illustrations/cover-hero-illustration.png
-    web_path: site/public/media/cover-hero.webp
-    pdf_path: media/pdf/cover-hero.jpg
-    source_url: media/prompts/cover-hero.md
-    source_platform: Cursor GenerateImage
-    creator: Cursor Agent (AI-generated)
-    license: Original AI-generated illustration for this project
-    attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Resized to WebP/JPEG for web and PDF; no style transfer from living artists
-    alt_zh: 暖色插畫封面：首爾宮殿屋脊、KTX 路線與釜山海平線
-    alt_en: Warm editorial cover illustration with Seoul palace roof, KTX route, and Busan horizon
-    focal_point: center
-    status: Approved
-    prompt_path: media/prompts/cover-hero.md
-    generation_tool: Cursor GenerateImage
-    generation_date: "2026-07-20"
-    purpose_note: 首屏與 PDF 封面建立旅程期待感；非景點證據
-
-  - id: seoul-chapter
-    type: generated_illustration
-    subject: Palace geometry, hanok roof line, spring branch abstraction
-    usage_scope: [seoul_chapter, pdf, credits]
-    local_path: media/illustrations/seoul-chapter-illustration.png
-    web_path: site/public/media/seoul-chapter.webp
-    pdf_path: media/pdf/seoul-chapter.jpg
-    source_url: media/prompts/seoul-chapter.md
-    source_platform: Cursor GenerateImage
-    creator: Cursor Agent (AI-generated)
-    license: Original AI-generated illustration for this project
-    attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Web/PDF derivatives only
-    alt_zh: 首爾章節插畫：宮殿幾何、韓屋屋脊與春枝抽象
-    alt_en: Seoul chapter illustration with palace geometry and spring branch abstraction
-    focal_point: center
-    status: Approved
-    prompt_path: media/prompts/seoul-chapter.md
-    generation_tool: Cursor GenerateImage
-    generation_date: "2026-07-20"
-    purpose_note: 首爾章節分隔與情緒；非景點證據
-
-  - id: ktx-transition
-    type: generated_illustration
-    subject: Train window, route line, luggage abstraction
-    usage_scope: [ktx, pdf, credits]
-    local_path: media/illustrations/ktx-transition-illustration.png
-    web_path: site/public/media/ktx-transition.webp
-    pdf_path: media/pdf/ktx-transition.jpg
-    source_url: media/prompts/ktx-transition.md
-    source_platform: Cursor GenerateImage
-    creator: Cursor Agent (AI-generated)
-    license: Original AI-generated illustration for this project
-    attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Web/PDF derivatives only
-    alt_zh: KTX 過渡插畫：車窗風景、路線與行李抽象
-    alt_en: Calm KTX transition illustration with window view and luggage shapes
-    focal_point: center
-    status: Approved
-    prompt_path: media/prompts/ktx-transition.md
-    generation_tool: Cursor GenerateImage
-    generation_date: "2026-07-20"
-    purpose_note: 移動日節奏與安心感
-
-  - id: busan-chapter
-    type: generated_illustration
-    subject: Sea, bridge rhythm, beach horizon, quiet evening
-    usage_scope: [busan_chapter, pdf, credits]
-    local_path: media/illustrations/busan-chapter-illustration.png
-    web_path: site/public/media/busan-chapter.webp
-    pdf_path: media/pdf/busan-chapter.jpg
-    source_url: media/prompts/busan-chapter.md
-    source_platform: Cursor GenerateImage
-    creator: Cursor Agent (AI-generated)
-    license: Original AI-generated illustration for this project
-    attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Regenerated 2026-07-20 without baked-in text/seals to fix PDF crop isolating letter N; Web/PDF derivatives refreshed
-    alt_zh: 釜山章節插畫：海平線、橋的節奏與安靜傍晚
-    alt_en: Busan chapter illustration with sea horizon and quiet evening bridge rhythm
-    focal_point: center
-    status: Approved
-    prompt_path: media/prompts/busan-chapter.md
-    generation_tool: Cursor GenerateImage
-    generation_date: "2026-07-20"
-    purpose_note: 釜山章節情緒與海景期待
-
-  - id: shopping-atmosphere
-    type: generated_illustration
-    subject: Abstract cosmetics bottles and shopping bags without brand marks
-    usage_scope: [shopping, pdf, credits]
-    local_path: media/illustrations/shopping-atmosphere-illustration.png
-    web_path: site/public/media/shopping-atmosphere.webp
-    pdf_path: media/pdf/shopping-atmosphere.jpg
-    source_url: media/prompts/shopping-atmosphere.md
-    source_platform: Cursor GenerateImage
-    creator: Cursor Agent (AI-generated)
-    license: Original AI-generated illustration for this project
-    attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: No brand names or logos rendered
-    alt_zh: 購物氣氛插畫：抽象保養瓶與提袋，無商標
-    alt_en: Shopping mood illustration with abstract bottles and bags, no trademarks
-    focal_point: center
-    status: Approved
-    prompt_path: media/prompts/shopping-atmosphere.md
-    generation_tool: Cursor GenerateImage
-    generation_date: "2026-07-20"
-    purpose_note: 購物期待；避免真實店招商標照片
-
-  - id: seoul-palace-roof
-    type: photo
-    subject: Traditional Korean palace roof details at Gyeongbokgung
-    usage_scope: [seoul_chapter, day_page, pdf, credits]
-    local_path: media/original/photos/seoul-palace-roof.jpg
-    web_path: site/public/media/seoul-palace-roof.webp
-    pdf_path: media/pdf/seoul-palace-roof.jpg
-    source_url: https://unsplash.com/photos/traditional-korean-palace-roof-details-FwnW73Jgw8M
-    source_platform: Unsplash
-    creator: HsinKai Tai (@able527)
-    license: Unsplash License
-    attribution: Photo by HsinKai Tai on Unsplash
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Downloaded 2400px; converted to WebP/JPEG; no crop of faces (none present)
-    alt_zh: 景福宮傳統屋頂細節特寫
-    alt_en: Close-up of traditional Korean palace roof details at Gyeongbokgung
-    focal_point: 50% 40%
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: 首爾宮殿氛圍；補插畫之外的真實質感
-
-  - id: seoul-palace-gate
-    type: photo
-    subject: Heungnyemun Gate of Gyeongbokgung under clear sky
-    usage_scope: [seoul_chapter, day_page, today, pdf, credits]
-    local_path: media/original/photos/seoul-palace-gate.jpg
-    web_path: site/public/media/seoul-palace-gate.webp
-    pdf_path: media/pdf/seoul-palace-gate.jpg
-    source_url: https://unsplash.com/photos/a-tall-building-with-a-sky-in-the-background-e9OxvjF1lD0
-    source_platform: Unsplash
-    creator: Raymond Yeung (@optiny)
-    license: Unsplash License
-    attribution: Photo by Raymond Yeung on Unsplash
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Downloaded 2400px; WebP/JPEG derivatives
-    alt_zh: 晴空下的景福宮興禮門
-    alt_en: Heungnyemun Gate of Gyeongbokgung under a clear blue sky
-    focal_point: 50% 45%
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: Day 2／今日模式小型情境圖
-
-  - id: busan-haeundae
-    type: photo
-    subject: Haeundae Beach waterfront with city skyline
-    usage_scope: [busan_chapter, day_page, pdf, credits]
-    local_path: media/original/photos/busan-haeundae.jpg
-    web_path: site/public/media/busan-haeundae.webp
-    pdf_path: media/pdf/busan-haeundae.jpg
-    source_url: https://unsplash.com/photos/a-large-body-of-water-with-a-city-in-the-background-8rHC6k4PIME
-    source_platform: Unsplash
-    creator: Yujin Seo (@offshoot)
-    license: Unsplash License
-    attribution: Photo by Yujin Seo on Unsplash
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Downloaded 2400px; WebP/JPEG derivatives
-    alt_zh: 海雲台海面與對岸城市天際線
-    alt_en: Haeundae Beach water with Busan city skyline beyond
-    focal_point: 50% 55%
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: 釜山海景期待
-
-  - id: busan-gwangan
-    type: photo
-    subject: Gwangan Bridge over calm ocean waters in Busan
-    usage_scope: [busan_chapter, pdf, credits]
-    local_path: media/original/photos/busan-gwangan-bridge.jpg
-    web_path: site/public/media/busan-gwangan.webp
-    pdf_path: media/pdf/busan-gwangan.jpg
-    source_url: https://unsplash.com/photos/modern-suspension-bridge-over-calm-ocean-waters-_dhfi4nkRas
-    source_platform: Unsplash
-    creator: note thanun (@notethanun)
-    license: Unsplash License
-    attribution: Photo by note thanun on Unsplash
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Downloaded 2400px; WebP/JPEG derivatives
-    alt_zh: 釜山廣安大橋橫跨平靜海面
-    alt_en: Gwangan Bridge spanning calm ocean waters in Busan
-    focal_point: 50% 40%
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: 橋與海的節奏；與插畫互補
-
-  - id: seoul-street-food
-    type: photo
-    subject: Korean street food display at Mangwon Market stall
-    usage_scope: [food, pdf, credits]
-    local_path: media/original/photos/seoul-street-food.jpg
-    web_path: site/public/media/seoul-street-food.webp
-    pdf_path: media/pdf/seoul-street-food.jpg
-    source_url: https://unsplash.com/photos/busy-market-stall-with-korean-street-food-displayed-CvBTNK1ZfOA
-    source_platform: Unsplash
-    creator: Zeynep S. (@ispywithmylittleeye)
-    license: Unsplash License
-    attribution: Photo by Zeynep S. on Unsplash
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: Downloaded 2400px; WebP/JPEG; food-forward crop focus
-    alt_zh: 首爾市場攤位上的韓式街頭小吃陳列
-    alt_en: Korean street food displayed at a Seoul market stall
-    focal_point: 50% 45%
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: 美食期待；非特定餐廳證據
-
-  - id: icon-hanbok
-    type: icon
-    subject: Hanbok experience icon
-    usage_scope: [experiences, icon_strip, credits]
-    local_path: media/icons/hanbok.svg
-    web_path: site/public/media/icons/hanbok.svg
-    pdf_path: null
-    source_url: media/icons/hanbok.svg
-    source_platform: Original SVG
-    creator: Cursor Agent (original SVG)
-    license: Original work for this project
-    attribution: Original SVG icon · Korea trip handbook
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: none
-    alt_zh: 韓服體驗圖示
-    alt_en: Hanbok experience icon
-    focal_point: center
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: Experience strip
-
-  - id: icon-palace
-    type: icon
-    subject: Palace visit icon
-    usage_scope: [experiences, icon_strip, credits]
-    local_path: media/icons/palace.svg
-    web_path: site/public/media/icons/palace.svg
-    pdf_path: null
-    source_url: media/icons/palace.svg
-    source_platform: Original SVG
-    creator: Cursor Agent (original SVG)
-    license: Original work for this project
-    attribution: Original SVG icon · Korea trip handbook
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: none
-    alt_zh: 宮殿圖示
-    alt_en: Palace icon
-    focal_point: center
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: Experience strip
-
-  - id: icon-beach
-    type: icon
-    subject: Beach / sea scenery icon
-    usage_scope: [experiences, icon_strip, credits]
-    local_path: media/icons/beach.svg
-    web_path: site/public/media/icons/beach.svg
-    pdf_path: null
-    source_url: media/icons/beach.svg
-    source_platform: Original SVG
-    creator: Cursor Agent (original SVG)
-    license: Original work for this project
-    attribution: Original SVG icon · Korea trip handbook
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: none
-    alt_zh: 海景圖示
-    alt_en: Beach scenery icon
-    focal_point: center
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: Experience strip
-
-  - id: icon-food
-    type: icon
-    subject: Food icon
-    usage_scope: [experiences, icon_strip, credits]
-    local_path: media/icons/food.svg
-    web_path: site/public/media/icons/food.svg
-    pdf_path: null
-    source_url: media/icons/food.svg
-    source_platform: Original SVG
-    creator: Cursor Agent (original SVG)
-    license: Original work for this project
-    attribution: Original SVG icon · Korea trip handbook
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: none
-    alt_zh: 美食圖示
-    alt_en: Food icon
-    focal_point: center
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: Experience strip
-
-  - id: icon-shop
-    type: icon
-    subject: Shopping icon
-    usage_scope: [experiences, icon_strip, credits]
-    local_path: media/icons/shop.svg
-    web_path: site/public/media/icons/shop.svg
-    pdf_path: null
-    source_url: media/icons/shop.svg
-    source_platform: Original SVG
-    creator: Cursor Agent (original SVG)
-    license: Original work for this project
-    attribution: Original SVG icon · Korea trip handbook
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: none
-    alt_zh: 購物圖示
-    alt_en: Shopping icon
-    focal_point: center
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: Experience strip
-
-  - id: icon-fortune
-    type: icon
-    subject: Fortune-telling icon
-    usage_scope: [experiences, icon_strip, credits]
-    local_path: media/icons/fortune.svg
-    web_path: site/public/media/icons/fortune.svg
-    pdf_path: null
-    source_url: media/icons/fortune.svg
-    source_platform: Original SVG
-    creator: Cursor Agent (original SVG)
-    license: Original work for this project
-    attribution: Original SVG icon · Korea trip handbook
-    downloaded_at: "2026-07-20"
-    checked_at: "2026-07-20"
-    modification_notes: none
-    alt_zh: 算命圖示
-    alt_en: Fortune-telling icon
-    focal_point: center
-    status: Approved
-    prompt_path: null
-    generation_tool: null
-    generation_date: null
-    purpose_note: Experience strip
-
+- id: cover-hero
+  type: generated_illustration
+  subject: Seoul palace roof silhouette, Seoul→Busan route line, KTX motion, Busan sea horizon
+  usage_scope:
+  - cover
+  - home_hero
+  - pdf
+  - credits
+  - review
+  local_path: media/illustrations/cover-hero-illustration.png
+  web_path: site/public/media/cover-hero.webp
+  pdf_path: media/pdf/cover-hero.jpg
+  source_url: media/prompts/cover-hero.md
+  source_platform: Cursor GenerateImage
+  creator: Cursor Agent (AI-generated)
+  license: Original AI-generated illustration for this project
+  attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Resized to WebP/JPEG for web and PDF; no style transfer from living artists
+  alt_zh: 暖色插畫封面：首爾宮殿屋脊、KTX 路線與釜山海平線
+  alt_en: Warm editorial cover illustration with Seoul palace roof, KTX route, and Busan horizon
+  focal_point: center
+  status: Approved
+  prompt_path: media/prompts/cover-hero.md
+  generation_tool: Cursor GenerateImage
+  generation_date: '2026-07-20'
+  purpose_note: 首屏與 PDF 封面建立旅程期待感；非景點證據
+- id: seoul-chapter
+  type: generated_illustration
+  subject: Palace geometry, hanok roof line, spring branch abstraction
+  usage_scope:
+  - seoul_chapter
+  - pdf
+  - credits
+  local_path: media/illustrations/seoul-chapter-illustration.png
+  web_path: site/public/media/seoul-chapter.webp
+  pdf_path: media/pdf/seoul-chapter.jpg
+  source_url: media/prompts/seoul-chapter.md
+  source_platform: Cursor GenerateImage
+  creator: Cursor Agent (AI-generated)
+  license: Original AI-generated illustration for this project
+  attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Web/PDF derivatives only
+  alt_zh: 首爾章節插畫：宮殿幾何、韓屋屋脊與春枝抽象
+  alt_en: Seoul chapter illustration with palace geometry and spring branch abstraction
+  focal_point: center
+  status: Approved
+  prompt_path: media/prompts/seoul-chapter.md
+  generation_tool: Cursor GenerateImage
+  generation_date: '2026-07-20'
+  purpose_note: 首爾章節分隔與情緒；非景點證據
+- id: ktx-transition
+  type: generated_illustration
+  subject: Train window, route line, luggage abstraction
+  usage_scope:
+  - ktx
+  - pdf
+  - credits
+  local_path: media/illustrations/ktx-transition-illustration.png
+  web_path: site/public/media/ktx-transition.webp
+  pdf_path: media/pdf/ktx-transition.jpg
+  source_url: media/prompts/ktx-transition.md
+  source_platform: Cursor GenerateImage
+  creator: Cursor Agent (AI-generated)
+  license: Original AI-generated illustration for this project
+  attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Web/PDF derivatives only
+  alt_zh: KTX 過渡插畫：車窗風景、路線與行李抽象
+  alt_en: Calm KTX transition illustration with window view and luggage shapes
+  focal_point: center
+  status: Approved
+  prompt_path: media/prompts/ktx-transition.md
+  generation_tool: Cursor GenerateImage
+  generation_date: '2026-07-20'
+  purpose_note: 移動日節奏與安心感
+- id: busan-chapter
+  type: generated_illustration
+  subject: Sea, bridge rhythm, beach horizon, quiet evening
+  usage_scope:
+  - busan_chapter
+  - pdf
+  - credits
+  local_path: media/illustrations/busan-chapter-illustration.png
+  web_path: site/public/media/busan-chapter.webp
+  pdf_path: media/pdf/busan-chapter.jpg
+  source_url: media/prompts/busan-chapter.md
+  source_platform: Cursor GenerateImage
+  creator: Cursor Agent (AI-generated)
+  license: Original AI-generated illustration for this project
+  attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Regenerated 2026-07-20 without baked-in text/seals to fix PDF crop isolating letter N; Web/PDF derivatives
+    refreshed
+  alt_zh: 釜山章節插畫：海平線、橋的節奏與安靜傍晚
+  alt_en: Busan chapter illustration with sea horizon and quiet evening bridge rhythm
+  focal_point: center
+  status: Approved
+  prompt_path: media/prompts/busan-chapter.md
+  generation_tool: Cursor GenerateImage
+  generation_date: '2026-07-20'
+  purpose_note: 釜山章節情緒與海景期待
+- id: shopping-atmosphere
+  type: generated_illustration
+  subject: Abstract cosmetics bottles and shopping bags without brand marks
+  usage_scope:
+  - shopping
+  - pdf
+  - credits
+  local_path: media/illustrations/shopping-atmosphere-illustration.png
+  web_path: site/public/media/shopping-atmosphere.webp
+  pdf_path: media/pdf/shopping-atmosphere.jpg
+  source_url: media/prompts/shopping-atmosphere.md
+  source_platform: Cursor GenerateImage
+  creator: Cursor Agent (AI-generated)
+  license: Original AI-generated illustration for this project
+  attribution: AI-generated illustration · Cursor GenerateImage · 2026-07-20
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: No brand names or logos rendered
+  alt_zh: 購物氣氛插畫：抽象保養瓶與提袋，無商標
+  alt_en: Shopping mood illustration with abstract bottles and bags, no trademarks
+  focal_point: center
+  status: Approved
+  prompt_path: media/prompts/shopping-atmosphere.md
+  generation_tool: Cursor GenerateImage
+  generation_date: '2026-07-20'
+  purpose_note: 購物期待；避免真實店招商標照片
+- id: seoul-palace-roof
+  type: photo
+  subject: Traditional Korean palace roof details at Gyeongbokgung
+  usage_scope:
+  - seoul_chapter
+  - day_page
+  - pdf
+  - credits
+  local_path: media/original/photos/seoul-palace-roof.jpg
+  web_path: site/public/media/seoul-palace-roof.webp
+  pdf_path: media/pdf/seoul-palace-roof.jpg
+  source_url: https://unsplash.com/photos/traditional-korean-palace-roof-details-FwnW73Jgw8M
+  source_platform: Unsplash
+  creator: HsinKai Tai (@able527)
+  license: Unsplash License
+  attribution: Photo by HsinKai Tai on Unsplash
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Downloaded 2400px; converted to WebP/JPEG; no crop of faces (none present)
+  alt_zh: 景福宮傳統屋頂細節特寫
+  alt_en: Close-up of traditional Korean palace roof details at Gyeongbokgung
+  focal_point: 50% 40%
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: 首爾宮殿氛圍；補插畫之外的真實質感
+- id: seoul-palace-gate
+  type: photo
+  subject: Heungnyemun Gate of Gyeongbokgung under clear sky
+  usage_scope:
+  - seoul_chapter
+  - day_page
+  - today
+  - pdf
+  - credits
+  local_path: media/original/photos/seoul-palace-gate.jpg
+  web_path: site/public/media/seoul-palace-gate.webp
+  pdf_path: media/pdf/seoul-palace-gate.jpg
+  source_url: https://unsplash.com/photos/a-tall-building-with-a-sky-in-the-background-e9OxvjF1lD0
+  source_platform: Unsplash
+  creator: Raymond Yeung (@optiny)
+  license: Unsplash License
+  attribution: Photo by Raymond Yeung on Unsplash
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Downloaded 2400px; WebP/JPEG derivatives
+  alt_zh: 晴空下的景福宮興禮門
+  alt_en: Heungnyemun Gate of Gyeongbokgung under a clear blue sky
+  focal_point: 50% 45%
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Day 2／今日模式小型情境圖
+- id: busan-haeundae
+  type: photo
+  subject: Haeundae Beach waterfront with city skyline
+  usage_scope:
+  - busan_chapter
+  - day_page
+  - pdf
+  - credits
+  local_path: media/original/photos/busan-haeundae.jpg
+  web_path: site/public/media/busan-haeundae.webp
+  pdf_path: media/pdf/busan-haeundae.jpg
+  source_url: https://unsplash.com/photos/a-large-body-of-water-with-a-city-in-the-background-8rHC6k4PIME
+  source_platform: Unsplash
+  creator: Yujin Seo (@offshoot)
+  license: Unsplash License
+  attribution: Photo by Yujin Seo on Unsplash
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Downloaded 2400px; WebP/JPEG derivatives
+  alt_zh: 海雲台海面與對岸城市天際線
+  alt_en: Haeundae Beach water with Busan city skyline beyond
+  focal_point: 50% 55%
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: 釜山海景期待
+- id: busan-gwangan
+  type: photo
+  subject: Gwangan Bridge over calm ocean waters in Busan
+  usage_scope:
+  - busan_chapter
+  - pdf
+  - credits
+  local_path: media/original/photos/busan-gwangan-bridge.jpg
+  web_path: site/public/media/busan-gwangan.webp
+  pdf_path: media/pdf/busan-gwangan.jpg
+  source_url: https://unsplash.com/photos/modern-suspension-bridge-over-calm-ocean-waters-_dhfi4nkRas
+  source_platform: Unsplash
+  creator: note thanun (@notethanun)
+  license: Unsplash License
+  attribution: Photo by note thanun on Unsplash
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Downloaded 2400px; WebP/JPEG derivatives
+  alt_zh: 釜山廣安大橋橫跨平靜海面
+  alt_en: Gwangan Bridge spanning calm ocean waters in Busan
+  focal_point: 50% 40%
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: 橋與海的節奏；與插畫互補
+- id: seoul-street-food
+  type: photo
+  subject: Korean street food display at Mangwon Market stall
+  usage_scope:
+  - food
+  - pdf
+  - credits
+  local_path: media/original/photos/seoul-street-food.jpg
+  web_path: site/public/media/seoul-street-food.webp
+  pdf_path: media/pdf/seoul-street-food.jpg
+  source_url: https://unsplash.com/photos/busy-market-stall-with-korean-street-food-displayed-CvBTNK1ZfOA
+  source_platform: Unsplash
+  creator: Zeynep S. (@ispywithmylittleeye)
+  license: Unsplash License
+  attribution: Photo by Zeynep S. on Unsplash
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: Downloaded 2400px; WebP/JPEG; food-forward crop focus
+  alt_zh: 首爾市場攤位上的韓式街頭小吃陳列
+  alt_en: Korean street food displayed at a Seoul market stall
+  focal_point: 50% 45%
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: 美食期待；非特定餐廳證據
+- id: icon-hanbok
+  type: icon
+  subject: Hanbok experience icon
+  usage_scope:
+  - experiences
+  - icon_strip
+  - credits
+  local_path: media/icons/hanbok.svg
+  web_path: site/public/media/icons/hanbok.svg
+  pdf_path: null
+  source_url: media/icons/hanbok.svg
+  source_platform: Original SVG
+  creator: Cursor Agent (original SVG)
+  license: Original work for this project
+  attribution: Original SVG icon · Korea trip handbook
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: none
+  alt_zh: 韓服體驗圖示
+  alt_en: Hanbok experience icon
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Experience strip
+- id: icon-palace
+  type: icon
+  subject: Palace visit icon
+  usage_scope:
+  - experiences
+  - icon_strip
+  - credits
+  local_path: media/icons/palace.svg
+  web_path: site/public/media/icons/palace.svg
+  pdf_path: null
+  source_url: media/icons/palace.svg
+  source_platform: Original SVG
+  creator: Cursor Agent (original SVG)
+  license: Original work for this project
+  attribution: Original SVG icon · Korea trip handbook
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: none
+  alt_zh: 宮殿圖示
+  alt_en: Palace icon
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Experience strip
+- id: icon-beach
+  type: icon
+  subject: Beach / sea scenery icon
+  usage_scope:
+  - experiences
+  - icon_strip
+  - credits
+  local_path: media/icons/beach.svg
+  web_path: site/public/media/icons/beach.svg
+  pdf_path: null
+  source_url: media/icons/beach.svg
+  source_platform: Original SVG
+  creator: Cursor Agent (original SVG)
+  license: Original work for this project
+  attribution: Original SVG icon · Korea trip handbook
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: none
+  alt_zh: 海景圖示
+  alt_en: Beach scenery icon
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Experience strip
+- id: icon-food
+  type: icon
+  subject: Food icon
+  usage_scope:
+  - experiences
+  - icon_strip
+  - credits
+  local_path: media/icons/food.svg
+  web_path: site/public/media/icons/food.svg
+  pdf_path: null
+  source_url: media/icons/food.svg
+  source_platform: Original SVG
+  creator: Cursor Agent (original SVG)
+  license: Original work for this project
+  attribution: Original SVG icon · Korea trip handbook
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: none
+  alt_zh: 美食圖示
+  alt_en: Food icon
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Experience strip
+- id: icon-shop
+  type: icon
+  subject: Shopping icon
+  usage_scope:
+  - experiences
+  - icon_strip
+  - credits
+  local_path: media/icons/shop.svg
+  web_path: site/public/media/icons/shop.svg
+  pdf_path: null
+  source_url: media/icons/shop.svg
+  source_platform: Original SVG
+  creator: Cursor Agent (original SVG)
+  license: Original work for this project
+  attribution: Original SVG icon · Korea trip handbook
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: none
+  alt_zh: 購物圖示
+  alt_en: Shopping icon
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Experience strip
+- id: icon-fortune
+  type: icon
+  subject: Fortune-telling icon
+  usage_scope:
+  - experiences
+  - icon_strip
+  - credits
+  local_path: media/icons/fortune.svg
+  web_path: site/public/media/icons/fortune.svg
+  pdf_path: null
+  source_url: media/icons/fortune.svg
+  source_platform: Original SVG
+  creator: Cursor Agent (original SVG)
+  license: Original work for this project
+  attribution: Original SVG icon · Korea trip handbook
+  downloaded_at: '2026-07-20'
+  checked_at: '2026-07-20'
+  modification_notes: none
+  alt_zh: 算命圖示
+  alt_en: Fortune-telling icon
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Experience strip
+- id: day4-feasibility-diagram
+  type: map
+  subject: Day 4 fortune candidate compare and JYP remove-from-core decision diagram
+  usage_scope:
+  - day_page
+  - pdf
+  - credits
+  - review
+  local_path: media/diagrams/day4-feasibility-decision.svg
+  web_path: site/public/media/day4-feasibility-decision.svg
+  pdf_path: media/diagrams/day4-feasibility-decision.svg
+  source_url: media/diagrams/day4-feasibility-decision.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original decision diagram · Korea trip handbook · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Compare diagram for Round 2A; not place photography
+  alt_zh: Day 4 決策圖：比較兩家算命候選，並將 JYP 大樓移出 Core Plan
+  alt_en: Day 4 decision diagram comparing two fortune candidates and removing JYP tower from the core plan
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Compare fortune feasibility and explain JYP Remove-from-Core; teaching visual, not decoration
 kto_candidates:
-  - id: kto-visitkorea-seoul-overview
-    title: VisitKorea — Seoul destination photography (candidate)
-    source_url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=196061&menuSn=346
-    kogl_type: null
-    commercial_ok: null
-    modification_ok: null
-    attribution_format: null
-    founder_action: Jerry 需手動確認 KOGL Type、商用／修改條件與 attribution 格式後再申請／下載
-    status: NeedsFounderAction
-    notes: 僅候選；本輪未下載、未申請帳號
-
-  - id: kto-visitkorea-busan-overview
-    title: VisitKorea — Busan destination photography (candidate)
-    source_url: https://english.visitkorea.or.kr/svc/whereToGo/whereToGoList.do?menuSn=361
-    kogl_type: null
-    commercial_ok: null
-    modification_ok: null
-    attribution_format: null
-    founder_action: Jerry 需手動確認 KOGL 條款後再決定是否申請
-    status: NeedsFounderAction
-    notes: 僅候選；本輪未下載
+- id: kto-visitkorea-seoul-overview
+  title: VisitKorea — Seoul destination photography (candidate)
+  source_url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=196061&menuSn=346
+  kogl_type: null
+  commercial_ok: null
+  modification_ok: null
+  attribution_format: null
+  founder_action: Jerry 需手動確認 KOGL Type、商用／修改條件與 attribution 格式後再申請／下載
+  status: NeedsFounderAction
+  notes: 僅候選；本輪未下載、未申請帳號
+- id: kto-visitkorea-busan-overview
+  title: VisitKorea — Busan destination photography (candidate)
+  source_url: https://english.visitkorea.or.kr/svc/whereToGo/whereToGoList.do?menuSn=361
+  kogl_type: null
+  commercial_ok: null
+  modification_ok: null
+  attribution_format: null
+  founder_action: Jerry 需手動確認 KOGL 條款後再決定是否申請
+  status: NeedsFounderAction
+  notes: 僅候選；本輪未下載

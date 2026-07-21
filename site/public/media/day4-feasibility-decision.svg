@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Day 4 Feasibility Decision</title>
+  <desc id="desc">Compare two fortune candidates and record JYP Remove from Core Plan.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-bad { fill: #fff5f2; stroke: #8a3b2a; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 32px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 20px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 13px; font-weight: 700; fill: #fffdf8; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="54">Day 4 可行性決策（Compare）</text>
+  <text class="muted" x="48" y="82">Jerry &amp; Nikita · 江南單區 · 2026-07-21 · 功能：比較候選與去留決策</text>
+
+  <rect class="card-bad" x="40" y="110" width="540" height="300" rx="8"/>
+  <rect x="56" y="126" width="86" height="28" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="68" y="145">F1</text>
+  <text class="h" x="156" y="148">KoreaTravelEasy 사주</text>
+  <text class="t" x="56" y="186">位置：狎鷗亭（江南可達）／弘大（會破單區）</text>
+  <text class="t" x="56" y="212">預約：官網購物車 + voucher（國際卡／PayPal）</text>
+  <text class="t" x="56" y="238">語言：頁面標示 English currently not in service*</text>
+  <text class="t" x="56" y="264">價格／時長：約 USD 50–100；40／50／90 分</text>
+  <text class="t" x="56" y="290">取消：出發前 2 個工作日 17:00 KST 前可全額退</text>
+  <text class="t" x="56" y="326">結論：現況不可鎖進 Core → T-14 再驗證</text>
+  <text class="muted" x="56" y="358">證據：業者預約頁（checked 2026-07-21）</text>
+
+  <rect class="card-bad" x="620" y="110" width="540" height="300" rx="8"/>
+  <rect x="636" y="126" width="86" height="28" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="648" y="145">F2</text>
+  <text class="h" x="736" y="148">솟대 사주카페 Sotdae</text>
+  <text class="t" x="636" y="186">位置：狎鷗亭羅德奧 · 漢陽商街 2 樓（江南）</text>
+  <text class="t" x="636" y="212">預約：電話 02-514-3307；可現場候位喝茶</text>
+  <text class="t" x="636" y="238">語言：Visit Gangnam 寫「需懂韓文的旅客」</text>
+  <text class="t" x="636" y="264">價格／取消：公開頁未列 → 不視為可執行</text>
+  <text class="t" x="636" y="290">營業：每日 13:00–22:00（頁面 Last updated 2026-07-20）</text>
+  <text class="t" x="636" y="326">結論：拒絕 Core，直到語言／價格書面確認</text>
+  <text class="muted" x="636" y="358">證據：Visit Gangnam 官方旅遊頁（A2）</text>
+
+  <rect class="card-ok" x="40" y="440" width="540" height="240" rx="8"/>
+  <rect x="56" y="456" width="120" height="28" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="475">算命 Result B</text>
+  <text class="h" x="192" y="478">Optional／T-14 確認</text>
+  <text class="t" x="56" y="520">不硬選不可靠店。Core 改為江南輕量日：</text>
+  <text class="t" x="56" y="546">咖啡休息 → 購物補齊 → 打包準備 KTX。</text>
+  <text class="t" x="56" y="572">僅當書面英文／中文 + 可預約入口成立，</text>
+  <text class="t" x="56" y="598">且地點仍在江南／狎鷗亭時，才升級執行。</text>
+  <text class="muted" x="56" y="640">低體力：直接跳過 Optional 算命</text>
+
+  <rect class="card-ok" x="620" y="440" width="540" height="240" rx="8"/>
+  <rect x="636" y="456" width="150" height="28" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="648" y="475">JYP Remove Core</text>
+  <text class="h" x="800" y="478">GOT7 ≠ 大樓打卡</text>
+  <text class="t" x="636" y="520">總部在江東區成內／奧運公園一帶，</text>
+  <text class="t" x="636" y="546">不是江南 Day 4 cluster；僅外觀、無訪客導覽。</text>
+  <text class="t" x="636" y="572">Nikita 的 GOT7 價值保留為主題／周邊靈感，</text>
+  <text class="t" x="636" y="598">不把 Day 4 時間花在跨區外牆拍照。</text>
+  <text class="muted" x="636" y="640">無高價值官方活動時：時間還給休息與購物</text>
+</svg>

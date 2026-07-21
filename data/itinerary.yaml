@@ -180,51 +180,62 @@ days:
 
   - id: day-04
     day_index: 4
-    theme: GOT7 靈感・算命・輕量文化（江南單區）
-    one_priority: 完成一次韓國算命體驗；GOT7 相關僅作低強度打卡
-    wake_time: "08:00"
-    out_time: "09:00"
-    return_by: "21:00"
+    theme: 江南輕量日・購物補齊・算命待確認
+    one_priority: 保持江南單區低負荷；購物／休息優先；算命僅在 T-14 語言與預約確認後才加入
+    wake_time: "09:00"
+    out_time: "10:00"
+    return_by: "20:30"
     primary_areas: [Gangnam]
     city: Seoul
     energy: low
-    estimated_cost_krw: 100000
+    estimated_cost_krw: 90000
     walking_level: low
     buffer_percent: 25
-    photo_tips: 算命店外／活動合照；不強求室內
+    photo_tips: 江南街景兩人照；不安排天堂洞 JYP 大樓折返
     restroom_notes: 商場內
-    rain_plan: 全程室內算命＋咖啡
-    low_energy_plan: 取消 JYP 周邊，只留算命
-    closure_plan: 換預約時段或改同區塔羅咖啡館（需篩選）
-    droppable_items: [JYP 周邊打卡]
+    rain_plan: 室內商場／咖啡；取消戶外散步
+    low_energy_plan: 刪減購物拉伸，只留咖啡休息與打包
+    closure_plan: 算命若 T-14 仍無法確認語言與預約，則維持 Optional 不做
+    droppable_items: [街頭散步]
     emergency_return: 地鐵／計程車
     status: Provisional
+    notes: >
+      Round 2A 2026-07-21: JYP HQ removed from Core (exterior-only, Gangdong≠Gangnam).
+      Fortune Result B — no lockable Gangnam+language provider; Optional/T-14 recheck.
+      See docs/research/DAY4_FEASIBILITY_DECISION.md.
     blocks:
-      - start: "10:00"
-        end: "11:00"
-        title: JYP 周邊（可刪）
-        kind: place
-        place_id: plc-jyp-tower
-        dwell_minutes: 30
-        droppable: true
-        plan_b: 直接算命
-        notes: 確認無可進入設施則跳過；與算命同留在江南，避免跨區折返
-      - start: "12:00"
-        end: "14:00"
-        title: 韓國算命（江南候選・店家未鎖定）
-        kind: experience
-        reservation_deadline: "建議 T-14 起查語言與預約"
-        queue_risk: low
-        notes: 英語／中文服務需驗證；費用差異大；勿改排到鍾路造成當日折返
-        plan_b: 改同區塔羅或取消
-        droppable: false
-      - start: "14:00"
-        end: "21:00"
-        title: 輕量自由／打包準備移動日
+      - start: "10:30"
+        end: "12:00"
+        title: 江南／狎鷗亭咖啡與輕量散步
         kind: free
-        plan_b: 提早回住宿整理行李
-        notes: 化妝品／三眼怪若尚未買，優先在首爾補齊（釜山僅 2 晚）
         droppable: true
+        plan_b: 直達商場室內休息
+        notes: 低體力日暖身；不跨區去天堂洞 JYP
+      - start: "12:00"
+        end: "15:00"
+        title: 購物補齊（化妝品／衣服・若 Day 3 未完）
+        kind: shopping
+        droppable: true
+        plan_b: 改咖啡休息
+        notes: 只在江南／狎鷗亭／可接受短程範圍；避免塞滿
+      - start: "15:00"
+        end: "17:00"
+        title: 韓國算命（Optional・T-14 確認後才執行）
+        kind: experience
+        reservation_deadline: "T-14 必須書面確認英文或中文＋可預約入口；否則跳過"
+        queue_risk: medium
+        notes: >
+          候選見 DAY4_FEASIBILITY_DECISION：KoreaTravelEasy 英語檔期現況停用；
+          Sotdae 無書面語言確認。不得硬選不可靠店。
+        plan_b: 同區塔羅僅在同樣語言／預約條件滿足時才考慮；否則改休息
+        droppable: true
+      - start: "17:00"
+        end: "20:30"
+        title: 回住宿休息／打包準備移動日
+        kind: free
+        plan_b: 提早回住宿
+        notes: Day 5 KTX 前不塞景點
+        droppable: false
 
   - id: day-05
     day_index: 5
