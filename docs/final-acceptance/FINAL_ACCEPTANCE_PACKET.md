@@ -10,7 +10,7 @@
 | Role | SHA | Notes |
 |------|-----|-------|
 | **Product baseline SHA** | `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c` | `main` tip after PR **#25** merge (acceptance packet). Recorded as `round_2_progress.final_audit.merge_sha`. |
-| **Packet PR / head SHA** | `3dd608dfbc8a2f695fa54223556550fe2bc28298` | Branch `cursor/final-textbook-rendering-f752`. Not claimed as `main`. |
+| **Packet PR / head SHA** | `e15fd89a2ed7734d97c498136b0cc2ee38ae4abf` | Branch `cursor/final-textbook-rendering-f752`. Not claimed as `main`. |
 | **Deployed Pages SHA** | unknown until Pages rebuild after merge | Live URL may lag; do not equate Pages deploy with packet head. |
 
 **PR #25 merge SHA (correct):** `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c`  
