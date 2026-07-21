@@ -72,6 +72,14 @@ const expectLine =
       </figure>
     )
   }
+  {
+    dayIndex === 6 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("gwangalli-optional")!)} alt={mediaById("gwangalli-optional")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("gwangalli-optional")!.alt_zh}</figcaption>
+      </figure>
+    )
+  }
 
   <section class={`surface city-ribbon ${cityClass}`}>
     <h2 style="margin-top:0">今天最重要</h2>

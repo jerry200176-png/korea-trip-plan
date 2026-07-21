@@ -383,7 +383,6 @@ days:
     end: '21:00'
     title: 廣安里 Optional 或回住宿
     kind: free
-    place_id: plc-gwangalli
     droppable: true
     plan_b: 直接回住宿
     notes: 體力足夠才去；可評估 Anmok；不是失敗條件
