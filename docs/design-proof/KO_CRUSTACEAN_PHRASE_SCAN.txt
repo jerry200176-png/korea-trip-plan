@@ -1,0 +1,55 @@
+KO_CRUSTACEAN_PHRASE_SCAN
+scanned_at 2026-07-21T06:58:53Z
+render_source_sha b4ed52b66ce24b6a7e878207355ffc9502e261bb
+result PASS
+incorrect: 갑각류 해산은 빼 주실 수 있나요?
+required: 갑각류는 빼 주실 수 있나요?
+
+OK required present, incorrect absent: data/emergency-public.yaml
+OK required present, incorrect absent: handbook/korean-phrases.md
+OK required present, incorrect absent: site/src/pages/phrases.astro
+OK incorrect absent: site/dist/index.html
+OK incorrect absent: site/dist/transport/index.html
+OK incorrect absent: site/dist/photo/index.html
+OK incorrect absent: site/dist/overview/index.html
+OK incorrect absent: site/dist/food/index.html
+OK incorrect absent: site/dist/route/index.html
+OK incorrect absent: site/dist/guides/index.html
+OK incorrect absent: site/dist/bookings/index.html
+OK incorrect absent: site/dist/more/index.html
+OK incorrect absent: site/dist/days/index.html
+OK required present, incorrect absent: site/dist/phrases/index.html
+OK incorrect absent: site/dist/sources/index.html
+OK incorrect absent: site/dist/before/index.html
+OK incorrect absent: site/dist/review/index.html
+OK incorrect absent: site/dist/budget/index.html
+OK incorrect absent: site/dist/shopping/index.html
+OK required present, incorrect absent: site/dist/emergency/index.html
+OK incorrect absent: site/dist/today/index.html
+OK incorrect absent: site/dist/packing/index.html
+OK incorrect absent: site/dist/credits/index.html
+OK incorrect absent: site/dist/decisions/index.html
+OK incorrect absent: site/dist/days/day-3/index.html
+OK incorrect absent: site/dist/days/day-7/index.html
+OK incorrect absent: site/dist/days/day-2/index.html
+OK incorrect absent: site/dist/days/day-5/index.html
+OK incorrect absent: site/dist/days/day-1/index.html
+OK incorrect absent: site/dist/days/day-4/index.html
+OK incorrect absent: site/dist/days/day-6/index.html
+OK incorrect absent: site/dist/today/day-3/index.html
+OK incorrect absent: site/dist/today/day-7/index.html
+OK incorrect absent: site/dist/today/day-2/index.html
+OK incorrect absent: site/dist/today/day-5/index.html
+OK incorrect absent: site/dist/today/day-1/index.html
+OK incorrect absent: site/dist/today/day-4/index.html
+OK incorrect absent: site/dist/today/day-6/index.html
+OK incorrect absent: docs/design-proof/korea-trip-handbook.pdf
+OK required present, incorrect absent: docs/design-proof/emergency-pack.pdf
+
+## ripgrep incorrect phrase across reader trees
+OK no incorrect phrase in data/handbook/site/src/site/dist/docs/design-proof/media (non-png/pdf via rg text)
+
+## required phrase anchors
+site/src/pages/phrases.astro:19:      <li>可以不要甲殼類海鮮嗎？ — <span lang="ko">갑각류는 빼 주실 수 있나요?</span></li>
+data/emergency-public.yaml:16:  no_crustaceans: 갑각류는 빼 주실 수 있나요?
+handbook/korean-phrases.md:10:| 可以不要甲殼類海鮮嗎？（蝦蟹等） | 갑각류는 빼 주실 수 있나요? |

@@ -18,7 +18,7 @@
 | 19–20 | Food | Identify/Warn English tags gone from diagram surfaces; captions sanitized. |
 | 21–22 | Transport | Arrival / compare / recovery diagrams path-rendered. |
 | 23 | Shopping | Tax-refund teaching without Explain/Warn chrome. |
-| 24 | Hanbok | Compare shortlist without English function label. |
+| 24 | Hanbok | Compare 候選清單 without English function label. |
 | 25–26 | Photo | Framing / handoff / polaroid / rain / memory / etiquette. |
 | 27–28 | Before | Timeline + packing; Date Pending → 日期待決定 in captions. |
 | 29 | Emergency short | Numbers + pointer to Quick Pack; fits one page. |
@@ -51,3 +51,7 @@
 - Crustacean phrase corrected to `갑각류는 빼 주실 수 있나요?` on /phrases/, Emergency Pack, handbook, diagrams.  
 - Workflow jargon scrubbed from reader surfaces: harden → 再次確認並鎖定; Hard Stop → 必須停止並求助; Optional → 可選／有體力再去; Core/Core Plan → 主要行程; shortlist → 候選清單.  
 - SHA roles stabilized in packet + section manifest (`product_baseline_sha` / `render_source_sha`).  
+- Exact public-text scan: `docs/design-proof/PUBLIC_TEXT_SCAN.txt` (PASS).  
+- Korean phrase search: `docs/design-proof/KO_CRUSTACEAN_PHRASE_SCAN.txt` (PASS).  
+- Consistent SHA table: `docs/design-proof/SHA_IDENTITY_TABLE.md`.  
+- Status remains `FINAL ACCEPTANCE REPAIR REQUIRED`; Visual / Publication / Overall stay `pending_revalidation`.  

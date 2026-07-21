@@ -15,6 +15,8 @@
 | **ci_verified_head_sha** | *(CI artifact / workflow metadata only — not hardcoded here)* | Recorded by CI when green; updating this packet must not invent a tip. |
 | **deployed_pages_sha** | unknown until Pages rebuild after merge | Populate only after deployment. |
 
+Canonical one-page table for this evidence folder: `docs/design-proof/SHA_IDENTITY_TABLE.md`.
+
 **PR #25 merge SHA (product baseline):** `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c`  
 **PR #26:** open for independent re-verification — do not self-merge.  
 **Live URL:** https://jerry200176-png.github.io/korea-trip-plan/  
@@ -25,13 +27,13 @@
 
 ## Why READY remains revoked
 
-Independent re-verification of PR #26 found remaining blockers after the first rendering pass:
+This repair pass addresses the three remaining independent blockers on PR #26:
 
-1. Incorrect Korean crustacean phrase (`갑각류 해산은…`)  
-2. Reader-facing workflow jargon (`harden` / `Hard Stop` / `Optional` / `Core` / `shortlist`)  
-3. Inconsistent SHA role labeling  
+1. Incorrect Korean crustacean phrase (`갑각류 해산은…`) → corrected + regression gated  
+2. Reader-facing workflow jargon (`harden` / `Hard Stop` / `Optional` / `Core` / `shortlist`) → scrubbed + gated  
+3. Inconsistent SHA role labeling → stable roles only (`product_baseline_sha` / `render_source_sha` / `evidence_snapshot_sha` / CI-only `ci_verified_head_sha`)  
 
-**Do not restore** `READY FOR JERRY & NIKITA ACCEPTANCE` until an independent reviewer clears these on regenerated renders.
+**Do not restore** `READY FOR JERRY & NIKITA ACCEPTANCE` until an independent reviewer clears regenerated evidence. Visual / Publication / Overall stay `pending_revalidation`.
 
 ---
 
@@ -64,6 +66,7 @@ Itinerary decisions, destinations, and research scope were **not** changed in th
 | PDF text / reader scan | `docs/design-proof/READER_FACING_SCAN.txt` |
 | Public-text / jargon scan | `docs/design-proof/PUBLIC_TEXT_SCAN.txt` |
 | Korean phrase search | `docs/design-proof/KO_CRUSTACEAN_PHRASE_SCAN.txt` |
+| SHA identity table | `docs/design-proof/SHA_IDENTITY_TABLE.md` |
 | SVG reader-facing scan | `docs/design-proof/SVG_READER_FACING_SCAN.txt` |
 | Font embedding report | `docs/design-proof/FONT_EMBEDDING_REPORT.md` |
 | PDF CJK evidence | `docs/design-proof/PDF_CJK_EVIDENCE.md` |
