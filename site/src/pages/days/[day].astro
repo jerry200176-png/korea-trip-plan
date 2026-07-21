@@ -34,7 +34,7 @@ const cityClass =
 
 const dayMediaId =
   dayIndex === 2
-    ? "seoul-palace-gate"
+    ? "day2-hanbok-compare"
     : dayIndex === 3
       ? "day3-myeongdong-route"
       : dayIndex === 4
@@ -69,6 +69,22 @@ const expectLine =
       <figure class={dayVisualClass}>
         <img src={mediaPublicUrl(base, dayMedia)} alt={dayMedia.alt_zh} loading="lazy" />
         <figcaption class="media-caption">{dayMedia.alt_zh}</figcaption>
+      </figure>
+    )
+  }
+  {
+    dayIndex === 2 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("day2-palace-areas")!)} alt={mediaById("day2-palace-areas")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("day2-palace-areas")!.alt_zh}</figcaption>
+      </figure>
+    )
+  }
+  {
+    dayIndex === 2 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("day2-low-energy")!)} alt={mediaById("day2-low-energy")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("day2-low-energy")!.alt_zh}</figcaption>
       </figure>
     )
   }

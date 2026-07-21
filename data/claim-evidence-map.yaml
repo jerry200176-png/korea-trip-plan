@@ -1,6 +1,6 @@
 meta:
   updated_at: '2026-07-21'
-  round: 2C
+  round: 3-day2
   purpose: Round 1 research governance — role-split claim evidence map
   notes: Round 2A closes Day 4 fortune Result B (Optional/T-14) and JYP Remove-from-Core. Roles remain split; blocked IDs
     never in supporting.
@@ -25,29 +25,27 @@ claims:
   notes: Supporting = A1 royal palace page + A2 VisitSeoul hours/closure summary. Discovery = guard ceremony page context
     only.
 - claim_id: clm-hanbok-shop-unselected
-  claim: Day 2 hanbok experience is a confirmed Nikita priority but no shop is selected; queue/deposit/language remain Research
-    Gaps.
-  supporting_source_ids: []
+  claim: Day 2 hanbok now has a three-shop shortlist (Hanboknam / Seohwa / Palace Fox cluster) with deposit/hair/return teaching;
+    specific shop lock remains T-14.
+  supporting_source_ids:
+  - rs-095
+  - rs-011
   discovery_source_ids:
-  - rs-010
-  - rs-013
-  - rs-050
-  - rs-062
   - rs-067
   - rs-068
+  - rs-010
+  - rs-013
   blocked_source_ids: []
   contradicting_source_ids: []
   missing_evidence_requirements:
-  - At least three shortlisted hanbok shops near palace/Bukchon
-  - Each shop A1 or directly verified booking page
-  - Language support, deposit, and rain/cancellation rules
-  confidence: Low
-  checked_at: '2026-07-20'
+  - T-14 written language/deposit/return terms for the chosen shop
+  confidence: Medium
+  checked_at: '2026-07-21'
   requires_revalidation: true
   affected_day: Day 2
   jerry_relevance: Queue and walking risk uncontrolled without vendor evidence.
   nikita_relevance: Core priority without executable vendor path.
-  notes: Discovery sources show hanbok/palace context only; they do not confirm a selected shop.
+  notes: Gap closed at shortlist/teaching level, not booking-ready lock.
 - claim_id: clm-day3-shopping-path-thin
   claim: Day 3 now has a Myeongdong-only executable teaching path (Olive Young cosmetics + clothes stretch + rest + tax-refund
     flow); Hongdae is Optional separate segment; Seongsu skipped for Day 3 Core.
@@ -420,6 +418,42 @@ claims:
   affected_day: Day 6
   jerry_relevance: Avoids forced second beach.
   nikita_relevance: Night bridge photos available when worth it.
+  notes: ''
+- claim_id: clm-day2-bukchon-retain-short
+  claim: After Gyeongbokgung, Bukchon is retained as a short Core photo walk; Insadong and Ikseon-dong are Optional and not
+    required for success.
+  supporting_source_ids:
+  - rs-013
+  - rs-095
+  discovery_source_ids:
+  - rs-015
+  - rs-016
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: Day 2
+  jerry_relevance: Limits walking load.
+  nikita_relevance: Keeps strongest hanok photo value.
+  notes: ''
+- claim_id: clm-day2-low-energy-hanbok
+  claim: Low-energy Day 2 keeps nearest hanbok shop + palace highlight photos and deletes long Bukchon / Insadong / Ikseon
+    segments.
+  supporting_source_ids:
+  - rs-095
+  discovery_source_ids:
+  - rs-013
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: Day 2
+  jerry_relevance: Complete low-energy variant.
+  nikita_relevance: Photo memory retained.
   notes: ''
 proposed_round_2_claims:
   day4: []

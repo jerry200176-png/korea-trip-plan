@@ -381,7 +381,7 @@ sources:
   publisher_or_creator: Visit Seoul
   url: https://english.visitseoul.net/attractions/Gyeongbokgung-Palace_/73
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -409,7 +409,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -421,7 +421,7 @@ sources:
   publisher_or_creator: Royal Palaces and Tombs Center
   url: https://royal.cha.go.kr/ENG/contents/E101010000.do
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -448,7 +448,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
@@ -497,7 +497,7 @@ sources:
   publisher_or_creator: Visit Seoul
   url: https://english.visitseoul.net/attractions/Bukchon-Hanok-Village_/263
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -525,7 +525,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -574,7 +574,7 @@ sources:
   publisher_or_creator: Visit Seoul
   url: https://english.visitseoul.net/attractions/Insa-dong_/82
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: mixed
   city: Seoul
   topic:
@@ -602,7 +602,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -614,7 +614,7 @@ sources:
   publisher_or_creator: Visit Seoul
   url: https://english.visitseoul.net/attractions/IkseongdongHanokVillage_/37013
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -642,7 +642,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -3717,6 +3717,49 @@ sources:
   revalidate_by: '2026-08-18'
   freshness_basis: City feature page reviewed on checked_at via search content; operational hours must be revalidated.
   freshness_basis_type: page_review_no_update_date
+- source_id: rs-095
+  source_type: official_tourism
+  title: Seoul Hanbok Rental Guide 2026 — visit.seoul.kr
+  publisher_or_creator: Seoul Metropolitan Government / LetSeoul Magazine
+  url: https://visit.seoul.kr/en/articles/seoul-hanbok-rental-experience-guide-2026
+  publish_date: '2026-01-21'
+  accessed_at: '2026-07-21'
+  language: en
+  city: Seoul
+  topic:
+  - hanbok
+  - Gyeongbokgung
+  - Bukchon
+  - deposit
+  summary: Official Seoul magazine-style guide on hanbok rental areas, free palace entry, deposit/passport practices, and
+    Bukchon/Insadong/Ikseon options.
+  findings:
+  - Page dated January 21, 2026; HTTP 200 and fully readable on 2026-07-21.
+  - States deposit often ₩50,000 or original passport, refunded on return (shop-dependent framing).
+  - Lists Gyeongbokgung·Bukchon as most popular rental cluster; Insadong and Ikseon-dong as alternate areas.
+  - Notes free palace admission benefit for hanbok wearers; recommended 4-hour sample itinerary.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Deposit/return/buffer guidance reduces day risk.
+  nikita_relevance: Supports executable hanbok photo day.
+  claims_requiring_official_verification:
+  - Lock a specific shop policy at T-14; reconfirm free-entry rules.
+  corroborating_source_ids:
+  - rs-010
+  - rs-011
+  - rs-013
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: '2026-01-21'
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: Official Seoul tourism magazine page with publish date 2026-01-21 reviewed on checked_at; shop-level deposit/hours
+    still need T-14 confirmation.
+  freshness_basis_type: dated_official_notice
 blocked_sources:
 - source_id: rs-blocked-001
   url: https://www.klook.com/en-US/city/13-seoul-things-to-do/

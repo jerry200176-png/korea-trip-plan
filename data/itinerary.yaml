@@ -59,81 +59,87 @@ days:
 - id: day-02
   day_index: 2
   foundation_slice: true
-  theme: 韓服・宮殿・北村
-  one_priority: 完成一次韓服＋宮殿／韓屋合照體驗
-  wake_time: 07:30
-  out_time: 09:00
-  return_by: '21:00'
+  theme: 韓服・景福宮・北村短走
+  one_priority: 完成韓服＋宮殿合照；北村可縮短；仁寺洞／益善洞不預設全塞
+  wake_time: 08:30
+  out_time: 09:30
+  return_by: '20:00'
   primary_areas:
   - Jongno
   city: Seoul
   energy: medium
   estimated_cost_krw: 120000
   walking_level: medium
-  buffer_percent: 20
-  photo_tips: 80% 兩人合照；宮殿門與韓屋階梯各留一組
-  restroom_notes: 景福宮參觀動線內；北村咖啡館
-  rain_plan: 縮短戶外韓屋；改室內博物館或購物雨備
-  low_energy_plan: 只留韓服店外拍＋咖啡，取消北村坡道
-  closure_plan: 若宮殿公休改昌德宮或仁寺洞室內文化體驗（需當日重查）
+  buffer_percent: 25
+  photo_tips: 景福宮門樓／庭院兩人照；北村巷弄遠景；尊重居民勿大聲
+  restroom_notes: 宮殿／租借店／咖啡店
+  rain_plan: 縮短宮殿戶外；取消北村長坡；改室內休息後提早還韓服
+  low_energy_plan: 最近租借店 → 宮殿重點合照 → 刪北村或只留一點 → 提早還衣
+  closure_plan: 若星期二休館（D1 後確認）改昌德宮或其他開放宮殿／韓屋區
   droppable_items:
-  - 北村延伸巷弄
+  - 北村長坡
+  - 仁寺洞
+  - 益善洞
   emergency_return: 地鐵回住宿；避免尖峰強行轉乘
   status: Provisional
   blocks:
-  - start: 09:00
-    end: 09:45
-    title: 住宿→鍾路
+  - start: 09:30
+    end: '10:15'
+    title: 前往鍾路／景福宮站商圈
     kind: transit
     transit_mode: subway
-    transit_minutes: 30
-    transfers: 1
-    notes: 實際分鐘依住宿區更新
-    plan_b: 計程車若行李腳痠
     droppable: false
-  - start: 09:45
+    plan_b: 計程車
+    notes: 目標韓服 shortlist 店
+  - start: '10:15'
     end: '12:00'
-    title: 韓服體驗（店家未鎖定）
+    title: 韓服租借＋簡單髮型（shortlist）
     kind: experience
-    place_id: null
-    reservation_deadline: T-7 前確認是否需預約
-    queue_risk: medium
-    notes: Founder 未選店；勿寫成已訂
-    plan_b: 僅便服拍北村
     droppable: false
+    reservation_deadline: T-14 鎖店家條款（語言／押金／歸還）
+    queue_risk: medium
+    plan_b: 改備選店或縮短時長
+    notes: 候選：Hanboknam／Seohwa／Palace Fox 圈；押金或護照以店家為準
   - start: '12:00'
     end: '14:00'
-    title: 景福宮
+    title: 景福宮合照（重點區即可）
     kind: place
     place_id: plc-gyeongbokgung
-    dwell_minutes: 120
-    queue_risk: medium
-    map_url: https://map.naver.com/v5/search/%EA%B2%BD%EB%B3%B5%EA%B6%81
-    plan_b: 縮短至主要殿堂
     droppable: false
+    plan_b: 改其他當日開放宮殿
+    notes: 合格韓服常可免票；星期二休館規則 D1 後對齊
+    queue_risk: medium
   - start: '14:00'
     end: '15:00'
     title: 午餐（非海鮮主打）
     kind: meal
-    restaurant_id: rst-seoul-non-seafood-candidate
-    plan_b: 第二候選韓式定食
     droppable: false
+    plan_b: 宮殿外簡單吃
+    notes: 避開甲殼類主打
   - start: '15:00'
     end: '16:30'
-    title: 北村韓屋村
+    title: 北村韓屋短走（可縮短）
     kind: place
     place_id: plc-bukchon
-    dwell_minutes: 90
-    map_url: https://map.naver.com/v5/search/%EB%B6%81%EC%B4%8C%ED%95%9C%EC%98%A5%EB%A7%88%EC%9D%84
-    plan_b: 取消坡道段
     droppable: true
+    plan_b: 刪除改休息
+    notes: Retain photo value；低體力可只留一個觀景點
+    queue_risk: medium
   - start: '16:30'
-    end: '21:00'
-    title: 緩衝／回住宿／輕量自由
-    kind: buffer
-    notes: 含休息與晚餐彈性
-    plan_b: 直接回住宿
+    end: '17:30'
+    title: 歸還韓服＋休息
+    kind: rest
+    droppable: false
+    plan_b: 提早還
+    notes: 預留緩衝避免逾時
+  - start: '17:30'
+    end: '20:00'
+    title: 仁寺洞／益善洞 Optional 或回住宿
+    kind: free
     droppable: true
+    plan_b: 直接回住宿
+    notes: 不預設兩區都去
+  notes: 'Round 3 Day2 teaching: hanbok shortlist H1–H3; Bukchon retain short; Insadong/Ikseon optional. Shop lock at T-14.'
 - id: day-03
   day_index: 3
   theme: 明洞購物教材日・化妝品／衣服／退稅
