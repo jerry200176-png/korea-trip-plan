@@ -1213,6 +1213,146 @@ media:
   generation_tool: null
   generation_date: null
   purpose_note: Rescue printable offline documents checklist; teaching visual, not decoration
+
+- id: photo-couple-framing-guide
+  type: map
+  subject: Couple photo framing guide for Jerry and Nikita portrait and landscape
+  usage_scope: [photo, day_page, pdf, credits, review]
+  local_path: media/diagrams/photo-couple-framing-guide.svg
+  web_path: site/public/media/photo-couple-framing-guide.svg
+  pdf_path: media/diagrams/photo-couple-framing-guide.svg
+  source_url: media/diagrams/photo-couple-framing-guide.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original couple framing guide · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Shape silhouettes only; no faces; Orient/Explain/Identify framing
+  alt_zh: 兩人合照構圖指南：直式宮殿街景與橫式海岸海平線示意
+  alt_en: Couple framing guide showing portrait palace/street and landscape coast compositions
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Orient|Explain|Identify couple framing; teaching visual not decoration
+- id: photo-phone-handoff-timer
+  type: map
+  subject: Phone handoff and timer flow for couple photos
+  usage_scope: [photo, day_page, pdf, credits]
+  local_path: media/diagrams/photo-phone-handoff-timer.svg
+  web_path: site/public/media/photo-phone-handoff-timer.svg
+  pdf_path: media/diagrams/photo-phone-handoff-timer.svg
+  source_url: media/diagrams/photo-phone-handoff-timer.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original phone handoff timer flow · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Device-aware iPhone 14 / 17 Pro principles; no appearance comparison
+  alt_zh: 手機交接與倒數流程：鎖定畫面、請路人或倒數、收回檢查
+  alt_en: Phone handoff and timer steps for couple photos with device tips
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Explain|Identify|Warn queue avoidance for phone handoff
+- id: photo-instant-budget-card
+  type: map
+  subject: Instant camera daily film budget across seven days
+  usage_scope: [photo, packing, pdf, credits]
+  local_path: media/diagrams/photo-instant-budget-card.svg
+  web_path: site/public/media/photo-instant-budget-card.svg
+  pdf_path: media/diagrams/photo-instant-budget-card.svg
+  source_url: media/diagrams/photo-instant-budget-card.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original instant-camera budget card · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Day 2 and Day 6 priority; cold-weather film warn; not brand ad
+  alt_zh: 拍立得每日預算卡：Day2與Day6優先、寒冷保溫提醒
+  alt_en: Instant-camera daily film budget with Day 2 and Day 6 priorities
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Explain|Warn|Remember polaroid film budget
+- id: photo-rainy-day-guide
+  type: map
+  subject: Rainy-day couple photo backup compared to outdoor attempt
+  usage_scope: [photo, day_page, pdf, credits]
+  local_path: media/diagrams/photo-rainy-day-guide.svg
+  web_path: site/public/media/photo-rainy-day-guide.svg
+  pdf_path: media/diagrams/photo-rainy-day-guide.svg
+  source_url: media/diagrams/photo-rainy-day-guide.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original rainy-day photo guide · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Seasonal March principles; no invented rain timestamps
+  alt_zh: 雨天拍照備案：戶外縮短與室內窗景／中庭替代
+  alt_en: Rainy-day photo compare outdoor shorten vs indoor backup
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Compare|Warn|Remember rainy-day photo backups
+- id: photo-memory-card-system
+  type: map
+  subject: Daily memory prompt cards for Jerry and Nikita
+  usage_scope: [photo, review, pdf, credits]
+  local_path: media/diagrams/photo-memory-card-system.svg
+  web_path: site/public/media/photo-memory-card-system.svg
+  pdf_path: media/diagrams/photo-memory-card-system.svg
+  source_url: media/diagrams/photo-memory-card-system.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original daily memory card system · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Natural prompts only; no fictional couple dialogue
+  alt_zh: 每日回憶卡系統：留下什麼、最好吃、意外、不完美照片、拍立得註記
+  alt_en: Daily memory card prompts without invented romantic dialogue
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Remember|Explain daily memory prompts
+- id: photo-privacy-etiquette-warn
+  type: map
+  subject: Photo privacy and etiquette warn for residents shops and travelers
+  usage_scope: [photo, day_page, pdf, credits]
+  local_path: media/diagrams/photo-privacy-etiquette-warn.svg
+  web_path: site/public/media/photo-privacy-etiquette-warn.svg
+  pdf_path: media/diagrams/photo-privacy-etiquette-warn.svg
+  source_url: media/diagrams/photo-privacy-etiquette-warn.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original photo etiquette warn card · Jerry & Nikita · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Warn residents/shops/other travelers; no shame tone
+  alt_zh: 拍照禮儀警示：居民區、店家宮殿、其他旅客動線
+  alt_en: Photo etiquette warn card for residents, shops, and other travelers
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Warn|Remember photo privacy and etiquette
+
 kto_candidates:
 - id: kto-visitkorea-seoul-overview
   title: VisitKorea — Seoul destination photography (candidate)

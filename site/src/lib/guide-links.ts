@@ -11,6 +11,7 @@ const baseGuides: Record<string, GuideLink> = {
   phrases: { href: "phrases/", label: "實用韓文" },
   emergency: { href: "emergency/", label: "緊急離線" },
   hanbok: { href: "days/day-2/", label: "韓服與宮殿" },
+  photo: { href: "photo/", label: "拍照與回憶" },
   day1: { href: "days/day-1/", label: "Day 1 抵達" },
   day2: { href: "days/day-2/", label: "Day 2 韓服" },
   day3: { href: "days/day-3/", label: "Day 3 明洞" },
@@ -27,15 +28,15 @@ export function relatedGuidesForDay(dayIndex: number): GuideLink[] {
     case 1:
       return [baseGuides.transport, baseGuides.before];
     case 2:
-      return [baseGuides.phrases, baseGuides.shopping];
+      return [baseGuides.photo, baseGuides.phrases];
     case 3:
-      return [baseGuides.shopping, baseGuides.phrases];
+      return [baseGuides.shopping, baseGuides.photo];
     case 4:
       return [baseGuides.shopping, baseGuides.food];
     case 5:
       return [baseGuides.transport, baseGuides.food];
     case 6:
-      return [baseGuides.food, baseGuides.phrases];
+      return [baseGuides.photo, baseGuides.food];
     case 7:
       return [baseGuides.transport, baseGuides.emergency];
     default:
@@ -54,6 +55,7 @@ export function relatedDaysForGuide(
     | "phrases"
     | "emergency"
     | "hanbok"
+    | "photo"
 ): GuideLink[] {
   switch (guide) {
     case "transport":
@@ -71,6 +73,8 @@ export function relatedDaysForGuide(
       return [baseGuides.day7, baseGuides.day1];
     case "hanbok":
       return [baseGuides.day2];
+    case "photo":
+      return [baseGuides.day2, baseGuides.day6];
     default:
       return [];
   }
@@ -82,6 +86,7 @@ export const GUIDES_HUB: { href: string; label: string; blurb: string }[] = [
   { href: "food/", label: "食物", blurb: "辨識、點餐、甲殼類／蝦醬避雷" },
   { href: "before/", label: "出發前", blurb: "時程、SIM、文件、離線準備" },
   { href: "shopping/", label: "購物與退稅", blurb: "明洞路徑、退稅怎麼做" },
+  { href: "photo/", label: "拍照與回憶", blurb: "合照構圖、拍立得、每日回憶提示" },
   { href: "days/day-2/", label: "韓服與宮殿", blurb: "Day 2 合照與宮殿節奏" },
   { href: "emergency/", label: "緊急", blurb: "離線救援與回住宿" },
   { href: "phrases/", label: "實用韓文", blurb: "點餐、問路、拍照請路人" },

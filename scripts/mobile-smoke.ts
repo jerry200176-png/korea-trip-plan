@@ -19,6 +19,7 @@ const pages = [
   "packing/index.html",
   "shopping/index.html",
   "phrases/index.html",
+  "photo/index.html",
   "emergency/index.html",
   "route/index.html",
   "review/index.html",
@@ -52,10 +53,18 @@ function checkFile(rel: string) {
     }
   }
   if (rel === "guides/index.html") {
-    for (const needle of ["交通", "食物", "出發前", "購物", "韓服", "緊急", "實用韓文", "guides-hub"]) {
+    for (const needle of ["交通", "食物", "出發前", "購物", "拍照", "韓服", "緊急", "實用韓文", "guides-hub"]) {
       if (!html.includes(needle)) {
         failed = true;
         console.error(`${rel}: missing guides hub "${needle}"`);
+      }
+    }
+  }
+  if (rel === "photo/index.html") {
+    for (const needle of ["拍照與回憶", "iPhone 14", "iPhone 17 Pro", "拍立得", "photo-couple-framing"]) {
+      if (!html.includes(needle)) {
+        failed = true;
+        console.error(`${rel}: missing photo teaching "${needle}"`);
       }
     }
   }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Privacy and etiquette warn card</title>
+  <desc id="desc">Warn about photo etiquette for residents, shops, and other travelers.</desc>
+  <defs><style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-bad { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-warm { fill: #f7f0e4; stroke: #8a6a2a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .warn { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #8a3b2a; }
+      .frame { fill: none; stroke: #2c2416; stroke-width: 3; stroke-dasharray: 8 6; }
+</style></defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">拍照禮儀（Warn）</text>
+  <text class="muted" x="48" y="68">不阻礙居民、店家、其他旅客 · 2026-07-21</text>
+
+  <rect class="card-bad" x="40" y="100" width="360" height="520" rx="8"/>
+  <rect x="56" y="116" width="64" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="70" y="133">Warn</text>
+  <text class="h" x="56" y="180">居民區</text>
+  <text class="t" x="56" y="230">北村巷弄保持安靜</text>
+  <text class="t" x="56" y="270">不拍私人住宅門口</text>
+  <text class="t" x="56" y="310">不擋窄巷通行</text>
+  <text class="muted" x="56" y="380">Day 2 特別注意</text>
+
+  <rect class="card-bad" x="420" y="100" width="360" height="520" rx="8"/>
+  <rect x="436" y="116" width="64" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="450" y="133">Warn</text>
+  <text class="h" x="436" y="180">店家／宮殿</text>
+  <text class="t" x="436" y="230">遵守禁拍標示</text>
+  <text class="t" x="436" y="270">不踩草坪與禁區</text>
+  <text class="t" x="436" y="310">不強制店員幫拍</text>
+  <text class="t" x="436" y="350">店門口不排長隊擋路</text>
+  <text class="muted" x="436" y="420">購物日改室內中庭</text>
+
+  <rect class="card-bad" x="800" y="100" width="360" height="520" rx="8"/>
+  <rect x="816" y="116" width="64" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="830" y="133">Warn</text>
+  <text class="h" x="816" y="180">其他旅客</text>
+  <text class="t" x="816" y="230">車站不擋車門</text>
+  <text class="t" x="816" y="270">海岸不占岩岸太久</text>
+  <text class="t" x="816" y="310">請路人幫忙要簡短</text>
+  <text class="t" x="816" y="350">腳累就收工</text>
+  <text class="muted" x="816" y="420">功能：Warn｜Remember</text>
+  <text class="muted" x="816" y="450">安全與尊重 &gt; 張數</text>
+</svg>

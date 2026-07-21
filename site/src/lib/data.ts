@@ -59,6 +59,10 @@ export function loadEmergencyPublic() {
   return loadData<any>("emergency-public.yaml");
 }
 
+export function loadPhotoMemory() {
+  return loadData<any>("photo-memory.yaml");
+}
+
 export function loadMedia() {
   return loadData<{ media: any[]; kto_candidates: any[] }>("media.yaml");
 }

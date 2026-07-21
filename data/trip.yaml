@@ -32,7 +32,8 @@ preferences:
   max_queue_hours: 1
   couple_photo_ratio_target: 0.8
   devices:
-    - iPhone
+    - iPhone 14 (Jerry)
+    - iPhone 17 Pro (Nikita)
     - instant_camera
   lodging:
     clean_comfortable: true

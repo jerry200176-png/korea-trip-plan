@@ -33,12 +33,22 @@ const relatedDays = relatedDaysForGuide("phrases");
     </ul>
   </section>
 
+  <section class="surface">
+    <h2 style="margin-top:0">請人幫忙拍照</h2>
+    <ul class="list">
+      <li>可以幫我們拍一張嗎？ — <span lang="ko">사진 한 장만 찍어 주세요</span></li>
+      <li>再一張可以嗎？ — <span lang="ko">한 장만 더 찍어 주세요</span></li>
+      <li>謝謝 — <span lang="ko">감사합니다</span></li>
+    </ul>
+  </section>
+
   <section class="surface-quiet" aria-label="相關行程日">
     <h2 style="margin-top:0">相關行程日</h2>
     <div class="btn-row">
       {relatedDays.map((d) => (
         <a class="btn" href={`${base}${d.href}`}>{d.label}</a>
       ))}
+      <a class="btn" href={`${base}photo/`}>拍照教材</a>
       <a class="btn" href={`${base}guides/`}>教材目錄</a>
     </div>
   </section>

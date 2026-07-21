@@ -1,0 +1,118 @@
+# Jerry & Nikita — Photo & Memory teaching plans (Textbook Edition)
+# Seasonal light principles for 2027-03 target month. No invented exact sunset times.
+# No fictional couple dialogue or romantic scripts.
+
+meta:
+  updated_at: "2026-07-21"
+  status: Provisional
+  target_month: "2027-03"
+  devices:
+    jerry_phone: iPhone 14
+    nikita_phone: iPhone 17 Pro
+    instant_camera: true
+  couple_photo_ratio_target: 0.8
+  notes: >
+    Founder-confirmed devices (2026-07-21 Phase 4). Prefer couple photos and polaroid.
+    Placeholders reserved for future Jerry/Nikita own photos — do not invent faces.
+
+device_guidance:
+  wide_or_far: Prefer Nikita iPhone 17 Pro when available for wider scenes and night detail
+  night: Prefer Nikita iPhone 17 Pro; keep both phones warm in March cold
+  timer_handoff: Either phone; use timer / countdown so both appear in frame
+  polaroid: Budget film; cold weather slows film chemistry — keep pack close to body
+  no_long_queues: Do not queue long only for a photo spot
+
+daily_plans:
+  - day: 1
+    primary_moment: 抵達後第一張兩人合照（機場大廳或市區安頓後）
+    backup_or_rain: 住宿附近便利商店外牆／室內燈下
+    device: phone
+    orientation: portrait
+    composition: 半身即可；行李可入鏡，證明「我們到了」
+    light_crowd: 三月室內燈為主；人潮多時側身避開人流
+    ask_stranger: false
+    etiquette: 不擋住出境／提領動線；不在安檢區逗留拍照
+    worth_if_tired: true
+    memory_prompts:
+      - 今天最想留下什麼？
+      - 留一張拍立得寫日期與地點（可晚上補拍）
+
+  - day: 2
+    primary_moment: 景福宮門樓或庭院兩人韓服合照
+    backup_or_rain: 租借店室內全身鏡／簷下；縮短戶外
+    device: phone_then_polaroid
+    orientation: portrait
+    composition: 全身或 3/4；門樓當背景；留一點天空與屋簷
+    light_crowd: 三月白天偏柔；人多時等空檔或側門樓
+    ask_stranger: true
+    etiquette: 不踩草坪／禁區；不阻擋參觀動線；尊重北村居民
+    worth_if_tired: true
+    memory_prompts:
+      - 今天拍一張不用完美的照片
+      - 今天哪個意外最值得記住？
+
+  - day: 3
+    primary_moment: 明洞街景兩人照（購物袋可入鏡）
+    backup_or_rain: 百貨／商場室內中庭
+    device: phone
+    orientation: portrait
+    composition: 半身＋街景；不追網紅店門口長隊
+    light_crowd: 午後人潮高；側巷或室內較穩
+    ask_stranger: false
+    etiquette: 不擋店門口；不強制店員幫忙
+    worth_if_tired: false
+    memory_prompts:
+      - 今天最好吃的是什麼？
+
+  - day: 4
+    primary_moment: 江南輕量街景或咖啡店窗邊兩人照
+    backup_or_rain: 室內商場／咖啡
+    device: phone
+    orientation: landscape_or_portrait
+    composition: 輕鬆半身；強調休息節奏而非打卡
+    light_crowd: 平日白天通常可接受；仍避開尖峰人潮口
+    ask_stranger: false
+    etiquette: 不為外牆打卡擋路
+    worth_if_tired: false
+    memory_prompts:
+      - 今天最想留下什麼？
+
+  - day: 5
+    primary_moment: 車站月台或車廂外一張合照（不影響上下車）
+    backup_or_rain: 車站大廳柱旁
+    device: phone
+    orientation: portrait
+    composition: 半身＋站名／月台指標一角即可
+    light_crowd: 發車前後最擠；車門關閉前不硬拍
+    ask_stranger: false
+    etiquette: 不擋車門；不站黃線內
+    worth_if_tired: true
+    memory_prompts:
+      - 今天哪個意外最值得記住？
+
+  - day: 6
+    primary_moment: 海岸線兩人照（海雲台或當日選定海岸）
+    backup_or_rain: 室內窗景／咖啡；風大改背風處
+    device: phone_then_polaroid
+    orientation: landscape
+    composition: 腰部以上＋海平線；風大時側身減頭髮遮臉
+    light_crowd: 三月海岸光線變化快；陰天仍可拍；不假造日落時刻
+    ask_stranger: true
+    etiquette: 不踩禁區岩岸；不打擾其他旅客長拍
+    worth_if_tired: true
+    memory_prompts:
+      - 今天拍一張不用完美的照片
+      - 留一張拍立得寫日期與地點
+
+  - day: 7
+    primary_moment: 離境前輕鬆合照（商場或機場非安檢區）
+    backup_or_rain: 室內咖啡後一張即可
+    device: phone
+    orientation: portrait
+    composition: 半身；行李可入鏡作結尾
+    light_crowd: 依航班緩衝；不為拍照壓縮安檢時間
+    ask_stranger: false
+    etiquette: 安檢後管制區遵守標示
+    worth_if_tired: true
+    memory_prompts:
+      - 今天最想留下什麼？

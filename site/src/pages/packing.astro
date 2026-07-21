@@ -68,6 +68,7 @@ const relatedDays = relatedDaysForGuide("packing");
 
   <div class="btn-row">
     <a class="btn" href={`${base}before/`}>出發前清單</a>
+    <a class="btn" href={`${base}photo/`}>拍照與拍立得</a>
     {relatedDays.map((d) => (
       <a class="btn" href={`${base}${d.href}`}>{d.label}</a>
     ))}

@@ -2,7 +2,7 @@
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
 import { relatedGuidesForDay } from "../../lib/guide-links";
-import { loadItinerary, loadPlaces, loadRestaurants, mediaById, mediaPublicUrl } from "../../lib/data";
+import { loadItinerary, loadPhotoMemory, loadPlaces, loadRestaurants, mediaById, mediaPublicUrl } from "../../lib/data";
 import {
   areaZh,
   cityZh,
@@ -70,6 +70,7 @@ const expectLine =
                 : day.one_priority;
 
 const relatedGuides = relatedGuidesForDay(dayIndex);
+const photoPlan = (loadPhotoMemory().daily_plans ?? []).find((p: { day: number }) => p.day === dayIndex);
 ---
 <Handbook title={`第 ${day.day_index} 天`} current="days">
   <p class="muted"><a href={`${base}days/`}>← 全部行程</a></p>
@@ -255,6 +256,28 @@ const relatedGuides = relatedGuidesForDay(dayIndex);
       {sanitizeReaderText(day.emergency_return)}
     </p>
   </section>
+
+  {
+    photoPlan && (
+      <section class="surface-warm" aria-label="今日拍照與回憶">
+        <h2 style="margin-top:0">今日拍照與回憶</h2>
+        <p>
+          <strong>主時刻：</strong>
+          {photoPlan.primary_moment}
+        </p>
+        <p class="muted">
+          備案：{photoPlan.backup_or_rain} · {photoPlan.ask_stranger ? "可請路人" : "通常自助／倒數"}
+        </p>
+        <p>
+          <strong>回憶提示：</strong>
+          {(photoPlan.memory_prompts || []).join("／")}
+        </p>
+        <a class="btn" href={`${base}photo/`}>
+          打開拍照教材
+        </a>
+      </section>
+    )
+  }
 
   <section class="surface-quiet related-guides" aria-label="相關教材">
     <h2 style="margin-top:0">這天相關教材</h2>

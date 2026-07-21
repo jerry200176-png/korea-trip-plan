@@ -82,33 +82,34 @@ dimensions:
       limousine ticket caveat recorded. Still partial time-sensitive coverage.'
   personalization:
     max: 20
-    score: 18
-    notes: 'Before-Trip delta +1: couple packing, dual-phone, instant camera, card principles without invented cashback,
-      conditional T-90…T-1 checklist. Meets Final Exit personalization minimum.'
+    score: 19
+    notes: >-
+      Photo & Memory delta +1: device-aware iPhone 14 / 17 Pro + polaroid plans, Day 1–7
+      couple photo teaching, natural memory prompts (no fictional dialogue). Prior Before-Trip
+      packing/SIM/card teaching retained. Above Final Exit personalization minimum.
   itinerary_logic:
     max: 15
     score: 14
     notes: 'Transport delta +1: Day 1/5/7 teaching flows + Date Pending KTX discipline. Day 7 still flight-dependent.'
   visual_teaching_value:
     max: 15
-    score: 14
-    notes: 'Food Atlas delta +1: six Identify/order/warn/compare/queue diagrams wired on /food/. Still room for licensed
-      dish photos and Photo & Memory teaching.'
+    score: 15
+    notes: >-
+      Photo & Memory delta +1 to ceiling: six functional photo diagrams (framing, handoff, polaroid
+      budget, rain, memory cards, etiquette) wired on /photo/, days, PDF.
   website_ux:
     max: 10
     score: 9
     notes: >-
-      Website IA slice: dock Home/Journey/Today/Guides/Review, /guides/ hub, Home discovery
-      strip, Day↔Guide cross-links, Playwright 390/430 click-path suite. Not 10 — Photo & Memory
-      teaching surface and deeper a11y still open.
+      Website IA slice retained. Photo guide added to Guides hub; deeper a11y still open.
   publication_quality:
     max: 5
     score: 4
-    notes: Emergency pack gains transport rescue lines; full Textbook PDF restructuring still pending.
+    notes: Photo chapter added to handbook PDF; full Textbook PDF restructuring still pending.
 totals:
   overall:
     max: 100
-    score: 88
+    score: 90
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 p0_open: []
@@ -124,9 +125,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Photo & Memory Slice
 - Full Textbook PDF restructuring
 - Full-product Final Audit
+- Final Acceptance Packet
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -173,10 +174,17 @@ round_2_progress:
     merge_sha: 7cba9796f30e8691e608f03c8012d016b65807e2
     pr: 20
   website_ia:
-    status: in_pr
+    status: merged
     decision_doc: docs/research/WEBSITE_IA_DECISION.md
     updated_at: '2026-07-21'
-    branch: cursor/textbook-website-ia-e48c
+    merged_at: '2026-07-21'
+    merge_sha: 4c7d46e046ed98cc7d4f2e66de749e6669d859f9
+    pr: 22
+  photo_memory:
+    status: in_pr
+    decision_doc: docs/research/PHOTO_MEMORY_TEXTBOOK.md
+    updated_at: '2026-07-21'
+    branch: cursor/textbook-photo-memory-e48c
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
@@ -245,3 +253,13 @@ score_deltas_website_ia_2026_07_21:
   - other dimensions unchanged this slice
   - overall 87→88 (Final Exit still unmet; Photo & Memory and PDF restructuring remain)
   - no score inflation beyond IA evidence
+
+score_deltas_photo_memory_2026_07_21:
+  from_overall: 88
+  to_overall: 90
+  evidence:
+  - personalization +1 to 19 via device-aware couple photo plans and memory prompts
+  - visual_teaching +1 to 15 via six photo functional diagrams
+  - publication unchanged at 4 (compact Photo chapter only; full PDF restructure next)
+  - overall 88→90 but textbook_final_exit_met remains false (human review, publication floor, time-sensitive partial, D1 dates)
+  - no Booking Ready / Final approved claims

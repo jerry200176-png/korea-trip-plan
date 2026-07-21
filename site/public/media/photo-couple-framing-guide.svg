@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Couple photo framing guide</title>
+  <desc id="desc">Orient and Explain couple framing: portrait vs landscape, headroom, no face idealization.</desc>
+  <defs><style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-bad { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-warm { fill: #f7f0e4; stroke: #8a6a2a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .warn { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #8a3b2a; }
+      .frame { fill: none; stroke: #2c2416; stroke-width: 3; stroke-dasharray: 8 6; }
+</style></defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">兩人合照構圖（Orient／Explain）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · 形狀示意非真實臉孔 · 2026-07-21 · 功能：構圖與直橫式</text>
+
+  <rect class="card" x="40" y="96" width="360" height="480" rx="8"/>
+  <rect x="56" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="70" y="129">直式</text>
+  <text class="h" x="56" y="168">宮殿／街景半身</text>
+  <rect class="frame" x="100" y="200" width="220" height="300" rx="6"/>
+  <circle cx="170" cy="280" r="28" fill="#d9cbb3"/>
+  <circle cx="250" cy="280" r="28" fill="#cbb89a"/>
+  <rect x="140" y="320" width="140" height="120" rx="20" fill="#e6d7bf"/>
+  <text class="t" x="56" y="540">頭上留一點天空／屋簷</text>
+  <text class="muted" x="56" y="565">腳可裁；臉不需完美對稱</text>
+
+  <rect class="card" x="420" y="96" width="360" height="480" rx="8"/>
+  <rect x="436" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="450" y="129">橫式</text>
+  <text class="h" x="436" y="168">海岸／海平線</text>
+  <rect class="frame" x="450" y="240" width="300" height="180" rx="6"/>
+  <line x1="450" y1="310" x2="750" y2="310" stroke="#6a8fa8" stroke-width="3"/>
+  <circle cx="540" cy="350" r="22" fill="#d9cbb3"/>
+  <circle cx="600" cy="350" r="22" fill="#cbb89a"/>
+  <text class="t" x="436" y="480">腰部以上＋海平線</text>
+  <text class="muted" x="436" y="510">風大時側身減擋臉</text>
+  <text class="muted" x="436" y="535">不虛構精確日落時間</text>
+
+  <rect class="card-ok" x="800" y="96" width="360" height="480" rx="8"/>
+  <text class="h" x="816" y="140">記住</text>
+  <text class="t" x="816" y="185">1. 兩人同框優先於景點完整</text>
+  <text class="t" x="816" y="225">2. 直式適合韓服全身</text>
+  <text class="t" x="816" y="265">3. 橫式適合海岸</text>
+  <text class="t" x="816" y="305">4. 不比較外貌／身材</text>
+  <text class="t" x="816" y="345">5. 腳累時半身即可</text>
+  <text class="muted" x="816" y="420">未來可換成你們自己的照片</text>
+  <text class="muted" x="816" y="450">占位：自有照片 placeholder</text>
+  <text class="muted" x="816" y="520">功能：Orient｜Explain｜Identify</text>
+</svg>
