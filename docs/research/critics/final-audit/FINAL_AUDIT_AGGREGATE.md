@@ -1,50 +1,46 @@
 # Full-product Final Audit — Aggregate Critic
 
 **Date:** 2026-07-21  
-**main baseline:** `2c13cf3` (PDF restructure)  
-**Verdict:** **PASS** for product status `READY FOR JERRY & NIKITA ACCEPTANCE`
+**Product baseline SHA:** `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c` (PR **#25** merge)  
+**Verdict:** **BLOCKED** — product status `FINAL ACCEPTANCE REPAIR REQUIRED`
 
-Overall ≥90 does **not** imply Final Exit. Human review still required.
+Overall was previously claimed 91 with Visual 15 / Publication 5. Those two dimensions are **pending_revalidation** after independent rendering blockers. Do **not** treat prior READY as current.
 
 ## Dimension critics
 
 | Critic | Verdict | Notes |
 |--------|---------|-------|
-| Research | PASS | Depth 18; sources registry + claims present; no primary-category padding |
-| Factual Trust | PASS | Dated operator/VisitKorea cites; no invented 2027 fares; partial time-sensitive coverage disclosed |
-| Personalization | PASS | 19/20; couple profile + device-aware photo + food/shopping constraints |
-| Itinerary | PASS | 14/15; Days 1–7 complete; D1 dependency honest |
-| Visual Editor | PASS | 15/15; functional diagrams across Transport/Food/Before/Photo |
-| Website UX | PASS | 9/10; Guides hub + discovery click-paths 390/430 |
-| Publication | PASS | 5/5; Textbook TOC + section budgets; Quick Pack short |
-| Accessibility | PASS | Dock landmarks, aria-current, tap targets in discovery suite |
-| Offline | PASS | SW precache Home/Today/Days/Emergency/Guides; Emergency PDF |
-| Performance | PASS | Image scopes unchanged; base path intact; no new heavy galleries |
-| Privacy／Media License | PASS | First names only; licenses clear; KTO not downloaded |
+| Research | PASS (unchanged) | Depth 18; no itinerary/research scope expansion in repair |
+| Factual Trust | PASS (unchanged) | No invented fares; partial time-sensitive disclosed |
+| Personalization | PASS (unchanged) | 19/20 retained |
+| Itinerary | PASS (unchanged) | Decisions unchanged |
+| Visual Editor | **pending_revalidation** | See page-cited critic; prior 15/15 invalidated |
+| Website UX | PASS (unchanged) | Label scrub on hubs; discovery suite still required green |
+| Publication | **pending_revalidation** | See page-cited critic; prior 5/5 invalidated |
+| Accessibility | PASS (unchanged) | — |
+| Offline | PASS (unchanged) | Emergency PDF now 1 page |
+| Performance | PASS (unchanged) | Path SVGs larger; still gated by verify |
+| Privacy／Media License | PASS (unchanged) | — |
 
 ## Hard checks
 
 | Check | Result |
 |-------|--------|
-| Overall ≥ 90 | 91 PASS |
-| Research ≥ 18 | 18 PASS |
-| Personalization ≥ 18 | 19 PASS |
-| Visual ≥ 13 | 15 PASS |
+| Overall ≥ 90 | **pending_revalidation** (not claimed) |
+| Visual ≥ 13 | **pending_revalidation** |
+| Publication ceiling | **pending_revalidation** |
 | P0 = 0 | PASS |
-| Public image licenses clear | PASS |
-| Time-sensitive checked_at／revalidate_by | partial — disclosed |
-| Seven days complete | PASS |
-| Website ↔ PDF teaching aligned | PASS |
-| No engineering language (reader scan) | PASS |
+| Zero `PDFSEC:` in final PDF text | required on repair PR |
+| Emergency Pack no near-blank orphan | required (target 1 page) |
 | No Booking Ready false claim | PASS |
-| D1 dependency retained honestly | PASS |
+| READY FOR JERRY & NIKITA ACCEPTANCE | **NOT authorized** |
 
-## Blockers for Final Exit (not for READY status)
+## Blockers for restoring READY
 
-1. Jerry & Nikita human review not yet completed  
-2. Time-sensitive coverage still partial  
-3. D1 exact dates DecisionRequired  
+1. Independent reviewer confirms rendered pages (1, 2, 20, 27 + all diagram pages + Emergency)  
+2. Reader-facing scans clean (HTML, SVG title/desc/text/aria, PDF text)  
+3. Publication + Visual critics return PASS with page citations  
 
 ## Forbidden labels
 
-Do **not** set: Final approved · Booking Ready · Jerry & Nikita accepted.
+Do **not** set: READY FOR JERRY & NIKITA ACCEPTANCE · Final approved · Booking Ready · Jerry & Nikita accepted — until blockers clear.

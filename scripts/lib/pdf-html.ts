@@ -88,7 +88,10 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2;
 }
 .toc-title { flex: 1; }
 .toc-page { font-variant-numeric: tabular-nums; color: var(--color-ink-muted); min-width: 1.5em; text-align: right; }
-.sec-marker {
+/* Section identity is data-pdfsec + pdf-section-manifest.json — never visible PDFSEC text in final PDF. */
+[data-pdfsec][hidden] { display: none !important; }
+/* Draft-only markers: extractable for manifest; never included in final HTML. */
+.sec-marker-draft {
   font-size: 6.5pt;
   line-height: 1;
   margin: 0 0 2pt;
@@ -221,7 +224,13 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2;
   margin-top: 14pt;
   text-align: center;
 }
-.emergency { padding: 36pt; }
+.emergency { padding: 28pt 32pt; }
+.emergency.compact-emergency { padding: 22pt 28pt 18pt; }
+.emergency.compact-emergency h1 { font-size: 20pt; margin: 2pt 0 6pt; }
+.emergency.compact-emergency h2 { font-size: 12pt; margin: 8pt 0 4pt; }
+.emergency.compact-emergency p { margin: 2pt 0; font-size: 10pt; }
+.emergency.compact-emergency .big { font-size: 14pt; margin: 4pt 0; }
+.emergency.compact-emergency .eyebrow { margin-bottom: 2pt; }
 .emergency h1 { color: #9b2c2c; }
 .big { font-size: 16pt; font-family: var(--font-serif); }
 ul.dense li, ol.dense li { margin: 4pt 0; break-inside: avoid; page-break-inside: avoid; }

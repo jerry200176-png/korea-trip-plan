@@ -11,3 +11,4 @@ data/bookings.local.yaml
 site/public/downloads/*.pdf
 site/public/downloads/readiness-report.json
 docs/design-proof/pdf-renders/
+.fonts/

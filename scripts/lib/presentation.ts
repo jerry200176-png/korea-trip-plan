@@ -1,5 +1,7 @@
 /** Reader-facing presentation helpers (PDF + shared wording). */
 
+import { scrubVisualFunctionLabels } from "./reader-sanitize-extra.ts";
+
 export function statusZh(status: string): string {
   const map: Record<string, string> = {
     Confirmed: "已決定",
@@ -135,7 +137,7 @@ export function readerRefLabel(
 
 export function sanitizeReaderText(text: string | null | undefined): string {
   if (!text) return "";
-  return text
+  const base = text
     .replace(/Jerry\s*與女友/g, "Jerry 與 Nikita")
     .replace(/Jerry\s*&\s*女友/g, "Jerry & Nikita")
     .replace(/\bREPLACE_ME\b/g, "確認後補上")
@@ -153,11 +155,12 @@ export function sanitizeReaderText(text: string | null | undefined): string {
     .replace(/\broute_option\b/g, "路線")
     .replace(/\bstart_date\b/g, "出發日")
     .replace(/\bend_date\b/g, "回程日")
-    .replace(/\bBooking Ready\b/gi, "可預訂狀態")
+    .replace(/\bBooking Ready\b/gi, "尚未完成預訂")
+    .replace(/\bDate Pending\b/gi, "日期待決定")
     .replace(/\bTrip Ready\b/gi, "行程就緒")
     .replace(/\bDashboard\b/g, "首頁")
     .replace(/\btrip\.yaml\b/g, "旅程資料")
-    .replace(/\bdata\/[a-z0-9_.-]+\.yaml\b/gi, "旅程資料")
+    .replace(/\bdata\/[a-z0-9_.-]+\.ya?ml\b/gi, "旅程資料")
     .replace(/\bchecklists\/[a-z0-9_.-]*/gi, "出發前清單")
     .replace(/\bhandbook\/[a-z0-9_.-]*/gi, "旅行筆記")
     .replace(/\bupdate YAML\b/gi, "回填實際心得")
@@ -180,6 +183,7 @@ export function sanitizeReaderText(text: string | null | undefined): string {
     .replace(/\brst-[a-z0-9-]+/gi, "餐廳候選")
     .replace(/\s{2,}/g, " ")
     .trim();
+  return scrubVisualFunctionLabels(base);
 }
 
 export function formatClock(value: string): string {

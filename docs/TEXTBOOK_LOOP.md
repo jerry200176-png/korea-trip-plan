@@ -1,7 +1,7 @@
 # Textbook Correction Loop
 
-**Updated:** 2026-07-21 (Final Acceptance Packet — READY FOR JERRY & NIKITA ACCEPTANCE)  
-**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **91 / 100**  
+**Updated:** 2026-07-21 (FINAL ACCEPTANCE REPAIR REQUIRED — rendering blockers)  
+**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **pending_revalidation** (prior 91 invalidated)  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
 ## Fixed cycle (every round / slice)
@@ -34,7 +34,7 @@ Whole-product success bar (not CI green):
 - Time-sensitive facts have `checked_at`  
 - Jerry & Nikita human review has no blockers  
 
-**Current:** `textbook_final_exit_met: false` — do **not** emit READY / Final approved.
+**Current:** `textbook_final_exit_met: false` — do **not** emit READY / Final approved. READY was revoked for rendering repair.
 
 ### Round 1 Acceptance
 
@@ -76,11 +76,11 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 
 ## Next Top 3 ROI gaps
 
-1. Jerry & Nikita human acceptance review  
-2. Time-sensitive facts revalidation before travel  
-3. D1 exact dates decision  
+1. Final textbook rendering repair (PDFSEC / CJK / labels / Emergency Pack)  
+2. Independent Publication + Visual re-verification  
+3. Jerry & Nikita human acceptance review (only after READY restored)  
 
-Textbook PDF restructure merged (PR #24 @ `2c13cf3`). Product status: **READY FOR JERRY & NIKITA ACCEPTANCE**. Do **not** claim Final approved / Booking Ready / accepted. Packet: [`docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md`](final-acceptance/FINAL_ACCEPTANCE_PACKET.md).
+PR #25 merged the acceptance packet @ `fc7a2ff`, then independent review **revoked** READY. Product status: **FINAL ACCEPTANCE REPAIR REQUIRED**. Do **not** claim READY / Final approved / Booking Ready / accepted. Packet: [`docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md`](final-acceptance/FINAL_ACCEPTANCE_PACKET.md).
 
 ## Posture
 

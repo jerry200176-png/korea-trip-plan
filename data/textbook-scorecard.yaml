@@ -93,10 +93,12 @@ dimensions:
     notes: 'Transport delta +1: Day 1/5/7 teaching flows + Date Pending KTX discipline. Day 7 still flight-dependent.'
   visual_teaching_value:
     max: 15
-    score: 15
+    score: null
+    pending_revalidation: true
+    prior_score_invalidated: 15
     notes: >-
-      Photo & Memory delta +1 to ceiling: six functional photo diagrams (framing, handoff, polaroid
-      budget, rain, memory cards, etiquette) wired on /photo/, days, PDF.
+      FINAL ACCEPTANCE REPAIR: prior 15/15 invalidated until CJK diagram/footer rendering
+      and reader-label scrub pass independent re-verification. Do not treat prior ceiling as current.
   website_ux:
     max: 10
     score: 9
@@ -104,21 +106,27 @@ dimensions:
       Website IA slice retained. Photo guide added to Guides hub; deeper a11y still open.
   publication_quality:
     max: 5
-    score: 5
+    score: null
+    pending_revalidation: true
+    prior_score_invalidated: 5
     notes: >-
-      Textbook PDF restructure: TOC + page numbers, section-aware budgets, Food/Transport/
-      Shopping/Hanbok/Photo/Before chapters; Emergency Quick Pack kept short. Publication
-      ceiling met with evidence; Final Exit still unmet (human review, time-sensitive, D1).
+      FINAL ACCEPTANCE REPAIR: prior 5/5 invalidated until PDFSEC removal, Emergency Pack
+      pagination, footer/SVG CJK, and acceptance evidence repair pass re-verification.
 totals:
   overall:
     max: 100
-    score: 91
+    # Visual + Publication pending_revalidation — overall not claimed while those dims are open
+    score: null
+    pending_revalidation: true
+    prior_score_invalidated: 91
   textbook_final_exit_met: false
   round_1_acceptance_met: true
-product_status: READY FOR JERRY & NIKITA ACCEPTANCE
+product_status: FINAL ACCEPTANCE REPAIR REQUIRED
 product_status_notes: >-
-  Phase 4 product slices complete (IA, Photo, PDF). Full-product audit PASS for readiness.
-  Do not claim Final approved, Booking Ready, or Jerry & Nikita accepted. Human review pending.
+  Independent review blocked READY FOR JERRY & NIKITA ACCEPTANCE. Rendering repair in progress:
+  PDFSEC leak, SVG/footer CJK, reader-facing function labels, Emergency Pack orphan page,
+  and stale acceptance evidence. Do not claim Final approved, Booking Ready, or accepted.
+  Do not restore READY until blockers pass independent re-verification.
 p0_open: []
 founder_decision_dependencies:
 - id: dep-d1-dates
@@ -132,9 +140,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Jerry & Nikita human acceptance review
-- Time-sensitive facts revalidation before travel
-- D1 exact dates decision
+- Final textbook rendering repair (PDFSEC / CJK / labels / Emergency Pack)
+- Independent Publication + Visual re-verification
+- Jerry & Nikita human acceptance review (only after READY restored)
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -202,10 +210,20 @@ round_2_progress:
     merge_sha: 2c13cf37f51d8995be8ec8d0e8528d2f515e043e
     pr: 24
   final_audit:
+    status: merged
+    decision_doc: docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md
+    updated_at: '2026-07-21'
+    merged_at: '2026-07-21'
+    merge_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
+    pr: 25
+    notes: >-
+      PR #25 merged the acceptance packet, but product status was reverted to
+      FINAL ACCEPTANCE REPAIR REQUIRED after independent rendering blockers.
+  final_acceptance_repair:
     status: in_pr
     decision_doc: docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md
     updated_at: '2026-07-21'
-    branch: cursor/textbook-final-audit-e48c
+    branch: cursor/final-textbook-rendering-f752
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'

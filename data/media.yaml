@@ -1093,8 +1093,8 @@ media:
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Orient teaching diagram; booking-dependent items marked Date Pending; no invented cashback rates
-  alt_zh: 出發前時間軸：T-90／T-30／T-14／T-7／T-1 清單帶，條件項標 Date Pending
-  alt_en: Before-trip timeline with T-90, T-30, T-14, T-7, and T-1 checklist bands; conditional items marked Date Pending
+  alt_zh: 出發前時間軸：T-90／T-30／T-14／T-7／T-1 清單帶，條件項標「日期待決定」
+  alt_en: Before-trip timeline with T-90, T-30, T-14, T-7, and T-1 checklist bands; conditional items marked date undecided
   focal_point: center
   status: Approved
   prompt_path: null
