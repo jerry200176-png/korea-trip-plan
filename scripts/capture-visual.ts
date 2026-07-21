@@ -138,11 +138,15 @@ if (fs.existsSync(handbook)) {
       });
     const wanted = [
       { key: "cover", idx: 0 },
-      { key: "seoul-divider", idx: 2 },
-      { key: "day", idx: 4 },
-      { key: "ktx", idx: 8 },
-      { key: "busan-divider", idx: 10 },
-      { key: "decisions", idx: Math.max(0, renders.length - 3) },
+      { key: "toc", idx: 1 },
+      { key: "seoul-divider", idx: 5 },
+      { key: "day", idx: 7 },
+      { key: "ktx", idx: 12 },
+      { key: "busan-divider", idx: 14 },
+      { key: "food", idx: Math.min(20, Math.max(0, renders.length - 14)) },
+      { key: "transport", idx: Math.min(22, Math.max(0, renders.length - 12)) },
+      { key: "photo", idx: Math.min(28, Math.max(0, renders.length - 8)) },
+      { key: "decisions", idx: Math.max(0, renders.length - 5) },
       { key: "credits", idx: Math.max(0, renders.length - 2) },
     ];
     for (const w of wanted) {

@@ -99,5 +99,5 @@
 
   <rect class="card" x="40" y="670" width="1120" height="80" rx="8"/>
   <text class="t" x="56" y="706">證據優先：Incheon Airport 官方動線＋航空公司報到建議＋T-money／Naver Map。本圖不寫死票價、不寫死航班時刻。</text>
-  <text class="muted" x="56" y="732">Date Pending 航班未鎖 · Open Decision D3／住宿區 · 出發前 T-7 再查官方</text>
+  <text class="muted" x="56" y="732">Date Pending 航班未鎖 · D3 住宿區待決 · 出發前 T-7 再查官方</text>
 </svg>
