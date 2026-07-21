@@ -81,6 +81,7 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 3. Photo & Memory Slice  
 
 Transport Textbook Slice is in progress on `cursor/textbook-transport-e48c` (local slice exit; Overall still below Final Exit).
+
 ## Posture
 
 - Do not inflate scores  
