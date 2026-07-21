@@ -73,4 +73,3 @@ Append-only. Newest first.
 - **Status:** Provisional product decision (Round 2A); T-14 language/booking revalidation still required before any Core upgrade of fortune.
 - **Evidence:** `rs-087` KoreaTravelEasy (English currently not in service); `rs-088`/`rs-089` Visit Gangnam Sotdae (Korean-capable tourist framing; price unpublished); `rs-026` JYP HQ Gangdong Seongnae, no public tour.
 - **Doc:** `docs/research/DAY4_FEASIBILITY_DECISION.md`
-

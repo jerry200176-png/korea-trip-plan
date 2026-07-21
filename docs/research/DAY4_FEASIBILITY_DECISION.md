@@ -127,7 +127,6 @@ Low-energy delete order: shopping stretch → photo walk → keep packing buffer
 
 No Founder stop triggered: no D1 required for this decision; no payment executed; no PII collected; evidence sufficient to choose **Optional/Contingent** without guessing a shop.
 
-
 ## Map validation note
 
 - F1 addresses taken from KoreaTravelEasy product map/address block (operator page).
