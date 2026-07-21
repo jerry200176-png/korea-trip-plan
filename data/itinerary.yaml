@@ -2,7 +2,7 @@ days:
 - id: day-01
   day_index: 1
   theme: 抵達首爾・輕量安頓
-  one_priority: 順利入境、抵達住宿、買好交通卡與網路
+  one_priority: 入境→行李→交通卡／網路→住宿；不追景點
   wake_time: 依航班
   out_time: 彈性
   return_by: '21:00'
@@ -16,44 +16,45 @@ days:
   photo_tips: 機場與市區第一張兩人合照即可，不追景點
   restroom_notes: 機場出境後與地鐵站內
   rain_plan: 直達住宿；便利商店晚餐
-  low_energy_plan: 放棄任何加點，提早休息
+  low_energy_plan: 大件行李改計程車 Rescue；放棄任何加點
   closure_plan: n/a
   droppable_items:
   - 附近散步
   emergency_return: 依尚未鎖定之住宿地址（占位）→ 計程車或地鐵末班前返回
   status: Provisional
+  notes: 'Transport textbook 2026-07-21: arrival flow + AREX/bus compare taught; lodging/flight still Date Pending. See docs/research/TRANSPORT_TEXTBOOK.md and /transport/.'
   blocks:
   - start: ARR
     end: +2h
     title: 入境與領行李
     kind: transit
     transit_mode: airport
-    notes: 航班未鎖定；預留緩衝
-    plan_b: 依機場官方動線
+    notes: 航班未鎖定；下機→入境→提領→海關；航空公司行李規則 airline-dependent
+    plan_b: 依機場官方動線與服務台
     droppable: false
   - start: +2h
     end: +3.5h
-    title: 機場→住宿
+    title: 機場→住宿（AREX／巴士／計程車）
     kind: transit
     transit_mode: AREX_or_bus_TBD
     transit_minutes: null
     transfers: null
-    notes: Decision Required — 機場與住宿區
-    plan_b: 官方機場巴士／計程車（行李多時）
+    notes: 住宿未定前不寫死分鐘；機場巴士須先買票；深夜考慮夜巴士或計程車
+    plan_b: 行李多／低體力改計程車 Rescue
     droppable: false
   - start: '17:00'
     end: '19:00'
-    title: 安頓・便利商店／輕食
+    title: 安頓・T-money／網路・便利商店
     kind: meal
     restaurant_id: null
-    notes: 不安排跨區晚餐
+    notes: 買／儲值交通卡；確認 Naver Map；不安排跨區晚餐
     plan_b: 住宿附近第二間便利商店
     droppable: false
   - start: '19:00'
     end: '21:00'
     title: 自由休息
     kind: free
-    notes: 15–25% 緩衝含於此
+    notes: 15–25% 緩衝含於此；查當晚末班習慣
     plan_b: 提早睡
     droppable: true
 - id: day-02
@@ -273,7 +274,7 @@ days:
   day_index: 5
   foundation_slice: true
   theme: 首爾→釜山移動日
-  one_priority: 安全舒適完成 KTX 移動與釜山入住安頓
+  one_priority: 安全完成 KTX 移動與釜山安頓；票未買前只跟流程
   wake_time: 07:00
   out_time: 08:30
   return_by: '21:00'
@@ -288,35 +289,37 @@ days:
   photo_tips: 車站合照一張即可
   restroom_notes: 車站內
   rain_plan: 不影響火車；市區用計程車減濕滑步行
-  low_energy_plan: 抵達後不安排任何景點
-  closure_plan: 若車次異動改下一班；查 Korail 官方
+  low_energy_plan: 住宿→車站改計程車；抵達後不安排任何景點
+  closure_plan: 若車次異動改下一班；查 Korail 官方；錯過列車不硬闖
   droppable_items:
   - 抵達後加點
   emergency_return: 當日以釜山住宿為家
   status: Provisional
+  notes: 'Transport textbook 2026-07-21: KTX Date Pending teaching; no invented 2027 schedules. Pork shortlist stays Day 6 unless energy after arrival.'
   blocks:
   - start: 08:30
     end: 09:30
-    title: 住宿→首爾站／龍山（TBD）
+    title: 住宿→首爾站／龍山（車站未鎖）
     kind: transit
     transit_mode: subway_taxi
-    notes: 車次未訂；勿寫確認碼
+    notes: 車次未訂；預留緩衝；大行李可改計程車
     plan_b: 計程車行李門到門
     droppable: false
   - start: '10:00'
     end: '13:00'
-    title: KTX 首爾→釜山
+    title: KTX 首爾→釜山（票未鎖定）
     kind: transit
     transit_mode: KTX
     transit_minutes: 150
     transfers: 0
-    notes: 實際時刻表查 letskorail；票未買
-    plan_b: SRT 若更合適（需比較）
+    notes: 實際時刻表查 LetsKorail；票未買；約 150 分僅作方向感
+    plan_b: 錯過則改下一班庫存；SRT 若更合適再比較
     droppable: false
   - start: '13:30'
     end: '15:00'
     title: 釜山站→住宿安頓
     kind: transit
+    notes: 地鐵／公車／計程車依行李與體力；住宿位置未定
     plan_b: 計程車
     droppable: false
   - start: '15:00'
@@ -326,7 +329,6 @@ days:
     notes: 'Round 2C: pork shortlist available Day 6; do not force Hapcheon after KTX.'
     plan_b: 便利商店
     droppable: true
-  notes: ' Round 2C: pork-soup shortlist available if energy after arrival; otherwise Day 6.'
 - id: day-06
   day_index: 6
   foundation_slice: true
@@ -397,7 +399,7 @@ days:
 - id: day-07
   day_index: 7
   theme: 釜山尾聲・返程準備
-  one_priority: 依航班安全前往機場；非必要購物可刪
+  one_priority: 依航班緩衝前往機場；非必要購物可刪
   wake_time: 07:30
   out_time: 09:00
   return_by: 依航班
@@ -411,12 +413,13 @@ days:
   photo_tips: 最後一天合照留在輕鬆場景
   restroom_notes: 商場與機場
   rain_plan: 室內咖啡後直達機場
-  low_energy_plan: 取消一切購物，直達機場
+  low_energy_plan: 取消一切購物，計程車 Rescue 直達機場
   closure_plan: 機場免稅僅作行李容量允許時的備案
   droppable_items:
   - 非必要購物
-  emergency_return: 以機場動線為優先
+  emergency_return: 以機場動線為優先；轉乘失敗改計程車
   status: Provisional
+  notes: 'Transport textbook 2026-07-21: Gimhae exit bands taught; final timing waits for flight.'
   blocks:
   - start: 09:00
     end: '11:00'
@@ -429,6 +432,6 @@ days:
     end: ARR_AIRPORT
     title: 前往機場（PUS 或其他・未鎖定）
     kind: transit
-    notes: Decision Required — 離境機場與航班時刻；預留航空公司建議到場時間
-    plan_b: 計程車減轉乘
+    notes: Decision Required — 離境機場與航班時刻；一般／行李／低體力三版；預留航空公司建議到場時間
+    plan_b: 計程車減轉乘；轉乘失敗不重試同一失效路線
     droppable: false

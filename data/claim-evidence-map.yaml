@@ -1,8 +1,8 @@
 meta:
   updated_at: '2026-07-21'
-  round: 3-day2
-  purpose: Round 1 research governance — role-split claim evidence map
-  notes: Round 2A closes Day 4 fortune Result B (Optional/T-14) and JYP Remove-from-Core. Roles remain split; blocked IDs
+  round: 4-transport
+  purpose: Role-split claim evidence map for Textbook Edition
+  notes: Transport textbook adds arrival/AREX/T-money/KTX/Busan-exit/recovery claims. Roles remain split; blocked IDs
     never in supporting.
 claims:
 - claim_id: clm-gyeongbokgung-closed-tuesday
@@ -455,7 +455,134 @@ claims:
   jerry_relevance: Complete low-energy variant.
   nikita_relevance: Photo memory retained.
   notes: ''
+- claim_id: clm-icn-arrival-flow-teachable
+  claim: Day 1 arrival teaching covers deplane → immigration → baggage → customs → SIM/cash/T-money contingency → lodging
+    transfer without requiring locked flights or lodging pins.
+  supporting_source_ids:
+  - rs-006
+  - rs-096
+  - rs-097
+  discovery_source_ids:
+  - rs-103
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Exact airline terminal and flight buffer after tickets exist
+  - Lodging door-to-door minutes after hotel pin
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 1
+  jerry_relevance: Stepwise arrival reduces first-night decision load.
+  nikita_relevance: Low-energy arrival without sightseeing pressure.
+  notes: Teaching flow only; airline baggage rules remain airline-dependent.
+- claim_id: clm-arex-vs-bus-compare
+  claim: AREX (Express non-stop / All-Stop with transit cards) vs Airport Limousine (advance ticket; cash/T-money not accepted)
+    vs taxi Rescue is taught as a comparison with time ranges and late-arrival night-bus awareness; lodging not assumed.
+  supporting_source_ids:
+  - rs-097
+  - rs-096
+  - rs-006
+  discovery_source_ids: []
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Final mode choice after lodging area lock
+  - Live Express/All-Stop timetable near arrival date
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 1
+  jerry_relevance: Avoids traffic-risk surprises and limousine ticket trap.
+  nikita_relevance: Low-Energy default leans AREX All-Stop or taxi when exhausted with luggage.
+  notes: VisitKorea ranges are teaching bands, not current booking facts.
+- claim_id: clm-seoul-local-transit-tmoney-naver
+  claim: Seoul local transit teaching uses T-money buy/top-up/tap habits, Seoul Metro official tools, Naver Map primary /
+    Kakao backup, and taxi as Rescue not default.
+  supporting_source_ids:
+  - rs-098
+  - rs-099
+  - rs-100
+  - rs-102
+  discovery_source_ids:
+  - rs-103
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Phone wallet compatibility confirmation for both iPhones
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Days 1–4
+  jerry_relevance: Transfer minimization and last-train nightly check habit.
+  nikita_relevance: Simple payment teaching without cash-on-bus stress.
+  notes: Do not freeze a single last-train clock in the textbook.
+- claim_id: clm-ktx-seoul-busan-date-pending
+  claim: Seoul→Busan KTX teaching covers lodging→station buffer, platform/car/seat/luggage habits, Busan Station arrival,
+    and missed-train recovery while tickets remain Date Pending (not purchased; no invented 2027 schedules/fares).
+  supporting_source_ids:
+  - rs-008
+  - rs-053
+  - rs-055
+  - rs-102
+  discovery_source_ids: []
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Actual train after D1 and booking window
+  - Seoul Station vs Yongsan final choice
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 5
+  jerry_relevance: Moving day stays light and recoverable.
+  nikita_relevance: No sightseeing forced after KTX.
+  notes: transit_minutes ~150 is orientation only until booked.
+- claim_id: clm-busan-local-and-gimhae-exit
+  claim: Busan local transit and Gimhae exit teach metro/LRT/bus/taxi options with Haeundae–Cheongsapo–Gwangalli characteristics,
+    luggage-day vs normal-day difference, and Low-Energy taxi Rescue; final airport timing waits for flight harden.
+  supporting_source_ids:
+  - rs-007
+  - rs-097
+  - rs-101
+  - rs-055
+  discovery_source_ids: []
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Flight departure time and airline recommended airport arrival
+  - Exact lodging-to-PUS door-to-door after hotel pin
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Days 6–7
+  jerry_relevance: Prevents last-day sprint and transfer failure panic.
+  nikita_relevance: Keeps coastal day and exit day separable.
+  notes: VisitKorea Gimhae ranges are teaching approximations.
+- claim_id: clm-transport-failure-recovery
+  claim: Transport Failure Recovery textbook covers wrong direction, missed stop, metro stoppage, wrong bus stop, low card
+    balance, no network, dead phone, lost luggage, missed KTX, flight delay, last train gone, and pair separation with first
+    actions, don'ts, help, Korean phrases, and Hard Stop triggers.
+  supporting_source_ids:
+  - rs-097
+  - rs-098
+  - rs-100
+  - rs-008
+  discovery_source_ids:
+  - rs-103
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - Offline screenshots of lodging Korean addresses after bookings
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: All
+  jerry_relevance: Risk foresight without freezing panic into Core Plan.
+  nikita_relevance: Shared rescue language for both travelers.
+  notes: Emergency pack holds phrases; personal phones stay offline-only.
 proposed_round_2_claims:
   day4: []
   shopping: []
   busan: []
+  transport: []

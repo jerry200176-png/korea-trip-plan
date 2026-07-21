@@ -76,10 +76,11 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 
 ## Next Top 3 ROI gaps
 
-1. Transport Textbook Slice  
-2. Food Atlas Slice  
-3. Before-Trip Textbook Slice  
+1. Food Atlas Slice  
+2. Before-Trip Textbook Slice  
+3. Photo & Memory Slice  
 
+Transport Textbook Slice is in progress on `cursor/textbook-transport-e48c` (local slice exit; Overall still below Final Exit).
 ## Posture
 
 - Do not inflate scores  

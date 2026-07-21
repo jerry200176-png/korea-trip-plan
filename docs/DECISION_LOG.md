@@ -94,3 +94,10 @@ Append-only. Newest first.
 - **Status:** Provisional; T-14 shop lock still required. Tuesday palace closure remains D1-dependent.
 - **Evidence:** `rs-095` visit.seoul.kr hanbok guide; `rs-011`/`rs-010` palace; `rs-013` Bukchon.
 - **Doc:** `docs/research/DAY2_HANBOK_PALACE.md`
+
+## 2026-07-21 — Transport Textbook (arrival / KTX / recovery)
+
+- **Decision:** Ship executable transport teaching without locked flights, lodging pins, or KTX tickets: ICN arrival flow, AREX vs limousine vs taxi Rescue, T-money + Naver Map habits, Date Pending KTX day, Busan local + Gimhae exit bands, Failure Recovery chapter.
+- **Status:** Teaching Provisional; not Booking Ready. Final airport timing waits for flight harden.
+- **Evidence:** `rs-006`/`rs-096`/`rs-097` arrival; `rs-098`/`rs-099`/`rs-100` local transit; `rs-008` KTX; `rs-007`/`rs-101` Busan/Gimhae; `rs-102`/`rs-103` map/traveler discovery.
+- **Doc:** `docs/research/TRANSPORT_TEXTBOOK.md`
