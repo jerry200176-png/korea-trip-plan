@@ -67,8 +67,22 @@ function walk(dir: string): string[] {
   return out;
 }
 
-function scan(label: string, content: string) {
-  for (const rule of forbiddenPatterns) {
+const readerSurfacePatterns = forbiddenPatterns.filter((p) =>
+  [
+    "visual-function label",
+    "workflow jargon",
+    "workflow Core token",
+    "incorrect Korean crustacean phrase",
+    "internal status label",
+  ].includes(p.label)
+);
+
+const codeAssetPatterns = forbiddenPatterns.filter(
+  (p) => !readerSurfacePatterns.includes(p)
+);
+
+function scan(label: string, content: string, rules = forbiddenPatterns) {
+  for (const rule of rules) {
     if (rule.re.test(content)) {
       failed = true;
       const m = content.match(rule.re);
@@ -136,8 +150,15 @@ for (const file of walk(siteDistDir)) {
   if (!textExt.has(ext)) continue;
   const rel = path.relative(root, file);
   let content = fs.readFileSync(file, "utf8");
-  if (ext === ".html") content = extractHtmlReaderText(content);
-  scan(rel, content);
+  if (ext === ".html") {
+    content = extractHtmlReaderText(content);
+    scan(rel, content, forbiddenPatterns);
+  } else if (ext === ".css" || ext === ".js" || ext === ".json" || ext === ".webmanifest") {
+    // CSS tokens like --warn are not reader-facing vocabulary; keep ID/privacy gates only.
+    scan(rel, content, codeAssetPatterns);
+  } else {
+    scan(rel, content, forbiddenPatterns);
+  }
 }
 
 console.log("check-reader-facing: scanning public SVG <text>/<title>/<desc>/aria-label …");

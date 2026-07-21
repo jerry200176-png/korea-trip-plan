@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg data-cjk-paths="1" xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
   <title id="title">SIM eSIM power bank</title>
-  <desc id="desc">and explain SIM contingency and airline-dependent power bank rules.</desc>
+  <desc id="desc">and 說明 SIM contingency and airline-dependent power bank rules.</desc>
   <defs><style>
       .bg { fill: #f7f4ed; }
       .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
