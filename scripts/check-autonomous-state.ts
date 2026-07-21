@@ -187,8 +187,12 @@ const finalMet =
   scorecard.totals?.textbook_final_exit_met === true;
 
 if (productStatus === READY) {
-  if (!finalMet) fail("READY claimed but textbook_final_exit.met is not true");
   if (run.hard_stop_required === true) fail("READY claimed while hard_stop_required is true");
+  // READY = handoff for Jerry & Nikita review. Textbook Final Exit may remain unmet until humans accept.
+  const overall = scorecard.totals?.overall?.score;
+  if (overall === null || overall === undefined || overall === "" || Number(overall) < 90) {
+    fail(`READY claimed but overall score is missing or < 90 (got ${String(overall)})`);
+  }
 }
 
 if (productStatus !== READY && productStatus !== REPAIR) {

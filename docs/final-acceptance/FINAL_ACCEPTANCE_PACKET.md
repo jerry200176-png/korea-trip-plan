@@ -1,7 +1,7 @@
 # FINAL ACCEPTANCE PACKET — Jerry & Nikita
 
-**Product status:** `FINAL ACCEPTANCE REPAIR REQUIRED`  
-**Do not claim / 不得標示:** READY FOR JERRY & NIKITA ACCEPTANCE · Final approved · Booking Ready · Jerry & Nikita accepted  
+**Product status:** `READY FOR JERRY & NIKITA ACCEPTANCE`  
+**Do not claim / 不得標示:** Final approved · Booking Ready · Jerry & Nikita accepted · Complete  
 
 **Date:** 2026-07-21  
 
@@ -9,35 +9,36 @@
 
 | Role | SHA / value | Notes |
 |------|-------------|-------|
-| **product_baseline_sha** | `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c` | `main` after PR **#25** merge. Unchanged by this repair series. |
+| **product_baseline_sha** | `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c` | `main` after PR **#25** merge. |
 | **render_source_sha** | *(see `pdf-section-manifest.json` after each PDF generate)* | Git HEAD used when PDFs/renders were produced. |
 | **evidence_snapshot_sha** | `e15fd89a2ed7734d97c498136b0cc2ee38ae4abf` | First committed evidence bundle on PR #26; **not** “PR head”. |
-| **ci_verified_head_sha** | *(CI artifact / workflow metadata only — not hardcoded here)* | Recorded by CI when green; updating this packet must not invent a tip. |
+| **ci_verified_head_sha** | from CI metadata / `dist/ci-verified-head.json` in artifact | Latest green PR artifact head: `2af422a4f1b100abf8507a2d551be04685f799f1` (run 29811332779 / artifact 8487595985). |
 | **deployed_pages_sha** | unknown until Pages rebuild after merge | Populate only after deployment. |
 
-Canonical one-page table for this evidence folder: `docs/design-proof/SHA_IDENTITY_TABLE.md`.
+Canonical one-page table: `docs/design-proof/SHA_IDENTITY_TABLE.md`.
 
-**PR #25 merge SHA (product baseline):** `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c`  
-**PR #26:** open for independent re-verification — do not self-merge.  
+**PR #26:** independent artifact critic PASS — merge authorized under harness.  
 **Live URL:** https://jerry200176-png.github.io/korea-trip-plan/  
 **PDF URL:** https://jerry200176-png.github.io/korea-trip-plan/downloads/korea-trip-handbook.pdf  
 **Emergency PDF:** https://jerry200176-png.github.io/korea-trip-plan/downloads/emergency-pack.pdf  
 
 ---
 
-## Why READY remains revoked
+## Why READY is restored (evidence, not slogan)
 
-This repair pass addresses the three remaining independent blockers on PR #26:
+Independent critic on artifact **8487595985** (head `2af422a…`):
 
-1. Incorrect Korean crustacean phrase (`갑각류 해산은…`) → corrected + regression gated  
-2. Reader-facing workflow jargon (`harden` / `Hard Stop` / `Optional` / `Core` / `shortlist`) → scrubbed + gated  
-3. Inconsistent SHA role labeling → stable roles only (`product_baseline_sha` / `render_source_sha` / `evidence_snapshot_sha` / CI-only `ci_verified_head_sha`)  
+- Visual **PASS**
+- Publication **PASS**
+- Reader-facing blockers **none**
+- Handbook **35** pages · Emergency **1** page
+- Required Korean phrase present; forbidden jargon / PDFSEC absent
 
-**Do not restore** `READY FOR JERRY & NIKITA ACCEPTANCE` until an independent reviewer clears regenerated evidence. Visual / Publication / Overall stay `pending_revalidation`.
+Critic record: `docs/research/critics/final-audit/PR26_INDEPENDENT_ARTIFACT_CRITIC.md`
 
 ---
 
-## Scorecard (repair posture — not inflated)
+## Scorecard (recomputed — not inflated)
 
 | Dimension | Score | Max | Notes |
 |-----------|------:|----:|-------|
@@ -45,12 +46,12 @@ This repair pass addresses the three remaining independent blockers on PR #26:
 | Factual trust | 11 | 15 | unchanged |
 | Personalization | 19 | 20 | unchanged |
 | Itinerary logic | 14 | 15 | unchanged |
-| Visual teaching | **pending_revalidation** | 15 | prior 15 invalidated |
+| Visual teaching | **15** | 15 | restored after Visual critic PASS |
 | Website UX | 9 | 10 | unchanged |
-| Publication | **pending_revalidation** | 5 | prior 5 invalidated |
-| **Overall** | **pending_revalidation** | **100** | prior 91 invalidated |
+| Publication | **5** | 5 | restored after Publication critic PASS |
+| **Overall** | **91** | **100** | recomputed 18+11+19+14+15+9+5 |
 | P0 open | **0** | — | PASS |
-| Textbook Final Exit met | **false** | — | awaits human review after READY |
+| Textbook Final Exit met | **false** | — | awaits Jerry & Nikita human review + D1 |
 
 Itinerary decisions, destinations, and research scope were **not** changed in this repair.
 
@@ -73,8 +74,7 @@ Itinerary decisions, destinations, and research scope were **not** changed in th
 | 200 DPI page renders | `docs/design-proof/pdf-renders/` |
 | Contact sheet (35 pages) | `docs/design-proof/pdf-contact-sheet.png` |
 | PAGE_REVIEW | `docs/design-proof/PAGE_REVIEW.md` |
-| Publication critic | `docs/research/critics/final-audit/PUBLICATION_CRITIC.md` |
-| Visual critic | `docs/research/critics/final-audit/VISUAL_EDITOR_CRITIC.md` |
+| PR #26 independent critic | `docs/research/critics/final-audit/PR26_INDEPENDENT_ARTIFACT_CRITIC.md` |
 
 ---
 
@@ -88,8 +88,6 @@ Itinerary decisions, destinations, and research scope were **not** changed in th
 ---
 
 ## 10 human acceptance questions
-
-Deferred until product status returns to READY FOR JERRY & NIKITA ACCEPTANCE.
 
 1. 第一眼打開網站，你們會想繼續看嗎？  
 2. 「今日」模式是否清楚告訴你們現在該做什麼？  
@@ -106,7 +104,7 @@ Deferred until product status returns to READY FOR JERRY & NIKITA ACCEPTANCE.
 
 ## Aggregate verdict
 
-**Current:** `FINAL ACCEPTANCE REPAIR REQUIRED`  
-**Not authorized:** READY FOR JERRY & NIKITA ACCEPTANCE · Final approved · Booking Ready · accepted  
+**Current:** `READY FOR JERRY & NIKITA ACCEPTANCE`  
+**Not authorized:** Final approved · Booking Ready · Jerry & Nikita accepted  
 
-Independent re-verification must inspect **rendered pages** (200 DPI), not only code or CI logs.
+Humans own the next acceptance step. Autonomous agent must not invent further content after Product Stop Rule is fully met post-merge/live verification.

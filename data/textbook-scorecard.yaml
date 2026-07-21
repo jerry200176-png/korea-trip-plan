@@ -93,12 +93,11 @@ dimensions:
     notes: 'Transport delta +1: Day 1/5/7 teaching flows + Date Pending KTX discipline. Day 7 still flight-dependent.'
   visual_teaching_value:
     max: 15
-    score: null
-    pending_revalidation: true
-    prior_score_invalidated: 15
+    score: 15
+    pending_revalidation: false
     notes: >-
-      FINAL ACCEPTANCE REPAIR: prior 15/15 invalidated until CJK diagram/footer rendering
-      and reader-label scrub pass independent re-verification. Do not treat prior ceiling as current.
+      Restored after independent Visual critic PASS on PR #26 artifact 8487595985
+      (head 2af422a). Day 3 orphan/crop fixed; CJK/footer/diagrams re-verified.
   website_ux:
     max: 10
     score: 9
@@ -106,27 +105,28 @@ dimensions:
       Website IA slice retained. Photo guide added to Guides hub; deeper a11y still open.
   publication_quality:
     max: 5
-    score: null
-    pending_revalidation: true
-    prior_score_invalidated: 5
+    score: 5
+    pending_revalidation: false
     notes: >-
-      FINAL ACCEPTANCE REPAIR: prior 5/5 invalidated until PDFSEC removal, Emergency Pack
-      pagination, footer/SVG CJK, and acceptance evidence repair pass re-verification.
+      Restored after independent Publication critic PASS on the same artifact:
+      zero PDFSEC/jargon, Emergency 1 page, credits taxonomy clean, 35-page handbook.
 totals:
   overall:
     max: 100
-    # Visual + Publication pending_revalidation — overall not claimed while those dims are open
-    score: null
-    pending_revalidation: true
-    prior_score_invalidated: 91
+    # Recomputed: 18+11+19+14+15+9+5 = 91 (not a blind slogan restore)
+    score: 91
+    pending_revalidation: false
+    recomputed_from: [18, 11, 19, 14, 15, 9, 5]
+    recomputed_at: '2026-07-21'
+    critic_artifact_id: '8487595985'
   textbook_final_exit_met: false
   round_1_acceptance_met: true
-product_status: FINAL ACCEPTANCE REPAIR REQUIRED
+product_status: READY FOR JERRY & NIKITA ACCEPTANCE
 product_status_notes: >-
-  Independent review blocked READY FOR JERRY & NIKITA ACCEPTANCE. Rendering repair in progress:
-  PDFSEC leak, SVG/footer CJK, reader-facing function labels, Emergency Pack orphan page,
-  and stale acceptance evidence. Do not claim Final approved, Booking Ready, or accepted.
-  Do not restore READY until blockers pass independent re-verification.
+  PR #26 independent artifact critic PASS (Visual + Publication). Overall recomputed to 91.
+  Status authorizes Jerry & Nikita human acceptance review only.
+  Do not claim Final approved, Booking Ready, or Jerry & Nikita accepted until humans finish review.
+  Textbook Final Exit remains unmet (human review + D1 dates + partial time-sensitive coverage).
 p0_open: []
 founder_decision_dependencies:
 - id: dep-d1-dates
@@ -138,11 +138,11 @@ license_risks:
 - KTO KOGL candidates not yet rights-confirmed for download
 time_sensitive_checked_at_coverage: partial
 human_review:
-  jerry_nikita_blockers: pending_textbook_final_acceptance
+  jerry_nikita_blockers: none_open_product_p0_awaiting_human_acceptance
 next_top3_roi_gaps:
-- Final textbook rendering repair (PDFSEC / CJK / labels / Emergency Pack)
-- Independent Publication + Visual re-verification
-- Jerry & Nikita human acceptance review (only after READY restored)
+- Jerry & Nikita human acceptance review on live site + PDFs
+- D1 exact travel dates (Founder Decision)
+- Time-sensitive facts revalidation at T-14 / T-7
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -227,9 +227,11 @@ round_2_progress:
     pr: 26
     product_baseline_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
     evidence_snapshot_sha: e15fd89a2ed7734d97c498136b0cc2ee38ae4abf
+    last_green_ci_run: '29811332779'
+    last_artifact_id: '8487595985'
     notes: >-
-      evidence_snapshot_sha points at the first committed evidence bundle on this PR
-      (git log --grep='add rendering evidence'). Do not store mutable PR tip as head_sha.
+      Independent Visual+Publication critic PASS on artifact 8487595985.
+      READY restored for human acceptance; Textbook Final Exit still unmet.
       render_source_sha lives in pdf-section-manifest.json; ci_verified_head_sha is CI-only.
 p0_closed:
 - id: p0-fortune-shop

@@ -52,9 +52,9 @@ items:
     scope_forbidden:
       - merge before critic PASS
       - restore READY before Visual/Publication critics
-    status: in_progress
-    attempts: 1
-    last_failure_signature: "publication:orphan-near-blank:day3-page-11"
+    status: passed
+    attempts: 2
+    last_failure_signature: null
     exit_gate: independent_critic_pass_on_final_artifact
     next_if_pass: restore-ready-state
     next_if_fail: verify-pr26-final-artifact
@@ -76,8 +76,8 @@ items:
       - Final approved
       - Booking Ready
       - inventing Visual/Publication scores without critic PASS
-    status: pending
-    attempts: 0
+    status: passed
+    attempts: 1
     last_failure_signature: null
     exit_gate: ready_status_honest_and_evidenced
     next_if_pass: merge-pr26
@@ -97,8 +97,8 @@ items:
       - merge operations and merge-SHA recording
     scope_forbidden:
       - further product feature work on same PR
-    status: pending
-    attempts: 0
+    status: in_progress
+    attempts: 1
     last_failure_signature: null
     exit_gate: squash_merged_to_main
     next_if_pass: verify-main-and-pages
