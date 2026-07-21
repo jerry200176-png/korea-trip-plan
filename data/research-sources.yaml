@@ -1,0 +1,3526 @@
+meta:
+  generated_at: '2026-07-20'
+  purpose: Textbook Edition Round 1 research foundation
+  notes: 'Quality correction: primary_category unique counting; A1/A2 split; freshness fields no longer set to current from
+    HTTP 200 alone; official tourism is A2 and not automatic venue-operator proof.'
+  quality_correction_at: '2026-07-20'
+  tier_definitions:
+    A1: Government, operator, venue/shop primary pages
+    A2: Official tourism portals / official aggregator pages
+    B: Independent experience, map platforms, trusted editorial
+    C: Creator discovery (must not alone confirm ops facts)
+  primary_categories:
+  - travel_factual_evidence
+  - independent_experience_evidence
+  - creator_discovery
+  - map_validation_endpoint
+  - design_publication_benchmark
+  tier_c_diversity:
+    direct_youtube_sources_readable: 0
+    direct_instagram_sources_readable: 0
+    blog_sources_readable: 12
+    blocked_creator_sources: 2
+    notes: Round 1 Tier C is blog-heavy. No direct YouTube/Instagram pages were fully readable in this environment. Do not
+      pretend search snippets equal full video/post review. Creator platforms remain listed under blocked or future work when
+      publicly accessible.
+  freshness_model:
+    field: freshness_basis_type
+    allowed:
+    - http_reachability_only
+    - page_review_no_update_date
+    - dated_official_notice
+    - operator_live_data
+    - direct_provider_confirmation
+    - unknown
+    current_allowed:
+    - dated_official_notice
+    - operator_live_data
+    - direct_provider_confirmation
+    notes: current requires typed basis + valid content_last_updated/checked_at/revalidate_by; HTTP reachability alone never
+      supports current
+sources:
+- source_id: rs-001
+  source_type: government
+  title: Korea Electronic Travel Authorization portal
+  publisher_or_creator: Korea Immigration Service
+  url: https://www.k-eta.go.kr/portal/apply/index.do
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: National
+  topic:
+  - entry
+  - K-ETA
+  - airport_access
+  summary: Official K-ETA portal verified by redirect to the current application page.
+  findings:
+  - Curl returned HTTP 200 and final URL under k-eta.go.kr.
+  - Use only for official entry and authorization workflow links.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Entry-rule anchor for pre-trip checklist.
+  nikita_relevance: Reduces uncertainty about whether Taiwan travelers need action before departure.
+  claims_requiring_official_verification:
+  - Recheck Taiwan eligibility and fee close to travel.
+  corroborating_source_ids:
+  - rs-002
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-10-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-002
+  source_type: government
+  title: Hi Korea main portal
+  publisher_or_creator: Korea Immigration Service
+  url: https://www.hikorea.go.kr/Main.pt
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: ko
+  city: National
+  topic:
+  - entry
+  - immigration
+  - visa
+  summary: Official immigration portal for Korea stay and immigration notices.
+  findings:
+  - Curl returned HTTP 200 with Hi Korea page title.
+  - Useful as a second official source for immigration-related questions.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Backup source for entry/stay rules.
+  nikita_relevance: Useful if visa or stay-status wording needs official confirmation.
+  claims_requiring_official_verification:
+  - Recheck relevant visa-free or stay notices before final booklet.
+  corroborating_source_ids:
+  - rs-001
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-10-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-003
+  source_type: government
+  title: Korea Customs Service English portal
+  publisher_or_creator: Korea Customs Service
+  url: https://www.customs.go.kr/english/main.do
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: National
+  topic:
+  - customs
+  - tax_refund
+  - airport_access
+  summary: Official customs portal for import/export and traveler customs context.
+  findings:
+  - Curl returned HTTP 200 and English portal title.
+  - Use for customs-sensitive claims rather than travel blogs.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Source for customs and airport exit cautions.
+  nikita_relevance: Helps verify shopping and tax/refund export assumptions.
+  claims_requiring_official_verification:
+  - Recheck traveler customs and refund export rules before trip.
+  corroborating_source_ids:
+  - rs-020
+  - rs-021
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-10-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-004
+  source_type: government
+  title: Taiwan Bureau of Consular Affairs
+  publisher_or_creator: Taiwan Ministry of Foreign Affairs
+  url: https://www.boca.gov.tw/mp-2.html
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Taiwan
+  topic:
+  - consular
+  - emergency
+  - entry
+  summary: Taiwan consular portal verified as the English BOCA homepage.
+  findings:
+  - Curl returned HTTP 200 with BOCA English title.
+  - Use as Taiwan-side source for outbound travel and consular references.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Pre-trip official source from home jurisdiction.
+  nikita_relevance: Gives Taiwan-side travel support context.
+  claims_requiring_official_verification:
+  - Recheck any Korea advisories or passport notices before trip.
+  corroborating_source_ids:
+  - rs-005
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-10-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-005
+  source_type: government
+  title: Taipei Mission in Korea contact listing
+  publisher_or_creator: Taiwan Bureau of Consular Affairs
+  url: https://www.boca.gov.tw/sp-foof-countrycp-01-1-6256a-2.html
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: mixed
+  city: Taiwan
+  topic:
+  - emergency
+  - consular
+  - Seoul
+  summary: BOCA listing for Taipei Mission in Korea contact and service information.
+  findings:
+  - Curl returned HTTP 200 for the BOCA mission listing.
+  - Search result showed address, phone, emergency phone, hours, and email fields.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Emergency contact anchor for the handbook.
+  nikita_relevance: Provides Taiwan mission contact confidence while in Seoul.
+  claims_requiring_official_verification:
+  - Recheck phone, service hours, and emergency number before final export.
+  corroborating_source_ids:
+  - rs-004
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-006
+  source_type: airport
+  title: Incheon International Airport official site
+  publisher_or_creator: Incheon International Airport Corporation
+  url: https://www.airport.kr/ap/en/index.do
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: mixed
+  city: Seoul
+  topic:
+  - airport_access
+  - arrival
+  - AREX
+  - rain_low_energy
+  summary: Official airport site for Seoul-area arrival and departure operations.
+  findings:
+  - Curl returned HTTP 200 after redirect to airport.kr content.
+  - Use for terminal, transport, and airport service checks.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Primary airport access source for Seoul arrival plans.
+  nikita_relevance: Useful for low-energy arrival and airport amenities.
+  claims_requiring_official_verification:
+  - Recheck terminal, transport, and airline-specific counters after flights are booked.
+  corroborating_source_ids:
+  - rs-008
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-007
+  source_type: airport
+  title: Gimhae International Airport official English site
+  publisher_or_creator: Korea Airports Corporation
+  url: https://www.airport.co.kr/gimhaeeng/index.do
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Gimhae Airport
+  - airport_access
+  - Busan_lodging
+  summary: Official Gimhae Airport English portal for Busan airport logistics.
+  findings:
+  - Curl returned HTTP 200 with Gimhae International Airport English title.
+  - Use for departure/arrival airport access, facilities, and terminal checks.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Anchor for Busan airport day timing.
+  nikita_relevance: Helps keep the last day low-stress and practical.
+  claims_requiring_official_verification:
+  - Recheck airport transport and airline counters after flight selection.
+  corroborating_source_ids:
+  - rs-039
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-008
+  source_type: rail
+  title: LetsKorail foreign booking portal
+  publisher_or_creator: KORAIL
+  url: https://www.letskorail.com/ebizbf/EbizbfForeign_pr16100.do?gubun=1
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: National
+  topic:
+  - KTX
+  - rail
+  - Busan Station
+  - airport_access
+  summary: Official KORAIL foreign-language rail booking portal for KTX planning.
+  findings:
+  - Curl returned HTTP 200 after redirect to Korail global booking page.
+  - Search result showed official booking interface content and one-month advance booking wording.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Primary source for Seoul to Busan KTX timing.
+  nikita_relevance: Supports comfortable transfer planning without guessing train times.
+  claims_requiring_official_verification:
+  - Recheck schedules, stations, fare classes, and booking windows close to trip.
+  corroborating_source_ids:
+  - rs-053
+  - rs-055
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-10-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-009
+  source_type: government
+  title: Korea Meteorological Administration English weather portal
+  publisher_or_creator: Korea Meteorological Administration
+  url: https://www.weather.go.kr/w/eng/main.do
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: National
+  topic:
+  - weather
+  - rain_low_energy
+  - rain_plans
+  summary: Official weather portal for national rain and weather checks.
+  findings:
+  - Curl returned HTTP 200 with KMA weather title.
+  - Use for rain-plan triggers rather than old climate averages.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Weather source for daily go/no-go decisions.
+  nikita_relevance: Supports low-energy and rain alternatives in both cities.
+  claims_requiring_official_verification:
+  - Use live forecast at T-7 and during travel.
+  corroborating_source_ids: []
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-010
+  source_type: official_tourism
+  title: Gyeongbokgung Palace
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/attractions/Gyeongbokgung-Palace_/73
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Gyeongbokgung
+  - palace
+  - hanbok
+  - couple_photo_spots
+  summary: Official Seoul tourism page describing Gyeongbokgung as the first and largest Joseon royal palace.
+  findings:
+  - WebSearch and curl returned HTTP 200 with page title.
+  - Page text notes onsite museums and palace history.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Foundation source for palace day route.
+  nikita_relevance: Supports hanbok-photo framing and palace expectations.
+  claims_requiring_official_verification:
+  - Recheck hours, admission, closures, and hanbok admission rules on official palace channels.
+  corroborating_source_ids:
+  - rs-011
+  - rs-012
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-011
+  source_type: government
+  title: Gyeongbokgung Palace and its history
+  publisher_or_creator: Royal Palaces and Tombs Center
+  url: https://royal.cha.go.kr/ENG/contents/E101010000.do
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Gyeongbokgung
+  - royal_palace
+  - history
+  summary: Official heritage page for Gyeongbokgung Palace history.
+  findings:
+  - WebSearch returned public page text from royal.cha.go.kr.
+  - The page identifies Gyeongbokgung as the primary palace of the Joseon dynasty established in 1395.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Highest-authority palace history source.
+  nikita_relevance: Good for short factual palace context without copying long text.
+  claims_requiring_official_verification:
+  - Curl from this environment returned 000; recheck direct access before publication if linking in UI.
+  corroborating_source_ids:
+  - rs-010
+  - rs-012
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-012
+  source_type: official_tourism
+  title: Changing of the Royal Guard at Gyeongbokgung Palace
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/event-festival/Changing-of-the-Royal-Guard-at-Gyeongbokgung-Palace-en_/8256
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Gyeongbokgung
+  - guard_ceremony
+  - rain_low_energy
+  summary: Official event page for the Gyeongbokgung guard ceremony.
+  findings:
+  - WebSearch page text says the ceremony is in front of Gwanghwamun and has weather/temperature caveats.
+  - Curl returned HTTP 200 with event title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Helps decide whether to time the palace visit around the ceremony.
+  nikita_relevance: Adds a photogenic but skippable moment to hanbok day.
+  claims_requiring_official_verification:
+  - Recheck ceremony hours and cancellation notices day-of.
+  corroborating_source_ids:
+  - rs-010
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-013
+  source_type: official_tourism
+  title: Bukchon Hanok Village
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/attractions/Bukchon-Hanok-Village_/263
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Bukchon
+  - hanok
+  - couple_photo_spots
+  - low_energy
+  summary: Official page for Bukchon as a residential hanok village between palaces.
+  findings:
+  - WebSearch text notes Bukchon is inhabited by Seoul residents.
+  - Page shows restricted visitor hours of 10:00-17:00 for restricted areas.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Sets etiquette and route constraints for Bukchon.
+  nikita_relevance: Protects the photo plan from disrespecting residents.
+  claims_requiring_official_verification:
+  - Recheck restricted zones and visitor-hour policy before final itinerary.
+  corroborating_source_ids:
+  - rs-014
+  - rs-010
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-014
+  source_type: government
+  title: Seoul Hanok Bukchon town page
+  publisher_or_creator: Seoul Metropolitan Government
+  url: https://hanok.seoul.go.kr/front/eng/town/town01.do
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Bukchon
+  - Seoul Hanok
+  - hanok
+  summary: Official Seoul Hanok portal page for Bukchon-related context.
+  findings:
+  - Curl returned HTTP 200 with Seoul Hanok title.
+  - Use as the official hanok-program context source.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Additional official layer for hanok village planning.
+  nikita_relevance: Useful for keeping hanok photo plans culturally grounded.
+  claims_requiring_official_verification:
+  - Recheck any program details or visitor rules before using.
+  corroborating_source_ids:
+  - rs-013
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-015
+  source_type: official_tourism
+  title: Insa-dong street
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/attractions/Insa-dong_/82
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: mixed
+  city: Seoul
+  topic:
+  - Insadong
+  - culture
+  - rain_low_energy
+  - shopping
+  summary: Official Visit Seoul page for Insa-dong as a culture/shopping area.
+  findings:
+  - Curl returned HTTP 200 with Visit Seoul Insa-dong page title.
+  - Useful as official source for pairing palace, Bukchon, and indoor cultural browsing.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Backup nearby area for palace day rain or fatigue.
+  nikita_relevance: Supports low-pressure tea, craft, and souvenir browsing.
+  claims_requiring_official_verification:
+  - Recheck store-specific hours separately.
+  corroborating_source_ids:
+  - rs-013
+  - rs-016
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-016
+  source_type: official_tourism
+  title: Ikseon-dong Hanok Village
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/attractions/IkseongdongHanokVillage_/37013
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Ikseon-dong
+  - hanok
+  - couple_photo_spots
+  - cafes
+  summary: Official page for Ikseon-dong Hanok Village and its cafe/shop alleys.
+  findings:
+  - WebSearch text says Ikseon-dong links Insadong and Nakwon Sanga and has fusion cafes, restaurants, and shops.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Good optional Seoul photo/cafe add-on.
+  nikita_relevance: Useful for a romantic but lower-effort hanok alley option.
+  claims_requiring_official_verification:
+  - Recheck crowd levels and individual cafe hours.
+  corroborating_source_ids:
+  - rs-017
+  - rs-015
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-017
+  source_type: government
+  title: Ikseon-dong in Seoul
+  publisher_or_creator: Seoul Metropolitan Government
+  url: https://english.seoul.go.kr/ikseon-dong-in-seoul/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Ikseon-dong
+  - benchmark
+  - photo_spots
+  summary: Seoul city page describing Ikseon-dong as an old hanok village with newtro appeal.
+  findings:
+  - WebSearch returned public page text from english.seoul.go.kr.
+  - Curl returned HTTP 200 with page title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: City-published context for Ikseon-dong identity.
+  nikita_relevance: Supports the couple-photo route without relying on social media alone.
+  claims_requiring_official_verification:
+  - Confirm current shop/cafe operations from maps.
+  corroborating_source_ids:
+  - rs-016
+  primary_category: travel_factual_evidence
+  category_tags:
+  - design_publication_benchmark
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-018
+  source_type: official_tourism
+  title: Myeongdong
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/shopping/myeongdong_/68
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Myeongdong
+  - cosmetics_shopping
+  - street_food
+  - lodging_areas
+  summary: Official page for Myeongdong shopping, cosmetics, and visitor access.
+  findings:
+  - WebSearch text notes cosmetics stores, fashion, street stalls, and Subway Line 4 access.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Core source for Seoul shopping day.
+  nikita_relevance: High relevance for cosmetics, clothing, and lively food streets.
+  claims_requiring_official_verification:
+  - Recheck individual store hours and tax-free procedures separately.
+  corroborating_source_ids:
+  - rs-019
+  - rs-020
+  - rs-061
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-019
+  source_type: official_tourism
+  title: A Complete Guide to Shopping in Seoul
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/shopping
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - shopping
+  - Myeongdong
+  - Hongdae
+  - Gangnam
+  - cosmetics_shopping
+  summary: Official shopping index covering major Seoul shopping neighborhoods.
+  findings:
+  - WebSearch text lists Myeongdong, Hongdae, Dongdaemun, Gangnam, and other shopping areas.
+  - Curl returned HTTP 200 with shopping guide title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Helps compare shopping neighborhoods without overbuilding the day.
+  nikita_relevance: Useful for choosing one primary cosmetics/clothing district.
+  claims_requiring_official_verification:
+  - Confirm store-level details from current maps or official brand pages.
+  corroborating_source_ids:
+  - rs-018
+  - rs-023
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-020
+  source_type: official_tourism
+  title: Comprehensive Tax Refund Guide
+  publisher_or_creator: VisitKorea
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=929&vcontsId=248765
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - tax_refund
+  - cosmetics_shopping
+  - Myeongdong
+  summary: Official tourism tax refund guide for foreign tourist shopping.
+  findings:
+  - WebSearch text states refund applies to taxable goods and purchase amount must be KRW 15000 or more.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Verifies shopping/tax-refund claims for Jerry's logistics checklist.
+  nikita_relevance: Important for Nikita's cosmetics shopping expectations.
+  claims_requiring_official_verification:
+  - Recheck limits, passport requirements, and airport steps before trip.
+  corroborating_source_ids:
+  - rs-021
+  - rs-003
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-021
+  source_type: official_tourism
+  title: Tax Refund
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/taxrefund
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - tax_refund
+  - shopping
+  - airport_access
+  summary: Official Seoul tax refund page with procedure overview.
+  findings:
+  - WebSearch text notes purchases over 15000 won and customs export confirmation.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Cross-check for shopping refund procedure.
+  nikita_relevance: Helps avoid surprise paperwork after cosmetics shopping.
+  claims_requiring_official_verification:
+  - Recheck immediate refund caps and customs process close to departure.
+  corroborating_source_ids:
+  - rs-020
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-022
+  source_type: official_tourism
+  title: If you visit Seoul for the first time
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/mvp/IfyouvisitSeoulforthefirsttime_/43817
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - lodging_areas
+  - Myeongdong
+  - Hongdae
+  - Gangnam
+  - benchmark
+  summary: Official first-time Seoul route benchmark grouping classic neighborhoods.
+  findings:
+  - WebSearch text covers Myeongdong, Bukchon, Gwangjang Market, Gangnam, and Hongdae.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Useful official benchmark for pacing a first Seoul visit.
+  nikita_relevance: Helps choose photogenic yet not overloaded days.
+  claims_requiring_official_verification:
+  - Use only as route inspiration; verify all place details independently.
+  corroborating_source_ids:
+  - rs-018
+  - rs-019
+  - rs-023
+  primary_category: travel_factual_evidence
+  category_tags:
+  - design_publication_benchmark
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-023
+  source_type: official_tourism
+  title: Seongsu Hotspot One-Day Course
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/mvp/SeongsuHotspot-1day/ENN8khsan
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Seongsu
+  - cafes
+  - photo_spots
+  - rain_low_energy
+  summary: Official Visit Seoul route for Seongsu cafes, shops, Seoul Forest, and photo booths.
+  findings:
+  - WebSearch text describes Seongsu Yeonmujang-gil, cafes, galleries, fashion shops, and self-photo booths.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Optional trendy Seoul route if shopping day shifts from Myeongdong.
+  nikita_relevance: Good fit for cafes, concept shops, and couple photo booths.
+  claims_requiring_official_verification:
+  - Recheck pop-up/shop details; many Seongsu stores change quickly.
+  corroborating_source_ids:
+  - rs-019
+  - rs-062
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-024
+  source_type: official_tourism
+  title: 'K-Star Road: Where Stars are Made'
+  publisher_or_creator: Visit Seoul
+  url: https://english.visitseoul.net/tours/K-Star-ROAD--Where-Stars-are-Made_/15297
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Gangnam
+  - GOT7
+  - JYP
+  - K-pop
+  - couple_photo_spots
+  summary: Official Visit Seoul page for K-Star Road in Gangnam and Cheongdam.
+  findings:
+  - WebSearch text says the route connects Apgujeong Rodeo Station and Cheongdam crossroads.
+  - Page text mentions entertainment companies including JYP in the area.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Useful for a lightweight JYP/GOT7-adjacent walk without claiming a tour.
+  nikita_relevance: Supports K-pop photo context while keeping expectations modest.
+  claims_requiring_official_verification:
+  - Recheck current public access and exact company locations from official/map sources.
+  corroborating_source_ids:
+  - rs-025
+  - rs-026
+  - rs-059
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-025
+  source_type: government
+  title: Gangnam K-Star Road English guidebook
+  publisher_or_creator: Gangnam-gu Office
+  url: https://www.gangnam.go.kr/etc/k_star_road_en/Gangnam_KSTARROAD_Guidebook(EN).pdf
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Gangnam
+  - K-pop
+  - GOT7
+  - benchmark
+  summary: Gangnam-gu PDF guidebook for K-Star Road zones and Gangnamdols.
+  findings:
+  - WebSearch returned public PDF text from gangnam.go.kr.
+  - Curl returned HTTP 200 with application/pdf content type.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: District-government route detail for Gangnam K-pop context.
+  nikita_relevance: Helps identify photo-zone style without promising fan access.
+  claims_requiring_official_verification:
+  - Recheck if guidebook map and shops remain current.
+  corroborating_source_ids:
+  - rs-024
+  - rs-026
+  primary_category: travel_factual_evidence
+  category_tags:
+  - design_publication_benchmark
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-026
+  source_type: venue_official
+  title: JYP Entertainment official site
+  publisher_or_creator: JYP Entertainment
+  url: https://www.jype.com/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - JYP
+  - GOT7
+  - K-pop
+  - Gangnam
+  summary: Official JYP Entertainment website, verified public home page.
+  findings:
+  - Curl returned HTTP 200 with JYP Entertainment title.
+  - Use only to verify official corporate presence, not public tours.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Caps claims around JYP to official facts only.
+  nikita_relevance: Prevents overpromising GOT7/JYP fan experiences.
+  claims_requiring_official_verification:
+  - Confirm any public-facing store, cafe, or office visitability separately.
+  corroborating_source_ids:
+  - rs-024
+  - rs-025
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-027
+  source_type: official_tourism
+  title: Haeundae Blueline Park
+  publisher_or_creator: VisitKorea
+  url: https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=34413
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - coastal_train
+  - capsule_train
+  - Mipo
+  - Cheongsapo
+  summary: Official national tourism page for Haeundae Blueline Park.
+  findings:
+  - WebSearch text describes the 4.8 km Mipo-Cheongsapo-Songjeong route.
+  - It identifies Beach Train and Sky Capsule experiences.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Primary national source for the Busan coastal train day.
+  nikita_relevance: High relevance for the scenic couple-photo priority.
+  claims_requiring_official_verification:
+  - Recheck official operating times and ticketing on Blueline Park before booking.
+  corroborating_source_ids:
+  - rs-028
+  - rs-029
+  - rs-057
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-028
+  source_type: venue_official
+  title: Haeundae Sky Capsule course
+  publisher_or_creator: Haeundae Blueline Park
+  url: https://www.bluelinepark.com/eng/skyCapsuleCourse.do
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Sky Capsule
+  - Mipo
+  - Cheongsapo
+  - booking
+  summary: Official Blueline Park page for Sky Capsule route and course basics.
+  findings:
+  - WebSearch page text says the Sky Capsule runs 2.0 km from Mipo to Cheongsapo.
+  - Page text notes four-person capsules and about 30 minutes one way.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Primary booking/detail source for capsule logistics.
+  nikita_relevance: Most relevant source for planning the signature sea-view ride.
+  claims_requiring_official_verification:
+  - Recheck fares, time slots, route direction, and reservation rules before booking.
+  corroborating_source_ids:
+  - rs-027
+  - rs-029
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-029
+  source_type: official_tourism
+  title: Haeundae Blueline Park themed tour
+  publisher_or_creator: Visit Busan
+  url: https://www.visitbusan.net/index.do?lang_cd=en&menuCd=DOM_000000302002001000&uc_seq=980
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Blue Line Park
+  - Mipo
+  - Cheongsapo
+  - coastal_train
+  summary: Official Busan tourism page describing Blueline Park and its coastal route.
+  findings:
+  - WebSearch text describes redevelopment of old railway facilities over 4.8 km.
+  - Curl returned HTTP 200 with Visit Busan themed tour title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: City-level corroboration for the capsule/train plan.
+  nikita_relevance: Supports a gentle, scenic day with limited walking if needed.
+  claims_requiring_official_verification:
+  - Recheck venue site for real-time operation and sold-out windows.
+  corroborating_source_ids:
+  - rs-027
+  - rs-028
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-030
+  source_type: official_tourism
+  title: 'Busan itinerary: Haeundae and Cheongsapo'
+  publisher_or_creator: Visit Busan
+  url: https://www.visitbusan.net/en/index.do?lang_cd=en&menuCd=DOM_000000302011001000&uc_seq=319
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Cheongsapo
+  - Mipo
+  - sea_cafes
+  - photo_spots
+  summary: Official Busan itinerary linking Haeundae Beach, Cheongsapo Village, and coastal sights.
+  findings:
+  - WebSearch text identifies Haeundae Beach, Cheongsapo Village, Mipo Port, and coastal scenery.
+  - Curl returned HTTP 200 with Visit Busan itinerary title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Useful official route scaffold for Busan day 6.
+  nikita_relevance: Highlights sea-view moments without requiring strenuous touring.
+  claims_requiring_official_verification:
+  - Recheck exact transit and attraction hours.
+  corroborating_source_ids:
+  - rs-031
+  - rs-033
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-031
+  source_type: official_tourism
+  title: Cheongsapo Port and Mipo Port
+  publisher_or_creator: Visit Busan
+  url: https://www.visitbusan.net/en/index.do?lang_cd=en&menuCd=DOM_000000301001001000&uc_seq=348
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Cheongsapo
+  - Mipo
+  - coastal_walk
+  - sea_cafes
+  summary: Official attraction page for Cheongsapo Port and Mipo Port.
+  findings:
+  - WebSearch text gives addresses and says the railroad/walking trail connects Cheongsapo to Mipo.
+  - Curl returned HTTP 200 with Visit Busan tourist attractions title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Official source for the Mipo/Cheongsapo geography.
+  nikita_relevance: Good for scenic couple-photo route choices.
+  claims_requiring_official_verification:
+  - Recheck skywalk and trail access before trip.
+  corroborating_source_ids:
+  - rs-027
+  - rs-030
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-032
+  source_type: official_tourism
+  title: Gwangalli Beach
+  publisher_or_creator: Visit Busan
+  url: https://visitbusan.net/en/index.do?lang_cd=en&menuCd=DOM_000000301001001000&uc_seq=377
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Gwangalli
+  - night_view
+  - sea_cafes
+  - couple_photo_spots
+  summary: Official Visit Busan page for Gwangalli Beach and Gwangan Bridge views.
+  findings:
+  - WebSearch text notes restaurants and coffee shops with open sea views.
+  - It describes night lights and Gwangandaegyo Bridge atmosphere.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Official source for Gwangalli as a low-effort evening option.
+  nikita_relevance: Very relevant for romantic night-view photos.
+  claims_requiring_official_verification:
+  - Recheck event/drone-show details from official event sources if used.
+  corroborating_source_ids:
+  - rs-033
+  - rs-040
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-033
+  source_type: official_tourism
+  title: Busan night view themed tour
+  publisher_or_creator: Visit Busan
+  url: https://visitbusan.net/en/index.do?lang_cd=en&menuCd=DOM_000000302002001000&uc_seq=489
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - night_view
+  - Gwangalli
+  - Haeundae
+  - The Bay 101
+  summary: Official Busan night-view route covering Gwangandaegyo, Haeundae, Marine City, and The Bay 101.
+  findings:
+  - WebSearch text calls Gwangandaegyo night view a must-see.
+  - It mentions The Bay 101 as a famous spot for Marine City skyscraper night views.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Helps choose a single night-view plan instead of overloading Busan.
+  nikita_relevance: Good for couple-photo and low-energy evening planning.
+  claims_requiring_official_verification:
+  - Recheck venue hours and weather before night-view outing.
+  corroborating_source_ids:
+  - rs-032
+  - rs-040
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-034
+  source_type: official_tourism
+  title: Gukje Market
+  publisher_or_creator: Visit Busan
+  url: https://visitbusan.net/en/index.do?lang_cd=en&menuCd=DOM_000000301003001000&uc_seq=399
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - markets
+  - street_food
+  - rain_low_energy
+  - Nampo
+  summary: Official page for Gukje Market in Busan's original commercial district.
+  findings:
+  - WebSearch text links Gukje with Bupyeong Kkangtong, Jagalchi, and Bosu Book Street.
+  - Curl returned HTTP 200.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Official market source for a Busan backup route.
+  nikita_relevance: Useful if shopping/food replaces beach time in rain.
+  claims_requiring_official_verification:
+  - Recheck market days and store-specific hours.
+  corroborating_source_ids:
+  - rs-035
+  - rs-036
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-035
+  source_type: official_tourism
+  title: Bupyeong Kkangtong Market
+  publisher_or_creator: Visit Busan
+  url: https://www.visitbusan.net/index.do?lang_cd=en&menuCd=DOM_000000301003001000&uc_seq=400
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - markets
+  - street_food
+  - night_market
+  - rain_low_energy
+  summary: Official page for Bupyeong Kkangtong Market and its food/night market identity.
+  findings:
+  - WebSearch text calls it a food market next to Gukje Market.
+  - It notes the night market schedule differs by store and is a late food option.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Useful evening food-market candidate if energy allows.
+  nikita_relevance: Relevant for casual street-food atmosphere without a formal meal.
+  claims_requiring_official_verification:
+  - Recheck night market operating dates and holiday closures.
+  corroborating_source_ids:
+  - rs-034
+  - rs-039
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-036
+  source_type: official_tourism
+  title: Jagalchi Market
+  publisher_or_creator: Visit Busan
+  url: https://visitbusan.net/en/index.do?lang_cd=en&menuCd=DOM_000000301003001000&uc_seq=412
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - markets
+  - Jagalchi
+  - street_food
+  - rain_low_energy
+  summary: Official page for Jagalchi Market as one of Korea's large fish markets.
+  findings:
+  - WebSearch text gives address, hours, closed Tuesdays pattern, and market background.
+  - Use with caution for seafood preferences.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Official source if Nampo market route is used.
+  nikita_relevance: Potential sightseeing market; seafood-heavy so may be optional for Nikita.
+  claims_requiring_official_verification:
+  - Recheck closures, hours, and whether seafood focus fits preferences.
+  corroborating_source_ids:
+  - rs-034
+  - rs-035
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-037
+  source_type: official_tourism
+  title: Pork and Rice Soup
+  publisher_or_creator: VisitKorea
+  url: https://english.visitkorea.or.kr/svc/sp/food/ext/special_view.do?menuSn=913&vcontsId=178139
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji-gukbap
+  - Busan_food
+  - markets
+  summary: Official Korean food page for pork and rice soup as a Busan local food.
+  findings:
+  - WebSearch text says thin pork slices and rice are added to broth made from pork bones for over six hours.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Primary dish-definition source for Busan meal planning.
+  nikita_relevance: Useful non-seafood local food option for Busan.
+  claims_requiring_official_verification:
+  - Restaurant-specific hours and menus require separate checks.
+  corroborating_source_ids:
+  - rs-038
+  - rs-041
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-038
+  source_type: official_tourism
+  title: 'Dwaejigukbap: Busan''s representative local dish'
+  publisher_or_creator: VisitKorea
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=221285
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji-gukbap
+  - Busan_food
+  - Seomyeon
+  - Busan_lodging
+  summary: Official tourism article on Busan's dwaejigukbap restaurants and food context.
+  findings:
+  - WebSearch text calls Busan the city of dwaejigukbap and mentions Seomyeon local food street.
+  - Curl returned HTTP 200.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Source for choosing a pork-soup meal after arrival or beach day.
+  nikita_relevance: Supports a warm, casual meal that is not shellfish-centered.
+  claims_requiring_official_verification:
+  - Recheck restaurant current operations from maps and official listings.
+  corroborating_source_ids:
+  - rs-037
+  - rs-041
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-039
+  source_type: official_tourism
+  title: 'Feel the Sea, Enjoy the City: Discover Busan'
+  publisher_or_creator: VisitKorea
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=222586
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Gimhae Airport
+  - Haeundae
+  - Gwangalli
+  - Blue Line Park
+  - airport_access
+  summary: Official VisitKorea Busan overview with sea attractions and airport-to-city transit notes.
+  findings:
+  - WebSearch text mentions Blue Line Park, Gwangalli at night, and Gimhae Airport subway transfer via BGL to Sasang.
+  - Curl returned HTTP 200.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Strong source for Busan airport and coast overview.
+  nikita_relevance: Helps keep Busan plan tied to practical airport movement.
+  claims_requiring_official_verification:
+  - Recheck airport-city transit times after lodging is chosen.
+  corroborating_source_ids:
+  - rs-007
+  - rs-027
+  - rs-032
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-040
+  source_type: official_tourism
+  title: Busan bridges themed tour
+  publisher_or_creator: Visit Busan
+  url: https://www.visitbusan.net/en/index.do?lang_cd=en&menuCd=DOM_000000302002001000&uc_seq=515
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Gwangandaegyo
+  - night_view
+  - Gwangalli
+  summary: Official Busan page describing Gwangandaegyo Bridge and other landmark bridges.
+  findings:
+  - WebSearch text describes Gwangandaegyo as a landmark and a nighttime light-view attraction.
+  - Curl returned HTTP 200.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Official bridge-night-view corroboration.
+  nikita_relevance: Useful for choosing the best romantic night-view stop.
+  claims_requiring_official_verification:
+  - Recheck lighting/event details if scheduling around a show.
+  corroborating_source_ids:
+  - rs-032
+  - rs-033
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
+    automatic venue-operator proof
+  freshness_basis_type: http_reachability_only
+- source_id: rs-041
+  source_type: guidebook_media
+  title: Michelin Guide Seoul and Busan Bib Gourmand Selection
+  publisher_or_creator: Michelin Guide
+  url: https://guide.michelin.com/en/article/michelin-guide-ceremony/the-michelin-guide-seoul-and-busan-2024-bib-gourmand-selection
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji-gukbap
+  - restaurants
+  - benchmark
+  - Busan_food
+  summary: Michelin article listing Seoul and Busan Bib Gourmand selections including Busan categories.
+  findings:
+  - WebSearch text says the inaugural 2024 Busan edition featured 15 Bib Gourmand restaurants.
+  - Search text showed multiple Dwaeji-Gukbap entries.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Independent dining benchmark for value restaurants.
+  nikita_relevance: Helps screen pork-soup options without relying on ads.
+  claims_requiring_official_verification:
+  - Verify current Michelin year and restaurant status before final recommendations.
+  corroborating_source_ids:
+  - rs-037
+  - rs-038
+  primary_category: independent_experience_evidence
+  category_tags:
+  - design_publication_benchmark
+  - independent_experience_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-042
+  source_type: guidebook_media
+  title: Hapcheon Gukbapjip
+  publisher_or_creator: Michelin Guide
+  url: https://guide.michelin.com/us/en/busan-region/busan_1025838/restaurant/hapcheon-gukbapjip
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji-gukbap
+  - restaurants
+  - benchmark
+  summary: Michelin restaurant page for Hapcheon Gukbapjip in Busan.
+  findings:
+  - WebSearch text identifies the cuisine as Dwaeji-gukbap, Korean.
+  - Page text describes Bib Gourmand good quality, good value cooking.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Candidate restaurant benchmark for Busan pork soup.
+  nikita_relevance: Potential non-seafood local meal candidate if routing fits.
+  claims_requiring_official_verification:
+  - Confirm hours, queues, and location before including as a live stop.
+  corroborating_source_ids:
+  - rs-037
+  - rs-041
+  primary_category: independent_experience_evidence
+  category_tags:
+  - design_publication_benchmark
+  - independent_experience_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-043
+  source_type: guidebook_media
+  title: Namakzip
+  publisher_or_creator: Michelin Guide
+  url: https://guide.michelin.com/en/busan-region/busan_1025838/restaurant/namakzip
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji-gukbap
+  - restaurants
+  - benchmark
+  summary: Michelin restaurant page for Namakzip in Busan.
+  findings:
+  - WebSearch text identifies Namakzip as Dwaeji-gukbap cuisine.
+  - Page text describes a lighter broth with vegetable broth component.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Alternative pork-soup benchmark if location suits route.
+  nikita_relevance: Useful for choosing a cleaner, less heavy soup option.
+  claims_requiring_official_verification:
+  - Confirm current listing, hours, and menu before recommending.
+  corroborating_source_ids:
+  - rs-037
+  - rs-041
+  primary_category: independent_experience_evidence
+  category_tags:
+  - design_publication_benchmark
+  - independent_experience_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-044
+  source_type: trusted_editorial
+  title: Seoul travel guide
+  publisher_or_creator: Lonely Planet
+  url: https://www.lonelyplanet.com/south-korea/seoul
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - lodging_areas
+  - rain_low_energy
+  - Seoul_overview
+  summary: Guidebook-style Seoul destination page for benchmark structure and area framing.
+  findings:
+  - Curl returned HTTP 200 with Lonely Planet Seoul title.
+  - Useful for comparing how guidebook media groups highlights.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Benchmark for concise city overview structure.
+  nikita_relevance: Helps identify which areas feel first-timer friendly.
+  claims_requiring_official_verification:
+  - Use official sources for hours, fees, and transport.
+  corroborating_source_ids:
+  - rs-022
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-045
+  source_type: trusted_editorial
+  title: Busan travel guide
+  publisher_or_creator: Lonely Planet
+  url: https://www.lonelyplanet.com/south-korea/gyeongsangnam-do/busan
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - lodging
+  - Haeundae
+  - Busan_overview
+  summary: Guidebook-style Busan destination page for benchmark route and city framing.
+  findings:
+  - Curl returned HTTP 200 with Lonely Planet Busan title.
+  - Good benchmark for what major guide publishers surface first.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Benchmark for Busan chapter structure.
+  nikita_relevance: Helps compare Haeundae/Gwangalli priority against broader Busan lists.
+  claims_requiring_official_verification:
+  - Use official sources for current operational facts.
+  corroborating_source_ids:
+  - rs-030
+  - rs-032
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-046
+  source_type: trusted_editorial
+  title: Time Out Seoul
+  publisher_or_creator: Time Out
+  url: https://www.timeout.com/seoul
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - Seoul_overview
+  - restaurants
+  - rain_low_energy
+  summary: Publication benchmark for Seoul things to do, hotels, and restaurants.
+  findings:
+  - Curl returned HTTP 200 with Time Out Seoul title.
+  - Use as editorial benchmark, not official fact source.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Good model for short, reader-friendly city modules.
+  nikita_relevance: Can inspire light-plan phrasing for low-energy options.
+  claims_requiring_official_verification:
+  - Officially verify any attraction facts before using.
+  corroborating_source_ids:
+  - rs-022
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-047
+  source_type: trusted_editorial
+  title: Time Out Busan
+  publisher_or_creator: Time Out
+  url: https://www.timeout.com/busan
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - Busan_overview
+  - lodging
+  - restaurants
+  summary: Publication benchmark for Busan where-to-go, eat, and sleep framing.
+  findings:
+  - Curl returned HTTP 200 with Time Out Busan title.
+  - Good for chapter benchmarking and city tone.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Benchmark for Busan destination-writing style.
+  nikita_relevance: Helps balance beach, food, and rest-oriented recommendations.
+  claims_requiring_official_verification:
+  - Officially verify all specific hours and event details.
+  corroborating_source_ids:
+  - rs-030
+  - rs-033
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-048
+  source_type: trusted_editorial
+  title: Seoul travel guide
+  publisher_or_creator: Wikivoyage
+  url: https://en.wikivoyage.org/wiki/Seoul
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - lodging_areas
+  - transit
+  - rain_low_energy
+  summary: Open travel guide benchmark for Seoul districts, transport, and practical notes.
+  findings:
+  - Curl returned HTTP 200 with Wikivoyage Seoul title.
+  - Use as public benchmark, not primary authority.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Helps sanity-check lodging-area and transit framing.
+  nikita_relevance: Useful for practical, concise traveler explanations.
+  claims_requiring_official_verification:
+  - Validate all claims with official and current sources.
+  corroborating_source_ids:
+  - rs-006
+  - rs-008
+  - rs-022
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-049
+  source_type: trusted_editorial
+  title: Busan travel guide
+  publisher_or_creator: Wikivoyage
+  url: https://en.wikivoyage.org/wiki/Busan
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - lodging
+  - Busan Station
+  - Gimhae Airport
+  summary: Open travel guide benchmark for Busan districts and transport context.
+  findings:
+  - Curl returned HTTP 200 with Wikivoyage Busan title.
+  - Use for structure and cross-checking topics only.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Useful for Busan station/airport/lodging-area framing.
+  nikita_relevance: Helps keep Busan practical notes readable.
+  claims_requiring_official_verification:
+  - Validate transit and lodging claims with official/map sources.
+  corroborating_source_ids:
+  - rs-007
+  - rs-039
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-050
+  source_type: trusted_editorial
+  title: Creatrip Seoul activity listing
+  publisher_or_creator: Creatrip
+  url: https://creatrip.com/en/spot/list?trip_city=1
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - booking
+  - hanbok
+  - Korean_fortune_telling
+  summary: Public activity-listing benchmark for Seoul traveler products and booking-oriented content.
+  findings:
+  - Curl returned HTTP 200 with Creatrip activity listing title.
+  - Useful to identify what international travelers can actually book.
+  sponsorship_bias_risk: high
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Shows booking-market framing for Seoul experiences.
+  nikita_relevance: Relevant for hanbok or fortune-telling booking expectations.
+  claims_requiring_official_verification:
+  - Do not use pricing/availability without checking vendor pages close to booking.
+  corroborating_source_ids:
+  - rs-010
+  - rs-065
+  - rs-066
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-051
+  source_type: trusted_editorial
+  title: Seoul travel guide
+  publisher_or_creator: KKday
+  url: https://www.kkday.com/en-us/city/seoul
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - booking
+  - hanbok
+  - rain_low_energy
+  summary: Marketplace travel guide page for Seoul activity benchmarking.
+  findings:
+  - Curl returned HTTP 200 after redirect to KKday Seoul destination page.
+  - Good for understanding bookable activity categories.
+  sponsorship_bias_risk: high
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Benchmark for bookable Seoul experiences.
+  nikita_relevance: Potential source family for hanbok or indoor rainy-day options.
+  claims_requiring_official_verification:
+  - Verify all availability, vendor terms, and prices on final booking pages.
+  corroborating_source_ids:
+  - rs-010
+  - rs-050
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-052
+  source_type: trusted_editorial
+  title: Busan travel guide
+  publisher_or_creator: KKday
+  url: https://www.kkday.com/en-us/city/busan
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - booking
+  - Sky Capsule
+  - Gimhae Airport
+  summary: Marketplace travel guide page for Busan activities and booking categories.
+  findings:
+  - Curl returned HTTP 200 after redirect to KKday Busan destination page.
+  - Useful as a booking-market benchmark for Busan experiences.
+  sponsorship_bias_risk: high
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Benchmark for bookable Busan coastal experiences.
+  nikita_relevance: Can help compare capsule booking channels after official check.
+  claims_requiring_official_verification:
+  - Use official venue pages for rules and verify any marketplace booking terms.
+  corroborating_source_ids:
+  - rs-027
+  - rs-028
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-053
+  source_type: map_platform
+  title: 'Naver Map search: Seoul Station'
+  publisher_or_creator: Naver Map
+  url: https://map.naver.com/p/search/Seoul%20Station
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: mixed
+  city: Seoul
+  topic:
+  - map
+  - Seoul Station
+  - KTX
+  - lodging_areas
+  summary: Map platform search URL for Seoul Station logistics and live place details.
+  findings:
+  - Curl returned HTTP 200 for Naver Map search URL.
+  - Use for final routing, walking exits, and station-area validation.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only
+  evidence_tier: B
+  jerry_relevance: Practical station-routing source for KTX day.
+  nikita_relevance: Helps minimize transfers and walking with luggage.
+  claims_requiring_official_verification:
+  - Check live route from final lodging address.
+  corroborating_source_ids:
+  - rs-008
+  primary_category: map_validation_endpoint
+  category_tags:
+  - independent_experience_evidence
+  - map_validation_endpoint
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-054
+  source_type: map_platform
+  title: 'Kakao Map search: Seoul Station'
+  publisher_or_creator: Kakao Map
+  url: https://map.kakao.com/?q=Seoul%20Station
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: ko
+  city: Seoul
+  topic:
+  - map
+  - Seoul Station
+  - KTX
+  - lodging_areas
+  summary: Kakao Map search URL for Seoul Station routing cross-check.
+  findings:
+  - Curl returned HTTP 200 with Kakao Map title.
+  - Useful as second map platform for Korean routing.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only
+  evidence_tier: B
+  jerry_relevance: Cross-check against Naver for station movement.
+  nikita_relevance: Useful if one map app gives awkward walking directions.
+  claims_requiring_official_verification:
+  - Check live route after lodging is fixed.
+  corroborating_source_ids:
+  - rs-053
+  - rs-008
+  primary_category: map_validation_endpoint
+  category_tags:
+  - independent_experience_evidence
+  - map_validation_endpoint
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-055
+  source_type: map_platform
+  title: 'Naver Map search: Busan Station'
+  publisher_or_creator: Naver Map
+  url: https://map.naver.com/p/search/Busan%20Station
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: mixed
+  city: Busan
+  topic:
+  - map
+  - Busan Station
+  - KTX
+  - lodging
+  summary: Map platform search URL for Busan Station arrival logistics.
+  findings:
+  - Naver Map search pattern verified with HTTP 200 in this environment.
+  - Use for final arrival route from KTX to lodging.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only
+  evidence_tier: B
+  jerry_relevance: Practical Busan arrival routing source.
+  nikita_relevance: Helps keep the KTX arrival day low-energy.
+  claims_requiring_official_verification:
+  - Check live route from final Busan lodging address.
+  corroborating_source_ids:
+  - rs-008
+  - rs-056
+  primary_category: map_validation_endpoint
+  category_tags:
+  - independent_experience_evidence
+  - map_validation_endpoint
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-056
+  source_type: map_platform
+  title: 'Kakao Map search: Busan Station'
+  publisher_or_creator: Kakao Map
+  url: https://map.kakao.com/?q=Busan%20Station
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: ko
+  city: Busan
+  topic:
+  - map
+  - Busan Station
+  - KTX
+  - lodging
+  summary: Kakao Map search URL for Busan Station routing cross-check.
+  findings:
+  - Kakao Map search URL pattern verified with HTTP 200 for station searches.
+  - Use to cross-check Korean transit and taxi routing.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only
+  evidence_tier: B
+  jerry_relevance: Backup route source for Busan Station to hotel.
+  nikita_relevance: Useful for reducing luggage-day confusion.
+  claims_requiring_official_verification:
+  - Check live route after lodging is selected.
+  corroborating_source_ids:
+  - rs-055
+  - rs-008
+  primary_category: map_validation_endpoint
+  category_tags:
+  - independent_experience_evidence
+  - map_validation_endpoint
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; operational claims must be revalidated before use in itinerary hardening
+  freshness_basis_type: http_reachability_only
+- source_id: rs-057
+  source_type: trusted_editorial
+  title: Haeundae Sky Capsule guide
+  publisher_or_creator: IVisitKorea
+  url: https://www.ivisitkorea.com/haeundae-sky-capsule-guide/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - Sky Capsule
+  - Haeundae
+  - Mipo
+  - Cheongsapo
+  summary: Independent guide explaining Haeundae Sky Capsule and Beach Train planning choices.
+  findings:
+  - WebSearch text explains Sky Capsule route from Mipo to Cheongsapo and booking pressure.
+  - Curl returned HTTP 200 with guide title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Helpful experience-level complement to official capsule pages.
+  nikita_relevance: Useful for deciding route direction and timing expectations.
+  claims_requiring_official_verification:
+  - Confirm fares, booking rules, and times on official Blueline site.
+  corroborating_source_ids:
+  - rs-027
+  - rs-028
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-058
+  source_type: trusted_editorial
+  title: 'Haeundae Blue Line Park: Sky Capsule and Beach Train'
+  publisher_or_creator: Breeze Korea
+  url: https://breezekorea.com/haeundae-blue-line-park-sky-capsule/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - Sky Capsule
+  - Haeundae
+  - Cheongsapo
+  summary: Independent guide comparing Sky Capsule and Beach Train experiences.
+  findings:
+  - WebSearch text says Sky Capsule is a shorter elevated Mipo-Cheongsapo ride and Beach Train covers the full line.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Useful comparison for scenic value versus cost.
+  nikita_relevance: Helps choose the most photogenic option without overcommitting.
+  claims_requiring_official_verification:
+  - Confirm operational details with Blueline Park.
+  corroborating_source_ids:
+  - rs-027
+  - rs-028
+  - rs-057
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-059
+  source_type: trusted_editorial
+  title: K-Star Road and Gangnamdol
+  publisher_or_creator: KoreaToDo
+  url: https://www.koreatodo.com/k-star-road-gangnamdo
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - Gangnam
+  - K-pop
+  - JYP
+  summary: Independent practical page for K-Star Road access and Gangnamdol photo points.
+  findings:
+  - WebSearch text gives Apgujeong Rodeo to Cheongdam stretch and Gangnamdol Haus note.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Practical layer for the optional K-pop walk.
+  nikita_relevance: Supports photo-point planning without assuming JYP access.
+  claims_requiring_official_verification:
+  - Confirm current public access and souvenir shop operation.
+  corroborating_source_ids:
+  - rs-024
+  - rs-025
+  - rs-026
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-060
+  source_type: trusted_editorial
+  title: Haeundae Beach guide
+  publisher_or_creator: KoreaToDo
+  url: https://www.koreatodo.com/haeundae-beach
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - Haeundae
+  - beach
+  - rain_low_energy
+  summary: Independent practical guide for Haeundae Beach area planning.
+  findings:
+  - Curl returned HTTP 200 with KoreaToDo Haeundae title.
+  - Useful for visitor-facing access and nearby-attraction framing.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Practical context for Haeundae beach pacing.
+  nikita_relevance: Useful if beach day needs to shrink to a short stroll and cafe.
+  claims_requiring_official_verification:
+  - Officially verify beach operations and safety notices.
+  corroborating_source_ids:
+  - rs-030
+  - rs-039
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-061
+  source_type: trusted_editorial
+  title: Myeongdong Shopping District guide
+  publisher_or_creator: TOP10KR
+  url: https://www.toptenkr.com/myeongdong-shopping-district-guide-seoul/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - Myeongdong
+  - cosmetics_shopping
+  - tax_refund
+  summary: Independent Myeongdong shopping guide focused on stores, tax refunds, and tips.
+  findings:
+  - WebSearch text notes passport and KRW 15000 threshold claims for tax refund.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Practical shopper perspective, secondary to official tax sources.
+  nikita_relevance: Directly relevant to cosmetics and clothing shopping flow.
+  claims_requiring_official_verification:
+  - Use official VisitKorea/VisitSeoul tax pages for all refund rules.
+  corroborating_source_ids:
+  - rs-018
+  - rs-020
+  - rs-021
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-062
+  source_type: trusted_editorial
+  title: Seoul itinerary seven-day guide
+  publisher_or_creator: Prepare Travel Plans
+  url: https://preparetravelplans.com/seoul-itinerary/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - Seoul_itinerary
+  - Myeongdong
+  - Hongdae
+  - Seongsu
+  summary: Independent itinerary benchmark for pacing multi-day Seoul sightseeing.
+  findings:
+  - Curl returned HTTP 200 with Seoul itinerary title.
+  - Useful for route pacing and first-timer structure comparisons.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Benchmark for day-by-day route density.
+  nikita_relevance: Helps keep Seoul days realistic for energy and shopping.
+  claims_requiring_official_verification:
+  - Verify every place detail from official/map sources.
+  corroborating_source_ids:
+  - rs-022
+  - rs-023
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-063
+  source_type: trusted_editorial
+  title: Busan itinerary three-day guide
+  publisher_or_creator: Prepare Travel Plans
+  url: https://preparetravelplans.com/busan-itinerary/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - Busan_itinerary
+  - Haeundae
+  - Gwangalli
+  summary: Independent Busan itinerary benchmark for a short first-time visit.
+  findings:
+  - Curl returned HTTP 200 with Busan itinerary title.
+  - Useful for comparing route density in a 2-3 day Busan stay.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Benchmark for not overloading the short Busan chapter.
+  nikita_relevance: Helps preserve beach/cafe rest time.
+  claims_requiring_official_verification:
+  - Verify transport, hours, and ticket details officially.
+  corroborating_source_ids:
+  - rs-030
+  - rs-032
+  - rs-033
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-064
+  source_type: trusted_editorial
+  title: Seoul restaurants guide
+  publisher_or_creator: Will Fly for Food
+  url: https://www.willflyforfood.net/seoul-food-guide/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - website_benchmark
+  - markets
+  - street_food
+  - rain_low_energy
+  summary: Independent food-guide benchmark for Seoul meals and market-food framing.
+  findings:
+  - Curl followed to a live Seoul food guide and returned HTTP 200.
+  - Use only for inspiration, not as sole restaurant proof.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Useful for food-plan style and market alternatives.
+  nikita_relevance: Can inspire easy meals near shopping or rainy-day plans.
+  claims_requiring_official_verification:
+  - Restaurant details require current map/official checks.
+  corroborating_source_ids:
+  - rs-015
+  - rs-018
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  - travel_editorial
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; trusted editorial/experience signal only — not Tier A operator proof; primary_category is independent_experience_evidence
+    (not design benchmark)
+  freshness_basis_type: http_reachability_only
+- source_id: rs-065
+  source_type: independent_blog
+  title: 'Saju and Tarot in Seoul: seven things foreigners should know'
+  publisher_or_creator: Citygram Seoul
+  url: https://citygramseoul.kr/korean-fortune-telling-saju-tarot-guide-2025/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Korean_fortune_telling
+  - Gangnam
+  - Hongdae
+  - Insadong
+  summary: Creator-style guide explaining saju and tarot neighborhoods for foreigners.
+  findings:
+  - WebSearch text says Gangnam has private consultation spaces, saju readers, tarot shops, and cafes.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Experience texture for planning a saju/tarot stop.
+  nikita_relevance: Relevant to making fortune-telling feel approachable and not over-scheduled.
+  claims_requiring_official_verification:
+  - Confirm language support, pricing, and reservations with the actual shop.
+  corroborating_source_ids:
+  - rs-050
+  - rs-066
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-066
+  source_type: independent_blog
+  title: How to visit a saju cafe in Korea
+  publisher_or_creator: K-Saju
+  url: https://k-saju.co.kr/how-to-visit-a-saju-cafe-in-korea-the-complete-guide/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - Korean_fortune_telling
+  - booking
+  - language_support
+  summary: Specialist blog guide for first-time saju cafe visitors in Korea.
+  findings:
+  - WebSearch text suggests checking Instagram, Naver Blog, or Google for English-friendly saju cafes.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Practical prep for saju experience logistics.
+  nikita_relevance: Useful for deciding whether English support is enough for Nikita to enjoy it.
+  claims_requiring_official_verification:
+  - Verify specific provider, language, birth-info needs, and booking channel officially.
+  corroborating_source_ids:
+  - rs-065
+  - rs-050
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-067
+  source_type: independent_blog
+  title: Wearing the Hanbok for a Day in Seoul
+  publisher_or_creator: Gini In the Jungle
+  url: https://giniinthejungle.com/wearing-hanbok-seoul/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - hanbok
+  - Gyeongbokgung
+  - Bukchon
+  - Insadong
+  - couple_photo_spots
+  summary: Personal blog account of wearing hanbok around Seoul historical neighborhoods.
+  findings:
+  - WebSearch text mentions hanbok rentals near Gyeongbokgung and Insadong and walking Bukchon streets.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Lived-experience texture for the hanbok day.
+  nikita_relevance: Helps make the photo experience feel personal while official sources handle rules.
+  claims_requiring_official_verification:
+  - Use official palace and rental-shop pages for current rules/prices.
+  corroborating_source_ids:
+  - rs-010
+  - rs-013
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-068
+  source_type: independent_blog
+  title: Hanbok at Gyeongbokgung Palace photo guide
+  publisher_or_creator: Unnies Picking
+  url: https://unniespicking.com/hanbok-at-gyeongbokgung-palace/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Seoul
+  topic:
+  - hanbok
+  - Gyeongbokgung
+  - Bukchon
+  - Insadong
+  - photo_spots
+  summary: Creator guide focused on hanbok photos around Gyeongbokgung, Bukchon, and Insadong.
+  findings:
+  - WebSearch text gives a typical Gyeongbokgung to Bukchon to Insadong photo route.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Photo-route inspiration for palace day.
+  nikita_relevance: Relevant for couple photos and keeping the route compact.
+  claims_requiring_official_verification:
+  - Confirm current prices, photographer availability, and palace rules separately.
+  corroborating_source_ids:
+  - rs-010
+  - rs-013
+  - rs-015
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-069
+  source_type: independent_blog
+  title: Busan three-day itinerary with cafe hopping
+  publisher_or_creator: To Infinity and Abroad
+  url: https://toinfinityandabroad.com/busan-3-day-itinerary/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Cheongsapo
+  - Sky Capsule
+  - sea_cafes
+  summary: Creator itinerary combining Haeundae, Cheongsapo, Sky Capsule, and cafe hopping.
+  findings:
+  - WebSearch text lists Haeundae Beach, Cheongsapo Daritdol Skywalk, Haeundae Blueline Park, and sea-view cafes.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Experience texture for a cafe-forward Busan plan.
+  nikita_relevance: Strong fit for sea cafes and low-pressure coastal photos.
+  claims_requiring_official_verification:
+  - Confirm cafe hours and capsule booking with official/map sources.
+  corroborating_source_ids:
+  - rs-027
+  - rs-028
+  - rs-031
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-070
+  source_type: independent_blog
+  title: Three day Busan itinerary
+  publisher_or_creator: Live Like It's the Weekend
+  url: https://www.livelikeitstheweekend.com/busan-itinerary/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Gwangalli
+  - Sky Capsule
+  - sea_cafes
+  - lodging
+  summary: Creator itinerary emphasizing Haeundae, Gwangalli, cafes, and Sky Capsule timing.
+  findings:
+  - WebSearch text recommends sunset for Busan Sky Capsule and mentions Gwangalli design-forward cafes.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Useful experiential counterpoint for timing the capsule ride.
+  nikita_relevance: Relevant for sea views, cafes, and evening photos.
+  claims_requiring_official_verification:
+  - Officially verify capsule slots, cafe hours, and drone-show details.
+  corroborating_source_ids:
+  - rs-028
+  - rs-032
+  - rs-033
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-071
+  source_type: independent_blog
+  title: Busan two-day itinerary for first timers
+  publisher_or_creator: Tourist to Local
+  url: https://touristtolocal.com/busan-2-day-itinerary/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Gwangalli
+  - Cheongsapo
+  - lodging
+  summary: Creator first-timer Busan itinerary with Haeundae base and coastal highlights.
+  findings:
+  - WebSearch text recommends basing in Haeundae and booking Blue Line Park in advance.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Useful lived-experience support for Haeundae lodging consideration.
+  nikita_relevance: Helps keep the short Busan stay centered near the coast.
+  claims_requiring_official_verification:
+  - Use maps and official venue pages for lodging, transit, and bookings.
+  corroborating_source_ids:
+  - rs-030
+  - rs-057
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-072
+  source_type: independent_blog
+  title: Rooftop cafes with the best ocean views in Busan
+  publisher_or_creator: Go Farther
+  url: https://www.gofarther.blog/blog/rooftop-cafes-with-the-best-ocean-views-in-busan
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - sea_cafes
+  - Haeundae
+  - Cheongsapo
+  - Gwangalli
+  - night_view
+  summary: Creator cafe guide for Busan ocean-view rooftop cafes across coastal districts.
+  findings:
+  - WebSearch text covers Haeundae/Cheongsapo, Gwangalli, and Yeongdo cafe districts.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Cafe-specific inspiration for rain or low-energy Busan time.
+  nikita_relevance: Very relevant for Nikita's sea-cafe and photo preferences.
+  claims_requiring_official_verification:
+  - Confirm cafe hours, menus, and reservation needs on maps/social before use.
+  corroborating_source_ids:
+  - rs-031
+  - rs-032
+  - rs-033
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-073
+  source_type: independent_blog
+  title: Things to do in Busan
+  publisher_or_creator: There She Goes Again
+  url: https://thereshegoesagain.org/things-to-do-in-busan/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Gwangalli
+  - lodging
+  - markets
+  summary: Creator Busan guide with practical Haeundae and Gwangalli notes.
+  findings:
+  - WebSearch text suggests staying near Haeundae and gives Haeundae/Gwangalli station access notes.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Experience-based support for Busan lodging-area tradeoffs.
+  nikita_relevance: Helps compare energetic beach base versus easier logistics.
+  claims_requiring_official_verification:
+  - Confirm lodging and transit with current maps and booking data.
+  corroborating_source_ids:
+  - rs-030
+  - rs-032
+  - rs-055
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-074
+  source_type: independent_blog
+  title: 'East Busan guide: Haeundae, Gwangan, and Dalmaji'
+  publisher_or_creator: The Occasional Traveller
+  url: https://theoccasionaltraveller.com/east-busan-haeundae/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Gwangalli
+  - Dalmaji
+  - coastal_walk
+  summary: Creator guide focused on East Busan beaches and coastal districts.
+  findings:
+  - WebSearch text describes Haeundae Beach, Gwangalli Beach, Gwangan Bridge, and metro access.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Good lived-experience framing for the east-coast day.
+  nikita_relevance: Helps explain why Haeundae and Gwangalli feel different.
+  claims_requiring_official_verification:
+  - Verify transit and attraction details with official/map sources.
+  corroborating_source_ids:
+  - rs-030
+  - rs-032
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-075
+  source_type: independent_blog
+  title: Sweet Escape to Busan three-day itinerary
+  publisher_or_creator: Knycx Journeying
+  url: https://knycxjourneying.com/busan-city-escape/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Gwangalli
+  - Haeundae
+  - Sky Capsule
+  - lodging
+  - low_energy
+  summary: Creator itinerary emphasizing a relaxed Busan escape around Gwangalli, Haeundae, and Sky Capsule.
+  findings:
+  - WebSearch text recommends Gwangalli or Haeundae lodging for coastal access.
+  - It describes a low-pressure itinerary with ocean time and subway/taxi use.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Helpful low-pressure Busan pacing example.
+  nikita_relevance: Good match for a romantic but not exhausting Busan stay.
+  claims_requiring_official_verification:
+  - Confirm lodging prices, capsule bookings, and taxi/subway times separately.
+  corroborating_source_ids:
+  - rs-027
+  - rs-032
+  - rs-039
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-076
+  source_type: independent_blog
+  title: Busan itinerary for first-time visitors
+  publisher_or_creator: Hey Roseanne
+  url: https://heyroseanne.com/busan-itinerary/
+  publish_date: null
+  accessed_at: '2026-07-20'
+  language: en
+  city: Busan
+  topic:
+  - Haeundae
+  - Gwangalli
+  - Cheongsapo
+  - night_view
+  - lodging
+  summary: Creator first-timer Busan itinerary covering Haeundae, Sky Capsule, Cheongsapo, and Gwangalli at night.
+  findings:
+  - WebSearch text lists Haeundae Beach, Blueline Sky Capsule, Cheongsapo Observatory, and Gwangalli Beach night.
+  - Curl returned HTTP 200 with title.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Useful for validating that the coastal cluster works for short stays.
+  nikita_relevance: Relevant for sea views and night-photo planning.
+  claims_requiring_official_verification:
+  - Officially verify transport, ticketing, and event details before final plan.
+  corroborating_source_ids:
+  - rs-028
+  - rs-031
+  - rs-032
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2026-09-18'
+  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
+    unknown; insufficient evidence to assert operational freshness
+  freshness_basis_type: http_reachability_only
+- source_id: rs-077
+  source_type: website_benchmark
+  title: Wanderlog product site
+  publisher_or_creator: Wanderlog
+  url: https://wanderlog.com/
+  publish_date: null
+  language: en
+  city: Multi
+  topic:
+  - website_benchmark
+  - itinerary_ux
+  summary: Collaborative trip planner used as website IA benchmark only.
+  findings:
+  - Reviewed as product pattern reference for day list and map-first planning UX.
+  - Not used as Korea operational evidence.
+  sponsorship_bias_risk: medium
+  jerry_relevance: Execution clarity patterns.
+  nikita_relevance: Low direct place relevance.
+  claims_requiring_official_verification: []
+  corroborating_source_ids:
+  - rs-078
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-078
+  source_type: website_benchmark
+  title: TripIt product site
+  publisher_or_creator: TripIt
+  url: https://www.tripit.com/
+  publish_date: null
+  language: en
+  city: Multi
+  topic:
+  - website_benchmark
+  - execution_timeline
+  summary: Confirmation-centric travel timeline product benchmark.
+  findings:
+  - Next-event hierarchy is useful for /today/ patterns.
+  - Assumes booked inventory we often lack.
+  sponsorship_bias_risk: medium
+  jerry_relevance: Timeline execution pattern.
+  nikita_relevance: Low.
+  claims_requiring_official_verification: []
+  corroborating_source_ids:
+  - rs-077
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-079
+  source_type: website_benchmark
+  title: KDE Itinerary documentation
+  publisher_or_creator: KDE
+  url: https://apps.kde.org/itinerary/
+  publish_date: null
+  language: en
+  city: Multi
+  topic:
+  - website_benchmark
+  - reservations
+  summary: Open-source travel document/timeline app used as domain benchmark.
+  findings:
+  - Reservation-object clarity is a useful model.
+  - Desktop-centric; not a couple editorial site.
+  sponsorship_bias_risk: low
+  jerry_relevance: Documents vs narrative separation.
+  nikita_relevance: Low.
+  claims_requiring_official_verification: []
+  corroborating_source_ids: []
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-080
+  source_type: website_benchmark
+  title: AdventureLog project
+  publisher_or_creator: seanmorley15/AdventureLog
+  url: https://adventurelog.app/
+  publish_date: null
+  language: en
+  city: Multi
+  topic:
+  - website_benchmark
+  - map_journal
+  summary: Self-hosted travel journal/map product benchmark.
+  findings:
+  - Map storytelling pattern noted.
+  - Stack unsuitable; pattern-only reference.
+  sponsorship_bias_risk: low
+  jerry_relevance: Remember/map patterns.
+  nikita_relevance: Low.
+  claims_requiring_official_verification: []
+  corroborating_source_ids:
+  - rs-079
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-081
+  source_type: website_benchmark
+  title: VisitKorea English portal homepage pattern
+  publisher_or_creator: Korea Tourism Organization
+  url: https://english.visitkorea.or.kr/
+  publish_date: null
+  language: en
+  city: National
+  topic:
+  - website_benchmark
+  - official_tourism_ia
+  summary: Official tourism portal IA/publication pattern benchmark (not counted as venue ops evidence).
+  findings:
+  - Hero → category → attraction modules observed as publication pattern.
+  - Operational facts still require A1 venue pages.
+  sponsorship_bias_risk: low
+  jerry_relevance: Fact-module hierarchy.
+  nikita_relevance: Discovery browsing pattern.
+  claims_requiring_official_verification:
+  - Any hours/prices must come from A1 pages
+  corroborating_source_ids:
+  - rs-082
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-082
+  source_type: website_benchmark
+  title: Visit Busan portal homepage pattern
+  publisher_or_creator: Busan Metropolitan City
+  url: https://www.visitbusan.net/EN/index.do
+  publish_date: null
+  language: en
+  city: Busan
+  topic:
+  - website_benchmark
+  - city_tourism_ia
+  summary: City tourism portal IA benchmark for area/season framing.
+  findings:
+  - Area and themed-tour modules useful as publication pattern.
+  - Not a substitute for venue operator pages.
+  sponsorship_bias_risk: low
+  jerry_relevance: Area comparison framing.
+  nikita_relevance: Beach/food discovery IA.
+  claims_requiring_official_verification: []
+  corroborating_source_ids:
+  - rs-081
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-083
+  source_type: website_benchmark
+  title: Lonely Planet destination guide pattern notes
+  publisher_or_creator: Lonely Planet
+  url: https://www.lonelyplanet.com/south-korea
+  publish_date: null
+  language: en
+  city: Multi
+  topic:
+  - website_benchmark
+  - guidebook_ia
+  summary: Commercial guidebook site used for editorial hierarchy patterns.
+  findings:
+  - Neighborhood why-go structure is useful.
+  - Brand UI must not be copied; travel facts still need local corroboration.
+  sponsorship_bias_risk: medium
+  jerry_relevance: Editorial teaching hierarchy.
+  nikita_relevance: Neighborhood storytelling.
+  claims_requiring_official_verification: []
+  corroborating_source_ids:
+  - rs-044
+  - rs-045
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-084
+  source_type: website_benchmark
+  title: Michelin Guide web restaurant page pattern
+  publisher_or_creator: Michelin Guide
+  url: https://guide.michelin.com/kr/en
+  publish_date: null
+  language: en
+  city: Multi
+  topic:
+  - website_benchmark
+  - food_guide_ia
+  summary: Food-guide page pattern for Identify/trust modules.
+  findings:
+  - One-dish identity + neighborhood pattern.
+  - Restaurant facts still need on-site/operator corroboration before booking claims.
+  sponsorship_bias_risk: low
+  jerry_relevance: Trust markers for shortlists.
+  nikita_relevance: Food Identify teaching.
+  claims_requiring_official_verification: []
+  corroborating_source_ids:
+  - rs-041
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-085
+  source_type: website_benchmark
+  title: TREK open-source travel planner README patterns
+  publisher_or_creator: liketrek/TREK
+  url: https://github.com/liketrek/TREK
+  publish_date: null
+  language: en
+  city: Multi
+  topic:
+  - website_benchmark
+  - oss_planner
+  summary: Open-source planner README used for planning-vs-documents UX notes.
+  findings:
+  - Planning vs documents separation useful.
+  - Reject AGPL server stack for this repo.
+  sponsorship_bias_risk: low
+  jerry_relevance: Planner information architecture.
+  nikita_relevance: Low.
+  claims_requiring_official_verification: []
+  corroborating_source_ids:
+  - rs-080
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-086
+  source_type: website_benchmark
+  title: awesome-design-md repository pattern reference
+  publisher_or_creator: awesome-design-md ecosystem
+  url: https://github.com/topics/awesome-design
+  publish_date: null
+  language: en
+  city: Multi
+  topic:
+  - website_benchmark
+  - design_language
+  summary: Design-language reference topic used for warm editorial direction constraints.
+  findings:
+  - Use for anti-patterns and editorial tone boundaries.
+  - Not travel factual evidence.
+  sponsorship_bias_risk: low
+  jerry_relevance: Publication design constraints.
+  nikita_relevance: Warm couple-book tone.
+  claims_requiring_official_verification: []
+  corroborating_source_ids: []
+  accessed_at: '2026-07-20'
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  revalidate_by: '2027-01-16'
+  freshness_basis: design/publication benchmark only; accessibility checked; content_last_updated unknown; not used as Korea
+    operational evidence
+  copyright_usage_rule: link_only_pattern_notes
+  evidence_tier: B
+  primary_category: design_publication_benchmark
+  category_tags:
+  - design_publication_benchmark
+  freshness_basis_type: page_review_no_update_date
+blocked_sources:
+- source_id: rs-blocked-001
+  url: https://www.klook.com/en-US/city/13-seoul-things-to-do/
+  reason: HTTP 403 from curl; treated as bot-blocked and not used as a read source.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-051
+  accessibility_status: blocked
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: source not successfully read; no content freshness claim
+  blocked_class: other
+- source_id: rs-blocked-002
+  url: https://www.klook.com/en-US/city/14-busan-things-to-do/
+  reason: HTTP 403 from curl; treated as bot-blocked and not used as a read source.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-052
+  accessibility_status: blocked
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: source not successfully read; no content freshness claim
+  blocked_class: other
+- source_id: rs-blocked-003
+  url: https://theculturetrip.com/asia/south-korea/articles/the-best-things-to-do-in-seoul
+  reason: Curl returned HTTP 000 in this environment; not used.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-046
+  accessibility_status: blocked
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: source not successfully read; no content freshness claim
+  blocked_class: other
+- source_id: rs-blocked-004
+  url: https://theculturetrip.com/asia/south-korea/articles/the-top-things-to-do-and-see-in-busan
+  reason: Curl returned HTTP 000 in this environment; not used.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-047
+  accessibility_status: blocked
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: source not successfully read; no content freshness claim
+  blocked_class: other
+- source_id: rs-blocked-005
+  url: https://daebak.co/blogs/magazine/korean-saju-fortune-telling-explained
+  reason: Curl returned HTTP 429 rate limited; not used as a read source.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-065
+  accessibility_status: blocked
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: source not successfully read; no content freshness claim
+  blocked_class: other
+- source_id: rs-blocked-006
+  url: https://www.trazy.com/city/seoul
+  reason: HTTP 404 for candidate city URL; not used.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-050
+  accessibility_status: blocked
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: source not successfully read; no content freshness claim
+  blocked_class: other
+- source_id: rs-blocked-007
+  url: https://www.willflyforfood.net/busan-food-guide/
+  reason: HTTP 404 for candidate page; not used.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-041
+  accessibility_status: blocked
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: source not successfully read; no content freshness claim
+  blocked_class: other
+- source_id: rs-blocked-008
+  url: https://www.youtube.com/results?search_query=busan+dwaeji+gukbap
+  reason: YouTube search/results require interactive session; no specific video fully watched or transcribed. Not counted
+    as readable Tier C.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-041
+  accessibility_status: blocked
+  blocked_class: creator
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: platform not fully readable here; no video content claimed
+- source_id: rs-blocked-009
+  url: https://www.instagram.com/explore/tags/해운대/
+  reason: Instagram tag explore typically login/region gated; no posts fully read. Not counted as readable Tier C.
+  attempted_at: '2026-07-20'
+  replacement_source_id: rs-032
+  accessibility_status: blocked
+  blocked_class: creator
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-20'
+  freshness_basis: platform not fully readable here; no post content claimed

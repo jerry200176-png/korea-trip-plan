@@ -1,0 +1,200 @@
+# Round 1 visual candidates only — do not mass-download.
+# approval_status: proposed | needs_license_check | blocked | deferred
+
+meta:
+  round: 1
+  updated_at: "2026-07-20"
+  rule: candidates_only_no_bulk_import
+
+candidates:
+  - id: vc-seoul-city-map
+    subject: Seoul 4-night orient map (Jongno / Myeongdong / Gangnam clusters)
+    visual_function: Orient
+    source_candidate: Redraw from OSM + official district names; cite VisitSeoul
+    creator: TBD project diagram
+    license_status: needs_license_check
+    factual_or_illustrative: factual_diagram
+    intended_page: [days, pdf_seoul]
+    jerry_nikita_relevance: Jerry transit clarity; Nikita shopping/GOT7 clusters
+    resolution_requirement: readable at mobile 390 and A4 PDF
+    approval_status: proposed
+
+  - id: vc-busan-city-map
+    subject: Busan 2-night orient map (Haeundae / Gwangalli / station / PUS)
+    visual_function: Orient
+    source_candidate: Redraw; cite VisitBusan / Busan city
+    creator: TBD project diagram
+    license_status: needs_license_check
+    factual_or_illustrative: factual_diagram
+    intended_page: [days, pdf_busan]
+    jerry_nikita_relevance: Beach vs return logistics
+    resolution_requirement: mobile + PDF
+    approval_status: proposed
+
+  - id: vc-day2-route
+    subject: Day 2 walking sequence Hanbok → Gyeongbokgung → Bukchon
+    visual_function: Explain
+    source_candidate: Project diagram; Tier A palace access points
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: factual_diagram
+    intended_page: [days/day-2, today/day-2, pdf]
+    jerry_nikita_relevance: Jerry walking load; Nikita hanbok photos
+    resolution_requirement: step labels legible
+    approval_status: proposed
+
+  - id: vc-day4-gangnam-cluster
+    subject: Gangnam single-cluster day (fortune + optional GOT7-light)
+    visual_function: Explain
+    source_candidate: Project diagram after shop research
+    creator: TBD
+    license_status: deferred
+    factual_or_illustrative: factual_diagram
+    intended_page: [days/day-4, today/day-4]
+    jerry_nikita_relevance: Minimize transfers; Nikita experiences
+    resolution_requirement: mobile first
+    approval_status: deferred
+
+  - id: vc-transfer-icn-to-city
+    subject: ICN → city transfer Compare (AREX vs bus)
+    visual_function: Compare
+    source_candidate: Incheon Airport official pages
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: factual_diagram
+    intended_page: [before, days/day-1]
+    jerry_nikita_relevance: Jerry risk/advance understanding
+    resolution_requirement: table + icons
+    approval_status: proposed
+
+  - id: vc-ktx-luggage
+    subject: KTX seat/luggage simple Explain card
+    visual_function: Explain
+    source_candidate: Korail official; redraw only
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: factual_diagram
+    intended_page: [days/day-5, pdf]
+    jerry_nikita_relevance: Move-day calm
+    resolution_requirement: PDF readable
+    approval_status: proposed
+
+  - id: vc-myeongdong-vs-hongdae
+    subject: Shopping area Compare
+    visual_function: Compare
+    source_candidate: VisitSeoul + experience sources
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: factual_diagram
+    intended_page: [shopping, days/day-3]
+    jerry_nikita_relevance: Nikita cosmetics/clothes; Jerry queue risk
+    resolution_requirement: two-column mobile
+    approval_status: proposed
+
+  - id: vc-pork-soup-identify
+    subject: Dwaeji-gukbap bowl Identify (ingredients, how to eat, shellfish notes)
+    visual_function: Identify
+    source_candidate: Original illustration or licensed food photo — not restaurant plagiarism
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: illustrative_with_fact_notes
+    intended_page: [food, days/day-5, days/day-6]
+    jerry_nikita_relevance: Nikita priority; avoid crustaceans
+    resolution_requirement: close-up readable
+    approval_status: proposed
+
+  - id: vc-cosmetics-identify
+    subject: Cosmetics category Identify card (what to buy where) — no brand logos unless licensed
+    visual_function: Identify
+    source_candidate: Abstract packaging illustration or licensed stills
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: illustrative
+    intended_page: [shopping, days/day-3]
+    jerry_nikita_relevance: Nikita cosmetics
+    resolution_requirement: mobile
+    approval_status: proposed
+
+  - id: vc-photo-composition-hanbok
+    subject: Couple photo composition guide at palace/hanok
+    visual_function: Explain
+    source_candidate: Original diagram; no scraped influencer stills
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: illustrative
+    intended_page: [days/day-2]
+    jerry_nikita_relevance: Couple photos + instant camera
+    resolution_requirement: 3-frame guide
+    approval_status: proposed
+
+  - id: vc-rain-backup-compare
+    subject: Rain backup Compare for Seoul Day 2/3 and Busan Day 6
+    visual_function: Compare
+    source_candidate: Project diagram after venue shortlist
+    creator: TBD
+    license_status: deferred
+    factual_or_illustrative: factual_diagram
+    intended_page: [days, today]
+    jerry_nikita_relevance: Weather resilience
+    resolution_requirement: mobile
+    approval_status: deferred
+
+  - id: vc-low-energy-day6
+    subject: Day 6 full vs low-energy beach walking map
+    visual_function: Compare
+    source_candidate: Project diagram
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: factual_diagram
+    intended_page: [days/day-6, today/day-6]
+    jerry_nikita_relevance: feet_tire_easily; not too packed
+    resolution_requirement: two variants
+    approval_status: proposed
+
+  - id: vc-packing-card
+    subject: Packing + departure checklist visual
+    visual_function: Explain
+    source_candidate: Original
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: illustrative
+    intended_page: [before, packing]
+    jerry_nikita_relevance: First overseas calm
+    resolution_requirement: one-screen mobile
+    approval_status: proposed
+
+  - id: vc-korean-phrase-cards
+    subject: Practical Korean phrase cards for food/taxi/emergency
+    visual_function: Explain
+    source_candidate: Original; verify phrases
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: factual_text_cards
+    intended_page: [phrases, emergency]
+    jerry_nikita_relevance: Execution confidence
+    resolution_requirement: large type
+    approval_status: proposed
+
+  - id: vc-memory-prompts
+    subject: Jerry & Nikita Remember prompts (polaroid-style prompts, not real faces)
+    visual_function: Remember
+    source_candidate: Original illustration
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: illustrative
+    intended_page: [home, review, pdf_closing]
+    jerry_nikita_relevance: Shared success criterion
+    resolution_requirement: warm editorial
+    approval_status: proposed
+
+  - id: vc-haeundae-vs-gwangalli
+    subject: Beach area Compare
+    visual_function: Compare
+    source_candidate: VisitBusan facts + redraw
+    creator: TBD
+    license_status: needs_license_check
+    factual_or_illustrative: factual_diagram
+    intended_page: [days/day-6]
+    jerry_nikita_relevance: Scenery vs energy/seafood risk
+    resolution_requirement: mobile
+    approval_status: proposed

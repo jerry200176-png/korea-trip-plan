@@ -1,0 +1,96 @@
+# Jerry & Nikita — confirmed couple profile only.
+# Public product uses first names only. No surnames, DOB, phone, address, ID, or other PII.
+# Do not invent preferences. Future recommendations must link back to fields here.
+
+meta:
+  profile_id: couple-jerry-nikita
+  status: Confirmed_foundation
+  updated_at: "2026-07-20"
+  pii_policy: first_names_only
+  notes: >
+    Assembled from founder-confirmed trip.yaml / travelers.yaml / TRIP_BRIEF
+    and explicit Round 1 instructions. Empty arrays mean not yet confirmed.
+
+travelers:
+  - id: trv-jerry
+    display_name: Jerry
+    role: traveler
+    public_name_rule: first_name_only
+  - id: trv-nikita
+    display_name: Nikita
+    role: traveler
+    public_name_rule: first_name_only
+
+trip_baseline:
+  first_overseas_trip_together: true
+  country: Korea
+  calendar_days: 7
+  hotel_nights: 6
+  seoul_nights: 4
+  busan_nights: 2
+  target_month: "2027-03"
+  d1_exact_dates: DecisionRequired
+  origin_city: Taipei
+  transport_mode: public_transit
+  rental_car: false
+  daily_window:
+    out: "09:00"
+    return: "21:00"
+  pacing:
+    not_too_packed: true
+    feet_tire_easily: true
+    minimize_transfers: true
+
+shared_success:
+  criterion: 第一次一起出國，留下最美好的回憶。
+
+nikita_priorities:
+  confirmed:
+    - GOT7
+    - 海灘與風景
+    - 道地豬肉湯飯
+    - 化妝品
+    - 衣服
+    - 購物
+    - 韓服
+    - 韓國算命
+    - 美食
+    - 乾淨舒服住宿
+  unconfirmed: []
+
+jerry_priorities:
+  confirmed:
+    - 行程順暢
+    - 不要太累
+    - 有充分研究與選擇理由
+    - 不為打卡犧牲整體體驗
+    - 提前理解交通與風險
+    - 兩人照與拍立得紀錄
+  unconfirmed: []
+
+constraints:
+  confirmed:
+    - no_alcohol
+    - no_jjimjilbang
+    - avoid_crustacean_seafood
+    - avoid_long_queues
+    - avoid_excessive_walking
+  unconfirmed: []
+
+recording:
+  devices_confirmed:
+    - iPhone
+    - instant_camera
+  couple_photo_intent: true
+
+lodging_preferences:
+  confirmed:
+    - clean_comfortable
+    - double_bed
+    - convenience_store_nearby_bonus
+  bathtub_required: false
+
+recommendation_rule: >
+  Every future stop, restaurant, lodging area, or visual candidate must cite at
+  least one concrete field from this profile (nikita_priorities, jerry_priorities,
+  constraints, or trip_baseline). Do not invent feelings or preferences.

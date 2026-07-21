@@ -1,0 +1,15 @@
+claims:
+  - claim_id: clm-fixture-1
+    claim: Fixture claim
+    supporting_source_ids:
+      - rs-blocked-fixture-001
+    discovery_source_ids: []
+    blocked_source_ids: []
+    contradicting_source_ids: []
+    missing_evidence_requirements: []
+    confidence: Low
+    checked_at: '2026-07-20'
+    requires_revalidation: true
+    affected_day: Day 0
+    jerry_relevance: Fixture
+    nikita_relevance: Fixture

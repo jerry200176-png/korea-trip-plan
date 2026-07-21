@@ -15,6 +15,8 @@
     "check:public-preview-privacy": "tsx scripts/check-public-preview-privacy.ts",
     "check:reader-facing": "tsx scripts/check-reader-facing.ts",
     "check:stale": "tsx scripts/check-stale.ts",
+    "check:research-registry": "tsx scripts/check-research-registry.ts",
+    "test:research-registry": "tsx scripts/test-research-registry-freshness.ts",
     "check:links": "tsx scripts/check-links.ts",
     "check:route-messaging": "tsx scripts/check-route-messaging.ts",
     "check:lodging-scores": "tsx scripts/check-lodging-scores.ts",
@@ -29,7 +31,7 @@
     "build": "npm run ci",
     "dev": "npm run dev --prefix site",
     "lint:md": "markdownlint-cli2 \"DESIGN.md\" \"docs/**/*.md\" \"handbook/**/*.md\" \"checklists/**/*.md\" \"README.md\"",
-    "ci": "npm run validate && npm run check:design-md && npm run check:css-tokens && npm run check:media && npm run check:privacy && npm run check:stale && npm run test:itinerary && npm run check:route-messaging && npm run check:lodging-scores && npm run check:links && npm run lint:md && npm run readiness && npm run build:site && npm run pdf && npm run verify:pdf && npm run prepare:artifacts && npm run check:public-preview-privacy && npm run check:reader-facing && npm run test:mobile && npm run capture:visual"
+    "ci": "npm run validate && npm run check:design-md && npm run check:css-tokens && npm run check:media && npm run check:privacy && npm run check:stale && npm run check:research-registry && npm run test:research-registry && npm run test:itinerary && npm run check:route-messaging && npm run check:lodging-scores && npm run check:links && npm run lint:md && npm run readiness && npm run build:site && npm run pdf && npm run verify:pdf && npm run prepare:artifacts && npm run check:public-preview-privacy && npm run check:reader-facing && npm run test:mobile && npm run capture:visual"
   },
   "devDependencies": {
     "ajv": "^8.17.1",
