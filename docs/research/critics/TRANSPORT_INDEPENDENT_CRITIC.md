@@ -2,7 +2,7 @@
 
 **PR:** #18 (`cursor/textbook-transport-e48c`)  
 **Critic context:** fresh-context subagent (not PR author)  
-**Reviewed head (PASS):** `826096d`  
+**Reviewed head (PASS):** `c7492f2` (after mobile status-badge fix)  
 **Verdict:** **PASS**
 
 ## Critics
