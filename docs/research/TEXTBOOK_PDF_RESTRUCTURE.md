@@ -31,7 +31,7 @@ Rebuild the handbook as a **Textbook Edition** with clear chapters, TOC + page n
 
 - Media Edition hard ≤20 **replaced** (not deleted) by:
   - overall min 28 / max 72
-  - section budgets (`PDFSEC:*` markers)
+  - section budgets (`docs/design-proof/pdf-section-manifest.json`; draft-only markers — final PDF must not contain `PDFSEC:`)
   - near-blank / orphan detection
   - chapter completeness (required markers)
   - file-size ceiling (15 MB handbook)

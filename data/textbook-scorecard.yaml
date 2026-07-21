@@ -224,6 +224,8 @@ round_2_progress:
     decision_doc: docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md
     updated_at: '2026-07-21'
     branch: cursor/final-textbook-rendering-f752
+    pr: 26
+    head_sha: bbdfbd4d502eb83be601082d98d000fe6446fd7a
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
