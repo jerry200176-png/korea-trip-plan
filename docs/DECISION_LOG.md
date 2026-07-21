@@ -80,4 +80,3 @@ Append-only. Newest first.
 - **Status:** Provisional product decision (Round 2B); tax thresholds revalidate at T-7.
 - **Evidence:** `rs-018`/`rs-019` area orientation; `rs-020`/`rs-021`/`rs-092` tax process; `rs-091` Olive Young immediate refund tourism page.
 - **Doc:** `docs/research/DAY3_SHOPPING_TEACHING.md`
-

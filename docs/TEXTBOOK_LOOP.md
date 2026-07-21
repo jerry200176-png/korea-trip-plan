@@ -54,7 +54,6 @@ Each Round 2 PR closes on **slice** criteria, not Textbook Final Exit:
 
 1. ~~Day 4 Feasibility Decision~~ (merged)
 2. ~~Nikita Shopping Teaching Slice~~ (Round 2B in progress)  
-2. Nikita Shopping Teaching Slice  
 3. Busan Food & Coastal Rhythm  
 
 Every slice PR must include: research evidence · personalized rationale · ≥1 functional diagram · independent critic · no self-merge.
@@ -76,4 +75,4 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 - Do not inflate scores  
 - Do not treat CI success as research completion  
 - Do not self-merge Textbook Edition PRs  
-- Do not start Round 2 implementation until Jerry accepts Round 1  
+- Do not start Round 2 implementation until Jerry accepts Round 1
