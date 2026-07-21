@@ -13,6 +13,7 @@ Working tree tip at scan time: `b4ed52b66ce24b6a7e878207355ffc9502e261bb`
 | deployed_pages_sha | unknown until Pages deploy | Populate only after deployment |
 
 Notes:
+
 - `render_source_sha` is the commit that was HEAD when PDFs in this evidence folder were generated.
 - Committing this evidence file changes tip; tip must not be written back as a mutable `head_sha`.
 - Product status remains `FINAL ACCEPTANCE REPAIR REQUIRED`.
