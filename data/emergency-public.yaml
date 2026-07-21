@@ -1,6 +1,6 @@
 # Public-safe emergency facts — no booking codes or personal phones
 status: Provisional
-checked_at: "2026-07-20"
+checked_at: "2026-07-21"
 source_ids: [src-emergency-kr, src-roc-korea]
 korea:
   police: "112"
@@ -17,8 +17,22 @@ phrases_ko:
   help: 도와주세요
   ambulance: 구급차를 불러 주세요
   taxi_address: 이 주소로 가 주세요
+  wrong_train: 반대 방향으로 가고 싶어요
+  station_staff: 혹시 저를 도와주실 수 있나요?
+transport_rescue:
+  note: 交通教材救援摘要；完整流程見網站交通頁
+  first_moves:
+    - 搭錯方向／坐過站：下一站下車再反向
+    - 餘額不足：便利商店或車站儲值
+    - 沒網路：改用離線截圖與夥伴手機
+    - 末班已過：計程車 Rescue，勿在不安全處過夜
+    - 兩人走散：留在最後約定點，必要時打 112
+  hard_stop_examples:
+    - 護照或重要文件遺失
+    - 行李遺失且含重要物品需報案／航空公司櫃台
+    - 國際航班誤接且無法自行改票
 insurance:
   provider: 此欄尚未完成
   emergency_phone: 此欄尚未完成
   note: 真實保單資料請離線保存，勿貼上公開網站
-offline_note: 出發前下載離線版，存入手機以便無網路時查看
+offline_note: 出發前下載離線版與交通救援卡，存入手機以便無網路時查看

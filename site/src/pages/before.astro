@@ -27,6 +27,7 @@ function milestoneLabel(label: string) {
 <Handbook title="出發前" current="more">
   <p class="eyebrow">出發前</p>
   <h1 class="page-title">出發前準備</h1>
+  <span class="status status-provisional">目前暫定</span>
   <p class="muted">依時間遠近，Jerry 與 Nikita 一起完成的事項。</p>
   {
     timeline.milestones.map((m) => (
@@ -48,6 +49,9 @@ function milestoneLabel(label: string) {
   <div class="btn-row">
     <a class="btn" href={`${base}packing/`}>
       行李
+    </a>
+    <a class="btn" href={`${base}transport/`}>
+      交通教材
     </a>
     <a class="btn" href={`${base}bookings/`}>
       預訂狀態

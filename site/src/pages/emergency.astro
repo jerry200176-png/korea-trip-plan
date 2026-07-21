@@ -1,11 +1,13 @@
 ---
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
-import { loadEmergencyPublic } from "../lib/data";
+import { loadEmergencyPublic, mediaById, mediaPublicUrl } from "../lib/data";
 import { sanitizeReaderText, statusZh } from "../lib/presentation";
 
 const e = loadEmergencyPublic();
 const base = siteBase();
+const offline = mediaById("offline-emergency-transport-card");
+const lost = mediaById("lost-wrong-train-recovery");
 ---
 <Handbook title="緊急" current="emergency">
   <p class="eyebrow">路上</p>
@@ -34,6 +36,42 @@ const base = siteBase();
     <p class="muted" lang="ko">{e.phrases_ko.taxi_address}</p>
   </section>
 
+  {
+    offline && (
+      <section class="surface-warm">
+        <h2 style="margin-top:0">離線交通救援卡</h2>
+        <figure class="media-block">
+          <img src={mediaPublicUrl(base, offline)} alt={offline.alt_zh} loading="lazy" />
+          <figcaption class="media-caption">{offline.alt_zh}</figcaption>
+        </figure>
+      </section>
+    )
+  }
+
+  {
+    lost && (
+      <section class="surface">
+        <h2 style="margin-top:0">搭錯／錯過怎麼救</h2>
+        <figure class="media-block">
+          <img src={mediaPublicUrl(base, lost)} alt={lost.alt_zh} loading="lazy" />
+          <figcaption class="media-caption">{lost.alt_zh}</figcaption>
+        </figure>
+        {
+          e.transport_rescue && (
+            <ul class="list">
+              {e.transport_rescue.first_moves.map((m: string) => (
+                <li>{sanitizeReaderText(m)}</li>
+              ))}
+            </ul>
+          )
+        }
+        <p class="muted">
+          <a href={`${base}transport/`}>完整交通教材</a>
+        </p>
+      </section>
+    )
+  }
+
   <section class="surface">
     <h2 style="margin-top:0">保險</h2>
     <p>保險公司：{sanitizeReaderText(e.insurance.provider)}</p>
@@ -47,6 +85,8 @@ const base = siteBase();
     <p lang="ko">{e.phrases_ko.no_crustaceans}</p>
     <p lang="ko">{e.phrases_ko.help}</p>
     <p lang="ko">{e.phrases_ko.ambulance}</p>
+    {e.phrases_ko.wrong_train && <p lang="ko">{e.phrases_ko.wrong_train}</p>}
+    {e.phrases_ko.station_staff && <p lang="ko">{e.phrases_ko.station_staff}</p>}
   </section>
 
   <a class="btn primary" href={`${base}downloads/emergency-pack.pdf`}>下載緊急 PDF</a>

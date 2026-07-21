@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Transport card and payment guide</title>
+  <desc id="desc">Explain T-money buy/top-up/tap; Naver Map primary; Google Maps limit; taxi as Rescue.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-warn { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-rescue { fill: #eef2f7; stroke: #2a4a8a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="48" y="44">交通卡與付款（Explain）</text>
+  <text class="muted" x="48" y="70">Jerry &amp; Nikita · 2026-07-21 · T-money 流程＋地圖工具；票價查官方</text>
+
+  <rect class="card-ok" x="40" y="100" width="280" height="280" rx="8"/>
+  <rect x="56" y="116" width="56" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="133">1 買</text>
+  <text class="h" x="128" y="134">購買 T-money</text>
+  <text class="t" x="56" y="176">便利店／機場／車站</text>
+  <text class="t" x="56" y="204">販賣點（依現場標示）</text>
+  <text class="t" x="56" y="240">手機相容方案：出發前</text>
+  <text class="t" x="56" y="268">確認 iPhone 是否可用</text>
+  <text class="muted" x="56" y="308">細節：t-money.co.kr</text>
+  <text class="muted" x="56" y="336">不寫死卡價</text>
+
+  <rect class="card" x="340" y="100" width="280" height="280" rx="8"/>
+  <rect x="356" y="116" width="56" height="24" rx="4" fill="#2c2416"/>
+  <text class="tag" x="368" y="133">2 加值</text>
+  <text class="h" x="428" y="134">Top-up</text>
+  <text class="t" x="356" y="176">便利店櫃台／加值機</text>
+  <text class="t" x="356" y="204">現金或依現場接受方式</text>
+  <text class="t" x="356" y="240">餘額不足會拒進站</text>
+  <text class="t" x="356" y="268">兩人各一張較穩</text>
+  <text class="muted" x="356" y="308">低額多次加值即可</text>
+  <text class="muted" x="356" y="336">金額：當日需求・查官方</text>
+
+  <rect class="card" x="640" y="100" width="280" height="280" rx="8"/>
+  <rect x="656" y="116" width="72" height="24" rx="4" fill="#2c2416"/>
+  <text class="tag" x="668" y="133">3 進出</text>
+  <text class="h" x="744" y="134">Tap on／off</text>
+  <text class="t" x="656" y="176">進站拍卡 · 出站再拍</text>
+  <text class="t" x="656" y="204">公車：上車拍（規則</text>
+  <text class="t" x="656" y="232">以車門標示為準）</text>
+  <text class="t" x="656" y="268">轉乘優惠依系統規則</text>
+  <text class="muted" x="656" y="308">忘出站可能鎖卡</text>
+  <text class="muted" x="656" y="336">到站務求助</text>
+
+  <rect class="card-rescue" x="940" y="100" width="220" height="280" rx="8"/>
+  <rect x="956" y="116" width="88" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="968" y="133">Rescue</text>
+  <text class="h" x="956" y="168">計程車</text>
+  <text class="t" x="956" y="204">非預設日常</text>
+  <text class="t" x="956" y="232">用於：行李／雨</text>
+  <text class="t" x="956" y="260">／末班／腳痛</text>
+  <text class="t" x="956" y="288">出示韓文地址</text>
+  <text class="muted" x="956" y="336">付款：現金／卡</text>
+
+  <rect class="card-ok" x="40" y="410" width="560" height="190" rx="8"/>
+  <rect x="56" y="426" width="120" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="443">Primary</text>
+  <text class="h" x="192" y="444">Naver Map 為主</text>
+  <text class="t" x="56" y="484">路線、出口、步行、末班資訊較貼在地</text>
+  <text class="t" x="56" y="512">Kakao Map 可作備援</text>
+  <text class="t" x="56" y="540">下載離線／收藏住宿與車站</text>
+  <text class="muted" x="56" y="572">Jerry：提前存點；Nikita：看步行段長度</text>
+
+  <rect class="card-warn" x="620" y="410" width="540" height="190" rx="8"/>
+  <rect x="636" y="426" width="140" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="648" y="443">Google Maps</text>
+  <text class="h" x="792" y="444">限制備註</text>
+  <text class="t" x="636" y="484">韓國大眾運輸細節常不完整</text>
+  <text class="t" x="636" y="512">可當地理方向，不作唯一進站依據</text>
+  <text class="t" x="636" y="540">出口編號／轉乘：改看 Naver</text>
+  <text class="muted" x="636" y="572">Warn：別只靠 Google 估末班</text>
+</svg>

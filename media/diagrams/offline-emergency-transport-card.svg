@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" role="img" aria-labelledby="title desc">
+  <title id="title">Offline emergency transport card</title>
+  <desc id="desc">Rescue/Warn offline card: 112/119, taxi phrase, lodging placeholders, no-network and dead-phone steps.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-warn { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-stop { fill: #2c2416; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 26px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #2c2416; }
+      .ht { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; font-weight: 700; fill: #fffdf8; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .tt { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #f7f4ed; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .big { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #8a3b2a; }
+    </style>
+  </defs>
+  <rect class="bg" width="1000" height="700"/>
+  <text class="title" x="36" y="40">離線緊急交通卡（Rescue／Warn）</text>
+  <text class="muted" x="36" y="64">Jerry &amp; Nikita · 2026-07-21 · 截圖／列印随身 · 住宿填空</text>
+
+  <rect class="card-warn" x="36" y="84" width="460" height="120" rx="8"/>
+  <rect x="52" y="100" width="88" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="64" y="117">緊急電話</text>
+  <text class="big" x="52" y="160">112</text>
+  <text class="h" x="130" y="152">警察</text>
+  <text class="big" x="260" y="160">119</text>
+  <text class="h" x="348" y="152">消防／急救</text>
+  <text class="muted" x="52" y="186">人身／醫療優先；交通糾紛先找站務</text>
+
+  <rect class="card" x="516" y="84" width="448" height="120" rx="8"/>
+  <rect x="532" y="100" width="100" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="544" y="117">Taxi 短語</text>
+  <text class="t" x="532" y="148">이 주소로 가 주세요</text>
+  <text class="t" x="532" y="172">（請載我去這個地址）</text>
+  <text class="muted" x="532" y="196">出示下方韓文地址卡</text>
+
+  <rect class="card-ok" x="36" y="224" width="928" height="160" rx="8"/>
+  <rect x="52" y="240" width="120" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="64" y="257">住宿占位</text>
+  <text class="h" x="188" y="258">鎖定後手寫／貼上</text>
+  <text class="t" x="52" y="296">首爾住宿（韓文）：________________________________</text>
+  <text class="t" x="52" y="324">釜山住宿（韓文）：________________________________</text>
+  <text class="t" x="52" y="352">電話／地圖截圖檔名：____________________（離線備份）</text>
+
+  <rect class="card" x="36" y="404" width="450" height="180" rx="8"/>
+  <rect x="52" y="420" width="100" height="24" rx="4" fill="#2c2416"/>
+  <text class="tag" x="64" y="437">無網路</text>
+  <text class="h" x="168" y="438">No network</text>
+  <text class="t" x="52" y="476">1. 用已截圖的地圖／地址卡</text>
+  <text class="t" x="52" y="504">2. 找站務／便利店問路</text>
+  <text class="t" x="52" y="532">3. 攔 Taxi，出示韓文地址</text>
+  <text class="muted" x="52" y="564">勿盲目換線找「下一班」</text>
+
+  <rect class="card-warn" x="506" y="404" width="458" height="180" rx="8"/>
+  <rect x="522" y="420" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="534" y="437">手機沒電</text>
+  <text class="h" x="638" y="438">Dead phone</text>
+  <text class="t" x="522" y="476">1. 用紙本地址卡／護照</text>
+  <text class="t" x="522" y="504">2. 找有插座的站內／咖啡店</text>
+  <text class="t" x="522" y="532">3. 仍失聯 → Taxi 回住宿</text>
+  <text class="muted" x="522" y="564">兩人約定會合點（資訊中心）</text>
+
+  <rect class="card-stop" x="36" y="604" width="928" height="72" rx="8"/>
+  <text class="ht" x="52" y="636">Hard Stop：失散／受傷／末班已過 → 112／119 或 Taxi 回已知安全地點，不硬趕原行程</text>
+  <text class="tt" x="52" y="658">本卡不含票價與班次 · Date Pending 住宿 · 出發前填空並雙人各留一份</text>
+</svg>

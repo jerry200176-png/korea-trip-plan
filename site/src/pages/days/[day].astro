@@ -33,30 +33,40 @@ const cityClass =
   day.city === "Seoul" ? "seoul" : day.city === "Busan" || day.primary_areas?.some((a: string) => a.includes("Busan")) ? "busan" : "";
 
 const dayMediaId =
-  dayIndex === 2
-    ? "day2-hanbok-compare"
-    : dayIndex === 3
-      ? "day3-myeongdong-route"
-      : dayIndex === 4
-        ? "day4-feasibility-diagram"
-        : dayIndex === 5
-          ? "ktx-transition"
-          : dayIndex === 6
-            ? "day6-core-low-energy"
-            : null;
+  dayIndex === 1
+    ? "incheon-arrival-flow"
+    : dayIndex === 2
+      ? "day2-hanbok-compare"
+      : dayIndex === 3
+        ? "day3-myeongdong-route"
+        : dayIndex === 4
+          ? "day4-feasibility-diagram"
+          : dayIndex === 5
+            ? "seoul-busan-ktx-journey"
+            : dayIndex === 6
+              ? "day6-core-low-energy"
+              : dayIndex === 7
+                ? "busan-station-to-hotel"
+                : null;
 const dayMedia = dayMediaId ? mediaById(dayMediaId) : null;
 const dayVisualClass = dayMedia?.type === "map" ? "day-visual day-visual-diagram" : "day-visual";
 
 const expectLine =
-  dayIndex === 2
-    ? "韓服與宮殿合照"
-    : dayIndex === 3
-      ? "明洞單區：化妝品＋退稅＋衣服，不跨區硬塞"
-      : dayIndex === 6
-      ? "海岸線兩人照"
-      : dayIndex === 4
-        ? "江南輕量日：休息與購物補齊；算命僅在預約確認後"
-        : day.one_priority;
+  dayIndex === 1
+    ? "入境安頓＋交通卡；不追景點"
+    : dayIndex === 2
+      ? "韓服與宮殿合照"
+      : dayIndex === 3
+        ? "明洞單區：化妝品＋退稅＋衣服，不跨區硬塞"
+        : dayIndex === 6
+          ? "海岸線兩人照"
+          : dayIndex === 4
+            ? "江南輕量日：休息與購物補齊；算命僅在預約確認後"
+            : dayIndex === 5
+              ? "KTX 移動安頓；票未買前只跟流程"
+              : dayIndex === 7
+                ? "依航班緩衝前往機場；可刪購物"
+                : day.one_priority;
 ---
 <Handbook title={`第 ${day.day_index} 天`} current="days">
   <p class="muted"><a href={`${base}days/`}>← 全部行程</a></p>
@@ -69,6 +79,22 @@ const expectLine =
       <figure class={dayVisualClass}>
         <img src={mediaPublicUrl(base, dayMedia)} alt={dayMedia.alt_zh} loading="lazy" />
         <figcaption class="media-caption">{dayMedia.alt_zh}</figcaption>
+      </figure>
+    )
+  }
+  {
+    dayIndex === 1 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("arex-vs-airport-bus")!)} alt={mediaById("arex-vs-airport-bus")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("arex-vs-airport-bus")!.alt_zh}</figcaption>
+      </figure>
+    )
+  }
+  {
+    dayIndex === 1 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("transport-card-payment-guide")!)} alt={mediaById("transport-card-payment-guide")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("transport-card-payment-guide")!.alt_zh}</figcaption>
       </figure>
     )
   }
@@ -89,10 +115,34 @@ const expectLine =
     )
   }
   {
+    dayIndex === 5 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("busan-station-to-hotel")!)} alt={mediaById("busan-station-to-hotel")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("busan-station-to-hotel")!.alt_zh}</figcaption>
+      </figure>
+    )
+  }
+  {
+    dayIndex === 5 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("lost-wrong-train-recovery")!)} alt={mediaById("lost-wrong-train-recovery")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("lost-wrong-train-recovery")!.alt_zh}</figcaption>
+      </figure>
+    )
+  }
+  {
     dayIndex === 6 && (
       <figure class="day-visual day-visual-diagram">
         <img src={mediaPublicUrl(base, mediaById("gwangalli-optional")!)} alt={mediaById("gwangalli-optional")!.alt_zh} loading="lazy" />
         <figcaption class="media-caption">{mediaById("gwangalli-optional")!.alt_zh}</figcaption>
+      </figure>
+    )
+  }
+  {
+    dayIndex === 7 && (
+      <figure class="day-visual day-visual-diagram">
+        <img src={mediaPublicUrl(base, mediaById("offline-emergency-transport-card")!)} alt={mediaById("offline-emergency-transport-card")!.alt_zh} loading="lazy" />
+        <figcaption class="media-caption">{mediaById("offline-emergency-transport-card")!.alt_zh}</figcaption>
       </figure>
     )
   }

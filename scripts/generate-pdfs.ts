@@ -322,6 +322,10 @@ const emergencyBody = `
   <p lang="ko">${emergency.phrases_ko.help}</p>
   <p lang="ko">${emergency.phrases_ko.ambulance}</p>
   <p lang="ko">${emergency.phrases_ko.taxi_address}</p>
+  ${emergency.phrases_ko.wrong_train ? `<p lang="ko">${emergency.phrases_ko.wrong_train}</p>` : ""}
+  ${emergency.phrases_ko.station_staff ? `<p lang="ko">${emergency.phrases_ko.station_staff}</p>` : ""}
+  <h2>交通救援（摘要）</h2>
+  ${(emergency.transport_rescue?.first_moves ?? []).map((m: string) => `<p>${sanitizeReaderText(m)}</p>`).join("\n  ")}
   <p class="muted">${sanitizeReaderText(emergency.offline_note)}</p>
 </section>
 `;

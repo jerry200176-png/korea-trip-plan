@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Seoul to Busan KTX journey</title>
+  <desc id="desc">Orient steps from lodging to Seoul Station through KTX to Busan lodging. Tickets not purchased.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-warn { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+    </style>
+    <marker id="karr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2f5d3a"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">首爾→釜山 KTX 動線（Orient）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · 換城日 · 2026-07-21 · 功能：移動順序與緩衝，非時刻表</text>
+
+  <rect class="card-warn" x="40" y="88" width="1120" height="56" rx="8"/>
+  <rect x="56" y="102" width="120" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="68" y="119">Date Pending</text>
+  <text class="h" x="192" y="120">車票尚未購買 · 勿填假時刻／假票價 · 查 Korail／Let’s Korail 官方</text>
+
+  <rect class="card" x="40" y="170" width="140" height="130" rx="8"/>
+  <text class="h" x="52" y="208">1 住宿退房</text>
+  <text class="t" x="52" y="236">行李一次備齊</text>
+  <text class="t" x="52" y="258">護照／票務 App</text>
+  <text class="muted" x="52" y="284">留緩衝，不趕</text>
+
+  <line x1="180" y1="235" x2="210" y2="235" stroke="#2f5d3a" stroke-width="2.5" marker-end="url(#karr)"/>
+
+  <rect class="card-ok" x="214" y="170" width="150" height="130" rx="8"/>
+  <text class="h" x="226" y="208">2 首爾站緩衝</text>
+  <text class="t" x="226" y="236">預留找路＋安檢</text>
+  <text class="t" x="226" y="258">＋買水／廁所</text>
+  <text class="muted" x="226" y="284">建議 ≥30–45 分</text>
+
+  <line x1="364" y1="235" x2="394" y2="235" stroke="#2f5d3a" stroke-width="2.5" marker-end="url(#karr)"/>
+
+  <rect class="card" x="398" y="170" width="140" height="130" rx="8"/>
+  <text class="h" x="410" y="208">3 月台確認</text>
+  <text class="t" x="410" y="236">看電子看板</text>
+  <text class="t" x="410" y="258">車次／月台號</text>
+  <text class="muted" x="410" y="284">以現場為準</text>
+
+  <line x1="538" y1="235" x2="568" y2="235" stroke="#2f5d3a" stroke-width="2.5" marker-end="url(#karr)"/>
+
+  <rect class="card" x="572" y="170" width="140" height="130" rx="8"/>
+  <text class="h" x="584" y="208">4 車廂／座位</text>
+  <text class="t" x="584" y="236">對號入座</text>
+  <text class="t" x="584" y="258">兩人相鄰優先</text>
+  <text class="muted" x="584" y="284">訂票後再標註</text>
+
+  <line x1="712" y1="235" x2="742" y2="235" stroke="#2f5d3a" stroke-width="2.5" marker-end="url(#karr)"/>
+
+  <rect class="card" x="746" y="170" width="140" height="130" rx="8"/>
+  <text class="h" x="758" y="208">5 行李放置</text>
+  <text class="t" x="758" y="236">大件：車廂頭尾</text>
+  <text class="t" x="758" y="258">貴重：座位旁</text>
+  <text class="muted" x="758" y="284">勿擋走道</text>
+
+  <line x1="886" y1="235" x2="916" y2="235" stroke="#2f5d3a" stroke-width="2.5" marker-end="url(#karr)"/>
+
+  <rect class="card-ok" x="920" y="170" width="240" height="130" rx="8"/>
+  <text class="h" x="932" y="208">6 抵達釜山站</text>
+  <text class="t" x="932" y="236">確認站名再下車</text>
+  <text class="t" x="932" y="258">→ 往住宿區（TBD）</text>
+  <text class="muted" x="932" y="284">見「站→飯店」圖</text>
+
+  <rect class="card" x="40" y="330" width="560" height="200" rx="8"/>
+  <rect x="56" y="346" width="88" height="24" rx="4" fill="#2c2416"/>
+  <text class="tag" x="68" y="363">緩衝原則</text>
+  <text class="h" x="160" y="364">移動日保持輕量</text>
+  <text class="t" x="56" y="400">・退房後直奔車站；不塞景點進 Core</text>
+  <text class="t" x="56" y="428">・腳累／行李多：住宿→計程車→首爾站</text>
+  <text class="t" x="56" y="456">・車上休息為優先；抵達釜山再決定輕行程</text>
+  <text class="muted" x="56" y="496">低體力：移動日 = 交通＋入住＋一餐，其餘刪</text>
+
+  <rect class="card-ok" x="620" y="330" width="540" height="200" rx="8"/>
+  <rect x="636" y="346" width="100" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="648" y="363">訂票狀態</text>
+  <text class="h" x="752" y="364">Not purchased</text>
+  <text class="t" x="636" y="400">日期／車次／車廂座號：全部 Pending</text>
+  <text class="t" x="636" y="428">鎖定 D1 後再經 Korail 官方購買</text>
+  <text class="t" x="636" y="456">本圖不寫 2027 假時刻、不寫假票價</text>
+  <text class="muted" x="636" y="496">證據：Korail／Let’s Korail · 查官方</text>
+
+  <rect class="card-warn" x="40" y="560" width="1120" height="120" rx="8"/>
+  <rect x="56" y="576" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="68" y="593">Warn</text>
+  <text class="h" x="172" y="594">常見失誤（換城日）</text>
+  <text class="t" x="56" y="630">弄錯方向／錯過停靠／錯過 KTX → 見「走錯車救援」圖。末班前務必確認；無把握就提早到站。</text>
+  <text class="t" x="56" y="658">Jerry：看看板與 App；Nikita：座位／行李就位後休息。兩人對一下目的站名再關門。</text>
+</svg>

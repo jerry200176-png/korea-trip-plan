@@ -18,7 +18,7 @@ meta:
   tier_c_diversity:
     direct_youtube_sources_readable: 0
     direct_instagram_sources_readable: 0
-    blog_sources_readable: 12
+    blog_sources_readable: 13
     blocked_creator_sources: 2
     notes: Round 1 Tier C is blog-heavy. No direct YouTube/Instagram pages were fully readable in this environment. Do not
       pretend search snippets equal full video/post review. Creator platforms remain listed under blocked or future work when
@@ -3760,6 +3760,318 @@ sources:
   freshness_basis: Official Seoul tourism magazine page with publish date 2026-01-21 reviewed on checked_at; shop-level deposit/hours
     still need T-14 confirmation.
   freshness_basis_type: dated_official_notice
+- source_id: rs-096
+  source_type: rail
+  title: AREX Airport Railroad official site
+  publisher_or_creator: Airport Railroad Co., Ltd.
+  url: https://www.arex.or.kr/main.do
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: mixed
+  city: Seoul
+  topic:
+  - AREX
+  - airport_access
+  - Incheon
+  - arrival
+  summary: Official AREX operator site for Express and All-Stop airport rail between ICN and Seoul Station.
+  findings:
+  - Curl returned HTTP 200 on 2026-07-21 for arex.or.kr main.
+  - Operator site is the booking/ops authority for Express vs All-Stop service; use with VisitKorea airport transport guide for traveler framing.
+  - Do not treat HTTP reachability as schedule currency; revalidate Express/All-Stop times before travel.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Primary operator source for choosing AREX vs bus on arrival with luggage.
+  nikita_relevance: Supports low-energy arrival without guessing train products.
+  claims_requiring_official_verification:
+  - Recheck Express vs All-Stop hours, fares, and luggage rules near travel dates.
+  corroborating_source_ids:
+  - rs-006
+  - rs-097
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: Operator homepage reachable HTTP 200 on checked_at; content_last_updated not confirmed; operational claims need revalidation.
+  freshness_basis_type: http_reachability_only
+- source_id: rs-097
+  source_type: official_tourism
+  title: Airport Transportation Guide — VISITKOREA
+  publisher_or_creator: Korea Tourism Organization (VISITKOREA)
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140654
+  publish_date: '2023-03-31'
+  accessed_at: '2026-07-21'
+  language: en
+  city: National
+  topic:
+  - AREX
+  - airport_bus
+  - Incheon
+  - Gimhae Airport
+  - taxi
+  - airport_access
+  summary: Official tourism guide comparing AREX Express/All-Stop, airport limousine (ticket required; cash/T-money not accepted), night buses, taxis, and Gimhae LRT/metro/taxi ranges.
+  findings:
+  - Page readable HTTP 200 on 2026-07-21; footer notes last updated May 22, 2026.
+  - AREX described as fastest ICN–Seoul Station link; Express non-stop; All-Stop serves major stations including Hongik University; All-Stop usable with transit cards.
+  - Airport Limousine requires advance ticket purchase; cash and transportation cards not accepted for limousine boarding.
+  - Most public transport from airport to Seoul center finishes around 23:30; night buses marked with N prefix for late arrivals.
+  - Gimhae: Airport Station on Busan–Gimhae LRT; transfer at Sasang to Line 2; approximate ranges Seomyeon ~30 min, Gwangalli ~50 min, Haeundae ~70 min (teaching ranges, not booked itinerary times).
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Compare AREX vs bus vs taxi with official caveats; late-arrival night-bus awareness.
+  nikita_relevance: Low-energy arrival teaching without inventing lodging-specific doors.
+  claims_requiring_official_verification:
+  - Revalidate times/ranges and ticket desks after flights and lodging are locked.
+  corroborating_source_ids:
+  - rs-006
+  - rs-007
+  - rs-096
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: '2026-05-22'
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: VisitKorea page reviewed on checked_at; page states last updated May 22, 2026; ranges are teaching not booking facts.
+  freshness_basis_type: dated_official_notice
+- source_id: rs-098
+  source_type: official_tourism
+  title: Transportation Cards — VISITKOREA
+  publisher_or_creator: Korea Tourism Organization (VISITKOREA)
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=140663
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: National
+  topic:
+  - T-money
+  - transit_card
+  - payments
+  summary: Official tourism overview of transportation cards including T-money purchase/reload venues and tourist-oriented card tips.
+  findings:
+  - Page reachable HTTP 200 on 2026-07-21.
+  - States cards can be purchased and charged at convenience stores nationwide and used on public transportation plus affiliated stores.
+  - Notes T-money has the largest affiliate network; points travelers to eng.tmoney.co.kr / pay.tmoney.co.kr for details.
+  - Card purchase price band cited for general cards (teaching band only; confirm on site).
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Anchors Day 1 T-money buy/top-up without inventing machine UX.
+  nikita_relevance: Supports simple tap-to-ride teaching for both cities.
+  claims_requiring_official_verification:
+  - Confirm foreigner card product names and reload methods for the couple phones before travel.
+  corroborating_source_ids:
+  - rs-099
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: Official tourism transportation-card page reviewed on checked_at; product SKUs may change.
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-099
+  source_type: government
+  title: T-money official site
+  publisher_or_creator: Tmoney Co., Ltd.
+  url: https://www.t-money.co.kr
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: mixed
+  city: National
+  topic:
+  - T-money
+  - transit_card
+  - payments
+  summary: Official T-money operator portal for card products, reload, and usage rules.
+  findings:
+  - HTTPS request redirected (301) from www.tmoney.co.kr / www.t-money.co.kr family; treat operator site as authority for product rules.
+  - Use with VisitKorea transportation-card page for traveler framing; do not invent refund fees or transfer windows as current booking facts without page-dated confirmation.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Operator authority for balance/reload/refund contingencies.
+  nikita_relevance: Reduces Day 1 payment confusion.
+  claims_requiring_official_verification:
+  - Reconfirm foreigner-friendly products and Apple/Google Wallet compatibility for both phones.
+  corroborating_source_ids:
+  - rs-098
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: Operator domain reachable with redirect on checked_at; detailed fee tables not locked as current.
+  freshness_basis_type: http_reachability_only
+- source_id: rs-100
+  source_type: government
+  title: Seoul Metro English portal
+  publisher_or_creator: Seoul Metro
+  url: https://www.seoulmetro.co.kr/en/index.do
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Seoul
+  topic:
+  - subway
+  - Seoul_local_transit
+  - luggage
+  - last_train
+  summary: Official Seoul Metro English portal for maps, fares/tickets user guides, and station services.
+  findings:
+  - Curl returned HTTP 200 on 2026-07-21.
+  - Portal exposes Cyber Station map/timetable tools and User Guide pages for fare/tickets; use for metro teaching not invented last-train clocks.
+  - Site mentions station luggage-related services (T-luggage) as optional convenience — not required for Core itinerary.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A1
+  jerry_relevance: Official metro map/timetable authority for Seoul local transit teaching.
+  nikita_relevance: Supports elevator/exit planning via station tools rather than guesswork.
+  claims_requiring_official_verification:
+  - Check last trains nightly in-app/map; do not freeze a single last-train time in the textbook.
+  corroborating_source_ids:
+  - rs-053
+  - rs-098
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: Seoul Metro English portal reachable HTTP 200 on checked_at; timetables are live data — revalidate in trip.
+  freshness_basis_type: http_reachability_only
+- source_id: rs-101
+  source_type: government
+  title: Busan Metropolitan City English portal
+  publisher_or_creator: Busan Metropolitan City
+  url: https://www.busan.go.kr/eng/index
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Busan
+  topic:
+  - Busan_local_transit
+  - Busan_metro
+  - airport_access
+  summary: Official Busan city English portal as orientation hub for city transport and visitor logistics.
+  findings:
+  - Curl returned HTTP 302 then reachable city English surface on 2026-07-21.
+  - Use with VisitKorea Gimhae section and station map endpoints for Busan metro/bus teaching; do not invent line-by-line fares here.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: City-level authority pointer for Busan transit orientation.
+  nikita_relevance: Supports coastal-day transit teaching without postcard forcing.
+  claims_requiring_official_verification:
+  - Harden Haeundae/Cheongsapo/Gwangalli routes after lodging pin is known.
+  corroborating_source_ids:
+  - rs-007
+  - rs-097
+  - rs-055
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-09-18'
+  freshness_basis: City English portal reachable on checked_at; operational routes still need map revalidation.
+  freshness_basis_type: http_reachability_only
+- source_id: rs-102
+  source_type: map
+  title: 'Naver Map search: Seoul Station (transit teaching endpoint)'
+  publisher_or_creator: Naver Map
+  url: https://map.naver.com/p/search/Seoul%20Station
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: ko
+  city: Seoul
+  topic:
+  - Naver_Map
+  - Seoul_Station
+  - KTX
+  - transfers
+  summary: Map validation endpoint demonstrating Naver Map as primary Korea navigation tool for station search and routes.
+  findings:
+  - Existing Round 1 map pattern (rs-053 family) confirmed usable for station teaching; re-checked pattern on 2026-07-21 for Transport slice.
+  - Google Maps is secondary in Korea for transit detail; textbook teaches Naver Map primary / Kakao Map backup.
+  - Do not screenshot copyrighted map tiles into public PDF; link + teach UI steps only.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: B
+  jerry_relevance: Primary navigation teaching for transfers and exits.
+  nikita_relevance: Reduces getting-lost stress with a single preferred app.
+  claims_requiring_official_verification:
+  - Practice both phones offline download where available before departure.
+  corroborating_source_ids:
+  - rs-053
+  - rs-055
+  primary_category: map_validation_endpoint
+  category_tags:
+  - map_validation_endpoint
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-10-18'
+  freshness_basis: Map search endpoint pattern used for teaching; live routes change continuously.
+  freshness_basis_type: http_reachability_only
+- source_id: rs-103
+  source_type: independent_blog
+  title: How to Use a T-money Card in Korea (2026) — Second Minute
+  publisher_or_creator: Second Minute
+  url: https://secondmin.co.kr/how-to-use-a-t-money-card-in-korea-2026-buy-recharge-transfer-discounts-balance-check-refund/
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: National
+  topic:
+  - T-money
+  - transfers
+  - luggage
+  - traveler_experience
+  summary: Independent 2026 traveler explainer on T-money buy/recharge/tap habits; discovery only for ops fees.
+  findings:
+  - Page reachable via search/index on 2026-07-21; useful for traveler confusion patterns (tap off, convenience-store buy).
+  - Points readers back to official T-money / VisitKorea pages for authority.
+  - Must not alone confirm refund fees or transfer-minute windows as current facts.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: link_only_short_paraphrase
+  evidence_tier: C
+  jerry_relevance: Surfaces common failure modes (forgot tap-off, low balance) for Recovery chapter.
+  nikita_relevance: Plain-language practice tips before Day 1.
+  claims_requiring_official_verification:
+  - Any fee/window numbers must be re-read on A1/A2 pages near travel.
+  corroborating_source_ids:
+  - rs-098
+  - rs-099
+  primary_category: creator_discovery
+  category_tags:
+  - creator_discovery
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: unknown
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-10-18'
+  freshness_basis: Independent blog used as discovery of traveler failure modes only.
+  freshness_basis_type: page_review_no_update_date
 blocked_sources:
 - source_id: rs-blocked-001
   url: https://www.klook.com/en-US/city/13-seoul-things-to-do/

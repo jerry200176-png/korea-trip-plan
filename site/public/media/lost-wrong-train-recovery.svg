@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Lost or wrong train recovery</title>
+  <desc id="desc">Rescue decision tree for wrong direction, missed stop, missed KTX, and last train gone.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-warn { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-stop { fill: #2c2416; stroke: #2c2416; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #2c2416; }
+      .ht { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #fffdf8; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .tt { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #f7f4ed; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="780"/>
+  <text class="title" x="48" y="44">走錯車／錯過站救援樹（Rescue）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · 2026-07-21 · 先停、辨識、求助；不硬衝</text>
+
+  <rect class="card-warn" x="40" y="90" width="270" height="200" rx="8"/>
+  <rect x="56" y="106" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="68" y="123">情境 A</text>
+  <text class="h" x="56" y="156">坐反方向</text>
+  <text class="t" x="56" y="186">① 下一站下車</text>
+  <text class="t" x="56" y="210">② 對看板／App</text>
+  <text class="t" x="56" y="234">③ 改搭正確方向</text>
+  <text class="muted" x="56" y="268">勿在車廂內焦慮衝門</text>
+
+  <rect class="card-warn" x="330" y="90" width="270" height="200" rx="8"/>
+  <rect x="346" y="106" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="358" y="123">情境 B</text>
+  <text class="h" x="346" y="156">錯過該下的站</text>
+  <text class="t" x="346" y="186">① 下一站下</text>
+  <text class="t" x="346" y="210">② 原線折返或轉乘</text>
+  <text class="t" x="346" y="234">③ 重估到住宿時間</text>
+  <text class="muted" x="346" y="268">行李多 → 考慮 Taxi</text>
+
+  <rect class="card-warn" x="620" y="90" width="270" height="200" rx="8"/>
+  <rect x="636" y="106" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="648" y="123">情境 C</text>
+  <text class="h" x="636" y="156">錯過 KTX</text>
+  <text class="t" x="636" y="186">① 到窗口／機器查</text>
+  <text class="t" x="636" y="210">② 改班／退改規則</text>
+  <text class="t" x="636" y="234">③ 以官方為準</text>
+  <text class="muted" x="636" y="268">勿聽信非官方「保證」</text>
+
+  <rect class="card-warn" x="910" y="90" width="250" height="200" rx="8"/>
+  <rect x="926" y="106" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="938" y="123">情境 D</text>
+  <text class="h" x="926" y="156">末班已過</text>
+  <text class="t" x="926" y="186">① 停止找「下一班」</text>
+  <text class="t" x="926" y="210">② 改 Taxi Rescue</text>
+  <text class="t" x="926" y="234">③ 或安全過夜方案</text>
+  <text class="muted" x="926" y="268">夜間安全優先</text>
+
+  <rect class="card-ok" x="40" y="320" width="360" height="220" rx="8"/>
+  <rect x="56" y="336" width="100" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="353">First actions</text>
+  <text class="h" x="172" y="354">立刻做</text>
+  <text class="t" x="56" y="392">1. 停下來，兩人同一位置</text>
+  <text class="t" x="56" y="420">2. 看站名／車次看板</text>
+  <text class="t" x="56" y="448">3. 打開 Naver Map／票務 App</text>
+  <text class="t" x="56" y="476">4. 確認還有多久末班</text>
+  <text class="muted" x="56" y="512">先定位，再移動</text>
+
+  <rect class="card" x="420" y="320" width="360" height="220" rx="8"/>
+  <rect x="436" y="336" width="72" height="24" rx="4" fill="#2c2416"/>
+  <text class="tag" x="448" y="353">Don'ts</text>
+  <text class="h" x="524" y="354">不要做</text>
+  <text class="t" x="436" y="392">・不要分開找路</text>
+  <text class="t" x="436" y="420">・不要跳閘／翻越月台</text>
+  <text class="t" x="436" y="448">・不要相信陌生人帶路進死角</text>
+  <text class="t" x="436" y="476">・不要為「趕時間」狂奔帶行李</text>
+  <text class="muted" x="436" y="512">安全 &gt; 原行程</text>
+
+  <rect class="card" x="800" y="320" width="360" height="220" rx="8"/>
+  <rect x="816" y="336" width="72" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="828" y="353">Help</text>
+  <text class="h" x="904" y="354">求助管道</text>
+  <text class="t" x="816" y="392">・站務／資訊中心／窗口</text>
+  <text class="t" x="816" y="420">・Korail／地鐵官方客服</text>
+  <text class="t" x="816" y="448">・警察 112（人身安全）</text>
+  <text class="t" x="816" y="476">・出示住宿韓文地址卡</text>
+  <text class="muted" x="816" y="512">英文／中文標示站點優先</text>
+
+  <rect class="card-stop" x="40" y="570" width="1120" height="170" rx="8"/>
+  <rect x="56" y="586" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="68" y="603">Hard Stop</text>
+  <text class="ht" x="172" y="604">立刻停止「硬趕原計畫」</text>
+  <text class="tt" x="56" y="640">若已過末班、兩人失散、身體不適、或無法確認位置 → 改 Taxi／求助／找安全明亮處，不要繼續換線冒險。</text>
+  <text class="tt" x="56" y="668">Jerry：做風險判斷與對外溝通；Nikita：保管證件與行李。會合點預設為「當前站資訊中心」。</text>
+  <text class="tt" x="56" y="706">本圖不含假班次時刻 · 末班時間以當日官方／App 為準 · 查官方</text>
+</svg>

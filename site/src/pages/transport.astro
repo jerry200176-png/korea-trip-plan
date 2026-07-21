@@ -1,31 +1,151 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
+import { mediaById, mediaPublicUrl } from "../lib/data";
+
+const base = siteBase();
+const arrival = mediaById("incheon-arrival-flow")!;
+const arex = mediaById("arex-vs-airport-bus")!;
+const card = mediaById("transport-card-payment-guide")!;
+const ktx = mediaById("seoul-busan-ktx-journey")!;
+const busan = mediaById("busan-station-to-hotel")!;
+const lost = mediaById("lost-wrong-train-recovery")!;
+const offline = mediaById("offline-emergency-transport-card")!;
 ---
 <Handbook title="交通" current="more">
-  <p class="eyebrow">交通</p>
-  <h1 class="page-title">地圖與交通</h1>
+  <p class="eyebrow">交通教材</p>
+  <h1 class="page-title">韓國交通與救援</h1>
+  <span class="status status-provisional">目前暫定</span>
+  <p class="muted">航班、住宿與 KTX 車票尚未鎖定時，仍可照著做的移動教材。不是訂票完成狀態。</p>
 
-  <section class="surface">
-    <h2 style="margin-top:0">必裝 App</h2>
+  <section class="surface-warm">
+    <h2 style="margin-top:0">現在可確定／須等日期</h2>
     <ul class="list">
-      <li>
-        <a href="https://map.naver.com" target="_blank" rel="noreferrer">Naver Map</a> — 路線與出口
-      </li>
-      <li>
-        <a href="https://map.kakao.com" target="_blank" rel="noreferrer">Kakao Map</a> — 備援導航
-      </li>
-      <li>
-        <a href="https://www.t-money.co.kr" target="_blank" rel="noreferrer">T-money</a> — 交通卡資訊
-      </li>
-      <li>
-        <a href="https://www.letskorail.com" target="_blank" rel="noreferrer">Korail</a> — KTX
-      </li>
+      <li>可確定：抵達步驟、AREX／巴士比較原則、T-money 習慣、Naver Map、KTX 移動日節奏、救援口訣</li>
+      <li>須等出發日與訂票：實際航班、住宿門牌分鐘數、KTX 車次票價、離境到場時間</li>
+      <li>行李與行動電源規則以<strong>航空公司</strong>為準</li>
     </ul>
   </section>
 
   <section class="surface">
-    <h2 style="margin-top:0">本趟原則</h2>
-    <p>不租車 · 每天最多 1–2 個相鄰區域 · 腳痠就改計程車 · 移動日不塞景點</p>
-    <p class="muted">Jerry 與 Nikita 以大眾運輸為主，轉乘越少越好。</p>
+    <h2 style="margin-top:0">A. 抵達仁川後怎麼走（Day 1）</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, arrival)} alt={arrival.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{arrival.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>台灣出發前：護照、登機證、網路計畫、入境資料；行李／電池規則看航空公司</li>
+      <li>下機 → 入境 → 提領行李 → 海關</li>
+      <li>SIM／eSIM 備援、小額現金、交通卡</li>
+      <li>再前往住宿；住宿未定前，不要寫死門到門分鐘</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">AREX · 機場巴士 · 計程車</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, arex)} alt={arex.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{arex.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>AREX：官方旅遊資料視為仁川→首爾站較快選項；直達（Express）與停靠站（All-Stop）不同</li>
+      <li>All-Stop 可用交通卡；Express 需對應票種（出發前再查業者頁）</li>
+      <li>機場巴士：須<strong>先買票</strong>；官方說明現金／交通卡通常不能直接上車付</li>
+      <li>深夜：多數大眾運輸約 23:30 前後結束；夜巴士（N）或計程車</li>
+      <li>低體力＋大件行李：優先少轉乘；必要時改計程車救援</li>
+    </ul>
+  </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">B. 首爾市區怎麼搭</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, card)} alt={card.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{card.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>T-money：便利商店／車站通路購買與儲值；進出站都要拍卡</li>
+      <li>地鐵：看出口與電梯；大行李避免複雜轉乘</li>
+      <li>每晚用地圖工具確認<strong>末班</strong>（不在教材寫死單一時刻）</li>
+      <li>導航以 Naver Map 為主、Kakao Map 備援；Google Maps 在韓國大眾運輸細節常不足</li>
+      <li>計程車是 Rescue，不是預設每一段</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">C. 首爾 → 釜山（Day 5 · 票未鎖定）</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, ktx)} alt={ktx.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{ktx.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>住宿 → 車站預留緩衝；車廂／座位／行李固定習慣</li>
+      <li>車上可輕食；本趟不安排飲酒</li>
+      <li>抵達釜山站再往住宿；當天不塞景點</li>
+      <li>車票未買：只教流程，不虛構 2027 班次或票價</li>
+      <li>錯過列車：改下一班庫存，不硬闖危險轉乘</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">D. 釜山市區與車站</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, busan)} alt={busan.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{busan.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>地鐵／公車／計程車並用；海雲台・青沙浦・廣安里晚上回來預留救援</li>
+      <li>行李日 ≠ 海岸日；KTX 當天以安頓為主</li>
+      <li>海岸列車／膠囊與一般地鐵不同，維持 Optional＋可刪</li>
+    </ul>
+  </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">E. 釜山 → 金海機場（Day 7）</h2>
+    <ul class="list">
+      <li>一般版：輕軌／地鐵轉乘＋充足緩衝</li>
+      <li>行李版：減少轉乘</li>
+      <li>低體力：計程車 Rescue</li>
+      <li>轉乘失敗：改計程車直達，不要反覆試同一條失效路線</li>
+      <li>最終出發時間等航班鎖定後再 harden</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">F. 失敗救援</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, lost)} alt={lost.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{lost.alt_zh}</figcaption>
+    </figure>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, offline)} alt={offline.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{offline.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>搭錯方向／坐過站：下一站下車再反向</li>
+      <li>餘額不足：便利商店或車站儲值，不要逃票</li>
+      <li>沒網路／沒電：改離線截圖與夥伴手機；約定集合點</li>
+      <li>錯過 KTX／末班：改票或計程車；不要在不安全處過夜</li>
+      <li>兩人走散：留在最後約定點；需要時打 112／119</li>
+      <li>文件或行李遺失：機場櫃檯／報案 — 可能進入 Hard Stop</li>
+    </ul>
+    <p class="muted" lang="ko">택시：이 주소로 가 주세요 · 도움：도와주세요</p>
+  </section>
+
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">官方入口（出發前再點一次）</h2>
+    <ul class="list">
+      <li><a href="https://map.naver.com" target="_blank" rel="noreferrer">Naver Map</a></li>
+      <li><a href="https://map.kakao.com" target="_blank" rel="noreferrer">Kakao Map</a></li>
+      <li><a href="https://www.t-money.co.kr" target="_blank" rel="noreferrer">T-money</a></li>
+      <li><a href="https://www.letskorail.com" target="_blank" rel="noreferrer">Korail / LetsKorail</a></li>
+      <li><a href="https://www.arex.or.kr/main.do" target="_blank" rel="noreferrer">AREX</a></li>
+      <li><a href="https://www.airport.kr/ap/en/index.do" target="_blank" rel="noreferrer">Incheon Airport</a></li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn" href={`${base}days/day-1/`}>Day 1</a>
+      <a class="btn" href={`${base}days/day-5/`}>Day 5</a>
+      <a class="btn" href={`${base}days/day-7/`}>Day 7</a>
+      <a class="btn" href={`${base}emergency/`}>緊急</a>
+    </div>
   </section>
 </Handbook>

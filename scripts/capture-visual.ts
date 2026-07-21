@@ -10,10 +10,13 @@ fs.mkdirSync(outDir, { recursive: true });
 const pages = [
   { path: "/", name: "home" },
   { path: "/route/", name: "route" },
+  { path: "/transport/", name: "transport" },
   { path: "/days/", name: "seoul-chapter" },
+  { path: "/days/day-1/", name: "day-1" },
   { path: "/days/day-2/", name: "day-2" },
   { path: "/days/day-5/", name: "ktx" },
   { path: "/days/day-6/", name: "busan-chapter" },
+  { path: "/days/day-7/", name: "day-7" },
   { path: "/today/day-2/", name: "today" },
   { path: "/review/", name: "review" },
   { path: "/decisions/", name: "decisions" },
