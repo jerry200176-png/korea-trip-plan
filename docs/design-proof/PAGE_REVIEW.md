@@ -38,3 +38,10 @@
 - All 35 functional SVGs: visible `<text>` converted to paths; labels scrubbed from `title`/`desc`/aria.  
 - Footer: CJK brand as path SVG; page numbers extractable as text.  
 - Visual 15/15 and Publication 5/5 evidence remain **pending_revalidation** until independent page inspection.
+
+## OCR spot-check (200 DPI)
+
+- Page 2 footer: `我們的韓國 · Textbook` readable  
+- Page 20 Food continuation: Chinese diagram titles without Identify/Warn chrome  
+- Page 27 Before: `日期待決定` present; no Date Pending  
+- Emergency p1: Korean phrases (`도와주세요`, etc.) readable; single page  

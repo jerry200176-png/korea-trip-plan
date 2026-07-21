@@ -83,7 +83,7 @@ Itinerary decisions, destinations, and research scope were **not** changed in th
 
 ## 10 human acceptance questions
 
-*(Deferred until product status returns to READY FOR JERRY & NIKITA ACCEPTANCE.)*
+Deferred until product status returns to READY FOR JERRY & NIKITA ACCEPTANCE.
 
 1. 第一眼打開網站，你們會想繼續看嗎？  
 2. 「今日」模式是否清楚告訴你們現在該做什麼？  

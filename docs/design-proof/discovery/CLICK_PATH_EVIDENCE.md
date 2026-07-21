@@ -1,6 +1,6 @@
 # Discovery click-path evidence
 
-Generated: 2026-07-21T04:04:07.505Z
+Generated: 2026-07-21T04:45:39.737Z
 
 - PASS t1-incheon 390: 仁川機場抵達後怎麼辦 in 1 click(s) → /transport/ · /workspace/docs/design-proof/discovery/t1-incheon-390.png
 - PASS t2-tax 390: 韓國退稅怎麼做 in 2 click(s) → /shopping/ · /workspace/docs/design-proof/discovery/t2-tax-390.png
