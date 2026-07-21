@@ -96,8 +96,11 @@ dimensions:
       dish photos and Photo & Memory teaching.'
   website_ux:
     max: 10
-    score: 8
-    notes: '/food/ textbook hub expanded; IA discovery still incomplete (Photo & Memory / nav discoverability).'
+    score: 9
+    notes: >-
+      Website IA slice: dock Home/Journey/Today/Guides/Review, /guides/ hub, Home discovery
+      strip, Day↔Guide cross-links, Playwright 390/430 click-path suite. Not 10 — Photo & Memory
+      teaching surface and deeper a11y still open.
   publication_quality:
     max: 5
     score: 4
@@ -105,7 +108,7 @@ dimensions:
 totals:
   overall:
     max: 100
-    score: 87
+    score: 88
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 p0_open: []
@@ -121,9 +124,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Website IA and discovery
 - Photo & Memory Slice
 - Full Textbook PDF restructuring
+- Full-product Final Audit
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -169,6 +172,11 @@ round_2_progress:
     merged_at: '2026-07-21'
     merge_sha: 7cba9796f30e8691e608f03c8012d016b65807e2
     pr: 20
+  website_ia:
+    status: in_pr
+    decision_doc: docs/research/WEBSITE_IA_DECISION.md
+    updated_at: '2026-07-21'
+    branch: cursor/textbook-website-ia-e48c
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
@@ -228,3 +236,12 @@ phase4_rescore_after_top3_2026_07_21:
   product_surface_change: false
   notes: >-
     PR #21 is scorecard and control-state only. No Photo, IA, or PDF product implementation.
+
+score_deltas_website_ia_2026_07_21:
+  from_overall: 87
+  to_overall: 88
+  evidence:
+  - website_ux +1 to 9 via Guides hub, Home discovery strip, Day-Guide cross-links, Playwright 390/430 click-path suite
+  - other dimensions unchanged this slice
+  - overall 87→88 (Final Exit still unmet; Photo & Memory and PDF restructuring remain)
+  - no score inflation beyond IA evidence

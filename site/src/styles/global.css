@@ -311,6 +311,78 @@ h1, h2, h3 {
   background: var(--color-surface-muted);
 }
 
+.discovery-strip {
+  margin: var(--space-4) 0 var(--space-5);
+}
+
+.discovery-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.discovery-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-height: var(--tap);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.discovery-link:hover,
+.discovery-link:focus-visible {
+  color: var(--color-accent-warm);
+  outline: none;
+}
+
+.discovery-label {
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.discovery-hint {
+  font-size: 0.85rem;
+}
+
+.guides-hub-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.guides-hub-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-height: var(--tap);
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.guides-hub-link:hover,
+.guides-hub-link:focus-visible {
+  color: var(--color-accent-warm);
+  outline: none;
+}
+
+.guides-hub-label {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.guides-hub-blurb {
+  font-size: 0.88rem;
+}
+
 .list {
   list-style: none;
   padding: 0;
@@ -323,6 +395,13 @@ h1, h2, h3 {
 }
 
 .list li:last-child { border-bottom: 0; }
+
+.list a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  padding: 0.15rem 0;
+}
 
 .btn-row {
   display: flex;

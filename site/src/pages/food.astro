@@ -3,6 +3,7 @@ import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadRestaurants, mediaById, mediaPublicUrl } from "../lib/data";
 import { areaZh, cityZh, statusZh } from "../lib/presentation";
+import { relatedDaysForGuide } from "../lib/guide-links";
 
 const restaurants = loadRestaurants();
 const base = siteBase();
@@ -14,6 +15,7 @@ const bbq = mediaById("food-bbq-cuts-compare")!;
 const market = mediaById("food-market-snack-identify")!;
 const queue = mediaById("food-queue-or-alt-decision")!;
 const porkCard = mediaById("busan-pork-order")!;
+const relatedDays = relatedDaysForGuide("food");
 
 function riskZh(v: string) {
   const map: Record<string, string> = {
@@ -25,7 +27,7 @@ function riskZh(v: string) {
   return map[v] ?? "出發前再確認";
 }
 ---
-<Handbook title="美食" current="more">
+<Handbook title="美食" current="guides">
   <p class="eyebrow">美食教材</p>
   <h1 class="page-title">辨識・點餐・避雷</h1>
   <span class="status status-provisional">目前暫定</span>
@@ -143,4 +145,14 @@ function riskZh(v: string) {
       </section>
     ))
   }
+
+  <section class="surface-quiet" aria-label="相關行程日">
+    <h2 style="margin-top:0">相關行程日</h2>
+    <div class="btn-row">
+      {relatedDays.map((d) => (
+        <a class="btn" href={`${base}${d.href}`}>{d.label}</a>
+      ))}
+      <a class="btn" href={`${base}guides/`}>教材目錄</a>
+    </div>
+  </section>
 </Handbook>

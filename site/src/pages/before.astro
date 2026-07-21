@@ -3,12 +3,14 @@ import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTimeline, mediaById, mediaPublicUrl } from "../lib/data";
 import { sanitizeReaderText } from "../lib/presentation";
+import { relatedDaysForGuide } from "../lib/guide-links";
 
 const timeline = loadTimeline();
 const base = siteBase();
 const band = mediaById("before-trip-timeline")!;
 const sim = mediaById("sim-esim-powerbank-card")!;
 const offline = mediaById("offline-docs-checklist")!;
+const relatedDays = relatedDaysForGuide("before");
 
 function milestoneLabel(label: string) {
   const map: Record<string, string> = {
@@ -27,7 +29,7 @@ function milestoneLabel(label: string) {
   return map[label] ?? sanitizeReaderText(label);
 }
 ---
-<Handbook title="出發前" current="more">
+<Handbook title="出發前" current="guides">
   <p class="eyebrow">出發前教材</p>
   <h1 class="page-title">第一次出國也能照著做</h1>
   <span class="status status-provisional">目前暫定</span>
@@ -92,6 +94,10 @@ function milestoneLabel(label: string) {
   <div class="btn-row">
     <a class="btn" href={`${base}packing/`}>行李</a>
     <a class="btn" href={`${base}transport/`}>交通</a>
+    {relatedDays.map((d) => (
+      <a class="btn" href={`${base}${d.href}`}>{d.label}</a>
+    ))}
+    <a class="btn" href={`${base}guides/`}>教材目錄</a>
     <a class="btn" href={`${base}bookings/`}>預訂狀態</a>
     <a class="btn" href={`${base}emergency/`}>緊急</a>
   </div>

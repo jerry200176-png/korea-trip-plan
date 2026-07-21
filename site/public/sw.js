@@ -1,4 +1,4 @@
-const CACHE = "korea-trip-v3";
+const CACHE = "korea-trip-v4";
 const PRECACHE = [
   "./",
   "./index.html",
@@ -6,6 +6,8 @@ const PRECACHE = [
   "./today/index.html",
   "./emergency/",
   "./days/",
+  "./guides/",
+  "./guides/index.html",
   "./manifest.webmanifest",
 ];
 

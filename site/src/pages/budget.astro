@@ -5,7 +5,7 @@ import { sanitizeReaderText, statusZh } from "../lib/presentation";
 const budget = loadBudget();
 const prog = budgetProgress(budget);
 ---
-<Handbook title="預算" current="more">
+<Handbook title="預算" current="guides">
   <h1>預算</h1>
   <section class="panel">
     <p>已花 {prog.spent} / 規劃 {prog.planned} {budget.currency}（{prog.pct}%）</p>

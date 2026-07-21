@@ -13,10 +13,10 @@ const base = siteBase();
 
 const links = [
   { href: base, id: "home", label: "首頁" },
-  { href: `${base}today/day-2/`, id: "today", label: "今日" },
   { href: `${base}days/`, id: "days", label: "行程" },
-  { href: `${base}decisions/`, id: "decisions", label: "決策" },
-  { href: `${base}emergency/`, id: "emergency", label: "緊急" },
+  { href: `${base}today/`, id: "today", label: "今日" },
+  { href: `${base}guides/`, id: "guides", label: "教材" },
+  { href: `${base}review/`, id: "review", label: "驗收" },
 ];
 ---
 <html lang="zh-Hant">
@@ -48,6 +48,7 @@ const links = [
       </main>
       <footer class="site-footer">
         我們的韓國 · 旅行規劃預覽版 · <a href={`${base}credits/`}>圖片出處</a>
+        · <a href={`${base}emergency/`}>緊急</a>
       </footer>
     </div>
     {
