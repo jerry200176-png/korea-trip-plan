@@ -16,6 +16,7 @@ const pages = [
   { path: "/before/", name: "before" },
   { path: "/packing/", name: "packing" },
   { path: "/shopping/", name: "shopping" },
+  { path: "/photo/", name: "photo" },
   { path: "/days/", name: "seoul-chapter" },
   { path: "/days/day-1/", name: "day-1" },
   { path: "/days/day-2/", name: "day-2" },

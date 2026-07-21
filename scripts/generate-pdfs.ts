@@ -287,6 +287,28 @@ ${busanMain.map((d) => dayPages(d, dayMedia[d.day_index])).join("\n")}
   <p class="footer-note">Jerry 與 Nikita · 我們的韓國 · 旅行規劃預覽版 · 非訂票憑證</p>
 </section>
 
+<section class="page compact">
+  <p class="eyebrow">Photo &amp; Memory</p>
+  <h2>拍照與回憶</h2>
+  <p>Jerry（iPhone 14）與 Nikita（iPhone 17 Pro）。兩人照合約八成；拍立得留給 Day 2 韓服與 Day 6 海岸。不比較外貌；不虛構日落時刻；不編造對話。</p>
+  <img src="${mediaSrc("photo-couple-framing-guide")}" alt="${mediaById["photo-couple-framing-guide"].alt_zh}" style="width:100%;max-height:220pt;object-fit:contain;margin:6pt 0"/>
+  <img src="${mediaSrc("photo-phone-handoff-timer")}" alt="${mediaById["photo-phone-handoff-timer"].alt_zh}" style="width:100%;max-height:200pt;object-fit:contain;margin:6pt 0"/>
+  <p><strong>請路人：</strong><span lang="ko">사진 한 장만 찍어 주세요</span> · <span lang="ko">감사합니다</span></p>
+  <img src="${mediaSrc("photo-instant-budget-card")}" alt="${mediaById["photo-instant-budget-card"].alt_zh}" style="width:100%;max-height:200pt;object-fit:contain;margin:6pt 0"/>
+  <img src="${mediaSrc("photo-rainy-day-guide")}" alt="${mediaById["photo-rainy-day-guide"].alt_zh}" style="width:100%;max-height:180pt;object-fit:contain;margin:6pt 0"/>
+  <img src="${mediaSrc("photo-memory-card-system")}" alt="${mediaById["photo-memory-card-system"].alt_zh}" style="width:100%;max-height:180pt;object-fit:contain;margin:6pt 0"/>
+  <img src="${mediaSrc("photo-privacy-etiquette-warn")}" alt="${mediaById["photo-privacy-etiquette-warn"].alt_zh}" style="width:100%;max-height:180pt;object-fit:contain;margin:6pt 0"/>
+  <ul class="dense">
+    <li>Day 1：抵達合照 · 腳累仍值得</li>
+    <li>Day 2：宮殿韓服主拍 · 可請路人 · 拍立得優先</li>
+    <li>Day 3–4：街景半身；腳累可刪</li>
+    <li>Day 5：車站一張即可</li>
+    <li>Day 6：海岸橫式 · 拍立得優先 · 雨改窗景</li>
+    <li>Day 7：輕鬆結尾；不壓縮安檢</li>
+  </ul>
+  <p class="muted">完整每日計畫見網站「拍照與回憶」教材。未來可換成你們自己的照片占位。</p>
+</section>
+
 <section class="page compact credits-page">
   <p class="eyebrow">Credits · 1／2</p>
   <h2>圖片出處 · 插畫</h2>

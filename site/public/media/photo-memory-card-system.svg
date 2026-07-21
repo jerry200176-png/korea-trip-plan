@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Daily memory card system</title>
+  <desc id="desc">Remember prompts for Jerry and Nikita without invented dialogue.</desc>
+  <defs><style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-bad { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-warm { fill: #f7f0e4; stroke: #8a6a2a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .warn { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #8a3b2a; }
+      .frame { fill: none; stroke: #2c2416; stroke-width: 3; stroke-dasharray: 8 6; }
+</style></defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">每日回憶卡（Remember）</text>
+  <text class="muted" x="48" y="68">每日最多 1–2 則 · 不虛構對話／浪漫台詞 · 2026-07-21</text>
+
+  <rect class="card" x="40" y="110" width="360" height="220" rx="8"/>
+  <text class="h" x="56" y="160">今天最想留下什麼？</text>
+  <text class="t" x="56" y="210">用一句話或一張照片回答</text>
+  <text class="muted" x="56" y="260">可寫在拍立得邊緣</text>
+
+  <rect class="card" x="420" y="110" width="360" height="220" rx="8"/>
+  <text class="h" x="436" y="160">今天最好吃的是什麼？</text>
+  <text class="t" x="436" y="210">店名或菜名即可</text>
+  <text class="muted" x="436" y="260">對齊食物教材，非評價秀</text>
+
+  <rect class="card" x="800" y="110" width="360" height="220" rx="8"/>
+  <text class="h" x="816" y="160">今天哪個意外最值得記住？</text>
+  <text class="t" x="816" y="210">小狀況也算</text>
+  <text class="muted" x="816" y="260">不美化、不編造情節</text>
+
+  <rect class="card-ok" x="40" y="360" width="560" height="300" rx="8"/>
+  <text class="h" x="56" y="410">今天拍一張不用完美的照片</text>
+  <text class="t" x="56" y="460">模糊、人潮、雨絲都可留</text>
+  <text class="t" x="56" y="500">對齊 Jerry：不為打卡犧牲節奏</text>
+  <text class="muted" x="56" y="560">功能：Remember｜Explain</text>
+
+  <rect class="card-warm" x="620" y="360" width="540" height="300" rx="8"/>
+  <text class="h" x="636" y="410">留一張拍立得寫日期與地點</text>
+  <text class="t" x="636" y="460">例：2027-03 · 景福宮</text>
+  <text class="t" x="636" y="500">日期未定時先寫「三月 · 地點」</text>
+  <text class="muted" x="636" y="560">自有照片 placeholder 可後補</text>
+</svg>

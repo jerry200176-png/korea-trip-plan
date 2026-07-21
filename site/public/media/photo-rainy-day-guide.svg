@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Rainy day photo guide</title>
+  <desc id="desc">Compare outdoor couple photo vs indoor backup when raining.</desc>
+  <defs><style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-bad { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-warm { fill: #f7f0e4; stroke: #8a6a2a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .warn { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #8a3b2a; }
+      .frame { fill: none; stroke: #2c2416; stroke-width: 3; stroke-dasharray: 8 6; }
+</style></defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">雨天拍照備案（Compare／Warn）</text>
+  <text class="muted" x="48" y="68">三月季節原則 · 不虛構精確雨時 · 2026-07-21</text>
+
+  <rect class="card-bad" x="40" y="100" width="560" height="480" rx="8"/>
+  <text class="h" x="56" y="150">戶外遇雨</text>
+  <text class="t" x="56" y="200">縮短宮殿／海岸停留</text>
+  <text class="t" x="56" y="240">手機防水有限：快拍半身</text>
+  <text class="t" x="56" y="280">拍立得遇濕易失敗 → 收起</text>
+  <text class="t" x="56" y="320">人潮＋雨具＝構圖雜亂</text>
+  <text class="muted" x="56" y="400">腳累時：直接改室內</text>
+  <text class="muted" x="56" y="430">不值得為一張硬撐</text>
+
+  <rect class="card-ok" x="620" y="100" width="540" height="480" rx="8"/>
+  <text class="h" x="636" y="150">室內備案</text>
+  <text class="t" x="636" y="200">租借店鏡前／簷下</text>
+  <text class="t" x="636" y="240">咖啡窗邊／商場中庭</text>
+  <text class="t" x="636" y="280">車站大廳（不擋動線）</text>
+  <text class="t" x="636" y="320">窗景海岸替代戶外長曝</text>
+  <text class="t" x="636" y="360">仍可完成「今天一張」</text>
+  <text class="muted" x="636" y="430">功能：Compare｜Warn｜Remember</text>
+  <text class="muted" x="636" y="460">與每日雨備行程對齊</text>
+</svg>

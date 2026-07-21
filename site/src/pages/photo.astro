@@ -1,0 +1,171 @@
+---
+import { siteBase } from "../lib/base";
+import Handbook from "../layouts/Handbook.astro";
+import { loadPhotoMemory, mediaById, mediaPublicUrl } from "../lib/data";
+import { relatedDaysForGuide } from "../lib/guide-links";
+
+const base = siteBase();
+const pm = loadPhotoMemory();
+const framing = mediaById("photo-couple-framing-guide")!;
+const handoff = mediaById("photo-phone-handoff-timer")!;
+const budget = mediaById("photo-instant-budget-card")!;
+const rainy = mediaById("photo-rainy-day-guide")!;
+const memory = mediaById("photo-memory-card-system")!;
+const etiquette = mediaById("photo-privacy-etiquette-warn")!;
+const relatedDays = relatedDaysForGuide("photo");
+
+const device = pm.device_guidance;
+const plans = pm.daily_plans ?? [];
+
+function deviceZh(v: string) {
+  const map: Record<string, string> = {
+    phone: "手機",
+    phone_then_polaroid: "手機為主，再留拍立得",
+    polaroid: "拍立得",
+  };
+  return map[v] ?? v;
+}
+
+function orientZh(v: string) {
+  const map: Record<string, string> = {
+    portrait: "直式",
+    landscape: "橫式",
+    landscape_or_portrait: "直式或橫式",
+  };
+  return map[v] ?? v;
+}
+---
+<Handbook title="拍照與回憶" current="guides">
+  <p class="eyebrow">拍照教材</p>
+  <h1 class="page-title">拍照與回憶</h1>
+  <span class="status status-provisional">目前暫定</span>
+  <p class="muted">
+    給 Jerry（iPhone 14）與 Nikita（iPhone 17 Pro）的合照／拍立得教材。不是通用美圖 gallery；不虛構對話或浪漫台詞。
+  </p>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">裝置與原則</h2>
+    <ul class="list">
+      <li>兩人照合約八成需求；拍立得保留重要時刻</li>
+      <li>廣角／遠景／夜景：優先 Nikita 的 iPhone 17 Pro</li>
+      <li>倒數或請路人：兩支手機皆可；固定後再入鏡</li>
+      <li>{device.polaroid}</li>
+      <li>{device.no_long_queues}</li>
+      <li>未來可用你們自己的照片取代示意占位</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">合照構圖</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, framing)} alt={framing.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{framing.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">手機交接與倒數</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, handoff)} alt={handoff.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{handoff.alt_zh}</figcaption>
+    </figure>
+    <p lang="ko">사진 한 장만 찍어 주세요 · 감사합니다</p>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">拍立得每日預算</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, budget)} alt={budget.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{budget.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">雨天備案</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, rainy)} alt={rainy.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{rainy.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">每日回憶卡</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, memory)} alt={memory.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{memory.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">禮儀警示</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, etiquette)} alt={etiquette.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{etiquette.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface-quiet">
+    <h2 style="margin-top:0">每日拍照計畫（Day 1–7）</h2>
+    {
+      plans.map((p: any) => (
+        <article class="surface" style="margin-bottom:var(--space-3)">
+          <h3 style="margin-top:0">Day {p.day}</h3>
+          <ul class="list">
+            <li>
+              <strong>主時刻：</strong>
+              {p.primary_moment}
+            </li>
+            <li>
+              <strong>備案／雨天：</strong>
+              {p.backup_or_rain}
+            </li>
+            <li>
+              <strong>裝置：</strong>
+              {deviceZh(p.device)} · {orientZh(p.orientation)}
+            </li>
+            <li>
+              <strong>構圖：</strong>
+              {p.composition}
+            </li>
+            <li>
+              <strong>光線／人潮：</strong>
+              {p.light_crowd}
+            </li>
+            <li>
+              <strong>請路人：</strong>
+              {p.ask_stranger ? "建議簡短請人幫忙" : "通常自己或倒數即可"}
+            </li>
+            <li>
+              <strong>禮儀：</strong>
+              {p.etiquette}
+            </li>
+            <li>
+              <strong>腳累時：</strong>
+              {p.worth_if_tired ? "值得留一張半身" : "可刪，改休息"}
+            </li>
+            <li>
+              <strong>回憶提示：</strong>
+              {(p.memory_prompts || []).join("／")}
+            </li>
+          </ul>
+          <a class="btn" href={`${base}days/day-${p.day}/`}>
+            打開 Day {p.day}
+          </a>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="surface-quiet" aria-label="相關行程日">
+    <h2 style="margin-top:0">相關行程日</h2>
+    <div class="btn-row">
+      {relatedDays.map((d) => (
+        <a class="btn" href={`${base}${d.href}`}>
+          {d.label}
+        </a>
+      ))}
+      <a class="btn" href={`${base}guides/`}>教材目錄</a>
+      <a class="btn" href={`${base}packing/`}>行李（拍立得）</a>
+    </div>
+  </section>
+</Handbook>
