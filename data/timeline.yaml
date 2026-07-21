@@ -32,14 +32,20 @@ milestones:
       - id: t90-lodging-areas
         title: 首爾／釜山住宿區域短名單
         done: false
+      - id: t90-passport-photo
+        title: 確認護照效期與證件照備份
+        done: false
+      - id: t90-card-notices
+        title: 讀台新／富邦等卡海外交易最新說明（不寫死回饋％）
+        done: false
   - id: t-60
     label: T-60
     tasks:
       - id: t60-book-flights
-        title: 購票（Founder 執行；代碼勿 commit）
+        title: 購票（我們執行；確認碼勿貼公開版）
         done: false
       - id: t60-book-hotels
-        title: 訂房（Founder 執行；代碼勿 commit）
+        title: 訂房（我們執行；確認碼勿貼公開版）
         done: false
       - id: t60-experiences
         title: 需提早預約的韓服／算命時段調查
@@ -51,10 +57,13 @@ milestones:
         title: 重查所有正式行程地點營業資訊
         done: false
       - id: t30-sim
-        title: 決定 eSIM／SIM／Wi-Fi
+        title: 決定 eSIM／SIM／Wi-Fi；兩支手機都測試
         done: false
       - id: t30-ktx
-        title: 若採雙城，規劃 KTX 車次（再購票）
+        title: 若採雙城，規劃 KTX 車次（日期未定前僅規劃）
+        done: false
+      - id: t30-luggage-size
+        title: 依航空公司規則決定登機／托運尺寸
         done: false
   - id: t-14
     label: T-14
@@ -63,7 +72,13 @@ milestones:
         title: 換匯／信用卡海外交易設定（查銀行官網）
         done: false
       - id: t14-packing-draft
-        title: 行李清單初稿
+        title: 行李清單初稿（七天層次＋雨備）
+        done: false
+      - id: t14-hanbok-fortune
+        title: 韓服店條款鎖定；算命若升級再確認語言／預約
+        done: false
+      - id: t14-instant-camera
+        title: 拍立得底片與電池備妥
         done: false
   - id: t-7
     label: T-7
@@ -74,17 +89,29 @@ milestones:
       - id: t7-pdfs
         title: 更新手冊與 PDF，存入兩人手機
         done: false
+      - id: t7-offline-emergency
+        title: 填入住宿韓文地址占位→真實地址（僅離線）
+        done: false
+      - id: t7-powerbank
+        title: 再查航空公司行動電源規則
+        done: false
   - id: t-3
     label: T-3
     tasks:
       - id: t3-pack
         title: 完成打包與液體／電池檢查
         done: false
+      - id: t3-cash
+        title: 準備少量韓元現金緩衝
+        done: false
   - id: t-1
     label: T-1
     tasks:
       - id: t1-docs
         title: 護照、保險、離線地圖、緊急包 PDF
+        done: false
+      - id: t1-phones
+        title: 兩支手機充滿電；離線檔案可開
         done: false
   - id: departure
     label: 出發日

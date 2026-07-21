@@ -1,11 +1,14 @@
 ---
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
-import { loadTimeline } from "../lib/data";
+import { loadTimeline, mediaById, mediaPublicUrl } from "../lib/data";
 import { sanitizeReaderText } from "../lib/presentation";
 
 const timeline = loadTimeline();
 const base = siteBase();
+const band = mediaById("before-trip-timeline")!;
+const sim = mediaById("sim-esim-powerbank-card")!;
+const offline = mediaById("offline-docs-checklist")!;
 
 function milestoneLabel(label: string) {
   const map: Record<string, string> = {
@@ -25,10 +28,50 @@ function milestoneLabel(label: string) {
 }
 ---
 <Handbook title="出發前" current="more">
-  <p class="eyebrow">出發前</p>
-  <h1 class="page-title">出發前準備</h1>
+  <p class="eyebrow">出發前教材</p>
+  <h1 class="page-title">第一次出國也能照著做</h1>
   <span class="status status-provisional">目前暫定</span>
-  <p class="muted">依時間遠近，Jerry 與 Nikita 一起完成的事項。</p>
+  <p class="muted">日期、航空公司與住宿未定的項目是條件式清單，不是假裝已完成。</p>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">時間帶總覽</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, band)} alt={band.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{band.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">網路・電源・雙手機</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, sim)} alt={sim.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{sim.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>T-30 決定 eSIM／實體 SIM／Wi-Fi；兩支手機都要測熱點</li>
+      <li>行動電源規則以<strong>航空公司</strong>為準</li>
+      <li>充電器與線材備援各一</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">卡・現金・保險</h2>
+    <ul class="list">
+      <li>信用卡海外交易前讀台新／富邦等<strong>官網最新條款</strong>；本教材不寫死回饋％</li>
+      <li>備少量韓元；刷卡盡量用韓元計價，拒絕不利的動態貨幣轉換</li>
+      <li>保險方案比較後，保單與緊急電話只存離線，不貼公開站</li>
+    </ul>
+  </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">離線文件包</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, offline)} alt={offline.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{offline.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <p class="muted">依時間遠近一起勾完。含「還要一起決定」的項目，等日期與訂票後再硬化。</p>
   {
     timeline.milestones.map((m) => (
       <section class="surface">
@@ -47,14 +90,9 @@ function milestoneLabel(label: string) {
     ))
   }
   <div class="btn-row">
-    <a class="btn" href={`${base}packing/`}>
-      行李
-    </a>
-    <a class="btn" href={`${base}transport/`}>
-      交通教材
-    </a>
-    <a class="btn" href={`${base}bookings/`}>
-      預訂狀態
-    </a>
+    <a class="btn" href={`${base}packing/`}>行李</a>
+    <a class="btn" href={`${base}transport/`}>交通</a>
+    <a class="btn" href={`${base}bookings/`}>預訂狀態</a>
+    <a class="btn" href={`${base}emergency/`}>緊急</a>
   </div>
 </Handbook>

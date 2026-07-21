@@ -1,7 +1,7 @@
 meta:
   product: Jerry & Nikita Korea Trip Textbook Edition
   updated_at: '2026-07-21'
-  round: 5-food-atlas
+  round: 6-before-trip
   quality_correction: '2026-07-20'
   baseline_of: Media Edition Beta + PR
   scoring_rule: Do not inflate. Unknowns lower the score.
@@ -72,9 +72,9 @@ gates:
 dimensions:
   research_depth:
     max: 20
-    score: 17
-    notes: 'Food Atlas delta +1: VisitKorea dwaejigukbap + Michelin how-to (rs-104–106) on top of transport. Before-Trip
-      still open — not 18 yet.'
+    score: 18
+    notes: 'Before-Trip delta +1: packing/SIM/card/insurance/offline checklist teaching closes prep research gap to Final
+      Exit research minimum. Photo & Memory / IA still open for other bars.'
   factual_trust:
     max: 15
     score: 11
@@ -82,9 +82,9 @@ dimensions:
       limousine ticket caveat recorded. Still partial time-sensitive coverage.'
   personalization:
     max: 20
-    score: 17
-    notes: 'Food Atlas delta +2: Identify/order/queue rules for no-alcohol, crustacean-ask, bones/organ, no long queues,
-      no cross-town when tired. Before-Trip packing personalization still needed for 18.'
+    score: 18
+    notes: 'Before-Trip delta +1: couple packing, dual-phone, instant camera, card principles without invented cashback,
+      conditional T-90…T-1 checklist. Meets Final Exit personalization minimum.'
   itinerary_logic:
     max: 15
     score: 14
@@ -105,7 +105,7 @@ dimensions:
 totals:
   overall:
     max: 100
-    score: 85
+    score: 87
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 p0_open: []
@@ -121,9 +121,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Before-Trip Textbook Slice
 - Photo & Memory Slice
 - Website IA and discovery
+- Full Textbook PDF restructuring
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -162,6 +162,10 @@ round_2_progress:
     merged_at: '2026-07-21'
     merge_sha: 7de48b732974da13159b4586e9f0945bc5b209b5
     pr: 19
+  before_trip:
+    status: in_pr
+    decision_doc: docs/research/BEFORE_TRIP_TEXTBOOK.md
+    updated_at: '2026-07-21'
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
@@ -190,3 +194,13 @@ score_deltas_food_atlas_2026_07_21:
   - personalization +2 via Identify/order/queue couple rules
   - visual_teaching +1 via six food diagrams
   - factual_trust/itinerary/website/publication unchanged this slice
+
+score_deltas_before_trip_2026_07_21:
+  from_overall: 85
+  to_overall: 87
+  evidence:
+  - research_depth +1 to 18 via before-trip textbook + timeline hardening
+  - personalization +1 to 18 via packing/SIM/card/offline couple prep
+  - visual_teaching unchanged at 14 (five new diagrams; still below saturation)
+  - factual_trust/itinerary/website/publication unchanged this slice
+  - overall 85→87 (not inflated to 90; Photo & Memory / IA / PDF still open)
