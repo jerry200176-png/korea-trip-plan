@@ -1,0 +1,4 @@
+PDF_TEXT_FORBIDDEN_SCAN OK
+scanned_at 2026-07-21T04:49:04Z
+matches: 0
+patterns: PDFSEC:|Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Date Pending|Booking Ready|avoid_

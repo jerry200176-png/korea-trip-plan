@@ -1,0 +1,210 @@
+# Autonomous work queue — one coherent outcome at a time.
+# Dynamic SHAs live in CI/runtime evidence, not as tip-hardcoded fields here.
+
+meta:
+  updated_at: "2026-07-21"
+  product: Jerry & Nikita Korea Trip Textbook Edition
+  rule: Do not mega-PR. Do not mix CI repair with new product features.
+
+items:
+  - id: repair-pr26-clean-ci
+    outcome: GitHub clean CI green on PR #26 with artifact for final head
+    priority: 1
+    expected_user_value: Unblocks independent artifact re-verification of rendering repairs
+    evidence_required:
+      - github_actions_conclusion_success
+      - artifact_upload_success
+      - artifact_name_includes_final_head_sha
+      - full_npm_run_ci_executed
+    dependencies: []
+    scope_allowed:
+      - fix root cause of CI failure
+      - autonomous harness docs/data/scripts
+      - markdown lint / control-state consistency
+    scope_forbidden:
+      - itinerary decision changes
+      - destination / research scope expansion
+      - restore READY without Exit Gate
+      - score inflation
+    status: passed
+    attempts: 2
+    last_failure_signature: "upload-artifact:sha-mismatch:github.sha-vs-pr-head"
+    exit_gate: github_ci_green_with_matching_artifact
+    next_if_pass: verify-pr26-final-artifact
+    next_if_fail: repair-pr26-clean-ci
+
+  - id: verify-pr26-final-artifact
+    outcome: Independent critic PASS on PR #26 final-head artifact
+    priority: 2
+    expected_user_value: Confirms reader text, PDF renders, Emergency pack, SHA roles
+    evidence_required:
+      - downloaded_artifact_for_final_head
+      - public_text_scan_pass
+      - ko_crustacean_phrase_scan_pass
+      - pdf_35_pages_inspected
+      - emergency_one_page
+      - independent_critic_pass
+    dependencies: [repair-pr26-clean-ci]
+    scope_allowed:
+      - artifact inspection notes
+      - critic docs under docs/research/critics or docs/design-proof
+      - targeted repair on same PR if critic finds blockers
+    scope_forbidden:
+      - merge before critic PASS
+      - restore READY before Visual/Publication critics
+    status: passed
+    attempts: 2
+    last_failure_signature: null
+    exit_gate: independent_critic_pass_on_final_artifact
+    next_if_pass: restore-ready-state
+    next_if_fail: verify-pr26-final-artifact
+
+  - id: restore-ready-state
+    outcome: Honest READY FOR JERRY & NIKITA ACCEPTANCE after recomputed scores
+    priority: 3
+    expected_user_value: Authorizes human acceptance review without false Booking Ready claims
+    evidence_required:
+      - visual_critic_pass
+      - publication_critic_pass
+      - overall_recomputed_ge_90
+      - packet_status_ready
+      - scorecard_aligned
+    dependencies: [verify-pr26-final-artifact]
+    scope_allowed:
+      - scorecard / packet status updates backed by critic evidence
+    scope_forbidden:
+      - Final approved
+      - Booking Ready
+      - inventing Visual/Publication scores without critic PASS
+    status: passed
+    attempts: 1
+    last_failure_signature: null
+    exit_gate: ready_status_honest_and_evidenced
+    next_if_pass: merge-pr26
+    next_if_fail: verify-pr26-final-artifact
+
+  - id: merge-pr26
+    outcome: Squash-merge PR #26 to main
+    priority: 4
+    expected_user_value: Lands rendering repair on production branch
+    evidence_required:
+      - pr_ready_for_review
+      - mergeable
+      - no_blocking_reviews
+      - squash_merge_sha
+    dependencies: [restore-ready-state]
+    scope_allowed:
+      - merge operations and merge-SHA recording
+    scope_forbidden:
+      - further product feature work on same PR
+    status: in_progress
+    attempts: 1
+    last_failure_signature: null
+    exit_gate: squash_merged_to_main
+    next_if_pass: verify-main-and-pages
+    next_if_fail: merge-pr26
+
+  - id: verify-main-and-pages
+    outcome: main CI + Pages deploy match expected revision; live PDFs OK
+    priority: 5
+    expected_user_value: Live site and downloads match merged product
+    evidence_required:
+      - main_ci_success
+      - pages_deploy_success
+      - deployed_pages_sha_match
+      - live_pdf_smoke
+    dependencies: [merge-pr26]
+    scope_allowed:
+      - live verification notes
+      - focused repair PR if live drift
+    scope_forbidden:
+      - mega redesign
+    status: pending
+    attempts: 0
+    last_failure_signature: null
+    exit_gate: live_matches_main
+    next_if_pass: full-product-human-readiness-audit
+    next_if_fail: verify-main-and-pages
+
+  - id: full-product-human-readiness-audit
+    outcome: Full website/PDF/content/honesty audit with blockers queued or cleared
+    priority: 6
+    expected_user_value: Catches residual UX/PDF/content honesty issues before human review
+    evidence_required:
+      - website_audit
+      - pdf_audit
+      - content_audit
+      - honesty_audit
+    dependencies: [verify-main-and-pages]
+    scope_allowed:
+      - audit docs
+      - focused corrective PRs for blockers
+    scope_forbidden:
+      - infinite polish
+      - itinerary route change without Hard Stop
+    status: pending
+    attempts: 0
+    last_failure_signature: null
+    exit_gate: audit_complete_no_p0
+    next_if_pass: final-polish-if-needed
+    next_if_fail: full-product-human-readiness-audit
+
+  - id: final-polish-if-needed
+    outcome: Highest-ROI non-blocking polish only, or explicit skip
+    priority: 7
+    expected_user_value: Small readability gains without delaying human review
+    evidence_required:
+      - polish_list_or_skip_rationale
+    dependencies: [full-product-human-readiness-audit]
+    scope_allowed:
+      - small high-ROI fixes
+    scope_forbidden:
+      - open-ended redesign
+    status: pending
+    attempts: 0
+    last_failure_signature: null
+    exit_gate: polish_done_or_skipped
+    next_if_pass: generate-final-human-acceptance-packet
+    next_if_fail: final-polish-if-needed
+
+  - id: generate-final-human-acceptance-packet
+    outcome: Current Final Acceptance Packet + 10 human questions
+    priority: 8
+    expected_user_value: Jerry & Nikita can review with clear evidence links
+    evidence_required:
+      - FINAL_ACCEPTANCE_PACKET.md
+      - ten_human_questions
+      - live_urls
+      - scorecard
+      - critic_verdicts
+    dependencies: [final-polish-if-needed]
+    scope_allowed:
+      - packet and evidence index updates
+    scope_forbidden:
+      - claiming Final approved or Booking Ready
+    status: pending
+    attempts: 0
+    last_failure_signature: null
+    exit_gate: packet_complete_for_humans
+    next_if_pass: stop-for-jerry-and-nikita-review
+    next_if_fail: generate-final-human-acceptance-packet
+
+  - id: stop-for-jerry-and-nikita-review
+    outcome: Autonomous work stops; wait for Jerry & Nikita
+    priority: 9
+    expected_user_value: Humans own acceptance; agent does not keep inventing content
+    evidence_required:
+      - product_status_ready
+      - exit_gate_all_pass
+      - stop_report_emitted
+    dependencies: [generate-final-human-acceptance-packet]
+    scope_allowed:
+      - final stop report only
+    scope_forbidden:
+      - further autonomous content changes
+    status: pending
+    attempts: 0
+    last_failure_signature: null
+    exit_gate: human_review_handoff
+    next_if_pass: null
+    next_if_fail: null

@@ -1,5 +1,45 @@
 /** Reader-facing presentation helpers for the Astro site. */
 
+function scrubVisualFunctionLabels(text: string): string {
+  let out = text;
+  out = out.replace(/\bRescue Flow\b/gi, "救援步驟");
+  out = out.replace(/\bTaxi Rescue\b/gi, "改搭計程車");
+  out = out.replace(/計程車\s*Rescue/g, "計程車救援");
+  out = out.replace(/\bHard Stop\b/gi, "必須停止並求助");
+  out = out.replace(/\bHardStop\b/gi, "必須停止並求助");
+  out = out.replace(/\bCore Plan\b/gi, "主要行程");
+  out = out.replace(/\bPrimary shortlist\b/gi, "優先候選清單");
+  out = out.replace(/\bshortlist\b/gi, "候選清單");
+  out = out.replace(/\bShortlist\b/g, "候選清單");
+  out = out.replace(/\bharden\b/gi, "再次確認並鎖定");
+  out = out.replace(/\bOptional\b/gi, "可選／有體力再去");
+  out = out.replace(/\bCore\b/gi, "主要行程");
+  out = out.replace(/\bDate Pending\b/gi, "日期待決定");
+  out = out.replace(/\bBooking Ready\b/gi, "尚未完成預訂");
+  out = out.replace(/[（(]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire)(?:\s*[／/·|,、]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire))*\s*[）)]/gi, "");
+  out = out.replace(/功能\s*[:：]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire)(?:\s*[｜|／/·,、]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire))*/gi, "");
+  out = out.replace(/\bwarn\b/gi, "提醒");
+  out = out.replace(/\bcompare\b/gi, "比較");
+  out = out.replace(/\borient\b/gi, "導覽");
+  out = out.replace(/\bexplain\b/gi, "說明");
+  out = out.replace(/\brescue\b/gi, "救援");
+  out = out.replace(/\bidentify\b/gi, "辨識");
+  out = out.replace(/\bremember\b/gi, "記住");
+  out = out.replace(/\binspire\b/gi, "啟發");
+  for (const label of ["Orient", "Explain", "Warn", "Rescue", "Compare", "Identify", "Remember", "Inspire"]) {
+    out = out.replace(new RegExp(`\\b${label}\\b`, "gi"), "");
+  }
+  out = out.replace(/\bavoid_long_queues\b/g, "避免長時間排隊");
+  out = out.replace(/\bavoid_crustacean_seafood\b/g, "避免甲殼類海鮮");
+  out = out.replace(/\bfeet_tire_easily\b/g, "腳容易累");
+  out = out.replace(/갑각류 해산은 빼 주실 수 있나요\?/g, "갑각류는 빼 주실 수 있나요?");
+  out = out.replace(/\s{2,}/g, " ");
+  out = out.replace(/（\s*）/g, "");
+  out = out.replace(/\(\s*\)/g, "");
+  return out.trim();
+}
+
+
 export function statusZh(status: string): string {
   const map: Record<string, string> = {
     Confirmed: "已決定",
@@ -135,7 +175,7 @@ export function readerRefLabel(
 
 export function sanitizeReaderText(text: string | null | undefined): string {
   if (!text) return "";
-  return text
+  const base = text
     .replace(/Jerry\s*與女友/g, "Jerry 與 Nikita")
     .replace(/Jerry\s*&\s*女友/g, "Jerry & Nikita")
     .replace(/\bREPLACE_ME\b/g, "確認後補上")
@@ -153,7 +193,8 @@ export function sanitizeReaderText(text: string | null | undefined): string {
     .replace(/\broute_option\b/g, "路線")
     .replace(/\bstart_date\b/g, "出發日")
     .replace(/\bend_date\b/g, "回程日")
-    .replace(/\bBooking Ready\b/gi, "可預訂狀態")
+    .replace(/\bBooking Ready\b/gi, "尚未完成預訂")
+    .replace(/\bDate Pending\b/gi, "日期待決定")
     .replace(/\bTrip Ready\b/gi, "行程就緒")
     .replace(/\bDashboard\b/g, "首頁")
     .replace(/\btrip\.yaml\b/g, "旅程資料")
@@ -180,6 +221,7 @@ export function sanitizeReaderText(text: string | null | undefined): string {
     .replace(/\brst-[a-z0-9-]+/gi, "餐廳候選")
     .replace(/\s{2,}/g, " ")
     .trim();
+  return scrubVisualFunctionLabels(base);
 }
 
 export function formatClock(value: string): string {

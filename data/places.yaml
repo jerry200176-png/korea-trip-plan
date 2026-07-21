@@ -78,7 +78,7 @@ places:
   rain_ok: true
   best_time_of_day: afternoon
   nearby_place_ids: []
-  recommend_reason: 衣服／街頭風格 Optional 備案；不預設塞進 Day 3 Core（轉乘成本高）
+  recommend_reason: 衣服／街頭風格 可選／有體力再去 備案；不預設塞進 Day 3 主要行程（轉乘成本高）
   risks: 人潮；夜間較吵；非 GOT7 官方場館
   source_ids:
   - src-naver-map
@@ -105,7 +105,7 @@ places:
   rain_ok: true
   best_time_of_day: afternoon
   nearby_place_ids: []
-  recommend_reason: Day 3 Core 購物區：化妝品＋衣服同區；退稅與室內備案佳
+  recommend_reason: Day 3 主要行程 購物區：化妝品＋衣服同區；退稅與室內備案佳
   risks: 人潮；高壓推銷；>1h 排隊店可跳過；行李變重就提早收工
   source_ids:
   - src-naver-map
@@ -162,7 +162,7 @@ places:
   best_time_of_day: evening
   nearby_place_ids:
   - plc-haeundae
-  recommend_reason: Day 6 Optional 夜景／橋；低體力可整段刪；非 Core 失敗條件
+  recommend_reason: Day 6 可選／有體力再去 夜景／橋；低體力可整段刪；非 主要行程 失敗條件
   risks: 海邊餐廳甲殼類比例高，用餐需篩選
   source_ids:
   - src-busan-city
@@ -190,7 +190,7 @@ places:
   rain_ok: true
   best_time_of_day: afternoon
   nearby_place_ids: []
-  recommend_reason: Round 2A 決策：自 Core Plan 移除。GOT7 情感價值 ≠ 大樓打卡價值；無一般訪客體驗；總部位於江東區，會破壞江南單區 Day 4。
+  recommend_reason: Round 2A 決策：自 主要行程 移除。GOT7 情感價值 ≠ 大樓打卡價值；無一般訪客體驗；總部位於江東區，會破壞江南單區 Day 4。
   risks: 外觀打卡價值低；跨區交通成本高；勿打擾員工
   source_ids:
   - src-jyp

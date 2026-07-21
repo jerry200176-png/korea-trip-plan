@@ -17,9 +17,9 @@
 
 詳見網站 `/food/` 與 `docs/research/FOOD_ATLAS.md`。
 
-## 釜山豬肉湯飯 shortlist（Round 2C）
+## 釜山豬肉湯飯 候選清單（Round 2C）
 
-1. **合天國飯店（합천국밥집）** — 南區龍湖；Michelin Bib；跨區 Optional  
+1. **合天國飯店（합천국밥집）** — 南區龍湖；Michelin Bib；跨區 可選／有體力再去  
 2. **Anmok（안목）** — 水營／廣安圈；編輯訊號可不加蝦醬，仍須現場確認  
 3. **Namakzip（나막집）** — Michelin Bib；行前確認 pin  
 
@@ -28,7 +28,7 @@
 
 ## Day 6 海岸節奏
 
-- Core：海雲台 → 尾浦／青沙浦擇一交通體驗 → 休息  
+- 主要行程：海雲台 → 尾浦／青沙浦擇一交通體驗 → 休息  
 - Low-Energy：短海灘 → 咖啡 → 回住宿  
-- 廣安里：Optional，不是失敗條件  
+- 廣安里：可選／有體力再去，不是失敗條件  
 詳見 `docs/research/DAY6_BUSAN_FOOD_COAST.md`。

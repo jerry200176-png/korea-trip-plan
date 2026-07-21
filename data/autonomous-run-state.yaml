@@ -1,0 +1,25 @@
+# Autonomous run state — committed fields are roles/status, not mutable tip SHAs.
+
+meta:
+  schema_note: Dynamic SHAs must not be tip-hardcoded into files that change tip.
+
+current_phase: merge-pr26
+current_outcome: Squash-merge PR #26 to main
+current_pr: 26
+current_branch: cursor/final-textbook-rendering-f752
+current_head_sha: null
+last_verified_main_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
+last_green_ci_run: "29811332779"
+last_artifact_id: "8487595985"
+deployed_pages_sha: null
+product_status: READY FOR JERRY & NIKITA ACCEPTANCE
+active_blockers: []
+retry_count: 0
+last_failure_signature: null
+next_action: Mark PR ready for review; squash-merge; verify main CI + Pages
+hard_stop_required: false
+updated_at: "2026-07-21T07:50:00Z"
+
+sha_roles:
+  product_baseline_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
+  evidence_snapshot_sha: e15fd89a2ed7734d97c498136b0cc2ee38ae4abf

@@ -25,7 +25,7 @@ restaurants:
   alternatives_nearby:
   - rst-anmok
   - rst-namakzip
-  recommend_reason: Michelin Bib 清湯系豬肉湯飯訊號強；作 Optional 專程，不強迫低體力海雲台日跨區
+  recommend_reason: Michelin Bib 清湯系豬肉湯飯訊號強；作可選／有體力再去專程，不強迫低體力海雲台日跨區
   risks: 午餐尖峰排隊；離海雲台遠；蝦醬／配料需現場確認，不可宣稱零甲殼類
   source_ids:
   - src-naver-map
@@ -56,7 +56,7 @@ restaurants:
   pork_soup: true
   alternatives_nearby:
   - rst-hapcheon-gukbapjip
-  recommend_reason: 近廣安 Optional 圈；Michelin 建議可原味、不加蝦醬／辣椒醬——仍須現場確認
+  recommend_reason: 近廣安可選／有體力再去圈；Michelin 建議可原味、不加蝦醬／辣椒醬——仍須現場確認
   risks: 仍可能有交叉污染；尖峰排隊；週三可能休息；crustacean_risk=low 不是保證
   source_ids:
   - src-naver-map
@@ -88,7 +88,7 @@ restaurants:
   alternatives_nearby:
   - rst-hapcheon-gukbapjip
   - rst-anmok
-  recommend_reason: Michelin Bib shortlist 第三選；清淡湯底訊號；行前確認地址與距離
+  recommend_reason: Michelin Bib 候選清單第三選；清淡湯底訊號；行前確認地址與距離
   risks: 深頁本次環境不穩；地址需行前鎖定；蝦醬風險未知
   source_ids:
   - src-naver-map

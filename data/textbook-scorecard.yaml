@@ -94,9 +94,10 @@ dimensions:
   visual_teaching_value:
     max: 15
     score: 15
+    pending_revalidation: false
     notes: >-
-      Photo & Memory delta +1 to ceiling: six functional photo diagrams (framing, handoff, polaroid
-      budget, rain, memory cards, etiquette) wired on /photo/, days, PDF.
+      Restored after independent Visual critic PASS on PR #26 artifact 8487595985
+      (head 2af422a). Day 3 orphan/crop fixed; CJK/footer/diagrams re-verified.
   website_ux:
     max: 10
     score: 9
@@ -105,20 +106,27 @@ dimensions:
   publication_quality:
     max: 5
     score: 5
+    pending_revalidation: false
     notes: >-
-      Textbook PDF restructure: TOC + page numbers, section-aware budgets, Food/Transport/
-      Shopping/Hanbok/Photo/Before chapters; Emergency Quick Pack kept short. Publication
-      ceiling met with evidence; Final Exit still unmet (human review, time-sensitive, D1).
+      Restored after independent Publication critic PASS on the same artifact:
+      zero PDFSEC/jargon, Emergency 1 page, credits taxonomy clean, 35-page handbook.
 totals:
   overall:
     max: 100
+    # Recomputed: 18+11+19+14+15+9+5 = 91 (not a blind slogan restore)
     score: 91
+    pending_revalidation: false
+    recomputed_from: [18, 11, 19, 14, 15, 9, 5]
+    recomputed_at: '2026-07-21'
+    critic_artifact_id: '8487595985'
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 product_status: READY FOR JERRY & NIKITA ACCEPTANCE
 product_status_notes: >-
-  Phase 4 product slices complete (IA, Photo, PDF). Full-product audit PASS for readiness.
-  Do not claim Final approved, Booking Ready, or Jerry & Nikita accepted. Human review pending.
+  PR #26 independent artifact critic PASS (Visual + Publication). Overall recomputed to 91.
+  Status authorizes Jerry & Nikita human acceptance review only.
+  Do not claim Final approved, Booking Ready, or Jerry & Nikita accepted until humans finish review.
+  Textbook Final Exit remains unmet (human review + D1 dates + partial time-sensitive coverage).
 p0_open: []
 founder_decision_dependencies:
 - id: dep-d1-dates
@@ -130,11 +138,11 @@ license_risks:
 - KTO KOGL candidates not yet rights-confirmed for download
 time_sensitive_checked_at_coverage: partial
 human_review:
-  jerry_nikita_blockers: pending_textbook_final_acceptance
+  jerry_nikita_blockers: none_open_product_p0_awaiting_human_acceptance
 next_top3_roi_gaps:
-- Jerry & Nikita human acceptance review
-- Time-sensitive facts revalidation before travel
-- D1 exact dates decision
+- Jerry & Nikita human acceptance review on live site + PDFs
+- D1 exact travel dates (Founder Decision)
+- Time-sensitive facts revalidation at T-14 / T-7
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -202,10 +210,29 @@ round_2_progress:
     merge_sha: 2c13cf37f51d8995be8ec8d0e8528d2f515e043e
     pr: 24
   final_audit:
+    status: merged
+    decision_doc: docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md
+    updated_at: '2026-07-21'
+    merged_at: '2026-07-21'
+    merge_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
+    pr: 25
+    notes: >-
+      PR #25 merged the acceptance packet, but product status was reverted to
+      FINAL ACCEPTANCE REPAIR REQUIRED after independent rendering blockers.
+  final_acceptance_repair:
     status: in_pr
     decision_doc: docs/final-acceptance/FINAL_ACCEPTANCE_PACKET.md
     updated_at: '2026-07-21'
-    branch: cursor/textbook-final-audit-e48c
+    branch: cursor/final-textbook-rendering-f752
+    pr: 26
+    product_baseline_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
+    evidence_snapshot_sha: e15fd89a2ed7734d97c498136b0cc2ee38ae4abf
+    last_green_ci_run: '29811332779'
+    last_artifact_id: '8487595985'
+    notes: >-
+      Independent Visual+Publication critic PASS on artifact 8487595985.
+      READY restored for human acceptance; Textbook Final Exit still unmet.
+      render_source_sha lives in pdf-section-manifest.json; ci_verified_head_sha is CI-only.
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'

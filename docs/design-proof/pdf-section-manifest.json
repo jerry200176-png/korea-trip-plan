@@ -1,0 +1,186 @@
+{
+  "generated_at": "2026-07-21T07:38:31.773Z",
+  "product_baseline_sha": "fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c",
+  "render_source_sha": "fd2efdd2612f0d52f523e27583e694e745340c2c",
+  "total_pages": 35,
+  "pages": [
+    {
+      "page": 1,
+      "section": "front"
+    },
+    {
+      "page": 2,
+      "section": "toc"
+    },
+    {
+      "page": 3,
+      "section": "how_to_use"
+    },
+    {
+      "page": 4,
+      "section": "profile"
+    },
+    {
+      "page": 5,
+      "section": "journey"
+    },
+    {
+      "page": 6,
+      "section": "seoul_days"
+    },
+    {
+      "page": 7,
+      "section": "seoul_days"
+    },
+    {
+      "page": 8,
+      "section": "seoul_days"
+    },
+    {
+      "page": 9,
+      "section": "seoul_days"
+    },
+    {
+      "page": 10,
+      "section": "seoul_days"
+    },
+    {
+      "page": 11,
+      "section": "seoul_days"
+    },
+    {
+      "page": 12,
+      "section": "seoul_days"
+    },
+    {
+      "page": 13,
+      "section": "transit_busan_days"
+    },
+    {
+      "page": 14,
+      "section": "transit_busan_days"
+    },
+    {
+      "page": 15,
+      "section": "transit_busan_days"
+    },
+    {
+      "page": 16,
+      "section": "transit_busan_days"
+    },
+    {
+      "page": 17,
+      "section": "transit_busan_days"
+    },
+    {
+      "page": 18,
+      "section": "transit_busan_days"
+    },
+    {
+      "page": 19,
+      "section": "food"
+    },
+    {
+      "page": 20,
+      "section": "food"
+    },
+    {
+      "page": 21,
+      "section": "transport"
+    },
+    {
+      "page": 22,
+      "section": "transport"
+    },
+    {
+      "page": 23,
+      "section": "shopping"
+    },
+    {
+      "page": 24,
+      "section": "hanbok"
+    },
+    {
+      "page": 25,
+      "section": "photo"
+    },
+    {
+      "page": 26,
+      "section": "photo"
+    },
+    {
+      "page": 27,
+      "section": "before"
+    },
+    {
+      "page": 28,
+      "section": "before"
+    },
+    {
+      "page": 29,
+      "section": "emergency_short"
+    },
+    {
+      "page": 30,
+      "section": "decisions"
+    },
+    {
+      "page": 31,
+      "section": "sources"
+    },
+    {
+      "page": 32,
+      "section": "credits"
+    },
+    {
+      "page": 33,
+      "section": "credits"
+    },
+    {
+      "page": 34,
+      "section": "credits"
+    },
+    {
+      "page": 35,
+      "section": "credits"
+    }
+  ],
+  "section_first_page": {
+    "front": 1,
+    "toc": 2,
+    "how_to_use": 3,
+    "profile": 4,
+    "journey": 5,
+    "seoul_days": 6,
+    "transit_busan_days": 13,
+    "food": 19,
+    "transport": 21,
+    "shopping": 23,
+    "hanbok": 24,
+    "photo": 25,
+    "before": 27,
+    "emergency_short": 29,
+    "decisions": 30,
+    "sources": 31,
+    "credits": 32
+  },
+  "section_counts": {
+    "front": 1,
+    "toc": 1,
+    "how_to_use": 1,
+    "profile": 1,
+    "journey": 1,
+    "seoul_days": 7,
+    "transit_busan_days": 6,
+    "food": 2,
+    "transport": 2,
+    "shopping": 1,
+    "hanbok": 1,
+    "photo": 2,
+    "before": 2,
+    "emergency_short": 1,
+    "decisions": 1,
+    "sources": 1,
+    "credits": 4
+  }
+}

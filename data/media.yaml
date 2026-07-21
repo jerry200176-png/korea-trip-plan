@@ -441,7 +441,7 @@ media:
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Compare diagram for Round 2A; not place photography
-  alt_zh: Day 4 決策圖：比較兩家算命候選，並將 JYP 大樓移出 Core Plan
+  alt_zh: Day 4 決策圖：比較兩家算命候選，並將 JYP 大樓移出主要行程
   alt_en: Day 4 decision diagram comparing two fortune candidates and removing JYP tower from the core plan
   focal_point: center
   status: Approved
@@ -573,7 +573,7 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original crustacean warn card · 2026-07-21
+  attribution: Original 甲殼類提醒 card · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Warn teaching card
@@ -600,11 +600,11 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original Day 6 compare diagram · 2026-07-21
+  attribution: Original Day 6 比較圖 · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Compare teaching diagram
-  alt_zh: Day 6 Core 與低體力路線比較圖
+  alt_zh: Day 6 主要行程與低體力路線比較圖
   alt_en: Day 6 Core versus low-energy route compare
   focal_point: center
   status: Approved
@@ -626,11 +626,11 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original Gwangalli optional card · 2026-07-21
+  attribution: Original Gwangalli 可選／有體力再去 card · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Compare decision card
-  alt_zh: 廣安里 Optional 去留決策卡
+  alt_zh: 廣安里可選／有體力再去・去留決策卡
   alt_en: Gwangalli optional go/no-go decision card
   focal_point: center
   status: Approved
@@ -652,7 +652,7 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original hanbok compare · 2026-07-21
+  attribution: Original 韓服比較 · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Compare teaching
@@ -759,7 +759,7 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original transfer compare diagram · 2026-07-21
+  attribution: Original transfer 比較圖 · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Compare diagram with time ranges; lodging unlocked; taxi as Rescue
@@ -844,7 +844,7 @@ media:
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Rescue decision tree with Hard Stop; no fake schedules
-  alt_zh: 走錯車救援樹：坐反、錯過站、錯過 KTX、末班已過的第一步、不要做與 Hard Stop
+  alt_zh: 走錯車救援樹：坐反、錯過站、錯過 KTX、末班已過的第一步、不要做與必須停止並求助
   alt_en: Lost or wrong-train rescue tree covering wrong direction, missed stop, missed KTX, and last train gone
   focal_point: center
   status: Approved
@@ -922,7 +922,7 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original food identify cards · Jerry & Nikita · 2026-07-21
+  attribution: Original food 辨識卡 · Jerry & Nikita · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Identify teaching diagram; icon/shape cues only, not photoreal food
@@ -978,7 +978,7 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original crustacean shrimp warn diagram · Jerry & Nikita · 2026-07-21
+  attribution: Original crustacean 蝦醬提醒 diagram · Jerry & Nikita · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Warn teaching diagram; shape icons only; no zero-allergen guarantee claim
@@ -1005,7 +1005,7 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original BBQ cuts compare diagram · Jerry & Nikita · 2026-07-21
+  attribution: Original BBQ cuts 比較圖 · Jerry & Nikita · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Compare teaching diagram; shape cues for cuts; no restaurant hours invented
@@ -1033,7 +1033,7 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original market snack identify diagram · Jerry & Nikita · 2026-07-21
+  attribution: Original market snack 辨識圖 · Jerry & Nikita · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Identify/Warn teaching diagram; shape cues; shellfish trap callout
@@ -1093,8 +1093,8 @@ media:
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Functional Orient teaching diagram; booking-dependent items marked Date Pending; no invented cashback rates
-  alt_zh: 出發前時間軸：T-90／T-30／T-14／T-7／T-1 清單帶，條件項標 Date Pending
-  alt_en: Before-trip timeline with T-90, T-30, T-14, T-7, and T-1 checklist bands; conditional items marked Date Pending
+  alt_zh: 出發前時間軸：T-90／T-30／T-14／T-7／T-1 清單帶，條件項標「日期待決定」
+  alt_en: Before-trip timeline with T-90, T-30, T-14, T-7, and T-1 checklist bands; conditional items marked date undecided
   focal_point: center
   status: Approved
   prompt_path: null
@@ -1340,7 +1340,7 @@ media:
   source_platform: Original SVG diagram
   creator: Cursor Agent (original diagram)
   license: Original work for this project
-  attribution: Original photo etiquette warn card · Jerry & Nikita · 2026-07-21
+  attribution: Original photo 禮儀提醒 card · Jerry & Nikita · 2026-07-21
   downloaded_at: '2026-07-21'
   checked_at: '2026-07-21'
   modification_notes: Warn residents/shops/other travelers; no shame tone

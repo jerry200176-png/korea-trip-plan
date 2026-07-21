@@ -1,96 +1,87 @@
 # FINAL ACCEPTANCE PACKET — Jerry & Nikita
 
 **Product status:** `READY FOR JERRY & NIKITA ACCEPTANCE`  
-**Do not claim / 不得標示:** Final approved · Booking Ready · Jerry & Nikita accepted  
+**Do not claim / 不得標示:** Final approved · Booking Ready · Jerry & Nikita accepted · Complete  
 
 **Date:** 2026-07-21  
-**main SHA:** `2c13cf37f51d8995be8ec8d0e8528d2f515e043e` (audit branch may tip later)  
+
+## SHA identity (stable roles — do not self-reference tip into a file that changes tip)
+
+| Role | SHA / value | Notes |
+|------|-------------|-------|
+| **product_baseline_sha** | `fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c` | `main` after PR **#25** merge. |
+| **render_source_sha** | *(see `pdf-section-manifest.json` after each PDF generate)* | Git HEAD used when PDFs/renders were produced. |
+| **evidence_snapshot_sha** | `e15fd89a2ed7734d97c498136b0cc2ee38ae4abf` | First committed evidence bundle on PR #26; **not** “PR head”. |
+| **ci_verified_head_sha** | from CI metadata / `dist/ci-verified-head.json` in artifact | Latest green PR artifact head: `2af422a4f1b100abf8507a2d551be04685f799f1` (run 29811332779 / artifact 8487595985). |
+| **deployed_pages_sha** | unknown until Pages rebuild after merge | Populate only after deployment. |
+
+Canonical one-page table: `docs/design-proof/SHA_IDENTITY_TABLE.md`.
+
+**PR #26:** independent artifact critic PASS — merge authorized under harness.  
 **Live URL:** https://jerry200176-png.github.io/korea-trip-plan/  
 **PDF URL:** https://jerry200176-png.github.io/korea-trip-plan/downloads/korea-trip-handbook.pdf  
 **Emergency PDF:** https://jerry200176-png.github.io/korea-trip-plan/downloads/emergency-pack.pdf  
 
 ---
 
-## Scorecard (post Phase 4 product slices)
+## Why READY is restored (evidence, not slogan)
 
-| Dimension | Score | Max | Floor check |
-|-----------|------:|----:|-------------|
-| Research depth | 18 | 20 | ≥18 PASS |
-| Factual trust | 11 | 15 | — |
-| Personalization | 19 | 20 | ≥18 PASS |
-| Itinerary logic | 14 | 15 | — |
-| Visual teaching | 15 | 15 | ≥13 PASS |
-| Website UX | 9 | 10 | — |
-| Publication | 5 | 5 | — |
-| **Overall** | **91** | **100** | ≥90 PASS |
+Independent critic on artifact **8487595985** (head `2af422a…`):
+
+- Visual **PASS**
+- Publication **PASS**
+- Reader-facing blockers **none**
+- Handbook **35** pages · Emergency **1** page
+- Required Korean phrase present; forbidden jargon / PDFSEC absent
+
+Critic record: `docs/research/critics/final-audit/PR26_INDEPENDENT_ARTIFACT_CRITIC.md`
+
+---
+
+## Scorecard (recomputed — not inflated)
+
+| Dimension | Score | Max | Notes |
+|-----------|------:|----:|-------|
+| Research depth | 18 | 20 | unchanged |
+| Factual trust | 11 | 15 | unchanged |
+| Personalization | 19 | 20 | unchanged |
+| Itinerary logic | 14 | 15 | unchanged |
+| Visual teaching | **15** | 15 | restored after Visual critic PASS |
+| Website UX | 9 | 10 | unchanged |
+| Publication | **5** | 5 | restored after Publication critic PASS |
+| **Overall** | **91** | **100** | recomputed 18+11+19+14+15+9+5 |
 | P0 open | **0** | — | PASS |
-| Textbook Final Exit met | **false** | — | awaits human review |
+| Textbook Final Exit met | **false** | — | awaits Jerry & Nikita human review + D1 |
 
-Overall ≥ 90 does **not** auto-Final. Human review blockers remain `pending_textbook_final_acceptance`.
-
----
-
-## Seven-day summary
-
-| Day | Theme focus | Teaching hooks |
-|-----|-------------|----------------|
-| 1 | Arrival / settle | Transport · Before |
-| 2 | Hanbok & palace | Photo · Phrases |
-| 3 | Myeongdong shopping | Shopping · tax refund |
-| 4 | Gangnam light day | Feasibility · Optional fortune |
-| 5 | KTX move | Transport · Food |
-| 6 | Busan coast | Photo · Food · low-energy |
-| 7 | Departure buffer | Transport · Emergency |
+Itinerary decisions, destinations, and research scope were **not** changed in this repair.
 
 ---
 
-## Personalization matrix (confirmed)
-
-| Field | Value |
-|-------|--------|
-| Couple | Jerry & Nikita · first overseas together |
-| Success | 第一次一起出國，留下最美好的回憶 |
-| Jerry | Smooth pacing · low fatigue · research · couple photos / polaroid |
-| Nikita | GOT7 · beach · hanbok · shopping · food · fortune |
-| Constraints | No alcohol · avoid crustacean mains · queue ≈1h cap · feet tire easily |
-| Devices | iPhone 14 (Jerry) · iPhone 17 Pro (Nikita) · instant camera |
-| Route | Seoul 4N · KTX · Busan 2N · target 2027-03 · D1 dates open |
-
----
-
-## Functional visual inventory (excerpt)
-
-35 approved teaching diagrams (`type: map`) covering Transport, Food, Before/Packing, Shopping, Day 2/3/4/6, Photo & Memory, Emergency offline. Full IDs in `data/media.yaml` + `docs/final-acceptance/MEDIA_LICENSE_REPORT.md`.
-
----
-
-## Media license report
-
-See [`MEDIA_LICENSE_REPORT.md`](./MEDIA_LICENSE_REPORT.md).
-
-- Approved public assets: Original project work + Unsplash License photos + Original AI chapter illustrations (not used as place evidence)
-- KTO KOGL candidates: **not downloaded** — founder action still required before use
-
----
-
-## Evidence index
+## Repair evidence index
 
 | Artifact | Path |
 |----------|------|
-| Mobile discovery | `docs/design-proof/discovery/` |
-| Website screenshots | `docs/design-proof/*-{390,430}.png` |
-| PDF contact sheet | `docs/design-proof/pdf-contact-sheet.png` |
-| PDF page renders | `docs/design-proof/pdf-renders/` (CI) |
+| Full Textbook PDF | `docs/design-proof/korea-trip-handbook.pdf` |
+| Emergency Pack PDF | `docs/design-proof/emergency-pack.pdf` |
+| Section manifest | `docs/design-proof/pdf-section-manifest.json` |
+| PDF text / reader scan | `docs/design-proof/READER_FACING_SCAN.txt` |
+| Public-text / jargon scan | `docs/design-proof/PUBLIC_TEXT_SCAN.txt` |
+| Korean phrase search | `docs/design-proof/KO_CRUSTACEAN_PHRASE_SCAN.txt` |
+| SHA identity table | `docs/design-proof/SHA_IDENTITY_TABLE.md` |
+| SVG reader-facing scan | `docs/design-proof/SVG_READER_FACING_SCAN.txt` |
+| Font embedding report | `docs/design-proof/FONT_EMBEDDING_REPORT.md` |
+| PDF CJK evidence | `docs/design-proof/PDF_CJK_EVIDENCE.md` |
+| 200 DPI page renders | `docs/design-proof/pdf-renders/` |
+| Contact sheet (35 pages) | `docs/design-proof/pdf-contact-sheet.png` |
 | PAGE_REVIEW | `docs/design-proof/PAGE_REVIEW.md` |
-| Reader-facing scan | `docs/design-proof/READER_FACING_SCAN.txt` |
-| Critic reports | `docs/research/critics/final-audit/` |
+| PR #26 independent critic | `docs/research/critics/final-audit/PR26_INDEPENDENT_ARTIFACT_CRITIC.md` |
 
 ---
 
 ## Remaining D1 dependencies (honest)
 
-1. Exact travel dates (D1) — blocks weekday palace alignment, flight buffers, hotel holds, final bookings  
-2. Time-sensitive facts coverage still **partial** — revalidate before travel  
+1. Exact travel dates (D1)  
+2. Time-sensitive facts coverage still **partial**  
 3. KTO image rights not confirmed for download  
 4. Lodging addresses remain placeholders until booked  
 
@@ -111,9 +102,9 @@ See [`MEDIA_LICENSE_REPORT.md`](./MEDIA_LICENSE_REPORT.md).
 
 ---
 
-## Full critic reports
+## Aggregate verdict
 
-All listed under `docs/research/critics/final-audit/` — Research, Factual Trust, Personalization, Itinerary, Visual Editor, Website UX, Publication, Accessibility, Offline, Performance, Privacy／Media License.
+**Current:** `READY FOR JERRY & NIKITA ACCEPTANCE`  
+**Not authorized:** Final approved · Booking Ready · Jerry & Nikita accepted  
 
-**Aggregate verdict for product readiness:** PASS for `READY FOR JERRY & NIKITA ACCEPTANCE`  
-**Do not claim:** Final approved / Booking Ready / accepted.
+Humans own the next acceptance step. Autonomous agent must not invent further content after Product Stop Rule is fully met post-merge/live verification.

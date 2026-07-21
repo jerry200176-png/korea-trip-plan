@@ -10,4 +10,6 @@ data/bookings.local.yaml
 *.log
 site/public/downloads/*.pdf
 site/public/downloads/readiness-report.json
-docs/design-proof/pdf-renders/
+# pdf-renders committed for final acceptance repair evidence
+# docs/design-proof/pdf-renders/
+.fonts/

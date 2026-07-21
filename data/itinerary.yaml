@@ -16,13 +16,13 @@ days:
   photo_tips: 機場與市區第一張兩人合照即可，不追景點
   restroom_notes: 機場出境後與地鐵站內
   rain_plan: 直達住宿；便利商店晚餐
-  low_energy_plan: 大件行李改計程車 Rescue；放棄任何加點
+  low_energy_plan: 大件行李改計程車救援；放棄任何加點
   closure_plan: n/a
   droppable_items:
   - 附近散步
   emergency_return: 依尚未鎖定之住宿地址（占位）→ 計程車或地鐵末班前返回
   status: Provisional
-  notes: 'Transport textbook 2026-07-21: arrival flow + AREX/bus compare taught; lodging/flight still Date Pending. See docs/research/TRANSPORT_TEXTBOOK.md and /transport/.'
+  notes: 'Transport textbook 2026-07-21: arrival flow + AREX/bus compare taught; lodging/flight still 日期待決定. See docs/research/TRANSPORT_TEXTBOOK.md and /transport/.'
   blocks:
   - start: ARR
     end: +2h
@@ -40,7 +40,7 @@ days:
     transit_minutes: null
     transfers: null
     notes: 住宿未定前不寫死分鐘；機場巴士須先買票；深夜考慮夜巴士或計程車
-    plan_b: 行李多／低體力改計程車 Rescue
+    plan_b: 行李多／低體力改計程車救援
     droppable: false
   - start: '17:00'
     end: '19:00'
@@ -94,7 +94,7 @@ days:
     notes: 目標韓服 shortlist 店
   - start: '10:15'
     end: '12:00'
-    title: 韓服租借＋簡單髮型（shortlist）
+    title: 韓服租借＋簡單髮型（候選清單）
     kind: experience
     droppable: false
     reservation_deadline: T-14 鎖店家條款（語言／押金／歸還）
@@ -135,7 +135,7 @@ days:
     notes: 預留緩衝避免逾時
   - start: '17:30'
     end: '20:00'
-    title: 仁寺洞／益善洞 Optional 或回住宿
+    title: 仁寺洞／益善洞可選／有體力再去或回住宿
     kind: free
     droppable: true
     plan_b: 直接回住宿
@@ -199,7 +199,7 @@ days:
     place_id: plc-myeongdong
     queue_risk: medium
     droppable: true
-    plan_b: 刪除此段；衣服改弘大 Optional 或 Day 4 補
+    plan_b: 刪除此段；衣服改弘大可選／有體力再去或 Day 4 補
     notes: 中價位成衣優先；不追網紅店；熱門不是保留理由
   - start: '16:30'
     end: '21:00'
@@ -228,7 +228,7 @@ days:
   restroom_notes: 商場內
   rain_plan: 室內商場／咖啡；取消戶外散步
   low_energy_plan: 刪減購物拉伸，只留咖啡休息與打包
-  closure_plan: 算命若 T-14 仍無法確認語言與預約，則維持 Optional 不做
+  closure_plan: 算命若 T-14 仍無法確認語言與預約，則維持可選／有體力再去不做
   droppable_items:
   - 街頭散步
   emergency_return: 地鐵／計程車
@@ -254,7 +254,7 @@ days:
     notes: 只在江南／狎鷗亭／可接受短程範圍；避免塞滿
   - start: '15:00'
     end: '17:00'
-    title: 韓國算命（Optional・T-14 確認後才執行）
+    title: 韓國算命（可選／有體力再去・T-14 確認後才執行）
     kind: experience
     reservation_deadline: T-14 必須書面確認英文或中文＋可預約入口；否則跳過
     queue_risk: medium
@@ -295,7 +295,7 @@ days:
   - 抵達後加點
   emergency_return: 當日以釜山住宿為家
   status: Provisional
-  notes: 'Transport textbook 2026-07-21: KTX Date Pending teaching; no invented 2027 schedules. Pork shortlist stays Day 6 unless energy after arrival.'
+  notes: 'Transport textbook 2026-07-21: KTX 日期待決定 teaching; no invented 2027 schedules. Pork shortlist stays Day 6 unless energy after arrival.'
   blocks:
   - start: 08:30
     end: 09:30
@@ -333,7 +333,7 @@ days:
   day_index: 6
   foundation_slice: true
   theme: 海雲台海岸節奏・低體力優先
-  one_priority: 完成海雲台海岸兩人照與休息節奏；膠囊可刪；廣安里僅 Optional
+  one_priority: 完成海雲台海岸兩人照與休息節奏；膠囊可刪；廣安里僅可選／有體力再去
   wake_time: 09:00
   out_time: '10:00'
   return_by: '21:00'
@@ -351,7 +351,7 @@ days:
   closure_plan: 膠囊候位久或風大就改 Beach Train／步道／直接休息
   droppable_items:
   - Sky Capsule
-  - 廣安里 Optional
+  - 廣安里可選／有體力再去
   emergency_return: 地鐵／計程車回住宿
   status: Provisional
   blocks:
@@ -366,7 +366,7 @@ days:
     queue_risk: low
   - start: '12:00'
     end: '13:30'
-    title: 午餐：豬肉湯飯（shortlist 或近圈備案）
+    title: 午餐：豬肉湯飯（候選清單或近圈備案）
     kind: meal
     droppable: false
     plan_b: 非海鮮主打韓式／豬肉料理
@@ -389,7 +389,7 @@ days:
     notes: 低體力日的保護段
   - start: '17:30'
     end: '21:00'
-    title: 廣安里 Optional 或回住宿
+    title: 廣安里可選／有體力再去或回住宿
     kind: free
     droppable: true
     plan_b: 直接回住宿
@@ -413,7 +413,7 @@ days:
   photo_tips: 最後一天合照留在輕鬆場景
   restroom_notes: 商場與機場
   rain_plan: 室內咖啡後直達機場
-  low_energy_plan: 取消一切購物，計程車 Rescue 直達機場
+  low_energy_plan: 取消一切購物，計程車救援 直達機場
   closure_plan: 機場免稅僅作行李容量允許時的備案
   droppable_items:
   - 非必要購物

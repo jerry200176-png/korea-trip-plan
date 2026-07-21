@@ -2,7 +2,7 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadRestaurants, mediaById, mediaPublicUrl } from "../lib/data";
-import { areaZh, cityZh, statusZh } from "../lib/presentation";
+import { areaZh, cityZh, sanitizeReaderText, statusZh } from "../lib/presentation";
 import { relatedDaysForGuide } from "../lib/guide-links";
 
 const restaurants = loadRestaurants();
@@ -71,7 +71,7 @@ function riskZh(v: string) {
   </section>
 
   <section class="surface">
-    <h2 style="margin-top:0">甲殼類／蝦醬 Warn</h2>
+    <h2 style="margin-top:0">甲殼類／蝦醬提醒</h2>
     <figure class="media-block">
       <img src={mediaPublicUrl(base, warn)} alt={warn.alt_zh} loading="lazy" />
       <figcaption class="media-caption">{warn.alt_zh}</figcaption>
@@ -80,7 +80,7 @@ function riskZh(v: string) {
   </section>
 
   <section class="surface-warm">
-    <h2 style="margin-top:0">豬肉湯飯 shortlist</h2>
+    <h2 style="margin-top:0">豬肉湯飯候選清單</h2>
     <figure class="media-block">
       <img src={mediaPublicUrl(base, porkCard)} alt={porkCard.alt_zh} loading="lazy" />
       <figcaption class="media-caption">{porkCard.alt_zh}</figcaption>
@@ -118,7 +118,7 @@ function riskZh(v: string) {
 
   <section class="surface-quiet">
     <h2 style="margin-top:0">候選店清單</h2>
-    <p class="muted">以下為教材 shortlist／占位，不是已訂位清單。</p>
+    <p class="muted">以下為教材候選清單／占位，不是已訂位清單。</p>
   </section>
 
   {
@@ -134,9 +134,9 @@ function riskZh(v: string) {
         <p>
           甲殼類風險：{riskZh(r.crustacean_risk)} · 排隊：{riskZh(r.queue_risk)}
         </p>
-        <p>{r.recommend_reason}</p>
-        <p class="muted">風險：{r.risks}</p>
-        {r.menu_order_ko && <p>點餐：{r.menu_order_ko}</p>}
+        <p>{sanitizeReaderText(r.recommend_reason)}</p>
+        <p class="muted">風險：{sanitizeReaderText(r.risks)}</p>
+        {r.menu_order_ko && <p>點餐：{sanitizeReaderText(r.menu_order_ko)}</p>}
         {r.naver_map_url && (
           <a class="btn primary" href={r.naver_map_url} target="_blank" rel="noreferrer">
             開啟 Naver Map

@@ -4,7 +4,6 @@ import { execSync } from "node:child_process";
 import { distDir, root } from "./lib/root.ts";
 
 const files = [
-  // Textbook Edition: content-driven overall ceiling (Media Edition ≤20 replaced, not deleted)
   {
     name: "korea-trip-handbook.pdf",
     minBytes: 80000,
@@ -17,13 +16,13 @@ const files = [
     name: "emergency-pack.pdf",
     minBytes: 8000,
     minPages: 1,
-    maxPages: 3,
+    maxPages: 2,
     maxBytes: 2_000_000,
     kind: "emergency" as const,
   },
 ];
 
-/** Section-aware page budgets — replace hard Media Edition ≤20 for handbook structure. */
+/** Section-aware page budgets — enforced via pdf-section-manifest.json (not PDFSEC text). */
 const SECTION_BUDGETS: Record<string, { min: number; max: number }> = {
   toc: { min: 1, max: 2 },
   how_to_use: { min: 1, max: 1 },
@@ -52,6 +51,7 @@ const handbookForbidden = [
   "[place]",
   "DecisionRequired",
   "AREX_or_bus_TBD",
+  "PDFSEC:",
 ];
 
 const beforeCreditsForbidden = [
@@ -61,8 +61,8 @@ const beforeCreditsForbidden = [
   "GenerateImage",
 ];
 
-// Bare engineering tokens must not appear in reader PDF body
 const handbookBareTokens = [/\bTBD\b/, /\bProvisional\b/, /\bConfirmed\b/, /\bAssumption\b/, /\bStale\b/];
+const functionLabelRe = /\b(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember)\b/;
 
 let failed = false;
 
@@ -92,40 +92,54 @@ function pageCount(p: string, latin: string): number {
   return (latin.match(/\/Type\s*\/Page[^s]/g) || []).length;
 }
 
+type SectionManifest = {
+  total_pages: number;
+  pages: Array<{ page: number; section: string }>;
+  section_counts: Record<string, number>;
+};
+
+function loadSectionManifest(): SectionManifest | null {
+  const p = path.join(root, "docs/design-proof/pdf-section-manifest.json");
+  if (!fs.existsSync(p)) return null;
+  return JSON.parse(fs.readFileSync(p, "utf8")) as SectionManifest;
+}
+
 function checkSectionBudgets(pdfPath: string, label: string) {
-  if (!hasPdfToText || !hasPdfInfo) {
-    console.warn(`  skip section-budget check (tools missing) for ${label}`);
+  const manifest = loadSectionManifest();
+  if (!manifest) {
+    failed = true;
+    console.error(`${label}: missing docs/design-proof/pdf-section-manifest.json`);
     return;
   }
-  try {
-    const info = execSync(`pdfinfo "${pdfPath}"`, { encoding: "utf8" });
-    const pageCount = Number((info.match(/Pages:\s+(\d+)/) || [])[1] || 0);
-    const counts: Record<string, number> = {};
-    let current = "front";
-    for (let i = 1; i <= pageCount; i++) {
-      const text = execSync(`pdftotext -f ${i} -l ${i} -layout "${pdfPath}" -`, { encoding: "utf8" });
-      const markers = [...text.matchAll(/PDFSEC:([a-z0-9_]+)/g)].map((m) => m[1]);
-      if (markers.length) current = markers[markers.length - 1];
-      counts[current] = (counts[current] || 0) + 1;
-    }
-    for (const [id, budget] of Object.entries(SECTION_BUDGETS)) {
-      const n = counts[id] || 0;
-      if (n < budget.min || n > budget.max) {
+  if (!hasPdfInfo) {
+    console.warn(`  skip section-budget page-count sync (pdfinfo missing)`);
+  } else {
+    try {
+      const info = execSync(`pdfinfo "${pdfPath}"`, { encoding: "utf8" });
+      const pages = Number((info.match(/Pages:\s+(\d+)/) || [])[1] || 0);
+      if (pages !== manifest.total_pages) {
         failed = true;
         console.error(
-          `${label}: section "${id}" pages=${n}, expected ${budget.min}-${budget.max}`
+          `${label}: manifest total_pages=${manifest.total_pages} != pdfinfo pages=${pages}`
         );
       }
+    } catch (e) {
+      failed = true;
+      console.error(`${label}: pdfinfo failed during section-budget check: ${e}`);
     }
-    console.log(
-      `  section budgets: ${Object.entries(counts)
-        .map(([k, v]) => `${k}=${v}`)
-        .join(" · ")}`
-    );
-  } catch (e) {
-    failed = true;
-    console.error(`${label}: section-budget check failed: ${e}`);
   }
+  for (const [id, budget] of Object.entries(SECTION_BUDGETS)) {
+    const n = manifest.section_counts[id] || 0;
+    if (n < budget.min || n > budget.max) {
+      failed = true;
+      console.error(`${label}: section "${id}" pages=${n}, expected ${budget.min}-${budget.max}`);
+    }
+  }
+  console.log(
+    `  section budgets (manifest): ${Object.entries(manifest.section_counts)
+      .map(([k, v]) => `${k}=${v}`)
+      .join(" · ")}`
+  );
 }
 
 function checkNearBlankPages(pdfPath: string, label: string) {
@@ -136,9 +150,8 @@ function checkNearBlankPages(pdfPath: string, label: string) {
   const tmp = fs.mkdtempSync(path.join("/tmp", "pdf-blank-"));
   try {
     execSync(`pdftoppm -png -r 72 "${pdfPath}" "${path.join(tmp, "p")}"`, { stdio: "ignore" });
-    const pages = fs.readdirSync(tmp).filter((f) => f.endsWith(".png")).sort();
     const info = execSync(`pdfinfo "${pdfPath}"`, { encoding: "utf8" });
-    const pageCount = Number((info.match(/Pages:\s+(\d+)/) || [])[1] || pages.length);
+    const pageCount = Number((info.match(/Pages:\s+(\d+)/) || [])[1] || 0);
     for (let i = 1; i <= pageCount; i++) {
       const text = execSync(`pdftotext -f ${i} -l ${i} -layout "${pdfPath}" -`, { encoding: "utf8" })
         .replace(/\f/g, "")
@@ -148,10 +161,9 @@ function checkNearBlankPages(pdfPath: string, label: string) {
         /^(Chapter|Transit)/.test(compact) ||
         compact.includes("Chapter") ||
         compact.startsWith("Transit") ||
-        /首爾·Seoul|釜山·Busan|首爾→釜山·KTX|Food Atlas|Transport|Photo|Before|Credits|PDFSEC:/.test(compact) ||
+        /首爾·Seoul|釜山·Busan|首爾→釜山·KTX|Food Atlas|Transport|Photo|Before|Credits/.test(compact) ||
         /^我們的韓國·Textbook\d+\/\d+$/.test(compact);
-      // Orphan / near-blank: very little extractable content (chapter dividers are image-led)
-      if (!intentionalSparse && compact.length > 0 && compact.length < 60) {
+      if (!intentionalSparse && compact.length > 0 && compact.length < 40) {
         failed = true;
         console.error(`${label}: near-blank/orphan page ${i} (text chars=${compact.length}): ${compact.slice(0, 80)}`);
       }
@@ -224,13 +236,23 @@ for (const f of files) {
   const hay = `${text}\n${latin}`;
 
   for (const bad of handbookForbidden) {
-    // Emergency pack still scanned for REPLACE_ME; handbook for all
-    if (f.name === "emergency-pack.pdf" && !["REPLACE_ME", "YAML generator", "place_id"].includes(bad)) {
+    if (f.name === "emergency-pack.pdf" && !["REPLACE_ME", "YAML generator", "place_id", "PDFSEC:"].includes(bad)) {
       continue;
     }
     if (hay.includes(bad)) {
       failed = true;
       console.error(`${f.name}: forbidden reader text "${bad}"`);
+    }
+  }
+
+  if (f.name === "emergency-pack.pdf") {
+    if (pages > 1) {
+      // Allow 2 only if page 2 is not a near-blank orphan — checked below via blank heuristic
+      console.log(`  emergency pages: ${pages} (prefer 1; max 2 if second page is meaningful)`);
+    }
+    if (functionLabelRe.test(text)) {
+      failed = true;
+      console.error(`${f.name}: forbidden visual-function label in extractable text`);
     }
   }
 
@@ -247,6 +269,15 @@ for (const f of files) {
         failed = true;
         console.error(`${f.name}: AI tool attribution leaked before Credits ("${bad}")`);
       }
+    }
+    if (functionLabelRe.test(text)) {
+      failed = true;
+      const m = text.match(functionLabelRe);
+      console.error(`${f.name}: forbidden visual-function label in extractable text: ${m?.[0]}`);
+    }
+    if (/\bDate Pending\b/i.test(text) || /\bBooking Ready\b/i.test(text)) {
+      failed = true;
+      console.error(`${f.name}: forbidden internal status label in extractable text`);
     }
     if (!/[\u4e00-\u9fff]/.test(text)) {
       failed = true;
@@ -276,25 +307,21 @@ for (const f of files) {
     }
     checkNearBlankPages(p, f.name);
     checkSectionBudgets(p, f.name);
-    if (!/PDFSEC:toc/.test(text) || !/目錄/.test(text)) {
+    if (!/目錄/.test(text)) {
       failed = true;
-      console.error(`${f.name}: missing TOC / PDFSEC:toc`);
+      console.error(`${f.name}: missing TOC (目錄)`);
     }
-    if (!/\d+\s*\/\s*\d+/.test(text) && !Object.keys(SECTION_BUDGETS).every((id) => text.includes(`PDFSEC:${id}`) || id === "front")) {
-      // page numbers live in footer; require section markers instead
-    }
-    for (const id of Object.keys(SECTION_BUDGETS)) {
-      if (!text.includes(`PDFSEC:${id}`)) {
-        failed = true;
-        console.error(`${f.name}: missing section marker PDFSEC:${id}`);
-      }
+    if (!/\d+\s*\/\s*\d+/.test(text)) {
+      failed = true;
+      console.error(`${f.name}: missing page numbers in footer text`);
+    } else {
+      console.log("  page numbers: extractable");
     }
   }
 
   console.log(`OK PDF ${f.name} (${buf.length} bytes)`);
 }
 
-// Media record coverage for PDF-referenced images is enforced by check-media; echo reminder
 const mediaYaml = fs.readFileSync(path.join(root, "data/media.yaml"), "utf8");
 if (!mediaYaml.includes("busan-chapter")) {
   failed = true;

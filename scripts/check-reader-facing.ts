@@ -2,13 +2,30 @@ import fs from "node:fs";
 import path from "node:path";
 import { execSync } from "node:child_process";
 import { distDir, root, siteDistDir } from "./lib/root.ts";
+import {
+  READER_FORBIDDEN_FUNCTION_RE,
+  READER_FORBIDDEN_PDFSEC_RE,
+  READER_FORBIDDEN_SNAKE_RE,
+  READER_FORBIDDEN_STATUS_RE,
+  READER_FORBIDDEN_JARGON_RE,
+  READER_FORBIDDEN_CORE_RE,
+  READER_FORBIDDEN_KO_CRUSTACEAN_RE,
+  READER_REQUIRED_KO_CRUSTACEAN,
+} from "./lib/reader-sanitize-extra.ts";
 
 /**
  * Full generated-output gate for Jerry & Nikita reader surfaces.
- * Scans built site/dist HTML/JS/CSS text + PDF extracted text.
+ * Scans built site/dist HTML, public SVG <text>/<title>/<desc>, and PDF text.
  */
 
 const forbiddenPatterns: Array<{ label: string; re: RegExp }> = [
+  { label: "PDFSEC", re: READER_FORBIDDEN_PDFSEC_RE },
+  { label: "visual-function label", re: READER_FORBIDDEN_FUNCTION_RE },
+  { label: "internal status label", re: READER_FORBIDDEN_STATUS_RE },
+  { label: "workflow jargon", re: READER_FORBIDDEN_JARGON_RE },
+  { label: "workflow Core token", re: READER_FORBIDDEN_CORE_RE },
+  { label: "incorrect Korean crustacean phrase", re: READER_FORBIDDEN_KO_CRUSTACEAN_RE },
+  { label: "raw snake_case profile key", re: READER_FORBIDDEN_SNAKE_RE },
   { label: "plc- id", re: /\bplc-[a-z0-9-]+/i },
   { label: "src- id", re: /\bsrc-[a-z0-9-]+/i },
   { label: "med- id", re: /\bmed-[a-z0-9-]+/i },
@@ -50,8 +67,22 @@ function walk(dir: string): string[] {
   return out;
 }
 
-function scan(label: string, content: string) {
-  for (const rule of forbiddenPatterns) {
+const readerSurfacePatterns = forbiddenPatterns.filter((p) =>
+  [
+    "visual-function label",
+    "workflow jargon",
+    "workflow Core token",
+    "incorrect Korean crustacean phrase",
+    "internal status label",
+  ].includes(p.label)
+);
+
+const codeAssetPatterns = forbiddenPatterns.filter(
+  (p) => !readerSurfacePatterns.includes(p)
+);
+
+function scan(label: string, content: string, rules = forbiddenPatterns) {
+  for (const rule of rules) {
     if (rule.re.test(content)) {
       failed = true;
       const m = content.match(rule.re);
@@ -63,10 +94,54 @@ function scan(label: string, content: string) {
 }
 
 function stripHtmlNoise(html: string): string {
-  // Keep visible-ish text; still catch attributes that leak into UI copy
   return html
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?<\/style>/gi, " ");
+}
+
+/** Visible / accessibility text only — not URL paths or media ids in src/href. */
+function extractHtmlReaderText(html: string): string {
+  const chunks: string[] = [];
+  const cleaned = stripHtmlNoise(html);
+  cleaned.replace(/\b(?:alt|aria-label|title|aria-description)="([^"]*)"/gi, (_m, v) => {
+    chunks.push(v);
+    return "";
+  });
+  cleaned.replace(/\b(?:alt|aria-label|title|aria-description)='([^']*)'/gi, (_m, v) => {
+    chunks.push(v);
+    return "";
+  });
+  const body = cleaned
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ");
+  chunks.push(body);
+  return chunks.join("\n");
+}
+
+function extractSvgReaderText(svg: string): string {
+  const chunks: string[] = [];
+  svg.replace(/<(title|desc|text)(\s[^>]*)?>([\s\S]*?)<\/\1>/gi, (_m, _tag, _attrs, body) => {
+    chunks.push(
+      body
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&quot;/g, '"')
+    );
+    return "";
+  });
+  // aria-label on paths (from text→path conversion) is still reader-facing
+  svg.replace(/\baria-label="([^"]*)"/gi, (_m, label) => {
+    chunks.push(label);
+    return "";
+  });
+  return chunks.join("\n");
 }
 
 console.log("check-reader-facing: scanning site/dist …");
@@ -75,8 +150,36 @@ for (const file of walk(siteDistDir)) {
   if (!textExt.has(ext)) continue;
   const rel = path.relative(root, file);
   let content = fs.readFileSync(file, "utf8");
-  if (ext === ".html") content = stripHtmlNoise(content);
-  scan(rel, content);
+  if (ext === ".html") {
+    content = extractHtmlReaderText(content);
+    scan(rel, content, forbiddenPatterns);
+  } else if (ext === ".css" || ext === ".js" || ext === ".json" || ext === ".webmanifest") {
+    // CSS tokens like --warn are not reader-facing vocabulary; keep ID/privacy gates only.
+    scan(rel, content, codeAssetPatterns);
+  } else {
+    scan(rel, content, forbiddenPatterns);
+  }
+}
+
+console.log("check-reader-facing: scanning public SVG <text>/<title>/<desc>/aria-label …");
+const svgRoots = [
+  path.join(root, "site/public/media"),
+  path.join(root, "media/diagrams"),
+];
+const svgReport: string[] = [];
+for (const dir of svgRoots) {
+  for (const file of walk(dir).filter((f) => f.endsWith(".svg"))) {
+    const rel = path.relative(root, file);
+    const svg = fs.readFileSync(file, "utf8");
+    const reader = extractSvgReaderText(svg);
+    const before = report.length;
+    scan(rel, reader);
+    if (report.length > before) {
+      svgReport.push(...report.slice(before));
+    } else {
+      svgReport.push(`OK ${rel}`);
+    }
+  }
 }
 
 console.log("check-reader-facing: scanning PDF text …");
@@ -97,7 +200,6 @@ for (const name of ["korea-trip-handbook.pdf", "emergency-pack.pdf"]) {
   }
   scan(name, text);
 
-  // Required positive presence for naming
   if (name === "korea-trip-handbook.pdf") {
     if (!/Jerry\s*&\s*Nikita/.test(text) && !/Jerry\s*與\s*Nikita/.test(text)) {
       failed = true;
@@ -111,10 +213,23 @@ for (const name of ["korea-trip-handbook.pdf", "emergency-pack.pdf"]) {
       failed = true;
       console.error("FAIL handbook PDF still contains plc-jyp-tower");
     }
+    if (/PDFSEC:/.test(text)) {
+      failed = true;
+      console.error("FAIL handbook PDF still contains PDFSEC:");
+    }
+  }
+  if (name === "emergency-pack.pdf") {
+    if (READER_FORBIDDEN_KO_CRUSTACEAN_RE.test(text)) {
+      failed = true;
+      console.error("FAIL emergency PDF still has incorrect Korean crustacean phrase");
+    }
+    if (!text.includes(READER_REQUIRED_KO_CRUSTACEAN)) {
+      failed = true;
+      console.error(`FAIL emergency PDF missing required phrase: ${READER_REQUIRED_KO_CRUSTACEAN}`);
+    }
   }
 }
 
-// Site must also contain expected names somewhere
 const home = path.join(siteDistDir, "index.html");
 if (fs.existsSync(home)) {
   const html = fs.readFileSync(home, "utf8");
@@ -124,11 +239,36 @@ if (fs.existsSync(home)) {
   }
 }
 
+const phrasesPage = path.join(siteDistDir, "phrases/index.html");
+if (fs.existsSync(phrasesPage)) {
+  const html = fs.readFileSync(phrasesPage, "utf8");
+  if (READER_FORBIDDEN_KO_CRUSTACEAN_RE.test(html)) {
+    failed = true;
+    console.error("FAIL /phrases/ still has incorrect Korean crustacean phrase");
+  }
+  if (!html.includes(READER_REQUIRED_KO_CRUSTACEAN)) {
+    failed = true;
+    console.error(`FAIL /phrases/ missing required phrase: ${READER_REQUIRED_KO_CRUSTACEAN}`);
+  }
+}
+
+
 const outPath = path.join(root, "docs/design-proof/READER_FACING_SCAN.txt");
+const svgOutPath = path.join(root, "docs/design-proof/SVG_READER_FACING_SCAN.txt");
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(
   outPath,
-  [`check-reader-facing ${failed ? "FAIL" : "OK"}`, `scanned_at ${new Date().toISOString()}`, ...report].join("\n") + "\n"
+  [`check-reader-facing ${failed ? "FAIL" : "OK"}`, `scanned_at ${new Date().toISOString()}`, ...report].join("\n") +
+    "\n"
+);
+fs.writeFileSync(
+  svgOutPath,
+  [
+    `svg-reader-facing ${failed ? "FAIL" : "OK"}`,
+    `scanned_at ${new Date().toISOString()}`,
+    `roots: site/public/media + media/diagrams`,
+    ...svgReport,
+  ].join("\n") + "\n"
 );
 
 if (failed) {
@@ -137,3 +277,4 @@ if (failed) {
 }
 console.log("check-reader-facing: OK");
 console.log(`  report: ${path.relative(root, outPath)}`);
+console.log(`  svg report: ${path.relative(root, svgOutPath)}`);
