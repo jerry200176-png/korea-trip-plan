@@ -1,6 +1,6 @@
 meta:
   updated_at: '2026-07-21'
-  round: 2A
+  round: 2B
   purpose: Round 1 research governance — role-split claim evidence map
   notes: Round 2A closes Day 4 fortune Result B (Optional/T-14) and JYP Remove-from-Core. Roles remain split; blocked IDs
     never in supporting.
@@ -49,30 +49,31 @@ claims:
   nikita_relevance: Core priority without executable vendor path.
   notes: Discovery sources show hanbok/palace context only; they do not confirm a selected shop.
 - claim_id: clm-day3-shopping-path-thin
-  claim: Day 3 names cosmetics/clothes shopping but lacks a researched store-level path; Myeongdong is popularity-default
-    until shortlisted.
-  supporting_source_ids: []
-  discovery_source_ids:
+  claim: Day 3 now has a Myeongdong-only executable teaching path (Olive Young cosmetics + clothes stretch + rest + tax-refund
+    flow); Hongdae is Optional separate segment; Seongsu skipped for Day 3 Core.
+  supporting_source_ids:
   - rs-018
-  - rs-019
   - rs-020
   - rs-021
+  - rs-091
+  - rs-092
+  discovery_source_ids:
+  - rs-019
+  - rs-023
   - rs-061
-  - rs-051
   blocked_source_ids: []
   contradicting_source_ids: []
   missing_evidence_requirements:
-  - Store-level cosmetics and clothes shortlist with official or map-validated shop pages
-  - One core Myeongdong walking path with rest breaks
-  - Current tax-refund process cited from official pages at slice time
-  - Explicit Hongdae/Seongsu transfer compare decision
-  confidence: Low
-  checked_at: '2026-07-20'
+  - 'Optional: lock one named mid-price clothes shop with current hours if Founder wants a single pin'
+  - T-7 revalidate tax thresholds and Olive Young immediate-refund participation
+  confidence: Medium
+  checked_at: '2026-07-21'
   requires_revalidation: true
   affected_day: Day 3
   jerry_relevance: Queue and sales-pressure risk without a plan.
   nikita_relevance: Cosmetics/clothes priorities not yet operationalized.
-  notes: A2/editorial pages are discovery/background for the gap claim, not a completed shopping path.
+  notes: Round 2B closes the thin-path gap at teaching level without inventing boutique hours. Clothes remain category-level
+    inside Myeongdong.
 - claim_id: clm-jyp-visit-value-unproven
   claim: JYP HQ is exterior-only for general visitors, located in Gangdong (Seongnae), and is Removed from Day 4 Core; GOT7
     emotional value is not equivalent to a building check-in. No verified high-value GOT7-light replace found in this pass.
@@ -285,13 +286,81 @@ claims:
   jerry_relevance: Avoids inventing a replacement stop.
   nikita_relevance: GOT7 theme can continue via merch/memory prompts without fake venue.
   notes: Absence of replace is an accepted decision input, not a research failure requiring a forced substitute.
+- claim_id: clm-myeongdong-single-area-sufficient
+  claim: For Nikita cosmetics+clothes priorities, Myeongdong single-area Core is sufficient; same-day Hongdae/Seongsu adds
+    transfer cost that is not justified for Day 3 Core.
+  supporting_source_ids:
+  - rs-018
+  - rs-019
+  discovery_source_ids:
+  - rs-023
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: Day 3
+  jerry_relevance: Protects minimize_transfers and not-too-packed.
+  nikita_relevance: Cosmetics density is already high in Myeongdong.
+  notes: Hongdae kept as Optional elsewhere; Seongsu not Day 3 Core.
+- claim_id: clm-tax-refund-current-process
+  claim: 'Tax refund teaching uses official VisitKorea/VisitSeoul process: KRW 15,000+ taxable goods, physical passport for
+    immediate refund path, or general airport path.'
+  supporting_source_ids:
+  - rs-020
+  - rs-021
+  - rs-092
+  discovery_source_ids:
+  - rs-091
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - T-7 revalidate thresholds and participation
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 3
+  jerry_relevance: Reduces airport surprise and wasted time.
+  nikita_relevance: Checkout becomes executable.
+  notes: Do not promise a fixed refund percentage.
+- claim_id: clm-shopping-route-rest-breaks
+  claim: Day 3 Core path includes an explicit indoor rest/unload break after cosmetics before clothes stretch; low-energy
+    delete order starts by cutting clothes.
+  supporting_source_ids:
+  - rs-018
+  discovery_source_ids:
+  - rs-019
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: Day 3
+  jerry_relevance: feet_tire_easily mitigation.
+  nikita_relevance: Keeps shopping enjoyable instead of marathon.
+  notes: Productized in itinerary + route diagram.
+- claim_id: clm-hongdae-backup-value
+  claim: Hongdae remains valuable as Optional clothes/street backup but is not required on Day 3 Core once Myeongdong path
+    is taught.
+  supporting_source_ids:
+  - rs-019
+  discovery_source_ids:
+  - rs-022
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: Day 3
+  jerry_relevance: Avoids forced second district.
+  nikita_relevance: Still available if clothes unfinished.
+  notes: Aligns with Day 4 shopping catch-up option.
 proposed_round_2_claims:
   day4: []
-  shopping:
-  - clm-myeongdong-single-area-sufficient
-  - clm-tax-refund-current-process
-  - clm-shopping-route-rest-breaks
-  - clm-hongdae-backup-value
+  shopping: []
   busan:
   - clm-pork-soup-crustacean-risk
   - clm-pork-soup-queue-risk

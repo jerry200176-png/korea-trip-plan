@@ -52,7 +52,8 @@ Round 1 Acceptance **does not** require Overall ≥ 90.
 
 Each Round 2 PR closes on **slice** criteria, not Textbook Final Exit:
 
-1. ~~Day 4 Feasibility Decision~~ (Round 2A in progress / merge pending)  
+1. ~~Day 4 Feasibility Decision~~ (merged)
+2. ~~Nikita Shopping Teaching Slice~~ (Round 2B in progress)  
 2. Nikita Shopping Teaching Slice  
 3. Busan Food & Coastal Rhythm  
 

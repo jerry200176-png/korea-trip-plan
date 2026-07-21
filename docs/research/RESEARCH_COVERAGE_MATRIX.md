@@ -80,5 +80,5 @@ See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for ful
 ## Matrix reading for Round 2 slices
 
 1. ~~**Day 4 Feasibility Decision**~~ — **done in Round 2A** (fortune Result B; JYP Remove)  
-2. **Nikita Shopping Teaching Slice** — Day 3 path (`clm-day3-shopping-path-thin`)  
+2. ~~**Nikita Shopping Teaching Slice**~~ — Round 2B in progress — Day 3 path (`clm-day3-shopping-path-thin`)  
 3. **Busan Food & Coastal Rhythm** — pork soup + Day 6 low-energy (`clm-pork-soup-shortlist-incomplete`, `clm-day6-low-energy-variant-missing`, `clm-sky-capsule-ops-unconfirmed`)  

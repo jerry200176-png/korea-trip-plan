@@ -1,13 +1,19 @@
 # 購物與娛樂
 
+## Day 3 明洞購物教材（Round 2B）
+
+- **Core：** 明洞單區 — Olive Young 化妝品 → 室內休息卸貨 → 衣服帶。
+- **Optional：** 弘大衣服／街頭（另段或 Day 4 補齊）；不預設同日硬塞。
+- **Skip Day 3：** 聖水（對化妝品清單 ROI 低）。
+- **退稅：** 實體護照；即時退稅或一般退稅流程見教材圖與 VisitKorea／VisitSeoul。
+- **低體力刪減：** 衣服 → 只留 Olive Young＋休息 → 改日補齊。
+- 詳見 `docs/research/DAY3_SHOPPING_TEACHING.md`。
+
 ## GOT7
 
 - Girlfriend interest is Confirmed as a **theme**.
-- Round 2A（2026-07-21）：**JYP 大樓自 Core Plan 移除**。
-  - 總部位於江東區成內，不是江南 Day 4 cluster。
-  - 一般旅客僅能外觀打卡；官方站未提供訪客導覽。
-  - GOT7 情感價值 ≠ 必須造訪 JYP 大樓。
-- 若出發前出現可公開進入的官方活動／快閃／合法周邊店，再評估 Optional；沒有高價值替代時，時間還給休息、購物與拍照。
+- Round 2A：JYP 大樓自 Core Plan 移除（江東區外觀／非訪客體驗）。
+- 若出發前出現可公開進入的官方活動／快閃／合法周邊店，再評估 Optional。
 
 ## 三眼怪 (Alien / Toy Story merch)
 
@@ -16,9 +22,9 @@
 
 ## Cosmetics & clothes
 
-- Myeongdong / Hongdae style districts are Provisional shopping anchors.
-- Skip any store with >1 hour queue unless Founder explicitly prioritizes it.
-- Tax refund: follow store + customs/airport official instructions at T-7.
+- Day 3 anchors Myeongdong with Olive Young as cosmetics home base.
+- Skip any store with >1 hour queue unless both agree.
+- Tax refund: physical passport; follow official VisitKorea / VisitSeoul pages at T-7.
 
 ## Entertainment load
 

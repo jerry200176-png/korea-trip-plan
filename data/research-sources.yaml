@@ -692,7 +692,7 @@ sources:
   publisher_or_creator: Visit Seoul
   url: https://english.visitseoul.net/shopping/myeongdong_/68
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -721,7 +721,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -733,7 +733,7 @@ sources:
   publisher_or_creator: Visit Seoul
   url: https://english.visitseoul.net/shopping
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -762,7 +762,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -774,7 +774,7 @@ sources:
   publisher_or_creator: VisitKorea
   url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=929&vcontsId=248765
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -801,19 +801,18 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
-  revalidate_by: '2026-09-18'
-  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
-    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
-    automatic venue-operator proof
-  freshness_basis_type: http_reachability_only
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: Official tax refund page re-reviewed on 2026-07-21 for Round 2B teaching slice; KRW 15,000 threshold and
+    immediate/general flows confirmed on page text; still needs_recheck before travel.
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-021
   source_type: official_tourism
   title: Tax Refund
   publisher_or_creator: Visit Seoul
   url: https://english.visitseoul.net/taxrefund
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -839,12 +838,11 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
-  revalidate_by: '2026-09-18'
-  freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
-    unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
-    automatic venue-operator proof
-  freshness_basis_type: http_reachability_only
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: Official tax refund page re-reviewed on 2026-07-21 for Round 2B teaching slice; KRW 15,000 threshold and
+    immediate/general flows confirmed on page text; still needs_recheck before travel.
+  freshness_basis_type: page_review_no_update_date
 - source_id: rs-022
   source_type: official_tourism
   title: If you visit Seoul for the first time
@@ -894,7 +892,7 @@ sources:
   publisher_or_creator: Visit Seoul
   url: https://english.visitseoul.net/mvp/SeongsuHotspot-1day/ENN8khsan
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Seoul
   topic:
@@ -922,7 +920,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -3596,6 +3594,89 @@ sources:
   revalidate_by: '2026-09-18'
   freshness_basis: Creator/editorial page reviewed for discovery context; hours conflict with A2 listing so not used as operational
     proof.
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-091
+  source_type: official_tourism
+  title: '[OLIVE YOUNG] Enjoy Immediate Tax Refunds and Discounts! — VISITKOREA'
+  publisher_or_creator: Korea Tourism Organization (VISITKOREA)
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=228046
+  publish_date: '2025-06-16'
+  accessed_at: '2026-07-21'
+  language: en
+  city: Seoul
+  topic:
+  - Olive_Young
+  - tax_refund
+  - shopping
+  - Myeongdong
+  summary: Official tourism article describing Olive Young immediate tax refund participation and passport presentation at
+    checkout.
+  findings:
+  - Page reachable HTTP 200 on 2026-07-21; article dated 06/16/2025 on page.
+  - Describes immediate tax refund service for international customers at participating Olive Young stores.
+  - Instructs presenting a physical passport to staff before checkout for immediate tax refund related offers.
+  - Useful as A2 orientation for Olive Young + immediate refund teaching; store-level hours/stock still need on-site confirmation.
+  sponsorship_bias_risk: medium
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Supports choosing a known chain with clearer refund path instead of random street stalls.
+  nikita_relevance: Anchors cosmetics shopping to a teachable flagship-style experience.
+  claims_requiring_official_verification:
+  - Reconfirm participating stores and any campaign dates near travel; do not treat 2025 campaign coupons as still valid.
+  corroborating_source_ids:
+  - rs-020
+  - rs-021
+  - rs-018
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: '2025-06-16'
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: Official tourism article with visible publish date 2025-06-16 reviewed on checked_at; immediate-refund
+    mechanics still need T-7 revalidation because campaigns and store participation change.
+  freshness_basis_type: dated_official_notice
+- source_id: rs-092
+  source_type: official_tourism
+  title: Comprehensive Tax Refund Guide — VISITKOREA (revalidated Round 2B)
+  publisher_or_creator: Korea Tourism Organization (VISITKOREA)
+  url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?menuSn=929&vcontsId=248765
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: National
+  topic:
+  - tax_refund
+  - passport
+  - immediate_tax_refund
+  summary: Official comprehensive tax refund guide stating KRW 15,000 threshold and immediate vs general refund flows.
+  findings:
+  - Page reachable HTTP 200 on 2026-07-21; full guide readable.
+  - States purchase amount must be KRW 15,000 or more to qualify for a refund.
+  - Describes immediate tax refund via passport verification then pay after tax deducted.
+  - Describes general tax refund path via voucher / customs / kiosk or counter.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Clear process reduces airport stress and avoids guessing.
+  nikita_relevance: Makes cosmetics checkout teachable instead of vague.
+  claims_requiring_official_verification:
+  - Revalidate thresholds, eligibility stay limits, and kiosk rules at T-7.
+  corroborating_source_ids:
+  - rs-020
+  - rs-021
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: Official tourism guide fully reviewed on checked_at; no durable content_last_updated stamp extracted beyond
+    page review; operational thresholds need T-7 recheck.
   freshness_basis_type: page_review_no_update_date
 blocked_sources:
 - source_id: rs-blocked-001

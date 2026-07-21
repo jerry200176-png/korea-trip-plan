@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="t d">
+  <title id="t">Myeongdong shopping route</title>
+  <desc id="d">Day 3 core path: subway to Olive Young to rest to clothes stretch.</desc>
+  <rect width="1200" height="700" fill="#f4f7f2"/>
+  <text x="48" y="52" font-family="Noto Sans TC, DejaVu Sans, sans-serif" font-size="30" font-weight="700" fill="#1f3324">明洞購物路線（Orient／Explain）</text>
+  <text x="48" y="82" font-family="Noto Sans TC, DejaVu Sans, sans-serif" font-size="14" fill="#5a6b5c">Day 3 Core · 單區 · 2026-07-21 · 不加弘大／聖水進 Core</text>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2f5d3a"/></marker></defs>
+  <rect x="60" y="140" width="200" height="110" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="80" y="180" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700" fill="#1f3324">1 明洞站</text>
+  <text x="80" y="210" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">地鐵 4 號線進場</text>
+  <text x="80" y="232" font-family="Noto Sans TC, sans-serif" font-size="13" fill="#6a7a6c">約 10:00</text>
+  <line x1="260" y1="195" x2="330" y2="195" stroke="#2f5d3a" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="340" y="140" width="240" height="110" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="360" y="180" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700" fill="#1f3324">2 Olive Young</text>
+  <text x="360" y="210" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">化妝品主戰場</text>
+  <text x="360" y="232" font-family="Noto Sans TC, sans-serif" font-size="13" fill="#6a7a6c">帶實體護照・即時退稅</text>
+  <line x1="580" y1="195" x2="650" y2="195" stroke="#2f5d3a" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="660" y="140" width="200" height="110" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="680" y="180" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700" fill="#1f3324">3 休息點</text>
+  <text x="680" y="210" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">商場室內座位</text>
+  <text x="680" y="232" font-family="Noto Sans TC, sans-serif" font-size="13" fill="#6a7a6c">卸貨・補水</text>
+  <line x1="860" y1="195" x2="930" y2="195" stroke="#2f5d3a" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="940" y="140" width="200" height="110" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="960" y="180" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700" fill="#1f3324">4 衣服帶</text>
+  <text x="960" y="210" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">主街／室內商場</text>
+  <text x="960" y="232" font-family="Noto Sans TC, sans-serif" font-size="13" fill="#6a7a6c">不追 &gt;1h 排隊</text>
+  <rect x="60" y="320" width="1080" height="140" rx="8" fill="#eef5ea" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="84" y="360" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700" fill="#1f3324">低體力刪減順序</text>
+  <text x="84" y="395" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a4a3c">① 刪衣服拉伸 → ② 只留 Olive Young＋休息 → ③ 改 Day 4 江南補齊</text>
+  <text x="84" y="430" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a4a3c">雨天：全程室內（Olive Young／百貨）；街道攤販可跳過</text>
+  <rect x="60" y="500" width="340" height="150" rx="8" fill="#fff" stroke="#8a3b2a" stroke-width="2"/>
+  <text x="84" y="540" font-family="Noto Sans TC, sans-serif" font-size="16" font-weight="700" fill="#8a3b2a">弘大 = Optional 另段</text>
+  <text x="84" y="575" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">不預設塞進同日 Core</text>
+  <text x="84" y="605" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">轉乘成本高於額外衣服價值</text>
+  <rect x="430" y="500" width="340" height="150" rx="8" fill="#fff" stroke="#8a3b2a" stroke-width="2"/>
+  <text x="454" y="540" font-family="Noto Sans TC, sans-serif" font-size="16" font-weight="700" fill="#8a3b2a">聖水 = Skip Day 3</text>
+  <text x="454" y="575" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">對化妝品清單 ROI 低</text>
+  <text x="454" y="605" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">興趣導向再另開日程</text>
+  <rect x="800" y="500" width="340" height="150" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="824" y="540" font-family="Noto Sans TC, sans-serif" font-size="16" font-weight="700" fill="#2f5d3a">最晚心智</text>
+  <text x="824" y="575" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">16:00 後可收工</text>
+  <text x="824" y="605" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#3a4a3c">行李重就提早回住宿</text>
+</svg>

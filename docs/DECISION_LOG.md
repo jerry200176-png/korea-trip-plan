@@ -73,3 +73,11 @@ Append-only. Newest first.
 - **Status:** Provisional product decision (Round 2A); T-14 language/booking revalidation still required before any Core upgrade of fortune.
 - **Evidence:** `rs-087` KoreaTravelEasy (English currently not in service); `rs-088`/`rs-089` Visit Gangnam Sotdae (Korean-capable tourist framing; price unpublished); `rs-026` JYP HQ Gangdong Seongnae, no public tour.
 - **Doc:** `docs/research/DAY4_FEASIBILITY_DECISION.md`
+
+## 2026-07-21 — Day 3 Myeongdong-only shopping teaching
+
+- **Decision:** Day 3 Core is **Myeongdong single-area** teaching path (Olive Young cosmetics → rest → clothes). Hongdae is Optional separate; Seongsu skipped for Day 3 Core.
+- **Status:** Provisional product decision (Round 2B); tax thresholds revalidate at T-7.
+- **Evidence:** `rs-018`/`rs-019` area orientation; `rs-020`/`rs-021`/`rs-092` tax process; `rs-091` Olive Young immediate refund tourism page.
+- **Doc:** `docs/research/DAY3_SHOPPING_TEACHING.md`
+
