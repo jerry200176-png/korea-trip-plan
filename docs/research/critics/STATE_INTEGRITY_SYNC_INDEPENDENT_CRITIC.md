@@ -2,8 +2,9 @@
 
 **PR branch:** `cursor/textbook-state-sync-e48c`  
 **Critic context:** fresh-context subagent (not PR author)  
+**Reviewed head (PASS):** `b378055`  
 **Scope:** control-state / docs only — no product, site, PDF, itinerary, or score inflation  
-**Verdict:** **PASS** (pending CI green on PR head)
+**Verdict:** **PASS**
 
 ## Checklist
 
