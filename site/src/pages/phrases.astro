@@ -1,9 +1,15 @@
 ---
+import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
+import { relatedDaysForGuide } from "../lib/guide-links";
+
+const base = siteBase();
+const relatedDays = relatedDaysForGuide("phrases");
 ---
-<Handbook title="韓文句子" current="more">
+<Handbook title="韓文句子" current="guides">
   <p class="eyebrow">韓文</p>
   <h1 class="page-title">實用韓文短句</h1>
+  <span class="status status-provisional">目前暫定</span>
   <p class="muted">短句優先，現場可指著螢幕給對方看。</p>
 
   <section class="surface">
@@ -25,5 +31,15 @@ import Handbook from "../layouts/Handbook.astro";
       <li>請叫救護車 — <span lang="ko">구급차를 불러 주세요</span></li>
       <li>請到這個地址 — <span lang="ko">이 주소로 가 주세요</span></li>
     </ul>
+  </section>
+
+  <section class="surface-quiet" aria-label="相關行程日">
+    <h2 style="margin-top:0">相關行程日</h2>
+    <div class="btn-row">
+      {relatedDays.map((d) => (
+        <a class="btn" href={`${base}${d.href}`}>{d.label}</a>
+      ))}
+      <a class="btn" href={`${base}guides/`}>教材目錄</a>
+    </div>
   </section>
 </Handbook>

@@ -7,7 +7,7 @@ const pages = [
   "index.html",
   "today/index.html",
   "today/day-2/index.html",
-  "decisions/index.html",
+  "guides/index.html",
   "days/day-1/index.html",
   "days/day-2/index.html",
   "days/day-5/index.html",
@@ -17,9 +17,10 @@ const pages = [
   "food/index.html",
   "before/index.html",
   "packing/index.html",
+  "shopping/index.html",
+  "phrases/index.html",
   "emergency/index.html",
   "route/index.html",
-  "before/index.html",
   "review/index.html",
   "credits/index.html",
 ];
@@ -41,6 +42,22 @@ function checkFile(rel: string) {
   if (!html.includes("nav-dock")) {
     failed = true;
     console.error(`${rel}: missing mobile nav`);
+  }
+  if (rel === "index.html") {
+    for (const needle of ["七天旅程", "今天怎麼走", "交通教學", "食物教學", "出發前準備", "一起驗收", "discovery-strip"]) {
+      if (!html.includes(needle)) {
+        failed = true;
+        console.error(`${rel}: missing home discovery "${needle}"`);
+      }
+    }
+  }
+  if (rel === "guides/index.html") {
+    for (const needle of ["交通", "食物", "出發前", "購物", "韓服", "緊急", "實用韓文", "guides-hub"]) {
+      if (!html.includes(needle)) {
+        failed = true;
+        console.error(`${rel}: missing guides hub "${needle}"`);
+      }
+    }
   }
   if (!html.includes("badge") && !html.includes("status ")) {
     failed = true;

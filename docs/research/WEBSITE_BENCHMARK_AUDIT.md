@@ -163,3 +163,9 @@ Sources include entries tagged `website_benchmark` in [`data/research-sources.ya
 Maintainer / research surfaces stay **non-navigated** from the couple product.
 
 **Round 1:** document only — no new blank reader pages.
+
+---
+
+## Implementation status (2026-07-21)
+
+Website IA Discovery slice implements the couple-facing dock **Home · Journey · Today · Guides · Review**, `/guides/` hub, Home discovery strip, and Day↔Guide cross-links. See [`WEBSITE_IA_DECISION.md`](./WEBSITE_IA_DECISION.md) and [`SITEMAP_BEFORE_AFTER.md`](./SITEMAP_BEFORE_AFTER.md). `/areas/*` remain future; no blank hubs shipped.

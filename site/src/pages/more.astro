@@ -2,25 +2,15 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 const base = siteBase();
-const items = [
-  ["行程總覽", "overview/"],
-  ["出發前", "before/"],
-  ["交通", "transport/"],
-  ["預訂", "bookings/"],
-  ["預算", "budget/"],
-  ["行李", "packing/"],
-  ["購物", "shopping/"],
-  ["韓文句子", "phrases/"],
-  ["來源", "sources/"],
-  ["路線一覽", "route/"],
-  ["一起決定", "decisions/"],
-];
 ---
-<Handbook title="更多" current="more">
-  <h1>更多</h1>
-  <ul class="list">
-    {items.map(([label, href]) => (
-      <li><a href={`${base}${href}`}>{label}</a></li>
-    ))}
-  </ul>
+<Handbook title="更多" current="guides">
+  <p class="eyebrow">導覽</p>
+  <h1 class="page-title">教材已移到這裡</h1>
+  <span class="status status-provisional">目前暫定</span>
+  <p>交通、食物、出發前、購物等高價值教材改由底部「教材」與首頁「先找這些」進入，不再藏在模糊的更多選單。</p>
+  <div class="btn-row">
+    <a class="btn primary" href={`${base}guides/`}>打開教材目錄</a>
+    <a class="btn" href={`${base}decisions/`}>一起決定</a>
+    <a class="btn" href={`${base}emergency/`}>緊急</a>
+  </div>
 </Handbook>

@@ -1,6 +1,7 @@
 ---
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
+import { relatedGuidesForDay } from "../../lib/guide-links";
 import { loadItinerary, loadPlaces, loadRestaurants, mediaById, mediaPublicUrl } from "../../lib/data";
 import {
   areaZh,
@@ -67,6 +68,8 @@ const expectLine =
               : dayIndex === 7
                 ? "依航班緩衝前往機場；可刪購物"
                 : day.one_priority;
+
+const relatedGuides = relatedGuidesForDay(dayIndex);
 ---
 <Handbook title={`第 ${day.day_index} 天`} current="days">
   <p class="muted"><a href={`${base}days/`}>← 全部行程</a></p>
@@ -251,6 +254,20 @@ const expectLine =
       <strong>回住宿方向：</strong>
       {sanitizeReaderText(day.emergency_return)}
     </p>
+  </section>
+
+  <section class="surface-quiet related-guides" aria-label="相關教材">
+    <h2 style="margin-top:0">這天相關教材</h2>
+    <div class="btn-row">
+      {
+        relatedGuides.map((g) => (
+          <a class="btn" href={`${base}${g.href}`}>
+            {g.label}
+          </a>
+        ))
+      }
+      <a class="btn" href={`${base}guides/`}>全部教材</a>
+    </div>
   </section>
 
   <div class="btn-row">

@@ -2,6 +2,7 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { mediaById, mediaPublicUrl } from "../lib/data";
+import { relatedDaysForGuide } from "../lib/guide-links";
 
 const base = siteBase();
 const arrival = mediaById("incheon-arrival-flow")!;
@@ -11,8 +12,9 @@ const ktx = mediaById("seoul-busan-ktx-journey")!;
 const busan = mediaById("busan-station-to-hotel")!;
 const lost = mediaById("lost-wrong-train-recovery")!;
 const offline = mediaById("offline-emergency-transport-card")!;
+const relatedDays = relatedDaysForGuide("transport");
 ---
-<Handbook title="交通" current="more">
+<Handbook title="交通" current="guides">
   <p class="eyebrow">交通教材</p>
   <h1 class="page-title">韓國交通與救援</h1>
   <span class="status status-provisional">目前暫定</span>
@@ -142,9 +144,10 @@ const offline = mediaById("offline-emergency-transport-card")!;
       <li><a href="https://www.airport.kr/ap/en/index.do" target="_blank" rel="noreferrer">Incheon Airport</a></li>
     </ul>
     <div class="btn-row">
-      <a class="btn" href={`${base}days/day-1/`}>Day 1</a>
-      <a class="btn" href={`${base}days/day-5/`}>Day 5</a>
-      <a class="btn" href={`${base}days/day-7/`}>Day 7</a>
+      {relatedDays.map((d) => (
+        <a class="btn" href={`${base}${d.href}`}>{d.label}</a>
+      ))}
+      <a class="btn" href={`${base}guides/`}>教材目錄</a>
       <a class="btn" href={`${base}emergency/`}>緊急</a>
     </div>
   </section>

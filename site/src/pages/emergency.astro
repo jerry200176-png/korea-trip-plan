@@ -3,13 +3,15 @@ import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadEmergencyPublic, mediaById, mediaPublicUrl } from "../lib/data";
 import { sanitizeReaderText, statusZh } from "../lib/presentation";
+import { relatedDaysForGuide } from "../lib/guide-links";
 
 const e = loadEmergencyPublic();
 const base = siteBase();
 const offline = mediaById("offline-emergency-transport-card");
 const lost = mediaById("lost-wrong-train-recovery");
+const relatedDays = relatedDaysForGuide("emergency");
 ---
-<Handbook title="緊急" current="emergency">
+<Handbook title="緊急" current="guides">
   <p class="eyebrow">路上</p>
   <h1 class="page-title">緊急協助</h1>
   <span class="status status-provisional">{statusZh(e.status)}</span>
@@ -91,4 +93,14 @@ const lost = mediaById("lost-wrong-train-recovery");
 
   <a class="btn primary" href={`${base}downloads/emergency-pack.pdf`}>下載緊急 PDF</a>
   <p class="muted">{sanitizeReaderText(e.offline_note)}</p>
+  <section class="surface-quiet" aria-label="相關行程日">
+    <h2 style="margin-top:0">相關行程日</h2>
+    <div class="btn-row">
+      {relatedDays.map((d) => (
+        <a class="btn" href={`${base}${d.href}`}>{d.label}</a>
+      ))}
+      <a class="btn" href={`${base}guides/`}>教材目錄</a>
+      <a class="btn" href={`${base}transport/`}>交通教學</a>
+    </div>
+  </section>
 </Handbook>

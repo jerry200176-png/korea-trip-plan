@@ -2,6 +2,7 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { mediaById, mediaPublicUrl } from "../lib/data";
+import { relatedDaysForGuide } from "../lib/guide-links";
 
 const base = siteBase();
 const shop = mediaById("shopping-atmosphere")!;
@@ -11,10 +12,12 @@ const cats = mediaById("day3-shopping-categories")!;
 const icons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-shop", "icon-fortune"].map(
   (id) => mediaById(id)!
 );
+const relatedDays = relatedDaysForGuide("shopping");
 ---
-<Handbook title="購物" current="more">
+<Handbook title="購物" current="guides">
   <p class="eyebrow">購物教材</p>
   <h1 class="page-title">明洞購物與退稅</h1>
+  <span class="status status-provisional">目前暫定</span>
   <figure class="media-block">
     <img src={mediaPublicUrl(base, shop)} alt={shop.alt_zh} loading="lazy" />
     <figcaption class="media-caption">{shop.alt_zh}</figcaption>
@@ -88,6 +91,16 @@ const icons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-sh
           </figure>
         ))
       }
+    </div>
+  </section>
+
+  <section class="surface-quiet" aria-label="相關行程日">
+    <h2 style="margin-top:0">相關行程日</h2>
+    <div class="btn-row">
+      {relatedDays.map((d) => (
+        <a class="btn" href={`${base}${d.href}`}>{d.label}</a>
+      ))}
+      <a class="btn" href={`${base}guides/`}>教材目錄</a>
     </div>
   </section>
 </Handbook>
