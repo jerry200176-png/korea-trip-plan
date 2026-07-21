@@ -195,19 +195,21 @@ function creditItemHtml(m: any): string {
   const isAi = m.type === "generated_illustration";
   const creator = isAi
     ? `AI 原創插畫（專案生成 · ${m.generation_date || ""}）`
-    : m.creator;
+    : sanitizeReaderText(m.creator);
   const source = String(m.source_url || "").startsWith("http")
     ? "來源頁面見網站圖片出處"
     : isAi
       ? "本專案原創插畫"
-      : m.source_platform || "本專案";
+      : sanitizeReaderText(m.source_platform || "本專案");
   const attrib = isAi
     ? `本專案 AI 原創插畫 · ${m.generation_date || ""}`
-    : m.attribution;
-  const license = String(m.license || "")
-    .replace(/Original AI-generated illustration for this project/g, "本專案原創 AI 插畫授權")
-    .replace(/AI-generated/g, "AI 原創");
-  return `<li><strong>${m.alt_zh}</strong><br/>攝影者／生成方式：${creator}<br/>來源：${source}<br/>授權：${license}<br/>出處：${attrib}</li>`;
+    : sanitizeReaderText(m.attribution);
+  const license = sanitizeReaderText(
+    String(m.license || "")
+      .replace(/Original AI-generated illustration for this project/g, "本專案原創 AI 插畫授權")
+      .replace(/AI-generated/g, "AI 原創")
+  );
+  return `<li><strong>${sanitizeReaderText(m.alt_zh)}</strong><br/>攝影者／生成方式：${creator}<br/>來源：${source}<br/>授權：${license}<br/>出處：${attrib}</li>`;
 }
 
 const approvedIllustrations = mediaDoc.media.filter(

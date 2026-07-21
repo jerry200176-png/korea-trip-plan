@@ -21,7 +21,7 @@
 
 ### Seoul (4N provisional)
 
-Prefer areas that reduce daily cross-city travel for palace/shopping days (e.g. Jongno / City Hall / Myeongdong belt **or** a single well-connected hub). Exact neighborhood shortlist after D2.
+Prefer areas that reduce daily cross-city travel for palace/shopping days (e.g. Jongno / City Hall / Myeongdong belt **or** a single well-connected hub). Exact neighborhood 候選清單 after D2.
 
 ### Busan (2N provisional for 7-day trip)
 

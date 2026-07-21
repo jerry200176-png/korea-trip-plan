@@ -228,7 +228,7 @@ days:
   restroom_notes: 商場內
   rain_plan: 室內商場／咖啡；取消戶外散步
   low_energy_plan: 刪減購物拉伸，只留咖啡休息與打包
-  closure_plan: 算命若 T-14 仍無法確認語言與預約，則維持 Optional 不做
+  closure_plan: 算命若 T-14 仍無法確認語言與預約，則維持可選／有體力再去不做
   droppable_items:
   - 街頭散步
   emergency_return: 地鐵／計程車
@@ -351,7 +351,7 @@ days:
   closure_plan: 膠囊候位久或風大就改 Beach Train／步道／直接休息
   droppable_items:
   - Sky Capsule
-  - 廣安里 Optional
+  - 廣安里可選／有體力再去
   emergency_return: 地鐵／計程車回住宿
   status: Provisional
   blocks:

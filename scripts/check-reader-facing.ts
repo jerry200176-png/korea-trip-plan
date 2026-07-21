@@ -85,6 +85,30 @@ function stripHtmlNoise(html: string): string {
     .replace(/<style[\s\S]*?<\/style>/gi, " ");
 }
 
+/** Visible / accessibility text only — not URL paths or media ids in src/href. */
+function extractHtmlReaderText(html: string): string {
+  const chunks: string[] = [];
+  const cleaned = stripHtmlNoise(html);
+  cleaned.replace(/\b(?:alt|aria-label|title|aria-description)="([^"]*)"/gi, (_m, v) => {
+    chunks.push(v);
+    return "";
+  });
+  cleaned.replace(/\b(?:alt|aria-label|title|aria-description)='([^']*)'/gi, (_m, v) => {
+    chunks.push(v);
+    return "";
+  });
+  const body = cleaned
+    .replace(/<[^>]+>/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/\s+/g, " ");
+  chunks.push(body);
+  return chunks.join("\n");
+}
+
 function extractSvgReaderText(svg: string): string {
   const chunks: string[] = [];
   svg.replace(/<(title|desc|text)(\s[^>]*)?>([\s\S]*?)<\/\1>/gi, (_m, _tag, _attrs, body) => {
@@ -112,7 +136,7 @@ for (const file of walk(siteDistDir)) {
   if (!textExt.has(ext)) continue;
   const rel = path.relative(root, file);
   let content = fs.readFileSync(file, "utf8");
-  if (ext === ".html") content = stripHtmlNoise(content);
+  if (ext === ".html") content = extractHtmlReaderText(content);
   scan(rel, content);
 }
 

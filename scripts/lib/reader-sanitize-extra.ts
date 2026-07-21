@@ -32,7 +32,7 @@ export function scrubVisualFunctionLabels(text: string): string {
   out = out.replace(/\bshortlist\b/gi, "候選清單");
   out = out.replace(/\bShortlist\b/g, "候選清單");
   out = out.replace(/\bharden\b/gi, "再次確認並鎖定");
-  out = out.replace(/\bOptional\b/g, "可選／有體力再去");
+  out = out.replace(/\bOptional\b/gi, "可選／有體力再去");
   // Bare Core after Core Plan handled — keep Chinese contexts readable
   out = out.replace(/\bCore\b/gi, "主要行程");
   // Parenthetical function tags: （Identify） / (Orient／Explain)

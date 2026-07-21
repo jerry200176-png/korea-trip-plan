@@ -12,7 +12,7 @@ function scrubVisualFunctionLabels(text: string): string {
   out = out.replace(/\bshortlist\b/gi, "候選清單");
   out = out.replace(/\bShortlist\b/g, "候選清單");
   out = out.replace(/\bharden\b/gi, "再次確認並鎖定");
-  out = out.replace(/\bOptional\b/g, "可選／有體力再去");
+  out = out.replace(/\bOptional\b/gi, "可選／有體力再去");
   out = out.replace(/\bCore\b/gi, "主要行程");
   out = out.replace(/\bDate Pending\b/gi, "日期待決定");
   out = out.replace(/\bBooking Ready\b/gi, "尚未完成預訂");
