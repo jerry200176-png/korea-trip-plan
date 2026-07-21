@@ -5,7 +5,7 @@
 
 ## Before (main @ `861ed98`)
 
-### Primary dock
+### Primary dock (before)
 
 `首頁 · 今日(Day2硬編碼) · 行程 · 決策 · 緊急`
 
@@ -19,7 +19,7 @@
 | `/review/` | CTA on home only; dock marked `home` |
 | Day pages | No related-guide exits |
 
-### Reader tree (simplified)
+### Reader tree before (simplified)
 
 ```text
 / ─ home hero + day list + decisions
@@ -32,11 +32,11 @@
 
 ## After (this PR)
 
-### Primary dock
+### Primary dock (after)
 
 `首頁 · 行程 · 今日 · 教材 · 驗收`
 
-### Reader tree (simplified)
+### Reader tree after (simplified)
 
 ```text
 / ─ hero + discovery strip（七天／今日／交通／食物／出發前／驗收）
