@@ -1,60 +1,126 @@
 restaurants:
-  - id: rst-busan-pork-soup-candidate
-    name_zh: 釜山豬肉湯飯（候選類型・尚未鎖定店家）
-    name_ko: 부산 돼지국밥 (후보)
-    name_en: Busan pork soup rice (candidate type)
-    city: Busan
-    area: TBD
-    address: TBD — pick specific shop after Founder locks route
-    cuisine: pork_soup
-    naver_map_url: https://map.naver.com/v5/search/%EB%8F%BC%EC%A7%80%EA%B5%AD%EB%B0%A5
-    google_maps_url: null
-    official_url: null
-    opening_hours: null
-    closed_days: null
-    estimated_dwell_minutes: 45
-    price_range_krw: "8000-15000"
-    reservation_possible: false
-    queue_risk: medium
-    menu_order_ko: 돼지국밥
-    payment_notes: Many accept cards; carry some cash
-    crustacean_risk: low
-    alcohol_focus: false
-    spicy_options: true
-    pork_soup: true
-    alternatives_nearby: []
-    recommend_reason: 符合道地豬肉湯飯目標；釜山代表性料理
-    risks: 店家未鎖定；排隊店可換隔壁；確認菜單無甲殼類主打
-    source_ids: [src-naver-map]
-    checked_at: "2026-07-20"
-    status: Assumption
-
-  - id: rst-seoul-non-seafood-candidate
-    name_zh: 首爾道地韓式（非海鮮主打・候選）
-    name_ko: 서울 한식 (해산물 메인 제외 후보)
-    name_en: Seoul Korean meal (non-seafood-forward candidate)
-    city: Seoul
-    area: TBD
-    address: TBD
-    cuisine: korean
-    naver_map_url: https://map.naver.com/v5/search/%ED%95%9C%EC%8B%9D
-    google_maps_url: null
-    official_url: null
-    opening_hours: null
-    closed_days: null
-    estimated_dwell_minutes: 60
-    price_range_krw: "12000-25000"
-    reservation_possible: null
-    queue_risk: unknown
-    menu_order_ko: null
-    payment_notes: Prefer card; decline DCC
-    crustacean_risk: unknown
-    alcohol_focus: false
-    spicy_options: true
-    pork_soup: false
-    alternatives_nearby: []
-    recommend_reason: 占位：鎖定區域後再選低甲殼類風險店
-    risks: 尚未點名；不可當作已訂位
-    source_ids: [src-naver-map]
-    checked_at: "2026-07-20"
-    status: Assumption
+- id: rst-hapcheon-gukbapjip
+  name_zh: 合天國飯店
+  name_ko: 합천국밥집
+  name_en: Hapcheon Gukbapjip
+  city: Busan
+  area: Nam-gu
+  address: 235 Yongho-ro, Nam-gu, Busan
+  cuisine: pork_soup
+  naver_map_url: https://map.naver.com/v5/search/%ED%95%A9%EC%B2%9C%EA%B5%AD%EB%B0%A5%EC%A7%91
+  google_maps_url: https://maps.google.com/?q=Hapcheon+Gukbapjip+Busan
+  official_url: https://guide.michelin.com/kr/en/busan-region/busan_1025838/restaurant/hapcheon-gukbapjip
+  opening_hours: Approx 09:30–20:00 with afternoon break (reconfirm before visit)
+  closed_days: Reconfirm; city feature described as open daily with break
+  estimated_dwell_minutes: 45
+  price_range_krw: 10000-20000
+  reservation_possible: false
+  queue_risk: high
+  menu_order_ko: 돼지국밥 / 새우젓 빼주세요
+  payment_notes: Card often OK; carry some cash
+  crustacean_risk: unknown
+  alcohol_focus: false
+  spicy_options: true
+  pork_soup: true
+  alternatives_nearby:
+  - rst-anmok
+  - rst-namakzip
+  recommend_reason: Michelin Bib 清湯系豬肉湯飯訊號強；作 Optional 專程，不強迫低體力海雲台日跨區
+  risks: 午餐尖峰排隊；離海雲台遠；蝦醬／配料需現場確認，不可宣稱零甲殼類
+  source_ids:
+  - src-naver-map
+  checked_at: '2026-07-21'
+  status: Provisional
+- id: rst-anmok
+  name_zh: Anmok
+  name_ko: 안목
+  name_en: Anmok
+  city: Busan
+  area: Suyeong
+  address: 3 Gwangnam-ro 22beon-gil, Suyeong-gu, Busan
+  cuisine: pork_soup
+  naver_map_url: https://map.naver.com/v5/search/%EC%95%88%EB%AA%A9%20%EB%8F%BC%EC%A7%80%EA%B5%AD%EB%B0%A5
+  google_maps_url: https://maps.google.com/?q=Anmok+Busan+gukbap
+  official_url: https://guide.michelin.com/sg/en/busan-region/busan_1025838/restaurant/anmok
+  opening_hours: Approx 11:30–21:00; break mid-afternoon; closed Wed (reconfirm)
+  closed_days: Wednesday (city/Michelin-adjacent reporting; reconfirm)
+  estimated_dwell_minutes: 45
+  price_range_krw: 9000-18000
+  reservation_possible: false
+  queue_risk: high
+  menu_order_ko: 돼지국밥 / 새우젓 빼주세요
+  payment_notes: Confirm card on-site
+  crustacean_risk: low
+  alcohol_focus: false
+  spicy_options: true
+  pork_soup: true
+  alternatives_nearby:
+  - rst-hapcheon-gukbapjip
+  recommend_reason: 近廣安 Optional 圈；Michelin 建議可原味、不加蝦醬／辣椒醬——仍須現場確認
+  risks: 仍可能有交叉污染；尖峰排隊；週三可能休息；crustacean_risk=low 不是保證
+  source_ids:
+  - src-naver-map
+  checked_at: '2026-07-21'
+  status: Provisional
+- id: rst-namakzip
+  name_zh: Namakzip
+  name_ko: 나막집
+  name_en: Namakzip
+  city: Busan
+  area: Busan
+  address: Confirm current pin on Michelin/Naver before visit
+  cuisine: pork_soup
+  naver_map_url: https://map.naver.com/v5/search/%EB%82%98%EB%A7%89%EC%A7%91
+  google_maps_url: null
+  official_url: https://guide.michelin.com/en/busan-region/busan_1025838/restaurant/namakzip
+  opening_hours: Reconfirm before visit
+  closed_days: null
+  estimated_dwell_minutes: 45
+  price_range_krw: 9000-18000
+  reservation_possible: false
+  queue_risk: medium
+  menu_order_ko: 돼지국밥 / 새우젓 빼주세요
+  payment_notes: Confirm on-site
+  crustacean_risk: unknown
+  alcohol_focus: false
+  spicy_options: true
+  pork_soup: true
+  alternatives_nearby:
+  - rst-hapcheon-gukbapjip
+  - rst-anmok
+  recommend_reason: Michelin Bib shortlist 第三選；清淡湯底訊號；行前確認地址與距離
+  risks: 深頁本次環境不穩；地址需行前鎖定；蝦醬風險未知
+  source_ids:
+  - src-naver-map
+  checked_at: '2026-07-21'
+  status: Provisional
+- id: rst-seoul-non-seafood-candidate
+  name_zh: 首爾道地韓式（非海鮮主打・候選）
+  name_ko: 서울 한식 (해산물 메인 제외 후보)
+  name_en: Seoul Korean meal (non-seafood-forward candidate)
+  city: Seoul
+  area: TBD
+  address: TBD
+  cuisine: korean
+  naver_map_url: https://map.naver.com/v5/search/%ED%95%9C%EC%8B%9D
+  google_maps_url: null
+  official_url: null
+  opening_hours: null
+  closed_days: null
+  estimated_dwell_minutes: 60
+  price_range_krw: 12000-25000
+  reservation_possible: null
+  queue_risk: unknown
+  menu_order_ko: null
+  payment_notes: Prefer card; decline DCC
+  crustacean_risk: unknown
+  alcohol_focus: false
+  spicy_options: true
+  pork_soup: false
+  alternatives_nearby: []
+  recommend_reason: 占位：鎖定區域後再選低甲殼類風險店
+  risks: 尚未點名；不可當作已訂位
+  source_ids:
+  - src-naver-map
+  checked_at: '2026-07-20'
+  status: Assumption

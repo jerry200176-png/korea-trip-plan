@@ -531,6 +531,113 @@ media:
   generation_tool: null
   generation_date: null
   purpose_note: Identify shopping functions; not decorative collage
+- id: busan-pork-order
+  type: map
+  subject: Pork soup identify and order teaching card
+  usage_scope:
+  - food
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/busan-pork-soup-order-card.svg
+  web_path: site/public/media/busan-pork-soup-order-card.svg
+  pdf_path: media/diagrams/busan-pork-soup-order-card.svg
+  source_url: media/diagrams/busan-pork-soup-order-card.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original pork-soup order card · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Identify/Warn teaching card
+  alt_zh: 豬肉湯飯辨識與點餐卡
+  alt_en: Pork soup identify and order card
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Identify dwaeji-gukbap and teach order phrases
+- id: busan-crustacean-warn
+  type: map
+  subject: Crustacean and side-sauce warning card for Busan meals
+  usage_scope:
+  - food
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/busan-crustacean-warn-card.svg
+  web_path: site/public/media/busan-crustacean-warn-card.svg
+  pdf_path: media/diagrams/busan-crustacean-warn-card.svg
+  source_url: media/diagrams/busan-crustacean-warn-card.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original crustacean warn card · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Warn teaching card
+  alt_zh: 甲殼類與蝦醬配料提醒卡
+  alt_en: Crustacean and salted-shrimp warning card
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Warn about salted shrimp and seafood sides
+- id: day6-core-low-energy
+  type: map
+  subject: Day 6 Core versus Low-Energy coastal path compare
+  usage_scope:
+  - day_page
+  - pdf
+  - credits
+  - today
+  local_path: media/diagrams/day6-core-vs-low-energy.svg
+  web_path: site/public/media/day6-core-vs-low-energy.svg
+  pdf_path: media/diagrams/day6-core-vs-low-energy.svg
+  source_url: media/diagrams/day6-core-vs-low-energy.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original Day 6 compare diagram · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Compare teaching diagram
+  alt_zh: Day 6 Core 與低體力路線比較圖
+  alt_en: Day 6 Core versus low-energy route compare
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Compare full coastal rhythm vs low-energy day
+- id: gwangalli-optional
+  type: map
+  subject: Gwangalli optional evening decision card
+  usage_scope:
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/gwangalli-optional-card.svg
+  web_path: site/public/media/gwangalli-optional-card.svg
+  pdf_path: media/diagrams/gwangalli-optional-card.svg
+  source_url: media/diagrams/gwangalli-optional-card.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original Gwangalli optional card · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Compare decision card
+  alt_zh: 廣安里 Optional 去留決策卡
+  alt_en: Gwangalli optional go/no-go decision card
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Decide whether optional second beach is worth energy
 kto_candidates:
 - id: kto-visitkorea-seoul-overview
   title: VisitKorea — Seoul destination photography (candidate)

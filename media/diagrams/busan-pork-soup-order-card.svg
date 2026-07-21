@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img">
+  <rect width="1200" height="640" fill="#f7f4ed"/>
+  <text x="48" y="50" font-family="Noto Sans TC, sans-serif" font-size="28" font-weight="700" fill="#2c2416">豬肉湯飯辨識與點餐（Identify）</text>
+  <text x="48" y="80" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">돼지국밥 · 不是保證無甲殼類 · 現場再確認</text>
+  <rect x="40" y="120" width="360" height="460" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="60" y="160" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700">看起來像什麼</text>
+  <text x="60" y="200" font-family="Noto Sans TC, sans-serif" font-size="15">熱湯 + 豬肉片 + 飯</text>
+  <text x="60" y="230" font-family="Noto Sans TC, sans-serif" font-size="15">可能附小碟泡菜／醬料</text>
+  <text x="60" y="260" font-family="Noto Sans TC, sans-serif" font-size="15">有的店水肉（수육）限量</text>
+  <text x="60" y="300" font-family="Noto Sans TC, sans-serif" font-size="15">清湯或較濃白湯都常見</text>
+  <rect x="420" y="120" width="360" height="460" rx="8" fill="#fff" stroke="#2c2416" stroke-width="2"/>
+  <text x="440" y="160" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700">怎麼點</text>
+  <text x="440" y="200" font-family="Noto Sans TC, sans-serif" font-size="15">「돼지국밥 하나 주세요」</text>
+  <text x="440" y="230" font-family="Noto Sans TC, sans-serif" font-size="15">不要蝦醬：새우젓 빼주세요</text>
+  <text x="440" y="260" font-family="Noto Sans TC, sans-serif" font-size="15">不要內臟／血腸：先問菜單</text>
+  <text x="440" y="290" font-family="Noto Sans TC, sans-serif" font-size="15">飯另加或已在湯裡：看店家</text>
+  <text x="440" y="330" font-family="Noto Sans TC, sans-serif" font-size="15">Shortlist：合天／Anmok／Namakzip</text>
+  <rect x="800" y="120" width="360" height="460" rx="8" fill="#fff" stroke="#8a3b2a" stroke-width="2"/>
+  <text x="820" y="160" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700" fill="#8a3b2a">Warn</text>
+  <text x="820" y="200" font-family="Noto Sans TC, sans-serif" font-size="15">名店常排隊：可換鄰近店</text>
+  <text x="820" y="230" font-family="Noto Sans TC, sans-serif" font-size="15">跨區名店不強迫低體力日</text>
+  <text x="820" y="260" font-family="Noto Sans TC, sans-serif" font-size="15">營業／break 出發前重查</text>
+  <text x="820" y="290" font-family="Noto Sans TC, sans-serif" font-size="15">不喝酒：拒絕燒酒推銷即可</text>
+</svg>

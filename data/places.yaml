@@ -138,7 +138,7 @@ places:
   source_ids:
   - src-busan-city
   - src-naver-map
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   status: Provisional
 - id: plc-gwangalli
   name_zh: 廣安里海水浴場
@@ -162,12 +162,12 @@ places:
   best_time_of_day: evening
   nearby_place_ids:
   - plc-haeundae
-  recommend_reason: 大橋夜景合照；節奏可放慢
+  recommend_reason: Day 6 Optional 夜景／橋；低體力可整段刪；非 Core 失敗條件
   risks: 海邊餐廳甲殼類比例高，用餐需篩選
   source_ids:
   - src-busan-city
   - src-naver-map
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   status: Provisional
 - id: plc-jyp-tower
   name_zh: JYP 周邊打卡

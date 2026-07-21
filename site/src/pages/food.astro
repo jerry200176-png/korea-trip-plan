@@ -7,6 +7,8 @@ import { areaZh, cityZh, statusZh } from "../lib/presentation";
 const restaurants = loadRestaurants();
 const base = siteBase();
 const foodMedia = mediaById("seoul-street-food")!;
+const porkCard = mediaById("busan-pork-order")!;
+const warnCard = mediaById("busan-crustacean-warn")!;
 
 function riskZh(v: string) {
   const map: Record<string, string> = {
@@ -19,8 +21,8 @@ function riskZh(v: string) {
 }
 ---
 <Handbook title="美食" current="more">
-  <p class="eyebrow">美食</p>
-  <h1 class="page-title">美食</h1>
+  <p class="eyebrow">美食教材</p>
+  <h1 class="page-title">美食與點餐</h1>
   <figure class="media-block">
     <img src={mediaPublicUrl(base, foodMedia)} alt={foodMedia.alt_zh} loading="lazy" />
     <figcaption class="media-caption">{foodMedia.alt_zh}</figcaption>
@@ -31,9 +33,26 @@ function riskZh(v: string) {
       <li>不喝酒</li>
       <li>不安排甲殼類海鮮為主的餐廳</li>
       <li>可吃辣</li>
-      <li>想吃豬肉湯飯／豬肉湯類</li>
+      <li>想吃豬肉湯飯／豬肉湯類（shortlist 已建立，仍要現場問蝦醬）</li>
     </ul>
   </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">豬肉湯飯怎麼點</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, porkCard)} alt={porkCard.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{porkCard.alt_zh}</figcaption>
+    </figure>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">甲殼類提醒</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, warnCard)} alt={warnCard.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{warnCard.alt_zh}</figcaption>
+    </figure>
+  </section>
+
   {
     restaurants.map((r) => (
       <section class="surface">

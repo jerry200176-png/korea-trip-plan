@@ -1,6 +1,6 @@
 meta:
   updated_at: '2026-07-21'
-  round: 2B
+  round: 2C
   purpose: Round 1 research governance — role-split claim evidence map
   notes: Round 2A closes Day 4 fortune Result B (Optional/T-14) and JYP Remove-from-Core. Roles remain split; blocked IDs
     never in supporting.
@@ -122,16 +122,17 @@ claims:
     gap. Discovery blogs remain non-operational. Blocked daebak page stays blocked. P0 product-theme infeasibility closed
     by Result B decision; T-14 revalidation remains.
 - claim_id: clm-pork-soup-shortlist-incomplete
-  claim: Busan dwaeji-gukbap is a Nikita food priority with editorial/Michelin signals, but no restaurant is locked and crustacean-safe
-    sides/queue strategy are incomplete.
+  claim: Busan dwaeji-gukbap shortlist now names Hapcheon Gukbapjip, Anmok, and Namakzip with crustacean-ask rules; none are
+    forced into low-energy Day 6 Core.
   supporting_source_ids:
-  - rs-041
   - rs-042
   - rs-043
-  discovery_source_ids:
+  - rs-093
+  - rs-094
   - rs-037
+  discovery_source_ids:
   - rs-038
-  - rs-063
+  - rs-041
   blocked_source_ids: []
   contradicting_source_ids: []
   missing_evidence_requirements:
@@ -139,58 +140,54 @@ claims:
   - Crustacean-risk and ordering Identify notes
   - Queue risk notes for chosen candidates
   confidence: Medium
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   requires_revalidation: true
   affected_day: Day 5 / Day 6
   jerry_relevance: Queue risk and transfer cost must be understood before pinning a bowl.
   nikita_relevance: Authentic pork soup goal without a chosen shop.
-  notes: Michelin entries support that named candidates exist as editorial signals; A2/itinerary pages are discovery. Still
-    not booking-ready.
+  notes: Shortlist complete at teaching level; on-site shrimp-sauce confirmation still required.
 - claim_id: clm-sky-capsule-ops-unconfirmed
-  claim: Haeundae Sky Capsule / Blueline is a candidate scenic add-on; operator pages exist but queue/price/hours for March
-    travel are not hardened.
+  claim: 'Sky Capsule is Optional on Day 6: A1 operator confirms Mipo–Cheongsapo ~30 min one-way; queue/weather skip rules
+    documented; not required for Core coastal value.'
   supporting_source_ids:
   - rs-028
   discovery_source_ids:
   - rs-027
   - rs-029
-  - rs-057
-  - rs-058
   blocked_source_ids: []
   contradicting_source_ids: []
   missing_evidence_requirements:
   - Operator hours/price/booking rules for the intended travel window
   - Queue/wait expectation and low-energy skip rule
   confidence: Medium
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   requires_revalidation: true
   affected_day: Day 6
   jerry_relevance: Queue and fatigue risk vs minimize_transfers / not-too-packed.
   nikita_relevance: Scenery/photo value if timed well.
-  notes: A1 operator page supports existence/course identity; A2/editorial are discovery. March ops still unconfirmed.
+  notes: Ops still need date-specific revalidation; product no longer treats capsule as must-do.
 - claim_id: clm-day6-low-energy-variant-missing
-  claim: Day 6 currently risks an over-touristy Haeundae + Gwangalli postcard day; a documented low-energy beach-walk variant
-    with named backups is not yet evidenced as a product slice.
-  supporting_source_ids: []
-  discovery_source_ids:
+  claim: Day 6 now has documented Core vs Low-Energy coastal paths and Gwangalli Optional decision; postcard double-beach
+    forcing removed.
+  supporting_source_ids:
+  - rs-028
   - rs-032
+  discovery_source_ids:
   - rs-030
-  - rs-060
-  - rs-039
-  - rs-009
+  - rs-027
   blocked_source_ids: []
   contradicting_source_ids: []
   missing_evidence_requirements:
   - Documented full vs low-energy coastal Compare path
   - Named rest/cafe backups near the chosen lodging cluster
   - Evidence-based Optional vs Retain decision for Gwangalli
-  confidence: Low
-  checked_at: '2026-07-20'
+  confidence: Medium
+  checked_at: '2026-07-21'
   requires_revalidation: true
   affected_day: Day 6
   jerry_relevance: feet_tire_easily; need Compare full vs low-energy path.
   nikita_relevance: Keep scenery value without forcing second-beach fatigue.
-  notes: Place/climate pages are discovery context for the missing teaching variant.
+  notes: Productized in itinerary + Compare diagrams.
 - claim_id: clm-fortune-language-support
   claim: Neither shortlisted fortune candidate currently provides reliable written English/Chinese confirmation suitable for
     a first-overseas Core booking in Gangnam.
@@ -356,11 +353,75 @@ claims:
   jerry_relevance: Avoids forced second district.
   nikita_relevance: Still available if clothes unfinished.
   notes: Aligns with Day 4 shopping catch-up option.
+- claim_id: clm-pork-soup-crustacean-risk
+  claim: Pork soup crustacean risk is managed by ask-rules (remove salted shrimp) and by not claiming zero-crustacean without
+    provider confirmation; Anmok has stronger editorial signal but still on-site ask.
+  supporting_source_ids:
+  - rs-093
+  - rs-037
+  discovery_source_ids:
+  - rs-094
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements:
+  - On-site confirmation day-of
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 5 / Day 6
+  jerry_relevance: Allergy/avoidance constraint taught.
+  nikita_relevance: Can still enjoy pork soup with safer ordering script.
+  notes: Warn card in product.
+- claim_id: clm-pork-soup-queue-risk
+  claim: Named shortlist shops can have high lunch queues; Day 6 Core may use nearer Plan B instead of forcing a cross-town
+    Michelin pin.
+  supporting_source_ids:
+  - rs-094
+  - rs-042
+  discovery_source_ids:
+  - rs-093
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: true
+  affected_day: Day 6
+  jerry_relevance: Protects not-too-packed days.
+  nikita_relevance: Quality option remains without mandatory queue.
+  notes: ''
+- claim_id: clm-day6-full-vs-low-energy
+  claim: Day 6 Core keeps Haeundae + one coastal segment + rest; Low-Energy deletes capsule/train and second beach.
+  supporting_source_ids:
+  - rs-028
+  - rs-032
+  discovery_source_ids: []
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: Day 6
+  jerry_relevance: Complete low-energy variant exists.
+  nikita_relevance: Photo value retained without marathon.
+  notes: ''
+- claim_id: clm-gwangalli-optional-value
+  claim: Gwangalli is Optional evening only if energy remains; not a Day 6 success requirement.
+  supporting_source_ids:
+  - rs-032
+  discovery_source_ids: []
+  blocked_source_ids: []
+  contradicting_source_ids: []
+  missing_evidence_requirements: []
+  confidence: Medium
+  checked_at: '2026-07-21'
+  requires_revalidation: false
+  affected_day: Day 6
+  jerry_relevance: Avoids forced second beach.
+  nikita_relevance: Night bridge photos available when worth it.
+  notes: ''
 proposed_round_2_claims:
   day4: []
   shopping: []
-  busan:
-  - clm-pork-soup-crustacean-risk
-  - clm-pork-soup-queue-risk
-  - clm-day6-full-vs-low-energy
-  - clm-gwangalli-optional-value
+  busan: []

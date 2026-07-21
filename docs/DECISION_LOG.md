@@ -80,3 +80,10 @@ Append-only. Newest first.
 - **Status:** Provisional product decision (Round 2B); tax thresholds revalidate at T-7.
 - **Evidence:** `rs-018`/`rs-019` area orientation; `rs-020`/`rs-021` tax process; `rs-091` Olive Young immediate refund tourism page.
 - **Doc:** `docs/research/DAY3_SHOPPING_TEACHING.md`
+
+## 2026-07-21 — Busan pork shortlist + Day 6 low-energy coast
+
+- **Decision:** Name three pork-soup candidates (Hapcheon, Anmok, Namakzip) with crustacean-ask rules; Day 6 uses Core vs Low-Energy coastal rhythm; Sky Capsule and Gwangalli are Optional with skip rules.
+- **Status:** Provisional (Round 2C); hours/queues revalidate before visit.
+- **Evidence:** `rs-028` Blueline Sky Capsule; `rs-042`/`rs-043`/`rs-093`/`rs-094` pork shortlist; `rs-032` Gwangalli.
+- **Doc:** `docs/research/DAY6_BUSAN_FOOD_COAST.md`

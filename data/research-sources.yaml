@@ -1055,7 +1055,7 @@ sources:
   publisher_or_creator: VisitKorea
   url: https://english.visitkorea.or.kr/svc/whereToGo/locIntrdn/rgnContentsView.do?vcontsId=34413
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Busan
   topic:
@@ -1085,7 +1085,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -1097,7 +1097,7 @@ sources:
   publisher_or_creator: Haeundae Blueline Park
   url: https://www.bluelinepark.com/eng/skyCapsuleCourse.do
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Busan
   topic:
@@ -1126,7 +1126,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
@@ -1259,7 +1259,7 @@ sources:
   publisher_or_creator: Visit Busan
   url: https://visitbusan.net/en/index.do?lang_cd=en&menuCd=DOM_000000301001001000&uc_seq=377
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Busan
   topic:
@@ -1287,7 +1287,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening; A2 official tourism aggregator — not
@@ -1659,7 +1659,7 @@ sources:
   publisher_or_creator: Michelin Guide
   url: https://guide.michelin.com/us/en/busan-region/busan_1025838/restaurant/hapcheon-gukbapjip
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Busan
   topic:
@@ -1687,7 +1687,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
@@ -1698,7 +1698,7 @@ sources:
   publisher_or_creator: Michelin Guide
   url: https://guide.michelin.com/en/busan-region/busan_1025838/restaurant/namakzip
   publish_date: null
-  accessed_at: '2026-07-20'
+  accessed_at: '2026-07-21'
   language: en
   city: Busan
   topic:
@@ -1726,7 +1726,7 @@ sources:
   accessibility_status: accessible
   content_last_updated: unknown
   operational_freshness: needs_recheck
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   revalidate_by: '2026-09-18'
   freshness_basis: accessibility verified via HTTP/search on checked_at; content_last_updated not confirmed on page; publish_date
     unknown; operational claims must be revalidated before use in itinerary hardening
@@ -3638,6 +3638,85 @@ sources:
   freshness_basis: Official tourism article with visible publish date 2025-06-16 reviewed on checked_at; immediate-refund
     mechanics still need T-7 revalidation because campaigns and store participation change.
   freshness_basis_type: dated_official_notice
+- source_id: rs-093
+  source_type: trusted_editorial
+  title: Anmok — MICHELIN Guide restaurant page
+  publisher_or_creator: MICHELIN Guide
+  url: https://guide.michelin.com/sg/en/busan-region/busan_1025838/restaurant/anmok
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji_gukbap
+  - Anmok
+  - crustacean_risk
+  summary: Michelin listing for Anmok pork soup in Suyeong-gu; notes soup can be enjoyed without adding chili sauce or salted
+    shrimp.
+  findings:
+  - Search/WebFetch text lists address 3 Gwangnam-ro 22beon-gil, Suyeong-gu, Busan.
+  - Editorial note recommends savoring soup without adding chili sauce or salted shrimp — not a kitchen allergen guarantee.
+  - Marks Worth Queueing For / solo dining signals.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: B
+  jerry_relevance: Near Gwangalli optional evening; queue risk noted.
+  nikita_relevance: Named pork-soup candidate with clearer salted-shrimp guidance than most.
+  claims_requiring_official_verification:
+  - Confirm hours/closed Wed and ask on-site about shrimp sauce.
+  corroborating_source_ids:
+  - rs-042
+  - rs-043
+  - rs-037
+  primary_category: independent_experience_evidence
+  category_tags:
+  - independent_experience_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: Michelin restaurant page content reviewed via search/fetch on checked_at; hours and queue still need revalidation.
+  freshness_basis_type: page_review_no_update_date
+- source_id: rs-094
+  source_type: government
+  title: Daily Busan — Michelin Guide Busan dwaeji gukbap feature
+  publisher_or_creator: Busan Metropolitan City (Daily Busan)
+  url: https://www.busan.go.kr/bige/daily-busan/view?bbsNo=10&dataNo=70578&srchCl=Daily+Busan
+  publish_date: null
+  accessed_at: '2026-07-21'
+  language: en
+  city: Busan
+  topic:
+  - dwaeji_gukbap
+  - Hapcheon
+  - Anmok
+  summary: City English feature summarizing Michelin-noted pork soup shops with addresses/hours/price sketches for Hapcheon
+    and Anmok.
+  findings:
+  - Hapcheon address 235 Yongho-ro, Nam-gu; hours/break and price sketches provided.
+  - Anmok address and Wed closed / break notes provided.
+  - Useful A2/government-adjacent orientation; still reconfirm ops before visit.
+  sponsorship_bias_risk: low
+  copyright_usage_rule: facts_ok_no_copy
+  evidence_tier: A2
+  jerry_relevance: Helps decide whether cross-town queue is worth it.
+  nikita_relevance: Supports shortlist realism for pork soup.
+  claims_requiring_official_verification:
+  - Reconfirm hours/prices on visit day.
+  corroborating_source_ids:
+  - rs-042
+  - rs-093
+  primary_category: travel_factual_evidence
+  category_tags:
+  - travel_factual_evidence
+  accessibility_status: accessible
+  content_last_updated: unknown
+  operational_freshness: needs_recheck
+  checked_at: '2026-07-21'
+  revalidate_by: '2026-08-18'
+  freshness_basis: City feature page reviewed on checked_at via search content; operational hours must be revalidated.
+  freshness_basis_type: page_review_no_update_date
 blocked_sources:
 - source_id: rs-blocked-001
   url: https://www.klook.com/en-US/city/13-seoul-things-to-do/

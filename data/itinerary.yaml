@@ -315,68 +315,80 @@ days:
     droppable: false
   - start: '15:00'
     end: '21:00'
-    title: 輕食＋休息（不塞景點）
+    title: 輕食＋休息（不塞景點；湯飯可改 Day 6）
     kind: rest
-    restaurant_id: rst-busan-pork-soup-candidate
-    notes: 可嘗試豬肉湯飯；若太累改便利商店
+    notes: 'Round 2C: pork shortlist available Day 6; do not force Hapcheon after KTX.'
     plan_b: 便利商店
     droppable: true
+  notes: ' Round 2C: pork-soup shortlist available if energy after arrival; otherwise Day 6.'
 - id: day-06
   day_index: 6
   foundation_slice: true
-  theme: 海雲台・海岸風景
-  one_priority: 完成海灘／海岸兩人合照，節奏放慢
-  wake_time: 08:00
-  out_time: 09:00
+  theme: 海雲台海岸節奏・低體力優先
+  one_priority: 完成海雲台海岸兩人照與休息節奏；膠囊可刪；廣安里僅 Optional
+  wake_time: 09:00
+  out_time: '10:00'
   return_by: '21:00'
   primary_areas:
   - Haeundae
   city: Busan
-  energy: medium
+  energy: low
   estimated_cost_krw: 100000
-  walking_level: medium
-  buffer_percent: 20
-  photo_tips: 海岸線合照為主；拍立得注意海風與底片保溫
-  restroom_notes: 海邊設施季節性，出發前重查
-  rain_plan: 改室內咖啡＋商場；取消長時間沙灘
-  low_energy_plan: 只留一處海灘觀景 45 分鐘
-  closure_plan: 改廣安里或城市展望台（需重查）
+  walking_level: low
+  buffer_percent: 25
+  photo_tips: 海灘／海岸線兩人照；風大時改室內窗景
+  restroom_notes: 海灘公廁／咖啡店／車站
+  rain_plan: 縮短海灘；改室內咖啡；取消膠囊／步道延伸
+  low_energy_plan: 短海灘 → 咖啡休息 → 回住宿；交通體驗整段可刪
+  closure_plan: 膠囊候位久或風大就改 Beach Train／步道／直接休息
   droppable_items:
-  - 第二海灘
+  - Sky Capsule
+  - 廣安里 Optional
   emergency_return: 地鐵／計程車回住宿
   status: Provisional
   blocks:
   - start: '10:00'
-    end: '12:30'
-    title: 海雲台海水浴場
+    end: '12:00'
+    title: 海雲台海水浴場（短散步／拍照）
     kind: place
     place_id: plc-haeundae
-    dwell_minutes: 120
-    map_url: https://map.naver.com/v5/search/%ED%95%B4%EC%9A%B4%EB%8C%80%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5
-    plan_b: 縮短步行
     droppable: false
-  - start: '12:30'
-    end: '14:00'
-    title: 午餐（避開甲殼類主打店）
+    plan_b: 室內咖啡窗景拍照
+    notes: Core 暖身；風大縮短
+    queue_risk: low
+  - start: '12:00'
+    end: '13:30'
+    title: 午餐：豬肉湯飯（shortlist 或近圈備案）
     kind: meal
-    notes: 篩選豬肉湯飯或其他非海鮮主打
-    restaurant_id: rst-busan-pork-soup-candidate
-    plan_b: 連鎖韓式
     droppable: false
-  - start: '15:00'
-    end: '17:00'
-    title: 廣安里（可刪）
-    kind: place
+    plan_b: 非海鮮主打韓式／豬肉料理
+    notes: 優先可達店；合天／Namakzip 僅交通可接受才去；問「새우젓 빼주세요」
+    queue_risk: medium
+  - start: '13:30'
+    end: '16:00'
+    title: 尾浦→青沙浦海岸線（膠囊／列車／步道擇一）
+    kind: experience
+    droppable: true
+    plan_b: 改咖啡休息
+    notes: Sky Capsule Optional；單程約30分；候位久就 skip
+    queue_risk: high
+  - start: '16:00'
+    end: '17:30'
+    title: 海景休息／咖啡
+    kind: rest
+    droppable: false
+    plan_b: 回住宿休息
+    notes: 低體力日的保護段
+  - start: '17:30'
+    end: '21:00'
+    title: 廣安里 Optional 或回住宿
+    kind: free
     place_id: plc-gwangalli
     droppable: true
-    plan_b: 回住宿休息
-    map_url: https://map.naver.com/v5/search/%EA%B4%91%EC%95%88%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5
-  - start: '17:00'
-    end: '21:00'
-    title: 緩衝與自由
-    kind: buffer
-    plan_b: 提早結束
-    droppable: true
+    plan_b: 直接回住宿
+    notes: 體力足夠才去；可評估 Anmok；不是失敗條件
+  notes: 'Round 2C 2026-07-21: Core vs Low-Energy coastal rhythm; Gwangalli Optional; pork shortlist exists but not forced
+    across town.'
 - id: day-07
   day_index: 7
   theme: 釜山尾聲・返程準備

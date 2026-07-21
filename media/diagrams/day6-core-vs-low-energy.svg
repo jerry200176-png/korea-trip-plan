@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img">
+  <rect width="1200" height="700" fill="#eef5f5"/>
+  <text x="48" y="48" font-family="Noto Sans TC, sans-serif" font-size="28" font-weight="700" fill="#1f3324">Day 6 Core vs Low-Energy（Compare）</text>
+  <rect x="40" y="90" width="540" height="480" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="60" y="130" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#2f5d3a">Core Plan</text>
+  <text x="60" y="175" font-family="Noto Sans TC, sans-serif" font-size="15">1 海雲台短散步／拍照</text>
+  <text x="60" y="210" font-family="Noto Sans TC, sans-serif" font-size="15">2 尾浦 → 青沙浦海岸線</text>
+  <text x="60" y="245" font-family="Noto Sans TC, sans-serif" font-size="15">   （膠囊／列車／步道擇一）</text>
+  <text x="60" y="280" font-family="Noto Sans TC, sans-serif" font-size="15">3 海景休息／咖啡</text>
+  <text x="60" y="315" font-family="Noto Sans TC, sans-serif" font-size="15">4 回住宿（最晚心智保留）</text>
+  <text x="60" y="370" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">目的：海岸節奏 + 兩人照</text>
+  <text x="60" y="400" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">不是收集所有打卡點</text>
+  <rect x="620" y="90" width="540" height="480" rx="8" fill="#fff" stroke="#6a5d4a" stroke-width="2"/>
+  <text x="640" y="130" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#6a5d4a">Low-Energy Plan</text>
+  <text x="640" y="175" font-family="Noto Sans TC, sans-serif" font-size="15">1 短海灘散步</text>
+  <text x="640" y="210" font-family="Noto Sans TC, sans-serif" font-size="15">2 單程交通體驗（可整段刪）</text>
+  <text x="640" y="245" font-family="Noto Sans TC, sans-serif" font-size="15">3 咖啡／休息</text>
+  <text x="640" y="280" font-family="Noto Sans TC, sans-serif" font-size="15">4 回住宿</text>
+  <text x="640" y="330" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">Skip rule：膠囊候位久／風大／腳累</text>
+  <text x="640" y="360" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">→ 直接咖啡，不硬完成路線</text>
+  <rect x="40" y="590" width="1120" height="80" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="60" y="638" font-family="Noto Sans TC, sans-serif" font-size="16">Sky Capsule = Optional 載具，不是 Core 必做。Core 要的是海與休息。</text>
+</svg>
