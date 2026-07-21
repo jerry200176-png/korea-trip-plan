@@ -17,6 +17,20 @@ Signatures use: `<command>:<error-class>:<affected-file-or-stage>`
 | hypothesis | `actions/upload-artifact` used `github.sha`, which on `pull_request` is the merge commit, not `pull_request.head.sha`. |
 | fix | Resolve `artifact_sha` from PR head on pull_request; emit `dist/ci-verified-head.json`; name artifact `handbook-dist-${artifact_sha}`. |
 | why_different | Fixes identity contract (`artifact head SHA == final PR head`), not a lint flake. |
+| status | closed — artifact now named with PR head; run 29810435976 |
+
+### FL-2026-07-21-03
+
+| Field | Value |
+|-------|-------|
+| signature | `publication:orphan-near-blank:day3-page-11` |
+| github_run / artifact | run 29810435976 / artifact 8487249520 (`cfcd85f…`) |
+| first_failing_command | independent Visual+Publication critic |
+| classification | PDF pagination / diagram crop / reader taxonomy in credits |
+| attempt | 1 |
+| hypothesis | Day 3 single-page section overflowed; `.keep { break-inside:avoid }` pushed rain/low-energy block alone to page 11; `.day-media { object-fit:cover }` cropped diagram; credits attributions retained lowercase `warn`/`compare`/`identify`. |
+| fix | Split Day 3 like Day 2/6; `object-fit:contain`; scrub attributions + case-insensitive function-label gate. |
+| why_different | Addresses critic-cited pages 10/11/35 directly instead of report-only. |
 | status | fixing |
 
 ## Closed

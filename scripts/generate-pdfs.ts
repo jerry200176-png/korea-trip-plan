@@ -123,6 +123,25 @@ function dayPages(day: any, mediaId?: string, sectionId = "seoul_days"): string 
     : "";
   const marker = secMark(sectionId);
 
+  if (day.day_index === 3 && blocks.length >= 4) {
+    const morning = blocks.slice(0, 3).map(blockHtml).join("\n");
+    const afternoon = blocks.slice(3).map(blockHtml).join("\n");
+    return `
+<section class="page day compact">
+  ${marker}
+  ${dayHeader(day, false)}
+  ${media}
+  ${morning}
+  ${expectBox(day)}
+</section>
+<section class="page day compact">
+  ${marker}
+  ${dayHeader(day, true)}
+  ${afternoon}
+  ${dayClosing(day)}
+</section>`;
+  }
+
   if (day.day_index === 2 && blocks.length >= 5) {
     const morning = blocks.slice(0, 3).map(blockHtml).join("\n");
     const afternoon = blocks.slice(3).map(blockHtml).join("\n");

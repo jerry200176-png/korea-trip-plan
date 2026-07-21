@@ -18,8 +18,16 @@ function scrubVisualFunctionLabels(text: string): string {
   out = out.replace(/\bBooking Ready\b/gi, "尚未完成預訂");
   out = out.replace(/[（(]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire)(?:\s*[／/·|,、]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire))*\s*[）)]/gi, "");
   out = out.replace(/功能\s*[:：]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire)(?:\s*[｜|／/·,、]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire))*/gi, "");
+  out = out.replace(/\bwarn\b/gi, "提醒");
+  out = out.replace(/\bcompare\b/gi, "比較");
+  out = out.replace(/\borient\b/gi, "導覽");
+  out = out.replace(/\bexplain\b/gi, "說明");
+  out = out.replace(/\brescue\b/gi, "救援");
+  out = out.replace(/\bidentify\b/gi, "辨識");
+  out = out.replace(/\bremember\b/gi, "記住");
+  out = out.replace(/\binspire\b/gi, "啟發");
   for (const label of ["Orient", "Explain", "Warn", "Rescue", "Compare", "Identify", "Remember", "Inspire"]) {
-    out = out.replace(new RegExp(`\\b${label}\\b`, "g"), "");
+    out = out.replace(new RegExp(`\\b${label}\\b`, "gi"), "");
   }
   out = out.replace(/\bavoid_long_queues\b/g, "避免長時間排隊");
   out = out.replace(/\bavoid_crustacean_seafood\b/g, "避免甲殼類海鮮");

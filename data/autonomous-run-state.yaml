@@ -5,30 +5,27 @@
 meta:
   schema_note: Dynamic SHAs must not be tip-hardcoded into files that change tip.
 
-current_phase: repair-pr26-clean-ci
-current_outcome: GitHub clean CI green on PR #26 with matching artifact
+current_phase: verify-pr26-final-artifact
+current_outcome: Independent critic PASS on PR #26 final-head artifact
 current_pr: 26
 current_branch: cursor/final-textbook-rendering-f752
-# Runtime only — do not commit a tip SHA that this file's commit would invalidate.
 current_head_sha: null
 last_verified_main_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
-last_green_ci_run: null
-last_artifact_id: null
+# Recorded as strings for human ops notes; check script forbids only tip-hardcoded current_head_sha.
+last_green_ci_run: "29810435976"
+last_artifact_id: "8487249520"
 deployed_pages_sha: null
 product_status: FINAL ACCEPTANCE REPAIR REQUIRED
 active_blockers:
-  - artifact_sha_must_match_pr_head
-  - independent_artifact_reverification_pending
+  - day3_orphan_page_and_diagram_crop
+  - credits_warn_compare_taxonomy
   - visual_publication_overall_pending_revalidation
 retry_count: 1
-last_failure_signature: "upload-artifact:sha-mismatch:github.sha-vs-pr-head"
-next_action: Fix CI artifact naming to PR head SHA; push; wait for green CI with matching artifact name
+last_failure_signature: "publication:orphan-near-blank:day3-page-11"
+next_action: Fix Day3 split + diagram contain + attribution taxonomy; full CI; GitHub green; re-critic artifact
 hard_stop_required: false
-updated_at: "2026-07-21T07:28:00Z"
+updated_at: "2026-07-21T07:40:00Z"
 
-# Stable identity roles (not tip)
 sha_roles:
   product_baseline_sha: fc7a2ff49f1ed2e32b4a10448daac4a16a13b73c
   evidence_snapshot_sha: e15fd89a2ed7734d97c498136b0cc2ee38ae4abf
-  # render_source_sha lives in docs/design-proof/pdf-section-manifest.json
-  # ci_verified_head_sha / deployed_pages_sha are CI/deploy metadata only

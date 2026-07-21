@@ -138,8 +138,8 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2;
 .day-media {
   width: 100%;
   max-height: 110pt;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  object-position: center top;
   border-radius: 3pt;
   margin: 4pt 0 6pt;
   break-inside: avoid;

@@ -26,7 +26,7 @@ items:
       - destination / research scope expansion
       - restore READY without Exit Gate
       - score inflation
-    status: in_progress
+    status: passed
     attempts: 2
     last_failure_signature: "upload-artifact:sha-mismatch:github.sha-vs-pr-head"
     exit_gate: github_ci_green_with_matching_artifact
@@ -52,12 +52,12 @@ items:
     scope_forbidden:
       - merge before critic PASS
       - restore READY before Visual/Publication critics
-    status: pending
-    attempts: 0
-    last_failure_signature: null
+    status: in_progress
+    attempts: 1
+    last_failure_signature: "publication:orphan-near-blank:day3-page-11"
     exit_gate: independent_critic_pass_on_final_artifact
     next_if_pass: restore-ready-state
-    next_if_fail: repair-pr26-clean-ci
+    next_if_fail: verify-pr26-final-artifact
 
   - id: restore-ready-state
     outcome: Honest READY FOR JERRY & NIKITA ACCEPTANCE after recomputed scores

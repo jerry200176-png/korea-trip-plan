@@ -44,8 +44,17 @@ export function scrubVisualFunctionLabels(text: string): string {
     /功能\s*[:：]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire)(?:\s*[｜|／/·,、]\s*(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember|Inspire))*/gi,
     "",
   );
+  // Natural Chinese replacements before bare-label stripping (attribution leftovers)
+  out = out.replace(/\bwarn\b/gi, "提醒");
+  out = out.replace(/\bcompare\b/gi, "比較");
+  out = out.replace(/\borient\b/gi, "導覽");
+  out = out.replace(/\bexplain\b/gi, "說明");
+  out = out.replace(/\brescue\b/gi, "救援");
+  out = out.replace(/\bidentify\b/gi, "辨識");
+  out = out.replace(/\bremember\b/gi, "記住");
+  out = out.replace(/\binspire\b/gi, "啟發");
   for (const label of FUNCTION_LABELS) {
-    out = out.replace(new RegExp(`\\b${label}\\b`, "g"), "");
+    out = out.replace(new RegExp(`\\b${label}\\b`, "gi"), "");
   }
   // Profile / constraint snake_case keys
   out = out.replace(/\bavoid_long_queues\b/g, "避免長時間排隊");
@@ -67,7 +76,7 @@ export function scrubVisualFunctionLabels(text: string): string {
 }
 
 export const READER_FORBIDDEN_FUNCTION_RE =
-  /\b(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember)\b/;
+  /\b(?:Orient|Explain|Warn|Rescue|Compare|Identify|Remember)\b/i;
 
 export const READER_FORBIDDEN_PDFSEC_RE = /PDFSEC:/;
 
