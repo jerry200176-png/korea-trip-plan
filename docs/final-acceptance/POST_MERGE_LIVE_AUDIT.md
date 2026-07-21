@@ -14,7 +14,7 @@
 
 ## Audit verdict
 
-**PASS_TO_HUMAN_HANDOFF**
+PASS_TO_HUMAN_HANDOFF
 
 - P0 blockers: none
 - High-ROI polish applied: `/before/` 「硬化」→「再確認並鎖定」
