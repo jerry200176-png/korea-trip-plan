@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Market Snack Identify</title>
+  <desc id="desc">Identify market snack types with shape cues and a shellfish trap warning.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-bad { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .shape { fill: #e8e0d0; stroke: #2c2416; stroke-width: 2; }
+      .ico { fill: none; stroke: #8a3b2a; stroke-width: 2.5; stroke-linecap: round; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">市場小吃辨識（Identify）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · 市場／夜市 · 2026-07-21 · 功能：Identify 攤型 + Warn 貝蝦陷阱</text>
+
+  <rect class="card" x="40" y="96" width="270" height="260" rx="8"/>
+  <rect x="56" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="129">Identify</text>
+  <text class="h" x="140" y="130">煎／炸物</text>
+  <ellipse class="shape" cx="120" cy="200" rx="42" ry="18"/>
+  <path d="M90 200 Q120 175 150 200" fill="none" stroke="#2c2416" stroke-width="2"/>
+  <text class="t" x="56" y="260">橢圓／扁平塊狀</text>
+  <text class="t" x="56" y="285">紙托或鐵板</text>
+  <text class="muted" x="56" y="320">先問有無海鮮餡</text>
+  <text class="muted" x="56" y="340">예: 전／튀김 類</text>
+
+  <rect class="card" x="330" y="96" width="270" height="260" rx="8"/>
+  <rect x="346" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="358" y="129">Identify</text>
+  <text class="h" x="430" y="130">串燒／竹籤</text>
+  <line x1="380" y1="170" x2="430" y2="250" stroke="#2c2416" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="400" cy="195" r="10" class="shape"/>
+  <circle cx="415" cy="220" r="10" class="shape"/>
+  <text class="t" x="346" y="280">長籤 + 圓塊</text>
+  <text class="t" x="346" y="305">邊走邊吃</text>
+  <text class="muted" x="346" y="330">魚糕串通常可</text>
+  <text class="muted" x="346" y="350">蝦串 → 跳過</text>
+
+  <rect class="card" x="620" y="96" width="270" height="260" rx="8"/>
+  <rect x="636" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="648" y="129">Identify</text>
+  <text class="h" x="720" y="130">麵／杯裝</text>
+  <ellipse class="shape" cx="700" cy="210" rx="36" ry="14"/>
+  <path d="M664 205 Q700 160 736 205" fill="#e8e0d0" stroke="#2c2416" stroke-width="2"/>
+  <path d="M680 185 Q700 195 720 180" fill="none" stroke="#2c2416" stroke-width="2"/>
+  <text class="t" x="636" y="260">碗／杯剪影</text>
+  <text class="t" x="636" y="285">熱湯蒸汽線</text>
+  <text class="muted" x="636" y="320">湯頭可能海鮮</text>
+  <text class="muted" x="636" y="340">不明就改點乾的</text>
+
+  <rect class="card" x="910" y="96" width="250" height="260" rx="8"/>
+  <rect x="926" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="938" y="129">Identify</text>
+  <text class="h" x="1010" y="130">甜／點心</text>
+  <circle class="shape" cx="980" cy="195" r="22"/>
+  <path d="M960 195 Q980 175 1000 195" fill="none" stroke="#2c2416" stroke-width="2"/>
+  <rect x="1010" y="180" width="40" height="50" rx="4" class="shape"/>
+  <text class="t" x="926" y="260">圓餅／長條糖</text>
+  <text class="t" x="926" y="285">通常低甲殼風險</text>
+  <text class="muted" x="926" y="320">可作輕食 Backup</text>
+  <text class="muted" x="926" y="340">仍看配料貼紙</text>
+
+  <rect class="card-bad" x="40" y="380" width="720" height="300" rx="8"/>
+  <rect x="56" y="396" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="72" y="413">Warn · Trap</text>
+  <text class="h" x="172" y="414">貝蝦陷阱（市場常見）</text>
+  <path class="ico" d="M620 460 Q650 420 680 460 Q650 500 620 460"/>
+  <path class="ico" d="M720 450 Q755 415 790 455 Q760 490 720 450"/>
+  <path class="ico" d="M820 470 Q850 440 880 470"/>
+  <text class="t" x="56" y="460">陷阱外觀：扇貝／蛤蜊殼形、長鬚蝦剪影、綜合海鮮盤</text>
+  <text class="t" x="56" y="490">招牌寫「해산물／조개／새우」→ 整攤跳過</text>
+  <text class="t" x="56" y="520">「綜合」「海鮮煎餅」名稱模糊 → 先問再開口</text>
+  <text class="t" x="56" y="550">湯飯攤若放 새우젓 碟 → 說 빼주세요 或換攤</text>
+  <text class="muted" x="56" y="595">約束：avoid_crustacean_seafood · 不能保證攤位零交叉</text>
+  <text class="muted" x="56" y="620">策略：先走一圈辨識 → 只點看得懂的非海鮮攤</text>
+  <text class="muted" x="56" y="645">雨天／擁擠：縮短市場時間，改便利店</text>
+
+  <rect class="card-ok" x="780" y="380" width="380" height="300" rx="8"/>
+  <rect x="796" y="396" width="88" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="812" y="413">Safe-ish</text>
+  <text class="h" x="900" y="414">較穩候選</text>
+  <text class="t" x="796" y="460">魚糕串（問清楚）</text>
+  <text class="t" x="796" y="490">蛋類／薯類炸物</text>
+  <text class="t" x="796" y="520">甜點糖餅類</text>
+  <text class="t" x="796" y="550">瓶裝飲料</text>
+  <text class="muted" x="796" y="600">仍 Always Ask</text>
+  <text class="muted" x="796" y="625">不確定 = 不點</text>
+  <text class="muted" x="796" y="650">形狀圖示 ≠ 照片</text>
+</svg>

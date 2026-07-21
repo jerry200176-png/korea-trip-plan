@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Crustacean and Salted Shrimp Warn</title>
+  <desc id="desc">Warn about crustacean and salted shrimp risk; cannot guarantee zero; always ask on site.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-bad { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .warn { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #8a3b2a; }
+      .ico { fill: none; stroke: #8a3b2a; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">甲殼類／蝦醬風險（Warn）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · avoid_crustacean_seafood · 2026-07-21 · 功能：Warn — 無法保證零接觸，務必現場問</text>
+
+  <rect class="card-bad" x="40" y="96" width="1120" height="100" rx="8"/>
+  <rect x="56" y="112" width="64" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="70" y="129">Warn</text>
+  <text class="warn" x="140" y="130">核心訊息：不能寫「完全無甲殼類」</text>
+  <path class="ico" d="M900 145 Q930 120 960 145 Q945 165 920 160"/>
+  <path class="ico" d="M960 145 L980 130 M955 155 L975 160 M950 165 L965 180"/>
+  <circle cx="910" cy="148" r="4" fill="#8a3b2a"/>
+  <circle class="ico" cx="1040" cy="150" r="14"/>
+  <path class="ico" d="M1020 145 L1005 130 M1060 145 L1075 130 M1022 162 L1010 175 M1058 162 L1070 175"/>
+  <text class="t" x="56" y="170">約束：不安排甲殼類主打店；湯飯／小菜仍可能含 새우젓 或海鮮。</text>
+  <text class="muted" x="56" y="192">形狀圖示僅示警，非食物照片</text>
+
+  <rect class="card-bad" x="40" y="216" width="360" height="220" rx="8"/>
+  <text class="h" x="56" y="250">風險 1 · 새우젓</text>
+  <text class="t" x="56" y="285">蝦醬是豬肉湯飯常見調味</text>
+  <text class="t" x="56" y="315">可能已拌入或另碟提供</text>
+  <text class="t" x="56" y="345">必說：새우젓 빼주세요</text>
+  <text class="muted" x="56" y="390">編輯訊號「可不加」≠ 保證</text>
+  <text class="muted" x="56" y="415">上桌仍要目視確認</text>
+
+  <rect class="card-bad" x="420" y="216" width="360" height="220" rx="8"/>
+  <text class="h" x="436" y="250">風險 2 · 配菜誤上</text>
+  <text class="t" x="436" y="285">海鮮煎餅／蝦／蟹小菜</text>
+  <text class="t" x="436" y="315">綜合海鮮套餐名稱模糊</text>
+  <text class="t" x="436" y="345">市場／海邊店風險更高</text>
+  <text class="muted" x="436" y="390">看到就再講約束句</text>
+  <text class="muted" x="436" y="415">或請店員撤換</text>
+
+  <rect class="card-bad" x="800" y="216" width="360" height="220" rx="8"/>
+  <text class="h" x="816" y="250">風險 3 · 廚房交叉</text>
+  <text class="t" x="816" y="285">同一砧板／油鍋可能接觸</text>
+  <text class="t" x="816" y="315">「拿掉」≠ 零殘留</text>
+  <text class="t" x="816" y="345">嚴重過敏者需自行評估</text>
+  <text class="muted" x="816" y="390">本教材：偏好避免，非醫療</text>
+  <text class="muted" x="816" y="415">不確定就不點</text>
+
+  <rect class="card-ok" x="40" y="456" width="720" height="224" rx="8"/>
+  <rect x="56" y="472" width="100" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="72" y="489">Always Ask</text>
+  <text class="h" x="172" y="490">現場三步</text>
+  <text class="t" x="56" y="535">1. 點餐前說：갑각류 해산은 빼 주실 수 있나요?</text>
+  <text class="t" x="56" y="565">2. 湯飯加說：새우젓 빼주세요</text>
+  <text class="t" x="56" y="595">3. 上桌檢查醬碟／配菜；有疑就再問或換</text>
+  <text class="muted" x="56" y="640">結論：Always ask。任何「保證完全無」的宣稱都不採用。</text>
+  <text class="muted" x="56" y="662">來源語境：couple-profile avoid_crustacean_seafood · handbook/food.md</text>
+
+  <rect class="card" x="780" y="456" width="380" height="224" rx="8"/>
+  <text class="h" x="796" y="490">Rescue 備援</text>
+  <text class="t" x="796" y="530">店家無法確認 → 換店</text>
+  <text class="t" x="796" y="560">海鮮主打街 → 改咖啡／便利店</text>
+  <text class="t" x="796" y="590">低體力日不硬試名店</text>
+  <text class="muted" x="796" y="635">安全與節奏 &gt; 打卡</text>
+  <text class="muted" x="796" y="658">見 queue／alt 決策圖</text>
+</svg>

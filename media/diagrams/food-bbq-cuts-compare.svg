@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Korean BBQ Cuts Compare</title>
+  <desc id="desc">Compare common Korean BBQ cuts; couple avoids long queues and prefers simpler cuts.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-warn { fill: #fff8ef; stroke: #8a6b2a; stroke-width: 2; }
+      .card-muted { fill: #f0ebe3; stroke: #6a5d4a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .shape { fill: #e8e0d0; stroke: #2c2416; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">韓式烤肉部位比較（Compare）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · avoid_long_queues · 2026-07-21 · 功能：Compare 常見部位；偏好簡單、少骨頭</text>
+
+  <rect class="card-ok" x="40" y="96" width="1120" height="72" rx="8"/>
+  <rect x="56" y="112" width="80" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="129">Prefer</text>
+  <text class="t" x="152" y="128">兩人偏好：簡單部位、好夾、少骨頭；不追網紅店長隊。排隊風險高就換鄰近普通烤肉或便利店。</text>
+  <text class="muted" x="152" y="150">不發明營業時間；出發前自行查店況</text>
+
+  <rect class="card-ok" x="40" y="188" width="270" height="230" rx="8"/>
+  <rect x="56" y="204" width="88" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="221">簡單</text>
+  <text class="h" x="156" y="222">삼겹살 五花</text>
+  <ellipse class="shape" cx="120" cy="290" rx="40" ry="22"/>
+  <ellipse cx="120" cy="290" rx="28" ry="12" fill="#d4c4a8" stroke="#2c2416" stroke-width="1.5"/>
+  <text class="t" x="56" y="350">最常見入門部位</text>
+  <text class="t" x="56" y="375">層狀長片 · 好辨識</text>
+  <text class="muted" x="56" y="400">本行優先候選</text>
+
+  <rect class="card-ok" x="330" y="188" width="270" height="230" rx="8"/>
+  <rect x="346" y="204" width="88" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="358" y="221">簡單</text>
+  <text class="h" x="446" y="222">목살 梅花</text>
+  <ellipse class="shape" cx="410" cy="290" rx="36" ry="26"/>
+  <text class="t" x="346" y="350">較厚圓片常見</text>
+  <text class="t" x="346" y="375">少骨頭 · 好夾</text>
+  <text class="muted" x="346" y="400">與五花二選一即可</text>
+
+  <rect class="card" x="620" y="188" width="270" height="230" rx="8"/>
+  <rect x="636" y="204" width="88" height="24" rx="4" fill="#2c2416"/>
+  <text class="tag" x="648" y="221">中等</text>
+  <text class="h" x="736" y="222">갈비 排骨</text>
+  <rect class="shape" x="680" y="265" width="70" height="40" rx="6"/>
+  <line x1="695" y1="265" x2="695" y2="305" stroke="#2c2416" stroke-width="2"/>
+  <line x1="715" y1="265" x2="715" y2="305" stroke="#2c2416" stroke-width="2"/>
+  <line x1="735" y1="265" x2="735" y2="305" stroke="#2c2416" stroke-width="2"/>
+  <text class="t" x="636" y="350">帶骨 · 吃較慢</text>
+  <text class="t" x="636" y="375">可說「뼈 적은」</text>
+  <text class="muted" x="636" y="400">體力／時間緊可跳過</text>
+
+  <rect class="card-warn" x="910" y="188" width="250" height="230" rx="8"/>
+  <rect x="926" y="204" width="88" height="24" rx="4" fill="#8a6b2a"/>
+  <text class="tag" x="938" y="221">進階</text>
+  <text class="h" x="1026" y="222">차돌 牛胸</text>
+  <rect class="shape" x="970" y="270" width="55" height="28" rx="3"/>
+  <rect x="978" y="278" width="40" height="12" fill="#d4c4a8" stroke="#2c2416" stroke-width="1"/>
+  <text class="t" x="926" y="350">薄片 · 火候快</text>
+  <text class="t" x="926" y="375">需注意熟度</text>
+  <text class="muted" x="926" y="400">非必須；會烤再點</text>
+
+  <rect class="card-muted" x="40" y="440" width="560" height="240" rx="8"/>
+  <rect x="56" y="456" width="100" height="24" rx="4" fill="#6a5d4a"/>
+  <text class="tag" x="68" y="473">Compare</text>
+  <text class="h" x="172" y="474">部位決策</text>
+  <text class="t" x="56" y="520">先點：삼겹살 或 목살（夠兩人）</text>
+  <text class="t" x="56" y="550">加點：若還餓再加一盤簡單肉</text>
+  <text class="t" x="56" y="580">跳過：內臟／곱창套餐（見點餐句卡）</text>
+  <text class="t" x="56" y="610">不喝酒：拒燒酒；點生菜與水</text>
+  <text class="muted" x="56" y="650">形狀僅示意部位外觀，非照片</text>
+
+  <rect class="card-warn" x="620" y="440" width="540" height="240" rx="8"/>
+  <rect x="636" y="456" width="120" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="648" y="473">Queue Warn</text>
+  <text class="h" x="772" y="474">避開長排隊</text>
+  <text class="t" x="636" y="520">網紅／打卡店常 &gt;1h → 直接換</text>
+  <text class="t" x="636" y="550">選：一般巷弄烤肉、座位看得見的店</text>
+  <text class="t" x="636" y="580">Backup：便利店飯糰／站內餐</text>
+  <text class="t" x="636" y="610">Jerry：不為打卡犧牲體力與節奏</text>
+  <text class="muted" x="636" y="650">詳見 food-queue-or-alt-decision</text>
+</svg>

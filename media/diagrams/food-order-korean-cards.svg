@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Korean Food Order Phrase Cards</title>
+  <desc id="desc">Explain Korean ordering phrases: no alcohol, no crustaceans, no bones preference, no organ meat, remove salted shrimp sauce.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #2c2416; }
+      .ko { font-family: "Noto Sans KR", "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2f5d3a; }
+      .ko-lg { font-family: "Noto Sans KR", "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 22px; font-weight: 700; fill: #2f5d3a; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">韓文點餐句卡（Explain）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · 可指螢幕給店員 · 2026-07-21 · 功能：Explain 飲食約束短句</text>
+
+  <rect class="card" x="40" y="96" width="560" height="140" rx="8"/>
+  <rect x="56" y="112" width="72" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="68" y="129">Explain</text>
+  <text class="h" x="140" y="130">不喝酒</text>
+  <text class="ko" x="56" y="175">저희는 술을 마시지 않아요</text>
+  <text class="t" x="56" y="205">中文：我們不喝酒</text>
+  <text class="muted" x="56" y="228">拒燒酒／啤酒推銷即可 · 點水或飲料</text>
+
+  <rect class="card" x="620" y="96" width="540" height="140" rx="8"/>
+  <rect x="636" y="112" width="72" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="648" y="129">Explain</text>
+  <text class="h" x="720" y="130">不要甲殼類</text>
+  <text class="ko" x="636" y="175">갑각류 해산은 빼 주실 수 있나요?</text>
+  <text class="t" x="636" y="205">中文：可以不要甲殼類海鮮嗎？</text>
+  <text class="muted" x="636" y="228">蝦／蟹／龍蝦等 · 無法保證廚房零接觸</text>
+
+  <rect class="card" x="40" y="256" width="560" height="140" rx="8"/>
+  <rect x="56" y="272" width="72" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="68" y="289">Explain</text>
+  <text class="h" x="140" y="290">偏好少骨頭／好夾</text>
+  <text class="ko" x="56" y="335">뼈가 적은 걸로 주세요</text>
+  <text class="t" x="56" y="365">中文：請給我骨頭比較少的（部位／份）</text>
+  <text class="muted" x="56" y="388">烤肉／燉煮時可用 · 店員不確定就改點簡單部位</text>
+
+  <rect class="card" x="620" y="256" width="540" height="140" rx="8"/>
+  <rect x="636" y="272" width="72" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="648" y="289">Explain</text>
+  <text class="h" x="720" y="290">不要內臟／雜肉</text>
+  <text class="ko" x="636" y="335">내장이나 곱창은 빼 주세요</text>
+  <text class="t" x="636" y="365">中文：請不要內臟或牛腸類</text>
+  <text class="muted" x="636" y="388">湯飯／烤肉套餐可能含 · 先指菜單再確認</text>
+
+  <rect class="card-ok" x="40" y="416" width="1120" height="160" rx="8"/>
+  <rect x="56" y="432" width="120" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="449">Explain · Key</text>
+  <text class="h" x="192" y="450">蝦醬拿掉（豬肉湯飯必備句）</text>
+  <text class="ko-lg" x="56" y="500">새우젓 빼주세요</text>
+  <text class="t" x="56" y="535">中文：請不要加蝦醬（새우젓）</text>
+  <text class="muted" x="420" y="500">搭配：돼지국밥 하나 주세요（豬肉湯飯一份）</text>
+  <text class="muted" x="420" y="528">Anmok 等店有「可不加」編輯訊號 · 仍須現場說這句</text>
+  <text class="muted" x="420" y="556">不得寫成「完全無甲殼類保證」</text>
+
+  <rect class="card" x="40" y="596" width="1120" height="88" rx="8"/>
+  <text class="h" x="56" y="630">使用方式</text>
+  <text class="t" x="56" y="658">1. 先點主餐 → 2. 念／指上述約束句 → 3. 店員複述時點頭確認 → 4. 上桌再目視醬料與配菜</text>
+  <text class="muted" x="56" y="680">現場仍可能出錯：看到蝦醬／海鮮小菜就再講一次，或換餐</text>
+</svg>

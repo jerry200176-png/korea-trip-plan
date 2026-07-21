@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Food Identify Cards</title>
+  <desc id="desc">Identify six meal types with shape cues: pork soup, BBQ, street snack, cafe dessert, convenience, station quick meal.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .ico { fill: none; stroke: #2c2416; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+      .ico-fill { fill: #e8e0d0; stroke: #2c2416; stroke-width: 2; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">餐型辨識卡（Identify）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · 首爾／釜山 · 2026-07-21 · 功能：用形狀線索辨識六種餐型，非食物照片</text>
+
+  <rect class="card" x="40" y="96" width="360" height="280" rx="8"/>
+  <rect x="56" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="129">Identify</text>
+  <text class="h" x="140" y="130">豬肉湯飯 · 국밥</text>
+  <ellipse class="ico-fill" cx="120" cy="210" rx="48" ry="18"/>
+  <path class="ico" d="M72 200 Q120 150 168 200"/>
+  <ellipse cx="120" cy="188" rx="28" ry="10" fill="#c4b89a" stroke="#2c2416" stroke-width="1.5"/>
+  <circle cx="100" cy="186" r="4" fill="#8a6b3a"/>
+  <circle cx="130" cy="182" r="5" fill="#8a6b3a"/>
+  <text class="t" x="200" y="185">熱湯 + 肉片 + 飯</text>
+  <text class="t" x="200" y="208">常見小碟泡菜／醬</text>
+  <text class="t" x="56" y="280">線索：深碗、蒸汽弧線、白／清湯</text>
+  <text class="muted" x="56" y="308">Nikita 優先 · 現場問蝦醬</text>
+  <text class="muted" x="56" y="332">不是保證無甲殼類</text>
+
+  <rect class="card" x="420" y="96" width="360" height="280" rx="8"/>
+  <rect x="436" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="448" y="129">Identify</text>
+  <text class="h" x="520" y="130">韓式烤肉 · 고기구이</text>
+  <rect class="ico-fill" x="468" y="170" width="90" height="70" rx="6"/>
+  <circle cx="513" cy="205" r="28" fill="none" stroke="#2c2416" stroke-width="2.5"/>
+  <circle cx="513" cy="205" r="10" fill="#c4b89a" stroke="#2c2416" stroke-width="1.5"/>
+  <path class="ico" d="M490 175 L500 165 M513 168 L513 155 M536 175 L526 165"/>
+  <text class="t" x="580" y="185">桌面圓烤盤</text>
+  <text class="t" x="580" y="208">夾子／剪刀常見</text>
+  <text class="t" x="436" y="280">線索：烤盤圓環、煙線向上</text>
+  <text class="muted" x="436" y="308">避開長排隊；選簡單部位</text>
+  <text class="muted" x="436" y="332">不喝酒：拒燒酒即可</text>
+
+  <rect class="card" x="800" y="96" width="360" height="280" rx="8"/>
+  <rect x="816" y="112" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="828" y="129">Identify</text>
+  <text class="h" x="900" y="130">街頭小吃 · 길거리</text>
+  <rect class="ico-fill" x="840" y="175" width="70" height="55" rx="4"/>
+  <line class="ico" x1="855" y1="175" x2="855" y2="155"/>
+  <line class="ico" x1="895" y1="175" x2="895" y2="155"/>
+  <ellipse cx="875" cy="200" rx="18" ry="10" fill="#d4a574" stroke="#2c2416" stroke-width="1.5"/>
+  <text class="t" x="940" y="185">攤車／紙托</text>
+  <text class="t" x="940" y="208">邊走邊吃節奏</text>
+  <text class="t" x="816" y="280">線索：小托盤、竹籤、蒸汽</text>
+  <text class="muted" x="816" y="308">市場／夜市常見</text>
+  <text class="muted" x="816" y="332">Warn：海鮮串另卡確認</text>
+
+  <rect class="card" x="40" y="400" width="360" height="280" rx="8"/>
+  <rect x="56" y="416" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="433">Identify</text>
+  <text class="h" x="140" y="434">咖啡甜點 · 카페</text>
+  <ellipse class="ico-fill" cx="110" cy="520" rx="32" ry="12"/>
+  <path class="ico" d="M78 510 Q110 460 142 510"/>
+  <path class="ico" d="M145 490 Q160 500 145 520"/>
+  <circle cx="100" cy="485" r="6" fill="none" stroke="#2c2416" stroke-width="2"/>
+  <circle cx="118" cy="475" r="8" fill="none" stroke="#2c2416" stroke-width="2"/>
+  <text class="t" x="180" y="495">杯型 + 層狀甜點</text>
+  <text class="t" x="180" y="518">休息／充電節點</text>
+  <text class="t" x="56" y="580">線索：馬克杯耳、蒸汽圈</text>
+  <text class="muted" x="56" y="608">低體力日優先保留</text>
+  <text class="muted" x="56" y="632">非正餐；可當 Backup</text>
+
+  <rect class="card" x="420" y="400" width="360" height="280" rx="8"/>
+  <rect x="436" y="416" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="448" y="433">Identify</text>
+  <text class="h" x="520" y="434">便利商店 · 편의점</text>
+  <rect class="ico-fill" x="460" y="480" width="55" height="70" rx="3"/>
+  <rect x="468" y="490" width="18" height="28" fill="#fffdf8" stroke="#2c2416" stroke-width="1.5"/>
+  <rect x="490" y="490" width="18" height="28" fill="#fffdf8" stroke="#2c2416" stroke-width="1.5"/>
+  <line class="ico" x1="460" y1="530" x2="515" y2="530"/>
+  <text class="t" x="545" y="505">三角飯糰／杯麵</text>
+  <text class="t" x="545" y="528">飲料・簡易早餐</text>
+  <text class="t" x="436" y="580">線索：貨架格線、門型剪影</text>
+  <text class="muted" x="436" y="608">排隊太久的 Rescue</text>
+  <text class="muted" x="436" y="632">住宿附近 bonus</text>
+
+  <rect class="card" x="800" y="400" width="360" height="280" rx="8"/>
+  <rect x="816" y="416" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="828" y="433">Identify</text>
+  <text class="h" x="900" y="434">車站速食 · 역내</text>
+  <rect class="ico-fill" x="840" y="490" width="80" height="40" rx="4"/>
+  <circle cx="855" cy="545" r="10" fill="#e8e0d0" stroke="#2c2416" stroke-width="2"/>
+  <circle cx="905" cy="545" r="10" fill="#e8e0d0" stroke="#2c2416" stroke-width="2"/>
+  <line class="ico" x1="830" y1="480" x2="930" y2="480"/>
+  <text class="t" x="945" y="505">站內便當／麵</text>
+  <text class="t" x="945" y="528">KTX／轉乘緩衝</text>
+  <text class="t" x="816" y="580">線索：車廂剪影 + 餐盒</text>
+  <text class="muted" x="816" y="608">移動日保底餐</text>
+  <text class="muted" x="816" y="632">不追站外名店排隊</text>
+</svg>
