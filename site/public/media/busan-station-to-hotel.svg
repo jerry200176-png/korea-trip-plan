@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Busan Station to hotel</title>
+  <desc id="desc">Explain options from Busan Station to lodging area TBD; luggage day vs normal day.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-warn { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-rescue { fill: #eef2f7; stroke: #2a4a8a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 16px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 14px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+    </style>
+    <marker id="barr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2f5d3a"/></marker>
+  </defs>
+  <rect class="bg" width="1200" height="640"/>
+  <text class="title" x="48" y="44">釜山站→住宿（Explain）</text>
+  <text class="muted" x="48" y="70">Jerry &amp; Nikita · KTX 抵達後 · 2026-07-21 · 住宿區 TBD · 不寫死票價</text>
+
+  <rect class="card-ok" x="40" y="100" width="220" height="140" rx="8"/>
+  <rect x="56" y="116" width="72" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="68" y="133">起點</text>
+  <text class="h" x="56" y="172">釜山站</text>
+  <text class="t" x="56" y="200">KTX 下車 → 出口</text>
+  <text class="muted" x="56" y="224">先對站名再離月台</text>
+
+  <line x1="260" y1="170" x2="300" y2="170" stroke="#2f5d3a" stroke-width="2.5" marker-end="url(#barr)"/>
+
+  <rect class="card" x="308" y="100" width="260" height="140" rx="8"/>
+  <text class="h" x="324" y="140">地鐵</text>
+  <text class="t" x="324" y="172">T-money 進出站</text>
+  <text class="t" x="324" y="198">Naver Map 選出口</text>
+  <text class="muted" x="324" y="224">適合輕裝／白天</text>
+
+  <rect class="card" x="588" y="100" width="260" height="140" rx="8"/>
+  <text class="h" x="604" y="140">公車</text>
+  <text class="t" x="604" y="172">站外站牌對 App</text>
+  <text class="t" x="604" y="198">行李多時較吃力</text>
+  <text class="muted" x="604" y="224">班次／站點：查官方</text>
+
+  <rect class="card-rescue" x="868" y="100" width="292" height="140" rx="8"/>
+  <rect x="884" y="116" width="88" height="24" rx="4" fill="#2a4a8a"/>
+  <text class="tag" x="896" y="133">Rescue</text>
+  <text class="h" x="884" y="172">計程車</text>
+  <text class="t" x="884" y="198">出示韓文住宿地址</text>
+  <text class="muted" x="884" y="224">行李日預設升級</text>
+
+  <rect class="card-warn" x="40" y="270" width="560" height="200" rx="8"/>
+  <rect x="56" y="286" width="100" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="68" y="303">行李日</text>
+  <text class="h" x="172" y="304">換城抵達當天</text>
+  <text class="t" x="56" y="344">・大件行李＋疲勞 → 優先 Taxi Rescue</text>
+  <text class="t" x="56" y="372">・地鐵轉乘／長步行：可跳過，不硬撐</text>
+  <text class="t" x="56" y="400">・雨天／尖峰：同樣升級計程車</text>
+  <text class="muted" x="56" y="440">目標：安全到房，不是省最多錢</text>
+
+  <rect class="card-ok" x="620" y="270" width="540" height="200" rx="8"/>
+  <rect x="636" y="286" width="100" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="648" y="303">平常日</text>
+  <text class="h" x="752" y="304">已入住、輕裝外出</text>
+  <text class="t" x="636" y="344">・地鐵／公車為預設（T-money）</text>
+  <text class="t" x="636" y="372">・腳累或末班前趕不上 → 再 Taxi</text>
+  <text class="t" x="636" y="400">・住宿區鎖定後：補「站→房」步行段</text>
+  <text class="muted" x="636" y="440">Lodging area TBD · 不預設海雲台／西面</text>
+
+  <rect class="card" x="40" y="500" width="1120" height="100" rx="8"/>
+  <text class="h" x="56" y="540">執行口訣</text>
+  <text class="muted" x="200" y="540">Jerry 看風險；Nikita 看體力負擔</text>
+  <text class="t" x="56" y="570">確認住宿韓文地址 → Naver Map 估時間 → 行李日偏 Taxi／平常日偏地鐵 → 票價與班次一律查官方</text>
+</svg>

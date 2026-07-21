@@ -717,6 +717,195 @@ media:
   generation_tool: null
   generation_date: null
   purpose_note: Explain low-energy Day 2 path
+- id: incheon-arrival-flow
+  type: map
+  subject: Incheon arrival flow from TPE prep through ICN to lodging
+  usage_scope:
+  - transport
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/incheon-arrival-flow.svg
+  web_path: site/public/media/incheon-arrival-flow.svg
+  pdf_path: media/diagrams/incheon-arrival-flow.svg
+  source_url: media/diagrams/incheon-arrival-flow.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original arrival flow diagram · Korea trip handbook · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Orient/Explain teaching diagram; airline/D1-dependent steps marked; no fixed fares
+  alt_zh: 仁川入境動線：桃園準備、下機、入境、行李、海關、SIM／現金／T-money 到住宿
+  alt_en: Incheon arrival flow from TPE prep through immigration, baggage, customs, and SIM/cash/T-money to lodging
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Orient|Explain Day 1 airport arrival sequence and dependent steps; teaching visual, not decoration
+- id: arex-vs-airport-bus
+  type: map
+  subject: AREX vs airport bus vs taxi rescue compare for ICN to lodging
+  usage_scope:
+  - transport
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/arex-vs-airport-bus.svg
+  web_path: site/public/media/arex-vs-airport-bus.svg
+  pdf_path: media/diagrams/arex-vs-airport-bus.svg
+  source_url: media/diagrams/arex-vs-airport-bus.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original transfer compare diagram · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Compare diagram with time ranges; lodging unlocked; taxi as Rescue
+  alt_zh: AREX、機場巴士與計程車救援比較：轉乘、行李、時間範圍、塞車與低體力建議
+  alt_en: Compare AREX, airport bus, and taxi rescue across transfers, luggage, time ranges, traffic, and low-energy fit
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Compare|Rescue airport-to-city transfer modes when lodging area is still TBD; teaching visual, not decoration
+- id: seoul-busan-ktx-journey
+  type: map
+  subject: Seoul lodging to Busan Station KTX journey orientation
+  usage_scope:
+  - transport
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/seoul-busan-ktx-journey.svg
+  web_path: site/public/media/seoul-busan-ktx-journey.svg
+  pdf_path: media/diagrams/seoul-busan-ktx-journey.svg
+  source_url: media/diagrams/seoul-busan-ktx-journey.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original KTX journey diagram · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Orient diagram; Date Pending banner; no fake times or prices
+  alt_zh: 首爾到釜山 KTX 動線：退房、車站緩衝、月台、座位、行李到釜山站
+  alt_en: Seoul to Busan KTX journey from lodging buffer through platform, seat, and luggage to Busan Station
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Orient Seoul–Busan KTX move-day sequence with tickets not purchased; teaching visual, not decoration
+- id: busan-station-to-hotel
+  type: map
+  subject: Busan Station to lodging options for luggage day vs normal day
+  usage_scope:
+  - transport
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/busan-station-to-hotel.svg
+  web_path: site/public/media/busan-station-to-hotel.svg
+  pdf_path: media/diagrams/busan-station-to-hotel.svg
+  source_url: media/diagrams/busan-station-to-hotel.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original Busan station transfer diagram · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Explain diagram; lodging area TBD; no fixed fares
+  alt_zh: 釜山站到住宿：地鐵、公車、計程車選項，區分行李日與平常日
+  alt_en: Busan Station to lodging via metro, bus, or taxi; luggage day versus normal day
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Explain|Rescue last-mile options from Busan Station when lodging is TBD; teaching visual, not decoration
+- id: lost-wrong-train-recovery
+  type: map
+  subject: Rescue decision tree for wrong direction, missed stop, missed KTX, last train gone
+  usage_scope:
+  - transport
+  - emergency
+  - pdf
+  - credits
+  local_path: media/diagrams/lost-wrong-train-recovery.svg
+  web_path: site/public/media/lost-wrong-train-recovery.svg
+  pdf_path: media/diagrams/lost-wrong-train-recovery.svg
+  source_url: media/diagrams/lost-wrong-train-recovery.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original wrong-train recovery diagram · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Rescue decision tree with Hard Stop; no fake schedules
+  alt_zh: 走錯車救援樹：坐反、錯過站、錯過 KTX、末班已過的第一步、不要做與 Hard Stop
+  alt_en: Lost or wrong-train rescue tree covering wrong direction, missed stop, missed KTX, and last train gone
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Rescue|Warn recovery actions when trains go wrong, including Hard Stop; teaching visual, not decoration
+- id: transport-card-payment-guide
+  type: map
+  subject: T-money buy top-up tap guide with Naver Map primary and taxi Rescue note
+  usage_scope:
+  - transport
+  - day_page
+  - pdf
+  - credits
+  local_path: media/diagrams/transport-card-payment-guide.svg
+  web_path: site/public/media/transport-card-payment-guide.svg
+  pdf_path: media/diagrams/transport-card-payment-guide.svg
+  source_url: media/diagrams/transport-card-payment-guide.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original transport payment guide · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Explain diagram; Google Maps limit noted; no exact fares
+  alt_zh: 交通卡付款指南：T-money 購買加值進出站、Naver Map 為主、Google Maps 限制、計程車為救援
+  alt_en: Transport card payment guide for T-money, Naver Map as primary, Google Maps limits, and taxi as rescue
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Explain|Warn|Rescue transit card and map tool use; teaching visual, not decoration
+- id: offline-emergency-transport-card
+  type: map
+  subject: Compact offline emergency transport card with 112/119 and lodging placeholders
+  usage_scope:
+  - transport
+  - emergency
+  - pdf
+  - credits
+  local_path: media/diagrams/offline-emergency-transport-card.svg
+  web_path: site/public/media/offline-emergency-transport-card.svg
+  pdf_path: media/diagrams/offline-emergency-transport-card.svg
+  source_url: media/diagrams/offline-emergency-transport-card.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original offline emergency transport card · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Rescue/Warn offline card; lodging placeholders; no network and dead phone steps
+  alt_zh: 離線緊急交通卡：112／119、計程車短語、住宿占位、無網路與手機沒電步驟
+  alt_en: Offline emergency transport card with 112/119, taxi phrase, lodging blanks, and no-network or dead-phone steps
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Rescue|Warn printable offline emergency transport card; teaching visual, not decoration
 kto_candidates:
 - id: kto-visitkorea-seoul-overview
   title: VisitKorea — Seoul destination photography (candidate)

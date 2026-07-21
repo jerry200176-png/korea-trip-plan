@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">AREX vs Airport Bus vs Taxi</title>
+  <desc id="desc">Compare transfer modes from ICN to lodging area across burden, time range, traffic, and low-energy fit.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f4ed; }
+      .card { fill: #fffdf8; stroke: #2c2416; stroke-width: 2; }
+      .card-ok { fill: #f3f7f2; stroke: #2f5d3a; stroke-width: 2; }
+      .card-warn { fill: #fff5f2; stroke: #8a3b2a; stroke-width: 2; }
+      .card-rescue { fill: #eef2f7; stroke: #2a4a8a; stroke-width: 2; }
+      .title { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 28px; font-weight: 700; fill: #2c2416; }
+      .h { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 15px; font-weight: 700; fill: #2c2416; }
+      .t { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; fill: #3a3124; }
+      .muted { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 12px; fill: #6a5d4a; }
+      .tag { font-family: "Noto Sans TC", "DejaVu Sans", sans-serif; font-size: 12px; font-weight: 700; fill: #fffdf8; }
+      .th { font-family: "Noto Sans TC", "Noto Sans KR", "DejaVu Sans", sans-serif; font-size: 13px; font-weight: 700; fill: #2c2416; }
+    </style>
+  </defs>
+  <rect class="bg" width="1200" height="720"/>
+  <text class="title" x="48" y="44">AREX vs 機場巴士 vs Taxi（Compare）</text>
+  <text class="muted" x="48" y="68">Jerry &amp; Nikita · ICN→住宿 · 2026-07-21 · 住宿區未鎖定 · 時間用 RANGE，非訂票時刻</text>
+
+  <rect class="card" x="40" y="90" width="200" height="48" rx="6"/>
+  <text class="th" x="56" y="120">比較維度</text>
+  <rect class="card-ok" x="250" y="90" width="290" height="48" rx="6"/>
+  <text class="th" x="266" y="120">AREX（機場鐵路）</text>
+  <rect class="card" x="550" y="90" width="290" height="48" rx="6"/>
+  <text class="th" x="566" y="120">機場巴士</text>
+  <rect class="card-rescue" x="850" y="90" width="310" height="48" rx="6"/>
+  <text class="th" x="866" y="120">Taxi Rescue</text>
+
+  <rect class="card" x="40" y="148" width="200" height="52" rx="6"/>
+  <text class="t" x="56" y="180">轉乘次數</text>
+  <rect class="card-ok" x="250" y="148" width="290" height="52" rx="6"/>
+  <text class="t" x="266" y="180">常需地鐵／步行接駁</text>
+  <rect class="card" x="550" y="148" width="290" height="52" rx="6"/>
+  <text class="t" x="566" y="180">視停靠點；可能少轉</text>
+  <rect class="card-rescue" x="850" y="148" width="310" height="52" rx="6"/>
+  <text class="t" x="866" y="180">門到門 · 0 轉乘</text>
+
+  <rect class="card" x="40" y="210" width="200" height="52" rx="6"/>
+  <text class="t" x="56" y="242">行李負擔</text>
+  <rect class="card-ok" x="250" y="210" width="290" height="52" rx="6"/>
+  <text class="t" x="266" y="242">上下月台／轉乘較重</text>
+  <rect class="card" x="550" y="210" width="290" height="52" rx="6"/>
+  <text class="t" x="566" y="242">託運艙；仍要拖到站</text>
+  <rect class="card-rescue" x="850" y="210" width="310" height="52" rx="6"/>
+  <text class="t" x="866" y="242">後車廂 · 負擔最低</text>
+
+  <rect class="card" x="40" y="272" width="200" height="52" rx="6"/>
+  <text class="t" x="56" y="304">時間 RANGE</text>
+  <rect class="card-ok" x="250" y="272" width="290" height="52" rx="6"/>
+  <text class="t" x="266" y="304">約 40–90+ 分（含接駁）</text>
+  <rect class="card" x="550" y="272" width="290" height="52" rx="6"/>
+  <text class="t" x="566" y="304">約 60–120+ 分（路況）</text>
+  <rect class="card-rescue" x="850" y="272" width="310" height="52" rx="6"/>
+  <text class="t" x="866" y="304">約 40–100+ 分（尖峰）</text>
+
+  <rect class="card" x="40" y="334" width="200" height="52" rx="6"/>
+  <text class="t" x="56" y="366">塞車風險</text>
+  <rect class="card-ok" x="250" y="334" width="290" height="52" rx="6"/>
+  <text class="t" x="266" y="366">低（軌道）</text>
+  <rect class="card" x="550" y="334" width="290" height="52" rx="6"/>
+  <text class="t" x="566" y="366">中–高（高速公路）</text>
+  <rect class="card-rescue" x="850" y="334" width="310" height="52" rx="6"/>
+  <text class="t" x="866" y="366">中–高（同道路）</text>
+
+  <rect class="card" x="40" y="396" width="200" height="52" rx="6"/>
+  <text class="t" x="56" y="428">步行／出口</text>
+  <rect class="card-ok" x="250" y="396" width="290" height="52" rx="6"/>
+  <text class="t" x="266" y="428">站內步行可能偏長</text>
+  <rect class="card" x="550" y="396" width="290" height="52" rx="6"/>
+  <text class="t" x="566" y="428">停靠點到住宿再走</text>
+  <rect class="card-rescue" x="850" y="396" width="310" height="52" rx="6"/>
+  <text class="t" x="866" y="428">最短步行</text>
+
+  <rect class="card" x="40" y="458" width="200" height="52" rx="6"/>
+  <text class="t" x="56" y="490">住宿區適配</text>
+  <rect class="card-ok" x="250" y="458" width="290" height="52" rx="6"/>
+  <text class="t" x="266" y="490">市區地鐵沿線較合</text>
+  <rect class="card" x="550" y="458" width="290" height="52" rx="6"/>
+  <text class="t" x="566" y="490">看巴士線是否近住宿</text>
+  <rect class="card-rescue" x="850" y="458" width="310" height="52" rx="6"/>
+  <text class="t" x="866" y="490">任何區皆可（費用↑）</text>
+
+  <rect class="card" x="40" y="520" width="200" height="52" rx="6"/>
+  <text class="t" x="56" y="552">深夜抵達</text>
+  <rect class="card-ok" x="250" y="520" width="290" height="52" rx="6"/>
+  <text class="t" x="266" y="552">查末班；過了改 Taxi</text>
+  <rect class="card" x="550" y="520" width="290" height="52" rx="6"/>
+  <text class="t" x="566" y="552">查班次；過了改 Taxi</text>
+  <rect class="card-rescue" x="850" y="520" width="310" height="52" rx="6"/>
+  <text class="t" x="866" y="552">預設 Rescue 方案</text>
+
+  <rect class="card-warn" x="40" y="590" width="700" height="100" rx="8"/>
+  <rect x="56" y="606" width="120" height="24" rx="4" fill="#8a3b2a"/>
+  <text class="tag" x="68" y="623">Low-Energy</text>
+  <text class="h" x="192" y="624">建議（住宿未鎖定）</text>
+  <text class="t" x="56" y="656">行李多／腳累／深夜／雨天 → 直接 Taxi Rescue，不硬撐比較省錢。</text>
+  <text class="t" x="56" y="678">日間輕裝且住宿近 AREX／巴士停靠 → 再選大眾運輸。票價／班次：查官方。</text>
+
+  <rect class="card-ok" x="760" y="590" width="400" height="100" rx="8"/>
+  <rect x="776" y="606" width="88" height="24" rx="4" fill="#2f5d3a"/>
+  <text class="tag" x="788" y="623">決策</text>
+  <text class="h" x="880" y="624">先鎖住宿再選</text>
+  <text class="t" x="776" y="656">本圖不預設江南／弘大等區。</text>
+  <text class="t" x="776" y="678">用 Naver Map 對出口／停靠點。</text>
+</svg>
