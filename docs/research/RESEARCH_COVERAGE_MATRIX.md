@@ -27,8 +27,10 @@ See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for ful
 | 景福宮 | clm-gyeongbokgung-closed-tuesday | rs-011, rs-010 | rs-012 | — |
 | 韓服 | clm-hanbok-shop-unselected | — | rs-010, rs-013, rs-050, rs-062, rs-067, rs-068 | — |
 | Day 3 購物 | clm-day3-shopping-path-thin | — | rs-018–021, rs-061, rs-051 | — |
+| Day 3 購物 | clm-day3-shopping-path-thin | — | rs-018–021, rs-061, rs-051 | — |
 | JYP | clm-jyp-visit-value-unproven | rs-026 | rs-024, rs-025, rs-059 | — |
 | 韓國算命 | clm-fortune-shop-missing | rs-087, rs-088 | rs-065, rs-066, rs-089, rs-090 | rs-blocked-005 |
+| 明洞購物／退稅 | clm-day3-shopping-path-thin | rs-018, rs-020, rs-021, rs-091 | rs-019, rs-023, rs-061 | — |
 | 豬肉湯飯 | clm-pork-soup-shortlist-incomplete | rs-041–043 | rs-037, rs-038, rs-063 | — |
 | Sky Capsule | clm-sky-capsule-ops-unconfirmed | rs-028 | rs-027, rs-029, rs-057, rs-058 | — |
 | Day 6 低體力 | clm-day6-low-energy-variant-missing | — | rs-032, rs-030, rs-060, rs-039, rs-009 | — |
@@ -80,5 +82,5 @@ See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for ful
 ## Matrix reading for Round 2 slices
 
 1. ~~**Day 4 Feasibility Decision**~~ — **done in Round 2A** (fortune Result B; JYP Remove)  
-2. **Nikita Shopping Teaching Slice** — Day 3 path (`clm-day3-shopping-path-thin`)  
+2. ~~**Nikita Shopping Teaching Slice**~~ — Round 2B in progress — Day 3 path (`clm-day3-shopping-path-thin`)  
 3. **Busan Food & Coastal Rhythm** — pork soup + Day 6 low-energy (`clm-pork-soup-shortlist-incomplete`, `clm-day6-low-energy-variant-missing`, `clm-sky-capsule-ops-unconfirmed`)  

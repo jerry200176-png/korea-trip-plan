@@ -1,7 +1,7 @@
 meta:
   product: Jerry & Nikita Korea Trip Textbook Edition
   updated_at: '2026-07-21'
-  round: 2A
+  round: 2B
   quality_correction: '2026-07-20'
   baseline_of: Media Edition Beta + PR
   scoring_rule: Do not inflate. Unknowns lower the score.
@@ -71,9 +71,8 @@ gates:
 dimensions:
   research_depth:
     max: 20
-    score: 11
-    notes: Round 2A added operator/tourism fortune evidence (rs-087–090) and closed fortune P0 via Result B. Day 3 shopping
-      and Busan food shortlists remain open gaps.
+    score: 12
+    notes: Round 2A/2B advanced Day 4 + Day 3 shopping evidence. Busan pork-soup shortlist and Day 6 low-energy remain open.
   factual_trust:
     max: 15
     score: 8
@@ -81,25 +80,20 @@ dimensions:
       and Sotdae language caveats recorded.
   personalization:
     max: 20
-    score: 11
-    notes: Day 4 now protects Jerry low-transfer/low-energy priorities while keeping Nikita fortune as Optional/T-14 and GOT7
-      as theme without forcing JYP HQ.
+    score: 12
+    notes: Day 3/4 now have couple-fit executable paths. Day 2 hanbok vendor and Day 6 coastal rhythm still thin.
   itinerary_logic:
     max: 15
-    score: 10
-    notes: Day 4 Core rewritten to Gangnam light day; JYP removed; fortune droppable; rain/low-energy paths present. Day 3/6
-      teaching slices still pending.
+    score: 11
+    notes: Day 3 Myeongdong-only + Day 4 light day decided. Day 6 postcard risk and Day 2 hanbok logistics remain.
   visual_teaching_value:
     max: 15
-    score: 6
-    notes: Added functional Compare diagram for Day 4 fortune candidates + JYP remove decision. Shopping/Busan teaching visuals
-      still missing.
+    score: 8
+    notes: Day 4 feasibility diagram + Day 3 route/tax/category teaching diagrams added. Busan Identify cards still missing.
   website_ux:
     max: 10
-    score: 6
-    notes: 'PR #10 reader cleanup on main; textbook IA not implemented (Round 1 non-goal).
-
-      '
+    score: 7
+    notes: Shopping page now teaches Day 3 path and tax refund; textbook IA still incomplete overall.
   publication_quality:
     max: 5
     score: 4
@@ -109,7 +103,7 @@ dimensions:
 totals:
   overall:
     max: 100
-    score: 56
+    score: 62
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 p0_open: []
@@ -125,14 +119,18 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_round_1_acceptance
 round_1_top3_roi_gaps:
-- Nikita Shopping Teaching Slice (cosmetics/clothes + tax-refund teaching)
 - Busan Food & Coastal Rhythm (pork soup shortlist + Day 6 low-energy variant)
 - Day 2 Hanbok & Palace Teaching Slice
+- Transport Textbook Slice
 round_2_progress:
   day4_feasibility:
-    status: critic_fix_pending
+    status: merged
     outcome: Fortune Result B Optional/T-14; JYP Remove from Core
-    decision_doc: docs/research/DAY4_FEASIBILITY_DECISION.md
+    updated_at: '2026-07-21'
+  nikita_shopping:
+    status: in_pr
+    outcome: Myeongdong-only Core teaching path + tax refund visuals
+    decision_doc: docs/research/DAY3_SHOPPING_TEACHING.md
     updated_at: '2026-07-21'
 p0_closed:
 - id: p0-fortune-shop

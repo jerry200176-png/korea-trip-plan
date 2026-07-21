@@ -78,11 +78,11 @@ places:
   rain_ok: true
   best_time_of_day: afternoon
   nearby_place_ids: []
-  recommend_reason: 衣服與年輕潮流購物；步行可控制在街區內
+  recommend_reason: 衣服／街頭風格 Optional 備案；不預設塞進 Day 3 Core（轉乘成本高）
   risks: 人潮；夜間較吵；非 GOT7 官方場館
   source_ids:
   - src-naver-map
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   status: Provisional
 - id: plc-myeongdong
   name_zh: 明洞
@@ -105,11 +105,11 @@ places:
   rain_ok: true
   best_time_of_day: afternoon
   nearby_place_ids: []
-  recommend_reason: 化妝品與退稅便利購物帶
-  risks: 人潮；推銷；排長隊熱門店可跳過
+  recommend_reason: Day 3 Core 購物區：化妝品＋衣服同區；退稅與室內備案佳
+  risks: 人潮；高壓推銷；>1h 排隊店可跳過；行李變重就提早收工
   source_ids:
   - src-naver-map
-  checked_at: '2026-07-20'
+  checked_at: '2026-07-21'
   status: Provisional
 - id: plc-haeundae
   name_zh: 海雲台海水浴場
@@ -194,6 +194,34 @@ places:
   risks: 外觀打卡價值低；跨區交通成本高；勿打擾員工
   source_ids:
   - src-jyp
+  - src-naver-map
+  checked_at: '2026-07-21'
+  status: Provisional
+- id: plc-olive-young-myeongdong
+  name_zh: Olive Young 明洞
+  name_ko: 올리브영 명동
+  name_en: Olive Young Myeongdong Global Town
+  type: shopping_district
+  city: Seoul
+  area: Jung
+  address: Myeongdong Global Town area, Jung-gu, Seoul (confirm pin on Naver before visit)
+  naver_map_url: https://map.naver.com/v5/search/%EC%98%AC%EB%A6%AC%EB%B8%8C%EC%98%81%20%EB%AA%85%EB%8F%99
+  google_maps_url: https://maps.google.com/?q=Olive+Young+Myeongdong
+  official_url: https://english.visitkorea.or.kr/svc/contents/contentsView.do?vcontsId=228046
+  opening_hours: Confirm on-site / Naver before visit (flagship-style hours often long; not asserted as fixed here)
+  closed_days: null
+  estimated_dwell_minutes: 120
+  estimated_cost_krw: null
+  reservation_required: false
+  queue_risk: medium
+  indoor_outdoor: indoor
+  rain_ok: true
+  best_time_of_day: morning
+  nearby_place_ids:
+  - plc-myeongdong
+  recommend_reason: Day 3 化妝品主場；可學即時退稅（實體護照）；室內雨備佳
+  risks: 排隊；促銷推銷；液體行李負擔
+  source_ids:
   - src-naver-map
   checked_at: '2026-07-21'
   status: Provisional

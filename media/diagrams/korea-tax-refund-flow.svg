@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">Korea tax refund flow</title>
+  <desc id="d">Immediate vs general tax refund steps with passport warning.</desc>
+  <rect width="1200" height="720" fill="#f7f4ed"/>
+  <text x="48" y="52" font-family="Noto Sans TC, DejaVu Sans, sans-serif" font-size="30" font-weight="700" fill="#2c2416">韓國退稅流程（Explain／Warn）</text>
+  <text x="48" y="82" font-family="Noto Sans TC, DejaVu Sans, sans-serif" font-size="14" fill="#6a5d4a">依據 VisitKorea／VisitSeoul 公開說明整理 · 出發前 T-7 再查官方頁</text>
+  <rect x="48" y="110" width="1104" height="70" rx="8" fill="#fff5f2" stroke="#8a3b2a" stroke-width="2"/>
+  <text x="72" y="152" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="700" fill="#8a3b2a">Warn：必須帶實體護照（影本／照片常無法辦理即時退稅）</text>
+  <rect x="48" y="210" width="540" height="360" rx="8" fill="#fffdf8" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="72" y="250" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#2f5d3a">A 即時退稅（店內）</text>
+  <text x="72" y="295" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">1. 選有即時退稅的店（如 Olive Young 參與店）</text>
+  <text x="72" y="330" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">2. 應稅商品通常達 KRW 15,000 以上</text>
+  <text x="72" y="365" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">3. 結帳出示實體護照驗證</text>
+  <text x="72" y="400" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">4. 扣稅後付款，完成</text>
+  <text x="72" y="450" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">適合明洞大型店・減少機場排隊</text>
+  <text x="72" y="485" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">來源：VisitKorea／VisitSeoul 官方退稅說明</text>
+  <rect x="612" y="210" width="540" height="360" rx="8" fill="#fffdf8" stroke="#2c2416" stroke-width="2"/>
+  <text x="636" y="250" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#2c2416">B 一般退稅（離境）</text>
+  <text x="636" y="295" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">1. 結帳時索取退稅單</text>
+  <text x="636" y="330" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">2. 機場／港口海關確認出口</text>
+  <text x="636" y="365" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">3. 至退稅櫃台或機具退款</text>
+  <text x="636" y="400" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">4. 預留排隊時間，勿卡登機</text>
+  <text x="636" y="450" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">沒護照／店家不提供即時退時走這條</text>
+  <text x="636" y="485" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">金額上限與細則以官方頁為準</text>
+  <rect x="48" y="600" width="1104" height="80" rx="8" fill="#eef5ea" stroke="#2f5d3a" stroke-width="2"/>
+  <text x="72" y="648" font-family="Noto Sans TC, sans-serif" font-size="16" fill="#1f3324">Jerry／Nikita 執行口訣：護照隨身 → 先問「即時退稅可以嗎？」→ 收據收好 → 機場不趕才用一般退稅</text>
+</svg>

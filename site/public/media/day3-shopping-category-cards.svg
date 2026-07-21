@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="t d">
+  <title id="t">Shopping category cards</title>
+  <desc id="d">Identify cosmetics clothes and rest functions for Day 3.</desc>
+  <rect width="1200" height="680" fill="#f7f4ed"/>
+  <text x="48" y="50" font-family="Noto Sans TC, DejaVu Sans, sans-serif" font-size="30" font-weight="700" fill="#2c2416">化妝品／衣服／休息功能卡（Identify）</text>
+  <text x="48" y="80" font-family="Noto Sans TC, DejaVu Sans, sans-serif" font-size="14" fill="#6a5d4a">不是必買清單・是現場決策分類</text>
+  <rect x="40" y="120" width="360" height="420" rx="8" fill="#fff" stroke="#2f5d3a" stroke-width="2"/>
+  <rect x="40" y="120" width="360" height="56" rx="8" fill="#2f5d3a"/>
+  <text x="60" y="155" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#fff">化妝品 Identify</text>
+  <text x="60" y="220" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">主場：Olive Young 明洞</text>
+  <text x="60" y="255" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">先列 3–5 個品類再進店</text>
+  <text x="60" y="290" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">護照・即時退稅</text>
+  <text x="60" y="325" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">排隊 &gt;1h → 換店／改天</text>
+  <text x="60" y="360" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">Warn：促銷話術可拒絕</text>
+  <text x="60" y="410" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">Nikita 優先・可執行</text>
+  <rect x="420" y="120" width="360" height="420" rx="8" fill="#fff" stroke="#2c2416" stroke-width="2"/>
+  <rect x="420" y="120" width="360" height="56" rx="8" fill="#2c2416"/>
+  <text x="440" y="155" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#fff">衣服 Identify</text>
+  <text x="440" y="220" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">主場：明洞主街／室內商場</text>
+  <text x="440" y="255" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">中價位成衣優先</text>
+  <text x="440" y="290" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">不追單一網紅店</text>
+  <text x="440" y="325" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">試穿後再決定退稅店</text>
+  <text x="440" y="360" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">Backup：弘大 Optional</text>
+  <text x="440" y="410" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">低體力可整段刪</text>
+  <rect x="800" y="120" width="360" height="420" rx="8" fill="#fff" stroke="#6a5d4a" stroke-width="2"/>
+  <rect x="800" y="120" width="360" height="56" rx="8" fill="#6a5d4a"/>
+  <text x="820" y="155" font-family="Noto Sans TC, sans-serif" font-size="20" font-weight="700" fill="#fff">休息 Identify</text>
+  <text x="820" y="220" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">化妝後先卸貨休息</text>
+  <text x="820" y="255" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">百貨／商場座位</text>
+  <text x="820" y="290" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">補水・充電・看行李</text>
+  <text x="820" y="325" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">雨天避風點</text>
+  <text x="820" y="360" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">Jerry 體力保護點</text>
+  <text x="820" y="410" font-family="Noto Sans TC, sans-serif" font-size="14" fill="#6a5d4a">沒休息點就不延長逛街</text>
+  <text x="48" y="600" font-family="Noto Sans TC, sans-serif" font-size="15" fill="#3a3124">Compare：熱門 ≠ 必去。只有能降低不確定、服務 Nikita 優先、且不破壞 Jerry 負荷時才保留。</text>
+</svg>

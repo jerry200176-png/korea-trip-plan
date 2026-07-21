@@ -5,19 +5,79 @@ import { mediaById, mediaPublicUrl } from "../lib/data";
 
 const base = siteBase();
 const shop = mediaById("shopping-atmosphere")!;
+const route = mediaById("day3-myeongdong-route")!;
+const tax = mediaById("korea-tax-refund-flow")!;
+const cats = mediaById("day3-shopping-categories")!;
 const icons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-shop", "icon-fortune"].map(
   (id) => mediaById(id)!
 );
 ---
 <Handbook title="購物" current="more">
-  <p class="eyebrow">購物</p>
-  <h1 class="page-title">購物與體驗</h1>
+  <p class="eyebrow">購物教材</p>
+  <h1 class="page-title">明洞購物與退稅</h1>
   <figure class="media-block">
     <img src={mediaPublicUrl(base, shop)} alt={shop.alt_zh} loading="lazy" />
     <figcaption class="media-caption">{shop.alt_zh}</figcaption>
   </figure>
 
+  <section class="surface-warm">
+    <h2 style="margin-top:0">今天怎麼買（Day 3 Core）</h2>
+    <p>明洞<strong>單區</strong>完成化妝品重點與衣服補齊。弘大是 Optional 另段；聖水不進 Day 3。</p>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, route)} alt={route.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{route.alt_zh}</figcaption>
+    </figure>
+  </section>
+
   <section class="surface">
+    <h2 style="margin-top:0">功能分類</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, cats)} alt={cats.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{cats.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>化妝品主場：Olive Young 明洞（帶實體護照）</li>
+      <li>衣服：明洞主街／室內商場；不追超過約 1 小時排隊</li>
+      <li>休息：買完化妝品先卸貨，再決定要不要衣服段</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">退稅怎麼做</h2>
+    <figure class="media-block">
+      <img src={mediaPublicUrl(base, tax)} alt={tax.alt_zh} loading="lazy" />
+      <figcaption class="media-caption">{tax.alt_zh}</figcaption>
+    </figure>
+    <ul class="list">
+      <li>應稅商品通常單次達 15,000 韓元以上才可能退稅（以官方頁為準）</li>
+      <li>即時退稅：店內出示<strong>實體護照</strong>後扣稅付款</li>
+      <li>一般退稅：取退稅單 → 離境海關確認 → 機場退款（預留排隊）</li>
+      <li>出發前 T-7 再查 VisitKorea／VisitSeoul 官方說明</li>
+    </ul>
+  </section>
+
+  <section class="surface-warm">
+    <h2 style="margin-top:0">Nikita 想完成的</h2>
+    <ul class="list">
+      <li>化妝品與衣服（明洞可執行路徑已寫進 Day 3）</li>
+      <li>三眼怪／角色周邊：出發前再查百貨與快閃</li>
+      <li>韓服體驗（店家鎖定後補上）</li>
+      <li>GOT7 靈感：JYP 大樓已自 Core 移除；有官方公開活動再評估 Optional</li>
+    </ul>
+  </section>
+
+  <section class="surface">
+    <h2 style="margin-top:0">Jerry 的節奏提醒</h2>
+    <ul class="list">
+      <li>排隊超過約 1 小時就先跳過</li>
+      <li>低體力：刪衣服 → 只留 Olive Young＋休息 → 或改 Day 4 補</li>
+      <li>雨天改全程室內</li>
+      <li>大件購物盡量留在首爾，避免壓縮釜山休息</li>
+      <li>高壓推銷可以拒絕；不因試用感到虧欠</li>
+    </ul>
+  </section>
+
+  <section class="surface-quiet">
     <h2 style="margin-top:0">體驗速覽</h2>
     <div class="icon-strip">
       {
@@ -29,25 +89,5 @@ const icons = ["icon-hanbok", "icon-palace", "icon-beach", "icon-food", "icon-sh
         ))
       }
     </div>
-  </section>
-
-  <section class="surface-warm">
-    <h2 style="margin-top:0">Nikita 最想買／體驗</h2>
-    <ul class="list">
-      <li>化妝品與衣服（明洞／弘大風格街區為目前暫定錨點）</li>
-      <li>三眼怪／角色周邊：出發前再查百貨與快閃</li>
-      <li>韓服體驗（店家鎖定後補上）</li>
-      <li>GOT7 靈感：JYP 大樓已自 Core 移除（江東區外觀打卡／非訪客體驗）。若出發前出現可公開進入的官方活動，再評估 Optional。</li>
-    </ul>
-  </section>
-
-  <section class="surface">
-    <h2 style="margin-top:0">Jerry 的節奏提醒</h2>
-    <ul class="list">
-      <li>排隊超過約 1 小時就先跳過，除非兩人一起決定一定要</li>
-      <li>粉絲相關停留保持低步行、可刪</li>
-      <li>退稅與海關規定出發前再查官方說明</li>
-      <li>大件購物盡量留在首爾完成，避免壓縮釜山休息</li>
-    </ul>
   </section>
 </Handbook>

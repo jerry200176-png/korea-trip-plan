@@ -449,6 +449,88 @@ media:
   generation_tool: null
   generation_date: null
   purpose_note: Compare fortune feasibility and explain JYP Remove-from-Core; teaching visual, not decoration
+- id: day3-myeongdong-route
+  type: map
+  subject: Myeongdong Day 3 shopping route with low-energy delete order
+  usage_scope:
+  - day_page
+  - shopping
+  - pdf
+  - credits
+  - today
+  local_path: media/diagrams/day3-myeongdong-shopping-route.svg
+  web_path: site/public/media/day3-myeongdong-shopping-route.svg
+  pdf_path: media/diagrams/day3-myeongdong-shopping-route.svg
+  source_url: media/diagrams/day3-myeongdong-shopping-route.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original shopping route diagram · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Orient/Explain diagram for Round 2B
+  alt_zh: 明洞購物路線圖：地鐵、Olive Young、休息、衣服帶與低體力刪減
+  alt_en: Myeongdong shopping route from subway to Olive Young, rest, and clothes stretch
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Orient Day 3 Core path; Compare Hongdae/Seongsu as non-Core
+- id: korea-tax-refund-flow
+  type: map
+  subject: Korea immediate vs general tax refund flowchart with passport warning
+  usage_scope:
+  - shopping
+  - pdf
+  - credits
+  - day_page
+  local_path: media/diagrams/korea-tax-refund-flow.svg
+  web_path: site/public/media/korea-tax-refund-flow.svg
+  pdf_path: media/diagrams/korea-tax-refund-flow.svg
+  source_url: media/diagrams/korea-tax-refund-flow.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original tax-refund flowchart · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Explain/Warn diagram; facts paraphrased from official guides
+  alt_zh: 韓國退稅流程圖：即時退稅與一般退稅，並提醒攜帶實體護照
+  alt_en: Tax refund flowchart comparing immediate and general refund paths
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Explain tax refund steps and warn about physical passport
+- id: day3-shopping-categories
+  type: map
+  subject: Cosmetics clothes and rest Identify cards for Day 3
+  usage_scope:
+  - shopping
+  - pdf
+  - credits
+  - day_page
+  local_path: media/diagrams/day3-shopping-category-cards.svg
+  web_path: site/public/media/day3-shopping-category-cards.svg
+  pdf_path: media/diagrams/day3-shopping-category-cards.svg
+  source_url: media/diagrams/day3-shopping-category-cards.svg
+  source_platform: Original SVG diagram
+  creator: Cursor Agent (original diagram)
+  license: Original work for this project
+  attribution: Original category cards · 2026-07-21
+  downloaded_at: '2026-07-21'
+  checked_at: '2026-07-21'
+  modification_notes: Functional Identify/Compare cards
+  alt_zh: 化妝品、衣服與休息三張功能分類卡
+  alt_en: Identify cards for cosmetics, clothes, and rest functions
+  focal_point: center
+  status: Approved
+  prompt_path: null
+  generation_tool: null
+  generation_date: null
+  purpose_note: Identify shopping functions; not decorative collage
 kto_candidates:
 - id: kto-visitkorea-seoul-overview
   title: VisitKorea — Seoul destination photography (candidate)
