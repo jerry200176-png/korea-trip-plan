@@ -27,6 +27,7 @@ See [`data/claim-evidence-map.yaml`](../../data/claim-evidence-map.yaml) for ful
 | 景福宮 | clm-gyeongbokgung-closed-tuesday | rs-011, rs-010 | rs-012 | — |
 | 韓服 | clm-hanbok-shop-unselected | — | rs-010, rs-013, rs-050, rs-062, rs-067, rs-068 | — |
 | Day 3 購物 | clm-day3-shopping-path-thin | — | rs-018–021, rs-061, rs-051 | — |
+| Day 3 購物 | clm-day3-shopping-path-thin | — | rs-018–021, rs-061, rs-051 | — |
 | JYP | clm-jyp-visit-value-unproven | rs-026 | rs-024, rs-025, rs-059 | — |
 | 韓國算命 | clm-fortune-shop-missing | rs-087, rs-088 | rs-065, rs-066, rs-089, rs-090 | rs-blocked-005 |
 | 明洞購物／退稅 | clm-day3-shopping-path-thin | rs-018, rs-020, rs-021, rs-091 | rs-019, rs-023, rs-061 | — |
