@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
   <title id="title">Busan Station to hotel</title>
-  <desc id="desc">Explain options from Busan Station to lodging area TBD; luggage day vs normal day.</desc>
+  <desc id="desc">Explain options from Busan Station to lodging area pending; luggage day vs normal day.</desc>
   <defs>
     <style>
       .bg { fill: #f7f4ed; }
@@ -19,7 +19,7 @@
   </defs>
   <rect class="bg" width="1200" height="640"/>
   <text class="title" x="48" y="44">釜山站→住宿（Explain）</text>
-  <text class="muted" x="48" y="70">Jerry &amp; Nikita · KTX 抵達後 · 2026-07-21 · 住宿區 TBD · 不寫死票價</text>
+  <text class="muted" x="48" y="70">Jerry &amp; Nikita · KTX 抵達後 · 2026-07-21 · 住宿區待定 · 不寫死票價</text>
 
   <rect class="card-ok" x="40" y="100" width="220" height="140" rx="8"/>
   <rect x="56" y="116" width="72" height="24" rx="4" fill="#2f5d3a"/>
@@ -65,7 +65,7 @@
   <text class="t" x="636" y="344">・地鐵／公車為預設（T-money）</text>
   <text class="t" x="636" y="372">・腳累或末班前趕不上 → 再 Taxi</text>
   <text class="t" x="636" y="400">・住宿區鎖定後：補「站→房」步行段</text>
-  <text class="muted" x="636" y="440">Lodging area TBD · 不預設海雲台／西面</text>
+  <text class="muted" x="636" y="440">住宿區待定 · 不預設海雲台／西面</text>
 
   <rect class="card" x="40" y="500" width="1120" height="100" rx="8"/>
   <text class="h" x="56" y="540">執行口訣</text>

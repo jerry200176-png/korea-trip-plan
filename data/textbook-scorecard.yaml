@@ -104,12 +104,15 @@ dimensions:
       Website IA slice retained. Photo guide added to Guides hub; deeper a11y still open.
   publication_quality:
     max: 5
-    score: 4
-    notes: Photo chapter added to handbook PDF; full Textbook PDF restructuring still pending.
+    score: 5
+    notes: >-
+      Textbook PDF restructure: TOC + page numbers, section-aware budgets, Food/Transport/
+      Shopping/Hanbok/Photo/Before chapters; Emergency Quick Pack kept short. Publication
+      ceiling met with evidence; Final Exit still unmet (human review, time-sensitive, D1).
 totals:
   overall:
     max: 100
-    score: 90
+    score: 91
   textbook_final_exit_met: false
   round_1_acceptance_met: true
 p0_open: []
@@ -125,9 +128,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: pending_textbook_final_acceptance
 next_top3_roi_gaps:
-- Full Textbook PDF restructuring
 - Full-product Final Audit
 - Final Acceptance Packet
+- Remaining D1 date dependency honesty
 round_2_progress:
   day4_feasibility:
     status: merged
@@ -181,10 +184,17 @@ round_2_progress:
     merge_sha: 4c7d46e046ed98cc7d4f2e66de749e6669d859f9
     pr: 22
   photo_memory:
-    status: in_pr
+    status: merged
     decision_doc: docs/research/PHOTO_MEMORY_TEXTBOOK.md
     updated_at: '2026-07-21'
-    branch: cursor/textbook-photo-memory-e48c
+    merged_at: '2026-07-21'
+    merge_sha: 02f6464591ad3c38585c777aecb6b0f8daddb130
+    pr: 23
+  pdf_restructure:
+    status: in_pr
+    decision_doc: docs/research/TEXTBOOK_PDF_RESTRUCTURE.md
+    updated_at: '2026-07-21'
+    branch: cursor/textbook-pdf-restructure-e48c
 p0_closed:
 - id: p0-fortune-shop
   summary: 'Closed by Round 2A Result B: fortune demoted to Optional/T-14; Core no longer requires an unfeasible shop.'
@@ -263,3 +273,11 @@ score_deltas_photo_memory_2026_07_21:
   - publication unchanged at 4 (compact Photo chapter only; full PDF restructure next)
   - overall 88→90 but textbook_final_exit_met remains false (human review, publication floor, time-sensitive partial, D1 dates)
   - no Booking Ready / Final approved claims
+
+score_deltas_pdf_restructure_2026_07_21:
+  from_overall: 90
+  to_overall: 91
+  evidence:
+  - publication_quality +1 to 5 via Textbook Edition TOC, section budgets, teaching chapters
+  - other dimensions unchanged this slice
+  - overall 90→91; textbook_final_exit_met remains false (human review pending; time-sensitive partial; D1)

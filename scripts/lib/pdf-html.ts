@@ -43,7 +43,7 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2;
 .cover {
   box-sizing: border-box;
   width: 100%;
-  height: 270mm;
+  height: 250mm;
   display: block;
   padding: 0;
   break-after: page;
@@ -75,11 +75,31 @@ h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; line-height: 1.2;
 .cover .lede { font-size: 11pt; color: var(--color-ink-muted); max-width: 30em; margin: 0 0 8pt; }
 .cover .meta { margin: 0; font-size: 10.5pt; }
 .intro h2, .toc h2 { margin-top: 0; }
-.toc li { margin: 5pt 0; border-bottom: 1px solid var(--color-border); padding-bottom: 4pt; break-inside: avoid; page-break-inside: avoid; }
+.toc-list { list-style: none; padding: 0; margin: 8pt 0 0; }
+.toc-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10pt;
+  margin: 5pt 0;
+  border-bottom: 1px dotted var(--color-border);
+  padding-bottom: 4pt;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.toc-title { flex: 1; }
+.toc-page { font-variant-numeric: tabular-nums; color: var(--color-ink-muted); min-width: 1.5em; text-align: right; }
+.sec-marker {
+  font-size: 6.5pt;
+  line-height: 1;
+  margin: 0 0 2pt;
+  color: #cfc6b6;
+  font-family: var(--font-sans);
+}
+.guide-page h2 { margin-top: 0; }
 .divider {
   box-sizing: border-box;
   width: 100%;
-  height: 270mm;
+  height: 250mm;
   display: block;
   break-before: page;
   page-break-before: always;

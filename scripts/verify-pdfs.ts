@@ -4,9 +4,44 @@ import { execSync } from "node:child_process";
 import { distDir, root } from "./lib/root.ts";
 
 const files = [
-  { name: "korea-trip-handbook.pdf", minBytes: 80000, minPages: 10, maxPages: 20 },
-  { name: "emergency-pack.pdf", minBytes: 8000, minPages: 1, maxPages: 3 },
+  // Textbook Edition: content-driven overall ceiling (Media Edition ≤20 replaced, not deleted)
+  {
+    name: "korea-trip-handbook.pdf",
+    minBytes: 80000,
+    minPages: 28,
+    maxPages: 72,
+    maxBytes: 15_000_000,
+    kind: "handbook" as const,
+  },
+  {
+    name: "emergency-pack.pdf",
+    minBytes: 8000,
+    minPages: 1,
+    maxPages: 3,
+    maxBytes: 2_000_000,
+    kind: "emergency" as const,
+  },
 ];
+
+/** Section-aware page budgets — replace hard Media Edition ≤20 for handbook structure. */
+const SECTION_BUDGETS: Record<string, { min: number; max: number }> = {
+  toc: { min: 1, max: 2 },
+  how_to_use: { min: 1, max: 1 },
+  profile: { min: 1, max: 1 },
+  journey: { min: 1, max: 1 },
+  seoul_days: { min: 4, max: 10 },
+  transit_busan_days: { min: 4, max: 10 },
+  food: { min: 2, max: 4 },
+  transport: { min: 2, max: 4 },
+  shopping: { min: 1, max: 3 },
+  hanbok: { min: 1, max: 2 },
+  photo: { min: 2, max: 4 },
+  before: { min: 2, max: 4 },
+  emergency_short: { min: 1, max: 1 },
+  decisions: { min: 1, max: 1 },
+  sources: { min: 1, max: 2 },
+  credits: { min: 2, max: 5 },
+};
 
 const handbookForbidden = [
   "REPLACE_ME",
@@ -57,6 +92,42 @@ function pageCount(p: string, latin: string): number {
   return (latin.match(/\/Type\s*\/Page[^s]/g) || []).length;
 }
 
+function checkSectionBudgets(pdfPath: string, label: string) {
+  if (!hasPdfToText || !hasPdfInfo) {
+    console.warn(`  skip section-budget check (tools missing) for ${label}`);
+    return;
+  }
+  try {
+    const info = execSync(`pdfinfo "${pdfPath}"`, { encoding: "utf8" });
+    const pageCount = Number((info.match(/Pages:\s+(\d+)/) || [])[1] || 0);
+    const counts: Record<string, number> = {};
+    let current = "front";
+    for (let i = 1; i <= pageCount; i++) {
+      const text = execSync(`pdftotext -f ${i} -l ${i} -layout "${pdfPath}" -`, { encoding: "utf8" });
+      const markers = [...text.matchAll(/PDFSEC:([a-z0-9_]+)/g)].map((m) => m[1]);
+      if (markers.length) current = markers[markers.length - 1];
+      counts[current] = (counts[current] || 0) + 1;
+    }
+    for (const [id, budget] of Object.entries(SECTION_BUDGETS)) {
+      const n = counts[id] || 0;
+      if (n < budget.min || n > budget.max) {
+        failed = true;
+        console.error(
+          `${label}: section "${id}" pages=${n}, expected ${budget.min}-${budget.max}`
+        );
+      }
+    }
+    console.log(
+      `  section budgets: ${Object.entries(counts)
+        .map(([k, v]) => `${k}=${v}`)
+        .join(" · ")}`
+    );
+  } catch (e) {
+    failed = true;
+    console.error(`${label}: section-budget check failed: ${e}`);
+  }
+}
+
 function checkNearBlankPages(pdfPath: string, label: string) {
   if (!hasPdfToPpm || !hasPdfToText) {
     console.warn(`  skip blank-page check (tools missing) for ${label}`);
@@ -77,7 +148,8 @@ function checkNearBlankPages(pdfPath: string, label: string) {
         /^(Chapter|Transit)/.test(compact) ||
         compact.includes("Chapter") ||
         compact.startsWith("Transit") ||
-        /首爾·Seoul|釜山·Busan|首爾→釜山·KTX/.test(compact);
+        /首爾·Seoul|釜山·Busan|首爾→釜山·KTX|Food Atlas|Transport|Photo|Before|Credits|PDFSEC:/.test(compact) ||
+        /^我們的韓國·Textbook\d+\/\d+$/.test(compact);
       // Orphan / near-blank: very little extractable content (chapter dividers are image-led)
       if (!intentionalSparse && compact.length > 0 && compact.length < 60) {
         failed = true;
@@ -112,6 +184,10 @@ for (const f of files) {
   if (buf.length < f.minBytes) {
     failed = true;
     console.error(`${f.name} too small: ${buf.length}`);
+  }
+  if (f.maxBytes && buf.length > f.maxBytes) {
+    failed = true;
+    console.error(`${f.name} too large: ${buf.length} > ${f.maxBytes}`);
   }
 
   const latin = buf.toString("latin1");
@@ -199,6 +275,20 @@ for (const f of files) {
       }
     }
     checkNearBlankPages(p, f.name);
+    checkSectionBudgets(p, f.name);
+    if (!/PDFSEC:toc/.test(text) || !/目錄/.test(text)) {
+      failed = true;
+      console.error(`${f.name}: missing TOC / PDFSEC:toc`);
+    }
+    if (!/\d+\s*\/\s*\d+/.test(text) && !Object.keys(SECTION_BUDGETS).every((id) => text.includes(`PDFSEC:${id}`) || id === "front")) {
+      // page numbers live in footer; require section markers instead
+    }
+    for (const id of Object.keys(SECTION_BUDGETS)) {
+      if (!text.includes(`PDFSEC:${id}`)) {
+        failed = true;
+        console.error(`${f.name}: missing section marker PDFSEC:${id}`);
+      }
+    }
   }
 
   console.log(`OK PDF ${f.name} (${buf.length} bytes)`);

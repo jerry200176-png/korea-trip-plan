@@ -1,7 +1,7 @@
 # Textbook Correction Loop
 
-**Updated:** 2026-07-21 (Photo & Memory in progress)  
-**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **90 / 100**  
+**Updated:** 2026-07-21 (Textbook PDF restructure in progress)  
+**Scorecard:** [`data/textbook-scorecard.yaml`](../data/textbook-scorecard.yaml) — Overall **91 / 100**  
 **Epic:** [#11](https://github.com/jerry200176-png/korea-trip-plan/issues/11)
 
 ## Fixed cycle (every round / slice)
@@ -76,11 +76,11 @@ Every slice PR must include: research evidence · personalized rationale · ≥1
 
 ## Next Top 3 ROI gaps
 
-1. Full Textbook PDF restructuring  
-2. Full-product Final Audit  
-3. Final Acceptance Packet  
+1. Full-product Final Audit  
+2. Final Acceptance Packet  
+3. Remaining D1 date dependency honesty  
 
-Website IA merged (PR #22 @ `4c7d46e`). Photo & Memory in progress on `cursor/textbook-photo-memory-e48c`. Overall **90 / 100** does **not** auto-mean Final Exit — human review, publication quality, and time-sensitive coverage still open.
+Photo & Memory merged (PR #23). Textbook PDF restructure in progress on `cursor/textbook-pdf-restructure-e48c`. Overall **91 / 100** does **not** auto-Final — human review still required.
 
 ## Posture
 
