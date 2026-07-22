@@ -18,7 +18,7 @@ milestones:
         title: 查票驗證機場方案（D3 目標 open-jaw）
         done: false
       - id: t120-flight-shortlist
-        title: 建立航班候選清單（含行李總價／時刻／取消條款；尚未購票）
+        title: 建立航班比較表（D3-B≥3 組、D3-A≥2 組；含行李總價／時刻／退改；尚未購票）
         done: false
       - id: t120-keta-watch
         title: 查核 K-ETA／免簽最新規定（官方）
@@ -30,7 +30,10 @@ milestones:
         title: 旅遊保險方案比較（官網條款）
         done: false
       - id: t90-lodging-areas
-        title: 首爾／釜山住宿區域短名單
+        title: 每城最多 3 間住宿 shortlist（鍾路／仁寺洞 vs 海雲台；可免費取消）
+        done: false
+      - id: t90-crustacean-class
+        title: 確認甲殼類是偏好還是過敏（含交叉接觸底線）
         done: false
       - id: t90-passport-photo
         title: 確認護照效期與證件照備份
@@ -47,8 +50,11 @@ milestones:
       - id: t60-book-hotels
         title: 訂房（我們執行；確認碼勿貼公開版）
         done: false
+      - id: t60-hanbok-slot
+        title: T-45～T-30 鎖定韓服可取消時段（主要行程）
+        done: false
       - id: t60-experiences
-        title: 需提早預約的韓服／算命時段調查
+        title: 算命僅在條件滿足時再調查；否則維持可選刪除
         done: false
   - id: t-30
     label: T-30
@@ -75,7 +81,7 @@ milestones:
         title: 行李清單初稿（七天層次＋雨備）
         done: false
       - id: t14-hanbok-fortune
-        title: 韓服店條款鎖定；算命若升級再確認語言／預約
+        title: 確認韓服預約條款；算命僅在條件滿足時再確認，否則維持刪除
         done: false
       - id: t14-instant-camera
         title: 拍立得底片與電池備妥

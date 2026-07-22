@@ -2,6 +2,15 @@
 
 Append-only. Newest first.
 
+## 2026-07-22 — Booking validation criteria (post-D1 discussion)
+
+- **D3:** Remain **Provisional D3-B** with explicit ticket filters (ICN ≤18:00 arrive; PUS ≥13:00 depart; all-in two-person cost; ≤NT$5k premium vs D3-A prefers B). Compare set B×3 / A×2. Plan B = D3-A with hard buffers; else D3-C.
+- **Lodging:** Tighten area pins — Seoul Jongno 3-ga / Insadong south (backup Euljiro 3-ga); Busan Haeundae station—Gunam-ro (backup Seomyeon). Hard floor: Double/Queen, ≤8 min station, free cancel ≥14 days. Max 3 hotels/city. **Not booked.**
+- **Crustacean:** Classification **unknown** — confirm preference vs allergy (+ cross-contact) before restaurant lock.
+- **Hanbok:** Upgrade to **Day 2 main experience**; candidates now; cancelable slot T-45～T-30.
+- **Fortune:** Remain **Optional** with join gates (both want, ≤30 min wait, clear fee/language, on-route).
+- **Docs:** `docs/BOOKING_VALIDATION.md` is the operational checklist. Phase shift: Content Building → Booking Validation. Still **not** Booking Ready.
+
 ## 2026-07-22 — Founder locks D1 dates (D1-A)
 
 - **D1:** Jerry **Confirmed D1-A** — arrive **2027-03-21**, depart **2027-03-27** (7 calendar days / 6 hotel nights).

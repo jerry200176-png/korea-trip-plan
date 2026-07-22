@@ -2,6 +2,8 @@
 
 Only items that require Jerry’s decision. Everything else is decided by the handbook maintainers and logged in [DECISION_LOG.md](DECISION_LOG.md).
 
+**Booking criteria detail:** [BOOKING_VALIDATION.md](BOOKING_VALIDATION.md)
+
 ## D1 — Final travel dates
 
 | Field | Value |
@@ -9,7 +11,6 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 | Decision | **D1-A** — arrive **2027-03-21**, depart **2027-03-27** (7 days / 6 nights) |
 | Status | **Confirmed** (2026-07-22) |
 | Honesty | Dates locked for planning; **not booked** |
-| Re-open | Only via Decision Log if tickets/prices make this week infeasible |
 
 ## D2 — Cities and night split
 
@@ -17,22 +18,24 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 |-------|--------|
 | Decision | **D2-A — Seoul 4N + Busan 2N** |
 | Status | **Confirmed** (2026-07-20) |
-| Re-open | Only via Decision Log if flight/price/transit evidence makes split infeasible |
 
 ## D3 — Flight airports
 
 | Field | Value |
 |-------|--------|
-| Target | **D3-B:** TPE → ICN, PUS → TPE, prefer direct open-jaw; Seoul↔Busan **KTX** |
-| Why still open | Need ticket verification for 2027-03-21/27 (schedule, fare, baggage, times, cancellation) |
-| Status | **Provisional** — do **not** assert specific flights exist |
+| Target | **D3-B** open-jaw TPE→ICN / PUS→TPE + KTX |
+| Status | **Provisional** — ticket verification next |
+| Filters | ICN arrive ≤18:00; PUS depart ≥13:00 (prefer 14–18); all-in two-person cost; if ≤NT$5,000 over D3-A prefer B; bag 20–23kg + clear cancel |
 | Needed by | Before paid tickets |
 
-## Soft open (not formal D1–D3)
+## Soft open (booking validation)
 
-1. Seoul / Busan lodging area + free-cancellation shortlist  
-2. Crustacean: preference vs medical allergy (upgrade emergency phrasing if allergy)  
-3. Hanbok shop + fortune-telling: keep Optional or promote after T-14 lock  
+| Topic | Status | Decision / ask |
+|-------|--------|----------------|
+| Lodging areas | Criteria **Confirmed**; hotels **not booked** | Seoul = Jongno 3-ga / Insadong south (backup Euljiro 3-ga); Busan = Haeundae belt (backup Seomyeon if early PUS / expensive). Max 3 hotels/city. Free cancel ≥14 days. |
+| Crustacean | **unknown** | Ask symptoms/diagnosis + cross-contact tolerance before restaurant lock |
+| Hanbok | **Main Day 2 experience** | Candidates now; cancelable slot T-45～T-30 |
+| Fortune | **Optional** | Join only if both want, wait ≤30 min, clear fee/language, on-route |
 
 ## Explicitly not Founder decisions
 

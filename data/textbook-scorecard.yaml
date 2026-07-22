@@ -141,9 +141,9 @@ time_sensitive_checked_at_coverage: partial
 human_review:
   jerry_nikita_blockers: none_open_product_p0_awaiting_human_acceptance
 next_top3_roi_gaps:
-- Jerry & Nikita human acceptance review on live site + PDFs
-- D3 ticket verification for 2027-03-21 / 2027-03-27 (open-jaw vs ICN round-trip)
-- Lodging area shortlist + free-cancellation candidates (not booked)
+- D3 ticket compare table (B×3 / A×2) for 2027-03-21 / 2027-03-27
+- Lodging shortlist ≤3 hotels per city (free-cancel hard floor)
+- Crustacean classify (preference vs allergy) then restaurant hardening
 round_2_progress:
   day4_feasibility:
     status: merged

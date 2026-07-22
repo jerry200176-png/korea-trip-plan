@@ -8,9 +8,9 @@ const decisions = loadFounderDecisions();
 const days = loadItinerary().days.slice().sort((a, b) => a.day_index - b.day_index);
 const open = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional");
 const softOpen = [
-  "首爾／釜山住宿區域與可免費取消房型",
-  "甲殼類是飲食偏好還是醫療過敏",
-  "韓服店與算命是否正式加入主要行程",
+  "航班查票：時刻、兩人含行李總價、退改（D3-B vs D3-A）",
+  "首爾／釜山各最多 3 間可免費取消住宿候選",
+  "甲殼類是飲食偏好還是醫療過敏（含同鍋／同油可否）",
 ];
 const pendingItems = [...open.map((d) => d.title_zh), ...softOpen];
 const pendingCount = pendingItems.length;

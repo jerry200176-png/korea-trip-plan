@@ -1,6 +1,6 @@
 id: lodging-area-scores-v1
 status: Provisional
-updated: '2026-07-20'
+updated: '2026-07-22'
 depends_on:
   route: seoul-4n-busan-2n
   flight_plan: D3-B
@@ -38,7 +38,7 @@ seoul:
     primary: jongno_insadong
     backup: myeongdong_euljiro
     status: Provisional
-    summary_zh: 4 晚首爾以 Jongno/Insadong 平衡 Day2 景點與 KTX；明洞為購物備選（Day3 一次地鐵）。
+    summary_zh: 首選鍾路3街／仁寺洞南側（安國或鍾路3街步行≤8分）；備援乙支路3街，次選明洞北側。勿住明洞步行街正中央。雙人床＋入住前14天可免費取消。
   areas:
     - id: jongno_insadong
       label: Jongno / Insadong
@@ -409,7 +409,7 @@ busan:
     primary: haeundae
     backup: seomyeon
     status: Provisional
-    summary_zh: 2 晚釜山優先海雲台（Day6 海灘）；西面為豬湯/轉運備選。
+    summary_zh: 首選海雲台站—Gunam-ro—海灘（站≤8分／海灘≤10分）。PUS 起飛早於13:00、房價過高或不可取消／床型不明時改西面。雙人床＋入住前14天可免費取消。
   areas:
     - id: haeundae
       label: Haeundae

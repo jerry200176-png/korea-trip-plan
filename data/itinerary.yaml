@@ -94,13 +94,13 @@ days:
     notes: 目標韓服 shortlist 店
   - start: '10:15'
     end: '12:00'
-    title: 韓服租借＋簡單髮型（候選清單）
+    title: 韓服租借＋簡單髮型（Day 2 主要行程）
     kind: experience
     droppable: false
-    reservation_deadline: T-14 鎖店家條款（語言／押金／歸還）
+    reservation_deadline: T-45～T-30 選定可取消時段；T-7 依天氣確認保暖與雨備
     queue_risk: medium
     plan_b: 改備選店或縮短時長
-    notes: 候選：Hanboknam／Seohwa／Palace Fox 圈；押金或護照以店家為準
+    notes: 主要行程（非可選）。候選 2–3 家：Hanboknam／Seohwa／Palace Fox 圈；現在建清單，不硬鎖店名；押金或護照以店家為準
   - start: '12:00'
     end: '14:00'
     title: 景福宮合照（重點區即可）
@@ -140,7 +140,7 @@ days:
     droppable: true
     plan_b: 直接回住宿
     notes: 不預設兩區都去
-  notes: 'Round 3 Day2 teaching: hanbok shortlist H1–H3; Bukchon retain short; Insadong/Ikseon optional. Shop lock at T-14.'
+  notes: '2026-07-22: 韓服升級為 Day 2 主要行程（Hero Moment）；候選 2–3 家；T-45～T-30 鎖可取消時段。Bukchon retain short; Insadong/Ikseon optional.'
 - id: day-03
   day_index: 3
   theme: 明洞購物教材日・化妝品／衣服／退稅
@@ -233,8 +233,9 @@ days:
   - 街頭散步
   emergency_return: 地鐵／計程車
   status: Provisional
-  notes: 'Round 2A 2026-07-21: JYP HQ removed from Core (exterior-only, Gangdong≠Gangnam). Fortune Result B — no lockable
-    Gangnam+language provider; Optional/T-14 recheck. See docs/research/DAY4_FEASIBILITY_DECISION.md.
+  notes: 'Round 2A 2026-07-21 + 2026-07-22: JYP HQ removed from Core. Fortune remains Optional — join Day 4 only if both want
+    it, wait ≤30 min, fee/language clear, on-route, and does not cut rest/dinner. See docs/research/DAY4_FEASIBILITY_DECISION.md
+    and docs/BOOKING_VALIDATION.md.
 
     '
   blocks:
@@ -254,11 +255,11 @@ days:
     notes: 只在江南／狎鷗亭／可接受短程範圍；避免塞滿
   - start: '15:00'
     end: '17:00'
-    title: 韓國算命（可選／有體力再去・T-14 確認後才執行）
+    title: 韓國算命（可選・僅條件滿足才加入）
     kind: experience
-    reservation_deadline: T-14 必須書面確認英文或中文＋可預約入口；否則跳過
+    reservation_deadline: 必須事先確認費用、語言與可預約入口；等待預估超過 30 分鐘或需跨區則跳過
     queue_risk: medium
-    notes: '候選見 DAY4_FEASIBILITY_DECISION：KoreaTravelEasy 英語檔期現況停用； Sotdae 無書面語言確認。不得硬選不可靠店。
+    notes: '維持 Optional。候選見 DAY4_FEASIBILITY_DECISION。兩人真的想去、等待≤30分、不砍休息／晚餐時才執行；否則刪除不算缺憾。
 
       '
     plan_b: 同區塔羅僅在同樣語言／預約條件滿足時才考慮；否則改休息

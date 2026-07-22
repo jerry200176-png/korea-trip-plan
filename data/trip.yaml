@@ -55,5 +55,6 @@ status: Provisional
 notes: >
   D1 Confirmed D1-A: 2027-03-21 arrive / 2027-03-27 depart (7 calendar days / 6 hotel nights).
   Not booked — flights, lodging, and KTX remain unlocked.
-  D2 Confirmed: Seoul 4N + Busan 2N. D3 Provisional: TPE→ICN / PUS→TPE open-jaw — ticket verification next.
-  Weekday alignment: Day2 Mon (palace open), Day5 Thu KTX, Day6 Fri coast, Day7 Sat depart.
+  D2 Confirmed: Seoul 4N + Busan 2N. D3 Provisional D3-B with ticket filters (see docs/BOOKING_VALIDATION.md).
+  Weekday alignment: Day2 Mon (palace open + hanbok main), Day5 Thu KTX, Day6 Fri coast, Day7 Sat depart.
+  Next: D3 compare table, lodging ≤3/city, crustacean classify, hanbok cancelable slot.
