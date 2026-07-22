@@ -79,7 +79,7 @@ gates.push(
     flightConfirmed
       ? null
       : flightProvisional
-        ? "D3 Provisional — not ticket-verified until D1 dates"
+        ? "D3 Provisional — ticket verification needed for locked dates"
         : "D3 not set",
     data.trip.flight_plan
       ? `flight_plan=${data.trip.flight_plan.founder_option} verified=${data.trip.flight_plan.verified_booking}`
@@ -235,7 +235,7 @@ const md = `# Trip Readiness
 
 Generated: ${checked} (machine report: dist/readiness-report.json)
 
-**Overall:** ${overall} — not Trip Ready until D1 dates locked, D3 ticket-verified, and bookings exist offline.
+**Overall:** ${overall} — not Trip Ready until D3 ticket-verified and bookings exist offline.
 
 | Gate | Status | Blocker |
 |------|--------|---------|
