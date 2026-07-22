@@ -2,14 +2,14 @@
 
 Generated: 2026-07-20 (machine report: dist/readiness-report.json)
 
-**Overall:** blocked — not Trip Ready until D1 dates locked, D3 ticket-verified, and bookings exist offline.
+**Overall:** blocked — not Trip Ready until D3 ticket-verified and bookings exist offline.
 
 | Gate | Status | Blocker |
 |------|--------|---------|
 | foundation | pass | — |
-| dates | blocked | D1 not locked — start_date null |
+| dates | pass | — |
 | route | pass | — |
-| flights | provisional | D3 Provisional — not ticket-verified until D1 dates |
+| flights | provisional | D3 Provisional — ticket verification needed for locked dates |
 | lodging | provisional | No hotel candidates booked |
 | transport | provisional | KTX/flight times not booked |
 | itinerary | provisional | Places/restaurants mostly candidates |

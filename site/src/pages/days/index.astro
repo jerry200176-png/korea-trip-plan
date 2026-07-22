@@ -1,9 +1,11 @@
 ---
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
-import { loadItinerary, mediaById, mediaPublicUrl } from "../../lib/data";
+import { loadItinerary, loadTrip, mediaById, mediaPublicUrl } from "../../lib/data";
+import { formatTripWindow, tripDayLabel } from "../../lib/presentation";
 
 const days = loadItinerary().days.slice().sort((a, b) => a.day_index - b.day_index);
+const trip = loadTrip();
 const base = siteBase();
 const seoul = mediaById("seoul-chapter")!;
 const busan = mediaById("busan-chapter")!;
@@ -12,7 +14,7 @@ const ktx = mediaById("ktx-transition")!;
 <Handbook title="行程" current="days">
   <p class="eyebrow">7 days</p>
   <h1 class="page-title">每日行程</h1>
-  <p class="muted">首爾四晚 · KTX · 釜山兩晚。狀態皆為目前暫定。</p>
+  <p class="muted">首爾四晚 · KTX · 釜山兩晚 · {formatTripWindow(trip)}。狀態皆為目前暫定。</p>
 
   <section class="chapter-visual">
     <img src={mediaPublicUrl(base, seoul)} alt={seoul.alt_zh} loading="lazy" />
@@ -22,14 +24,19 @@ const ktx = mediaById("ktx-transition")!;
     {
       days
         .filter((d) => d.city === "Seoul")
-        .map((d) => (
-          <li>
-            <a href={`${base}days/day-${d.day_index}/`}>
-              <strong>Day {d.day_index}</strong> · {d.theme}
-            </a>
-            <div class="muted">{d.one_priority}</div>
-          </li>
-        ))
+        .map((d) => {
+          const cal = tripDayLabel(trip.start_date, d.day_index);
+          return (
+            <li>
+              <a href={`${base}days/day-${d.day_index}/`}>
+                <strong>Day {d.day_index}</strong>
+                {cal ? ` · ${cal}` : ""}
+                {" "}· {d.theme}
+              </a>
+              <div class="muted">{d.one_priority}</div>
+            </li>
+          );
+        })
     }
   </ul>
 
@@ -41,14 +48,19 @@ const ktx = mediaById("ktx-transition")!;
     {
       days
         .filter((d) => d.city === "Transit")
-        .map((d) => (
-          <li>
-            <a href={`${base}days/day-${d.day_index}/`}>
-              <strong>Day {d.day_index}</strong> · {d.theme}
-            </a>
-            <div class="muted">{d.one_priority}</div>
-          </li>
-        ))
+        .map((d) => {
+          const cal = tripDayLabel(trip.start_date, d.day_index);
+          return (
+            <li>
+              <a href={`${base}days/day-${d.day_index}/`}>
+                <strong>Day {d.day_index}</strong>
+                {cal ? ` · ${cal}` : ""}
+                {" "}· {d.theme}
+              </a>
+              <div class="muted">{d.one_priority}</div>
+            </li>
+          );
+        })
     }
   </ul>
 
@@ -60,14 +72,19 @@ const ktx = mediaById("ktx-transition")!;
     {
       days
         .filter((d) => d.city === "Busan")
-        .map((d) => (
-          <li>
-            <a href={`${base}days/day-${d.day_index}/`}>
-              <strong>Day {d.day_index}</strong> · {d.theme}
-            </a>
-            <div class="muted">{d.one_priority}</div>
-          </li>
-        ))
+        .map((d) => {
+          const cal = tripDayLabel(trip.start_date, d.day_index);
+          return (
+            <li>
+              <a href={`${base}days/day-${d.day_index}/`}>
+                <strong>Day {d.day_index}</strong>
+                {cal ? ` · ${cal}` : ""}
+                {" "}· {d.theme}
+              </a>
+              <div class="muted">{d.one_priority}</div>
+            </li>
+          );
+        })
     }
   </ul>
 </Handbook>

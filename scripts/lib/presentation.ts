@@ -6,7 +6,7 @@ export function statusZh(status: string): string {
   const map: Record<string, string> = {
     Confirmed: "已決定",
     Provisional: "目前暫定",
-    Assumption: "規劃基準",
+    Assumption: "暫定假設",
     DecisionRequired: "還要一起決定",
     Stale: "出發前需重查",
   };
@@ -110,6 +110,41 @@ export function formatTargetMonth(month: string | null | undefined): string {
   return `${m[1]} 年 ${Number(m[2])} 月，日期待決定`;
 }
 
+function parseYmd(iso: string): { y: number; m: number; d: number } | null {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!m) return null;
+  return { y: Number(m[1]), m: Number(m[2]), d: Number(m[3]) };
+}
+
+/** Reader-facing trip window. Prefer locked dates; never claim booked. */
+export function formatTripWindow(trip: {
+  start_date?: string | null;
+  end_date?: string | null;
+  target_month?: string | null;
+}): string {
+  if (trip.start_date && trip.end_date) {
+    const s = parseYmd(trip.start_date);
+    const e = parseYmd(trip.end_date);
+    if (s && e) {
+      if (s.y === e.y && s.m === e.m) {
+        return `${s.y} 年 ${s.m} 月 ${s.d}–${e.d} 日（尚未訂票）`;
+      }
+      return `${s.y} 年 ${s.m} 月 ${s.d} 日–${e.m} 月 ${e.d} 日（尚未訂票）`;
+    }
+  }
+  return formatTargetMonth(trip.target_month);
+}
+
+/** Calendar label for Day N from trip start_date (1-indexed). */
+export function tripDayLabel(startDate: string | null | undefined, dayIndex: number): string | null {
+  if (!startDate || !Number.isFinite(dayIndex) || dayIndex < 1) return null;
+  const s = parseYmd(startDate);
+  if (!s) return null;
+  const dt = new Date(Date.UTC(s.y, s.m - 1, s.d + dayIndex - 1));
+  const weekdays = ["日", "一", "二", "三", "四", "五", "六"];
+  return `${dt.getUTCMonth() + 1} 月 ${dt.getUTCDate()} 日（週${weekdays[dt.getUTCDay()]}）`;
+}
+
 const READER_PLACE_LABELS: Record<string, string> = {
   "plc-jyp-tower": "JYP 周邊打卡",
   "plc-gyeongbokgung": "景福宮",
@@ -146,7 +181,7 @@ export function sanitizeReaderText(text: string | null | undefined): string {
     .replace(/\bOpen Decision\b/gi, "還要一起決定")
     .replace(/\bConfirmed\b/g, "已決定")
     .replace(/\bProvisional\b/g, "目前暫定")
-    .replace(/\bAssumption\b/g, "規劃基準")
+    .replace(/\bAssumption\b/g, "暫定假設")
     .replace(/\bStale\b/g, "出發前需重查")
     .replace(/\bTBD\b/g, "尚未決定")
     .replace(/\bFounder\b/g, "我們")
@@ -157,7 +192,10 @@ export function sanitizeReaderText(text: string | null | undefined): string {
     .replace(/\bend_date\b/g, "回程日")
     .replace(/\bBooking Ready\b/gi, "尚未完成預訂")
     .replace(/\bDate Pending\b/gi, "日期待決定")
-    .replace(/\bTrip Ready\b/gi, "行程就緒")
+    .replace(/\bTrip Ready\b/gi, "可以安心出發")
+    .replace(/\bcrustacean_risk\s*=\s*\w+/gi, "甲殼類風險評級")
+    .replace(/\bcrustacean_risk\b/gi, "甲殼類風險")
+    .replace(/\bqueue_risk\b/gi, "排隊風險")
     .replace(/\bDashboard\b/g, "首頁")
     .replace(/\btrip\.yaml\b/g, "旅程資料")
     .replace(/\bdata\/[a-z0-9_.-]+\.ya?ml\b/gi, "旅程資料")

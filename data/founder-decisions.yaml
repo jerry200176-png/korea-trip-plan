@@ -1,32 +1,37 @@
 decisions:
   - id: D1
     title_zh: 最終旅行日期
-    status: DecisionRequired
-    why_now: 尚未鎖定 start_date/end_date，Dashboard 倒數、機票、住宿、保險、K-ETA 重查窗口與 3 月打包都無法進入 Booking Ready。
+    status: Confirmed
+    founder_selection: D1-A
+    founder_selection_note: Jerry 2026-07-22 確認 D1-A — 2027-03-21 抵達、2027-03-27 離境（7日6晚）；尚未訂票
+    why_now: 日期已鎖定，可開始查票與可取消訂房；仍不可把任何航班／房型寫成已預訂。
     confirmed_facts:
-      - 約 7 天行程意圖（Assumption 層級，見 trip.yaml）
-      - 目標月份可能為 2027-03（Assumption，非 Confirmed）
-      - 每日約 09:00 出門、21:00 回住宿（Confirmed 偏好）
+      - 抵達韓國 2027-03-21（日）；離境 2027-03-27（六）
+      - 共 7 個日曆日、6 晚住宿（Day 1 抵達／Day 7 離境）
+      - Day 2＝3/22（一）韓服＋景福宮，避開景福宮星期二休館
+      - Day 5＝3/25（四）KTX；Day 6＝3/26（五）海岸主拍照日
+      - 此區間無韓國國定假日（3 月國定假日為 3/1）
+      - 每日約 09:00 出門、21:00 回住宿
     assumptions:
-      - 兩人均可配合 March 2027 的氣候與假別
-      - 未與公司／補習等固定班表衝突（未驗證）
+      - 兩人假別與這週可配合（仍請各自再確認公司／課表）
+      - 3 月底仍偏涼；韓服早晨與海雲台海風需洋蔥式穿法
     recommendation: null
     options:
       - id: D1-A
         label: 維持 2027 年 3 月並選定具體起迄（7 日／6 晚）
-        summary: 鎖定一組可購票的日期，使倒數、保險、K-ETA 重查有明確 T- 時間軸。
+        summary: 已選定 2027-03-21 至 2027-03-27。
         impacts:
-          quality: 高 — 可安排連假或低壓時段
-          energy: 中 — 取決於是否選在週末密集日
+          quality: 高 — Day 2 落星期一可進景福宮
+          energy: 中 — 主拍照與移動在平日
           transit_loss: 低
           food: 中 — 3 月非旺季，排隊風險通常較低
           beach_scenery: 中 — 3 月海邊偏涼，需正確期待
           shopping: 中
           cost: 中 — 機票價格隨日期波動
-          research_effort: 低 — 解鎖後續所有 T- 任務
+          research_effort: 低 — 已解鎖查票與訂房搜尋
       - id: D1-B
         label: 改到其他月份（仍約 7 天）
-        summary: 若 3 月不可行，改月並重算氣候、假別、機票。
+        summary: 若查票後整週不可行，可改月並重算氣候與服裝。
         impacts:
           quality: 視月份而定
           energy: 視月份而定
@@ -37,23 +42,23 @@ decisions:
           cost: 中
           research_effort: 高 — 需重跑天氣、服裝、部分營業資訊
       - id: D1-C
-        label: 暫不決定，維持 Assumption
-        summary: 繼續 Provisional 骨架，但不進入購票／訂房。
+        label: 暫不決定
+        summary: 已不採用；日期已鎖定。
         impacts:
-          quality: 低 — 手冊無法進入 Trip Ready
+          quality: n/a
           energy: n/a
           transit_loss: n/a
           food: n/a
           beach_scenery: n/a
           shopping: n/a
-          cost: 低 — 暫無支出
-          research_effort: 低 — 但阻塞後續 ROI
-    decide_by: 任何機票／住宿搜尋或 K-ETA 申請之前
+          cost: n/a
+          research_effort: n/a
+    decide_by: 已決定；若要改期須重新寫入決策紀錄
     reply_legend: |
       D1-A = 維持 2027 年 3 月並選定具體起迄（7 calendar days / 6 hotel nights）
       D1-B = 改到其他月份（仍約 7 天）
-      D1-C = 暫不決定，維持 Assumption（不進 Booking Ready）
-    reply_one_line: "D1: 選 D1-A / D1-B / D1-C — A=2027-03+確切起迄7日6晚；B=改月份仍約7天；C=暫不決定 — 若 A 請寫 YYYY-MM-DD 抵達日 與 YYYY-MM-DD 離境日"
+      D1-C = 暫不決定，維持暫定假設（不進購票）
+    reply_one_line: "D1: 選 D1-A — 抵達 2027-03-21，離境 2027-03-27（7日6晚）"
 
   - id: D2
     title_zh: 城市與停留晚數
@@ -119,24 +124,28 @@ decisions:
     title_zh: 航班機場
     status: Provisional
     founder_selection: D3-B
-    founder_selection_note: Jerry 2026-07-20 選定目標方案 D3-B；D1 前不得斷言特定日期必有直飛或票價
-    why_now: 住宿區評分需 ICN 進城與 PUS 離境假設；機票仍待 D1 後以班次、總價、行李、時刻、取消條款驗證才可 Confirmed。
+    founder_selection_note: >
+      2026-07-22 維持 Provisional D3-B；查票以時刻、兩人含行李完整總價、退改為優先。
+      若 D3-B 比 D3-A 兩人總成本高不超過 NT$5,000 則選 open-jaw；回程 PUS 起飛不早於 13:00。
+    why_now: 日期已鎖定為 2027-03-21／2027-03-27；下一步產出 D3-B≥3 組與 D3-A≥2 組比較表，不可把未購票班次寫成已決定。
     confirmed_facts:
-      - Founder 目標方案：TPE → ICN 入境、PUS → TPE 出境，open-jaw、優先全程直飛；首爾↔釜山 KTX
-      - 台灣常見出發點含 TPE、TSA（本方案鎖 TPE 為目標，非已購票）
-      - 韓國端 ICN（首爾圈）、PUS（釜山）
-      - 不得將「目前或 2027 年必有此航班」寫成 Confirmed 事實
+      - 目標方案：TPE → ICN 入境、PUS → TPE 出境，open-jaw、優先全程直飛；首爾↔釜山 KTX
+      - 去程目標：抵達 ICN 不晚於 18:00
+      - 回程目標：PUS 起飛不早於 13:00（理想 14:00–18:00）
+      - 總價門檻：兩人含行李完整總價若比 D3-A 貴不超過約 NT$5,000，優先 D3-B
+      - 托運比較基準約 20–23 kg；分開購票須兩段都確認退改
+      - 不得將「目前或 2027 年必有此航班」寫成已決定事實
     assumptions:
-      - 兩人持 ROC 護照（Assumption，影響 K-ETA 重查）
+      - 兩人持 ROC 護照（暫定假設，影響 K-ETA 重查）
     recommendation: null
     reply_legend: |
       D3-A = 桃園/松山 ↔ ICN 往返，釜山靠 KTX（Day7 若在釜山可能需回頭飛 ICN）
       D3-B = Open-jaw：TPE → ICN 去、PUS → TPE 回（優先全程直飛；符合 4N+2N）
-      D3-C = 暫不決定機場（維持 TBD）
+      D3-C = 暫不決定機場／重開動線
     options:
       - id: D3-A
         label: 往返 ICN（首爾進出）+ KTX 往返釜山
-        summary: 機票選擇多；需 KTX 日；Day7 若從釜山離境則需回頭或改 PUS 出。
+        summary: Plan B。僅當 D3-B 時刻／總價／可靠性失敗時採用；3/27 ICN 回程最好 20:00 後，且 KTX 抵首爾站至少早於起飛 5 小時。
         impacts:
           quality: 中
           energy: 中 — 可能多一段回頭
@@ -148,7 +157,7 @@ decisions:
           research_effort: 中
       - id: D3-B
         label: Open-jaw：TPE → ICN、PUS → TPE（優先全程直飛）
-        summary: 符合 4N+2N 雙城動線；機票組合較少需比價；最終須在 D1 鎖定後查票驗證。
+        summary: 現行目標。保護 Day 6 海岸與 Day 7 離境緩衝；查票後才能升級為已決定。
         impacts:
           quality: 高 — 少回頭
           energy: 高 — 對腳友善
@@ -159,8 +168,8 @@ decisions:
           cost: 視票價
           research_effort: 中
       - id: D3-C
-        label: 暫不決定，維持 TBD
-        summary: 手冊維持占位；Day1/D7 僅保留緩衝框架。
+        label: 暫不決定／重開動線
+        summary: 若 D3-A/B 都無法滿足安全緩衝，重開回程或日期，不要硬塞 Day 7。
         impacts:
           quality: 低
           energy: n/a
@@ -169,6 +178,6 @@ decisions:
           beach_scenery: n/a
           shopping: n/a
           cost: 低
-          research_effort: 低 — 阻塞 lodging 與機場交通細節
-    decide_by: 機票短名單前
-    reply_one_line: "D3: Provisional D3-B — TPE→ICN、PUS→TPE open-jaw 直飛優先 + KTX；D1 後查票驗證"
+          research_effort: 低 — 阻塞住宿與機場交通細節
+    decide_by: 機票短名單與付費前
+    reply_one_line: "D3: 維持 Provisional D3-B — 優先比較時刻、含行李完整總價與退改；若兩人總成本較 D3-A 高不超過 NT$5,000，選 open-jaw，回程以 PUS 13:00 後為底線"

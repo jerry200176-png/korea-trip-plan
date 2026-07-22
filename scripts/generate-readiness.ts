@@ -44,11 +44,11 @@ gates.push(
 gates.push(
   gate(
     "dates",
-    data.trip.start_date ? "pass" : "blocked",
-    data.trip.start_date ? null : "D1 not locked — start_date null",
-    `target_month=${data.trip.target_month ?? "null"}`,
-    "Founder D1 reply",
-    "founder"
+    data.trip.start_date && data.trip.end_date ? "pass" : "blocked",
+    data.trip.start_date && data.trip.end_date ? null : "D1 not locked — start_date/end_date null",
+    `start_date=${data.trip.start_date ?? "null"} end_date=${data.trip.end_date ?? "null"}`,
+    data.trip.start_date ? "Proceed to D3 ticket verification + lodging shortlist" : "Founder D1 reply",
+    data.trip.start_date ? "both" : "founder"
   )
 );
 
@@ -79,7 +79,7 @@ gates.push(
     flightConfirmed
       ? null
       : flightProvisional
-        ? "D3 Provisional — not ticket-verified until D1 dates"
+        ? "D3 Provisional — ticket verification needed for locked dates"
         : "D3 not set",
     data.trip.flight_plan
       ? `flight_plan=${data.trip.flight_plan.founder_option} verified=${data.trip.flight_plan.verified_booking}`
@@ -235,7 +235,7 @@ const md = `# Trip Readiness
 
 Generated: ${checked} (machine report: dist/readiness-report.json)
 
-**Overall:** ${overall} — not Trip Ready until D1 dates locked, D3 ticket-verified, and bookings exist offline.
+**Overall:** ${overall} — not Trip Ready until D3 ticket-verified and bookings exist offline.
 
 | Gate | Status | Blocker |
 |------|--------|---------|

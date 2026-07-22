@@ -5,11 +5,11 @@
 meta:
   profile_id: couple-jerry-nikita
   status: Confirmed_foundation
-  updated_at: "2026-07-20"
+  updated_at: "2026-07-22"
   pii_policy: first_names_only
   notes: >
     Assembled from founder-confirmed trip.yaml / travelers.yaml / TRIP_BRIEF
-    and explicit Round 1 instructions. Empty arrays mean not yet confirmed.
+    and explicit Round 1 + 2026-07-22 booking-validation discussion. Empty arrays mean not yet confirmed.
 
 travelers:
   - id: trv-jerry
@@ -29,7 +29,9 @@ trip_baseline:
   seoul_nights: 4
   busan_nights: 2
   target_month: "2027-03"
-  d1_exact_dates: DecisionRequired
+  d1_exact_dates: Confirmed
+  start_date: "2027-03-21"
+  end_date: "2027-03-27"
   origin_city: Taipei
   transport_mode: public_transit
   rental_car: false
@@ -77,6 +79,16 @@ constraints:
     - avoid_excessive_walking
   unconfirmed: []
 
+dietary_safety:
+  crustacean_classification: unknown
+  notes: >
+    2026-07-22：尚不足以判定為「僅偏好」或「醫療過敏」。鎖餐廳前必須先分類。
+  confirm_with_travelers:
+    - 吃到蝦、蟹、蝦醬後是否曾出現皮疹、嘴唇／喉嚨腫、喘、嘔吐、暈眩，或曾就醫／被醫師診斷？
+    - 能否接受同鍋、同烤盤、同炸油或共用器具，還是連交叉接觸都必須避免？
+  until_classified: keep_ask_rules_and_phrase_cards_do_not_claim_safe_restaurants
+  if_allergy_signals: treat_as_allergy_standard_before_restaurant_lock
+
 recording:
   devices_confirmed:
     - iPhone 14 (Jerry)
@@ -94,8 +106,28 @@ lodging_preferences:
     - double_bed
     - convenience_store_nearby_bonus
   bathtub_required: false
+  shortlist_rules_ref: docs/BOOKING_VALIDATION.md
+  hard_floor:
+    - non_smoking_private_bath
+    - explicit_one_double_or_queen
+    - station_walk_max_8_minutes
+    - free_cancel_until_14_days_before_checkin
+
+experience_decisions:
+  hanbok:
+    status: main_day2_experience
+    notes: 2026-07-22 升級為 Day 2 主要行程；T-45～T-30 鎖可取消時段；現在建 2–3 家候選，不硬鎖店名。
+  fortune_telling:
+    status: optional
+    join_only_if:
+      - both_want_it
+      - wait_max_30_minutes
+      - fee_language_clear
+      - on_day4_route
+      - does_not_cut_rest_or_dinner_quality
 
 recommendation_rule: >
   Every future stop, restaurant, lodging area, or visual candidate must cite at
   least one concrete field from this profile (nikita_priorities, jerry_priorities,
-  constraints, or trip_baseline). Do not invent feelings or preferences.
+  constraints, dietary_safety, lodging_preferences, experience_decisions, or trip_baseline).
+  Do not invent feelings or preferences.

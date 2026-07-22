@@ -2,7 +2,7 @@
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
 import { relatedGuidesForDay } from "../../lib/guide-links";
-import { loadItinerary, loadPhotoMemory, loadPlaces, loadRestaurants, mediaById, mediaPublicUrl } from "../../lib/data";
+import { loadItinerary, loadPhotoMemory, loadPlaces, loadRestaurants, loadTrip, mediaById, mediaPublicUrl } from "../../lib/data";
 import {
   areaZh,
   cityZh,
@@ -14,6 +14,7 @@ import {
   sanitizeReaderText,
   statusZh,
   transitModeZh,
+  tripDayLabel,
   walkingZh,
 } from "../../lib/presentation";
 
@@ -25,6 +26,8 @@ export function getStaticPaths() {
 const dayParam = Astro.params.day!;
 const dayIndex = Number(dayParam.replace("day-", ""));
 const day = loadItinerary().days.find((d) => d.day_index === dayIndex)!;
+const trip = loadTrip();
+const dayCal = tripDayLabel(trip.start_date, dayIndex);
 const places = Object.fromEntries(loadPlaces().map((p) => [p.id, p]));
 const restaurants = Object.fromEntries(loadRestaurants().map((r) => [r.id, r]));
 const base = siteBase();
@@ -62,7 +65,7 @@ const expectLine =
         : dayIndex === 6
           ? "海岸線兩人照"
           : dayIndex === 4
-            ? "江南輕量日：休息與購物補齊；算命僅在預約確認後"
+            ? "江南輕量日：休息與購物補齊；算命僅在條件滿足時加入"
             : dayIndex === 5
               ? "KTX 移動安頓；票未買前只跟流程"
               : dayIndex === 7
@@ -74,7 +77,7 @@ const photoPlan = (loadPhotoMemory().daily_plans ?? []).find((p: { day: number }
 ---
 <Handbook title={`第 ${day.day_index} 天`} current="days">
   <p class="muted"><a href={`${base}days/`}>← 全部行程</a></p>
-  <p class="eyebrow">Day {day.day_index} · {cityZh(day.city)}</p>
+  <p class="eyebrow">Day {day.day_index}{dayCal ? ` · ${dayCal}` : ""} · {cityZh(day.city)}</p>
   <h1 class="page-title">{sanitizeReaderText(day.theme)}</h1>
   <span class="status status-provisional">{statusZh(day.status)}</span>
 

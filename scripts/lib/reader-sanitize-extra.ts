@@ -63,6 +63,9 @@ export function scrubVisualFunctionLabels(text: string): string {
   out = out.replace(/\bno_alcohol\b/g, "不喝酒");
   out = out.replace(/\bprimary_moment\b/g, "主要時刻");
   out = out.replace(/\bmemory_prompts\b/g, "回憶提示");
+  out = out.replace(/\bcrustacean_risk\s*=\s*\w+/gi, "甲殼類風險評級");
+  out = out.replace(/\bcrustacean_risk\b/gi, "甲殼類風險");
+  out = out.replace(/\bqueue_risk\b/gi, "排隊風險");
   // Wrong Korean crustacean phrase → correct
   out = out.replace(/갑각류 해산은 빼 주실 수 있나요\?/g, "갑각류는 빼 주실 수 있나요?");
   // Cleanup
@@ -84,7 +87,7 @@ export const READER_FORBIDDEN_STATUS_RE =
   /\b(?:Date Pending|Booking Ready)\b/i;
 
 export const READER_FORBIDDEN_SNAKE_RE =
-  /\b(?:avoid_long_queues|avoid_crustacean_seafood|feet_tire_easily|primary_moment|memory_prompts|place_id|foundation_slice|route_option|start_date|end_date|duration_days)\b/;
+  /\b(?:avoid_long_queues|avoid_crustacean_seafood|feet_tire_easily|primary_moment|memory_prompts|place_id|foundation_slice|route_option|start_date|end_date|duration_days|crustacean_risk|queue_risk)\b/;
 
 /** Workflow jargon that must not appear in reader HTML / SVG a11y / PDF text. */
 export const READER_FORBIDDEN_JARGON_RE =

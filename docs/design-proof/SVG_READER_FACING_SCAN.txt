@@ -1,5 +1,5 @@
 svg-reader-facing OK
-scanned_at 2026-07-21T07:38:44.415Z
+scanned_at 2026-07-22T03:20:06.931Z
 roots: site/public/media + media/diagrams
 OK site/public/media/arex-vs-airport-bus.svg
 OK site/public/media/before-trip-timeline.svg

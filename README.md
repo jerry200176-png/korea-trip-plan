@@ -37,7 +37,7 @@ Every important fact is tagged: `Confirmed` | `Provisional` | `Assumption` | `De
 
 ## Open Founder decisions
 
-See [`docs/OPEN_DECISIONS.md`](docs/OPEN_DECISIONS.md) — dates, cities, airports only.
+See [`docs/OPEN_DECISIONS.md`](docs/OPEN_DECISIONS.md) — **D1 dates Confirmed**; **D3 airports** still Provisional until ticket-verified.
 
 ## Privacy
 

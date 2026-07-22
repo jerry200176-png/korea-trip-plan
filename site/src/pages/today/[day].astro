@@ -1,7 +1,7 @@
 ---
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
-import { loadItinerary, loadPlaces, mediaById, mediaPublicUrl } from "../../lib/data";
+import { loadItinerary, loadPlaces, loadTrip, mediaById, mediaPublicUrl } from "../../lib/data";
 import {
   cityZh,
   formatClock,
@@ -9,6 +9,7 @@ import {
   sanitizeReaderText,
   statusZh,
   transitModeZh,
+  tripDayLabel,
 } from "../../lib/presentation";
 
 export function getStaticPaths() {
@@ -19,6 +20,8 @@ export function getStaticPaths() {
 const dayParam = Astro.params.day!;
 const dayIndex = Number(dayParam.replace("day-", ""));
 const day = loadItinerary().days.find((d) => d.day_index === dayIndex)!;
+const trip = loadTrip();
+const dayCal = tripDayLabel(trip.start_date, dayIndex);
 const places = Object.fromEntries(loadPlaces().map((p) => [p.id, p]));
 const base = siteBase();
 const mood = dayIndex === 2 ? mediaById("seoul-palace-gate") : null;
@@ -41,7 +44,7 @@ const transit = nextBlock ? transitModeZh(nextBlock.transit_mode) : null;
   <p class="muted">
     <a href={`${base}today/`}>← 換一天</a>
   </p>
-  <p class="eyebrow">今日執行 · Day {day.day_index} · {cityZh(day.city)}</p>
+  <p class="eyebrow">今日執行 · Day {day.day_index}{dayCal ? ` · ${dayCal}` : ""} · {cityZh(day.city)}</p>
   <h1 class="page-title" style="font-size:1.25rem">{sanitizeReaderText(day.theme)}</h1>
   <span class="status status-provisional">{statusZh(day.status)}</span>
 

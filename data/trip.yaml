@@ -3,8 +3,8 @@ title: Jerry 與 Nikita 韓國旅行
 party_size: 2
 duration_days: 7
 target_month: "2027-03"
-start_date: null
-end_date: null
+start_date: "2027-03-21"
+end_date: "2027-03-27"
 daily_out: "09:00"
 daily_return: "21:00"
 route_option: seoul-4n-busan-2n
@@ -51,8 +51,10 @@ preferences:
     - alien_merch
     - cosmetics
     - clothes
-status: Assumption
+status: Provisional
 notes: >
-  D1 DecisionRequired: March 2027 + 7 calendar days Assumption only; no start_date/end_date.
-  D2 Confirmed: Seoul 4N + Busan 2N. D3 Provisional: TPE→ICN / PUS→TPE open-jaw — not ticket-verified.
-  Night math: Day1 arrive / Day7 depart ⇒ 6 hotel nights.
+  D1 Confirmed D1-A: 2027-03-21 arrive / 2027-03-27 depart (7 calendar days / 6 hotel nights).
+  Not booked — flights, lodging, and KTX remain unlocked.
+  D2 Confirmed: Seoul 4N + Busan 2N. D3 Provisional D3-B with ticket filters (see docs/BOOKING_VALIDATION.md).
+  Weekday alignment: Day2 Mon (palace open + hanbok main), Day5 Thu KTX, Day6 Fri coast, Day7 Sat depart.
+  Next: D3 compare table, lodging ≤3/city, crustacean classify, hanbok cancelable slot.
