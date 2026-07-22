@@ -118,7 +118,7 @@ function riskZh(v: string) {
 
   <section class="surface-quiet">
     <h2 style="margin-top:0">候選店清單</h2>
-    <p class="muted">以下為教材候選清單／占位，不是已訂位清單。</p>
+    <p class="muted">以下為教材候選清單，不是已訂位清單。</p>
   </section>
 
   {
@@ -132,7 +132,7 @@ function riskZh(v: string) {
           {cityZh(r.city)}／{areaZh(r.area)} · {statusZh(r.status)}
         </p>
         <p>
-          甲殼類風險：{riskZh(r.crustacean_risk)} · 排隊：{riskZh(r.queue_risk)}
+          甲殼類風險：{riskZh(r.crustacean_risk)} · 排隊風險：{riskZh(r.queue_risk)}
         </p>
         <p>{sanitizeReaderText(r.recommend_reason)}</p>
         <p class="muted">風險：{sanitizeReaderText(r.risks)}</p>

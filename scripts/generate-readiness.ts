@@ -44,11 +44,11 @@ gates.push(
 gates.push(
   gate(
     "dates",
-    data.trip.start_date ? "pass" : "blocked",
-    data.trip.start_date ? null : "D1 not locked — start_date null",
-    `target_month=${data.trip.target_month ?? "null"}`,
-    "Founder D1 reply",
-    "founder"
+    data.trip.start_date && data.trip.end_date ? "pass" : "blocked",
+    data.trip.start_date && data.trip.end_date ? null : "D1 not locked — start_date/end_date null",
+    `start_date=${data.trip.start_date ?? "null"} end_date=${data.trip.end_date ?? "null"}`,
+    data.trip.start_date ? "Proceed to D3 ticket verification + lodging shortlist" : "Founder D1 reply",
+    data.trip.start_date ? "both" : "founder"
   )
 );
 

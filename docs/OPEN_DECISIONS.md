@@ -6,12 +6,10 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 
 | Field | Value |
 |-------|--------|
-| Question | Exact departure and return dates? Is March 2027 still the target? |
-| Why it blocks | Flights, hotels, weather packing, reservation windows, countdown dashboard |
-| Planning baseline | March 2027, 7 calendar days, Day 1 arrive / Day 7 depart, 6 hotel nights |
-| Current placeholder | **No** `start_date` / `end_date` in repo (Assumption only) |
-| Status | Decision Required |
-| Needed by | Before any paid booking |
+| Decision | **D1-A** — arrive **2027-03-21**, depart **2027-03-27** (7 days / 6 nights) |
+| Status | **Confirmed** (2026-07-22) |
+| Honesty | Dates locked for planning; **not booked** |
+| Re-open | Only via Decision Log if tickets/prices make this week infeasible |
 
 ## D2 — Cities and night split
 
@@ -26,9 +24,15 @@ Only items that require Jerry’s decision. Everything else is decided by the ha
 | Field | Value |
 |-------|--------|
 | Target | **D3-B:** TPE → ICN, PUS → TPE, prefer direct open-jaw; Seoul↔Busan **KTX** |
-| Why still open | Not ticket-verified until D1 dates (schedule, fare, baggage, times, cancellation) |
-| Status | **Provisional** — do **not** assert specific flights exist for 2027 |
-| Needed by | After D1; before paid tickets |
+| Why still open | Need ticket verification for 2027-03-21/27 (schedule, fare, baggage, times, cancellation) |
+| Status | **Provisional** — do **not** assert specific flights exist |
+| Needed by | Before paid tickets |
+
+## Soft open (not formal D1–D3)
+
+1. Seoul / Busan lodging area + free-cancellation shortlist  
+2. Crustacean: preference vs medical allergy (upgrade emergency phrasing if allergy)  
+3. Hanbok shop + fortune-telling: keep Optional or promote after T-14 lock  
 
 ## Explicitly not Founder decisions
 

@@ -6,7 +6,14 @@ import { loadFounderDecisions, loadItinerary, mediaById, mediaPublicUrl } from "
 const base = siteBase();
 const decisions = loadFounderDecisions();
 const days = loadItinerary().days.slice().sort((a, b) => a.day_index - b.day_index);
-const open = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional").slice(0, 3);
+const open = decisions.filter((d) => d.status === "DecisionRequired" || d.status === "Provisional");
+const softOpen = [
+  "首爾／釜山住宿區域與可免費取消房型",
+  "甲殼類是飲食偏好還是醫療過敏",
+  "韓服店與算命是否正式加入主要行程",
+];
+const pendingItems = [...open.map((d) => d.title_zh), ...softOpen];
+const pendingCount = pendingItems.length;
 const hero = mediaById("cover-hero")!;
 const heroSrc = mediaPublicUrl(base, hero);
 
@@ -75,9 +82,9 @@ const replyTemplate = `Jerry & Nikita Review 回覆
   </section>
 
   <section class="surface-quiet">
-    <h2 style="margin-top:0">三個尚待一起決定</h2>
+    <h2 style="margin-top:0">{pendingCount} 個尚待一起決定</h2>
     <ol>
-      {open.map((d) => <li>{d.title_zh}</li>)}
+      {pendingItems.map((item) => <li>{item}</li>)}
     </ol>
     <a class="btn" href={`${base}decisions/`}>打開決策頁</a>
   </section>

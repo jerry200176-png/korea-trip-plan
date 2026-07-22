@@ -73,7 +73,7 @@ function checkFile(rel: string) {
     console.error(`${rel}: missing text status badges`);
   }
   // Status must appear as text, not color-only
-  if (!/已決定|目前暫定|還要一起決定|規劃基準|出發前需重查|暫定|公開版|預覽/.test(html)) {
+  if (!/已決定|目前暫定|還要一起決定|暫定假設|規劃基準|出發前需重查|暫定|公開版|預覽/.test(html)) {
     console.warn(`WARN ${rel}: no reader-facing status keyword in HTML`);
   }
   for (const bad of ["place_id", "foundation_slice", "route_option", "REPLACE_ME", "[place]"]) {

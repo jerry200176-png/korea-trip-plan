@@ -2,6 +2,15 @@
 
 Append-only. Newest first.
 
+## 2026-07-22 — Founder locks D1 dates (D1-A)
+
+- **D1:** Jerry **Confirmed D1-A** — arrive **2027-03-21**, depart **2027-03-27** (7 calendar days / 6 hotel nights).
+- **Rationale:** Day 2 Monday avoids Gyeongbokgung Tuesday closure; Day 5 Thu KTX + Day 6 Fri coast keep photo/move days weekday; no KR public holiday in window; late March slightly less cold than early March.
+- **Honesty:** Dates locked for planning only — **not booked**. Flights/lodging/KTX remain Provisional.
+- **D2:** Remains Confirmed D2-A (Seoul 4N + Busan 2N).
+- **D3:** Remains Provisional D3-B — ticket verification is the next Founder/agent action.
+- **Data:** `trip.yaml` `start_date`/`end_date` set; `status: Provisional` (not Booking Ready).
+
 ## 2026-07-20 — Lodging area scoring v1 (regions only)
 
 - **Decision:** Publish Provisional area scoring in `data/lodging-area-scores.yaml` (14 dimensions × listed Seoul/Busan belts).

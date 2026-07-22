@@ -2,7 +2,7 @@
 import { siteBase } from "../lib/base";
 import Handbook from "../layouts/Handbook.astro";
 import { loadTrip, loadDestinations, loadTravelers } from "../lib/data";
-import { formatTargetMonth, statusZh } from "../lib/presentation";
+import { formatTripWindow, statusZh } from "../lib/presentation";
 
 const trip = loadTrip();
 const destinations = loadDestinations();
@@ -13,10 +13,10 @@ const base = siteBase();
   <h1>旅程概覽</h1>
   <section class="panel">
     <h2>{trip.title}</h2>
-    <p>長度約 {trip.duration_days} 天 · <span class="status status-assumption">{statusZh(trip.status)}</span></p>
-    <p>目標：{formatTargetMonth(trip.target_month)}</p>
+    <p>長度約 {trip.duration_days} 天 · <span class="status status-provisional">{statusZh(trip.status)}</span></p>
+    <p>日期：{formatTripWindow(trip)}</p>
     <p>每日：{trip.daily_out} 出門 / {trip.daily_return} 回住宿</p>
-    <p class="muted">目前是規劃預覽，不是已完成預訂。日期、航班與住宿仍待一起決定。</p>
+    <p class="muted">目前是規劃預覽，不是已完成預訂。航班與住宿仍待一起決定。</p>
   </section>
   <section class="panel">
     <h2>旅客</h2>

@@ -57,7 +57,7 @@ restaurants:
   alternatives_nearby:
   - rst-hapcheon-gukbapjip
   recommend_reason: 近廣安可選／有體力再去圈；Michelin 建議可原味、不加蝦醬／辣椒醬——仍須現場確認
-  risks: 仍可能有交叉污染；尖峰排隊；週三可能休息；crustacean_risk=low 不是保證
+  risks: 仍可能有交叉污染；尖峰排隊；週三可能休息；甲殼類風險評為低仍不是保證零接觸
   source_ids:
   - src-naver-map
   checked_at: '2026-07-21'

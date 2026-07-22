@@ -9,13 +9,14 @@ import {
   areaZh,
   cityZh,
   formatClock,
-  formatTargetMonth,
+  formatTripWindow,
   kindZh,
   placeTypeZh,
   readerRefLabel,
   sanitizeReaderText,
   statusZh,
   transitModeZh,
+  tripDayLabel,
   walkingZh,
 } from "./lib/presentation.ts";
 
@@ -102,7 +103,8 @@ function blockHtml(b: any): string {
 
 function dayHeader(day: any, continued = false): string {
   const cont = continued ? " · 續" : "";
-  return `<div class="day-header"><p class="eyebrow">Day ${day.day_index} · ${cityZh(day.city)}${cont}</p><h1>${sanitizeReaderText(day.theme)}</h1><p><strong>今天最重要：</strong>${sanitizeReaderText(day.one_priority)}</p><p class="meta-row">最晚回住宿 ${day.return_by} · 步行強度 ${walkingZh(day.walking_level)} · <span class="status">${statusZh(day.status)}</span></p><p class="meta-row">區域：${(day.primary_areas || []).map(areaZh).join("／")}</p></div>`;
+  const cal = tripDayLabel(trip.start_date, day.day_index);
+  return `<div class="day-header"><p class="eyebrow">Day ${day.day_index}${cal ? ` · ${cal}` : ""} · ${cityZh(day.city)}${cont}</p><h1>${sanitizeReaderText(day.theme)}</h1><p><strong>今天最重要：</strong>${sanitizeReaderText(day.one_priority)}</p><p class="meta-row">最晚回住宿 ${day.return_by} · 步行強度 ${walkingZh(day.walking_level)} · <span class="status">${statusZh(day.status)}</span></p><p class="meta-row">區域：${(day.primary_areas || []).map(areaZh).join("／")}</p></div>`;
 }
 
 function dayClosing(day: any): string {
@@ -242,7 +244,7 @@ const creditMaps = approvedMaps.slice(0, 16).map(creditItemHtml).join("");
 const photoListStart = approvedIllustrations.length + 1;
 const mapListStart = approvedIllustrations.length + approvedPhotos.length + 1;
 
-const monthLabel = formatTargetMonth(trip.target_month);
+const monthLabel = formatTripWindow(trip);
 
 const tocEntries: { id: string; title: string }[] = [
   { id: "how_to_use", title: "怎麼使用這本書" },
@@ -466,7 +468,7 @@ ${busanMain.map((d) => dayPages(d, dayMedia[d.day_index], "transit_busan_days"))
   ${sec("emergency_short", "Emergency", "緊急離線（摘要）")}
   <p class="big">${emergency.korea.police} 警察 · ${emergency.korea.fire_ambulance} 消防／醫療</p>
   <p>${emergency.korea.mission_name} · ${emergency.korea.mission_phone_note}</p>
-  <p>完整緊急卡、住宿韓文地址占位與離線口訣，請另開 <strong>Emergency／Quick Pack PDF</strong>（保持短小，不膨脹成旅行書）。</p>
+  <p>完整緊急卡、住宿韓文地址待補與離線口訣，請另開 <strong>Emergency／Quick Pack PDF</strong>（保持短小，不膨脹成旅行書）。</p>
   ${diagram("offline-emergency-transport-card", 110)}
   <p lang="ko">${emergency.phrases_ko.help}</p>
   <p lang="ko">${emergency.phrases_ko.ambulance}</p>

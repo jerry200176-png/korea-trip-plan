@@ -76,7 +76,7 @@ days:
   restroom_notes: 宮殿／租借店／咖啡店
   rain_plan: 縮短宮殿戶外；取消北村長坡；改室內休息後提早還韓服
   low_energy_plan: 最近租借店 → 宮殿重點合照 → 刪北村或只留一點 → 提早還衣
-  closure_plan: 若星期二休館（D1 後確認）改昌德宮或其他開放宮殿／韓屋區
+  closure_plan: Day 2 已對齊 2027-03-22（一）；景福宮星期二休館已避開。若臨時休館改昌德宮或其他開放宮殿／韓屋區
   droppable_items:
   - 北村長坡
   - 仁寺洞
@@ -108,7 +108,7 @@ days:
     place_id: plc-gyeongbokgung
     droppable: false
     plan_b: 改其他當日開放宮殿
-    notes: 合格韓服常可免票；星期二休館規則 D1 後對齊
+    notes: 合格韓服常可免票；本日為星期一（2027-03-22），景福宮星期二休館已避開
     queue_risk: medium
   - start: '14:00'
     end: '15:00'
