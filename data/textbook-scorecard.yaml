@@ -126,14 +126,15 @@ product_status_notes: >-
   PR #26 independent artifact critic PASS (Visual + Publication). Overall recomputed to 91.
   Status authorizes Jerry & Nikita human acceptance review only.
   Do not claim Final approved, Booking Ready, or Jerry & Nikita accepted until humans finish review.
-  Textbook Final Exit remains unmet (human review + D1 dates + partial time-sensitive coverage).
+  D1 dates Confirmed (2027-03-21–2027-03-27). Textbook Final Exit remains unmet
+  (human review + D3 ticket verification + partial time-sensitive coverage).
 p0_open: []
 founder_decision_dependencies:
 - id: dep-d1-dates
-  summary: D1 exact dates DecisionRequired — blocks weekday palace alignment, flight buffers, hotel holds, final bookings
+  summary: D1 Confirmed 2027-03-21–2027-03-27 — weekday palace alignment unlocked; hotel holds and final bookings still open
   blocks_round_2_research: false
-  blocks_final_hardening: true
-  notes: Not a Round 1 / Round 2 research P0. Tracked separately from p0-fortune-shop.
+  blocks_final_hardening: false
+  notes: Dates locked for planning only; not booked. Remaining blockers are D3 ticket verify + lodging + T-14/T-7 rechecks.
 license_risks:
 - KTO KOGL candidates not yet rights-confirmed for download
 time_sensitive_checked_at_coverage: partial
@@ -141,8 +142,8 @@ human_review:
   jerry_nikita_blockers: none_open_product_p0_awaiting_human_acceptance
 next_top3_roi_gaps:
 - Jerry & Nikita human acceptance review on live site + PDFs
-- D1 exact travel dates (Founder Decision)
-- Time-sensitive facts revalidation at T-14 / T-7
+- D3 ticket verification for 2027-03-21 / 2027-03-27 (open-jaw vs ICN round-trip)
+- Lodging area shortlist + free-cancellation candidates (not booked)
 round_2_progress:
   day4_feasibility:
     status: merged

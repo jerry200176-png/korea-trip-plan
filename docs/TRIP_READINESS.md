@@ -7,7 +7,7 @@ Generated: 2026-07-20 (machine report: dist/readiness-report.json)
 | Gate | Status | Blocker |
 |------|--------|---------|
 | foundation | pass | — |
-| dates | blocked | D1 not locked — start_date null |
+| dates | pass | — |
 | route | pass | — |
 | flights | provisional | D3 Provisional — not ticket-verified until D1 dates |
 | lodging | provisional | No hotel candidates booked |
