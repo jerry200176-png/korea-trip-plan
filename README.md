@@ -65,3 +65,10 @@ Reinstall:
 ```bash
 npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend" --skill "redesign-existing-projects" --skill "high-end-visual-design" -y
 ```
+
+Also installed [Impeccable](https://github.com/pbakaus/impeccable) under `.cursor/skills/impeccable/` with product truth in `PRODUCT.md`.
+
+```bash
+npx impeccable install --providers=cursor --scope=project -y
+npx impeccable detect site/src
+```
