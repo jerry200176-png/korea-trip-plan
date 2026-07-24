@@ -72,3 +72,10 @@ Also installed [Impeccable](https://github.com/pbakaus/impeccable) under `.curso
 npx impeccable install --providers=cursor --scope=project -y
 npx impeccable detect site/src
 ```
+
+Also installed [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) under `.cursor/skills/ui-ux-pro-max/`. Adapted recommendations live in `design-system/our-first-korea/MASTER.md` (always defer to `DESIGN.md` for palette/type).
+
+```bash
+npx ui-ux-pro-max-cli init --ai cursor
+python3 .cursor/skills/ui-ux-pro-max/scripts/search.py "couple travel journal" --design-system -p "Our First Korea"
+```
