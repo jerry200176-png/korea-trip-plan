@@ -73,10 +73,12 @@ const relatedGuides = relatedGuidesForDay(dayIndex);
 const photoPlan = (loadPhotoMemory().daily_plans ?? []).find((p: { day: number }) => p.day === dayIndex);
 ---
 <Handbook title={`第 ${day.day_index} 天`} current="days">
-  <p class="muted"><a href={`${base}days/`}>← 全部行程</a></p>
-  <p class="eyebrow">Day {day.day_index} · {cityZh(day.city)}</p>
-  <h1 class="page-title">{sanitizeReaderText(day.theme)}</h1>
-  <span class="status status-provisional">{statusZh(day.status)}</span>
+  <a class="back-link" href={`${base}days/`}>← 全部行程</a>
+  <header class="page-intro">
+    <p class="eyebrow">Day {day.day_index} · {cityZh(day.city)}</p>
+    <h1 class="page-title">{sanitizeReaderText(day.theme)}</h1>
+    <span class="status status-provisional">{statusZh(day.status)}</span>
+  </header>
 
   {
     dayMedia && (
@@ -151,21 +153,21 @@ const photoPlan = (loadPhotoMemory().daily_plans ?? []).find((p: { day: number }
     )
   }
 
-  <section class={`surface city-ribbon ${cityClass}`}>
+  <section class={`surface city-ribbon ${cityClass} reveal`}>
     <h2 style="margin-top:0">今天最重要</h2>
-    <p style="font-size:1.1rem">{sanitizeReaderText(day.one_priority)}</p>
+    <p class="priority-text">{sanitizeReaderText(day.one_priority)}</p>
     <p class="muted">
       出門 {day.out_time} · 最晚回住宿 {day.return_by} · 步行強度 {walkingZh(day.walking_level)}
     </p>
     <p class="muted">區域：{(day.primary_areas || []).map(areaZh).join("／")}</p>
   </section>
 
-  <section class="surface-warm">
+  <section class="surface-warm reveal">
     <h2 style="margin-top:0">這一天最期待</h2>
     <p style="margin:0">{sanitizeReaderText(expectLine)}</p>
   </section>
 
-  <section class="surface-quiet">
+  <section class="surface-quiet reveal">
     <h2 style="margin-top:0">時間軸</h2>
     <div class="route-line">
     {
@@ -237,7 +239,7 @@ const photoPlan = (loadPhotoMemory().daily_plans ?? []).find((p: { day: number }
     </div>
   </section>
 
-  <section class="surface">
+  <section class="surface reveal">
     <h2 style="margin-top:0">備案</h2>
     <p>
       <strong>雨備：</strong>

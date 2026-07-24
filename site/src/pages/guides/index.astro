@@ -6,12 +6,14 @@ import { GUIDES_HUB } from "../../lib/guide-links";
 const base = siteBase();
 ---
 <Handbook title="教材" current="guides">
-  <p class="eyebrow">教材入口</p>
-  <h1 class="page-title">旅行教材</h1>
-  <span class="status status-provisional">目前暫定</span>
-  <p class="muted">給 Jerry 與 Nikita 的高價值教材。交通、食物、出發前不再藏在「更多」。</p>
+  <header class="page-intro">
+    <p class="eyebrow">教材入口</p>
+    <h1 class="page-title">旅行教材</h1>
+    <span class="status status-provisional">目前暫定</span>
+    <p class="hero-lede">給 Jerry 與 Nikita 的高價值教材。交通、食物、出發前不再藏在「更多」。</p>
+  </header>
 
-  <nav class="guides-hub" aria-label="教材目錄">
+  <nav class="guides-hub reveal" aria-label="教材目錄">
     <ul class="guides-hub-list">
       {
         GUIDES_HUB.map((g) => (

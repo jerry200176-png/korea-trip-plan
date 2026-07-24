@@ -38,16 +38,19 @@ for (const b of day.blocks) {
 const transit = nextBlock ? transitModeZh(nextBlock.transit_mode) : null;
 ---
 <Handbook title={`今日 · Day ${day.day_index}`} current="today">
-  <p class="muted">
-    <a href={`${base}today/`}>← 換一天</a>
-  </p>
-  <p class="eyebrow">今日執行 · Day {day.day_index} · {cityZh(day.city)}</p>
-  <h1 class="page-title" style="font-size:1.25rem">{sanitizeReaderText(day.theme)}</h1>
-  <span class="status status-provisional">{statusZh(day.status)}</span>
+  <a class="back-link" href={`${base}today/`}>← 換一天</a>
 
-  <section class="surface-warm">
+  <header class="page-intro">
+    <p class="eyebrow">今日執行 · Day {day.day_index} · {cityZh(day.city)}</p>
+    <h1 class="page-title" style="font-size:1.35rem">{sanitizeReaderText(day.theme)}</h1>
+    <div class="meta-row">
+      <span class="status status-provisional">{statusZh(day.status)}</span>
+    </div>
+  </header>
+
+  <section class="surface-warm reveal">
     <h2 style="margin-top:0">今天只做這件事</h2>
-    <p style="font-size:1.15rem;line-height:1.45;margin:0">{sanitizeReaderText(day.one_priority)}</p>
+    <p class="priority-text">{sanitizeReaderText(day.one_priority)}</p>
     <p class="muted" style="margin-top:var(--space-3)">
       最晚回住宿 <strong>{day.return_by}</strong> · 出門目標 {day.out_time}
     </p>
@@ -56,7 +59,7 @@ const transit = nextBlock ? transitModeZh(nextBlock.transit_mode) : null;
   {
     mood && (
       <img
-        class="today-visual"
+        class="today-visual reveal"
         src={mediaPublicUrl(base, mood)}
         alt={mood.alt_zh}
         loading="lazy"
@@ -66,7 +69,7 @@ const transit = nextBlock ? transitModeZh(nextBlock.transit_mode) : null;
 
   {
     nextBlock && (
-      <section class="surface">
+      <section class="surface reveal">
         <h2 style="margin-top:0">下一動</h2>
         <p style="margin:0">
           <strong>{sanitizeReaderText(nextBlock.title)}</strong>
@@ -86,13 +89,14 @@ const transit = nextBlock ? transitModeZh(nextBlock.transit_mode) : null;
     )
   }
 
-  <section class="surface">
+  <section class="surface reveal">
     <h2 style="margin-top:0">一鍵</h2>
     <div class="btn-row">
       {
         mapPlace?.naver_map_url && (
           <a class="btn primary" href={mapPlace.naver_map_url} target="_blank" rel="noreferrer">
             開啟 Naver Map
+            <span class="btn-arrow" aria-hidden="true">→</span>
           </a>
         )
       }
@@ -114,7 +118,7 @@ const transit = nextBlock ? transitModeZh(nextBlock.transit_mode) : null;
     }
   </section>
 
-  <section class="surface-quiet">
+  <section class="surface-quiet reveal">
     <h2 style="margin-top:0">若下雨／體力低</h2>
     <p class="muted" style="margin:0"><strong>雨備：</strong>{sanitizeReaderText(day.rain_plan)}</p>
     <p class="muted"><strong>低體力優先刪除：</strong>{(day.droppable_items || []).map((x: string) => readerRefLabel(String(x), places)).join("、") || sanitizeReaderText(day.low_energy_plan)}</p>

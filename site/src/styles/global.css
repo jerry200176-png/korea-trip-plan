@@ -899,3 +899,267 @@ h1, h2, h3 {
     padding-right: var(--space-5);
   }
 }
+
+/* —— Page intro & reading chrome —— */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-height: 2.5rem;
+  margin: 0 0 var(--space-3);
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-out), transform var(--duration-fast) var(--ease-out);
+}
+
+.back-link:hover {
+  color: var(--color-primary);
+  transform: translateX(-2px);
+}
+
+.page-intro {
+  margin-bottom: var(--space-5);
+}
+
+.page-intro .page-title {
+  margin-bottom: var(--space-2);
+}
+
+.lead {
+  font-size: 1.12rem;
+  line-height: 1.45;
+  margin: var(--space-2) 0 0;
+  text-wrap: pretty;
+}
+
+.priority-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 3.6vw, 1.35rem);
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 0;
+}
+
+/* —— Day picker / chapter rows —— */
+.day-picker {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-4) 0 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.day-picker-link {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr;
+  gap: var(--space-3);
+  align-items: baseline;
+  min-height: var(--tap);
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: color var(--duration-med) var(--ease-out), padding-left var(--duration-med) var(--ease-out);
+}
+
+.day-picker-link:hover,
+.day-picker-link:focus-visible {
+  color: var(--color-accent-warm);
+  padding-left: var(--space-2);
+  outline: none;
+}
+
+.day-picker-index {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.day-picker-theme {
+  font-weight: 600;
+  margin: 0 0 var(--space-1);
+}
+
+.day-picker-hint {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.chapter-block {
+  margin: var(--space-6) 0;
+}
+
+.chapter-block .chapter-visual {
+  margin-bottom: var(--space-3);
+}
+
+.chapter-label {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--space-3);
+}
+
+.chapter-block.seoul .chapter-label {
+  color: var(--color-seoul);
+}
+
+.chapter-block.busan .chapter-label {
+  color: var(--color-busan);
+}
+
+.chapter-block.transit .chapter-label {
+  color: var(--color-accent-warm);
+}
+
+/* —— Decision cards —— */
+.decision-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.decision-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--color-border-strong);
+}
+
+.decision-card.is-confirmed::before {
+  background: var(--color-status-confirmed);
+}
+
+.decision-card.is-provisional::before {
+  background: var(--color-status-provisional);
+}
+
+.decision-card.is-decision::before {
+  background: var(--color-status-decision);
+}
+
+.decision-card h2 {
+  padding-right: 0.5rem;
+}
+
+.decision-option {
+  transition: background var(--duration-med) var(--ease-out), border-color var(--duration-med) var(--ease-out);
+}
+
+.decision-option:hover {
+  background: color-mix(in srgb, var(--color-primary-soft) 55%, var(--color-surface-muted));
+}
+
+/* —— Emergency dial —— */
+.dial-row {
+  display: grid;
+  gap: var(--space-3);
+  margin: var(--space-4) 0 0;
+}
+
+.dial-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-height: var(--tap);
+  padding: var(--space-4);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  border: 1px solid color-mix(in srgb, var(--color-status-danger) 35%, var(--color-border));
+  text-decoration: none;
+  color: var(--color-ink);
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    background var(--duration-med) var(--ease-out),
+    border-color var(--duration-med) var(--ease-out);
+}
+
+.dial-link:hover {
+  background: color-mix(in srgb, var(--color-status-danger) 6%, var(--color-surface));
+  border-color: var(--color-status-danger);
+}
+
+.dial-link:active {
+  transform: scale(0.98);
+}
+
+.dial-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 7vw, 2.25rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  color: var(--color-status-danger);
+  line-height: 1.1;
+}
+
+.dial-label {
+  font-size: 0.9rem;
+  color: var(--color-ink-muted);
+}
+
+/* —— Timeline polish —— */
+.route-line {
+  margin-top: var(--space-5);
+}
+
+.route-node h3 {
+  font-size: 1.05rem;
+  letter-spacing: -0.015em;
+}
+
+.route-node .time {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border-radius: var(--radius-pill);
+  background: color-mix(in srgb, var(--color-accent-warm-soft) 80%, transparent);
+}
+
+.today-visual {
+  width: 100%;
+  max-height: 9rem;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  margin: 0 0 var(--space-4);
+  box-shadow: var(--shadow-soft);
+}
+
+.chapter-visual,
+.day-visual,
+.media-block {
+  box-shadow: 0 10px 28px color-mix(in srgb, var(--color-ink) 5%, transparent);
+}
+
+.guides-hub-label {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+.guides-hub-link {
+  padding: var(--space-4) 0;
+  transition: color var(--duration-med) var(--ease-out), padding-left var(--duration-med) var(--ease-out);
+}
+
+.guides-hub-link:hover,
+.guides-hub-link:focus-visible {
+  padding-left: var(--space-2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal:nth-child(1) { transition-delay: 0ms; }
+  .reveal:nth-child(2) { transition-delay: 40ms; }
+  .reveal:nth-child(3) { transition-delay: 80ms; }
+  .reveal:nth-child(4) { transition-delay: 120ms; }
+  .reveal:nth-child(5) { transition-delay: 160ms; }
+}

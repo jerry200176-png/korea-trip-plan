@@ -2,72 +2,67 @@
 import { siteBase } from "../../lib/base";
 import Handbook from "../../layouts/Handbook.astro";
 import { loadItinerary, mediaById, mediaPublicUrl } from "../../lib/data";
+import { sanitizeReaderText } from "../../lib/presentation";
 
 const days = loadItinerary().days.slice().sort((a, b) => a.day_index - b.day_index);
 const base = siteBase();
 const seoul = mediaById("seoul-chapter")!;
 const busan = mediaById("busan-chapter")!;
 const ktx = mediaById("ktx-transition")!;
+
+const chapters = [
+  {
+    id: "seoul",
+    label: "首爾章節",
+    cityClass: "seoul",
+    media: seoul,
+    days: days.filter((d) => d.city === "Seoul"),
+  },
+  {
+    id: "transit",
+    label: "KTX 移動",
+    cityClass: "transit",
+    media: ktx,
+    days: days.filter((d) => d.city === "Transit"),
+  },
+  {
+    id: "busan",
+    label: "釜山章節",
+    cityClass: "busan",
+    media: busan,
+    days: days.filter((d) => d.city === "Busan"),
+  },
+];
 ---
 <Handbook title="行程" current="days">
-  <p class="eyebrow">7 days</p>
-  <h1 class="page-title">每日行程</h1>
-  <p class="muted">首爾四晚 · KTX · 釜山兩晚。狀態皆為目前暫定。</p>
+  <header class="page-intro">
+    <p class="eyebrow">7 days</p>
+    <h1 class="page-title">每日行程</h1>
+    <p class="hero-lede">首爾四晚 · KTX · 釜山兩晚。狀態皆為目前暫定。</p>
+  </header>
 
-  <section class="chapter-visual">
-    <img src={mediaPublicUrl(base, seoul)} alt={seoul.alt_zh} loading="lazy" />
-    <p class="media-caption">首爾章節</p>
-  </section>
-  <ul class="list">
-    {
-      days
-        .filter((d) => d.city === "Seoul")
-        .map((d) => (
-          <li>
-            <a href={`${base}days/day-${d.day_index}/`}>
-              <strong>Day {d.day_index}</strong> · {d.theme}
-            </a>
-            <div class="muted">{d.one_priority}</div>
-          </li>
-        ))
-    }
-  </ul>
-
-  <section class="chapter-visual">
-    <img src={mediaPublicUrl(base, ktx)} alt={ktx.alt_zh} loading="lazy" />
-    <p class="media-caption">KTX 移動</p>
-  </section>
-  <ul class="list">
-    {
-      days
-        .filter((d) => d.city === "Transit")
-        .map((d) => (
-          <li>
-            <a href={`${base}days/day-${d.day_index}/`}>
-              <strong>Day {d.day_index}</strong> · {d.theme}
-            </a>
-            <div class="muted">{d.one_priority}</div>
-          </li>
-        ))
-    }
-  </ul>
-
-  <section class="chapter-visual">
-    <img src={mediaPublicUrl(base, busan)} alt={busan.alt_zh} loading="lazy" />
-    <p class="media-caption">釜山章節</p>
-  </section>
-  <ul class="list">
-    {
-      days
-        .filter((d) => d.city === "Busan")
-        .map((d) => (
-          <li>
-            <a href={`${base}days/day-${d.day_index}/`}>
-              <strong>Day {d.day_index}</strong> · {d.theme}
-            </a>
-            <div class="muted">{d.one_priority}</div>
-          </li>
-        ))
-    }
-  </ul>
+  {
+    chapters.map((ch) => (
+      <section class={`chapter-block ${ch.cityClass} reveal`}>
+        <h2 class="chapter-label">{ch.label}</h2>
+        <figure class="chapter-visual">
+          <img src={mediaPublicUrl(base, ch.media)} alt={ch.media.alt_zh} loading="lazy" />
+          <figcaption class="media-caption">{ch.media.alt_zh}</figcaption>
+        </figure>
+        <ul class="day-picker">
+          {ch.days.map((d) => (
+            <li>
+              <a class="day-picker-link" href={`${base}days/day-${d.day_index}/`}>
+                <span class="day-picker-index">Day {d.day_index}</span>
+                <span>
+                  <p class="day-picker-theme">{sanitizeReaderText(d.theme)}</p>
+                  <p class="day-picker-hint muted">{sanitizeReaderText(d.one_priority)}</p>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
 </Handbook>
