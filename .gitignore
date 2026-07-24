@@ -31,3 +31,5 @@ site/public/downloads/readiness-report.json
 .impeccable/live/deferred-svelte-component-accepts.json
 .impeccable/live/*.png
 # impeccable-ignore-end
+__pycache__/
+*.pyc
