@@ -28,12 +28,14 @@ function riskZh(v: string) {
 }
 ---
 <Handbook title="美食" current="guides">
-  <p class="eyebrow">美食教材</p>
-  <h1 class="page-title">辨識・點餐・避雷</h1>
-  <span class="status status-provisional">目前暫定</span>
-  <p class="muted">給 Jerry 與 Nikita 的食物教材。不保證零甲殼類；不為熱門店排過久；腳累不跨區吃一餐。</p>
+  <header class="page-intro">
+    <p class="eyebrow">美食教材</p>
+    <h1 class="page-title">辨識・點餐・避雷</h1>
+    <span class="status status-provisional">目前暫定</span>
+    <p class="hero-lede">給 Jerry 與 Nikita 的食物教材。不保證零甲殼類；不為熱門店排過久；腳累不跨區吃一餐。</p>
+  </header>
 
-  <figure class="media-block">
+  <figure class="media-block reveal">
     <img src={mediaPublicUrl(base, foodMedia)} alt={foodMedia.alt_zh} loading="lazy" />
     <figcaption class="media-caption">{foodMedia.alt_zh}</figcaption>
   </figure>
