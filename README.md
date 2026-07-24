@@ -51,3 +51,17 @@ Policy: [`docs/PRIVACY_AND_DATA_POLICY.md`](docs/PRIVACY_AND_DATA_POLICY.md).
 ## Archive
 
 Previous SyncTrip collaboration MVP lives in [`archive/synctrip-mvp/`](archive/synctrip-mvp/) for history only. It is not the product.
+
+## Agent design skills
+
+Installed from [taste-skill](https://github.com/Leonxlnx/taste-skill) under `.agents/skills/`:
+
+- `design-taste-frontend` — anti-slop layout / type / motion
+- `redesign-existing-projects` — audit-first UI upgrades
+- `high-end-visual-design` — soft editorial polish
+
+Reinstall:
+
+```bash
+npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend" --skill "redesign-existing-projects" --skill "high-end-visual-design" -y
+```

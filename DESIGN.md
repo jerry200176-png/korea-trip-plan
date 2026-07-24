@@ -14,11 +14,12 @@ Feel like opening a **well-edited travel journal** someone made for the two of y
 
 ## 3. Visual theme and atmosphere
 
-- **Warm editorial journey** on a rice-paper canvas.
+- **Warm editorial journey** on a rice-paper canvas with a faint fixed grain overlay.
 - Light mode only for couple preview (no dark “dev console” default).
 - Airy vertical rhythm; content flows in **sections**, not dense grids.
 - Travel vocabulary: thin route lines, day timelines, city ribbons, chapter breaks.
-- Photography is optional and small — never full-bleed marketplace tiles.
+- Home hero may be edge-to-edge within the reading shell; elsewhere photography stays restrained — never marketplace tile walls.
+- Agent design skills live under `.agents/skills/` (`design-taste-frontend`, `redesign-existing-projects`, `high-end-visual-design`).
 
 ## 4. Color palette and semantic roles
 
@@ -57,15 +58,15 @@ Regional accents appear as **left borders or small labels**, never full backgrou
 
 | Level | Size | Weight | Use |
 |-------|------|--------|-----|
-| display | clamp(1.75rem, 5vw, 2.25rem) | 600 | Home hero, PDF cover |
-| h1 | 1.5rem | 600 | Page title |
+| display | clamp(2.1rem, 8vw, 2.85rem) | 600 | Home hero brand |
+| h1 | clamp(1.65rem, 5vw, 2.15rem) | 600 | Page title |
 | h2 | 1.15rem | 600 | Section |
 | h3 | 1rem | 600 | Block title |
-| body | 1.0625rem (17px) | 400 | Reading |
+| body | 1.0625rem (17px) | 400–500 | Reading |
 | small | 0.8125rem | 400 | Meta, badges |
-| label | 0.75rem | 600 | Uppercase eyebrows (DAY, CITY) |
+| label | 0.7rem | 600 | Uppercase eyebrows (DAY, CITY) |
 
-Line-height: 1.45 body, 1.2 headings. Prefer weight and spacing over size jumps.
+Line-height: 1.55 body, 1.18 headings. Prefer weight, tracking, and spacing over size jumps. Use `text-wrap: balance` on headings.
 
 ## 6. Layout principles
 
@@ -173,8 +174,9 @@ No glassmorphism stacks, no heavy drop shadows on content cards.
 
 ## 19. Motion
 
-- Subtle only: 150ms ease on button press (`scale(0.98)` optional).
-- No parallax, no hero animations. Respect `prefers-reduced-motion`.
+- Subtle only: button press `scale(0.98)` with `--ease-out` (~160–280ms).
+- Home hero may use a short fade/rise; below-fold sections may use `.reveal` scroll entry.
+- No parallax, no magnetic cursors, no continuous looping motion. Respect `prefers-reduced-motion`.
 
 ## 20. Icons and imagery
 
@@ -186,9 +188,9 @@ No glassmorphism stacks, no heavy drop shadows on content cards.
 
 ### Do
 
-- Lead with couple + Seoul 4N / Busan 2N on Home.
+- Lead with brand **我們的韓國**, couple line, and Seoul 4N / Busan 2N in the Home hero.
 - Use serif for emotional headlines, sans for execution UI.
-- Keep whitespace; one idea per surface block.
+- Keep whitespace; one idea per surface block; prefer rules and quiet surfaces over card walls.
 - Mirror site tokens in PDF print stylesheet.
 
 ### Don't

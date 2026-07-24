@@ -6,19 +6,30 @@ import { sanitizeReaderText, statusClass, statusZh } from "../lib/presentation";
 
 const decisions = loadFounderDecisions();
 const base = siteBase();
+
+function decisionTone(status: string) {
+  if (status === "Confirmed") return "is-confirmed";
+  if (status === "DecisionRequired") return "is-decision";
+  return "is-provisional";
+}
 ---
 <Handbook title="一起決定" current="">
-  <p class="eyebrow">出發前</p>
-  <h1 class="page-title">一起決定</h1>
-  <p class="hero-lede">已決定與仍暫定的項目分開標示 — 方便兩人討論。</p>
+  <header class="page-intro">
+    <p class="eyebrow">出發前</p>
+    <h1 class="page-title">一起決定</h1>
+    <p class="hero-lede">已決定與仍暫定的項目分開標示 — 方便兩人討論。</p>
+  </header>
+
   {
     decisions.map((d) => (
-      <section class="surface decision-card">
-        <h2 style="margin-top:0">
+      <section class={`surface decision-card ${decisionTone(d.status)} reveal`}>
+        <div class="meta-row" style="margin-top:0">
+          <span class={`status ${statusClass(d.status)}`}>{statusZh(d.status)}</span>
+        </div>
+        <h2 style="margin-top:var(--space-3)">
           {d.title_zh}
         </h2>
-        <span class={`status ${statusClass(d.status)}`}>{statusZh(d.status)}</span>
-        <p style="margin-top:var(--space-3)">
+        <p>
           <strong>為什麼現在要談：</strong>
           {sanitizeReaderText(d.why_now)}
         </p>
@@ -52,5 +63,5 @@ const base = siteBase();
       </section>
     ))
   }
-  <a class="btn" href={`${base}`}>← 首頁</a>
+  <a class="back-link" href={`${base}`}>← 首頁</a>
 </Handbook>

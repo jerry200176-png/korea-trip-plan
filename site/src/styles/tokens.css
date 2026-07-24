@@ -42,10 +42,23 @@
   --space-8: 4rem;
 
   --radius-button: 10px;
-  --radius-card: 12px;
+  --radius-card: 14px;
   --radius-pill: 999px;
 
   --tap: 48px;
+
+  --ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-med: 280ms;
+  --duration-slow: 700ms;
+
+  --shadow-dock: 0 -8px 32px color-mix(in srgb, var(--color-ink) 7%, transparent);
+  --shadow-soft: 0 12px 40px color-mix(in srgb, var(--color-ink) 6%, transparent);
+
+  --z-grain: 30;
+  --z-dock: 40;
+  --z-skip: 60;
 
   /* Semantic aliases used in components */
   --bg: var(--color-canvas);

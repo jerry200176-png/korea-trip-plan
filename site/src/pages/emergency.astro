@@ -12,18 +12,27 @@ const lost = mediaById("lost-wrong-train-recovery");
 const relatedDays = relatedDaysForGuide("emergency");
 ---
 <Handbook title="緊急" current="guides">
-  <p class="eyebrow">路上</p>
-  <h1 class="page-title">緊急協助</h1>
-  <span class="status status-provisional">{statusZh(e.status)}</span>
+  <header class="page-intro">
+    <p class="eyebrow">路上</p>
+    <h1 class="page-title">緊急協助</h1>
+    <span class="status status-provisional">{statusZh(e.status)}</span>
+  </header>
 
-  <section class="surface-emergency">
+  <section class="surface-emergency reveal">
     <h2 style="margin-top:0">立即撥打</h2>
-    <p style="font-size:1.5rem;font-family:var(--font-display);margin:0">
-      {e.korea.police} 警察 · {e.korea.fire_ambulance} 消防／醫療
-    </p>
+    <div class="dial-row">
+      <a class="dial-link" href={`tel:${e.korea.police}`}>
+        <span class="dial-number">{e.korea.police}</span>
+        <span class="dial-label">警察</span>
+      </a>
+      <a class="dial-link" href={`tel:${e.korea.fire_ambulance}`}>
+        <span class="dial-number">{e.korea.fire_ambulance}</span>
+        <span class="dial-label">消防／醫療</span>
+      </a>
+    </div>
   </section>
 
-  <section class="surface">
+  <section class="surface reveal">
     <h2 style="margin-top:0">駐韓機構</h2>
     <p>
       <a href={e.korea.mission_url} target="_blank" rel="noreferrer">{e.korea.mission_name}</a>
@@ -31,7 +40,7 @@ const relatedDays = relatedDaysForGuide("emergency");
     <p class="muted">{e.korea.mission_phone_note}</p>
   </section>
 
-  <section class="surface">
+  <section class="surface reveal">
     <h2 style="margin-top:0">住宿地址</h2>
     <p>首爾：{sanitizeReaderText(e.lodging_placeholders.seoul_address_ko)}</p>
     <p>釜山：{sanitizeReaderText(e.lodging_placeholders.busan_address_ko)}</p>
@@ -40,7 +49,7 @@ const relatedDays = relatedDaysForGuide("emergency");
 
   {
     offline && (
-      <section class="surface-warm">
+      <section class="surface-warm reveal">
         <h2 style="margin-top:0">離線交通救援卡</h2>
         <figure class="media-block">
           <img src={mediaPublicUrl(base, offline)} alt={offline.alt_zh} loading="lazy" />
@@ -52,7 +61,7 @@ const relatedDays = relatedDaysForGuide("emergency");
 
   {
     lost && (
-      <section class="surface">
+      <section class="surface reveal">
         <h2 style="margin-top:0">搭錯／錯過怎麼救</h2>
         <figure class="media-block">
           <img src={mediaPublicUrl(base, lost)} alt={lost.alt_zh} loading="lazy" />
@@ -74,14 +83,14 @@ const relatedDays = relatedDaysForGuide("emergency");
     )
   }
 
-  <section class="surface">
+  <section class="surface reveal">
     <h2 style="margin-top:0">保險</h2>
     <p>保險公司：{sanitizeReaderText(e.insurance.provider)}</p>
     <p>緊急電話：{sanitizeReaderText(e.insurance.emergency_phone)}</p>
     <p class="muted">{sanitizeReaderText(e.insurance.note)}</p>
   </section>
 
-  <section class="surface-quiet">
+  <section class="surface-quiet reveal">
     <h2 style="margin-top:0">飲食／求助韓文</h2>
     <p lang="ko">{e.phrases_ko.no_alcohol}</p>
     <p lang="ko">{e.phrases_ko.no_crustaceans}</p>
@@ -91,9 +100,14 @@ const relatedDays = relatedDaysForGuide("emergency");
     {e.phrases_ko.station_staff && <p lang="ko">{e.phrases_ko.station_staff}</p>}
   </section>
 
-  <a class="btn primary" href={`${base}downloads/emergency-pack.pdf`}>下載緊急 PDF</a>
+  <div class="btn-row reveal" style="margin-top:var(--space-4)">
+    <a class="btn primary" href={`${base}downloads/emergency-pack.pdf`}>
+      下載緊急 PDF
+      <span class="btn-arrow" aria-hidden="true">↓</span>
+    </a>
+  </div>
   <p class="muted">{sanitizeReaderText(e.offline_note)}</p>
-  <section class="surface-quiet" aria-label="相關行程日">
+  <section class="surface-quiet reveal" aria-label="相關行程日">
     <h2 style="margin-top:0">相關行程日</h2>
     <div class="btn-row">
       {relatedDays.map((d) => (
