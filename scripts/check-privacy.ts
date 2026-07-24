@@ -11,6 +11,9 @@ const SKIP_DIRS = new Set([
   ".astro",
   "site/dist",
   "pdf-renders",
+  // Vendor agent skills (may contain fake card numbers in fixture tests)
+  ".cursor",
+  ".agents",
 ]);
 
 const SKIP_EXT = new Set([

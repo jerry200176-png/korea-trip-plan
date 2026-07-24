@@ -19,7 +19,7 @@ Feel like opening a **well-edited travel journal** someone made for the two of y
 - Airy vertical rhythm; content flows in **sections**, not dense grids.
 - Travel vocabulary: thin route lines, day timelines, soft city washes, chapter breaks.
 - Home hero may be edge-to-edge within the reading shell; elsewhere photography stays restrained — never marketplace tile walls.
-- Agent design skills: taste-skill under `.agents/skills/`; Impeccable under `.cursor/skills/impeccable/` (see `PRODUCT.md`).
+- Agent design skills: taste-skill (`.agents/skills/`), Impeccable (`.cursor/skills/impeccable/`), UI/UX Pro Max (`.cursor/skills/ui-ux-pro-max/`). See `PRODUCT.md` and `design-system/our-first-korea/MASTER.md`.
 
 ## 4. Color palette and semantic roles
 
