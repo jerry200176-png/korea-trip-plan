@@ -41,15 +41,36 @@ const discovery = [
       />
     </picture>
     <div class="hero-copy">
-      <h1 class="page-title hero-title">我們的韓國</h1>
+      <p class="hero-kicker">Jerry 與 Nikita · 第一次一起出國</p>
+      <h1 class="hero-title">我們的韓國</h1>
       <p class="hero-lede">{trip.success_criterion}</p>
-      <p class="muted" style="margin:0.4rem 0 0">
+      <p class="hero-meta">
         首爾 {seoul?.provisional_nights ?? 4} 晚 · 釜山 {busan?.provisional_nights ?? 2} 晚 · {monthLabel}
       </p>
+      <div class="btn-row">
+        <a class="btn primary" href={`${base}days/`}>
+          查看 7 天旅程
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="btn" href={`${base}decisions/`}>一起決定</a>
+      </div>
     </div>
   </section>
 
-  <nav class="discovery-strip" aria-label="快速找到教材">
+  <section class="reveal route-overlay" style="margin-bottom:var(--space-6)">
+    <p class="eyebrow">路線</p>
+    <div class="route-path" aria-label="首爾到釜山路線">
+      <span>首爾 {seoul?.provisional_nights ?? 4} 晚</span>
+      <span class="route-arrow">—— KTX ——</span>
+      <span>釜山 {busan?.provisional_nights ?? 2} 晚</span>
+    </div>
+    <p class="muted" style="margin:var(--space-3) 0 0">
+      目前是規劃預覽，不是已完成預訂。
+      <span class={`status ${statusClass(trip.route_status)}`}>{statusZh(trip.route_status)}</span>
+    </p>
+  </section>
+
+  <nav class="discovery-strip reveal" aria-label="快速找到教材">
     <p class="eyebrow" style="margin-top:0">先找這些</p>
     <ul class="discovery-list">
       {
@@ -65,34 +86,17 @@ const discovery = [
     </ul>
   </nav>
 
-  <section class="surface route-overlay">
-    <p class="eyebrow">路線</p>
-    <div class="route-path" aria-label="首爾到釜山路線">
-      <span>首爾 {seoul?.provisional_nights ?? 4} 晚</span>
-      <span class="route-arrow">—— KTX ——</span>
-      <span>釜山 {busan?.provisional_nights ?? 2} 晚</span>
-    </div>
-    <p class="muted" style="margin:var(--space-3) 0 0">
-      目前是規劃預覽，不是已完成預訂。
-      <span class={`status ${statusClass(trip.route_status)}`}>{statusZh(trip.route_status)}</span>
-    </p>
-    <div class="btn-row" style="margin-top:var(--space-3)">
+  <section class="surface-warm reveal">
+    <h2 style="margin-top:0">我們想留下的回憶</h2>
+    <p>第一次一起出國。Nikita 期待 GOT7、海景、韓服、購物、美食與韓國算命；Jerry 希望順暢、不要太累、不要排太滿。兩人照與拍立得優先。</p>
+    <div class="btn-row">
       <a class="btn" href={`${base}guides/`}>打開教材目錄</a>
       <a class="btn" href={`${base}emergency/`}>緊急離線</a>
     </div>
   </section>
 
-  <section class="surface-warm">
-    <h2 style="margin-top:0">我們想留下的回憶</h2>
-    <p>第一次一起出國。Nikita 期待 GOT7、海景、韓服、購物、美食與韓國算命；Jerry 希望順暢、不要太累、不要排太滿。兩人照與拍立得優先。</p>
-    <div class="btn-row">
-      <a class="btn primary" href={`${base}days/`}>查看 7 天旅程</a>
-      <a class="btn" href={`${base}decisions/`}>一起決定</a>
-    </div>
-  </section>
-
-  <section class="surface">
-    <h2 style="margin-top:0">七天預覽</h2>
+  <section class="reveal" style="margin-bottom:var(--space-6)">
+    <h2 class="page-title" style="font-size:1.5rem">七天預覽</h2>
     <ul class="list">
       {
         itinerary.days
@@ -108,7 +112,7 @@ const discovery = [
     </ul>
   </section>
 
-  <section class="surface-quiet">
+  <section class="surface-quiet reveal">
     <h2 style="margin-top:0">還要一起決定</h2>
     <ul class="list">
       {
@@ -123,7 +127,7 @@ const discovery = [
     <a class="btn" href={`${base}decisions/`}>打開決策頁</a>
   </section>
 
-  <section class="surface">
+  <section class="reveal" style="margin-top:var(--space-6)">
     <h2 style="margin-top:0">離線 PDF</h2>
     <p class="muted">旅行書目前為 Beta 品質修正版；通過驗收前請勿視為 Final。</p>
     <div class="btn-row">
