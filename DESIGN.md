@@ -17,9 +17,9 @@ Feel like opening a **well-edited travel journal** someone made for the two of y
 - **Warm editorial journey** on a rice-paper canvas with a faint fixed grain overlay.
 - Light mode only for couple preview (no dark “dev console” default).
 - Airy vertical rhythm; content flows in **sections**, not dense grids.
-- Travel vocabulary: thin route lines, day timelines, city ribbons, chapter breaks.
+- Travel vocabulary: thin route lines, day timelines, soft city washes, chapter breaks.
 - Home hero may be edge-to-edge within the reading shell; elsewhere photography stays restrained — never marketplace tile walls.
-- Agent design skills live under `.agents/skills/` (`design-taste-frontend`, `redesign-existing-projects`, `high-end-visual-design`).
+- Agent design skills: taste-skill under `.agents/skills/`; Impeccable under `.cursor/skills/impeccable/` (see `PRODUCT.md`).
 
 ## 4. Color palette and semantic roles
 
@@ -48,7 +48,7 @@ All UI colors MUST come from CSS variables in `site/src/styles/tokens.css`. Do n
 | `--color-status-danger` | Emergency, critical |
 | `--color-status-ok` | Positive completion |
 
-Regional accents appear as **left borders or small labels**, never full backgrounds.
+Regional accents appear as **thin left hairlines, soft washes, or small labels** — never thick side-tab bars or full backgrounds.
 
 ## 5. Typography hierarchy
 
